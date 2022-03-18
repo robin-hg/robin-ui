@@ -4,7 +4,8 @@
 	"rules": {
 		"selector-nested-pattern": "^&",
 		"no-descending-specificity": null,
-		"no-duplicate-selectors": null
+		"no-duplicate-selectors": null,
+		"function-no-unknown": null
 	},
 	"ignoreFiles": ["src/style/index.ts"]
 }
