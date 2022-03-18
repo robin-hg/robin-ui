@@ -1,0 +1,10 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Hooks/useDebouncedFn" />
+
+# useDebouncedFn
+
+Returns a debounced function that delays invoking `fn` until after `timeout` miliseconds have elapsed since it was last invoked. Defaults to 500ms.
+It will immediately invoke the function if `immediate` is true and if there is no running timeout. Otherwise it will delay the invocation.
+
+`const useDebouncedFn: <T extends (...args: any[]) => void>(fn: T, timeout?: number, immediate?: boolean) => (this: ThisParameterType<T>, ...args: Parameters<T>) => void`

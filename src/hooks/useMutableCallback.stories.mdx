@@ -1,0 +1,9 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Hooks/useMutableCallback" />
+
+# useMutableCallback
+
+A variation of `useCallback` that does not become stale even if variables in its callback function changes.
+
+`const useMutableCallback: <T extends any[]>(callback: (...args: T) => void) => (...args: T) => void`

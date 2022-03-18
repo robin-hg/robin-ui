@@ -1,0 +1,9 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Hooks/useEventListener" />
+
+# useEventListener
+
+A shorthand custom `useEvent` hook that automatically adds/removes an event listener on mount/unmount.
+
+`const useEventListener: <K extends keyof GlobalEventHandlersEventMap>(eventName: K, listener: GlobalEventHandlersEventMap[K]) => void, dependencies?: any[]) => void`

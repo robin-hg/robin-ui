@@ -1,0 +1,15 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"outDir": "dist"
+	},
+	"exclude": [
+		"node_modules",
+		"**/*.stories.tsx",
+		"**/*.test.ts",
+		"**/*.test.tsx",
+		"**/testUtils.ts",
+		"**/testUtilsHooks.ts"
+	]
+}

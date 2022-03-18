@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "esnext",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"jsx": "react-jsxdev",
+		"types": ["react", "react-dom"],
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"preserveValueImports": true,
+		"isolatedModules": true,
+		"strict": true,
+		"sourceMap": true,
+		"declaration": true,
+		"declarationDir": "dist",
+		"esModuleInterop": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": "./src"
+	},
+	"include": ["src"]
+}

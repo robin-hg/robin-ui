@@ -1,0 +1,9 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Hooks/useOnClickOutside" />
+
+# useOnClickOutside
+
+Adds `mousedown`/`touchstart` listeners that fires `action` if the `target` of the event is not in `exclude`.
+
+`const useOnClickOutside: (exclude: Element | (Element | null)[] | null, action: (event: Event | MouseEvent | TouchEvent) => void) => void`

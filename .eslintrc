@@ -1,0 +1,38 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["@typescript-eslint", "react-hooks", "prefer-arrow"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
+	],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"rules": {
+		"curly": "error",
+		"dot-notation": "error",
+		"no-eval": "error",
+		"no-shadow": ["error", { "hoist": "all" }],
+		"spaced-comment": "error",
+		"@typescript-eslint/prefer-optional-chain": "error",
+		"@typescript-eslint/no-namespace": "off",
+		"@typescript-eslint/no-empty-interface": "off",
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"react/jsx-boolean-value": "error",
+		"react/prefer-stateless-function": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"prefer-arrow/prefer-arrow-functions": "error"
+	}
+}
