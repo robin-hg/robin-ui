@@ -1,11 +1,16 @@
-import React, { useRef, useState } from 'react'
-import { useCombinedRef } from 'hooks'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { useCombinedRef, useId, useOnKeyPress, useMutableCallback } from '@rui/hooks'
 
-import { Fade, FocusTrap, Portal } from 'index'
+import Fade from '@rui/components/Fade'
+import FocusTrap from '@rui/components/FocusTrap'
+import Portal from '@rui/components/Portal'
+import { ModalManagerContext } from '@rui/components/ModalManager'
 
 import { Backdrop, ModalContainer, ModalPaper } from './Modal.style'
 
 export const ModalContext = React.createContext<{
+	id?: string
+	contentId?: string
 	modalRef?: React.RefObject<HTMLDivElement>
 	onClose?: () => void
 	setPreventClose?: (state: boolean) => void
@@ -21,6 +26,9 @@ const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const [preventClose, setPreventClose] = useState(false)
 	const modalRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, modalRef)
+	const { topModal, addModal, removeModal } = useContext(ModalManagerContext)
+	const id = useId()
+	const contentId = useId()
 
 	const close = () => {
 		if (!preventClose) {
@@ -28,16 +36,31 @@ const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}
 
-	// const handleEsc = useMutableCallback(() => {
-	// 	if (!topModal || topModal === id) {
-	// 		close()
-	// 	}
-	// })
+	const handleEsc = useMutableCallback(() => {
+		if (!topModal || topModal === id) {
+			close()
+		}
+	})
+
+	useOnKeyPress('Escape', handleEsc)
+
+	useEffect(() => {
+		if (open) {
+			addModal?.(id)
+		} else {
+			removeModal?.(id)
+		}
+		return () => {
+			removeModal?.(id)
+		}
+	}, [open])
 
 	return (
 		<Portal>
 			<ModalContext.Provider
 				value={{
+					id,
+					contentId,
 					modalRef,
 					setPreventClose,
 					onClose: onClose && !preventClose ? close : undefined
@@ -46,7 +69,13 @@ const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					<ModalContainer>
 						<div>
 							<FocusTrap>
-								<ModalPaper ref={combinedRef} {...otherProps}>
+								<ModalPaper
+									ref={combinedRef}
+									role="dialog"
+									aria-modal="true"
+									aria-labelledby={id}
+									aria-describedby={contentId}
+									{...otherProps}>
 									{children}
 								</ModalPaper>
 							</FocusTrap>

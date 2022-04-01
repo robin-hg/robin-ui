@@ -1,25 +1,24 @@
-import styled, { css, type RUITheme } from 'style'
-import { getColor, getContrastColor } from 'utils/color'
+import styled, { css } from '@rui/style'
 
 interface TypographyProps {
 	$color: string
 	$highlight?: string
 	$bold: boolean
 	$italic: boolean
-	$decoration: 'underline' | 'line-through' | 'none'
+	$decoration: string
 	$fontSize?: string
 	$fontWeight?: number
 }
 
-const common = (props: { theme: RUITheme } & TypographyProps) => css`
+const common = (props: { theme: RobinUI.ThemeWithUtils } & TypographyProps) => css`
 	margin: 0;
 	font-family: ${props.theme.typography.fontFamily};
 	font-style: ${props.$italic ? 'italic' : 'normal'};
 	line-height: normal;
-	color: ${props.$highlight ? getContrastColor(props.theme, props.$highlight) : getColor(props.theme, props.$color)};
+	color: ${props.theme.utils.getColor(props.$color) || props.theme.utils.getTextColor(props.$highlight)};
 	text-decoration: ${props.$decoration};
 	letter-spacing: normal;
-	background: ${props.$highlight ? getColor(props.theme, props.$highlight) : 'none'};
+	background: ${props.$highlight ? props.theme.utils.getColor(props.$highlight) : 'none'};
 
 	&& {
 		${props.$bold &&
@@ -41,10 +40,10 @@ const common = (props: { theme: RUITheme } & TypographyProps) => css`
 	}
 `
 
-const heading = (props: { theme: RUITheme } & TypographyProps) => css`
-	margin-bottom: 0.35em;
+const heading = (props: { theme: RobinUI.ThemeWithUtils } & TypographyProps) => css`
+	font-family: ${props.theme.typography.headingFontFamily};
 	font-weight: ${props.theme.typography.fontWeights.heading};
-	line-height: 1.1em;
+	line-height: ${props.theme.typography.lineHeight.heading};
 `
 
 export const H1 = styled.h1<TypographyProps>`
@@ -83,37 +82,23 @@ export const H6 = styled.h6<TypographyProps>`
 	font-size: ${props => props.theme.typography.fontSizes.h6};
 `
 
-export const Subtitle1 = styled.h6<TypographyProps>`
+export const Subtitle = styled.h6<TypographyProps>`
 	${common}
-	font-size: ${props => props.theme.typography.fontSizes.subtitle1};
+	font-size: ${props => props.theme.typography.fontSizes.subtitle};
 	font-weight: ${props => props.theme.typography.fontWeights.subtitle};
-	line-height: 1.2;
+	line-height: ${props => props.theme.typography.lineHeight.subtitle};
 `
 
-export const Subtitle2 = styled.h6<TypographyProps>`
+export const Body = styled.p<TypographyProps>`
 	${common}
-	font-size: ${props => props.theme.typography.fontSizes.subtitle2};
-	font-weight: ${props => props.theme.typography.fontWeights.subtitle};
-	line-height: 1.2;
-`
-
-export const Body1 = styled.p<TypographyProps>`
-	${common}
-	font-size: ${props => props.theme.typography.fontSizes.body1};
+	font-size: ${props => props.theme.typography.fontSizes.body};
 	font-weight: ${props => props.theme.typography.fontWeights.body};
-	line-height: 1.4;
-`
-
-export const Body2 = styled.p<TypographyProps>`
-	${common}
-	font-size: ${props => props.theme.typography.fontSizes.body2};
-	font-weight: ${props => props.theme.typography.fontWeights.body};
-	line-height: 1.4;
+	line-height: ${props => props.theme.typography.lineHeight.body};
 `
 
 export const Caption = styled.p<TypographyProps>`
 	${common}
 	font-size: ${props => props.theme.typography.fontSizes.caption};
 	font-weight: ${props => props.theme.typography.fontWeights.body};
-	line-height: 1.5;
+	line-height: ${props => props.theme.typography.lineHeight.caption};
 `

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { useSize } from 'hooks'
-import { parseSize } from 'utils'
+import { useSize } from '@rui/hooks'
+import { parseSize } from '@rui/utils'
 
 import { ExpandContainer } from './Expand.style'
 

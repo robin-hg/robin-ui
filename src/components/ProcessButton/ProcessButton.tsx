@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
-import { wait } from '../../utils'
+import { wait } from '@rui/utils'
 import { ModalContext } from '../Modal'
 
 import Button from '../Button'

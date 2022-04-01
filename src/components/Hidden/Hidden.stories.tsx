@@ -1,7 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
 
 import Hidden, { type Props } from './Hidden'
-import { Paper } from 'index'
+import Paper from '@rui/components/Paper'
 
 export default {
 	title: 'Layout/Hidden',

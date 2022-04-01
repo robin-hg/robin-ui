@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react'
-import { v4 as uuid } from 'uuid'
+import React from 'react'
+import { useId } from '@rui/hooks'
 
-import InputBox from 'components/InputBox'
+import InputBox from '@rui/components/InputBox'
 
 import { StyledInput } from './TextInput.style'
 
-export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'onChange'> {
+export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'onChange' | 'labelId'> {
 	value?: string
 	placeholder?: string
 	onChange?: React.ChangeEventHandler<HTMLInputElement>
@@ -13,7 +13,7 @@ export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'onCh
 
 const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { value, placeholder, disabled, onChange, ...otherProps } = props
-	const id = useMemo(() => uuid(), [])
+	const id = useId()
 
 	return (
 		<InputBox ref={ref} labelId={id} disabled={disabled} {...otherProps}>

@@ -1,4 +1,4 @@
-import { useMedia } from 'hooks'
+import { useMedia } from '@rui/hooks'
 import React from 'react'
 
 export interface Props {

@@ -1,64 +1,72 @@
-import type { RUITheme } from 'style'
 import tinycolor from 'tinycolor2'
-import { get } from './'
+import { get } from './index'
 
-export const getColorObj = (theme: RUITheme, color: string) => {
-	const keys = color.split('.')
-	const colorStr = get(
-		theme.colors,
-		[keys[0], keys[1] || (['text', 'paper'].includes(keys[0]) ? 'primary' : 'base')],
-		color
-	)
+const BASE_VARIANT = '5'
+
+const getColorObj = (theme: RobinUI.Theme, color: string) => {
+	const [base, variant = BASE_VARIANT] = color.split('.')
+	const colorStr = (() => {
+		switch (base) {
+			case 'text': {
+				return get(theme.typography.colors, variant, theme.typography.colors.base)
+			}
+			case 'paper': {
+				return get(theme.paper, variant, theme.paper.base)
+			}
+			default: {
+				return get(theme.colors, [base, variant], color)
+			}
+		}
+	})()
 	const obj = tinycolor(colorStr)
 	return obj.isValid() ? obj : null
 }
 
-export const getColor = (theme: RUITheme, color: string) => {
+export const getColor = (theme: RobinUI.Theme, color: string) => {
 	const colorObj = getColorObj(theme, color)
 	return colorObj?.toRgbString() || color
 }
 
-export const getContrastColor = (theme: RUITheme, background: string) => {
-	const colorObj = getColorObj(theme, background)
-	if (theme.darkMode) {
-		return colorObj?.isDark() ? theme.colors.text.primary : theme.colors.text.contrast
-	} else {
-		return colorObj?.isDark() ? theme.colors.text.contrast : theme.colors.text.primary
-	}
+export const getTextColor = (theme: RobinUI.Theme, background?: string, colors = ['text', 'text.contrast']) => {
+	const colorList = colors.map(color => {
+		const [base, variant] = color.split('.')
+		if (base === 'text') {
+			switch (variant) {
+				case 'light':
+					return theme.typography.colors.light
+				case 'contrast':
+					return theme.typography.colors.contrast
+				case 'disabled':
+					return theme.typography.colors.disabled
+				default:
+					return theme.typography.colors.base
+			}
+		} else {
+			return getColor(theme, color)
+		}
+	})
+	const backgroundObj = getColor(theme, background || theme.paper.base)
+	return tinycolor.mostReadable(backgroundObj, colorList).toRgbString()
 }
 
-export const getColorAlpha = (theme: RUITheme, color: string, alpha: number) => {
+export const getColorAlpha = (theme: RobinUI.Theme, color: string, alpha: number) => {
 	const colorObj = getColorObj(theme, color)
 	return colorObj?.setAlpha(alpha).toRgbString() || color
 }
 
-export const getColorVariant = (
-	theme: RUITheme,
-	color: string,
-	variant: 'extraLight' | 'light' | 'base' | 'dark' | 'extraDark' | number
-) => {
-	const keys = color.split('.')
-	const colorVariant = get<string>(theme.colors, [keys[0], variant])
+export const getColorVariant = (theme: RobinUI.Theme, color: string, modifier: number) => {
+	const [base, variant = BASE_VARIANT] = color.split('.')
+	const result = getColorObj(theme, `${base}.${parseInt(variant) + modifier}`)
 
-	if (colorVariant) {
-		return colorVariant
+	if (result) {
+		return result.toRgbString()
 	}
 
-	// Fallback to color manipulation
+	// fallback to color manipulation
 	const colorObj = tinycolor(color)
-	switch (variant) {
-		case 'extraLight':
-			return colorObj.brighten(80).toRgbString()
-		case 'light':
-			return colorObj.brighten(40).toRgbString()
-		case 'base':
-			return colorObj.toRgbString()
-		case 'dark':
-			return colorObj.darken(40).toRgbString()
-		case 'extraDark':
-			return colorObj.darken(40).toRgbString()
-		default:
-			// can't handle numbered variant
-			return null
+	if (modifier < 0) {
+		return colorObj.brighten(modifier * 5).toRgbString()
+	} else {
+		return colorObj.darken(Math.abs(modifier) * 5).toRgbString()
 	}
 }

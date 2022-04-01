@@ -1,5 +1,4 @@
-import styled, { css } from 'style'
-import { getColor } from 'utils/color'
+import styled, { css } from '@rui/style'
 
 interface CircleProps {
 	$color: string
@@ -22,25 +21,29 @@ export const Circle = styled.span<CircleProps>`
 	outline: none;
 	transition: all 200ms ease-out;
 
-	@media (hover: hover) {
-		&:hover {
-			box-shadow: ${props => props.theme.generateShadow(2, props.theme.colors.shadow, false)};
-		}
-	}
-
-	&:active {
-		box-shadow: ${props => props.theme.generateShadow(3, props.theme.colors.shadow, false)};
-	}
-
-	&:focus-visible {
-		box-shadow: ${props => props.theme.generateShadow(2, props.theme.colors.shadow, false)};
-	}
-
 	${props => {
-		const borderColor = props.$error ? 'error' : props.$checked ? props.$color : 'grey'
+		const borderColor = props.$error ? 'error' : props.$checked ? props.$color : 'gray'
+		const hoverColor = props.$error ? 'error' : props.$color
 
 		return css`
-			border-color: ${getColor(props.theme, borderColor)};
+			border-color: ${props.theme.utils.getColor(borderColor)};
+
+			@media (hover: hover) {
+				&:hover {
+					background: ${props.theme.utils.getColorAlpha(hoverColor, 0.1)};
+					border-color: ${props.theme.utils.getColor(hoverColor)};
+				}
+			}
+
+			&:focus-visible {
+				background: ${props.theme.utils.getColorAlpha(hoverColor, 0.1)};
+				border-color: ${props.theme.utils.getColor(hoverColor)};
+			}
+
+			&:active {
+				background: ${props.theme.utils.getColorAlpha(hoverColor, 0.2)};
+				border-color: ${props.theme.utils.getColor(hoverColor)};
+			}
 
 			&::before {
 				position: absolute;
@@ -49,7 +52,7 @@ export const Circle = styled.span<CircleProps>`
 				width: 1rem;
 				height: 1rem;
 				content: '';
-				background: ${getColor(props.theme, borderColor)};
+				background: ${props.theme.utils.getColor(borderColor)};
 				border-radius: 100%;
 				transform: translate(-50%, -50%) scale(${props.$checked ? 1 : 0});
 				transition: all 200ms ease-out;
@@ -60,11 +63,11 @@ export const Circle = styled.span<CircleProps>`
 	${props =>
 		props.$disabled &&
 		css`
-			border-color: ${props.theme.colors.grey.base} !important;
+			border-color: ${props.theme.colors.gray[5]} !important;
 			box-shadow: none !important;
 
 			&::before {
-				background: ${props.theme.colors.grey.base} !important;
+				background: ${props.theme.colors.gray[5]} !important;
 			}
 		`}
 

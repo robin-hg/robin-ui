@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'style'
+import styled from '@rui/style'
 
 interface FlexBoxContainerProps {
 	$direction: React.CSSProperties['flexDirection']

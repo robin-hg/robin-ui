@@ -1,3 +1,3 @@
-import styled from 'style'
+import styled from '@rui/style'
 
 export const ClickAwayListenerContainer = styled.div()

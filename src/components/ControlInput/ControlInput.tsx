@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { Typography } from 'index'
+import Typography from '@rui/components/Typography'
 
 import { ControlInputContainer, Control } from './ControlInput.style'
 
@@ -29,8 +28,12 @@ const ControlInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			}}
 			disabled={disabled}
 			{...otherProps}>
-			<Control $labelPosition={labelPosition}>{children}</Control>
-			{label && <Typography component="span">{label}</Typography>}
+			<Control>{children}</Control>
+			{label && (
+				<Typography component="label" color={disabled ? 'text.disabled' : 'text'}>
+					{label}
+				</Typography>
+			)}
 		</ControlInputContainer>
 	)
 })

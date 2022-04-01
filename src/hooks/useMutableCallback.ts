@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react'
 
-const useMutableCallback = <T extends (...args: any[]) => void | Promise<void>>(callback: T) => {
+const useMutableCallback = <T extends (...args: any[]) => any>(callback: T) => {
 	const ref = useRef<T>()
 
 	useEffect(() => {

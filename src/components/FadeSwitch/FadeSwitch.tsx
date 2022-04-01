@@ -1,7 +1,7 @@
 import React from 'react'
 import { SwitchTransition } from 'react-transition-group'
 
-import { Fade } from 'index'
+import Fade from '@rui/components/Fade'
 
 export interface Props extends RobinUI.StandardProps<HTMLDivElement> {
 	currentKey: string | number

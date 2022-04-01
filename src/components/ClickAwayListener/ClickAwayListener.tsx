@@ -1,4 +1,4 @@
-import { useOnClickOutside, useCombinedRef } from 'hooks'
+import { useOnClickOutside, useCombinedRef } from '@rui/hooks'
 import React, { useRef } from 'react'
 
 import { ClickAwayListenerContainer } from './ClickAwayListener.style'

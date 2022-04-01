@@ -1,5 +1,4 @@
-import styled, { keyframes, css } from 'style'
-import { getColor } from 'utils/color'
+import styled, { keyframes, css } from '@rui/style'
 
 const circleRotate = keyframes`
 	100%{
@@ -31,19 +30,19 @@ const spin = keyframes`
 type State = 'loading' | 'complete' | 'error'
 
 interface SpinnerContainer {
-	size: string
-	color: string
-	spin: boolean
+	$size: string
+	$color: string
+	$spin: boolean
 }
 
 export const SpinnerContainer = styled.div<SpinnerContainer>`
 	display: block;
-	width: ${props => props.size};
-	height: ${props => props.size};
-	color: ${props => getColor(props.theme, props.color)};
+	width: ${props => props.$size};
+	height: ${props => props.$size};
+	color: ${props => props.theme.utils.getColor(props.$color)};
 
 	${props =>
-		props.spin &&
+		props.$spin &&
 		css`
 			animation: ${spin} 1s linear infinite;
 		`}

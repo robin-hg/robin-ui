@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import { useArgs } from '@storybook/client-api'
+import { useArgs } from '@storybook/api'
 
 import Select, { type Props } from './Select'
 
@@ -24,7 +24,8 @@ export default {
 			{ value: 'I' },
 			{ value: 'J' },
 			{ value: 'K' }
-		]
+		],
+		required: true
 	},
 	argTypes: {
 		value: { control: 'text' }

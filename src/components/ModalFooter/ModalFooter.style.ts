@@ -1,7 +1,7 @@
-import styled from 'style'
-import { FlexBox } from 'index'
+import styled from '@rui/style'
+import FlexBox from '@rui/components/FlexBox'
 
 export const ModalFooterContainer = styled(FlexBox)`
-	padding: 1.5rem;
-	padding-top: 1rem;
+	padding: 1.6rem;
+	padding-top: 0.8rem;
 `

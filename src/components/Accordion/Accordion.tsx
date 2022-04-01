@@ -1,7 +1,9 @@
-import { ChevronDown } from 'icons'
+import { ChevronDown } from '@rui/icons'
 import React, { useEffect, useState } from 'react'
-import { handleEnter } from 'utils'
+import { handleEnter } from '@rui/utils'
 import { AccordionContainer, AccordionContent, AccordionSummary } from './Accordion.style'
+
+import Typography from '@rui/components/Typography'
 
 export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'summary'> {
 	open?: boolean
@@ -31,7 +33,7 @@ const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}
 
 	return (
-		<AccordionContainer ref={ref} $disabled={!!disabled} {...otherProps}>
+		<AccordionContainer ref={ref} $disabled={!!disabled} {...otherProps} elevation={0}>
 			<AccordionSummary
 				role="button"
 				$open={open}
@@ -40,8 +42,10 @@ const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				onClick={toggleOpen}
 				onKeyDown={handleEnter(toggleOpen)}
 				tabIndex={expandable ? 0 : -1}>
-				<div>{summary}</div>
-				{expandable && <ChevronDown size={20} />}
+				<Typography component="div" bold color="inherit">
+					{summary}
+				</Typography>
+				{!!children && <ChevronDown size={20} />}
 			</AccordionSummary>
 			{children && <AccordionContent open={!disabled && open}>{children}</AccordionContent>}
 		</AccordionContainer>

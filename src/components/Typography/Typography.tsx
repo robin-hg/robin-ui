@@ -1,21 +1,17 @@
 import React from 'react'
-import { parseSize } from 'utils'
+import { parseSize } from '@rui/utils'
 
-import { H1, H2, H3, H4, H5, H6, Subtitle1, Subtitle2, Body1, Body2, Caption } from './Typography.style'
+import { H1, H2, H3, H4, H5, H6, Subtitle, Body, Caption } from './Typography.style'
 
 export interface Props extends RobinUI.StandardProps<HTMLParagraphElement> {
 	/**
 	 * Text variant.
-	 * @default body1
+	 * @default body
 	 */
-	variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption'
+	variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle' | 'body' | 'caption'
 	fontSize?: number | string
 	fontWeight?: number
 	bold?: boolean
-	/**
-	 * Text color.
-	 * @default text
-	 */
 	color?: string
 	highlight?: string
 	italic?: boolean
@@ -27,11 +23,11 @@ export interface Props extends RobinUI.StandardProps<HTMLParagraphElement> {
 const Typography = React.forwardRef<HTMLParagraphElement, Props>((props, ref) => {
 	const {
 		component,
-		variant = 'body1',
+		variant = 'body',
 		fontSize,
 		fontWeight,
 		bold,
-		color = 'text',
+		color = 'text.disabled',
 		highlight,
 		italic,
 		underline,
@@ -54,20 +50,18 @@ const Typography = React.forwardRef<HTMLParagraphElement, Props>((props, ref) =>
 				return H5
 			case 'h6':
 				return H6
-			case 'subtitle1':
-				return Subtitle1
-			case 'subtitle2':
-				return Subtitle2
-			case 'body1':
-				return Body1
-			case 'body2':
-				return Body2
+			case 'subtitle':
+				return Subtitle
+			case 'body':
+				return Body
 			case 'caption':
 				return Caption
 			default:
-				return Body1
+				return Body
 		}
 	})()
+
+	const decoration = `${underline ? 'underline' : ''} ${strikethrough ? 'line-through' : ''}`.trim()
 
 	return (
 		<Component
@@ -79,7 +73,7 @@ const Typography = React.forwardRef<HTMLParagraphElement, Props>((props, ref) =>
 			$color={color}
 			$highlight={highlight}
 			$italic={!!italic}
-			$decoration={underline ? 'underline' : strikethrough ? 'line-through' : 'none'}
+			$decoration={decoration || 'none'}
 			{...otherProps}>
 			{children}
 		</Component>
@@ -89,6 +83,6 @@ const Typography = React.forwardRef<HTMLParagraphElement, Props>((props, ref) =>
 Typography.displayName = 'Typography'
 Typography.defaultProps = {
 	color: 'text',
-	variant: 'body1'
+	variant: 'body'
 }
 export default Typography

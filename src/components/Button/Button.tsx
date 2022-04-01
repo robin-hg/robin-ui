@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { ButtonGroupContext } from 'components/ButtonGroup'
+import { ButtonGroupContext } from '@rui/components/ButtonGroup'
 
 import { Adornment, Content, StyledButton } from './Button.style'
 
@@ -46,6 +46,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
 			$variant={groupVariant || variant}
 			$color={groupColor || color}
 			$size={groupSize || size}
+			type="button"
 			onClick={event => {
 				if (disabled) {
 					event.preventDefault()
@@ -58,7 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
 			{...otherProps}>
 			<Content key={size}>
 				{startAdornment && <Adornment $position={children ? 'start' : undefined}>{startAdornment}</Adornment>}
-				{children && <span>{children}</span>}
+				{children && children}
 				{endAdornment && <Adornment $position={children ? 'end' : undefined}>{endAdornment}</Adornment>}
 			</Content>
 		</StyledButton>

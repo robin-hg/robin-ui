@@ -1,4 +1,4 @@
-import styled, { css, media } from 'style'
+import styled, { css } from '@rui/style'
 
 interface GridItemContainerProps {
 	$sm?: number
@@ -14,7 +14,7 @@ export const GridItemContainer = styled.div<GridItemContainerProps>`
 		${props =>
 			props.$lg &&
 			css`
-				${media.lg(props)} {
+				${props.theme.media.lg} {
 					grid-column: auto / span ${props.$lg};
 				}
 			`}
@@ -22,7 +22,7 @@ export const GridItemContainer = styled.div<GridItemContainerProps>`
 		${props =>
 			props.$md &&
 			css`
-				${media.md(props)} {
+				${props.theme.media.md} {
 					grid-column: auto / span ${props.$md};
 				}
 			`}
@@ -30,7 +30,7 @@ export const GridItemContainer = styled.div<GridItemContainerProps>`
 		${props =>
 			props.$sm &&
 			css`
-				${media.sm(props)} {
+				${props.theme.media.sm} {
 					grid-column: auto / span ${props.$sm};
 				}
 			`}

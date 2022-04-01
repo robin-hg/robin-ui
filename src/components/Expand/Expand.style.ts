@@ -1,4 +1,4 @@
-import styled from 'style'
+import styled from '@rui/style'
 
 interface ExpandProps {
 	$open: boolean

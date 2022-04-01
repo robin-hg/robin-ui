@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { PaginationContainer, PageButton, Elipsis } from './Pagination.style'
-import { ChevronLeft, ChevronRight } from 'icons'
+import { ChevronLeft, ChevronRight } from '@rui/icons'
 
 export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'onChange'> {
 	totalItems: number
@@ -61,12 +61,13 @@ const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	return (
 		<PaginationContainer ref={ref} $align={align} {...otherProps}>
 			<PageButton
-				variant="outlined"
+				variant="text"
 				size="sm"
-				$activeColor={color}
+				color="text"
 				disabled={currentPage === 1}
 				onClick={() => navigate(currentPage - 1)}
 				startAdornment={<ChevronLeft />}
+				aria-label={`Go to previous page`}
 			/>
 			{visiblePages.map((page, i) => {
 				switch (i) {
@@ -90,22 +91,23 @@ const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				return (
 					<PageButton
 						key={page}
-						variant="outlined"
+						variant={page === currentPage ? 'contained' : 'text'}
 						size="sm"
-						$activeColor={color}
-						$active={page === currentPage}
-						onClick={() => navigate(page)}>
+						color={page === currentPage ? color : 'text'}
+						onClick={() => navigate(page)}
+						aria-label={`Go to page ${page}`}>
 						{page}
 					</PageButton>
 				)
 			})}
 			<PageButton
-				variant="outlined"
+				variant="text"
 				size="sm"
-				$activeColor={color}
+				color="text"
 				disabled={currentPage === numberOfPages}
 				onClick={() => navigate(currentPage + 1)}
 				endAdornment={<ChevronRight />}
+				aria-label={`Go to next page`}
 			/>
 		</PaginationContainer>
 	)

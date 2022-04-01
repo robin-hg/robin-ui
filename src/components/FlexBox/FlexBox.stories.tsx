@@ -1,8 +1,8 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from 'style'
+import styled from '@rui/style'
 
 import FlexBox, { type Props } from './FlexBox'
-import { Paper } from 'index'
+import Paper from '@rui/components/Paper'
 
 export default {
 	title: 'Layout/FlexBox',

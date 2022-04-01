@@ -1,25 +1,54 @@
 import React from 'react'
-import { Box, InputBoxContainer, Label } from './InputBox.style'
 
-export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'label'> {
-	label?: number | string
+import { InputBoxContainer, Box, Content, Label, Message, Adornment } from './InputBox.style'
+
+export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'label' | 'wrap'> {
+	label?: string
 	labelId?: string
+	required?: boolean
 	error?: boolean
 	disabled?: boolean
+	errorMessage?: React.ReactNode
+	infoMessage?: React.ReactNode
+	startAdornment?: React.ReactNode
+	endAdornment?: React.ReactNode
+	boxProps?: RobinUI.StandardProps<HTMLDivElement>
 }
 
 const InputBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { label, labelId, error, disabled, children, ...otherProps } = props
+	const {
+		label,
+		labelId,
+		required,
+		error,
+		disabled,
+		errorMessage,
+		infoMessage,
+		startAdornment,
+		endAdornment,
+		boxProps,
+		children,
+		...otherProps
+	} = props
+
+	const message = error ? errorMessage : infoMessage
 
 	return (
-		<InputBoxContainer ref={ref} {...otherProps}>
-			<Box data-rui-element="input-box" $error={!!error} $disabled={!!disabled}>
-				{children}
-			</Box>
+		<InputBoxContainer ref={ref} $error={!!error} $disabled={!!disabled} {...otherProps}>
 			{label && (
-				<Label component="label" variant="caption" fontSize={11} fontWeight={600} htmlFor={labelId}>
+				<Label component="label" variant="caption" fontWeight={500} htmlFor={labelId} $required={!!required}>
 					{label}
 				</Label>
+			)}
+			<Box data-rui-element="input-box" elevation={0} {...boxProps}>
+				{startAdornment && <Adornment>{startAdornment}</Adornment>}
+				<Content>{children}</Content>
+				{endAdornment && <Adornment>{endAdornment}</Adornment>}
+			</Box>
+			{message && (
+				<Message variant="caption" fontWeight={500}>
+					{message}
+				</Message>
 			)}
 		</InputBoxContainer>
 	)

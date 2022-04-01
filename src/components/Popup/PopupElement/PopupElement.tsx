@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Placement, Instance } from '@popperjs/core'
-import { useEventListener } from '../../../hooks'
+import { useEventListener } from '@rui/hooks'
 
 import { PopupElementContainer } from './PopupElement.style'
 

@@ -1,8 +1,8 @@
 import type { Story, Meta } from '@storybook/react'
-import { lightTheme as theme } from 'style/theme'
+import styled from '@rui/style'
 
 import Typography, { type Props } from './Typography'
-import { Divider } from 'index'
+import Divider from '@rui/components/Divider'
 
 export default {
 	title: 'Display/Typography',
@@ -21,40 +21,44 @@ const Template: Story<Props> = args => <Typography {...args} />
 
 export const Default = Template.bind({})
 
+interface LabelProps {
+	variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle' | 'body' | 'caption'
+}
+
+const Label = styled.small<LabelProps>`
+	&::before {
+		content: '- ${props => props.theme.typography.fontSizes[props.variant]}';
+	}
+`
+
 export const Variants = () => (
 	<div>
 		<Typography variant="h1">
-			H1. Headline1 <small>- {theme.typography.fontSizes.h1}</small>
+			H1. Headline1 <Label variant="h1" />
 		</Typography>
 		<Typography variant="h2">
-			H2. Headline3 <small>- {theme.typography.fontSizes.h2}</small>
+			H2. Headline3 <Label variant="h2" />
 		</Typography>
 		<Typography variant="h3">
-			H3. Headline2 <small>- {theme.typography.fontSizes.h3}</small>
+			H3. Headline3 <Label variant="h3" />
 		</Typography>
 		<Typography variant="h4">
-			H4. Headline2 <small>- {theme.typography.fontSizes.h4}</small>
+			H4. Headline4 <Label variant="h4" />
 		</Typography>
 		<Typography variant="h5">
-			H5. Headline2 <small>- {theme.typography.fontSizes.h5}</small>
+			H5. Headline5 <Label variant="h5" />
 		</Typography>
 		<Typography variant="h6">
-			Subtitle1 <small>- {theme.typography.fontSizes.h6}</small>
+			H6. Headline6 <Label variant="h6" />
 		</Typography>
-		<Typography variant="subtitle1">
-			Subtitle1 <small>- {theme.typography.fontSizes.subtitle1}</small>
+		<Typography variant="subtitle">
+			Subtitle <Label variant="subtitle" />
 		</Typography>
-		<Typography variant="subtitle2">
-			Subtitle2 <small>- {theme.typography.fontSizes.subtitle2}</small>
-		</Typography>
-		<Typography variant="body1">
-			Body1 <small>- {theme.typography.fontSizes.body1}</small>
-		</Typography>
-		<Typography variant="body2">
-			Body2 <small>- {theme.typography.fontSizes.body2}</small>
+		<Typography variant="body">
+			Body <Label variant="body" />
 		</Typography>
 		<Typography variant="caption">
-			Caption <small>- {theme.typography.fontSizes.caption}</small>
+			Caption <Label variant="caption" />
 		</Typography>
 		<Divider />
 		<Typography bold>Bold</Typography>

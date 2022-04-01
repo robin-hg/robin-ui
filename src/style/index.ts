@@ -1,19 +1,10 @@
-import styled from '@emotion/styled'
 import { css, keyframes, jsx, Global } from '@emotion/react'
-import { RUIThemeProvider, type RUITheme } from './theme'
-import media from './breakpoints'
+import styled, { Styled } from './styled'
+import { RUIThemeProvider, type RUIThemeWithUtils } from './ThemeProvider'
 
 declare module '@emotion/react' {
-	export interface Theme extends RUITheme {}
+	export interface Theme extends RUIThemeWithUtils {}
 }
 
-// const shouldForwardProp = (prop: string) => !prop.startsWith('$') && prop !== 'as'
-// const extendedStyled = new Proxy(styled, {
-// 	get:
-// 		(_, tag: keyof JSX.IntrinsicElements) =>
-// 		(getStyle = () => css``) =>
-// 			styled(tag, { shouldForwardProp })(getStyle)
-// })
-
-export { media, css, keyframes, jsx, Global, RUIThemeProvider, type RUITheme }
+export { css, keyframes, jsx, Global, RUIThemeProvider, Styled }
 export default styled

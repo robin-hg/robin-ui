@@ -6,4 +6,4 @@ import { Meta } from '@storybook/addon-docs'
 
 Combines multiple refs to a single ref.
 
-`const useCombinedRef: <T extends any>(...refs: Array<React.Ref<T> | null | undefined>) => React.Ref<T>`
+`const useCombinedRef: <T extends any>(...refs: React.Ref<T>[] | null | undefined>) => React.Ref<T>`

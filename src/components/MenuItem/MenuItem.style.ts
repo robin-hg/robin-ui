@@ -1,22 +1,18 @@
-import styled, { css } from 'style'
-import { getColorVariant } from 'utils/color'
-
-import { Button } from 'index'
+import styled, { css } from '@rui/style'
+import Button from '@rui/components/Button'
 
 interface MenuItemContainerProps {
 	$active: boolean
-	$focused: boolean
 	disabled: boolean
 }
 
 export const MenuItemContainer = styled(Button)<MenuItemContainerProps>`
 	display: block;
 	width: 100%;
-	padding: 0.5rem 1rem;
-	font-weight: ${props => (props.$active ? 600 : 400)};
-	color: ${props => (props.$active ? props.theme.colors.primary.base : props.theme.colors.text.primary)};
+	padding: 0.4rem 0.8rem;
+	font-weight: 400;
 	text-align: left;
-	border-radius: 0;
+	outline: none !important;
 
 	&:after {
 		content: none !important;
@@ -26,29 +22,21 @@ export const MenuItemContainer = styled(Button)<MenuItemContainerProps>`
 		white-space: break-spaces;
 	}
 
-	@media (hover: hover) {
-		&:hover {
-			color: ${props => props.theme.colors.primary.base};
-			background: ${props => getColorVariant(props.theme, 'primary', 'extraLight')};
-		}
-	}
-
-	&:focus {
-		color: ${props => props.theme.colors.primary.base};
-		background: ${props => getColorVariant(props.theme, 'primary', 'extraLight')};
-	}
-
 	${props =>
-		props.$focused &&
+		!props.$active &&
 		css`
-			color: ${props.theme.colors.primary.base} !important;
-			background: ${getColorVariant(props.theme, 'primary', 'extraLight')} !important;
-		`}
+			@media (hover: hover) {
+				&:hover {
+					background: ${props.theme.darkMode ? props.theme.colors.dark[5] : props.theme.colors.gray[0]};
+				}
+			}
 
-	${props =>
-		props.disabled &&
-		css`
-			color: ${props.theme.colors.text.disabled} !important;
-			background: ${getColorVariant(props.theme, 'grey', 'extraLight')} !important;
+			&:focus-visible {
+				background: ${props.theme.darkMode ? props.theme.colors.dark[5] : props.theme.colors.gray[0]};
+			}
+
+			&:active {
+				background: ${props.theme.darkMode ? props.theme.colors.dark[4] : props.theme.colors.gray[1]};
+			}
 		`}
 `

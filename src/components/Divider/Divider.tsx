@@ -1,5 +1,5 @@
 import React from 'react'
-import { parseSize } from 'utils'
+import { parseSize } from '@rui/utils'
 
 import { DividerLine } from './Divider.style'
 
@@ -11,7 +11,7 @@ export interface Props extends RobinUI.StandardProps<HTMLHRElement> {
 }
 
 const Divider = React.forwardRef<HTMLHRElement, Props>((props, ref) => {
-	const { orientation = 'horizontal', thickness = 1, margin = 15, color = 'grey', ...otherProps } = props
+	const { orientation = 'horizontal', thickness = 1, margin = 16, color = 'gray', ...otherProps } = props
 
 	return (
 		<DividerLine

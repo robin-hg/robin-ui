@@ -12,16 +12,15 @@ export interface Props extends RobinUI.StandardProps<HTMLSpanElement, 'size'> {
 	 * Tag size.
 	 * @default md
 	 */
-	size?: 'sm' | 'md'
 	outlined?: boolean
 	pill?: boolean
 }
 
 const Tag = React.forwardRef<HTMLSpanElement, Props>((props, ref) => {
-	const { color = 'primary', size = 'md', outlined, pill, children, ...otherProps } = props
+	const { color = 'primary', outlined, pill, children, ...otherProps } = props
 
 	return (
-		<TagContainer ref={ref} $color={color} $size={size} $outlined={!!outlined} $pill={!!pill} {...otherProps}>
+		<TagContainer ref={ref} $color={color} $outlined={!!outlined} $pill={!!pill} {...otherProps}>
 			{children}
 		</TagContainer>
 	)

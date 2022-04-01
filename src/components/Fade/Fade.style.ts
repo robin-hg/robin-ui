@@ -1,5 +1,5 @@
 import type { TransitionStatus } from 'react-transition-group'
-import styled, { css } from 'style'
+import styled, { css } from '@rui/style'
 
 interface FadeContainerProps {
 	$state: TransitionStatus

@@ -1,40 +1,47 @@
 import { useEffect, useRef } from 'react'
-import { useEventListener } from '../../hooks'
+import { getFocusable } from '@rui/utils'
+import { useOnKeyPress, useMutableCallback } from '@rui/hooks'
 
 export interface Props {
-	disableAutoFocusOnMount?: boolean
+	autofocus?: boolean
 	disabled?: boolean
 }
 
 const FocusTrap: React.FC<Props> = props => {
-	const { disableAutoFocusOnMount, disabled, children } = props
-	const start = useRef<HTMLDivElement>(null)
-	const end = useRef<HTMLDivElement>(null)
-
-	useEventListener(
-		'focus',
-		event => {
-			event.preventDefault()
-			if (!disabled && event.target === end.current) {
-				start.current?.focus()
-			}
-		},
-		[disabled]
-	)
+	const { autofocus, disabled, children } = props
+	const ref = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
-		if (!disabled && !disableAutoFocusOnMount) {
-			start.current?.focus({ preventScroll: true })
+		if (autofocus && !disabled) {
+			const focusable = getFocusable(ref.current)
+			focusable[0]?.focus()
 		}
-	}, [disabled, disableAutoFocusOnMount])
+	}, [autofocus])
 
-	return (
-		<>
-			<div ref={start} tabIndex={0} />
-			{children}
-			<div ref={end} tabIndex={0} />
-		</>
-	)
+	const handleTab = useMutableCallback((event: KeyboardEvent) => {
+		const focusable = getFocusable(ref.current)
+
+		if (!focusable.length || disabled) {
+			return
+		}
+
+		const first = focusable[0]
+		const last = focusable[focusable.length - 1]
+
+		const next = event.shiftKey ? last : first
+		const leaving = event.shiftKey ? document.activeElement !== first : document.activeElement !== last
+
+		if (leaving) {
+			return
+		}
+
+		event.preventDefault()
+		next.focus()
+	})
+
+	useOnKeyPress('Tab', handleTab)
+
+	return <div ref={ref}>{children}</div>
 }
 
 FocusTrap.displayName = 'FocusTrap'

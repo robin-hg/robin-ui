@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 
-const useEventListener = <K extends keyof GlobalEventHandlersEventMap>(
+const useEventListener = <K extends keyof WindowEventMap>(
 	eventName: K,
-	listener: (event: GlobalEventHandlersEventMap[K]) => void,
+	listener: (event: WindowEventMap[K]) => void,
 	dependencies: any[] = []
 ) => {
 	useEffect(() => {

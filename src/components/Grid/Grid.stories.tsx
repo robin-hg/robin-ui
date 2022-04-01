@@ -1,8 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from 'style'
 
 import Grid, { type Props } from './Grid'
-import { Paper } from 'index'
+import Paper from '@rui/components/Paper'
 
 export default {
 	title: 'Layout/Grid',
@@ -16,16 +15,12 @@ export default {
 	}
 } as Meta<Props>
 
-const Element = styled(Paper)`
-	height: 20rem;
-`
-
 const Template: Story<Props> = args => (
 	<Grid {...args}>
 		{Array(20)
 			.fill(null)
 			.map((_, i) => (
-				<Element key={i} />
+				<Paper key={i} sx={{ height: '20rem' }} />
 			))}
 	</Grid>
 )

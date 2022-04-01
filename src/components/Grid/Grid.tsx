@@ -1,5 +1,5 @@
 import React from 'react'
-import { parseSize } from 'utils'
+import { parseSize } from '@rui/utils'
 
 import { GridContainer } from './Grid.style'
 

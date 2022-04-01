@@ -9,7 +9,7 @@ export interface Props extends RobinUI.StandardProps<HTMLDivElement> {
 }
 
 const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { component, elevation = 2, color = 'paper', children, ...otherProps } = props
+	const { component, elevation = 1, color = 'paper', children, ...otherProps } = props
 
 	return (
 		<PaperContainer ref={ref} component={component} $elevation={elevation} $color={color} {...otherProps}>

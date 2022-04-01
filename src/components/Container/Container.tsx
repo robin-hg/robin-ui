@@ -1,6 +1,6 @@
 import React from 'react'
-import { useTheme } from 'hooks'
-import { parseSize } from 'utils'
+import { useTheme } from '@rui/hooks'
+import { parseSize } from '@rui/utils'
 
 import { StyledContainer } from './Container.style'
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import { useTheme } from 'hooks'
-import { getColor } from 'utils/color'
+import { useTheme } from '@rui/hooks'
 
 export interface Props extends RobinUI.StandardProps<SVGElement> {
 	color?: string
@@ -13,7 +12,7 @@ export default (icon: JSX.Element) =>
 		const { color, size = 20, style, ...otherProps } = props
 
 		const theme = useTheme()
-		const colorStr = (color && getColor(theme, color)) || style?.color
+		const colorStr = (color && theme.utils.getColor(color)) || style?.color
 
 		return React.cloneElement(icon, {
 			ref,

@@ -15,6 +15,8 @@ demo
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+
 .idea
 .DS_Store
 *.suo
@@ -24,3 +26,11 @@ demo
 *.sw?
 .npm
 .env
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

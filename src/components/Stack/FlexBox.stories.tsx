@@ -1,8 +1,8 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from 'style'
+import styled from '@rui/style'
 
 import Stack, { type Props } from './Stack'
-import { Paper } from 'index'
+import Paper from '@rui/components/Paper'
 
 export default {
 	title: 'Layout/Stack',
@@ -13,7 +13,7 @@ export default {
 } as Meta<Props>
 
 const Element = styled(Paper)`
-	width: 10rem;
+	width: 100%;
 	height: 10rem;
 `
 

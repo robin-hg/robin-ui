@@ -1,6 +1,6 @@
-import styled from '../../style'
+import styled from '@rui/style'
 
-import Fade from '../Fade'
+import Fade from '@rui/components/Fade'
 
 export const FadeContainer = styled(Fade)`
 	position: absolute;
@@ -21,7 +21,7 @@ export const Arrow = styled.span`
 		display: block;
 		margin: auto;
 		content: '';
-		border: solid 0.5rem ${props => props.theme.colors.paper.primary};
+		border: solid 0.5rem ${props => props.theme.paper.base};
 		border-radius: 0.1rem;
 		transform: rotate(45deg);
 	}

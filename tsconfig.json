@@ -17,7 +17,16 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"forceConsistentCasingInFileNames": true,
-		"baseUrl": "./src"
+		"baseUrl": "./src",
+		"paths": {
+			"@rui/components/*": ["./components/*"],
+			"@rui/hooks": ["./hooks"],
+			"@rui/icons": ["./icons"],
+			"@rui/style": ["./style"],
+			"@rui/style/*": ["./style/*"],
+			"@rui/utils": ["./utils"],
+			"@rui/utils/*": ["./utils/*"]
+		}
 	},
 	"include": ["src"]
 }

@@ -1,7 +1,7 @@
 import React from 'react'
-import { handleEnter } from 'utils'
+import { handleEnter } from '@rui/utils'
 
-import ControlInput from 'components/ControlInput'
+import ControlInput from '@rui/components/ControlInput'
 
 import { Circle } from './Radio.style'
 

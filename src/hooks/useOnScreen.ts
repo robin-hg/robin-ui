@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const useOnScreen = (element: Element | null, rootMargin = '0px') => {
+const useOnScreen = (element: HTMLElement | null, rootMargin = '0px') => {
 	const [isIntersecting, setIsIntersecting] = useState(false)
 
 	useEffect(() => {

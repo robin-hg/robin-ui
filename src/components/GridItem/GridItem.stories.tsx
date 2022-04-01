@@ -1,8 +1,9 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from 'style'
+import styled from '@rui/style'
 
 import GridItem, { type Props } from './GridItem'
-import { Grid, Paper } from 'index'
+import Paper from '@rui/components/Paper'
+import Grid from '@rui/components/Grid'
 
 export default {
 	title: 'Layout/GridItem',

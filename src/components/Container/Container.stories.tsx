@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from '../../style'
+import styled from '@rui/style'
 
 import Container, { type Props } from './Container'
 
@@ -17,7 +17,7 @@ export default {
 const Content = styled.div`
 	width: 100%;
 	height: 30rem;
-	background: ${props => props.theme.colors.paper.secondary};
+	background: ${props => props.theme.paper.secondary};
 `
 
 const Template: Story<Props> = args => (

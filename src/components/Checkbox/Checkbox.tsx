@@ -1,10 +1,10 @@
 import React from 'react'
-import { handleEnter } from 'utils'
+import { handleEnter } from '@rui/utils'
 
-import ControlInput from 'components/ControlInput'
+import ControlInput from '@rui/components/ControlInput'
 
 import { Box } from './Checkbox.style'
-import { Check, Minus } from 'icons'
+import { Check, Minus } from '@rui/icons'
 
 export interface Props extends Omit<React.ComponentProps<typeof ControlInput>, 'onChange'> {
 	checked?: boolean

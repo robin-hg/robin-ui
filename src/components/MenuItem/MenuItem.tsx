@@ -1,25 +1,25 @@
 import React from 'react'
 
-import { Button } from 'index'
+import Button from '@rui/components/Button'
+
 import { MenuItemContainer } from './MenuItem.style'
 
 export interface Props extends React.ComponentProps<typeof Button> {
 	active?: boolean
-	focused?: boolean
 	disabled?: boolean
 }
 
 const MenuItem = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
-	const { active, focused, disabled, children, ...otherProps } = props
+	const { active, disabled, children, ...otherProps } = props
 
 	return (
 		<MenuItemContainer
 			ref={ref}
-			tabIndex={0}
 			$active={!!active}
-			$focused={!!focused}
 			disabled={!!disabled}
+			size="sm"
 			variant="text"
+			color={active ? 'primary' : 'text'}
 			{...otherProps}>
 			{children}
 		</MenuItemContainer>

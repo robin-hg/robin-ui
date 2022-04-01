@@ -1,21 +1,18 @@
 import useEventListener from './useEventListener'
 
-type ExcludedTarget = Element | null
+type ExcludedTarget = HTMLElement | null | undefined
 
 const useOnClickOutside = (exclude: ExcludedTarget | ExcludedTarget[], action: (event: PointerEvent) => void) => {
+	const excludedArray = Array.isArray(exclude) ? exclude : [exclude]
 	useEventListener(
 		'pointerdown',
 		event => {
-			const excludeArray = Array.isArray(exclude) ? exclude : [exclude]
-			const clickedExclude = excludeArray.reduce(
-				(acc, target) => acc || !!target?.contains(event.target as Element),
-				false
-			)
-			if (!clickedExclude) {
+			const clickedExcluded = excludedArray.some(target => !!target?.contains(event.target as HTMLElement))
+			if (!clickedExcluded) {
 				action(event)
 			}
 		},
-		Array.isArray(exclude) ? exclude : [exclude]
+		excludedArray
 	)
 }
 

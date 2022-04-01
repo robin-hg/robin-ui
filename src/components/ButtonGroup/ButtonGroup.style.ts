@@ -1,5 +1,4 @@
-import styled, { css } from 'style'
-import { getColorVariant } from 'utils/color'
+import styled, { css } from '@rui/style'
 
 interface ButtonGroupContainerProps {
 	$variant: 'contained' | 'outlined' | 'text'
@@ -35,7 +34,7 @@ export const ButtonGroupContainer = styled.div<ButtonGroupContainerProps>`
 			case 'outlined':
 				return css`
 					& > button:not(:first-child) {
-						border-left: solid 0.1rem ${getColorVariant(props.theme, props.$color, 'dark')};
+						border-left: solid 0.1rem ${props.theme.utils.getColorVariant(props.$color, 2)};
 					}
 				`
 			default:

@@ -1,7 +1,5 @@
-import styled, { css } from 'style'
-import { getColor, getColorAlpha, getColorVariant, getContrastColor } from 'utils/color'
-
-import { AutoResizer } from 'index'
+import styled, { css } from '@rui/style'
+import AutoResizer from '@rui/components/AutoResizer'
 
 interface StyledButtonProps {
 	$variant: 'contained' | 'outlined' | 'text'
@@ -13,9 +11,13 @@ export const StyledButton = styled.button<StyledButtonProps>`
 	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
+	min-width: 4rem;
 	overflow: hidden;
 	font-family: ${props => props.theme.typography.fontFamily};
-	font-weight: ${props => props.theme.typography.fontWeights.button};
+	font-size: ${props => props.theme.typography.fontSizes.button};
+	font-weight: ${props => props.theme.typography.fontWeights.bold};
+	text-align: center;
 	text-decoration: none;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -24,85 +26,96 @@ export const StyledButton = styled.button<StyledButtonProps>`
 	border: solid 0.1rem transparent;
 	border-radius: ${props => props.theme.borderRadius};
 	outline: none;
-	transition: all 200ms ease-out;
+	transition: all 200ms ease-out, outline 0ms;
+
+	&:focus-visible {
+		outline: solid 0.1rem ${props => props.theme.colors.primary[5]};
+		outline-offset: 0.2rem;
+	}
 
 	${props => {
 		switch (props.$variant) {
 			case 'contained':
 				return css`
-					color: ${getContrastColor(props.theme, props.$color)};
-					background: ${getColor(props.theme, props.$color)};
+					color: ${props.theme.utils.getTextColor(props.$color, [
+						props.theme.typography.colors.contrast,
+						props.theme.utils.getColorVariant(props.$color, 4)
+					])};
+					background: ${props.theme.utils.getColor(props.$color)};
 
 					@media (hover: hover) {
 						&:hover {
-							background: ${getColorVariant(props.theme, props.$color, 'dark')};
+							background: ${props.theme.utils.getColorVariant(props.$color, 1)};
 						}
 					}
 
 					&:focus-visible {
-						background: ${getColorVariant(props.theme, props.$color, 'dark')};
+						background: ${props.theme.utils.getColorVariant(props.$color, 1)};
 					}
 
 					&:active {
-						background: ${getColorVariant(props.theme, props.$color, 'extraDark')};
+						background: ${props.theme.utils.getColorVariant(props.$color, 2)};
 					}
 
 					${props.disabled &&
 					css`
-						color: ${props.theme.colors.grey.extraLight} !important;
-						background: ${props.theme.colors.text.disabled} !important;
+						color: ${props.theme.typography.colors.disabled} !important;
+						background: ${props.theme.darkMode
+							? props.theme.colors.dark[6]
+							: props.theme.colors.gray[1]} !important;
 					`}
 				`
 			case 'outlined':
 				return css`
-					color: ${getColor(props.theme, props.$color)};
+					color: ${props.theme.utils.getColor(props.$color)};
 					background: transparent;
-					border-color: ${getColor(props.theme, props.$color)};
+					border-color: ${props.theme.utils.getColor(props.$color)};
 
 					@media (hover: hover) {
 						&:hover {
-							background: ${getColorAlpha(props.theme, props.$color, 0.15)};
+							background: ${props.theme.utils.getColorAlpha(props.$color, 0.1)};
 						}
 					}
 
 					&:focus-visible {
-						background: ${getColorAlpha(props.theme, props.$color, 0.15)};
+						background: ${props.theme.utils.getColorAlpha(props.$color, 0.1)};
 					}
 
 					&:active {
-						background: ${getColorAlpha(props.theme, props.$color, 0.3)};
+						background: ${props.theme.utils.getColorAlpha(props.$color, 0.2)};
 					}
 
 					${props.disabled &&
 					css`
-						color: ${props.theme.colors.text.disabled} !important;
-						background: ${props.theme.colors.grey.extraLight} !important;
-						border-color: ${props.theme.colors.text.disabled} !important;
+						color: ${props.theme.typography.colors.disabled} !important;
+						background: ${props.theme.darkMode
+							? props.theme.colors.dark[6]
+							: props.theme.colors.gray[1]} !important;
+						border-color: ${props.theme.typography.colors.disabled} !important;
 					`}
 				`
 			case 'text':
 				return css`
-					color: ${getColor(props.theme, props.$color)};
+					color: ${props.theme.utils.getColor(props.$color)};
 					background: transparent;
 
 					@media (hover: hover) {
 						&:hover {
-							color: ${getColorVariant(props.theme, props.$color, 'light')};
-							background: ${getColorAlpha(props.theme, props.$color, 0.15)};
+							background: ${props.theme.utils.getColorAlpha(props.$color, 0.1)};
 						}
 					}
 
 					&:focus-visible {
-						background: ${getColorAlpha(props.theme, props.$color, 0.15)};
+						background: ${props.theme.utils.getColorAlpha(props.$color, 0.1)};
 					}
 
 					&:active {
-						background: ${getColorAlpha(props.theme, props.$color, 0.3)};
+						background: ${props.theme.utils.getColorAlpha(props.$color, 0.2)};
 					}
 
 					${props.disabled &&
 					css`
-						color: ${props.theme.colors.text.disabled} !important;
+						color: ${props.theme.typography.colors.disabled} !important;
 						background: transparent !important;
 					`}
 				`
@@ -115,21 +128,18 @@ export const StyledButton = styled.button<StyledButtonProps>`
 		switch (props.$size) {
 			case 'sm':
 				return css`
-					height: 3rem;
-					padding: 0.5rem 1rem;
-					font-size: ${props.theme.typography.fontSizes.buttonSm};
+					height: 3.2rem;
+					padding: 0.4rem 0.8rem;
 				`
 			case 'md':
 				return css`
 					height: 3.6rem;
-					padding: 0.5rem 1.5rem;
-					font-size: ${props.theme.typography.fontSizes.buttonMd};
+					padding: 0.4rem 1.6rem;
 				`
 			case 'lg':
 				return css`
-					height: 4.4rem;
-					padding: 1.5rem 2rem;
-					font-size: ${props.theme.typography.fontSizes.buttonLg};
+					height: 4rem;
+					padding: 1.2rem 2rem;
 				`
 			default:
 				return css``
@@ -154,8 +164,8 @@ interface AdornmentProps {
 export const Adornment = styled.span<AdornmentProps>`
 	display: flex;
 	align-items: center;
-	margin-right: ${props => (props.$position === 'start' ? 0.5 : 0)}em;
-	margin-left: ${props => (props.$position === 'end' ? 0.5 : 0)}em;
+	margin-right: ${props => (props.$position === 'start' ? 0.8 : 0)}rem;
+	margin-left: ${props => (props.$position === 'end' ? 0.8 : 0)}rem;
 
 	&::before {
 		content: '\\200b';

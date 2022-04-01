@@ -1,5 +1,6 @@
-import { FlexBox } from 'index'
 import React from 'react'
+
+import FlexBox from '@rui/components/FlexBox'
 
 export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'wrap'> {
 	spacing?: number | string

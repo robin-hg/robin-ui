@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
-import { parseSize } from 'utils'
-import { useSize } from 'hooks'
+import { parseSize } from '@rui/utils'
+import { useSize } from '@rui/hooks'
 
 import { AutoResizerContainer, HiddenContent } from './AutoResizer.style'
 

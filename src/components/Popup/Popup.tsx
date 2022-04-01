@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { usePopper, type Modifier, type StrictModifierNames } from 'react-popper'
 import type { Placement } from '@popperjs/core'
-import { useOnClickOutside } from 'hooks'
-import { ModalContext } from 'components/Modal'
+import { useOnClickOutside } from '@rui/hooks'
+import { ModalContext } from '@rui/components/Modal'
 
-import { Paper, Portal } from 'index'
+import Paper from '@rui/components/Paper'
+import Portal from '@rui/components/Portal'
 import PopupElement from './PopupElement'
 
 import { FadeContainer, Arrow } from './Popup.style'
@@ -14,7 +15,7 @@ export const PopupContext = React.createContext<{
 }>({})
 
 export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'target'> {
-	target: Element
+	target?: HTMLElement | null
 	open?: boolean
 	placement?: Placement
 	modifiers?: Modifier<StrictModifierNames>[]
@@ -60,8 +61,8 @@ const Popup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}, [show])
 
-	useOnClickOutside(target, event => {
-		if (!disableClickOutside && !innerRef?.contains(event.target as Element)) {
+	useOnClickOutside([target, innerRef], () => {
+		if (!disableClickOutside) {
 			onClose?.()
 		}
 	})

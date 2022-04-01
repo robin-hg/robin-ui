@@ -1,21 +1,23 @@
 import type { Story, Meta } from '@storybook/react'
-import { useArgs } from '@storybook/client-api'
+import { useArgs } from '@storybook/api'
 
 import Modal, { type Props } from './Modal'
-// import ModalManager from '../ModalManager'
-import ModalHeader from '../ModalHeader'
-import { Button, ModalContent, ModalFooter } from 'index'
+import ModalManager from '../ModalManager'
+import ModalHeader from '@rui/components/ModalHeader'
+import ModalContent from '@rui/components/ModalContent'
+import ModalFooter from '@rui/components/ModalFooter'
+import Button from '@rui/components/Button'
 
 export default {
 	title: 'Display/Modal',
 	component: Modal,
-	subcomponents: { ModalHeader, ModalContent, ModalFooter }
+	subcomponents: { ModalManager, ModalHeader, ModalContent, ModalFooter }
 } as Meta<Props>
 
 const Template: Story<Props> = args => {
 	const [, updateArgs] = useArgs()
 	return (
-		<>
+		<ModalManager>
 			<Button onClick={() => updateArgs({ open: true })}>Open Modal</Button>
 			<Modal
 				{...args}
@@ -56,10 +58,9 @@ const Template: Story<Props> = args => {
 				</ModalContent>
 				<ModalFooter>
 					<Button>Submit</Button>
-					<Button>Submit</Button>
 				</ModalFooter>
 			</Modal>
-		</>
+		</ModalManager>
 	)
 }
 export const Default = Template.bind({})

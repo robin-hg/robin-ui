@@ -1,5 +1,4 @@
-import styled, { css } from 'style'
-import { getColor, getContrastColor } from 'utils/color'
+import styled, { css } from '@rui/style'
 
 interface BoxProps {
 	$color: string
@@ -22,38 +21,50 @@ export const Box = styled.span<BoxProps>`
 	outline: none;
 	transition: all 200ms ease-out;
 
-	@media (hover: hover) {
-		&:hover {
-			box-shadow: ${props => props.theme.generateShadow(2, props.theme.colors.shadow, false)};
-		}
-	}
-
-	&:active {
-		box-shadow: ${props => props.theme.generateShadow(3, props.theme.colors.shadow, false)};
-	}
-
-	&:focus-visible {
-		box-shadow: ${props => props.theme.generateShadow(2, props.theme.colors.shadow, false)};
-	}
-
 	${props => {
-		const borderColor = props.$error ? 'error' : props.$checked ? props.$color : 'grey'
-
+		const borderColor = props.$error ? 'error' : props.$checked ? props.$color : 'gray'
+		const hoverColor = props.$error ? 'error' : props.$color
 		const background = props.$checked ? borderColor : 'rgba(0, 0, 0, 0)'
 
 		return css`
-			color: ${getContrastColor(props.theme, background)};
-			background: ${getColor(props.theme, background)};
-			border-color: ${getColor(props.theme, borderColor)};
+			color: ${props.theme.utils.getTextColor(props.$color, [
+				props.theme.typography.colors.contrast,
+				props.theme.utils.getColorVariant(props.$color, 4)
+			])};
+			background: ${props.theme.utils.getColor(background)};
+			border-color: ${props.theme.utils.getColor(borderColor)};
+
+			@media (hover: hover) {
+				&:hover {
+					background: ${props.$checked
+						? props.theme.utils.getColorVariant(background, 1)
+						: props.theme.utils.getColorAlpha(hoverColor, 0.1)};
+					border-color: ${props.theme.utils.getColor(hoverColor)};
+				}
+			}
+
+			&:focus-visible {
+				background: ${props.$checked
+					? props.theme.utils.getColorVariant(background, 1)
+					: props.theme.utils.getColorAlpha(hoverColor, 0.1)};
+				border-color: ${props.theme.utils.getColor(hoverColor)};
+			}
+
+			&:active {
+				background: ${props.$checked
+					? props.theme.utils.getColorVariant(background, 2)
+					: props.theme.utils.getColorAlpha(hoverColor, 0.2)};
+				border-color: ${props.theme.utils.getColor(hoverColor)};
+			}
 		`
 	}}
 
 	${props =>
 		props.$disabled &&
 		css`
-			color: ${props.theme.colors.grey.base} !important;
-			background: ${props.theme.colors.grey.light} !important;
-			border-color: ${props.theme.colors.grey.base} !important;
+			color: ${props.theme.colors.gray[5]} !important;
+			background: ${props.theme.colors.gray[3]} !important;
+			border-color: ${props.theme.colors.gray[5]} !important;
 			box-shadow: none !important;
 		`}
 

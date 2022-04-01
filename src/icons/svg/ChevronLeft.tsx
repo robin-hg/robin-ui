@@ -1,8 +1,16 @@
 import createIcon from 'icons/createIcon'
 
 export default createIcon(
-	<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
-		<path d="M0 0h24v24H0V0z" fill="none" />
-		<path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z" />
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round">
+		<polyline points="15 18 9 12 15 6"></polyline>
 	</svg>
 )

@@ -1,4 +1,4 @@
-import styled, { css, media } from 'style'
+import styled, { css } from '@rui/style'
 
 interface GridContainerProps {
 	$sm?: number
@@ -17,7 +17,7 @@ export const GridContainer = styled.div<GridContainerProps>`
 	${props =>
 		props.$lg &&
 		css`
-			${media.lg(props)} {
+			${props.theme.media.lg} {
 				grid-template-columns: repeat(${props.$lg}, 1fr);
 			}
 		`}
@@ -25,7 +25,7 @@ export const GridContainer = styled.div<GridContainerProps>`
 	${props =>
 		props.$md &&
 		css`
-			${media.md(props)} {
+			${props.theme.media.md} {
 				grid-template-columns: repeat(${props.$md}, 1fr);
 			}
 		`}
@@ -33,7 +33,7 @@ export const GridContainer = styled.div<GridContainerProps>`
 	${props =>
 		props.$sm &&
 		css`
-			${media.sm(props)} {
+			${props.theme.media.sm} {
 				grid-template-columns: repeat(${props.$sm}, 1fr);
 			}
 		`}

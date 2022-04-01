@@ -1,7 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
-import { Typography } from 'index'
 
 import Accordion, { type Props } from './Accordion'
+import Typography from '@rui/components/Typography'
 
 export default {
 	title: 'Surface/Accordion',

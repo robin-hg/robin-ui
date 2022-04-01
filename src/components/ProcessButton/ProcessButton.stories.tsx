@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import { wait } from 'utils'
+import { wait } from '@rui/utils'
 
 import ProcessButton, { type Props } from './ProcessButton'
 

@@ -1,4 +1,4 @@
-import styled, { css } from '../../../style'
+import styled, { css } from '@rui/style'
 import type { Placement } from '@popperjs/core'
 
 import { Arrow } from '../Popup.style'

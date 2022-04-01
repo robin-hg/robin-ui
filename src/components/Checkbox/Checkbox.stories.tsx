@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import { useArgs } from '@storybook/client-api'
+import { useArgs } from '@storybook/api'
 
 import Checkbox, { type Props } from './Checkbox'
 
@@ -7,7 +7,8 @@ export default {
 	title: 'Inputs/Checkbox',
 	component: Checkbox,
 	args: {
-		label: 'Label'
+		label: 'Label',
+		disabled: false
 	}
 } as Meta<Props>
 

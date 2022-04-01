@@ -1,112 +1,140 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react'
-import { v4 as uuid } from 'uuid'
-import { useCombinedRef, useKeyPress, useMutableCallback, useSize } from '../../hooks'
+import React, { useState, useRef, useEffect } from 'react'
+import { useCombinedRef, useForceUpdate, useId, useMedia, useSize } from '@rui/hooks'
+import { handleEnter } from '@rui/utils'
 
-import { Menu, MenuItem, Typography, InputBox } from 'index'
+import Menu from '@rui/components/Menu'
+import MenuItem from '@rui/components/MenuItem'
+import InputBox from '@rui/components/InputBox'
 
-import { StyledInputBox, ValueContainer } from './Select.style'
-import { handleEnter } from 'utils'
-import { ChevronDown } from 'icons'
+import { StyledInputBox, ValueContainer, NativeSelect } from './Select.style'
+import { ChevronDown } from '@rui/icons'
 
 interface Item {
-	value: string | number | Record<string, any>
+	value: string | number
 	label?: string
 	disabled?: boolean
 }
 
-export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'onChange' | 'value'> {
+export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'onChange' | 'value' | 'labelId'> {
 	value?: Item['value']
 	objectKey?: string
 	placeholder?: string
-	options: Item[]
+	options?: Item[]
 	menuProps?: React.ComponentProps<typeof Menu>
 	menuItemProps?: React.ComponentProps<typeof MenuItem>
+	native?: boolean
 	onChange?: (value: Item['value']) => void
 }
 
 const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { value, objectKey, placeholder, options, disabled, onChange, menuProps, menuItemProps, ...otherProps } =
-		props
+	const {
+		value,
+		placeholder,
+		options = [],
+		menuProps,
+		menuItemProps,
+		native,
+		onChange,
+		required,
+		disabled,
+		boxProps,
+		...otherProps
+	} = props
 	const [open, setOpen] = useState(false)
-	const [focusedItem, setFocusedItem] = useState(-1)
 	const selectRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(selectRef, ref)
-	const menuRef = useRef<HTMLDivElement>(null)
-	const size = useSize(selectRef.current, [placeholder, value, options])
-	const id = useMemo(() => uuid(), [])
+	const size = useSize(selectRef.current, [value])
+	const forceUpdate = useForceUpdate()
+	const id = useId()
+	const isMobile = useMedia('sm')
 
-	const currentValue = options.find(option => {
-		if (typeof value === 'object' && typeof option.value === 'object' && objectKey) {
-			return option.value[objectKey] === value?.[objectKey]
-		} else {
-			return option.value === value
-		}
-	})
+	const useNative = native ?? isMobile
 
 	useEffect(() => {
-		setFocusedItem(-1)
-	}, [open])
+		forceUpdate()
+	}, [])
 
-	const handleArrow = useMutableCallback((direction: 'up' | 'down') => {
-		if (open) {
-			const nextIndex = focusedItem + (direction === 'up' ? -1 : 1)
-			const target = menuRef.current?.children[nextIndex] as HTMLAnchorElement
-			if (target) {
-				target.focus()
-				setFocusedItem(nextIndex)
-			}
-		}
-	})
-
-	useKeyPress('ArrowDown', () => handleArrow('down'))
-	useKeyPress('ArrowUp', () => handleArrow('up'))
-
-	const inputBox = selectRef.current?.querySelector('div[data-rui-element="input-box"]')
+	const inputBox = selectRef.current?.querySelector('div[data-rui-element="input-box"]') as
+		| HTMLDivElement
+		| null
+		| undefined
 
 	const openMenu = () => {
-		if (!disabled) {
+		if (!useNative && !disabled) {
 			setOpen(true)
 		}
 	}
 
 	return (
 		<>
-			<StyledInputBox ref={combinedRef} $open={open} labelId={id} disabled={disabled} {...otherProps}>
-				<ValueContainer
-					onClick={openMenu}
-					onKeyDown={handleEnter(openMenu)}
-					tabIndex={disabled ? -1 : 0}
-					$open={open}>
-					<Typography color={otherProps.error ? 'error' : currentValue ? 'text' : 'text.secondary'}>
-						{currentValue ? currentValue.label ?? currentValue.value : placeholder}
-					</Typography>
-					<ChevronDown />
-				</ValueContainer>
+			<StyledInputBox
+				ref={combinedRef}
+				$open={open}
+				labelId={id}
+				disabled={disabled}
+				required={required}
+				endAdornment={<ChevronDown />}
+				boxProps={
+					useNative
+						? boxProps
+						: {
+								...boxProps,
+								role: 'combobox',
+								tabIndex: -1,
+								'aria-disabled': disabled ? 'true' : 'false',
+								onClick: openMenu,
+								onKeyDown: handleEnter(openMenu)
+						  }
+				}
+				{...otherProps}>
+				{useNative ? (
+					<NativeSelect
+						id={id}
+						value={value ?? ''}
+						onChange={event => onChange?.(event.target.value)}
+						required={required}>
+						<option value="" disabled hidden>
+							{placeholder ?? ''}
+						</option>
+						{options.map(option => (
+							<option key={option.value} value={option.value}>
+								{option.label ?? option.value}
+							</option>
+						))}
+					</NativeSelect>
+				) : (
+					<ValueContainer
+						id={id}
+						value={value ?? ''}
+						placeholder={placeholder}
+						required={required}
+						readOnly
+						size={12}
+					/>
+				)}
 			</StyledInputBox>
-			{inputBox && (
+			{!useNative && (
 				<Menu
+					type="listbox"
 					width={size?.width}
 					open={!disabled && open}
 					target={inputBox}
 					onClose={() => setOpen(false)}
 					{...menuProps}>
-					<div ref={menuRef}>
-						{options.map((option, i) => (
-							<MenuItem
-								key={i}
-								disabled={!!option.disabled}
-								onClick={() => {
-									onChange?.(option.value)
-									setOpen(false)
-								}}
-								onFocus={() => setFocusedItem(i)}
-								tabIndex={option.disabled ? -1 : 0}
-								active={value === option.value}
-								{...menuItemProps}>
-								{option.label ?? option.value}
-							</MenuItem>
-						))}
-					</div>
+					{options.map(option => (
+						<MenuItem
+							key={option.value}
+							disabled={!!option.disabled}
+							onClick={() => {
+								onChange?.(option.value)
+								setOpen(false)
+							}}
+							tabIndex={option.disabled ? -1 : 0}
+							active={value === option.value}
+							{...menuItemProps}>
+							{option.label ?? option.value}
+						</MenuItem>
+					))}
 				</Menu>
 			)}
 		</>

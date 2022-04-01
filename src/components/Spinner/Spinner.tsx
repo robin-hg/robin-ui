@@ -1,5 +1,5 @@
 import React from 'react'
-import { parseSize } from '../../utils'
+import { parseSize } from '@rui/utils'
 
 import { SpinnerContainer, AnimatedCircle, AnimatedComplete, AnimatedXRight, AnimatedXLeft } from './Spinner.style'
 
@@ -25,7 +25,7 @@ const Spinner = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { size = '3.2rem', color = 'primary', state = 'loading', ...otherProps } = props
 
 	return (
-		<SpinnerContainer ref={ref} size={parseSize(size)} color={color} spin={state === 'loading'} {...otherProps}>
+		<SpinnerContainer ref={ref} $size={parseSize(size)} $color={color} $spin={state === 'loading'} {...otherProps}>
 			<svg viewBox="25 25 50 50">
 				<AnimatedCircle
 					state={state}

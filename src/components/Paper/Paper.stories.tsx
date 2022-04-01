@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from 'style'
+import styled from '@rui/style'
 
 import Paper, { type Props } from './Paper'
 

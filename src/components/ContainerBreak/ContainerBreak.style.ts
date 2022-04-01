@@ -1,4 +1,4 @@
-import styled from 'style'
+import styled from '@rui/style'
 
 export const BreakerContainer = styled.div`
 	margin: 0 -50vw;

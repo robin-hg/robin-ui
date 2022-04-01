@@ -1,7 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
-import { Button } from 'index'
 
 import ButtonGroup, { type Props } from './ButtonGroup'
+import Button from '@rui/components/Button'
 
 export default {
 	title: 'Inputs/ButtonGroup',

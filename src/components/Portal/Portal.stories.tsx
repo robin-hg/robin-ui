@@ -1,10 +1,11 @@
 import type { Story, Meta } from '@storybook/react'
 import { useRef, useEffect } from 'react'
-import styled from 'style'
-import { useForceUpdate } from 'hooks'
+import styled from '@rui/style'
+import { useForceUpdate } from '@rui/hooks'
 
 import Portal, { type Props } from './Portal'
-import { Paper, Typography } from 'index'
+import Paper from '@rui/components/Paper'
+import Typography from '@rui/components/Typography'
 
 export default {
 	title: 'Utils/Portal',
@@ -15,8 +16,8 @@ export default {
 } as Meta<Props>
 
 const Box = styled(Paper)`
-	padding: 1rem;
-	margin: 1rem 0;
+	padding: 0.8rem;
+	margin: 0.8rem 0;
 `
 
 const Template: Story<Props> = args => {
@@ -30,7 +31,7 @@ const Template: Story<Props> = args => {
 	return (
 		<div>
 			<Box elevation={0}>
-				<Typography>I should be rendered here.</Typography>
+				<Typography>I should be rendered in here.</Typography>
 				{ref.current && (
 					<Portal {...args} target={ref.current}>
 						<Typography>But I am rendered here.</Typography>

@@ -1,6 +1,5 @@
-import styled from 'style'
-
-import { Paper } from 'index'
+import styled from '@rui/style'
+import Paper from '@rui/components/Paper'
 
 export const ModalContainer = styled.div`
 	position: fixed;

@@ -1,22 +1,18 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from 'style'
 
 import FocusTrap, { type Props } from './FocusTrap'
-import { Paper, TextInput } from 'index'
+import Paper from '@rui/components/Paper'
+import TextInput from '@rui/components/TextInput'
 
 export default {
 	title: 'Utils/FocusTrap',
 	component: FocusTrap
 } as Meta<Props>
 
-const Content = styled(Paper)`
-	padding: 2rem;
-`
-
 const Template: Story<Props> = args => (
 	<>
 		<FocusTrap {...args}>
-			<Content>
+			<Paper sx={{ padding: '2rem' }}>
 				<p>Once this section is focused</p>
 				<div>
 					<TextInput label="Input 1" />
@@ -24,12 +20,12 @@ const Template: Story<Props> = args => (
 				<div>
 					<TextInput label="Input 2" />
 				</div>
-			</Content>
+			</Paper>
 		</FocusTrap>
-		<Content>
+		<Paper sx={{ padding: '2rem' }}>
 			<p>This input cannot be focused by pressing Tab</p>
 			<TextInput label="Input 3" />
-		</Content>
+		</Paper>
 	</>
 )
 

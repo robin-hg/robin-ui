@@ -1,5 +1,5 @@
-import styled from 'style'
-import { BaseContainer } from 'index'
+import styled from '@rui/style'
+import BaseContainer from '@rui/components/BaseContainer'
 
 interface ControlInputContainerpProps {
 	$labelPosition: 'left' | 'right'
@@ -12,17 +12,16 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 	align-items: baseline;
 	cursor: ${props => (props.disabled ? 'default' : 'pointer')};
 	user-select: none;
+
+	& > label {
+		margin-right: ${props => (props.$labelPosition === 'left' ? 0.8 : 0)}rem;
+		margin-left: ${props => (props.$labelPosition === 'right' ? 0.8 : 0)}rem;
+	}
 `
 
-interface ControlProps {
-	$labelPosition: 'left' | 'right'
-}
-
-export const Control = styled.span<ControlProps>`
+export const Control = styled.span`
 	display: flex;
 	align-items: center;
-	margin-right: ${props => (props.$labelPosition === 'right' ? 0.6 : 0)}em;
-	margin-left: ${props => (props.$labelPosition === 'left' ? 0.6 : 0)}em;
 
 	&::before {
 		content: '\\200b';

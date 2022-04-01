@@ -5,7 +5,7 @@ export interface Props {
 	 * Content is inside the specified target.
 	 * @default document.body
 	 */
-	target?: Element
+	target?: HTMLElement
 }
 
 const Portal: React.FC<Props> = props => {

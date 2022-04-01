@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import useEventListener from './useEventListener'
 
-const useSize = (element: Element | null, dependencies: any[] = []) => {
+const useSize = (element: HTMLElement | null, dependencies: any[] = []) => {
 	const [size, setSize] = useState<DOMRect>()
 
 	const getSize = () => {
