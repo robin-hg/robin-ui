@@ -1,6 +1,6 @@
 import type { Story, Meta } from '@storybook/react'
 import { useRef } from 'react'
-import { useArgs } from '@storybook/api'
+import { useArgs } from '@storybook/client-api'
 
 import Menu, { type Props } from './Menu'
 import MenuItem from '../MenuItem'
