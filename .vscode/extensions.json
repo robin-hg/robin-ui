@@ -1,10 +1,9 @@
 {
-  "recommendations": [
-    "EditorConfig.EditorConfig",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "stylelint.vscode-stylelint",
-    "styled-components.vscode-styled-components",
-    "arcanis.vscode-zipfs"
-  ]
+	"recommendations": [
+		"EditorConfig.EditorConfig",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"styled-components.vscode-styled-components",
+		"arcanis.vscode-zipfs"
+	]
 }

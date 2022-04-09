@@ -1,0 +1,11 @@
+{
+	"name": "@rui/types",
+	"packageManager": "yarn@3.2.0",
+	"sideEffects": false,
+	"dependencies": {
+		"@rui/styles": "workspace:*"
+	},
+	"peerDependencies": {
+		"react": "^17"
+	}
+}

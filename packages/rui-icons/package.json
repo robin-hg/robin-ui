@@ -1,0 +1,17 @@
+{
+	"name": "@rui/icons",
+	"packageManager": "yarn@3.2.0",
+	"sideEffects": false,
+	"dependencies": {
+		"@rui/hooks": "workspace:*",
+		"@rui/styles": "workspace:*",
+		"@rui/types": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.44",
+		"react": "^17.0.2"
+	},
+	"peerDependencies": {
+		"react": "^17"
+	}
+}

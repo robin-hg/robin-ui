@@ -1,10 +1,7 @@
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
-// const tsconfigPaths = require('vite-tsconfig-paths').default
-
 module.exports = {
 	core: { builder: 'webpack5' },
 	// core: { builder: '@storybook/builder-vite' },
-	stories: ['../src/**/*.stories.@(tsx|mdx)'],
+	stories: ['../packages/**/*.stories.@(tsx|mdx)'],
 	addons: [
 		{ name: '@storybook/addon-essentials', options: { backgrounds: false } },
 		'@storybook/addon-a11y',
@@ -13,14 +10,19 @@ module.exports = {
 	framework: '@storybook/react',
 	features: { emotionAlias: false },
 	webpackFinal: config => {
-		config.resolve.plugins = [
-			...(config.resolve.plugins ?? []),
-			new TsconfigPathsPlugin({ extensions: config.resolve.extensions })
-		]
+		config.resolve.alias = {
+			...config.resolve.alias,
+			'@emotion/react': require.resolve('@emotion/react'),
+			'@emotion/styled': require.resolve('@emotion/styled')
+		}
 		return config
 	}
 	// viteFinal: config => {
-	// 	config.plugins.push(tsconfigPaths())
+	// 	config.resolve.alias = {
+	// 		...config.resolve.alias,
+	// 		'@emotion/react': require.resolve('@emotion/react'),
+	// 		'@emotion/styled': require.resolve('@emotion/styled')
+	// 	}
 	// 	config.optimizeDeps.include = [
 	// 		...(config.optimizeDeps.include ?? []),
 	// 		'@storybook/theming',

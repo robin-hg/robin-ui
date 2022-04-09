@@ -29,7 +29,7 @@ const augumentStyle = (
 	return { transformedStyle, transformedExpressions }
 }
 
-const extendedStyled = new Proxy(styled, {
+const extendedStyled: ExtendedCreateStyled = new Proxy(styled, {
 	apply:
 		(_styled, _, args: Parameters<typeof styled>) =>
 		(
@@ -54,7 +54,7 @@ const extendedStyled = new Proxy(styled, {
 			const { transformedStyle, transformedExpressions } = augumentStyle(baseStyle, expressions)
 			return _styled(tag, { shouldForwardProp })(transformedStyle, ...transformedExpressions)
 		}
-}) as ExtendedCreateStyled
+})
 
 export const Styled = (tags as (keyof JSX.IntrinsicElements)[]).reduce(
 	(acc, tag) => ({ ...acc, [tag]: extendedStyled(tag)({}) }),
