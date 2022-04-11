@@ -42,13 +42,13 @@ export const lightPalette: Palette = {
 		base: colors.gray[50],
 		onBase: colors.gray[700],
 		variant: colors.gray[200],
-		onVariant: colors.gray[700]
+		onVariant: colors.gray[900]
 	},
 	background: {
-		base: colors.gray[800],
-		onBase: colors.gray[50]
+		base: colors.gray[0],
+		onBase: colors.gray[700]
 	},
-	outline: colors.gray[600]
+	outline: colors.gray[500]
 }
 
 export const darkPalette: Palette = {

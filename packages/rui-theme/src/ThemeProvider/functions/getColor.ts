@@ -1,9 +1,9 @@
-import type { ThemeWithPalette } from '../themeFactory'
+import type { AugumentedTheme } from '../../types'
 import { get, memoize } from '@rui/utils'
 
 const DEFAULT_SHADE = 500
 
-export const getColor = (theme: ThemeWithPalette) =>
+export const getColor = (theme: AugumentedTheme) =>
 	memoize((color: string) => {
 		const [base, shade] = color.split('.')
 

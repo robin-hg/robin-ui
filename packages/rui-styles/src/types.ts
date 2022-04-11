@@ -10,7 +10,7 @@ export interface StyledOptions {
 	shouldForwardProp?: (key: string) => boolean
 }
 
-export interface DefaultProps {
+export interface ThemeWithSX {
 	theme: Theme
 	sx?: SX
 }
@@ -21,7 +21,7 @@ interface CreateStyledComponent<
 	JSXProps extends Record<string, any> = Record<string, any>
 > {
 	<AdditionalProps extends Record<string, any>>(
-		...styles: Interpolation<AdditionalProps & ComponentProps & DefaultProps>[]
+		...styles: Interpolation<AdditionalProps & ComponentProps & ThemeWithSX>[]
 	): StyledComponent<ComponentProps & AdditionalProps, SpecificComponentProps, JSXProps>
 }
 
@@ -38,10 +38,7 @@ export interface BaseCreateStyled {
 
 export type StyledTags = {
 	[Tag in keyof JSX.IntrinsicElements]: CreateStyledComponent<
-		{
-			sx?: SX
-			as?: React.ElementType
-		},
+		{ sx?: SX; as?: React.ElementType },
 		JSX.IntrinsicElements[Tag]
 	>
 }
@@ -49,5 +46,8 @@ export type StyledTags = {
 export interface CreateStyled extends BaseCreateStyled, StyledTags {}
 
 export type SXComponents = {
-	[Tag in keyof JSX.IntrinsicElements]: StyledComponent<{ sx?: SX }, JSX.IntrinsicElements[Tag]>
+	[Tag in keyof JSX.IntrinsicElements]: StyledComponent<
+		{ sx?: SX; as?: React.ElementType },
+		JSX.IntrinsicElements[Tag]
+	>
 }

@@ -1,3 +1,4 @@
+import type { SizeValue } from '@rui/types'
 import styled from '@rui/styles'
 import { BaseContainer } from '../BaseContainer'
 
@@ -6,19 +7,25 @@ interface PaperContainerProps {
 	$tint: string
 	$elevation: number
 	$outlined: boolean
+	$padding: SizeValue | SizeValue[]
 }
 
 export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
-	({ theme, $tint, $elevation }) => ({
+	({ theme, $tint, $elevation, $padding }) => ({
 		position: 'relative',
+		zIndex: 0,
 		boxSizing: 'border-box',
 		overflow: 'hidden',
+		padding: theme.fn.getSpacing($padding),
 		transition: theme.fn.getTransition(),
 		borderRadius: theme.borderRadius,
 		boxShadow: theme.shadow.generateShadow($elevation),
 		['::before']: {
 			content: '""',
 			position: 'absolute',
+			zIndex: -1,
+			top: 0,
+			left: 0,
 			height: '100%',
 			width: '100%',
 			background: theme.fn.getColorAlpha($tint, theme.colorModifiers.tint)

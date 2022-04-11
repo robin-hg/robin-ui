@@ -5,6 +5,7 @@ export type ColorMode = 'light' | 'dark' | 'system'
 export type DerrivedColorMode = 'light' | 'dark'
 
 export type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+export type SizeValue = Sizes | string | number
 
 type DefaultColors =
 	| 'gray'
@@ -71,7 +72,7 @@ export interface TypographyProperties<V extends Sizes> {
 	sizes: Record<V, TypographyVariant>
 }
 
-export interface RUITheme {
+export interface BaseTheme {
 	componentStyles: Record<string, CSSObject | ((theme: Theme) => CSSObject)>
 	breakpoints: Record<Sizes, number | string>
 	spacing: Record<Sizes, number | string>
@@ -103,9 +104,14 @@ export interface RUITheme {
 	}
 }
 
-export interface RUIThemeExtended extends RUITheme {
+type Media = Record<Sizes, string>
+
+export type AugumentedTheme = BaseTheme & {
 	colorMode: 'light' | 'dark'
 	palette: Palette
-	media: ReturnType<typeof themeFactory>['media']
+	media: Media
+}
+
+export interface RUITheme extends AugumentedTheme {
 	fn: ReturnType<typeof themeFactory>['fn']
 }

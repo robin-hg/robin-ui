@@ -1,9 +1,9 @@
+import type { AugumentedTheme } from '../../types'
 import { mostReadable } from '@ctrl/tinycolor'
 import { getColor as _getColor } from './getColor'
-import type { ThemeWithPalette } from '../themeFactory'
 
 export const getAccessibleColor =
-	(theme: ThemeWithPalette) =>
+	(theme: AugumentedTheme) =>
 	(background?: string, colors = ['text', 'text.contrast']) => {
 		const getColor = _getColor(theme)
 		const backgroundColor = getColor(background || 'background')

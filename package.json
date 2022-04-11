@@ -19,6 +19,7 @@
 		"release-local": "yarn build && cd ./dist && yalc push --replace"
 	},
 	"resolutions": {
+		"@types/react": "^17",
 		"webpack": "^5"
 	},
 	"devDependencies": {

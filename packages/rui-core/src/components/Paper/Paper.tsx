@@ -1,5 +1,5 @@
+import type { DefaultProps, SizeValue } from '@rui/types'
 import React from 'react'
-import type { DefaultProps } from '@rui/types'
 
 import { PaperContainer } from './Paper.style'
 
@@ -8,11 +8,21 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	tint?: string
 	elevation?: number
 	outlined?: boolean
+	padding?: SizeValue | SizeValue[]
 	component?: React.ElementType
 }
 
 export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { variant = 'base', tint = 'primary', elevation = 1, outlined, component, children, ...otherProps } = props
+	const {
+		variant = 'base',
+		tint = 'primary',
+		elevation = 1,
+		padding = 'md',
+		outlined,
+		component,
+		children,
+		...otherProps
+	} = props
 
 	return (
 		<PaperContainer
@@ -22,6 +32,7 @@ export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			$tint={tint}
 			$elevation={elevation}
 			$outlined={!!outlined}
+			$padding={padding}
 			{...otherProps}>
 			{children}
 		</PaperContainer>

@@ -1,14 +1,15 @@
+import type { BaseTheme, ColorMode } from '../types'
 import merge from 'deepmerge'
 import { ThemeProvider as EmThemeProvider } from '@emotion/react'
 import { useColorMode, useReducedMotion } from '@rui/hooks'
 import { themeFactory } from './themeFactory'
 import { defaultTheme } from '../defaultTheme'
-import type { RUITheme, ColorMode } from '../types'
+import { Global } from './Global'
 
 interface Props {
 	colorMode?: ColorMode
 	forcedColorMode?: boolean
-	theme?: Partial<RUITheme>
+	theme?: Partial<BaseTheme>
 }
 
 export const ThemeProvider: React.FC<Props> = props => {
@@ -21,5 +22,10 @@ export const ThemeProvider: React.FC<Props> = props => {
 		reducedMotion
 	)
 
-	return <EmThemeProvider theme={themeFinal}>{children}</EmThemeProvider>
+	return (
+		<EmThemeProvider theme={themeFinal}>
+			<Global />
+			{children}
+		</EmThemeProvider>
+	)
 }

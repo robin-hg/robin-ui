@@ -1,35 +1,33 @@
-import { createMedia, getColor, getColorAlpha, getTransition, getVariant } from './functions'
-import type { RUITheme, DerrivedColorMode, Palette } from '../types'
+import { createMedia, getColor, getColorAlpha, getSpacing, getTransition, getVariant } from './functions'
+import type { BaseTheme, AugumentedTheme, DerrivedColorMode } from '../types'
 
-export type ThemeWithPalette = RUITheme & { palette: Palette }
-
-export const themeFactory = (theme: RUITheme, colorMode: DerrivedColorMode, reducedMotion = false) => {
+export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode, reducedMotion = false) => {
 	const palette = colorMode === 'light' ? theme.lightPalette : theme.darkPalette
 
-	const modifiedTheme: ThemeWithPalette = {
+	const augumentedTheme: AugumentedTheme = {
+		colorMode,
 		...theme,
 		palette,
+		media: {
+			xs: createMedia(theme, 'xs'),
+			sm: createMedia(theme, 'sm'),
+			md: createMedia(theme, 'md'),
+			lg: createMedia(theme, 'lg'),
+			xl: createMedia(theme, 'xl')
+		},
 		transition: reducedMotion ? { ...theme.transition, duration: '0ms' } : theme.transition
 	}
 
 	const fn = {
-		getTransition: getTransition(modifiedTheme),
-		getColor: getColor(modifiedTheme),
-		getColorAlpha: getColorAlpha(modifiedTheme),
+		getColor: getColor(augumentedTheme),
+		getColorAlpha: getColorAlpha(augumentedTheme),
+		getSpacing: getSpacing(augumentedTheme),
+		getTransition: getTransition(augumentedTheme),
 		getVariant
 	}
 
-	const media = {
-		sm: createMedia(theme, 'sm'),
-		md: createMedia(theme, 'md'),
-		lg: createMedia(theme, 'lg'),
-		xl: createMedia(theme, 'xl')
-	}
-
 	return {
-		colorMode,
-		...modifiedTheme,
-		media,
+		...augumentedTheme,
 		fn
 	}
 }

@@ -1,9 +1,9 @@
 import colors from './colors'
 import { lightPalette, darkPalette } from './palette'
 import { heading, text, label } from './typography'
-import type { RUITheme } from '../types'
+import type { BaseTheme } from '../types'
 
-export const defaultTheme: RUITheme = {
+export const defaultTheme: BaseTheme = {
 	componentStyles: {},
 	breakpoints: {
 		xl: 1536,
@@ -13,11 +13,11 @@ export const defaultTheme: RUITheme = {
 		xs: 0
 	},
 	spacing: {
-		xl: '1.6rem',
-		lg: '1.2rem',
-		md: '0.8rem',
-		sm: '0.4rem',
-		xs: '0.2rem'
+		xl: '3.2rem',
+		lg: '2.4rem',
+		md: '1.6rem',
+		sm: '0.8rem',
+		xs: '0.4rem'
 	},
 	typography: {
 		heading,

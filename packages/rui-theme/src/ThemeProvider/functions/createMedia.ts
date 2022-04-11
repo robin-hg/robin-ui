@@ -1,5 +1,5 @@
+import type { BaseTheme } from '../../types'
 import { parseSize } from '@rui/utils'
-import type { RUITheme } from '../../types'
 
-export const createMedia = (theme: RUITheme, breakpoint: keyof RUITheme['breakpoints']) =>
+export const createMedia = (theme: BaseTheme, breakpoint: keyof BaseTheme['breakpoints']) =>
 	`@media screen and (max-width: ${parseSize(theme.breakpoints[breakpoint])})`

@@ -1,5 +1,6 @@
-import React from 'react'
 import type { DefaultProps } from '@rui/types'
+import React from 'react'
+
 import { StyledBaseContainer } from './BaseContainer.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {

@@ -1,4 +1,5 @@
 import type { SX } from '@rui/styles'
+export type { Sizes, SizeValue } from '@rui/theme'
 
 export type DefaultProps<C, Removals extends keyof React.HTMLProps<C> = never> = {
 	sx?: SX
