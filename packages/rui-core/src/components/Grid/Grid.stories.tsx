@@ -21,7 +21,7 @@ const Template: Story<Props> = args => (
 		{Array(12)
 			.fill(null)
 			.map((_, i) => (
-				<Paper key={i} sx={{ height: '20rem' }} />
+				<Paper key={i} elevation={0} sx={{ height: '20rem' }} />
 			))}
 	</Grid>
 )

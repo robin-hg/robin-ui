@@ -7,7 +7,8 @@ export default {
 	title: 'Layout/Hidden',
 	component: Hidden,
 	args: {
-		breakpoint: 'sm'
+		breakpoint: 'sm',
+		direction: 'down'
 	}
 } as Meta<Props>
 
