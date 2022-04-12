@@ -11,7 +11,7 @@ interface PaperContainerProps {
 }
 
 export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
-	({ theme, $tint, $elevation, $padding }) => ({
+	({ theme, $elevation, $padding }) => ({
 		position: 'relative',
 		zIndex: 0,
 		boxSizing: 'border-box',
@@ -19,27 +19,17 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 		padding: theme.fn.getSpacing($padding),
 		transition: theme.fn.getTransition(),
 		borderRadius: theme.borderRadius,
-		boxShadow: theme.shadow.generateShadow($elevation),
-		['::before']: {
-			content: '""',
-			position: 'absolute',
-			zIndex: -1,
-			top: 0,
-			left: 0,
-			height: '100%',
-			width: '100%',
-			background: theme.fn.getColorAlpha($tint, theme.colorModifiers.tint)
-		}
+		boxShadow: theme.shadow.generateShadow($elevation)
 	}),
-	({ theme, $variant }) =>
+	({ theme, $variant, $tint }) =>
 		theme.fn.getVariant(
 			{
 				base: {
-					background: theme.palette.surface.base,
+					background: theme.fn.getColorTint('surface', $tint, theme.colorModifiers.tint),
 					color: theme.palette.surface.onBase
 				},
 				variant: {
-					background: theme.palette.surface.variant,
+					background: theme.fn.getColorTint('surface.variant', $tint, theme.colorModifiers.tint),
 					color: theme.palette.surface.onVariant
 				}
 			},

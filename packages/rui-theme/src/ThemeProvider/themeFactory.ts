@@ -1,4 +1,4 @@
-import { createMedia, getColor, getColorAlpha, getSpacing, getTransition, getVariant } from './functions'
+import { createMedia, getColor, getColorAlpha, getColorTint, getSpacing, getTransition, getVariant } from './functions'
 import type { BaseTheme, AugumentedTheme, DerrivedColorMode } from '../types'
 
 export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode, reducedMotion = false) => {
@@ -21,6 +21,7 @@ export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode, red
 	const fn = {
 		getColor: getColor(augumentedTheme),
 		getColorAlpha: getColorAlpha(augumentedTheme),
+		getColorTint: getColorTint(augumentedTheme),
 		getSpacing: getSpacing(augumentedTheme),
 		getTransition: getTransition(augumentedTheme),
 		getVariant
