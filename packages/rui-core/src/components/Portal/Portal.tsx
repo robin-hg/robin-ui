@@ -1,19 +1,22 @@
 import ReactDOM from 'react-dom'
+import { useForceUpdate, useIsomorphicLayoutEffect } from '@rui/hooks'
 
 export interface Props {
 	/**
 	 * Content is inside the specified target.
 	 * @default document.body
 	 */
-	target?: HTMLElement
+	targetRef?: React.RefObject<HTMLElement>
 }
 
 export const Portal: React.FC<Props> = props => {
-	const { children, target } = props
+	const { children, targetRef } = props
+	const target = targetRef?.current || document?.body
+	const forceUpdate = useForceUpdate()
 
-	if (!document) {
-		return null
-	}
+	useIsomorphicLayoutEffect(() => {
+		forceUpdate()
+	}, [])
 
-	return ReactDOM.createPortal(children, target || document.body)
+	return target ? ReactDOM.createPortal(children, target) : null
 }
