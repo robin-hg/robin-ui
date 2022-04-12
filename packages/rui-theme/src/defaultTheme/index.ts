@@ -42,13 +42,13 @@ export const defaultTheme: BaseTheme = {
 		timing: 'ease-out'
 	},
 	shadow: {
-		color: 'rgba(0, 0, 0, 0.2)',
+		color: 'rgba(0, 0, 0, 0.15)',
 		generateShadow: function (elevation: number) {
 			if (elevation <= 0) {
 				return 'none'
 			}
 
-			return `0 ${elevation * 1}px ${elevation * 2}px ${elevation * 1}px ${this.color}`
+			return `0 ${elevation * 2}px ${elevation * 3}px ${elevation}px ${this.color}`
 		}
 	}
 }

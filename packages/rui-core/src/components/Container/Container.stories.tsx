@@ -18,7 +18,7 @@ const Template: Story<Props> = args => (
 		{...args}
 		sx={theme => ({
 			height: '30rem',
-			background: theme.palette.surface.base
+			background: theme.palette.surface.variant
 		})}
 	/>
 )

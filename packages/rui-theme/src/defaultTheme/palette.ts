@@ -9,9 +9,9 @@ export const lightPalette: Palette = {
 		onVariant: colors.gray[800]
 	},
 	secondary: {
-		base: colors.blue[600],
-		onBase: colors.blue[0],
-		variant: colors.blue[300],
+		base: colors.red[600],
+		onBase: colors.red[0],
+		variant: colors.red[300],
 		onVariant: colors.gray[800]
 	},
 	critical: {
@@ -39,7 +39,7 @@ export const lightPalette: Palette = {
 		onVariant: colors.gray[50]
 	},
 	surface: {
-		base: colors.gray[50],
+		base: colors.gray[0],
 		onBase: colors.gray[700],
 		variant: colors.gray[200],
 		onVariant: colors.gray[900]

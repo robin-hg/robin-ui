@@ -15,7 +15,7 @@ const Template: Story<Props> = args => (
 			sx={theme => ({
 				width: '100%',
 				height: '30rem',
-				background: theme.palette.surface.base
+				background: theme.palette.surface.variant
 			})}></ContainerBreak>
 	</Container>
 )
