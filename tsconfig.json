@@ -15,8 +15,7 @@
 		"declarationDir": "dist",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"forceConsistentCasingInFileNames": true,
-		"baseUrl": "."
+		"forceConsistentCasingInFileNames": true
 	},
 	"include": ["packages"],
 	"exclude": ["**/*.stories.tsx"]

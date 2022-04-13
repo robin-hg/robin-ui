@@ -1,4 +1,4 @@
-import type { DefaultProps, Sizes } from '@rui/types'
+import type { DefaultProps, SizeValue } from '@rui/types'
 import React from 'react'
 import { useTheme } from '@rui/hooks'
 import { parseSize } from '@rui/utils'
@@ -6,7 +6,7 @@ import { parseSize } from '@rui/utils'
 import { StyledContainer } from './Container.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
-	maxWidth?: Sizes | number | string
+	maxWidth?: SizeValue
 }
 
 export const Container = React.forwardRef<HTMLDivElement, Props>((props, ref) => {

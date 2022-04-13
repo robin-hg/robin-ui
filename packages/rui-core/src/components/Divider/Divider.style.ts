@@ -1,10 +1,10 @@
-import type { Sizes } from '@rui/types'
+import type { SizeValue } from '@rui/types'
 import styled from '@rui/styles'
 
 interface DividerLineProps {
 	$orientation: 'horizontal' | 'vertical'
 	$thickness: string
-	$spacing: Sizes | number | string
+	$spacing: SizeValue
 }
 
 export const DividerLine = styled.hr<DividerLineProps>(
