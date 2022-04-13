@@ -8,18 +8,17 @@ export interface Props extends DefaultProps<SVGElement> {
 	strokeWidth?: number
 }
 
-// TODO: convert to sxc
 /* eslint-disable react/display-name */
 export default (icon: JSX.Element) =>
 	React.forwardRef<SVGElement, Props>((props, ref) => {
-		const { color, size = 20, strokeWidth = 2, ...otherProps } = props
+		const { color, size = 20, strokeWidth = 2, sx, ...otherProps } = props
 
 		const theme = useTheme()
 		const colorStr = color && theme.fn.getColor(color)
 
 		return React.cloneElement(icon, {
 			ref,
-			sx: { color: colorStr },
+			sx: [{ color: colorStr }, sx],
 			width: size,
 			height: size,
 			strokeWidth,
