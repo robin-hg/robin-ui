@@ -6,6 +6,7 @@ export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode, red
 
 	const augumentedTheme: AugumentedTheme = {
 		colorMode,
+		reducedMotion,
 		...theme,
 		palette,
 		media: {

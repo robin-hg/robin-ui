@@ -108,6 +108,7 @@ type Media = Record<Sizes, string>
 
 export type AugumentedTheme = BaseTheme & {
 	colorMode: 'light' | 'dark'
+	reducedMotion: boolean
 	palette: Palette
 	media: Media
 }
