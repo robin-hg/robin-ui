@@ -4,14 +4,14 @@ import React from 'react'
 import { StyledBaseContainer } from './BaseContainer.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
-	component?: React.ElementType
+	as?: React.ElementType
 }
 
 export const BaseContainer = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { component, children, ...otherProps } = props
+	const { as, children, ...otherProps } = props
 
 	return (
-		<StyledBaseContainer ref={ref} as={component} {...otherProps}>
+		<StyledBaseContainer ref={ref} as={as} {...otherProps}>
 			{children}
 		</StyledBaseContainer>
 	)

@@ -9,7 +9,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	elevation?: number
 	outlined?: boolean
 	padding?: SizeValue | SizeValue[]
-	component?: React.ElementType
+	as?: React.ElementType
 }
 
 export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
@@ -19,7 +19,7 @@ export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		elevation = 1,
 		padding = 'md',
 		outlined,
-		component,
+		as,
 		children,
 		...otherProps
 	} = props
@@ -27,7 +27,7 @@ export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	return (
 		<PaperContainer
 			ref={ref}
-			component={component}
+			as={as}
 			$variant={variant}
 			$tint={tint}
 			$elevation={elevation}

@@ -1,15 +1,14 @@
 import type { Sizes, SizeValue } from '../../types'
-import { parseSize } from '@rui/utils'
+import { parseSize, get } from '@rui/utils'
 
-export const getSize = (size: SizeValue, object: Partial<Record<Sizes, string | number>>, parse = true) => {
-	switch (size) {
-		case 'xs':
-		case 'sm':
-		case 'md':
-		case 'lg':
-		case 'xl':
-			return parse ? parseSize(object[size] || size) : undefined
-		default:
-			return parse ? parseSize(size) : undefined
-	}
+type IGetSize = {
+	(size: SizeValue, object: Partial<Record<Sizes, string | number>>): string
+	<T extends boolean>(size: SizeValue, object: Partial<Record<Sizes, string | number>>, parse: T): T extends true
+		? string
+		: string | undefined
+}
+
+export const getSize: IGetSize = (size: SizeValue, object: Partial<Record<Sizes, string | number>>, parse = true) => {
+	const value = get<string>(object, [size])
+	return parse ? parseSize(value || size) : value
 }

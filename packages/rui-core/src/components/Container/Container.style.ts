@@ -1,12 +1,13 @@
+import type { SizeValue } from '@rui/types'
 import styled from '@rui/styles'
 
 interface StyledContainerProps {
-	$maxWidth: string
+	$maxWidth: SizeValue
 }
 
 export const StyledContainer = styled.div<StyledContainerProps>(({ theme, $maxWidth }) => ({
 	boxSizing: 'content-box',
-	maxWidth: $maxWidth,
+	maxWidth: theme.fn.getSize($maxWidth, theme.breakpoints),
 	padding: `0 ${theme.spacing.md}`,
 	margin: '0 auto'
 }))

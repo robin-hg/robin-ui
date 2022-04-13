@@ -12,15 +12,21 @@ export interface Props extends DefaultProps<HTMLParagraphElement, 'size'> {
 	italic?: boolean
 	underline?: boolean
 	strikethrough?: boolean
-	component?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+	as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 }
 
 type Variant = 'heading' | 'text' | 'label'
 
+const variantComponentMap: Record<Variant, keyof JSX.IntrinsicElements> = {
+	heading: 'h2',
+	text: 'p',
+	label: 'span'
+}
+
 const TypographyFactory = (variant: Variant) => {
 	const Typography = React.forwardRef<HTMLParagraphElement, Props>((props, ref) => {
 		const {
-			component,
+			as,
 			size = 'md',
 			fontWeight,
 			bold,
@@ -34,19 +40,7 @@ const TypographyFactory = (variant: Variant) => {
 		} = props
 
 		const decoration = `${underline ? 'underline' : ''} ${strikethrough ? 'line-through' : ''}`.trim() || 'none'
-
-		const defaultComponent =
-			component ||
-			(() => {
-				switch (variant) {
-					case 'heading':
-						return 'h2'
-					case 'text':
-						return 'p'
-					case 'label':
-						return 'span'
-				}
-			})()
+		const defaultComponent = as || variantComponentMap[variant]
 
 		return (
 			<StyledText

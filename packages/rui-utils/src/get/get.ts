@@ -1,5 +1,5 @@
 type IGet = {
-	(obj: any, path: string | (number | string)[]): unknown
+	<T = unknown>(obj: any, path: string | (number | string)[]): T
 	<T>(obj: any, path: string | (number | string)[], defaultValue: T): T
 }
 
