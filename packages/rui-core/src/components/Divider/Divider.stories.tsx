@@ -7,12 +7,12 @@ export default {
 	component: Divider,
 	args: {
 		thickness: 1,
-		margin: 16,
+		spacing: 'md',
 		orientation: 'horizontal'
 	},
 	argTypes: {
-		thickness: { control: { type: 'range', min: 1, max: 12, step: 1 } },
-		margin: { control: { type: 'range', min: 0, max: 36, step: 1 } }
+		thickness: { control: { type: 'range', min: 1, max: 6, step: 1 } },
+		spacing: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } }
 	}
 } as Meta<Props>
 

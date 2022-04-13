@@ -11,13 +11,13 @@ export default {
 		direction: 'row',
 		justifyContent: 'flex-start',
 		alignItems: 'center',
-		spacing: 16
+		spacing: 'md'
 	},
 	argTypes: {
 		direction: { control: { type: 'text' } },
 		justifyContent: { control: { type: 'text' } },
 		alignItems: { control: { type: 'text' } },
-		spacing: { control: { type: 'range', min: 0, max: 36, step: 1 } }
+		spacing: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } }
 	}
 } as Meta<Props>
 

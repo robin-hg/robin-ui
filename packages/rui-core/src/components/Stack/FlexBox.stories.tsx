@@ -8,10 +8,10 @@ export default {
 	title: 'Layout/Stack',
 	component: Stack,
 	args: {
-		spacing: 16
+		spacing: 'md'
 	},
 	argTypes: {
-		spacing: { control: { type: 'range', min: 0, max: 36, step: 1 } }
+		spacing: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } }
 	}
 } as Meta<Props>
 

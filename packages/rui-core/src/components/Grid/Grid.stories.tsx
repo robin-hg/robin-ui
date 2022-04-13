@@ -8,11 +8,11 @@ export default {
 	component: Grid,
 	args: {
 		columns: 12,
-		spacing: 16
+		spacing: 'md'
 	},
 	argTypes: {
 		columns: { control: 'number' },
-		spacing: { control: { type: 'range', min: 0, max: 36, step: 1 } }
+		spacing: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } }
 	}
 } as Meta<Props>
 
