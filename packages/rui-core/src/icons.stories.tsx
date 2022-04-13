@@ -2,7 +2,7 @@ import type { Story, Meta } from '@storybook/react'
 
 import * as Icons from '@rui/icons'
 import { type Props } from '@rui/icons/src/createIcon'
-import { FlexBox } from './'
+import { FlexBox, Text } from './'
 
 export default {
 	title: 'Icons/Icons',
@@ -31,7 +31,9 @@ const Template: Story<Props> = args => (
 							margin: '2rem'
 						}}>
 						<Icon {...args} />
-						<p>{i[0]}</p>
+						<Text size="sm" sx={{ marginTop: 8 }}>
+							{i[0]}
+						</Text>
 					</FlexBox>
 				)
 			})}

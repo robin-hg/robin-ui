@@ -1,6 +1,6 @@
 const defaultSerializer = (...args: any[]) => JSON.stringify(args)
 
-export const memoize = <T extends (...args: any[]) => any>(fn: T, serializer = defaultSerializer) => {
+export const memoize = <T extends (...args: any[]) => ReturnType<T>>(fn: T, serializer = defaultSerializer) => {
 	const cache = new Map<ReturnType<typeof serializer>, ReturnType<T>>()
 
 	return (...args: Parameters<T>) => {

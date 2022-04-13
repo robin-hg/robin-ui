@@ -17,8 +17,9 @@ export const parameters = {
 			order: [
 				'Colors',
 				'Icons',
-				'Surface',
+				'Typography',
 				'Layout',
+				'Surface',
 				'Display',
 				'Navigation',
 				'Inputs',

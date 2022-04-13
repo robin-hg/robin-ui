@@ -2,8 +2,7 @@ import type { Story, Meta } from '@storybook/react'
 import { useTheme, useWidthQuery } from '@rui/hooks'
 import { sxc } from '@rui/styles'
 
-import { Grid, Stack, FlexBox } from './'
-// import Typography from '@rui/components/Typography'
+import { Grid, Stack, FlexBox, Text } from './'
 
 export default {
 	title: 'Colors/Colors'
@@ -40,10 +39,12 @@ const Colors = () => {
 											})}
 										/>
 										<div>
-											<sxc.p sx={{ textTransform: 'capitalize' }}>
+											<Text sx={{ textTransform: 'capitalize' }}>
 												{colorName} {shade}
-											</sxc.p>
-											<sxc.span sx={{ textTransform: 'uppercase' }}>{colorHex}</sxc.span>
+											</Text>
+											<Text size="sm" sx={{ textTransform: 'uppercase', userSelect: 'all' }}>
+												{colorHex}
+											</Text>
 										</div>
 									</FlexBox>
 								)

@@ -61,15 +61,11 @@ export interface Palette extends AdditionalColors {
 	outline: string
 }
 
-interface TypographyVariant {
-	fontSize: React.CSSProperties['fontSize']
-	lineHeight: React.CSSProperties['lineHeight']
-}
-
 export interface TypographyProperties<V extends Sizes> {
 	fontFamily: React.CSSProperties['fontFamily']
 	fontWeight: React.CSSProperties['fontWeight']
-	sizes: Record<V, TypographyVariant>
+	fontSize: Record<V, React.CSSProperties['fontSize']>
+	lineHeight: Record<V, React.CSSProperties['lineHeight']>
 }
 
 export interface BaseTheme {
