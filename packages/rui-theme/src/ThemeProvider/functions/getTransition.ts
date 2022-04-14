@@ -1,6 +1,17 @@
 import type { BaseTheme } from '../../types'
 
-export const getTransition =
-	(theme: BaseTheme) =>
-	(properties: React.CSSProperties['transitionProperty'][] = ['all']) =>
-		properties.map(property => `${property} ${theme.transition.duration} ${theme.transition.timing}`).join(', ')
+export interface TransitionOptions {
+	properties?: React.CSSProperties['transitionProperty'][]
+	timeout?: string | number
+}
+
+const parseDuration = (value?: number | string) => (typeof value === 'number' ? `${value}ms` : value)
+
+export const getTransition = (theme: BaseTheme) => (options?: TransitionOptions) => {
+	const { properties = ['all'], timeout } = options || {}
+	return properties
+		.map(
+			property => `${property} ${parseDuration(timeout || theme.transition.duration)} ${theme.transition.timing}`
+		)
+		.join(', ')
+}
