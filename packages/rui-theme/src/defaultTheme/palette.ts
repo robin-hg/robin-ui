@@ -1,4 +1,4 @@
-import colors from './colors'
+import { colors } from './colors'
 import type { Palette } from '../types'
 
 export const lightPalette: Palette = {

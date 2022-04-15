@@ -180,7 +180,7 @@ export const orange = {
 	900: '#d9480f'
 }
 
-export default {
+export const colors = {
 	gray,
 	red,
 	pink,

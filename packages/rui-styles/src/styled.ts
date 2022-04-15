@@ -1,6 +1,6 @@
 import _styled, { type Interpolation } from '@emotion/styled'
 import { runIfFn } from '@rui/utils'
-import tags from './tags'
+import { tags } from './tags'
 import type { StyledOptions, ThemeWithSX, BaseCreateStyled, StyledTags, CreateStyled, SXComponents } from './types'
 
 const excludedProps = new Set(['sx', 'css', 'as'])

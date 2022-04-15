@@ -1,4 +1,4 @@
-import colors from './colors'
+import { colors } from './colors'
 import { lightPalette, darkPalette } from './palette'
 import { heading, text, label } from './typography'
 import type { BaseTheme } from '../types'

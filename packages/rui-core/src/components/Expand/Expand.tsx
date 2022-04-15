@@ -12,7 +12,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	timeout?: number
 }
 
-const Expand = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Expand = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { open, timeout = 200, children, ...otherProps } = props
 	const [childUpdating, setChildUpdating] = useState(false)
 	const { updateParent } = useContext(ExpandContext)
@@ -45,4 +45,3 @@ const Expand = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 })
 
 Expand.displayName = 'Expand'
-export default Expand
