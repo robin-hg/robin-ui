@@ -69,6 +69,7 @@ export interface TypographyProperties<V extends Sizes> {
 }
 
 export interface BaseTheme {
+	global: CSSObject
 	componentStyles: Record<string, CSSObject | ((theme: Theme) => CSSObject)>
 	breakpoints: Record<Sizes, number | string>
 	spacing: Record<Sizes, number | string>

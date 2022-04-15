@@ -4,6 +4,7 @@ import { heading, text, label } from './typography'
 import type { BaseTheme } from '../types'
 
 export const defaultTheme: BaseTheme = {
+	global: {},
 	componentStyles: {},
 	breakpoints: {
 		xl: 1536,
