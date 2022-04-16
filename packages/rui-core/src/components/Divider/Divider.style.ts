@@ -7,7 +7,7 @@ interface DividerLineProps {
 	$spacing: SizeValue
 }
 
-export const DividerLine = styled.hr<DividerLineProps>(
+export const DividerLine = styled.div<DividerLineProps>(
 	{
 		border: 'none'
 	},
@@ -22,7 +22,7 @@ export const DividerLine = styled.hr<DividerLineProps>(
 				vertical: {
 					display: 'inline',
 					height: '100%',
-					margin: `0 ${$spacing}`,
+					margin: `0 ${theme.fn.getSpacing($spacing)}`,
 					borderRight: `solid ${$thickness} ${theme.palette.outline}`
 				}
 			},
