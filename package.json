@@ -11,7 +11,7 @@
 		"build": "rm -rf dist && tsc -p ./tsconfig.prod.json && tsc-alias -p tsconfig.prod.json",
 		"postbuild": "node ./scripts/postbuild.js && cp README.md dist",
 		"build:storybook": "rm -rf demo && build-storybook -o demo",
-		"start": "start-storybook -p 5000 --ci --no-manager-cache",
+		"start": "start-storybook -p 5000 --ci",
 		"lint": "eslint --ext .ts,.tsx packages && tsc -p tsconfig.json --noEmit",
 		"test": "jest",
 		"prerelease": "npm i && yarn lint && yarn test && yarn build",
