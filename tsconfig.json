@@ -5,8 +5,9 @@
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"jsx": "react-jsxdev",
 		"strict": true,
-		"moduleResolution": "Node",
+		"moduleResolution": "node",
 		"esModuleInterop": true,
+		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true,
 		"preserveValueImports": true,
 		"isolatedModules": true,
@@ -17,6 +18,5 @@
 		"noUnusedParameters": true,
 		"forceConsistentCasingInFileNames": true
 	},
-	"include": ["packages"],
-	"exclude": ["**/*.stories.tsx"]
+	"include": ["packages"]
 }
