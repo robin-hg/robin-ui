@@ -39,7 +39,7 @@ export const defaultTheme: BaseTheme = {
 	borderRadius: '0.8rem',
 	transition: {
 		duration: '200ms',
-		timing: 'ease-out'
+		ease: 'ease-out'
 	},
 	shadow: {
 		color: 'rgba(0, 0, 0, 0.10)',

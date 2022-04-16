@@ -21,7 +21,8 @@ export const Global = () => (
 					WebkitFontSmoothing: 'antialiased'
 				},
 				'*': {
-					margin: 0
+					margin: 0,
+					boxSizing: 'border-box'
 				},
 				'img, picture, video, canvas, svg': {
 					display: 'block',

@@ -1,46 +1,40 @@
 import type { DefaultProps } from '@rui/types'
-import React, { useContext, useRef, useState } from 'react'
-import { useSize, useIsomorphicLayoutEffect } from '@rui/hooks'
-import { parseSize } from '@rui/utils'
-
-import { ExpandContainer } from './Expand.style'
-
-const ExpandContext = React.createContext<{ updateParent?: (updatingChild: boolean) => void }>({})
+import type { Easing } from 'framer-motion/types/types'
+import React from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	open?: boolean
-	timeout?: number
+	duration?: number
+	ease?: Easing
+	unmountOnExit?: boolean
 }
 
 export const Expand = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { open, timeout = 200, children, ...otherProps } = props
-	const [childUpdating, setChildUpdating] = useState(false)
-	const { updateParent } = useContext(ExpandContext)
-	const contentRef = useRef<HTMLDivElement>(null)
-	const size = useSize(contentRef)
+	const { open, duration = 200, ease = 'easeOut', unmountOnExit, children, ...otherProps } = props
 
-	// TODO: test nested animations
-	useIsomorphicLayoutEffect(() => {
-		if (updateParent) {
-			updateParent(true)
-			const t = window.setTimeout(() => updateParent(false), timeout + 50)
-			return () => {
-				window.clearTimeout(t)
-			}
-		}
-	}, [open])
+	const show = unmountOnExit ? open : true
+	const animate = open || unmountOnExit ? 'enter' : 'exit'
 
 	return (
-		<ExpandContext.Provider value={{ updateParent: setChildUpdating }}>
-			<ExpandContainer
-				ref={ref}
-				$open={!!open}
-				$height={childUpdating ? 'auto' : parseSize(size?.height || 0)}
-				$timeout={timeout}
-				{...otherProps}>
-				<div ref={contentRef}>{children}</div>
-			</ExpandContainer>
-		</ExpandContext.Provider>
+		<AnimatePresence initial={false}>
+			{show && (
+				<motion.div
+					initial={unmountOnExit ? 'exit' : false}
+					animate={animate}
+					exit="exit"
+					variants={{
+						enter: { height: 'auto' },
+						exit: { height: 0 }
+					}}
+					transition={{ duration: duration / 1000, ease }}
+					style={{ overflow: 'hidden' }}>
+					<div ref={ref} {...otherProps}>
+						{children}
+					</div>
+				</motion.div>
+			)}
+		</AnimatePresence>
 	)
 })
 

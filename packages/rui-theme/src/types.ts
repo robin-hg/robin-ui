@@ -88,7 +88,7 @@ export interface BaseTheme {
 	borderRadius: React.CSSProperties['borderRadius']
 	transition: {
 		duration: React.CSSProperties['transitionDuration']
-		timing: React.CSSProperties['transitionTimingFunction']
+		ease: React.CSSProperties['transitionTimingFunction']
 	}
 	shadow: {
 		color: string

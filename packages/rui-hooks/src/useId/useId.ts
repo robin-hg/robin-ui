@@ -6,5 +6,5 @@ export const useId = () => {
 			.toString(36)
 			.replace(/[^a-z]+/g, '')
 	const id = useRef(generateId())
-	return id.current
+	return `rui-${id.current}`
 }

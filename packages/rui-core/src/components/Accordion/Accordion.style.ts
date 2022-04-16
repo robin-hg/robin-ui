@@ -1,5 +1,10 @@
 import styled from '@rui/styles'
+import { BaseContainer } from '../BaseContainer'
 import { Expand } from '../Expand'
+
+export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
+	borderBottom: `solid 0.1rem ${theme.palette.outline}`
+}))
 
 interface AccordionSummaryProps {
 	$open: boolean
@@ -7,16 +12,19 @@ interface AccordionSummaryProps {
 	$disabled: boolean
 }
 
-export const AccordionSummary = styled.div<AccordionSummaryProps>(
+export const AccordionSummary = styled.button<AccordionSummaryProps>(
 	({ theme, $expandable, $open }) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-between',
+		width: '100%',
 		minHeight: '4rem',
-		padding: theme.fn.getSpacing([theme.spacing.sm, theme.spacing.md]),
+		background: 'transparent',
+		padding: theme.fn.getSpacing(['sm', 'md']),
 		cursor: $expandable ? 'pointer' : 'default',
 		userSelect: 'none',
 		outline: 'none',
+		border: 'none',
 		transition: theme.fn.getTransition(),
 		'&:hover': {
 			background: theme.fn.getColorTint('surface', 'surface.onBase', 'hover')
@@ -37,9 +45,5 @@ export const AccordionSummary = styled.div<AccordionSummaryProps>(
 )
 
 export const AccordionContent = styled(Expand)(({ theme }) => ({
-	cursor: 'auto',
-	borderBottom: `solid 0.1rem ${theme.palette.outline}`,
-	'& > div': {
-		padding: theme.spacing.md
-	}
+	padding: theme.fn.getSpacing('md')
 }))

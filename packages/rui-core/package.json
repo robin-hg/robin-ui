@@ -9,6 +9,7 @@
 		"@rui/theme": "workspace:*",
 		"@rui/types": "workspace:*",
 		"@rui/utils": "workspace:*",
+		"framer-motion": "^6.3.0",
 		"react-transition-group": "^4.4.2"
 	},
 	"devDependencies": {
