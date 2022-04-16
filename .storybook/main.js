@@ -5,6 +5,7 @@ module.exports = {
 	addons: [
 		{ name: '@storybook/addon-essentials', options: { backgrounds: false } },
 		'@storybook/addon-a11y',
+		'storybook-addon-performance/register',
 		'storybook-dark-mode/register'
 	],
 	framework: '@storybook/react',

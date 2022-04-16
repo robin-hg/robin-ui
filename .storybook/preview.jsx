@@ -2,6 +2,8 @@
 import { useDarkMode } from 'storybook-dark-mode'
 // import { dark, gray } from '../src/style/colors'
 
+import { withPerformance } from 'storybook-addon-performance'
+
 import { BaseContainer, RUIProvider } from '../packages/rui-core'
 
 export const parameters = {
@@ -46,5 +48,6 @@ export const decorators = [
 				<BaseContainer>{Story()}</BaseContainer>
 			</RUIProvider>
 		)
-	}
+	},
+	withPerformance()
 ]
