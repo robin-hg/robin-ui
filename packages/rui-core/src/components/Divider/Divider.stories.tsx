@@ -12,7 +12,7 @@ export default {
 	},
 	argTypes: {
 		thickness: { control: { type: 'range', min: 1, max: 6, step: 1 } },
-		spacing: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } }
+		spacing: { control: { type: 'radio' }, options: ['xl', 'lg', 'md', 'sm', 'xs'] }
 	}
 } as Meta<Props>
 

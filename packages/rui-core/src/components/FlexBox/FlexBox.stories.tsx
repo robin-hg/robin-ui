@@ -17,7 +17,7 @@ export default {
 		direction: { control: { type: 'text' } },
 		justifyContent: { control: { type: 'text' } },
 		alignItems: { control: { type: 'text' } },
-		spacing: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } }
+		spacing: { control: { type: 'radio' }, options: ['xl', 'lg', 'md', 'sm', 'xs'] }
 	}
 } as Meta<Props>
 

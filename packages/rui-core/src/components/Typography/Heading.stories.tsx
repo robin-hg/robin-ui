@@ -13,8 +13,8 @@ export default {
 		children: 'Lorem ipsum'
 	},
 	argTypes: {
-		size: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } },
-		fontWeight: { options: [400, 700], control: { type: 'select' } },
+		size: { control: { type: 'radio' }, options: ['xl', 'lg', 'md', 'sm', 'xs'] },
+		fontWeight: { control: { type: 'select' }, options: [400, 700] },
 		component: { control: false }
 	}
 } as Meta<Props>

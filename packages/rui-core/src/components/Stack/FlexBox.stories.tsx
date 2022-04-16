@@ -11,7 +11,7 @@ export default {
 		spacing: 'md'
 	},
 	argTypes: {
-		spacing: { control: { type: 'radio', options: ['xl', 'lg', 'md', 'sm', 'xs'] } }
+		spacing: { control: { type: 'radio' }, options: ['xl', 'lg', 'md', 'sm', 'xs'] }
 	}
 } as Meta<Props>
 
