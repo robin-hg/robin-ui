@@ -24,7 +24,7 @@ export const StyledText = styled.div<TypographyProps>(
 		textDecoration: $decoration,
 		letterSpacing: 'normal',
 		background: theme.fn.getColor($highlight),
-		['& small']: {
+		'& small': {
 			fontSize: '0.7em'
 		}
 	})

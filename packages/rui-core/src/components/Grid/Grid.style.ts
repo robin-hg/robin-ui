@@ -15,7 +15,7 @@ export const GridContainer = styled.div<GridContainerProps>(
 		gridTemplateColumns: `repeat(${$xl}, 1fr)`,
 		gap: theme.fn.getSpacing($spacing),
 		width: '100%',
-		['& > *']: {
+		'& > *': {
 			minWidth: 0
 		}
 	}),
