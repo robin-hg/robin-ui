@@ -12,11 +12,11 @@ const Template: Story<Props> = args => (
 	<Container>
 		<ContainerBreak
 			{...args}
-			sx={theme => ({
+			sx={{
 				width: '100%',
 				height: '30rem',
-				background: theme.palette.surface.variant
-			})}></ContainerBreak>
+				background: 'surface.variant'
+			}}></ContainerBreak>
 	</Container>
 )
 export const Default = Template.bind({})

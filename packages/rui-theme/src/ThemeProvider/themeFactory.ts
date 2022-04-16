@@ -1,5 +1,5 @@
 import {
-	createMedia,
+	createMediaBreakpoint,
 	getColor,
 	getColorAlpha,
 	getColorTint,
@@ -10,22 +10,20 @@ import {
 } from './functions'
 import type { BaseTheme, AugumentedTheme, DerrivedColorMode } from '../types'
 
-export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode, reducedMotion = false) => {
+export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode) => {
 	const palette = colorMode === 'light' ? theme.lightPalette : theme.darkPalette
 
 	const augumentedTheme: AugumentedTheme = {
 		colorMode,
-		reducedMotion,
 		...theme,
 		palette,
 		media: {
-			xs: createMedia(theme, 'xs'),
-			sm: createMedia(theme, 'sm'),
-			md: createMedia(theme, 'md'),
-			lg: createMedia(theme, 'lg'),
-			xl: createMedia(theme, 'xl')
-		},
-		transition: reducedMotion ? { ...theme.transition, duration: '0ms' } : theme.transition
+			xs: createMediaBreakpoint(theme, 'xs'),
+			sm: createMediaBreakpoint(theme, 'sm'),
+			md: createMediaBreakpoint(theme, 'md'),
+			lg: createMediaBreakpoint(theme, 'lg'),
+			xl: createMediaBreakpoint(theme, 'xl')
+		}
 	}
 
 	const fn = {

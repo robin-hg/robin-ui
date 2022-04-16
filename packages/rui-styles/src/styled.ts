@@ -1,24 +1,21 @@
 import _styled, { type Interpolation } from '@emotion/styled'
-import { runIfFn } from '@rui/utils'
 import { tags } from './tags'
-import type { StyledOptions, ThemeWithSX, BaseCreateStyled, StyledTags, CreateStyled, SXComponents } from './types'
+import type { StyledOptions, PropsWithSX, BaseCreateStyled, StyledTags, CreateStyled, SXComponents } from './types'
+import { transformSx } from './transformer'
 
 const excludedProps = new Set(['sx', 'css', 'as'])
 
 const shouldForwardProp = (prop: string) => !excludedProps.has(prop) && !prop.startsWith('$')
 
-const augumentStyle = <P extends Record<string, any>>(props: P & ThemeWithSX, label?: string) => {
+const augumentStyle = <P extends PropsWithSX>(props: P, label = '') => {
 	const { sx, theme } = props
-	const themeSx = (label && theme.componentStyles[label]) || {}
-	const themeStyle = Array.isArray(themeSx) ? themeSx.map(s => runIfFn(s, theme)) : runIfFn(themeSx, theme)
-	const sxStyle = Array.isArray(sx) ? sx.map(s => runIfFn(s, theme)) : runIfFn(sx, theme)
-
-	return [themeStyle, sxStyle].flat()
+	const themeSx = theme.componentStyles[label]
+	return [transformSx(themeSx), transformSx(sx)]
 }
 
 const styled: BaseCreateStyled =
 	(component: any, options?: StyledOptions) =>
-	<P extends Record<string, any>>(...styles: Interpolation<P & ThemeWithSX>[]) => {
+	<P extends PropsWithSX>(...styles: Interpolation<P>[]) => {
 		if (options?.shouldForwardProp) {
 			options.shouldForwardProp = shouldForwardProp
 		}

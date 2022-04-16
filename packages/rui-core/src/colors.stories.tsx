@@ -27,16 +27,16 @@ const Colors = () => {
 										alignItems="flex-start"
 										spacing="xs">
 										<sxc.div
-											sx={theme => ({
+											sx={{
 												height: '8rem',
 												width: '100%',
 												background: colorHex,
-												[theme.media.sm]: {
+												_sm: {
 													width: '5rem',
 													height: '5rem',
 													minWidth: '5rem'
 												}
-											})}
+											}}
 										/>
 										<div>
 											<Text sx={{ textTransform: 'capitalize' }}>

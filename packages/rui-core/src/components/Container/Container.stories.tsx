@@ -16,10 +16,10 @@ export default {
 const Template: Story<Props> = args => (
 	<Container
 		{...args}
-		sx={theme => ({
+		sx={{
 			height: '30rem',
-			background: theme.palette.surface.variant
-		})}
+			background: 'surface.variant'
+		}}
 	/>
 )
 export const Default = Template.bind({})

@@ -5,6 +5,7 @@
 	"dependencies": {
 		"@ctrl/tinycolor": "^3.4.1",
 		"@rui/hooks": "workspace:*",
+		"@rui/styles": "workspace:*",
 		"@rui/utils": "workspace:*",
 		"deepmerge": "^4.2.2"
 	},
