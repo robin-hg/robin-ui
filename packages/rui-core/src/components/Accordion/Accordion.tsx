@@ -1,18 +1,20 @@
+import type { DefaultProps } from '@rui/types'
 import { ChevronDown } from '@rui/icons'
 import React, { useEffect, useState } from 'react'
-import { handleEnter } from '@rui/utils'
-import { AccordionContainer, AccordionContent, AccordionSummary } from './Accordion.style'
+import { handleKeyPress } from '@rui/utils'
+import { AccordionContent, AccordionSummary } from './Accordion.style'
 
-import Typography from '@rui/components/Typography'
+import { Text } from '../Typography'
+import { BaseContainer } from '../BaseContainer'
 
-export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'summary'> {
+export interface Props extends DefaultProps<HTMLDivElement, 'summary'> {
 	open?: boolean
 	disabled?: boolean
 	summary?: React.ReactNode
 	onClick?: () => void
 }
 
-const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { open: openOverride, disabled, summary, children, onClick, ...otherProps } = props
 	const [open, setOpen] = useState(!!openOverride)
 
@@ -33,24 +35,24 @@ const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}
 
 	return (
-		<AccordionContainer ref={ref} $disabled={!!disabled} {...otherProps} elevation={0}>
+		<BaseContainer ref={ref} {...otherProps}>
 			<AccordionSummary
 				role="button"
 				$open={open}
 				$expandable={expandable}
 				$disabled={!!disabled}
 				onClick={toggleOpen}
-				onKeyDown={handleEnter(toggleOpen)}
-				tabIndex={expandable ? 0 : -1}>
-				<Typography component="div" bold color="inherit">
+				onKeyDown={handleKeyPress('Enter', toggleOpen)}
+				tabIndex={expandable ? 0 : -1}
+				aria-disabled={disabled}>
+				<Text as="div" bold color="inherit">
 					{summary}
-				</Typography>
+				</Text>
 				{!!children && <ChevronDown size={20} />}
 			</AccordionSummary>
 			{children && <AccordionContent open={!disabled && open}>{children}</AccordionContent>}
-		</AccordionContainer>
+		</BaseContainer>
 	)
 })
 
 Accordion.displayName = 'Accordion'
-export default Accordion

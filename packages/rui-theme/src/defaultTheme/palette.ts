@@ -48,7 +48,7 @@ export const lightPalette: Palette = {
 		base: colors.gray[0],
 		onBase: colors.gray[700]
 	},
-	outline: colors.gray[500]
+	outline: colors.gray[400]
 }
 
 export const darkPalette: Palette = {

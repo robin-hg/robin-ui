@@ -1,5 +1,6 @@
 export * from '@rui/types'
 
+export { Accordion } from './components/Accordion'
 export { BaseContainer } from './components/BaseContainer'
 export { ClickAwayListener } from './components/ClickAwayListener'
 export { Container } from './components/Container'

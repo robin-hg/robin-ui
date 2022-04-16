@@ -1,7 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
 
-import Accordion, { type Props } from './Accordion'
-import Typography from '@rui/components/Typography'
+import { Accordion, type Props } from './Accordion'
+import { Text } from '../Typography'
 
 export default {
 	title: 'Surface/Accordion',
@@ -17,7 +17,7 @@ export default {
 const Template: Story<Props> = args => {
 	return (
 		<Accordion {...args}>
-			<Typography>
+			<Text>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum suscipit rutrum. Vivamus
 				tristique quis risus nec sodales. Mauris vel nulla ut ex dictum posuere. Cras ut ligula sit amet tortor
 				consequat scelerisque. Duis id neque ut sem finibus placerat mattis vel quam. Integer neque leo, porta
@@ -45,9 +45,8 @@ const Template: Story<Props> = args => {
 				ultrices erat quis sodales. Quisque quis ex odio. Nam sed nisi nibh. In dictum sapien ullamcorper
 				convallis rutrum. Donec quis eleifend urna. Sed molestie lacus vel velit porta, sed molestie lacus
 				dignissim. Mauris justo velit, euismod ut sapien id, vehicula scelerisque felis.
-			</Typography>
+			</Text>
 		</Accordion>
 	)
 }
 export const Default = Template.bind({})
-Default.storyName = 'Accordion'
