@@ -1,11 +1,12 @@
-import type { CSSObject, Theme } from '@emotion/react'
+import type { CSSObject } from '@emotion/react'
+import type { SX } from '@rui/styles'
 import { themeFactory } from './ThemeProvider/themeFactory'
 
 export type ColorMode = 'light' | 'dark' | 'system'
 export type DerrivedColorMode = 'light' | 'dark'
 
-export type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-export type SizeValue = Sizes | string | number
+export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+export type SizeValue = Size | string | number
 
 type DefaultColors =
 	| 'gray'
@@ -61,7 +62,7 @@ export interface Palette extends AdditionalColors {
 	outline: string
 }
 
-export interface TypographyProperties<V extends Sizes> {
+export interface TypographyProperties<V extends Size> {
 	fontFamily: React.CSSProperties['fontFamily']
 	fontWeight: React.CSSProperties['fontWeight']
 	fontSize: Record<V, React.CSSProperties['fontSize']>
@@ -69,13 +70,13 @@ export interface TypographyProperties<V extends Sizes> {
 }
 
 export interface BaseTheme {
-	global: CSSObject
-	componentStyles: Record<string, CSSObject | ((theme: Theme) => CSSObject)>
-	breakpoints: Record<Sizes, number | string>
-	spacing: Record<Sizes, number | string>
+	global: SX
+	componentStyles: Record<string, CSSObject>
+	breakpoints: Record<Size, number | string>
+	spacing: Record<Size, number | string>
 	typography: {
-		heading: TypographyProperties<Sizes>
-		text: TypographyProperties<Sizes>
+		heading: TypographyProperties<Size>
+		text: TypographyProperties<Size>
 		label: TypographyProperties<'lg' | 'md' | 'sm'>
 	}
 	colors: Record<DefaultColors, ColorObj>
@@ -101,11 +102,10 @@ export interface BaseTheme {
 	}
 }
 
-type Media = Record<Sizes, string>
+type Media = Record<Size, string>
 
 export type AugumentedTheme = BaseTheme & {
 	colorMode: 'light' | 'dark'
-	reducedMotion: boolean
 	palette: Palette
 	media: Media
 }

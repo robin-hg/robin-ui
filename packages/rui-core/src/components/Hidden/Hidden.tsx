@@ -1,8 +1,8 @@
-import type { Sizes } from '@rui/types'
+import type { Size } from '@rui/types'
 import { useWidthQuery } from '@rui/hooks'
 
 export interface Props {
-	breakpoint: Sizes
+	breakpoint: Size
 	direction?: 'up' | 'down'
 }
 

@@ -1,4 +1,4 @@
-export { createMedia } from './createMedia'
+export { createMediaBreakpoint } from './createMediaBreakpoint'
 export { getAccessibleColor } from './getAccessibleColor'
 export { getColor } from './getColor'
 export { getColorAlpha } from './getColorAlpha'
