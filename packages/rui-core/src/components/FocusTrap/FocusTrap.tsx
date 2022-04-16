@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { getFocusable } from '@rui/utils'
-import { useOnKeyPress, useMutableCallback } from '@rui/hooks'
+import { useKeyPress, useMutableCallback } from '@rui/hooks'
 
 export interface Props {
 	autofocus?: boolean
 	disabled?: boolean
 }
 
-const FocusTrap: React.FC<Props> = props => {
+export const FocusTrap: React.FC<Props> = props => {
 	const { autofocus, disabled, children } = props
 	const ref = useRef<HTMLDivElement>(null)
 
@@ -39,10 +39,9 @@ const FocusTrap: React.FC<Props> = props => {
 		next.focus()
 	})
 
-	useOnKeyPress('Tab', handleTab)
+	useKeyPress('Tab', handleTab)
 
 	return <div ref={ref}>{children}</div>
 }
 
 FocusTrap.displayName = 'FocusTrap'
-export default FocusTrap

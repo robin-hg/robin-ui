@@ -1,8 +1,8 @@
 import type { Story, Meta } from '@storybook/react'
 
-import FocusTrap, { type Props } from './FocusTrap'
-import Paper from '@rui/components/Paper'
-import TextInput from '@rui/components/TextInput'
+import { FocusTrap, type Props } from './FocusTrap'
+import { Paper } from '../Paper'
+import { Stack } from '../Stack'
 
 export default {
 	title: 'Utils/FocusTrap',
@@ -10,24 +10,23 @@ export default {
 } as Meta<Props>
 
 const Template: Story<Props> = args => (
-	<>
+	<Stack>
 		<FocusTrap {...args}>
-			<Paper sx={{ padding: '2rem' }}>
+			<Paper elevation={0} sx={{ padding: '2rem' }}>
 				<p>Once this section is focused</p>
 				<div>
-					<TextInput label="Input 1" />
+					<input />
 				</div>
 				<div>
-					<TextInput label="Input 2" />
+					<input />
 				</div>
 			</Paper>
 		</FocusTrap>
-		<Paper sx={{ padding: '2rem' }}>
+		<Paper elevation={0} sx={{ padding: '2rem' }}>
 			<p>This input cannot be focused by pressing Tab</p>
-			<TextInput label="Input 3" />
+			<input />
 		</Paper>
-	</>
+	</Stack>
 )
 
 export const Default = Template.bind({})
-Default.storyName = 'FocusTrap'
