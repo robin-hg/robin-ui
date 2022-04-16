@@ -31,11 +31,10 @@ export const defaultTheme: BaseTheme = {
 	colorModifiers: {
 		tint: 0.08,
 		hover: 0.08,
+		focus: 0.08,
 		active: 0.12,
-		disabled: {
-			base: 0.12,
-			onBase: 0.38
-		}
+		disabledBase: 0.12,
+		disabledOnBase: 0.5
 	},
 	borderRadius: '0.8rem',
 	transition: {

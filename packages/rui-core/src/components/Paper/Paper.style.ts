@@ -25,11 +25,11 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 		theme.fn.getVariant(
 			{
 				base: {
-					background: theme.fn.getColorTint('surface', $tint, theme.colorModifiers.tint),
+					background: theme.fn.getColorTint('surface', $tint, 'tint'),
 					color: theme.palette.surface.onBase
 				},
 				variant: {
-					background: theme.fn.getColorTint('surface.variant', $tint, theme.colorModifiers.tint),
+					background: theme.fn.getColorTint('surface.variant', $tint, 'tint'),
 					color: theme.palette.surface.onVariant
 				}
 			},

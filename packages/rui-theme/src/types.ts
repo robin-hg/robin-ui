@@ -8,6 +8,8 @@ export type DerrivedColorMode = 'light' | 'dark'
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number
 
+export type Modifier = 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
+
 type DefaultColors =
 	| 'gray'
 	| 'red'
@@ -82,15 +84,7 @@ export interface BaseTheme {
 	colors: Record<DefaultColors, ColorObj>
 	lightPalette: Palette
 	darkPalette: Palette
-	colorModifiers: {
-		tint: number
-		hover: number
-		active: number
-		disabled: {
-			base: number
-			onBase: number
-		}
-	}
+	colorModifiers: Record<Modifier, number>
 	borderRadius: React.CSSProperties['borderRadius']
 	transition: {
 		duration: React.CSSProperties['transitionDuration']
