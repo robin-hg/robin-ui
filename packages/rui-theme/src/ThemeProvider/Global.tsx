@@ -8,7 +8,7 @@ export const Global = () => (
 					padding: 0,
 					margin: 0,
 					fontSize: '62.5%',
-					scrollBehavior: theme.reducedMotion ? 'auto' : 'smooth'
+					scrollBehavior: 'smooth'
 				},
 				body: {
 					padding: 0,
@@ -26,6 +26,14 @@ export const Global = () => (
 				'img, picture, video, canvas, svg': {
 					display: 'block',
 					maxWidth: '100%'
+				},
+				'@media (prefers-reduced-motion)': {
+					html: {
+						scrollBehavior: 'auto'
+					},
+					'*, *::before, *::after': {
+						transitionDuration: '0ms !important'
+					}
 				}
 			}),
 			theme => theme.global
