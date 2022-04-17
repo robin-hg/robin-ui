@@ -6,6 +6,7 @@ import { FadeContainer } from './Fade.style'
 
 export interface Props extends TimeoutProps<HTMLDivElement> {
 	timeout: number
+	children?: React.ReactNode
 }
 
 export const Fade = React.forwardRef<HTMLDivElement, Props>((props, ref) => {

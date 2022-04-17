@@ -2,7 +2,7 @@ import React from 'react'
 import type { DefaultProps } from '@rui/types'
 import { useTheme } from '@rui/hooks'
 
-export interface Props extends DefaultProps<SVGElement> {
+export interface Props extends DefaultProps<SVGElement, 'children'> {
 	color?: string
 	size?: number
 	strokeWidth?: number

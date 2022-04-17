@@ -4,7 +4,7 @@ import { parseSize } from '@rui/utils'
 
 import { DividerLine } from './Divider.style'
 
-export interface Props extends DefaultProps<HTMLHRElement> {
+export interface Props extends DefaultProps<HTMLHRElement, 'children'> {
 	orientation?: 'horizontal' | 'vertical'
 	thickness?: number | string
 	spacing?: SizeValue

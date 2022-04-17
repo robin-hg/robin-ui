@@ -7,6 +7,6 @@
 		"@rui/theme": "workspace:*"
 	},
 	"peerDependencies": {
-		"react": "^17"
+		"react": "^17 || ^18"
 	}
 }

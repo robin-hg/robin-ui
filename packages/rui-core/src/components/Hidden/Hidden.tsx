@@ -4,6 +4,7 @@ import { useWidthQuery } from '@rui/hooks'
 export interface Props {
 	breakpoint: Size
 	direction?: 'up' | 'down'
+	children?: React.ReactNode
 }
 
 export const Hidden: React.FC<Props> = props => {

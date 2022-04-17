@@ -7,6 +7,7 @@ export interface Props {
 	 * @default document.body
 	 */
 	targetRef?: React.RefObject<HTMLElement>
+	children?: React.ReactNode
 }
 
 export const Portal: React.FC<Props> = props => {

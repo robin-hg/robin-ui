@@ -8,7 +8,7 @@
 		"@rui/types": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/react": "^17.0.44",
+		"@types/react": "^18.0.5",
 		"react": "^17.0.2"
 	},
 	"peerDependencies": {

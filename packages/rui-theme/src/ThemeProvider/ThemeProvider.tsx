@@ -10,6 +10,7 @@ interface Props {
 	colorMode?: ColorMode
 	forcedColorMode?: boolean
 	theme?: Partial<BaseTheme>
+	children?: React.ReactNode
 }
 
 export const ThemeProvider: React.FC<Props> = props => {

@@ -5,6 +5,7 @@ import { useKeyPress, useMutableCallback } from '@rui/hooks'
 export interface Props {
 	autofocus?: boolean
 	disabled?: boolean
+	children?: React.ReactNode
 }
 
 export const FocusTrap: React.FC<Props> = props => {
