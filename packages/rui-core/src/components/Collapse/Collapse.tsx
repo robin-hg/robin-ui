@@ -10,7 +10,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	unmountOnExit?: boolean
 }
 
-export const Expand = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Collapse = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { open, duration = 200, ease = 'easeOut', unmountOnExit, children, ...otherProps } = props
 
 	const show = unmountOnExit ? open : true
@@ -38,4 +38,4 @@ export const Expand = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	)
 })
 
-Expand.displayName = 'Expand'
+Collapse.displayName = 'Collapse'

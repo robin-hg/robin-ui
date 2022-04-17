@@ -1,6 +1,6 @@
 import styled from '@rui/styles'
 import { BaseContainer } from '../BaseContainer'
-import { Expand } from '../Expand'
+import { Collapse } from '../Collapse'
 
 export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
 	borderBottom: `solid 0.1rem ${theme.palette.outline}`
@@ -44,6 +44,6 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(
 		}
 )
 
-export const AccordionContent = styled(Expand)(({ theme }) => ({
+export const AccordionContent = styled(Collapse)(({ theme }) => ({
 	padding: theme.fn.getSpacing('md')
 }))
