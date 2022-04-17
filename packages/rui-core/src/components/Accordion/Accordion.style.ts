@@ -1,6 +1,6 @@
 import styled from '@rui/styles'
 import { BaseContainer } from '../BaseContainer'
-import { Collapse } from '../Collapse'
+import { Collapse } from '../Transition'
 
 export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
 	borderBottom: `solid 0.1rem ${theme.palette.outline}`
