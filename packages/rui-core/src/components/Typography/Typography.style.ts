@@ -1,7 +1,7 @@
 import type { SizeValue } from '@rui/types'
 import styled from '@rui/styles'
 
-interface TypographyProps {
+interface StyledTextProps {
 	$variant: 'heading' | 'text' | 'label'
 	$size: SizeValue
 	$color: string
@@ -12,7 +12,7 @@ interface TypographyProps {
 	$fontWeight?: number
 }
 
-export const StyledText = styled.div<TypographyProps>(
+export const StyledText = styled.div<StyledTextProps>(
 	({ theme, $variant, $size, $color, $decoration, $highlight, $fontWeight, $italic, $bold }) => ({
 		margin: 0,
 		fontFamily: theme.typography[$variant].fontFamily,
