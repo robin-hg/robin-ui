@@ -6,10 +6,10 @@ export const useDebouncedCallback = <T extends (...args: any[]) => void>(callbac
 
 	return useMutableCallback((...args: Parameters<T>) => {
 		if (timeout.current) {
-			clearTimeout(timeout.current)
+			window.clearTimeout(timeout.current)
 		}
 
-		timeout.current = setTimeout(() => {
+		timeout.current = window.setTimeout(() => {
 			callback(...args)
 		}, delay)
 	})

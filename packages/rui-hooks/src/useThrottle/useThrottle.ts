@@ -16,15 +16,15 @@ export const useThrottle = <T>(value: T, delay = 500) => {
 			if (waitingValue.current) {
 				setThrottledValue(waitingValue.current)
 				waitingValue.current = undefined
-				timeout.current = setTimeout(timeoutCallback, delay)
+				timeout.current = window.setTimeout(timeoutCallback, delay)
 			} else {
 				timeout.current = undefined
 			}
 		}
 
-		timeout.current = setTimeout(timeoutCallback, delay)
+		timeout.current = window.setTimeout(timeoutCallback, delay)
 		return () => {
-			clearTimeout(timeout.current)
+			window.clearTimeout(timeout.current)
 		}
 	}, [value, delay])
 

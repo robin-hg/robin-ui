@@ -5,9 +5,9 @@ export const useTimeout = (callback: () => void, ms = 500, dependencies: React.D
 	const savedCallback = useMutableCallback(callback)
 
 	useEffect(() => {
-		const timeout = setTimeout(savedCallback, ms)
+		const timeout = window.setTimeout(savedCallback, ms)
 		return () => {
-			clearTimeout(timeout)
+			window.clearTimeout(timeout)
 		}
 	}, dependencies)
 }

@@ -5,30 +5,24 @@ module.exports = {
 	addons: [
 		{ name: '@storybook/addon-essentials', options: { backgrounds: false } },
 		'@storybook/addon-a11y',
-		'storybook-addon-performance/register',
 		'storybook-dark-mode/register'
 	],
 	framework: '@storybook/react',
-	features: { emotionAlias: false },
-	webpackFinal: config => {
-		config.resolve.alias = {
-			...config.resolve.alias,
-			'@emotion/react': require.resolve('@emotion/react'),
-			'@emotion/styled': require.resolve('@emotion/styled')
-		}
-		return config
-	}
+	features: { emotionAlias: false }
+	// webpackFinal: config => {
+	// 	config.resolve.alias = {
+	// 		...config.resolve.alias,
+	// 		'@emotion/react': require.resolve('@emotion/react'),
+	// 		'@emotion/styled': require.resolve('@emotion/styled')
+	// 	}
+	// 	return config
+	// }
 	// viteFinal: config => {
 	// 	config.resolve.alias = {
 	// 		...config.resolve.alias,
 	// 		'@emotion/react': require.resolve('@emotion/react'),
 	// 		'@emotion/styled': require.resolve('@emotion/styled')
 	// 	}
-	// 	config.optimizeDeps.include = [
-	// 		...(config.optimizeDeps.include ?? []),
-	// 		'@storybook/theming',
-	// 		'storybook-dark-mode'
-	// 	]
 	// 	return config
 	// }
 }
