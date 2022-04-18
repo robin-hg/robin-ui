@@ -2,6 +2,7 @@ import type { SizeValue } from '@rui/types'
 import styled from '@rui/styles'
 
 interface GridContainerProps {
+	$xs?: number
 	$sm?: number
 	$md?: number
 	$lg?: number
@@ -35,6 +36,12 @@ export const GridContainer = styled.div<GridContainerProps>(
 		$sm && {
 			[theme.media.sm]: {
 				gridTemplateColumns: `repeat(${$sm}, 1fr)`
+			}
+		},
+	({ theme, $xs }) =>
+		$xs && {
+			[theme.media.xs]: {
+				gridTemplateColumns: `repeat(${$xs}, 1fr)`
 			}
 		}
 )

@@ -4,7 +4,7 @@ import React from 'react'
 import { GridContainer } from './Grid.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
-	columns?: number | { sm?: number; md?: number; lg?: number; xl: number }
+	columns?: number | { xs?: number; sm?: number; md?: number; lg?: number; xl: number }
 	spacing?: SizeValue | [SizeValue, SizeValue]
 }
 
@@ -16,6 +16,7 @@ export const Grid = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	return (
 		<GridContainer
 			ref={ref}
+			$xs={!staticColumns ? columns.xs : undefined}
 			$sm={!staticColumns ? columns.sm : undefined}
 			$md={!staticColumns ? columns.md : undefined}
 			$lg={!staticColumns ? columns.lg : undefined}
