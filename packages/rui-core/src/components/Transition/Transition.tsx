@@ -8,32 +8,42 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	duration?: number
 	ease?: Easing
 	unmountOnExit?: boolean
+	motionOnly?: boolean
 }
 
 const TransitionFactory = (animation: Variants) => {
 	const Transition = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-		const { in: inProp, duration = 200, ease = 'easeOut', unmountOnExit, children, ...otherProps } = props
+		const {
+			in: inProp,
+			duration = 200,
+			ease = 'easeOut',
+			unmountOnExit,
+			motionOnly,
+			children,
+			...otherProps
+		} = props
 
 		const show = unmountOnExit ? inProp : true
-		const animate = inProp || unmountOnExit ? 'enter' : 'exit'
+		const animate = inProp ? 'enter' : 'exit'
 
-		return (
-			<AnimatePresence initial={false}>
-				{show && (
-					<motion.div
-						initial={unmountOnExit ? 'exit' : false}
-						animate={animate}
-						exit="exit"
-						variants={animation}
-						transition={{ duration: duration / 1000, ease }}
-						style={{ overflow: 'hidden' }}>
-						<div ref={ref} {...otherProps}>
-							{children}
-						</div>
-					</motion.div>
-				)}
-			</AnimatePresence>
+		const transition = (
+			<motion.div
+				initial={unmountOnExit ? 'exit' : false}
+				animate={animate}
+				exit="exit"
+				variants={animation}
+				transition={{ duration: duration / 1000, ease }}>
+				<div ref={ref} {...otherProps}>
+					{children}
+				</div>
+			</motion.div>
 		)
+
+		if (motionOnly) {
+			return transition
+		}
+
+		return <AnimatePresence initial={false}>{show && transition}</AnimatePresence>
 	})
 
 	Transition.displayName = 'Collapse'
@@ -48,5 +58,10 @@ export const Fade = TransitionFactory({
 
 export const Collapse = TransitionFactory({
 	enter: { height: 'auto' },
-	exit: { height: 0 }
+	exit: { height: 0, overflow: 'hidden' }
+})
+
+export const Grow = TransitionFactory({
+	enter: { opacity: 1, transform: 'scale(1)' },
+	exit: { opacity: 0, transform: 'scale(0.75)' }
 })
