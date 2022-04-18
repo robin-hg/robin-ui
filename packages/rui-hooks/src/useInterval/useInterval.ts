@@ -5,9 +5,9 @@ export const useInterval = (callback: () => void, ms = 500, dependencies: React.
 	const savedCallback = useMutableCallback(callback)
 
 	useEffect(() => {
-		const timeout = setInterval(savedCallback, ms)
+		const intervalId = setInterval(savedCallback, ms)
 		return () => {
-			clearInterval(timeout)
+			clearInterval(intervalId)
 		}
 	}, dependencies)
 }
