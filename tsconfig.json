@@ -7,7 +7,6 @@
 		"strict": true,
 		"moduleResolution": "Node",
 		"esModuleInterop": true,
-		// "skipLibCheck": true,
 		"allowSyntheticDefaultImports": true,
 		"preserveValueImports": true,
 		"isolatedModules": true,
