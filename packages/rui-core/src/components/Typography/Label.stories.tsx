@@ -9,7 +9,7 @@ export default {
 	component: Label,
 	args: {
 		size: 'md',
-		fontWeight: 500,
+		fontWeight: 600,
 		children: 'Lorem ipsum'
 	},
 	argTypes: {

@@ -40,14 +40,14 @@ export const text: TypographyProperties<Size> = {
 
 export const label: TypographyProperties<'sm' | 'md' | 'lg'> = {
 	fontFamily: '"Noto Sans", Arial, sans-serif',
-	fontWeight: 500,
+	fontWeight: 600,
 	fontSize: {
 		sm: '1.1rem',
 		md: '1.2rem',
 		lg: '1.4rem'
 	},
 	lineHeight: {
-		sm: 0.6,
+		sm: 1.2,
 		md: 1.33,
 		lg: 1.42
 	}
