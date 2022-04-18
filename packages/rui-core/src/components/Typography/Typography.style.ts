@@ -1,11 +1,11 @@
-import type { SizeValue } from '@rui/types'
+import type { SizeValue, ColorToken } from '@rui/types'
 import styled from '@rui/styles'
 
 interface StyledTextProps {
 	$variant: 'heading' | 'text' | 'label'
 	$size: SizeValue
-	$color: string
-	$highlight: string
+	$color: ColorToken
+	$highlight: ColorToken
 	$bold: boolean
 	$italic: boolean
 	$decoration: string

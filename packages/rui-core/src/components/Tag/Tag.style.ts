@@ -1,8 +1,9 @@
+import type { ColorToken } from '@rui/types'
 import styled from '@rui/styles'
 
 interface TagContainerProps {
 	$variant: 'filled' | 'outlined'
-	$color: string
+	$color: ColorToken
 	$size: 'sm' | 'md' | 'lg'
 }
 

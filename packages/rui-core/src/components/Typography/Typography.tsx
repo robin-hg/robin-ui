@@ -1,4 +1,4 @@
-import type { DefaultProps, SizeValue } from '@rui/types'
+import type { DefaultProps, SizeValue, ColorToken } from '@rui/types'
 import React from 'react'
 
 import { StyledText } from './Typography.style'
@@ -7,8 +7,8 @@ export interface Props extends DefaultProps<HTMLParagraphElement, 'size'> {
 	size?: SizeValue
 	fontWeight?: number
 	bold?: boolean
-	color?: string
-	highlight?: string
+	color?: ColorToken
+	highlight?: ColorToken
 	italic?: boolean
 	underline?: boolean
 	strikethrough?: boolean

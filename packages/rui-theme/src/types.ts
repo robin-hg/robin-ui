@@ -10,7 +10,7 @@ export type SizeValue = Size | string | number
 
 export type Modifier = 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
 
-type DefaultColors =
+type DefaultColor =
 	| 'gray'
 	| 'red'
 	| 'pink'
@@ -38,31 +38,38 @@ export interface ColorObj {
 	900: string
 }
 
+export interface AdditionalColors extends Record<string, ColorObj> {}
+
 interface PaletteColor {
 	base: string
 	onBase: string
 }
 
-interface PaletteColorWithVariant {
-	base: string
-	onBase: string
+interface PaletteColorWithVariant extends PaletteColor {
 	variant: string
 	onVariant: string
 }
 
-export interface AdditionalColors extends Record<string, string | PaletteColor | PaletteColorWithVariant> {}
+type PaletteKey = 'background'
+type PaletteKeyWithVariant = 'primary' | 'secondary' | 'critical' | 'warning' | 'info' | 'success' | 'surface'
 
-export interface Palette extends AdditionalColors {
-	primary: PaletteColorWithVariant
-	secondary: PaletteColorWithVariant
-	critical: PaletteColorWithVariant
-	warning: PaletteColorWithVariant
-	info: PaletteColorWithVariant
-	success: PaletteColorWithVariant
-	surface: PaletteColorWithVariant
-	background: PaletteColor
+export interface AdditionalPalette extends Record<string, string | PaletteColor | PaletteColorWithVariant> {}
+
+interface DefaultPalette
+	extends Record<PaletteKey, PaletteColor>,
+		Record<PaletteKeyWithVariant, PaletteColorWithVariant> {
 	outline: string
 }
+
+export type Palette = DefaultPalette & AdditionalPalette
+
+export type ColorToken =
+	| `${keyof DefaultPalette}`
+	| `${PaletteKeyWithVariant}.${keyof PaletteColorWithVariant}`
+	| `${PaletteKey}.${keyof PaletteColor}`
+	| `${DefaultColor}.${keyof ColorObj}`
+	| (`${keyof AdditionalPalette}` & Record<never, never>)
+	| (string & Record<never, never>)
 
 export interface TypographyProperties<V extends Size> {
 	fontFamily: React.CSSProperties['fontFamily']
@@ -81,7 +88,7 @@ export interface BaseTheme {
 		text: TypographyProperties<Size>
 		label: TypographyProperties<'sm' | 'md' | 'lg'>
 	}
-	colors: Record<DefaultColors, ColorObj>
+	colors: Record<DefaultColor, ColorObj> & AdditionalColors
 	lightPalette: Palette
 	darkPalette: Palette
 	colorModifiers: Record<Modifier, number>
@@ -96,12 +103,10 @@ export interface BaseTheme {
 	}
 }
 
-type Media = Record<Size, string>
-
 export type AugumentedTheme = BaseTheme & {
 	colorMode: 'light' | 'dark'
 	palette: Palette
-	media: Media
+	media: Record<Size, string>
 }
 
 export interface RUITheme extends AugumentedTheme {

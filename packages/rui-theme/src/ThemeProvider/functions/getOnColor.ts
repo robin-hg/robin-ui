@@ -1,10 +1,10 @@
-import type { AugumentedTheme } from '../../types'
+import type { AugumentedTheme, ColorToken } from '../../types'
 import { mostReadable } from '@ctrl/tinycolor'
 import { getColor as _getColor } from './getColor'
 import { get, memoize } from '@rui/utils'
 
 export const getOnColor = (theme: AugumentedTheme) =>
-	memoize((background: string) => {
+	memoize((background: ColorToken) => {
 		const [base, variant = 'base'] = background.split('.')
 		const v = variant === 'base' ? 'onBase' : 'onVariant'
 		const onColor = get<string | undefined>(theme.palette, [base, v])

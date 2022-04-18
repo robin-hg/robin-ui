@@ -1,4 +1,4 @@
-export const colorProperties = new Set([
+const supportedColorProperties = [
 	'background',
 	'backgroundColor',
 	'border',
@@ -14,9 +14,11 @@ export const colorProperties = new Set([
 	'textDecorationColor',
 	'fill',
 	'stroke'
-])
+] as const
+export const colorProperties = new Set<string>(supportedColorProperties)
+export type SupportedColorProp = typeof supportedColorProperties[number]
 
-export const spacingProperties = new Set([
+const supportedSpacingProperties = [
 	'gap',
 	'columnGap',
 	'rowGap',
@@ -34,4 +36,6 @@ export const spacingProperties = new Set([
 	'right',
 	'bottom',
 	'left'
-])
+] as const
+export const spacingProperties = new Set<string>(supportedSpacingProperties)
+export type SupportedSpacingProp = typeof supportedSpacingProperties[number]

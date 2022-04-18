@@ -1,4 +1,4 @@
-import type { DefaultProps, SizeValue } from '@rui/types'
+import type { DefaultProps, SizeValue, ColorToken } from '@rui/types'
 import React from 'react'
 
 import { PaperContainer } from './Paper.style'
@@ -7,7 +7,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	variant?: 'flat' | 'elevated' | 'outlined'
 	elevation?: number
 	surfaceColor?: 'base' | 'variant'
-	tint?: string
+	tint?: ColorToken
 	padding?: SizeValue | SizeValue[]
 	as?: React.ElementType
 }

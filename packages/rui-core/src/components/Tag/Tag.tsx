@@ -1,4 +1,4 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps, ColorToken } from '@rui/types'
 import React from 'react'
 
 import { TagContainer } from './Tag.style'
@@ -9,7 +9,7 @@ export interface Props extends DefaultProps<HTMLSpanElement, 'size'> {
 	 * Tag color.
 	 * @default primary
 	 */
-	color?: string
+	color?: ColorToken
 	/**
 	 * Tag size.
 	 * @default md
