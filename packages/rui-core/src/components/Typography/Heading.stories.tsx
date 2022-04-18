@@ -13,7 +13,7 @@ export default {
 		children: 'Lorem ipsum'
 	},
 	argTypes: {
-		size: { control: { type: 'radio' }, options: ['xl', 'lg', 'md', 'sm', 'xs'] },
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
 		fontWeight: { control: { type: 'select' }, options: [400, 700] },
 		component: { control: false }
 	}
