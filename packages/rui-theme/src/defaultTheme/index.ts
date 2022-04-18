@@ -7,18 +7,18 @@ export const defaultTheme: BaseTheme = {
 	global: {},
 	componentStyles: {},
 	breakpoints: {
-		xl: 1536,
-		lg: 1200,
-		md: 900,
+		xs: 0,
 		sm: 600,
-		xs: 0
+		md: 900,
+		lg: 1200,
+		xl: 1536
 	},
 	spacing: {
-		xl: '3.6rem',
-		lg: '2.4rem',
-		md: '1.6rem',
+		xs: '0.4rem',
 		sm: '0.8rem',
-		xs: '0.4rem'
+		md: '1.6rem',
+		lg: '2.4rem',
+		xl: '3.6rem'
 	},
 	typography: {
 		heading,

@@ -4,18 +4,18 @@ export const heading: TypographyProperties<Size> = {
 	fontFamily: '"Noto Serif", Arial, sans-serif',
 	fontWeight: 400,
 	fontSize: {
-		xl: '5.7rem',
-		lg: '5.2rem',
-		md: '3.6rem',
+		xs: '2.8rem',
 		sm: '3.2rem',
-		xs: '2.8rem'
+		md: '3.6rem',
+		lg: '5.2rem',
+		xl: '5.7rem'
 	},
 	lineHeight: {
-		xl: 1.12,
-		lg: 1.16,
-		md: 1.22,
+		xs: 1.28,
 		sm: 1.25,
-		xs: 1.28
+		md: 1.22,
+		lg: 1.16,
+		xl: 1.12
 	}
 }
 
@@ -23,32 +23,32 @@ export const text: TypographyProperties<Size> = {
 	fontFamily: '"Noto Sans", Arial, sans-serif',
 	fontWeight: 400,
 	fontSize: {
-		xl: '2.2rem',
-		lg: '1.8rem',
-		md: '1.6rem',
+		xs: '1.2rem',
 		sm: '1.4rem',
-		xs: '1.2rem'
+		md: '1.6rem',
+		lg: '1.8rem',
+		xl: '2.2rem'
 	},
 	lineHeight: {
-		xl: 1.28,
-		lg: 1.4,
-		md: 1.5,
+		xs: 1.33,
 		sm: 1.42,
-		xs: 1.33
+		md: 1.5,
+		lg: 1.4,
+		xl: 1.28
 	}
 }
 
-export const label: TypographyProperties<'lg' | 'md' | 'sm'> = {
+export const label: TypographyProperties<'sm' | 'md' | 'lg'> = {
 	fontFamily: '"Noto Sans", Arial, sans-serif',
 	fontWeight: 500,
 	fontSize: {
-		lg: '1.4rem',
+		sm: '1.1rem',
 		md: '1.2rem',
-		sm: '1.1rem'
+		lg: '1.4rem'
 	},
 	lineHeight: {
-		lg: 1.42,
+		sm: 0.6,
 		md: 1.33,
-		sm: 0.6
+		lg: 1.42
 	}
 }

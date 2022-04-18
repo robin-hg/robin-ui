@@ -79,7 +79,7 @@ export interface BaseTheme {
 	typography: {
 		heading: TypographyProperties<Size>
 		text: TypographyProperties<Size>
-		label: TypographyProperties<'lg' | 'md' | 'sm'>
+		label: TypographyProperties<'sm' | 'md' | 'lg'>
 	}
 	colors: Record<DefaultColors, ColorObj>
 	lightPalette: Palette
