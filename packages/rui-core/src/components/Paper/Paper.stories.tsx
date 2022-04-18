@@ -6,7 +6,8 @@ export default {
 	title: 'Surface/Paper',
 	component: Paper,
 	args: {
-		variant: 'base',
+		variant: 'elevated',
+		surfaceColor: 'base',
 		tint: 'primary',
 		elevation: 1
 	},

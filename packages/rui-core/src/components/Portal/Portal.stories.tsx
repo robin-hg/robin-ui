@@ -18,13 +18,13 @@ const Template: Story<Props> = args => {
 
 	return (
 		<Stack>
-			<Paper elevation={0}>
+			<Paper variant="flat">
 				I should be rendered in here.
 				<Portal {...args} targetRef={ref}>
 					But I am rendered here.
 				</Portal>
 			</Paper>
-			<Paper ref={ref} elevation={0} />
+			<Paper ref={ref} variant="flat" />
 		</Stack>
 	)
 }

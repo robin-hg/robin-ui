@@ -22,9 +22,9 @@ const Element = styled(Paper)({
 
 const Template: Story<Props> = args => (
 	<Stack {...args}>
-		<Element elevation={0}>1</Element>
-		<Element elevation={0}>2</Element>
-		<Element elevation={0}>3</Element>
+		<Element variant="flat">1</Element>
+		<Element variant="flat">2</Element>
+		<Element variant="flat">3</Element>
 	</Stack>
 )
 export const Default = Template.bind({})

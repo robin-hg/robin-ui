@@ -12,7 +12,7 @@ export default {
 const Template: Story<Props> = args => (
 	<Stack>
 		<FocusTrap {...args}>
-			<Paper elevation={0} sx={{ padding: '2rem' }}>
+			<Paper variant="flat" sx={{ padding: '2rem' }}>
 				<p>Once this section is focused</p>
 				<div>
 					<input />
@@ -22,7 +22,7 @@ const Template: Story<Props> = args => (
 				</div>
 			</Paper>
 		</FocusTrap>
-		<Paper elevation={0} sx={{ padding: '2rem' }}>
+		<Paper variant="flat" sx={{ padding: '2rem' }}>
 			<p>This input cannot be focused by pressing Tab</p>
 			<input />
 		</Paper>

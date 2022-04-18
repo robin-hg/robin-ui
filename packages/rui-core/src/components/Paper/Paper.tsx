@@ -4,21 +4,21 @@ import React from 'react'
 import { PaperContainer } from './Paper.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
-	variant?: 'base' | 'variant'
-	tint?: string
+	variant?: 'flat' | 'elevated' | 'outlined'
 	elevation?: number
-	outlined?: boolean
+	surfaceColor?: 'base' | 'variant'
+	tint?: string
 	padding?: SizeValue | SizeValue[]
 	as?: React.ElementType
 }
 
 export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
-		variant = 'base',
-		tint = 'primary',
+		variant = 'elevated',
 		elevation = 1,
+		surfaceColor = 'base',
+		tint = 'primary',
 		padding = 'md',
-		outlined,
 		as,
 		children,
 		...otherProps
@@ -29,9 +29,9 @@ export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			ref={ref}
 			as={as}
 			$variant={variant}
+			$surfaceColor={surfaceColor}
 			$tint={tint}
 			$elevation={elevation}
-			$outlined={!!outlined}
 			$padding={padding}
 			{...otherProps}>
 			{children}

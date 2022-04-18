@@ -14,7 +14,7 @@ export default {
 const Template: Story<Props> = args => {
 	const [toggle, setToggle] = useState(false)
 	return (
-		<Paper onClick={() => setToggle(!toggle)} elevation={0} sx={{ display: 'inline-block', userSelect: 'none' }}>
+		<Paper onClick={() => setToggle(!toggle)} variant="flat" sx={{ display: 'inline-block', userSelect: 'none' }}>
 			<DynamicResizer {...args}>
 				<Text>
 					{!toggle

@@ -14,7 +14,7 @@ export default {
 
 const Template: Story<Props> = args => (
 	<Hidden {...args}>
-		<Paper elevation={0}>Hidden on {args.breakpoint}</Paper>
+		<Paper variant="flat">Hidden on {args.breakpoint}</Paper>
 	</Hidden>
 )
 export const Default = Template.bind({})
