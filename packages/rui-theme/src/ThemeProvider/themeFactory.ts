@@ -3,6 +3,7 @@ import {
 	getColor,
 	getColorAlpha,
 	getColorTint,
+	getOnColor,
 	getSize,
 	getSpacing,
 	getTransition
@@ -29,6 +30,7 @@ export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode) => 
 		getColor: getColor(augumentedTheme),
 		getColorAlpha: getColorAlpha(augumentedTheme),
 		getColorTint: getColorTint(augumentedTheme),
+		getOnColor: getOnColor(augumentedTheme),
 		getSize,
 		getSpacing: getSpacing(augumentedTheme),
 		getTransition: getTransition(augumentedTheme)
