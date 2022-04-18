@@ -22,19 +22,16 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 		boxShadow: theme.shadow.generateShadow($elevation)
 	}),
 	({ theme, $variant, $tint }) =>
-		theme.fn.getVariant(
-			{
-				base: {
-					background: theme.fn.getColorTint('surface', $tint, 'tint'),
-					color: theme.palette.surface.onBase
-				},
-				variant: {
-					background: theme.fn.getColorTint('surface.variant', $tint, 'tint'),
-					color: theme.palette.surface.onVariant
-				}
+		({
+			base: {
+				background: theme.fn.getColorTint('surface', $tint, 'tint'),
+				color: theme.palette.surface.onBase
 			},
-			$variant
-		),
+			variant: {
+				background: theme.fn.getColorTint('surface.variant', $tint, 'tint'),
+				color: theme.palette.surface.onVariant
+			}
+		}[$variant]),
 	({ theme, $outlined }) =>
 		$outlined && {
 			border: `solid 0.1rem ${theme.palette.outline}`

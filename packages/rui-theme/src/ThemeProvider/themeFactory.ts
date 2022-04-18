@@ -5,8 +5,7 @@ import {
 	getColorTint,
 	getSize,
 	getSpacing,
-	getTransition,
-	getVariant
+	getTransition
 } from './functions'
 import type { BaseTheme, AugumentedTheme, DerrivedColorMode } from '../types'
 
@@ -32,8 +31,7 @@ export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode) => 
 		getColorTint: getColorTint(augumentedTheme),
 		getSize,
 		getSpacing: getSpacing(augumentedTheme),
-		getTransition: getTransition(augumentedTheme),
-		getVariant
+		getTransition: getTransition(augumentedTheme)
 	}
 
 	return {
