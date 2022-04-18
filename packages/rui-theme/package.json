@@ -9,11 +9,6 @@
 		"@rui/utils": "workspace:*",
 		"deepmerge": "^4.2.2"
 	},
-	"devDependencies": {
-		"@emotion/react": "^11.9.0",
-		"@types/react": "^18.0.5",
-		"react": "^17.0.2"
-	},
 	"peerDependencies": {
 		"@emotion/react": "^11",
 		"react": "^17 || ^18"

@@ -1,4 +1,4 @@
-import type { Size } from '@rui/theme'
+import type { Size } from '@rui/types'
 import { parseSize } from '@rui/utils'
 import { useTheme } from '../useTheme'
 import { useMediaQuery } from '../useMediaQuery'

@@ -1,8 +1,5 @@
 {
 	"name": "@rui/utils",
 	"packageManager": "yarn@3.2.0",
-	"sideEffects": false,
-	"devDependencies": {
-		"@types/react": "^18.0.5"
-	}
+	"sideEffects": false
 }
