@@ -8,6 +8,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	spacing?: SizeValue | [SizeValue, SizeValue]
 }
 
+// TODO: Expand grid functionality (columns, etc.)
 export const Grid = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { columns = 12, spacing = 'md', children, ...otherProps } = props
 
