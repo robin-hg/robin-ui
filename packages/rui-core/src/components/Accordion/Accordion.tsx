@@ -43,7 +43,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				role="button"
 				$open={open}
 				$expandable={expandable}
-				$disabled={!!disabled}
+				disabled={!!disabled}
 				onClick={toggleOpen}
 				onKeyDown={handleKeyPress('Enter', toggleOpen)}
 				tabIndex={expandable ? 0 : -1}
