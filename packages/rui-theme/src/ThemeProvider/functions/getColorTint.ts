@@ -7,6 +7,6 @@ import { getColorAlpha } from './getColorAlpha'
 export const getColorTint = (theme: AugumentedTheme) =>
 	memoize((background: ColorToken, color: ColorToken, modifier: Modifier) => {
 		const backgrounColor = getColor(theme)(background)
-		const tint = getColorAlpha(theme)(color, theme.colorModifiers[modifier])
+		const tint = getColorAlpha(theme)(color, modifier)
 		return tinycolor(tint).onBackground(backgrounColor).toRgbString()
 	})
