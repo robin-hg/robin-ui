@@ -5,7 +5,7 @@ import { TransitionSwitch, type Props } from './TransitionSwitch'
 import { Paper } from '../Paper'
 
 export default {
-	title: 'Group/TransitionSwitch',
+	title: 'Utils/TransitionSwitch',
 	component: TransitionSwitch,
 	argTypes: {
 		currentKey: { control: null }

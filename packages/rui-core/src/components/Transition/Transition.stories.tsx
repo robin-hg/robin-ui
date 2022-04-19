@@ -9,7 +9,7 @@ import {
 import { Paper } from '../Paper'
 
 export default {
-	title: 'Group/Transitions',
+	title: 'Utils/Transitions',
 	component: FadeTransition,
 	args: {
 		ease: 'easeOut',
