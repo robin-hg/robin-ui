@@ -53,6 +53,7 @@ interface PaletteColorWithVariant extends PaletteColor {
 type PaletteKey = 'background'
 type PaletteKeyWithVariant = 'primary' | 'secondary' | 'critical' | 'warning' | 'info' | 'success' | 'surface'
 
+// TODO: Test additional keys
 export interface AdditionalPalette extends Record<string, string | PaletteColor | PaletteColorWithVariant> {}
 
 interface DefaultPalette
