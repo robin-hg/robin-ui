@@ -25,15 +25,15 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 		content: '"\\200b"'
 	},
 	'&:hover': {
-		color: theme.fn.getTintColor($color, 'surface.onBase', 'hover'),
+		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover'),
 		textDecorationColor: 'currentColor'
 	},
 	'&:focus-visible': {
-		color: theme.fn.getTintColor($color, 'surface.onBase', 'hover'),
+		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover'),
 		outline: 'auto'
 	},
 	'&:active': {
-		color: theme.fn.getTintColor($color, 'surface.onBase', 'active')
+		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
 	},
 	'&[disabled]': {
 		color: `${theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')} !important`,

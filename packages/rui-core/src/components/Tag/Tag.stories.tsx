@@ -8,6 +8,7 @@ export default {
 	args: {
 		variant: 'filled',
 		size: 'md',
+		color: 'primary',
 		children: 'I am a Tag'
 	},
 	argTypes: {

@@ -31,9 +31,9 @@ export const getColorFunctions = (theme: AugumentedTheme) => ({
 			})?.toRgbString() || ''
 		)
 	},
-	getTintColor: function (background: ColorToken, tint: ColorToken) {
+	getModifiedColor: function (background: ColorToken, color: ColorToken, modifier: Modifier) {
 		const backgrounColor = this.getColor(background)
-		const tintLayerColor = this.getAlphaColor(tint, 'tint')
-		return tinycolor(tintLayerColor).onBackground(backgrounColor).toRgbString()
+		const layerColor = this.getAlphaColor(color, modifier)
+		return tinycolor(layerColor).onBackground(backgrounColor).toRgbString()
 	}
 })
