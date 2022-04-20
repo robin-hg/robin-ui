@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@rui/types'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { handleKeyPress } from '@rui/utils'
 import { useId } from '@rui/hooks'
 import { ChevronDown } from '@rui/icons'
@@ -7,6 +7,7 @@ import { ChevronDown } from '@rui/icons'
 import { Text } from '../Typography'
 
 import { AccordionContainer, AccordionSummary, AccordionContent } from './Accordion.style'
+import { PaperContext } from '../Paper'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'summary'> {
 	open?: boolean
@@ -17,6 +18,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'summary'> {
 
 export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { open: openOverride, disabled, summary, children, onClick, ...otherProps } = props
+	const { paperColor = 'surface' } = useContext(PaperContext)
 	const [open, setOpen] = useState(!!openOverride)
 	const summaryId = useId()
 	const bodyId = useId()
@@ -43,6 +45,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				role="button"
 				$open={open}
 				$expandable={expandable}
+				$paperColor={paperColor}
 				disabled={!!disabled}
 				onClick={toggleOpen}
 				onKeyDown={handleKeyPress('Enter', toggleOpen)}

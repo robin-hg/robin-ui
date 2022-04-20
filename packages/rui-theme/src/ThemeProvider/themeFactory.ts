@@ -1,14 +1,9 @@
-import {
-	createMediaBreakpoint,
-	getColor,
-	getColorAlpha,
-	getColorTint,
-	getOnColor,
-	getSize,
-	getSpacing,
-	getTransition
-} from './functions'
 import type { BaseTheme, AugumentedTheme, DerrivedColorMode } from '../types'
+import { createThemeFunctions } from './functions'
+import { parseSize } from '@rui/utils'
+
+export const createMediaBreakpoint = (theme: BaseTheme, breakpoint: keyof BaseTheme['breakpoints']) =>
+	`@media screen and (max-width: ${parseSize(theme.breakpoints[breakpoint])})`
 
 export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode) => {
 	const palette = colorMode === 'light' ? theme.lightPalette : theme.darkPalette
@@ -26,18 +21,8 @@ export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode) => 
 		}
 	}
 
-	const fn = {
-		getColor: getColor(augumentedTheme),
-		getColorAlpha: getColorAlpha(augumentedTheme),
-		getColorTint: getColorTint(augumentedTheme),
-		getOnColor: getOnColor(augumentedTheme),
-		getSize,
-		getSpacing: getSpacing(augumentedTheme),
-		getTransition: getTransition(augumentedTheme)
-	}
-
 	return {
 		...augumentedTheme,
-		fn
+		fn: createThemeFunctions(augumentedTheme)
 	}
 }

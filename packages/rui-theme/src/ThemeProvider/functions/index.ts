@@ -1,8 +1,13 @@
-export { createMediaBreakpoint } from './createMediaBreakpoint'
-export { getColor } from './getColor'
-export { getColorAlpha } from './getColorAlpha'
-export { getColorTint } from './getColorTint'
-export { getOnColor } from './getOnColor'
-export { getSize } from './getSize'
-export { getSpacing } from './getSpacing'
-export { getTransition } from './getTransition'
+import type { AugumentedTheme } from '../../types'
+
+import { getColorFunctions } from './colorFunctions'
+import { getSize } from './getSize'
+import { getSpacing } from './getSpacing'
+import { getTransition } from './getTransition'
+
+export const createThemeFunctions = (augumentedTheme: AugumentedTheme) => ({
+	...getColorFunctions(augumentedTheme),
+	getSize,
+	getSpacing: getSpacing(augumentedTheme),
+	getTransition: getTransition(augumentedTheme)
+})

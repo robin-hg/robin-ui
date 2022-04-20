@@ -1,6 +1,6 @@
 import type { CSSObject } from '@emotion/react'
 import type { SX } from '@rui/styles'
-import { themeFactory } from './ThemeProvider/themeFactory'
+import { createThemeFunctions } from './ThemeProvider/functions'
 
 export type ColorMode = 'light' | 'dark' | 'system'
 export type DerrivedColorMode = 'light' | 'dark'
@@ -111,5 +111,5 @@ export type AugumentedTheme = BaseTheme & {
 }
 
 export interface RUITheme extends AugumentedTheme {
-	fn: ReturnType<typeof themeFactory>['fn']
+	fn: ReturnType<typeof createThemeFunctions>
 }

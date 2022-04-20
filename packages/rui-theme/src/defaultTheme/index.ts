@@ -29,7 +29,7 @@ export const defaultTheme: BaseTheme = {
 	lightPalette,
 	darkPalette,
 	colorModifiers: {
-		tint: 0.08,
+		tint: 0.05,
 		hover: 0.08,
 		focus: 0.08,
 		active: 0.12,
