@@ -8,7 +8,8 @@ export default {
 	title: 'Icons/Icons',
 	component: Icons.ChevronDown,
 	args: {
-		size: 24
+		size: 24,
+		color: 'inherit'
 	},
 	argTypes: {
 		size: { control: { type: 'range', min: 12, max: 36, step: 4 } },

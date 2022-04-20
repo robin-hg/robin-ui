@@ -13,7 +13,8 @@ export default {
 	},
 	argTypes: {
 		component: { control: false },
-		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+		color: { control: { type: 'color' } }
 	}
 } as Meta<Props>
 

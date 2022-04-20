@@ -12,12 +12,11 @@ export default {
 		children: 'I am a Tag'
 	},
 	argTypes: {
-		color: { control: 'color' },
-		size: { control: { type: 'radio' }, options: ['sm', 'md', 'lg'] }
+		size: { control: { type: 'radio' }, options: ['sm', 'md', 'lg'] },
+		color: { control: { type: 'color' } }
 	}
 } as Meta<Props>
 
 const Template: Story<Props> = args => <Tag {...args} />
 
 export const Default = Template.bind({})
-Default.storyName = 'Tag'
