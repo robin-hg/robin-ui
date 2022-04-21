@@ -14,7 +14,7 @@ export const Global = () => (
 					padding: 0,
 					margin: 0,
 					lineHeight: 1.5,
-					minHeight: '100vh',
+					minHeight: ['100vh', '-webkit-fill-available'],
 					background: theme.palette.background.base,
 					color: theme.palette.background.onBase,
 					textRendering: 'optimizeLegibility',

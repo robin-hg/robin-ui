@@ -15,13 +15,13 @@ export const DividerLine = styled.div<DividerLineProps>(
 		({
 			horizontal: {
 				width: '100%',
-				margin: `${theme.fn.getSpacing($spacing)} 0`,
+				margin: theme.fn.getSpacing([$spacing, 0]),
 				borderTop: `solid ${$thickness} ${theme.palette.outline}`
 			},
 			vertical: {
 				display: 'inline',
 				height: '100%',
-				margin: `0 ${theme.fn.getSpacing($spacing)}`,
+				margin: theme.fn.getSpacing([0, $spacing]),
 				borderRight: `solid ${$thickness} ${theme.palette.outline}`
 			}
 		}[$orientation])

@@ -46,5 +46,5 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 }))
 
 export const AccordionContent = styled(Collapse)(({ theme }) => ({
-	padding: theme.fn.getSpacing('md')
+	padding: theme.spacing.md
 }))

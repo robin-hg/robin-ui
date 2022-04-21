@@ -79,7 +79,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		// <Portal target={popupEl || modalRef?.current || undefined}>
 		<Portal target={popperEl}>
 			<PopperContext.Provider value={{ popperEl: innerRef }}>
-				<FadeContainer in={show} timeout={timeout}>
+				<FadeContainer in={show} timeout={timeout} unmountOnExit>
 					<PopperElement
 						ref={setInnerRef}
 						style={styles.popper}

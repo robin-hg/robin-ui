@@ -8,6 +8,6 @@ interface StyledContainerProps {
 export const StyledContainer = styled.div<StyledContainerProps>(({ theme, $maxWidth }) => ({
 	boxSizing: 'content-box',
 	maxWidth: theme.fn.getSize($maxWidth, theme.breakpoints),
-	padding: `0 ${theme.fn.getSpacing('md')}`,
+	padding: theme.fn.getSpacing([0, 'md']),
 	margin: '0 auto'
 }))
