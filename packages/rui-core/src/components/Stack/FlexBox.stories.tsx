@@ -8,7 +8,8 @@ export default {
 	title: 'Layout/Stack',
 	component: Stack,
 	args: {
-		spacing: 'md'
+		spacing: 'md',
+		direction: 'column'
 	},
 	argTypes: {
 		spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }

@@ -1,17 +1,18 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps, SizeValue } from '@rui/types'
 import React from 'react'
 
 import { StackContainer } from './Stack.style'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {
-	spacing?: number | string
+	spacing?: SizeValue
+	direction?: React.CSSProperties['flexDirection']
 }
 
 export const Stack = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { spacing, children, ...otherProps } = props
+	const { spacing, direction = 'column', children, ...otherProps } = props
 
 	return (
-		<StackContainer ref={ref} direction="column" alignItems="flex-start" spacing={spacing} {...otherProps}>
+		<StackContainer ref={ref} direction={direction} alignItems="flex-start" spacing={spacing} {...otherProps}>
 			{children}
 		</StackContainer>
 	)
