@@ -38,6 +38,6 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 	'&[disabled]': {
 		color: `${theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')} !important`,
 		textDecoration: 'none !important',
-		cursor: 'default'
+		cursor: 'default !important'
 	}
 }))

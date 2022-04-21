@@ -1,14 +1,15 @@
+import type { DefaultProps } from '@rui/types'
 import React, { useContext } from 'react'
-import { ButtonGroupContext } from '@rui/components/ButtonGroup'
+import { ButtonGroupContext } from '../ButtonGroup'
 
 import { Adornment, Content, StyledButton } from './Button.style'
 
-export interface Props extends RobinUI.StandardProps<HTMLButtonElement, 'size' | 'type'> {
+export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> {
 	/**
 	 * Button variant
-	 * @default contained
+	 * @default filled
 	 */
-	variant?: 'contained' | 'outlined' | 'text'
+	variant?: 'filled' | 'outlined' | 'text'
 	/**
 	 * Button size
 	 * @default md
@@ -24,10 +25,10 @@ export interface Props extends RobinUI.StandardProps<HTMLButtonElement, 'size' |
 	component?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 }
 
-const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
+export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
 	const {
 		component,
-		variant = 'contained',
+		variant = 'filled',
 		size = 'md',
 		color = 'primary',
 		startAdornment,
@@ -67,4 +68,3 @@ const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
 })
 
 Button.displayName = 'Button'
-export default Button

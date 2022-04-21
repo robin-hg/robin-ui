@@ -1,11 +1,19 @@
 import type { Story, Meta } from '@storybook/react'
 
-import ButtonGroup, { type Props } from './ButtonGroup'
-import Button from '@rui/components/Button'
+import { ButtonGroup, type Props } from './ButtonGroup'
+import { Button } from '../Button'
 
 export default {
 	title: 'Inputs/ButtonGroup',
-	component: ButtonGroup
+	component: ButtonGroup,
+	args: {
+		size: 'md',
+		variant: 'filled',
+		color: 'primary'
+	},
+	argTypes: {
+		color: { control: { type: 'color' } }
+	}
 } as Meta<Props>
 
 const Template: Story<Props> = args => (

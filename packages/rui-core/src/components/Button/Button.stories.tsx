@@ -1,17 +1,18 @@
 import type { Story, Meta } from '@storybook/react'
 
-import Button, { type Props } from './Button'
+import { Button, type Props } from './Button'
 
 export default {
 	title: 'Inputs/Button',
 	component: Button,
 	args: {
 		children: 'I am a button',
-		disabled: false
+		size: 'md',
+		variant: 'filled',
+		color: 'primary'
 	},
 	argTypes: {
-		component: { control: false },
-		onClick: { action: 'clicked' }
+		color: { control: { type: 'color' } }
 	}
 } as Meta<Props>
 

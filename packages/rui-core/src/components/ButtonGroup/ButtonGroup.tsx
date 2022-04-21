@@ -1,24 +1,25 @@
+import type { DefaultProps } from '@rui/types'
 import React from 'react'
 import { ButtonGroupContainer } from './ButtonGroup.style'
 
 export const ButtonGroupContext = React.createContext<{
-	groupVariant?: 'contained' | 'outlined' | 'text'
+	groupVariant?: 'filled' | 'outlined' | 'text'
 	groupColor?: string
 	groupSize?: 'sm' | 'md' | 'lg'
 }>({})
 
-export interface Props extends RobinUI.StandardProps<HTMLDivElement, 'size'> {
-	variant?: 'contained' | 'outlined' | 'text'
+export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
+	variant?: 'filled' | 'outlined' | 'text'
 	color?: string
 	size?: 'sm' | 'md' | 'lg'
 }
 
-const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { variant = 'contained', color = 'primary', size = 'md', children, ...otherProps } = props
+export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+	const { variant = 'filled', color = 'primary', size = 'md', children, ...otherProps } = props
 
 	return (
 		<ButtonGroupContext.Provider value={{ groupVariant: variant, groupColor: color, groupSize: size }}>
-			<ButtonGroupContainer ref={ref} $variant={variant} $color={color} {...otherProps}>
+			<ButtonGroupContainer ref={ref} {...otherProps}>
 				{children}
 			</ButtonGroupContainer>
 		</ButtonGroupContext.Provider>
@@ -26,4 +27,3 @@ const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 })
 
 ButtonGroup.displayName = 'ButtonGroup'
-export default ButtonGroup

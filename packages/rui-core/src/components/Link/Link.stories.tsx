@@ -12,7 +12,6 @@ export default {
 		underline: true
 	},
 	argTypes: {
-		component: { control: false },
 		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
 		color: { control: { type: 'color' } }
 	}

@@ -16,8 +16,7 @@ export default {
 		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
 		color: { control: { type: 'color' } },
 		highlight: { control: { type: 'color' } },
-		fontWeight: { control: { type: 'select' }, options: [400, 600] },
-		component: { control: false }
+		fontWeight: { control: { type: 'select' }, options: [400, 600] }
 	}
 } as Meta<Props>
 
