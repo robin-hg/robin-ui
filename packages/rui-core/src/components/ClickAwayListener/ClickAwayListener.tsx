@@ -12,7 +12,7 @@ export const ClickAwayListener = React.forwardRef<HTMLDivElement, Props>((props,
 	const listenerRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, listenerRef)
 
-	useClickOutside(listenerRef, onClickAway)
+	useClickOutside(listenerRef.current, onClickAway)
 
 	return (
 		<sxc.div ref={combinedRef} {...otherProps}>

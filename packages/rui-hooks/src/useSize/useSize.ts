@@ -2,15 +2,15 @@ import { useState } from 'react'
 import { useEventListener } from '../useEventListener'
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
-export const useSize = (elementRef: React.RefObject<HTMLElement>, dependencies: React.DependencyList = []) => {
+export const useSize = (element: HTMLElement | null, dependencies: React.DependencyList = []) => {
 	const [size, setSize] = useState<DOMRect>()
 
 	const getSize = () => {
-		const rect = elementRef.current?.getBoundingClientRect()
+		const rect = element?.getBoundingClientRect()
 		setSize(rect)
 	}
 
-	useIsomorphicLayoutEffect(getSize, [elementRef.current, ...dependencies])
+	useIsomorphicLayoutEffect(getSize, [element, ...dependencies])
 	useEventListener('resize', getSize)
 
 	return size

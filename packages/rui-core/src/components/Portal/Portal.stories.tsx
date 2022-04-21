@@ -20,7 +20,7 @@ const Template: Story<Props> = args => {
 		<Stack>
 			<Paper variant="flat">
 				I should be rendered in here.
-				<Portal {...args} targetRef={ref}>
+				<Portal {...args} target={ref.current}>
 					But I am rendered here.
 				</Portal>
 			</Paper>

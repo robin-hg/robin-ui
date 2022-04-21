@@ -6,7 +6,7 @@ type IUseEventListener = {
 	<K extends keyof HTMLElementEventMap, T extends HTMLElement>(
 		eventName: K,
 		listener: (event: HTMLElementEventMap[K]) => void,
-		node: React.RefObject<T>
+		element: T
 	): void
 }
 
@@ -17,15 +17,15 @@ export const useEventListener: IUseEventListener = <
 >(
 	eventName: KW | KH,
 	listener: (event: WindowEventMap[KW] | HTMLElementEventMap[KH] | Event) => void,
-	elementRef?: React.RefObject<T>
+	element?: T | null
 ) => {
-	const element = elementRef?.current || window
+	const el = element || window
 	const savedListener = useMutableCallback(listener)
 
 	useIsomorphicLayoutEffect(() => {
-		element.addEventListener(eventName, savedListener, { capture: true })
+		el.addEventListener(eventName, savedListener, { capture: true })
 		return () => {
-			element.removeEventListener(eventName, savedListener, { capture: true })
+			el.removeEventListener(eventName, savedListener, { capture: true })
 		}
 	}, [])
 }

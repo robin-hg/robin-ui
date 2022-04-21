@@ -20,7 +20,7 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
 	const { duration = 200, disableResizeHeight, disableResizeWidth, children, ...otherProps } = props
 	const [stage, setStage] = useState<Stages>('finished')
 	const contentRef = useRef<HTMLDivElement>(null)
-	const size = useSize(contentRef, [children])
+	const size = useSize(contentRef.current, [children])
 	const previousSize = usePreviousState(size)
 
 	useIsomorphicLayoutEffect(() => {

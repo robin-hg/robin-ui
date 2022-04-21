@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 
-export const useOnScreen = (elementRef: React.RefObject<HTMLElement>, options: IntersectionObserverInit) => {
+export const useOnScreen = (element: HTMLElement | null, options: IntersectionObserverInit) => {
 	const { root, rootMargin = '0px', threshold = 0 } = options
 	const [isIntersecting, setIsIntersecting] = useState(false)
-	const element = elementRef.current
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(([entry]) => setIsIntersecting(entry.isIntersecting), {

@@ -6,13 +6,13 @@ export interface Props {
 	 * Content is inside the specified target.
 	 * @default document.body
 	 */
-	targetRef?: React.RefObject<HTMLElement>
+	target?: HTMLElement | null
 	children?: React.ReactNode
 }
 
 export const Portal: React.FC<Props> = props => {
-	const { children, targetRef } = props
-	const target = targetRef?.current || document?.body
+	const { children, target: targetEl } = props
+	const target = targetEl || document?.body
 	const forceUpdate = useForceUpdate()
 
 	useIsomorphicLayoutEffect(() => {
