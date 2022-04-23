@@ -8,8 +8,6 @@
 		"@rui/utils": "workspace:*"
 	},
 	"peerDependencies": {
-		"@emotion/react": "^11",
-		"@emotion/styled": "^11",
 		"react": "^17 || ^18"
 	}
 }
