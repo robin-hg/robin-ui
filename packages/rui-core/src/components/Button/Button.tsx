@@ -1,4 +1,4 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps, SizeValue, ConstrainedSize } from '@rui/types'
 import React, { useContext } from 'react'
 import { ButtonGroupContext } from '../ButtonGroup'
 
@@ -14,7 +14,8 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	 * Button size
 	 * @default md
 	 */
-	size?: 'sm' | 'md' | 'lg'
+	size?: ConstrainedSize
+	borderRadius?: SizeValue
 	/**
 	 * Button color
 	 * @default primary
@@ -31,6 +32,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 		variant = 'filled',
 		size = 'md',
 		color = 'primary',
+		borderRadius = 'sm',
 		startAdornment,
 		endAdornment,
 		disabled,
@@ -47,6 +49,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 			$variant={groupVariant || variant}
 			$color={groupColor || color}
 			$size={groupSize || size}
+			$borderRadius={borderRadius}
 			type="button"
 			onClick={event => {
 				if (disabled) {

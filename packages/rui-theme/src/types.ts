@@ -7,6 +7,8 @@ export type DerrivedColorMode = 'light' | 'dark'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number
+export type ConstrainedSize = 'sm' | 'md' | 'lg'
+export type ConstrainedSizeValue = ConstrainedSize | string | number
 
 export type Modifier = 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
 
@@ -87,13 +89,13 @@ export interface BaseTheme {
 	typography: {
 		heading: TypographyProperties<Size>
 		text: TypographyProperties<Size>
-		label: TypographyProperties<'sm' | 'md' | 'lg'>
+		label: TypographyProperties<ConstrainedSize>
 	}
 	colors: Record<DefaultColor, ColorObj> & AdditionalColors
 	lightPalette: Palette
 	darkPalette: Palette
 	colorModifiers: Record<Modifier, number>
-	borderRadius: React.CSSProperties['borderRadius']
+	borderRadius: Record<Size, React.CSSProperties['borderRadius']>
 	transition: {
 		duration: React.CSSProperties['transitionDuration']
 		ease: React.CSSProperties['transitionTimingFunction']

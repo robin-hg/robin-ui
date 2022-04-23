@@ -1,4 +1,4 @@
-import type { TypographyProperties, Size } from '../types'
+import type { TypographyProperties, Size, ConstrainedSize } from '../types'
 
 export const heading: TypographyProperties<Size> = {
 	fontFamily: '"Noto Serif", Arial, sans-serif',
@@ -38,7 +38,7 @@ export const text: TypographyProperties<Size> = {
 	}
 }
 
-export const label: TypographyProperties<'sm' | 'md' | 'lg'> = {
+export const label: TypographyProperties<ConstrainedSize> = {
 	fontFamily: '"Noto Sans", Arial, sans-serif',
 	fontWeight: 600,
 	fontSize: {

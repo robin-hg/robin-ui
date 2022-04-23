@@ -11,6 +11,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	surfaceColor?: 'base' | 'variant'
 	tint?: ColorToken
 	padding?: SizeValue | SizeValue[]
+	borderRadius?: SizeValue
 	as?: React.ElementType
 }
 
@@ -21,6 +22,7 @@ export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		surfaceColor = 'base',
 		tint = 'primary',
 		padding = 'md',
+		borderRadius = 'md',
 		as,
 		children,
 		...otherProps
@@ -37,6 +39,7 @@ export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				$tint={tint}
 				$elevation={elevation}
 				$padding={padding}
+				$borderRadius={borderRadius}
 				{...otherProps}>
 				{children}
 			</PaperContainer>

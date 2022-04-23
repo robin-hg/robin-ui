@@ -8,17 +8,18 @@ interface PaperContainerProps {
 	$tint: string
 	$elevation: number
 	$padding: SizeValue | SizeValue[]
+	$borderRadius: SizeValue
 }
 
 export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
-	({ theme, $padding }) => ({
+	({ theme, $padding, $borderRadius }) => ({
 		position: 'relative',
 		zIndex: 0,
 		boxSizing: 'border-box',
 		overflow: 'hidden',
 		padding: theme.fn.getSpacing($padding),
 		transition: theme.fn.getTransition(),
-		borderRadius: theme.borderRadius
+		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
 	}),
 	({ theme, $surfaceColor, $tint }) =>
 		({
