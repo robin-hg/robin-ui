@@ -9,7 +9,7 @@
 		"@rui/theme": "workspace:*",
 		"@rui/types": "workspace:*",
 		"@rui/utils": "workspace:*",
-		"framer-motion": "^6.3.0"
+		"framer-motion": "^6.3.1"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",
