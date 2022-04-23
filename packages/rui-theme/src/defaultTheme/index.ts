@@ -20,6 +20,13 @@ export const defaultTheme: BaseTheme = {
 		lg: '2.4rem',
 		xl: '3.6rem'
 	},
+	borderRadius: {
+		xs: 0,
+		sm: '0.4rem',
+		md: '0.8rem',
+		lg: '1.6rem',
+		xl: '999px'
+	},
 	typography: {
 		heading,
 		text,
@@ -35,13 +42,6 @@ export const defaultTheme: BaseTheme = {
 		active: 0.15,
 		disabledBase: 0.12,
 		disabledOnBase: 0.5
-	},
-	borderRadius: {
-		xs: 0,
-		sm: '0.4rem',
-		md: '0.8rem',
-		lg: '1.6rem',
-		xl: '999px'
 	},
 	transition: {
 		duration: '200ms',

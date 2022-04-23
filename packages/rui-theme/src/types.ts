@@ -86,6 +86,7 @@ export interface BaseTheme {
 	componentStyles: Record<string, CSSObject>
 	breakpoints: Record<Size, number | string>
 	spacing: Record<Size, number | string>
+	borderRadius: Record<Size, React.CSSProperties['borderRadius']>
 	typography: {
 		heading: TypographyProperties<Size>
 		text: TypographyProperties<Size>
@@ -95,7 +96,6 @@ export interface BaseTheme {
 	lightPalette: Palette
 	darkPalette: Palette
 	colorModifiers: Record<Modifier, number>
-	borderRadius: Record<Size, React.CSSProperties['borderRadius']>
 	transition: {
 		duration: React.CSSProperties['transitionDuration']
 		ease: React.CSSProperties['transitionTimingFunction']
