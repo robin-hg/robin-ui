@@ -9,9 +9,11 @@
 		"@rui/theme": "workspace:*",
 		"@rui/types": "workspace:*",
 		"@rui/utils": "workspace:*",
-		"framer-motion": "^6.3.0"
+		"framer-motion": "^6.3.1"
 	},
 	"peerDependencies": {
+		"@emotion/react": "^11",
+		"@emotion/styled": "^11",
 		"react": "^17 || ^18",
 		"react-dom": "^17 || ^18"
 	}
