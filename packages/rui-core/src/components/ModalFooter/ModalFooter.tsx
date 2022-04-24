@@ -16,7 +16,7 @@ export const ModalFooter = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 	return (
 		<FlexBox ref={ref} justifyContent="flex-end" {...otherProps}>
 			{closeButton && onClose && (
-				<Button onClick={onClose} variant="text" color="text">
+				<Button onClick={onClose} variant="text" color="surface.onBase">
 					{closeButton}
 				</Button>
 			)}

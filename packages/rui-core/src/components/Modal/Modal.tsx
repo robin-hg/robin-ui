@@ -1,4 +1,4 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps, ConstrainedSize } from '@rui/types'
 import React, { useRef, useState } from 'react'
 import { useCombinedRef, useId } from '@rui/hooks'
 
@@ -16,24 +16,21 @@ export const ModalContext = React.createContext<{
 	setPreventClose?: (state: boolean) => void
 }>({})
 
-export interface Props extends DefaultProps<HTMLDivElement> {
+export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
+	size?: ConstrainedSize | 'full'
 	open?: boolean
 	onClose?: () => void
 }
 
 export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { open, onClose, children, ...otherProps } = props
+	const { size = 'md', open, onClose, children, ...otherProps } = props
 	const [preventClose, setPreventClose] = useState(false)
 	const modalRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, modalRef)
 	const id = useId()
 	const contentId = useId()
 
-	const close = () => {
-		if (!preventClose) {
-			onClose?.()
-		}
-	}
+	const close = !preventClose ? onClose : undefined
 
 	return (
 		<Portal>
@@ -43,10 +40,11 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					contentId,
 					modalEl: modalRef.current,
 					setPreventClose,
-					onClose: onClose && !preventClose ? close : undefined
+					onClose: close
 				}}>
 				<Fade in={open} unmountOnExit>
-					<ModalContainer>
+					<Backdrop />
+					<ModalContainer tabIndex={-1} onClick={close}>
 						<FocusTrap autofocus restoreFocus>
 							<ModalPaper
 								ref={combinedRef}
@@ -54,17 +52,18 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 								aria-modal="true"
 								aria-labelledby={id}
 								aria-describedby={contentId}
+								$size={size}
+								onClick={event => event.stopPropagation()}
 								onKeyDown={event => {
 									if (event.key === 'Escape') {
 										event.stopPropagation()
-										close()
+										close?.()
 									}
 								}}
 								{...otherProps}>
 								{children}
 							</ModalPaper>
 						</FocusTrap>
-						<Backdrop tabIndex={-1} onClick={close} />
 					</ModalContainer>
 				</Fade>
 			</ModalContext.Provider>
