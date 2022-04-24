@@ -87,7 +87,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 						setHovering={setHovering}
 						continuousUpdate={continuousUpdate}
 						{...attributes}>
-						<Paper ref={ref} elevation={0} {...otherProps}>
+						<Paper ref={ref} variant="outlined" {...otherProps}>
 							{children}
 							{withArrow && <Arrow ref={setArrowRef} $placement={finalPlacement} style={styles.arrow} />}
 						</Paper>
