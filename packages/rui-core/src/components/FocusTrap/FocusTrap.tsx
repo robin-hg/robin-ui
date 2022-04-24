@@ -4,13 +4,23 @@ import { useKeyPress } from '@rui/hooks'
 
 export interface Props {
 	autofocus?: boolean
+	restoreFocus?: boolean
 	disabled?: boolean
 	children?: React.ReactNode
 }
 
 export const FocusTrap: React.FC<Props> = props => {
-	const { autofocus, disabled, children } = props
+	const { autofocus, restoreFocus, disabled, children } = props
 	const ref = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		const original = document.activeElement as HTMLElement
+		return () => {
+			if (restoreFocus && !disabled) {
+				original?.focus()
+			}
+		}
+	}, [restoreFocus])
 
 	useEffect(() => {
 		if (autofocus && !disabled) {
