@@ -1,12 +1,8 @@
-import { useRef } from 'react'
-import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
+import { useCallback, useRef } from 'react'
 
-export const useMutableCallback = <T extends (...args: any[]) => any>(callback: T) => {
+export const useMutableCallback = <T extends (...args: any[]) => ReturnType<T>>(callback: T) => {
 	const ref = useRef<T>(callback)
+	ref.current = callback
 
-	useIsomorphicLayoutEffect(() => {
-		ref.current = callback
-	}, [callback])
-
-	return ref.current
+	return useCallback((...args: Parameters<T>) => ref.current(...args), [])
 }
