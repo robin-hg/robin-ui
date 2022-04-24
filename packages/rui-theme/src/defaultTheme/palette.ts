@@ -90,13 +90,13 @@ export const darkPalette: Palette = {
 	},
 	surface: {
 		base: colors.gray[800],
-		onBase: colors.gray[50],
+		onBase: colors.gray[100],
 		variant: colors.gray[700],
-		onVariant: colors.gray[50]
+		onVariant: colors.gray[100]
 	},
 	background: {
-		base: colors.gray[800],
-		onBase: colors.gray[50]
+		base: colors.gray[900],
+		onBase: colors.gray[100]
 	},
 	outline: colors.gray[600]
 }
