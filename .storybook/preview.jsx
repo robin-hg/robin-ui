@@ -1,14 +1,15 @@
-// import { themes } from '@storybook/theming'
+import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
 // import { dark, gray } from '../src/style/colors'
+import { dark, gray } from '../packages/rui-theme/src/defaultTheme/colors'
 
 import { BaseContainer, RUIProvider } from '../packages/rui-core'
 
 export const parameters = {
-	// darkMode: {
-	// 	dark: { ...themes.dark, appBg: dark[7], barBg: dark[8], appContentBg: dark[8] },
-	// 	light: { ...themes.light, appBg: gray[0] }
-	// },
+	darkMode: {
+		dark: { ...themes.dark, appBg: dark[900], barBg: dark[900], appContentBg: dark[900] },
+		light: { ...themes.light, appBg: gray[50] }
+	},
 	actions: { argTypesRegex: '^on[A-Z].*' },
 	options: {
 		panelPosition: 'right',

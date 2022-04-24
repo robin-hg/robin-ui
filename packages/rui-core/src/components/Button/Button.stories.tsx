@@ -12,7 +12,8 @@ export default {
 		color: 'primary'
 	},
 	argTypes: {
-		color: { control: { type: 'color' } }
+		color: { control: { type: 'color' } },
+		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 
