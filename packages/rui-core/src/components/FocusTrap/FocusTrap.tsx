@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { getFocusable } from '@rui/utils'
-import { useKeyPress, useMutableCallback } from '@rui/hooks'
+import { useKeyPress } from '@rui/hooks'
 
 export interface Props {
 	autofocus?: boolean
@@ -19,7 +19,7 @@ export const FocusTrap: React.FC<Props> = props => {
 		}
 	}, [autofocus])
 
-	const handleTab = useMutableCallback((event: KeyboardEvent) => {
+	useKeyPress('Tab', event => {
 		const focusable = getFocusable(ref.current)
 
 		if (!focusable.length || disabled) {
@@ -39,8 +39,6 @@ export const FocusTrap: React.FC<Props> = props => {
 		event.preventDefault()
 		next.focus()
 	})
-
-	useKeyPress('Tab', handleTab)
 
 	return <div ref={ref}>{children}</div>
 }

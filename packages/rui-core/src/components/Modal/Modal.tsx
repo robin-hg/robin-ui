@@ -1,6 +1,6 @@
 import type { DefaultProps } from '@rui/types'
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { useCombinedRef, useId, useKeyPress, useMutableCallback } from '@rui/hooks'
+import { useCombinedRef, useId, useKeyPress } from '@rui/hooks'
 
 import { Fade } from '../Transition'
 import { FocusTrap } from '../FocusTrap'
@@ -22,7 +22,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	onClose?: () => void
 }
 
-const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { open, onClose, children, ...otherProps } = props
 	const [preventClose, setPreventClose] = useState(false)
 	const modalRef = useRef<HTMLDivElement>(null)
@@ -37,13 +37,11 @@ const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}
 
-	const handleEsc = useMutableCallback(() => {
+	useKeyPress('Escape', () => {
 		if (!topModal || topModal === id) {
 			close()
 		}
 	})
-
-	useKeyPress('Escape', handleEsc)
 
 	useEffect(() => {
 		if (open) {
@@ -90,4 +88,3 @@ const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 })
 
 Modal.displayName = 'Modal'
-export default Modal

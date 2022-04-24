@@ -1,7 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import Modal, { type Props } from './Modal'
+import { Modal, type Props } from './Modal'
 import { ModalManager } from '../ModalManager'
 import { ModalHeader } from '../ModalHeader'
 import { ModalContent } from '../ModalContent'
