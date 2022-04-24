@@ -7,8 +7,12 @@ import { Paper } from '../Paper'
 export default {
 	title: 'Utils/TransitionSwitch',
 	component: TransitionSwitch,
+	args: {
+		transition: 'fade',
+		duration: 400
+	},
 	argTypes: {
-		currentKey: { control: null }
+		currentKey: { table: { disable: true } }
 	}
 } as Meta<Props>
 

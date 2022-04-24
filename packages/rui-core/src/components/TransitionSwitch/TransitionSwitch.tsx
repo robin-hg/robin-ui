@@ -12,7 +12,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	ease?: Easing
 }
 
-export const TransitionSwitch: React.FC<Props> = props => {
+export const TransitionSwitch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { currentKey, transition = 'fade', duration = 400, children, ...otherProps } = props
 
 	const Transition = (() => {
@@ -29,11 +29,11 @@ export const TransitionSwitch: React.FC<Props> = props => {
 
 	return (
 		<AnimatePresence exitBeforeEnter>
-			<Transition key={currentKey} in unmountOnExit duration={duration} motionOnly {...otherProps}>
+			<Transition ref={ref} key={currentKey} in unmountOnExit duration={duration} motionOnly {...otherProps}>
 				{children}
 			</Transition>
 		</AnimatePresence>
 	)
-}
+})
 
 TransitionSwitch.displayName = 'TransitionSwitch'
