@@ -20,9 +20,9 @@ export const parameters = {
 				'Typography',
 				'Layout',
 				'Surface',
+				'Inputs',
 				'Display',
 				'Navigation',
-				'Inputs',
 				'Shotrtcuts',
 				'Utils',
 				'Hooks'
