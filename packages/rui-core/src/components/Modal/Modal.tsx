@@ -23,7 +23,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
 }
 
 export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { size = 'md', open, onClose, children, ...otherProps } = props
+	const { size = 'md', open, onClose, onClick, children, ...otherProps } = props
 	const [preventClose, setPreventClose] = useState(false)
 	const modalRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, modalRef)
@@ -44,7 +44,15 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				}}>
 				<Fade in={open} unmountOnExit>
 					<Backdrop />
-					<ModalContainer tabIndex={-1} onClick={close}>
+					<ModalContainer
+						tabIndex={-1}
+						onClick={close}
+						onKeyDown={event => {
+							if (event.key === 'Escape') {
+								event.stopPropagation()
+								close?.()
+							}
+						}}>
 						<FocusTrap autofocus restoreFocus>
 							<ModalPaper
 								ref={combinedRef}
@@ -53,12 +61,9 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 								aria-labelledby={id}
 								aria-describedby={contentId}
 								$size={size}
-								onClick={event => event.stopPropagation()}
-								onKeyDown={event => {
-									if (event.key === 'Escape') {
-										event.stopPropagation()
-										close?.()
-									}
+								onClick={event => {
+									event.stopPropagation()
+									onClick?.(event)
 								}}
 								{...otherProps}>
 								{children}
