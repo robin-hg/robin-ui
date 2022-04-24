@@ -2,7 +2,6 @@ import type { Story, Meta } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
 import { Modal, type Props } from './Modal'
-import { ModalManager } from '../ModalManager'
 import { ModalHeader } from '../ModalHeader'
 import { ModalContent } from '../ModalContent'
 import { ModalFooter } from '../ModalFooter'
@@ -11,13 +10,13 @@ import { Button } from '../Button'
 export default {
 	title: 'Display/Modal',
 	component: Modal,
-	subcomponents: { ModalManager, ModalHeader, ModalContent, ModalFooter }
+	subcomponents: { ModalHeader, ModalContent, ModalFooter }
 } as Meta<Props>
 
 const Template: Story<Props> = args => {
 	const [, updateArgs] = useArgs()
 	return (
-		<ModalManager>
+		<>
 			<Button onClick={() => updateArgs({ open: true })}>Open Modal</Button>
 			<Modal
 				{...args}
@@ -60,7 +59,7 @@ const Template: Story<Props> = args => {
 					<Button>Submit</Button>
 				</ModalFooter>
 			</Modal>
-		</ModalManager>
+		</>
 	)
 }
 export const Default = Template.bind({})

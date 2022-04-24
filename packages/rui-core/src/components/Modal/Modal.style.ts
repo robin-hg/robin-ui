@@ -5,12 +5,10 @@ export const ModalContainer = styled.div({
 	position: 'fixed',
 	inset: 0,
 	zIndex: 1000,
-	'& > div': {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		height: '100%'
-	}
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	height: '100%'
 })
 
 export const ModalPaper = styled(Paper)(({ theme }) => ({
