@@ -23,6 +23,7 @@
 		"dot-notation": "error",
 		"no-eval": "error",
 		"no-shadow": ["error", { "hoist": "all" }],
+		"no-console": ["error", { "allow": ["info", "warn", "error"] }],
 		"spaced-comment": "error",
 		"@typescript-eslint/prefer-optional-chain": "error",
 		"@typescript-eslint/no-namespace": "off",
