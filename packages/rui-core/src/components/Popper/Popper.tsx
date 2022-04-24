@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { usePopper, type Modifier, type StrictModifierNames } from 'react-popper'
 import type { Placement } from '@popperjs/core'
 import { useClickOutside } from '@rui/hooks'
-// import { ModalContext } from '../Modal'
+import { ModalContext } from '../Modal'
 
 import { Paper } from '../Paper'
 import { Portal } from '../Portal'
@@ -29,7 +29,6 @@ export interface Props extends DefaultProps<HTMLDivElement, 'target'> {
 	onClose?: () => void
 }
 
-// TODO: Add ModalContext
 export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
 		target,
@@ -48,7 +47,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const [hovering, setHovering] = useState(false)
 	const [innerRef, setInnerRef] = useState<HTMLDivElement | null>(null)
 	const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null)
-	// const { modalRef } = useContext(ModalContext)
+	const { modalEl } = useContext(ModalContext)
 	const { popperEl } = useContext(PopperContext)
 	const { styles, attributes, update } = usePopper(target, innerRef, {
 		placement,
@@ -76,8 +75,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const finalPlacement = (attributes?.popper?.['data-popper-placement'] || 'bottom') as Placement
 
 	return (
-		// <Portal target={popupEl || modalRef?.current || undefined}>
-		<Portal target={popperEl}>
+		<Portal target={popperEl || modalEl || undefined}>
 			<PopperContext.Provider value={{ popperEl: innerRef }}>
 				<FadeContainer in={show} timeout={timeout} unmountOnExit>
 					<PopperElement
