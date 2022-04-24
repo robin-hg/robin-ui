@@ -6,7 +6,7 @@ type IUseEventListener = {
 	<K extends keyof HTMLElementEventMap, T extends HTMLElement>(
 		eventName: K,
 		handler: (event: HTMLElementEventMap[K]) => void,
-		element: T
+		element?: T | null
 	): void
 }
 
