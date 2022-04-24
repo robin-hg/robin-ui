@@ -17,7 +17,6 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		justifyContent: 'center',
 		gap: theme.spacing.sm,
 		minWidth: '4rem',
-		overflow: 'hidden',
 		fontFamily: theme.typography.label.fontFamily,
 		fontSize: theme.typography.text.fontSize[$size],
 		fontWeight: theme.typography.label.fontWeight,
@@ -29,8 +28,8 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		userSelect: 'none',
 		border: 'solid 0.1rem transparent',
 		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
-		outline: 'none',
-		transition: theme.fn.getTransition()
+		outlineOffset: '0.2rem',
+		transition: theme.fn.getTransition(['color', 'background-color', 'border-color'])
 	}),
 	({ theme, $variant, $color }) =>
 		({
@@ -41,7 +40,9 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover')
 				},
 				'&:focus-visible': {
-					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'focus')
+					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'focus'),
+					outline: '0.2rem solid',
+					outlineColor: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'focus')
 				},
 				'&:active': {
 					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
@@ -59,7 +60,8 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					background: theme.fn.getAlphaColor($color, 'hover')
 				},
 				'&:focus-visible': {
-					background: theme.fn.getAlphaColor($color, 'focus')
+					background: theme.fn.getAlphaColor($color, 'focus'),
+					outline: 'auto'
 				},
 				'&:active': {
 					background: theme.fn.getAlphaColor($color, 'active')
@@ -77,7 +79,8 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					background: theme.fn.getAlphaColor($color, 'hover')
 				},
 				'&:focus-visible': {
-					background: theme.fn.getAlphaColor($color, 'focus')
+					background: theme.fn.getAlphaColor($color, 'focus'),
+					outline: 'auto'
 				},
 				'&:active': {
 					background: theme.fn.getAlphaColor($color, 'active')

@@ -25,7 +25,8 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 	userSelect: 'none',
 	outline: 'none',
 	border: 'none',
-	transition: theme.fn.getTransition(),
+	color: 'inherit',
+	transition: theme.fn.getTransition(['background', 'color']),
 	'&:hover': {
 		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'hover')
 	},
@@ -40,7 +41,7 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 		color: `${theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'disabledOnBase')} !important`
 	},
 	'& > svg': {
-		transition: theme.fn.getTransition(),
+		transition: theme.fn.getTransition('transform'),
 		transform: `rotate(${$open ? 180 : 0}deg)`
 	}
 }))

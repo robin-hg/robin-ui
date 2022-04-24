@@ -11,6 +11,6 @@ export const DynamicResizeContainer = styled.div<DynamicResizeContainerProps>(
 		width: $width,
 		height: $height,
 		overflow: 'hidden',
-		transition: theme.fn.getTransition({ duration: $duration })
+		transition: theme.fn.getTransition(['width', 'height'], $duration)
 	})
 )

@@ -17,10 +17,10 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 	textDecorationThickness: '0.1rem',
 	textUnderlineOffset: '0.2rem',
 	textDecorationColor: 'transparent',
-	outline: 'none',
-	outlineOffset: '0.1rem',
+	borderRadius: theme.borderRadius.sm,
+	outlineOffset: '0.2rem',
 	cursor: 'pointer',
-	transition: theme.fn.getTransition(),
+	transition: theme.fn.getTransition('color', 'text-decoration-color'),
 	'&::before': {
 		content: '"\\200b"'
 	},
@@ -30,7 +30,7 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 	},
 	'&:focus-visible': {
 		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover'),
-		outline: 'auto'
+		outline: '0.2rem solid currentColor'
 	},
 	'&:active': {
 		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
