@@ -1,19 +1,18 @@
 import type { Story, Meta } from '@storybook/react'
 
-import Spinner, { type Props } from './Spinner'
+import { Spinner, type Props } from './Spinner'
 
 export default {
-	title: 'Display/Spinner',
+	title: 'Feedback/Spinner',
 	component: Spinner,
 	args: {
-		size: 32
+		color: 'primary',
+		size: 'md'
 	},
 	argTypes: {
-		size: { control: { type: 'range', min: 12, max: 72, step: 4 } }
+		color: { control: { type: 'color' } }
 	}
 } as Meta<Props>
 
 const Template: Story<Props> = args => <Spinner {...args} />
-
 export const Default = Template.bind({})
-Default.storyName = 'Spinner'
