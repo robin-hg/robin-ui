@@ -15,10 +15,10 @@ export const lightPalette: Palette = {
 		onVariant: colors.gray[800]
 	},
 	critical: {
-		base: colors.red[300],
-		onBase: colors.red[900],
-		variant: colors.gray[700],
-		onVariant: colors.gray[50]
+		base: colors.red[800],
+		onBase: colors.red[50],
+		variant: colors.red[100],
+		onVariant: colors.red[900]
 	},
 	warning: {
 		base: colors.yellow[300],
@@ -40,7 +40,7 @@ export const lightPalette: Palette = {
 	},
 	surface: {
 		base: colors.gray[0],
-		onBase: colors.gray[700],
+		onBase: colors.gray[800],
 		variant: colors.gray[200],
 		onVariant: colors.gray[900]
 	},
