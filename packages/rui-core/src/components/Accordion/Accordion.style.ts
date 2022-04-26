@@ -23,7 +23,7 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 	padding: theme.fn.getSpacing(['sm', 'md']),
 	cursor: $expandable ? 'pointer' : 'default',
 	userSelect: 'none',
-	outline: 'none',
+	outline: '0.2rem solid transparent',
 	border: 'none',
 	color: 'inherit',
 	transition: theme.fn.getTransition(['background', 'color']),
@@ -31,7 +31,8 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'hover')
 	},
 	'&:focus-visible': {
-		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'focus')
+		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'focus'),
+		outlineColor: theme.fn.getColor('primary')
 	},
 	'&:active': {
 		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'active')

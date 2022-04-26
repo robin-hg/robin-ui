@@ -18,6 +18,7 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 	textUnderlineOffset: '0.2rem',
 	textDecorationColor: 'transparent',
 	borderRadius: theme.borderRadius.sm,
+	outline: '0.2rem solid transparent',
 	outlineOffset: '0.2rem',
 	cursor: 'pointer',
 	transition: theme.fn.getTransition('color', 'text-decoration-color'),
@@ -30,7 +31,7 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 	},
 	'&:focus-visible': {
 		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover'),
-		outline: '0.2rem solid currentColor'
+		outlineColor: 'currentColor'
 	},
 	'&:active': {
 		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
