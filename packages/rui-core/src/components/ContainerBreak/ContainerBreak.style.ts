@@ -5,7 +5,6 @@ export const BreakerContainer = styled.div({
 })
 
 export const Content = styled.div({
-	boxSizing: 'border-box',
 	width: '100vw',
 	margin: '0 auto'
 })

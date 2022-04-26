@@ -1,7 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import Checkbox, { type Props } from './Checkbox'
+import { Checkbox, type Props } from './Checkbox'
 
 export default {
 	title: 'Inputs/Checkbox',
@@ -9,6 +9,9 @@ export default {
 	args: {
 		label: 'Label',
 		disabled: false
+	},
+	argTypes: {
+		color: { control: { type: 'color' } }
 	}
 } as Meta<Props>
 
@@ -18,13 +21,12 @@ const Template: Story<Props> = args => {
 	return (
 		<Checkbox
 			{...args}
-			onChange={value => {
-				args.onChange?.(value)
-				updateArgs({ checked: value })
+			onChange={event => {
+				args.onChange?.(event)
+				updateArgs({ checked: event.target.checked })
 			}}
 		/>
 	)
 }
 
 export const Default = Template.bind({})
-Default.storyName = 'Checkbox'
