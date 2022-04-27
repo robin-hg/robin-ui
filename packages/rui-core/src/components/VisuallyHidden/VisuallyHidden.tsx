@@ -2,7 +2,7 @@ import type { DefaultProps } from '@rui/types'
 import React from 'react'
 import { HiddenContainer } from './VisuallyHidden.style'
 
-interface Props extends DefaultProps<HTMLDivElement> {}
+export interface Props extends DefaultProps<HTMLDivElement> {}
 
 export const VisuallyHidden = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { children, ...otherProps } = props
