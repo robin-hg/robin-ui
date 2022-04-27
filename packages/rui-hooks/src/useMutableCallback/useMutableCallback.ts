@@ -1,8 +1,8 @@
 import { useCallback, useRef } from 'react'
 
-export const useMutableCallback = <T extends (...args: any[]) => ReturnType<T>>(callback: T) => {
+export const useMutableCallback = <T extends (...args: Parameters<T>) => ReturnType<T>>(callback: T) => {
 	const ref = useRef<T>(callback)
 	ref.current = callback
 
-	return useCallback((...args: Parameters<T>) => ref.current(...args), [])
+	return useCallback(ref.current, [])
 }
