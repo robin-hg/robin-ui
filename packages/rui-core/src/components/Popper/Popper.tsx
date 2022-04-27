@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@rui/types'
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useMemo } from 'react'
 import { usePopper, type Modifier, type StrictModifierNames } from 'react-popper'
 import type { Placement } from '@popperjs/core'
 import { useClickOutside } from '@rui/hooks'
@@ -53,6 +53,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		placement,
 		modifiers: [{ name: 'arrow', options: { element: arrowRef } }, ...modifiers]
 	})
+	const ctxValue = useMemo(() => ({ popperEl: innerRef }), [innerRef])
 
 	const show = open || (hovering && interactive)
 
@@ -76,7 +77,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<Portal target={popperEl || modalEl || undefined}>
-			<PopperContext.Provider value={{ popperEl: innerRef }}>
+			<PopperContext.Provider value={ctxValue}>
 				<FadeContainer in={show} timeout={timeout} unmountOnExit>
 					<PopperElement
 						ref={setInnerRef}

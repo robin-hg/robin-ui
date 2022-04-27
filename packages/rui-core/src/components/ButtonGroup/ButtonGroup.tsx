@@ -1,5 +1,5 @@
 import type { DefaultProps, ConstrainedSize, SizeValue } from '@rui/types'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { ButtonGroupContainer } from './ButtonGroup.style'
 
 export const ButtonGroupContext = React.createContext<{
@@ -17,9 +17,13 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
 
 export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { variant = 'filled', color = 'primary', size = 'md', borderRadius = 'sm', children, ...otherProps } = props
+	const ctxValue = useMemo(
+		() => ({ groupVariant: variant, groupColor: color, groupSize: size }),
+		[variant, color, size]
+	)
 
 	return (
-		<ButtonGroupContext.Provider value={{ groupVariant: variant, groupColor: color, groupSize: size }}>
+		<ButtonGroupContext.Provider value={ctxValue}>
 			<ButtonGroupContainer ref={ref} $borderRadius={borderRadius} {...otherProps}>
 				{children}
 			</ButtonGroupContainer>

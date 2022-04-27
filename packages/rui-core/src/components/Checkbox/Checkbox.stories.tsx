@@ -8,6 +8,7 @@ export default {
 	component: Checkbox,
 	args: {
 		label: 'Label',
+		checked: false,
 		disabled: false
 	},
 	argTypes: {

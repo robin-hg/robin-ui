@@ -1,5 +1,5 @@
 import type { DefaultProps, ConstrainedSize } from '@rui/types'
-import React, { useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { useCombinedRef, useId } from '@rui/hooks'
 
 import { Fade } from '../Transition'
@@ -31,17 +31,20 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const contentId = useId()
 
 	const close = !preventClose ? onClose : undefined
+	const ctxValue = useMemo(
+		() => ({
+			id,
+			contentId,
+			modalEl: modalRef.current,
+			setPreventClose,
+			onClose: close
+		}),
+		[id, contentId, modalRef, preventClose, onClose]
+	)
 
 	return (
 		<Portal>
-			<ModalContext.Provider
-				value={{
-					id,
-					contentId,
-					modalEl: modalRef.current,
-					setPreventClose,
-					onClose: close
-				}}>
+			<ModalContext.Provider value={ctxValue}>
 				<Fade in={open} unmountOnExit>
 					<Backdrop />
 					<ModalContainer

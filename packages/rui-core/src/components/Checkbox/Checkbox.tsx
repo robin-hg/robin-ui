@@ -18,7 +18,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	const id = useId()
 
 	return (
-		<ControlInput ref={ref} color={color} disabled={disabled} labelId={id} {...otherProps}>
+		<ControlInput ref={ref} color={color} disabled={disabled} labelFor={id} {...otherProps}>
 			<BoxContainer>
 				<Box
 					id={id}

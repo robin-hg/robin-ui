@@ -7,12 +7,12 @@ import { ControlInputContainer, Control } from './ControlInput.style'
 export interface Props extends DefaultProps<HTMLDivElement, 'label'> {
 	color?: string
 	label?: number | string
-	labelId?: string
+	labelFor?: string
 	labelPosition?: 'left' | 'right'
 }
 
 export const ControlInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { color = 'primary', label, labelId, labelPosition = 'right', children, disabled, ...otherProps } = props
+	const { color = 'primary', label, labelFor, labelPosition = 'right', children, disabled, ...otherProps } = props
 
 	return (
 		<ControlInputContainer
@@ -24,7 +24,7 @@ export const ControlInput = React.forwardRef<HTMLDivElement, Props>((props, ref)
 			{...otherProps}>
 			<Control>{children}</Control>
 			{label && (
-				<Text as="label" htmlFor={labelId}>
+				<Text as="label" size="sm" htmlFor={labelFor}>
 					{label}
 				</Text>
 			)}

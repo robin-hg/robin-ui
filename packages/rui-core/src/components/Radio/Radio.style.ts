@@ -1,8 +1,8 @@
 import styled from '@rui/styles'
 
 interface CircleProps {
+	checked: boolean
 	$color: string
-	$checked: boolean
 	$error: boolean
 }
 
@@ -22,17 +22,17 @@ export const Circle = styled.input<CircleProps>(
 		transition: theme.fn.getTransition(['background', 'border-color']),
 		cursor: 'inherit'
 	}),
-	({ theme, $color, $checked, $error }) => {
-		const color = $error ? ($checked ? 'critical' : 'critical.variant') : $color
+	({ theme, checked, $color, $error }) => {
+		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
 		const onColor = theme.fn.getOnColor(color)
 		const borderColor = $error ? 'critical' : color
 
 		return {
-			background: $checked || $error ? theme.fn.getColor(color) : 'transparent',
-			borderColor: theme.fn.getColor($checked || $error ? borderColor : 'surface.onBase'),
+			background: checked || $error ? theme.fn.getColor(color) : 'transparent',
+			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'surface.onBase'),
 			'&:hover': {
 				background:
-					$checked || $error
+					checked || $error
 						? theme.fn.getModifiedColor(color, onColor, 'hover')
 						: theme.fn.getAlphaColor(color, 'hover'),
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
@@ -43,7 +43,7 @@ export const Circle = styled.input<CircleProps>(
 			},
 			'&:active': {
 				background:
-					$checked || $error
+					checked || $error
 						? theme.fn.getModifiedColor(color, onColor, 'active')
 						: theme.fn.getAlphaColor(color, 'active'),
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
@@ -57,7 +57,7 @@ export const Circle = styled.input<CircleProps>(
 				height: '0.8rem',
 				background: onColor,
 				borderRadius: '100%',
-				transform: `translate(-50%, -50%) scale(${$checked ? 1 : 0})`,
+				transform: `translate(-50%, -50%) scale(${checked ? 1 : 0})`,
 				transition: theme.fn.getTransition()
 			}
 		}

@@ -11,11 +11,11 @@ export const heading: TypographyProperties<Size> = {
 		xl: '5.7rem'
 	},
 	lineHeight: {
-		xs: 1.28,
+		xs: 1.3,
 		sm: 1.25,
-		md: 1.22,
-		lg: 1.16,
-		xl: 1.12
+		md: 1.2,
+		lg: 1.15,
+		xl: 1.1
 	}
 }
 
@@ -30,11 +30,11 @@ export const text: TypographyProperties<Size> = {
 		xl: '2.2rem'
 	},
 	lineHeight: {
-		xs: 1.33,
-		sm: 1.42,
+		xs: 1.3,
+		sm: 1.4,
 		md: 1.5,
 		lg: 1.4,
-		xl: 1.28
+		xl: 1.3
 	}
 }
 
@@ -48,7 +48,7 @@ export const label: TypographyProperties<ConstrainedSize> = {
 	},
 	lineHeight: {
 		sm: 1.2,
-		md: 1.33,
-		lg: 1.42
+		md: 1.1,
+		lg: 1
 	}
 }

@@ -10,7 +10,7 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 		display: 'inline-flex',
 		flexDirection: $labelPosition === 'right' ? 'row' : 'row-reverse',
 		gap: theme.spacing.sm,
-		alignItems: 'baseline',
+		alignItems: 'center',
 		cursor: 'pointer',
 		userSelect: 'none',
 		'&[disabled]': {
