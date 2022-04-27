@@ -21,7 +21,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	 * @default primary
 	 */
 	color?: string
-	startAdornment?: any
+	startAdornment?: React.ReactNode
 	endAdornment?: React.ReactNode
 	component?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 }
