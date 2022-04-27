@@ -30,19 +30,19 @@ const List = () => {
 	return (
 		<Stack>
 			<Heading size="xl">
-				Heading<small> - Size xl ({theme.typography.text.fontSize.xl})</small>
+				Heading<small> - Size xl ({theme.typography.heading.fontSize.xl})</small>
 			</Heading>
 			<Heading size="lg">
-				Heading<small> - Size lg ({theme.typography.text.fontSize.lg})</small>
+				Heading<small> - Size lg ({theme.typography.heading.fontSize.lg})</small>
 			</Heading>
 			<Heading size="md">
-				Heading<small> - Size md ({theme.typography.text.fontSize.md})</small>
+				Heading<small> - Size md ({theme.typography.heading.fontSize.md})</small>
 			</Heading>
 			<Heading size="sm">
-				Heading<small> - Size sm ({theme.typography.text.fontSize.sm})</small>
+				Heading<small> - Size sm ({theme.typography.heading.fontSize.sm})</small>
 			</Heading>
 			<Heading size="xs">
-				Heading<small> - Size xs ({theme.typography.text.fontSize.xs})</small>
+				Heading<small> - Size xs ({theme.typography.heading.fontSize.xs})</small>
 			</Heading>
 		</Stack>
 	)

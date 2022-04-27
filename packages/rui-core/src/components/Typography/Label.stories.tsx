@@ -29,9 +29,9 @@ const List = () => {
 	const theme = useTheme()
 	return (
 		<Stack>
-			<Label size="lg">Label - Size lg ({theme.typography.text.fontSize.lg})</Label>
-			<Label size="md">Label - Size md ({theme.typography.text.fontSize.md})</Label>
-			<Label size="sm">Label - Size sm ({theme.typography.text.fontSize.sm})</Label>
+			<Label size="lg">Label - Size lg ({theme.typography.label.fontSize.lg})</Label>
+			<Label size="md">Label - Size md ({theme.typography.label.fontSize.md})</Label>
+			<Label size="sm">Label - Size sm ({theme.typography.label.fontSize.sm})</Label>
 		</Stack>
 	)
 }
