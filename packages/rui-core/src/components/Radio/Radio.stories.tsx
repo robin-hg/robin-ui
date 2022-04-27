@@ -1,14 +1,18 @@
 import type { Story, Meta } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import Radio, { type Props } from './Radio'
+import { Radio, type Props } from './Radio'
 
 export default {
 	title: 'Inputs/Radio',
 	component: Radio,
 	args: {
 		label: 'Label',
+		checked: true,
 		disabled: false
+	},
+	argTypes: {
+		color: { control: { type: 'color' } }
 	}
 } as Meta<Props>
 
@@ -18,13 +22,12 @@ const Template: Story<Props> = args => {
 	return (
 		<Radio
 			{...args}
-			onChange={value => {
-				args.onChange?.(value)
-				updateArgs({ checked: value })
+			onChange={event => {
+				args.onChange?.(event)
+				updateArgs({ checked: event.target.checked })
 			}}
 		/>
 	)
 }
 
 export const Default = Template.bind({})
-Default.storyName = 'Radio'
