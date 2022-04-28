@@ -1,6 +1,5 @@
 import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
-// import { dark, gray } from '../src/style/colors'
 import { dark, gray } from '../packages/rui-theme/src/defaultTheme/colors'
 
 import { BaseContainer, RUIProvider } from '../packages/rui-core'
