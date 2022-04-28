@@ -9,7 +9,6 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 	({ theme, $labelPosition }) => ({
 		display: 'inline-flex',
 		flexDirection: $labelPosition === 'right' ? 'row' : 'row-reverse',
-		gap: theme.spacing.sm,
 		alignItems: 'center',
 		cursor: 'pointer',
 		userSelect: 'none',
@@ -18,6 +17,8 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 			color: theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')
 		},
 		'& > label': {
+			paddingLeft: $labelPosition === 'right' ? theme.spacing.sm : 0,
+			paddingRight: $labelPosition === 'left' ? theme.spacing.sm : 0,
 			cursor: 'inherit'
 		}
 	})
