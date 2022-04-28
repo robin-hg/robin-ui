@@ -61,7 +61,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 			disabled={disabled}
 			tabIndex={disabled ? -1 : 0}
 			{...otherProps}>
-			<Content key={size}>
+			<Content key={size} disableResizeHeight>
 				{startAdornment && <Adornment $position={children ? 'start' : undefined}>{startAdornment}</Adornment>}
 				{children && children}
 				{endAdornment && <Adornment $position={children ? 'end' : undefined}>{endAdornment}</Adornment>}

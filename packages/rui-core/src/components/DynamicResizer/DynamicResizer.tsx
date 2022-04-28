@@ -1,5 +1,6 @@
 import type { DefaultProps } from '@rui/types'
 import React, { useRef, useState } from 'react'
+import { flushSync } from 'react-dom'
 import { useIsomorphicLayoutEffect, usePreviousState, useSize } from '@rui/hooks'
 
 import { DynamicResizeContainer } from './DynamicResizer.style'
@@ -24,10 +25,9 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
 	const previousSize = usePreviousState(size)
 
 	useIsomorphicLayoutEffect(() => {
-		// TODO: use flushSync when upgrading to react 18
 		setStage('preparing')
-		const prepareTimeout = window.setTimeout(() => setStage('updating'))
-		const updateTimeout = window.setTimeout(() => setStage('finished'), duration)
+		const prepareTimeout = window.setTimeout(() => flushSync(() => setStage('updating')))
+		const updateTimeout = window.setTimeout(() => flushSync(() => setStage('finished')), duration)
 		return () => {
 			window.clearTimeout(prepareTimeout)
 			window.clearTimeout(updateTimeout)
