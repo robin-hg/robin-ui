@@ -18,7 +18,7 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<Grid {...args}>
 		<GridItem span={4}>
 			<Paper sx={{ height: '20rem' }}>span=4</Paper>
@@ -43,4 +43,3 @@ const Template: Story<Props> = args => (
 		</GridItem>
 	</Grid>
 )
-export const Default = Template.bind({})

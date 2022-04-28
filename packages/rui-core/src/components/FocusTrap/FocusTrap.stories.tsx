@@ -9,7 +9,7 @@ export default {
 	component: FocusTrap
 } as Meta<Props>
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<Stack>
 		<FocusTrap {...args}>
 			<Paper variant="flat" sx={{ padding: '2rem' }}>
@@ -28,5 +28,3 @@ const Template: Story<Props> = args => (
 		</Paper>
 	</Stack>
 )
-
-export const Default = Template.bind({})

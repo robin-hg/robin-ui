@@ -1,4 +1,4 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 import { useTheme, useWidthQuery } from '@rui/hooks'
 import { sxc } from '@rui/styles'
 
@@ -55,5 +55,4 @@ const Colors = () => {
 		</Stack>
 	)
 }
-const Template: Story = () => <Colors />
-export const Default = Template.bind({})
+export const Default = () => <Colors />

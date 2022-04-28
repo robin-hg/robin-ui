@@ -11,7 +11,7 @@ export default {
 	component: DynamicResizer
 } as Meta<Props>
 
-const Template: Story<Props> = args => {
+export const Default: Story<Props> = args => {
 	const [toggle, setToggle] = useState(false)
 	return (
 		<Paper onClick={() => setToggle(!toggle)} variant="flat" sx={{ display: 'inline-block', userSelect: 'none' }}>
@@ -25,4 +25,3 @@ const Template: Story<Props> = args => {
 		</Paper>
 	)
 }
-export const Default = Template.bind({})

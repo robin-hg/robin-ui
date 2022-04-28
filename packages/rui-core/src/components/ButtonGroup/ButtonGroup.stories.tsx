@@ -16,12 +16,10 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<ButtonGroup {...args}>
 		<Button>A</Button>
 		<Button>B</Button>
 		<Button>C</Button>
 	</ButtonGroup>
 )
-
-export const Default = Template.bind({})

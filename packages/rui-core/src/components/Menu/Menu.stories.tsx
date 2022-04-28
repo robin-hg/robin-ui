@@ -18,7 +18,7 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => {
+export const Default: Story<Props> = args => {
 	const ref = useRef<HTMLButtonElement>(null)
 	const [, updateArgs] = useArgs()
 	return (
@@ -42,5 +42,3 @@ const Template: Story<Props> = args => {
 		</>
 	)
 }
-
-export const Default = Template.bind({})

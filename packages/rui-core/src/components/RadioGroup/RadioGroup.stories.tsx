@@ -19,7 +19,7 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => {
+export const Default: Story<Props> = args => {
 	const [, updateArgs] = useArgs()
 
 	return (
@@ -34,5 +34,3 @@ const Template: Story<Props> = args => {
 		</RadioGroup>
 	)
 }
-
-export const Default = Template.bind({})

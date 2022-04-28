@@ -13,7 +13,7 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<Container
 		{...args}
 		sx={{
@@ -22,4 +22,3 @@ const Template: Story<Props> = args => (
 		}}
 	/>
 )
-export const Default = Template.bind({})

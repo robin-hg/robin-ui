@@ -26,11 +26,10 @@ const Element = styled(Paper)({
 	height: '10rem'
 })
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<FlexBox {...args}>
 		<Element variant="flat">1</Element>
 		<Element variant="flat">2</Element>
 		<Element variant="flat">3</Element>
 	</FlexBox>
 )
-export const Default = Template.bind({})

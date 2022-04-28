@@ -8,7 +8,7 @@ export default {
 	component: ContainerBreak
 } as Meta<Props>
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<Container>
 		<ContainerBreak
 			{...args}
@@ -19,4 +19,3 @@ const Template: Story<Props> = args => (
 			}}></ContainerBreak>
 	</Container>
 )
-export const Default = Template.bind({})

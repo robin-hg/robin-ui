@@ -36,26 +36,20 @@ export default {
 
 // TODO: add switch toggle later
 
-const FadeTemplate: Story<Props> = args => (
+export const Fade: Story<Props> = args => (
 	<FadeTransition {...args}>
 		<Paper variant="flat">Content</Paper>
 	</FadeTransition>
 )
 
-export const Fade = FadeTemplate.bind({})
-
-const CollapseTemplate: Story<Props> = args => (
+export const Collapse: Story<Props> = args => (
 	<CollapseTransition {...args}>
 		<Paper variant="flat">Content</Paper>
 	</CollapseTransition>
 )
 
-export const Collapse = CollapseTemplate.bind({})
-
-const GrowTemplate: Story<Props> = args => (
+export const Grow: Story<Props> = args => (
 	<GrowTransition {...args}>
 		<Paper variant="flat">Content</Paper>
 	</GrowTransition>
 )
-
-export const Grow = GrowTemplate.bind({})

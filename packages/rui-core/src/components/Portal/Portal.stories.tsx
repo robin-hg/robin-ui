@@ -13,7 +13,7 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => {
+export const Default: Story<Props> = args => {
 	const ref = useRef<HTMLDivElement>(null)
 
 	return (
@@ -28,4 +28,3 @@ const Template: Story<Props> = args => {
 		</Stack>
 	)
 }
-export const Default = Template.bind({})

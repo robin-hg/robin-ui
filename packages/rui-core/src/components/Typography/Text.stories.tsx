@@ -20,9 +20,7 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => <Text {...args} />
-
-export const Default = Template.bind({})
+export const Default: Story<Props> = args => <Text {...args} />
 
 const List = () => {
 	const theme = useTheme()

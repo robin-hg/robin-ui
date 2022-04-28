@@ -12,9 +12,8 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<Hidden {...args}>
 		<Paper variant="flat">Hidden on {args.breakpoint}</Paper>
 	</Hidden>
 )
-export const Default = Template.bind({})

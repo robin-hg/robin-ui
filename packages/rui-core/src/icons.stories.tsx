@@ -17,7 +17,7 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => (
+export const Default: Story<Props> = args => (
 	<div>
 		<FlexBox justifyContent="flex-start" wrap>
 			{Object.entries(Icons).map(i => {
@@ -41,5 +41,3 @@ const Template: Story<Props> = args => (
 		</FlexBox>
 	</div>
 )
-
-export const Default = Template.bind({})
