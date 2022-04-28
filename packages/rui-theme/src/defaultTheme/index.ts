@@ -36,6 +36,7 @@ export const defaultTheme: BaseTheme = {
 	lightPalette,
 	darkPalette,
 	colorModifiers: {
+		base: 0.02,
 		tint: 0.05,
 		hover: 0.1,
 		focus: 0.1,

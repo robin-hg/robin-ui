@@ -19,8 +19,7 @@ export const Circle = styled.input<CircleProps>(
 		borderRadius: '100%',
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
-		transition: theme.fn.getTransition(['background', 'border-color']),
-		cursor: 'inherit'
+		transition: theme.fn.getTransition(['background', 'border-color'])
 	}),
 	({ theme, checked, $color, $error }) => {
 		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color

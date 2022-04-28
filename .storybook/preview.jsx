@@ -7,7 +7,7 @@ import { BaseContainer, RUIProvider } from '../packages/rui-core'
 
 export const parameters = {
 	darkMode: {
-		dark: { ...themes.dark, appBg: dark[900], barBg: dark[900], appContentBg: dark[900] },
+		dark: { ...themes.dark, appBg: dark[800], barBg: dark[800], appContentBg: dark[800] },
 		light: { ...themes.light, appBg: gray[50] }
 	},
 	actions: { argTypesRegex: '^on[A-Z].*' },

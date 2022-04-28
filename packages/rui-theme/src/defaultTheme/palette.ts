@@ -89,14 +89,14 @@ export const darkPalette: Palette = {
 		onVariant: colors.gray[50]
 	},
 	surface: {
-		base: colors.dark[700],
+		base: colors.dark[600],
 		onBase: colors.dark[50],
-		variant: colors.dark[600],
+		variant: colors.dark[800],
 		onVariant: colors.dark[50]
 	},
 	background: {
-		base: colors.dark[800],
+		base: colors.dark[700],
 		onBase: colors.dark[50]
 	},
-	outline: colors.gray[600]
+	outline: colors.dark[400]
 }

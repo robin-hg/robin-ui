@@ -10,7 +10,7 @@ export type SizeValue = Size | string | number
 export type ConstrainedSize = 'sm' | 'md' | 'lg'
 export type ConstrainedSizeValue = ConstrainedSize | string | number
 
-export type Modifier = 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
+export type Modifier = 'base' | 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
 
 type DefaultColor =
 	| 'gray'

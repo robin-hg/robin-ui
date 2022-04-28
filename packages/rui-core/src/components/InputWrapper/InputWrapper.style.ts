@@ -8,5 +8,7 @@ export const InputContainer = styled(Stack)(({ theme }) => ({
 }))
 
 export const Content = styled.div(({ theme }) => ({
-	paddingTop: theme.spacing.xs
+	'&:not(:first-child)': {
+		paddingTop: theme.spacing.xs
+	}
 }))

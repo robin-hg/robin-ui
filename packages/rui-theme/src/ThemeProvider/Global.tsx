@@ -16,7 +16,7 @@ export const Global = () => (
 					padding: 0,
 					lineHeight: 1.5,
 					minHeight: ['100vh', '-webkit-fill-available'],
-					background: theme.palette.background.base,
+					background: theme.fn.getModifiedColor('background', 'primary', 'base'),
 					color: theme.palette.background.onBase,
 					textRendering: 'optimizeLegibility',
 					WebkitFontSmoothing: 'antialiased'

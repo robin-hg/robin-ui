@@ -27,6 +27,7 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 export const Control = styled.span({
 	display: 'flex',
 	alignItems: 'center',
+	cursor: 'inherit',
 	'&::before': {
 		content: '"\\200b"'
 	}

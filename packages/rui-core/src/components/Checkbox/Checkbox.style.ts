@@ -32,8 +32,7 @@ export const Box = styled.input<BoxProps>(
 		borderRadius: theme.borderRadius.sm,
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
-		transition: theme.fn.getTransition(['background', 'border-color']),
-		cursor: 'inherit'
+		transition: theme.fn.getTransition(['background', 'border-color'])
 	}),
 	({ theme, $color, checked, $error }) => {
 		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
