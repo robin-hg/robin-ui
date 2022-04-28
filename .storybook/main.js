@@ -1,6 +1,5 @@
 module.exports = {
-	core: { builder: 'webpack5' },
-	// core: { builder: '@storybook/builder-vite' },
+	core: { builder: '@storybook/builder-vite' },
 	stories: ['../packages/**/*.stories.@(tsx|mdx)'],
 	addons: [
 		{ name: '@storybook/addon-essentials', options: { backgrounds: false } },
@@ -8,13 +7,6 @@ module.exports = {
 		'storybook-dark-mode/register'
 	],
 	framework: '@storybook/react',
-	features: { emotionAlias: false }
-	// viteFinal: config => {
-	// 	config.resolve.alias = {
-	// 		...config.resolve.alias,
-	// 		'@emotion/react': require.resolve('@emotion/react'),
-	// 		'@emotion/styled': require.resolve('@emotion/styled')
-	// 	}
-	// 	return config
-	// }
+	features: { emotionAlias: false },
+	typescript: { reactDocgen: false }
 }

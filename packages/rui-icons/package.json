@@ -1,6 +1,7 @@
 {
 	"name": "@rui/icons",
 	"packageManager": "yarn@3.2.0",
+	"main": "./src/index.ts",
 	"sideEffects": false,
 	"dependencies": {
 		"@rui/hooks": "workspace:*",

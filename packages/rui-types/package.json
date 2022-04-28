@@ -1,6 +1,7 @@
 {
 	"name": "@rui/types",
 	"packageManager": "yarn@3.2.0",
+	"main": "./src/index.ts",
 	"sideEffects": false,
 	"dependencies": {
 		"@rui/styles": "workspace:*",

@@ -1,15 +1,18 @@
 {
 	"name": "@rui/core",
 	"packageManager": "yarn@3.2.0",
+	"main": "./src/index.ts",
 	"sideEffects": false,
 	"dependencies": {
+		"@popperjs/core": "^2.11.5",
 		"@rui/hooks": "workspace:*",
 		"@rui/icons": "workspace:*",
 		"@rui/styles": "workspace:*",
 		"@rui/theme": "workspace:*",
 		"@rui/types": "workspace:*",
 		"@rui/utils": "workspace:*",
-		"framer-motion": "^6.3.3"
+		"framer-motion": "^6.3.3",
+		"react-popper": "^2.3.0"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",
