@@ -5,6 +5,11 @@ import { dark, gray } from '../packages/rui-theme/src/defaultTheme/colors'
 import { BaseContainer, RUIProvider } from '../packages/rui-core'
 
 export const parameters = {
+	previewTabs: {
+		'storybook/docs/panel': {
+			hidden: true
+		}
+	},
 	darkMode: {
 		dark: { ...themes.dark, appBg: dark[800], barBg: dark[800], appContentBg: dark[800] },
 		light: { ...themes.light, appBg: gray[50] }

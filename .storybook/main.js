@@ -4,7 +4,7 @@ module.exports = {
 	addons: [
 		{ name: '@storybook/addon-essentials', options: { backgrounds: false } },
 		'@storybook/addon-a11y',
-		'storybook-dark-mode/register'
+		'storybook-dark-mode'
 	],
 	framework: '@storybook/react',
 	features: { emotionAlias: false },
