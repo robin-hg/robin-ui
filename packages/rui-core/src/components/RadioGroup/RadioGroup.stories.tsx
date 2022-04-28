@@ -8,8 +8,9 @@ export default {
 	title: 'Inputs/RadioGroup',
 	component: RadioGroup,
 	args: {
-		label: 'Radio Group label',
+		label: 'Radio group label',
 		description: 'Description',
+		errorMessage: 'Error message',
 		value: 'react'
 	},
 	argTypes: {

@@ -14,8 +14,8 @@ export const BoxContainer = styled.span({
 })
 
 interface BoxProps {
+	checked: boolean
 	$color: ColorToken
-	$checked: boolean
 	$error: boolean
 }
 
@@ -35,20 +35,20 @@ export const Box = styled.input<BoxProps>(
 		transition: theme.fn.getTransition(['background', 'border-color']),
 		cursor: 'inherit'
 	}),
-	({ theme, $color, $checked, $error }) => {
-		const color = $error ? ($checked ? 'critical' : 'critical.variant') : $color
+	({ theme, $color, checked, $error }) => {
+		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
 		const onColor = theme.fn.getOnColor(color)
 		const borderColor = $error ? 'critical' : color
 
 		return {
-			background: $checked || $error ? theme.fn.getColor(color) : 'transparent',
-			borderColor: theme.fn.getColor($checked || $error ? borderColor : 'surface.onBase'),
+			background: checked || $error ? theme.fn.getColor(color) : 'transparent',
+			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'surface.onBase'),
 			'& + svg': {
 				color: onColor
 			},
 			'&:hover': {
 				background:
-					$checked || $error
+					checked || $error
 						? theme.fn.getModifiedColor(color, onColor, 'hover')
 						: theme.fn.getAlphaColor(color, 'hover'),
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
@@ -59,7 +59,7 @@ export const Box = styled.input<BoxProps>(
 			},
 			'&:active': {
 				background:
-					$checked || $error
+					checked || $error
 						? theme.fn.getModifiedColor(color, onColor, 'active')
 						: theme.fn.getAlphaColor(color, 'active'),
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')

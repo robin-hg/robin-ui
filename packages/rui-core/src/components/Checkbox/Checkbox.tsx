@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useId } from '@rui/hooks'
 
 import { ControlInput } from '../ControlInput'
@@ -6,16 +6,21 @@ import { ControlInput } from '../ControlInput'
 import { BoxContainer, Box } from './Checkbox.style'
 import { Check, Minus } from '@rui/icons'
 
-export interface Props extends Omit<React.ComponentProps<typeof ControlInput>, 'onChange'> {
+export interface Props extends Omit<React.ComponentProps<typeof ControlInput>, 'onChange' | 'defaultValue'> {
 	checked?: boolean
+	defaultValue?: boolean
 	indeterminate?: boolean
 	error?: boolean
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { checked, indeterminate, error, color = 'primary', disabled, onChange, ...otherProps } = props
+	const { checked, defaultValue, indeterminate, error, color = 'primary', disabled, onChange, ...otherProps } = props
 	const id = useId()
+
+	const [uncontrolled, setUncontrolled] = useState(!!defaultValue)
+	const isUncontrolled = checked === undefined
+	const _checked = isUncontrolled ? uncontrolled : checked
 
 	return (
 		<ControlInput ref={ref} color={color} disabled={disabled} labelFor={id} {...otherProps}>
@@ -23,14 +28,18 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 				<Box
 					id={id}
 					type="checkbox"
-					checked={checked}
-					onChange={onChange}
+					checked={_checked || !!indeterminate}
+					onChange={event => {
+						if (isUncontrolled) {
+							setUncontrolled(event.target.checked)
+						}
+						onChange?.(event)
+					}}
 					$color={color}
-					$checked={!!checked || !!indeterminate}
 					$error={!!error}
 					disabled={disabled}
 				/>
-				{checked ? <Check /> : indeterminate ? <Minus /> : null}
+				{_checked ? <Check /> : indeterminate ? <Minus /> : null}
 			</BoxContainer>
 		</ControlInput>
 	)
