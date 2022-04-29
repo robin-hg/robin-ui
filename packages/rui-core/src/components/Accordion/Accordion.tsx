@@ -13,11 +13,11 @@ export interface Props extends DefaultProps<HTMLDivElement, 'summary'> {
 	open?: boolean
 	disabled?: boolean
 	summary?: React.ReactNode
-	onClick?: () => void
+	onToggle?: () => void
 }
 
 export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { open: openOverride, disabled, summary, children, onClick, ...otherProps } = props
+	const { open: openOverride, disabled, summary, children, onToggle, ...otherProps } = props
 	const { paperColor = 'surface' } = useContext(PaperContext)
 	const [open, setOpen] = useState(!!openOverride)
 	const summaryId = useId()
@@ -33,7 +33,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 	}, [open])
 
 	const toggleOpen = () => {
-		onClick?.()
+		onToggle?.()
 		if (!overrideMode && expandable) {
 			setOpen(!open)
 		}
