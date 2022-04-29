@@ -50,7 +50,7 @@ export const defaultTheme: BaseTheme = {
 	},
 	shadow: {
 		color: 'rgba(0, 0, 0, 0.10)',
-		generateShadow: function (elevation: number) {
+		generateShadow(elevation: number) {
 			if (elevation <= 0) {
 				return 'none'
 			}
