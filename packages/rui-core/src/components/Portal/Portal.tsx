@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { useForceUpdate, useIsomorphicLayoutEffect } from '@rui/hooks'
+import { useForceUpdate } from '@rui/hooks'
 
 export interface Props {
 	/**
@@ -13,11 +13,7 @@ export interface Props {
 export const Portal: React.FC<Props> = props => {
 	const { children, target: targetEl } = props
 	const target = targetEl || document?.body
-	const forceUpdate = useForceUpdate()
-
-	useIsomorphicLayoutEffect(() => {
-		forceUpdate()
-	}, [])
+	useForceUpdate(true)
 
 	return target ? ReactDOM.createPortal(children, target) : null
 }
