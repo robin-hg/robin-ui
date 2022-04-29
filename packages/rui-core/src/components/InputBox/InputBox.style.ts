@@ -17,8 +17,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			paddingLeft: $leftPadding || theme.spacing.md,
 			width: '100%',
 			fontSize: 'inherit',
-			lineHeight: 'inherit',
-			background: theme.fn.getModifiedColor('surface.variant', 'primary', 'base'),
+			background: theme.fn.getModifiedColor('surface', 'primary', 'base'),
 			color: theme.palette.surface.onVariant,
 			border: `solid 0.1rem ${theme.palette.outline}`,
 			borderRadius: theme.borderRadius.sm,
@@ -26,15 +25,19 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			transition: theme.fn.getTransition(),
 			'&:focus': {
 				borderColor: theme.fn.getColor('primary')
+			},
+			'::placeholder': {
+				color: theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')
 			}
 		}
 	}),
 	({ theme, $state }) => ({
 		'& > input, & > div': {
 			disabled: {
-				color: theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase'),
-				background: theme.fn.getAlphaColor('surface.variant', 'disabledBase'),
-				cursor: 'not-allowed'
+				color: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')} !important`,
+				background: `${theme.fn.getAlphaColor('surface.variant', 'disabledBase')} !important`,
+				borderColor: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledBase')} !important`,
+				cursor: 'not-allowed !important'
 			},
 			error: {
 				borderColor: theme.fn.getColor('critical')

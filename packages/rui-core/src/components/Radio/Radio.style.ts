@@ -60,5 +60,14 @@ export const Circle = styled.input<CircleProps>(
 				transition: theme.fn.getTransition()
 			}
 		}
-	}
+	},
+	({ theme }) => ({
+		'&[disabled]': {
+			background: `${theme.fn.getAlphaColor('surface.base', 'disabledBase')} !important`,
+			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`,
+			'&::before': {
+				background: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`
+			}
+		}
+	})
 )

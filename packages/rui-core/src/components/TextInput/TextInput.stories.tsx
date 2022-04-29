@@ -9,7 +9,8 @@ export default {
 	args: {
 		label: 'Text input label',
 		description: 'Description',
-		value: 'Value'
+		placeholder: 'Placeholder',
+		value: ''
 	}
 } as Meta<Props>
 

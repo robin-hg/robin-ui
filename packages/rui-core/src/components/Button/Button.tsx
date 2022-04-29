@@ -23,12 +23,13 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	color?: ColorToken
 	startAdornment?: React.ReactNode
 	endAdornment?: React.ReactNode
-	component?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+	disabled?: boolean
+	as?: React.ElementType
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
 	const {
-		component,
+		as,
 		variant = 'filled',
 		size = 'md',
 		color = 'primary',
@@ -45,7 +46,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 	return (
 		<StyledButton
 			ref={ref}
-			as={component}
+			as={as}
 			$variant={groupVariant || variant}
 			$color={groupColor || color}
 			$size={groupSize || size}

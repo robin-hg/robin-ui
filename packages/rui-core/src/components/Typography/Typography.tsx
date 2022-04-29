@@ -12,7 +12,7 @@ export interface Props extends DefaultProps<HTMLParagraphElement, 'size'> {
 	italic?: boolean
 	underline?: boolean
 	strikethrough?: boolean
-	as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+	as?: React.ElementType
 }
 
 type Variant = 'heading' | 'text' | 'label'

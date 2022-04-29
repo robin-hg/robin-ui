@@ -66,8 +66,8 @@ export const Box = styled.input<BoxProps>(
 			'& + svg': {
 				color: `${theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')} !important`
 			},
-			background: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`,
-			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')} !important`
+			background: `${theme.fn.getAlphaColor('surface.base', 'disabledBase')} !important`,
+			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`
 		}
 	})
 )
