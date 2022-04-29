@@ -1,17 +1,26 @@
 import type { DefaultProps } from '@rui/types'
 import React from 'react'
+import { pick } from '@rui/utils'
 import { Text } from '../Typography'
 
 import { Label, Description, ErrorMessage } from './InputWrapper.style'
 
-export interface Props extends DefaultProps<HTMLDivElement> {
+export const extractInputWrapperProps = (props: ExternalInputWrapperProps & Record<string, any>) => {
+	const keys: (keyof ExternalInputWrapperProps)[] = ['label', 'description', 'error', 'errorMessage', 'required']
+	return pick(props, keys)
+}
+
+export interface ExternalInputWrapperProps {
 	label?: string
-	labelId?: string
-	labelFor?: string
 	description?: React.ReactNode
 	error?: boolean
 	errorMessage?: React.ReactNode
 	required?: boolean
+}
+
+export interface Props extends DefaultProps<HTMLDivElement>, ExternalInputWrapperProps {
+	labelId?: string
+	labelFor?: string
 }
 
 export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {

@@ -2,53 +2,30 @@ import type { DefaultProps } from '@rui/types'
 import React from 'react'
 import { useId } from '@rui/hooks'
 
-import { InputBox } from '../InputBox'
-import { InputWrapper } from '../InputWrapper'
+import { extractInputBoxProps, InputBox, type ExternalInputBoxProps } from '../InputBox'
+import { InputWrapper, extractInputWrapperProps, type ExternalInputWrapperProps } from '../InputWrapper'
+import { omit } from '@rui/utils'
 
-export interface Props extends DefaultProps<HTMLInputElement, 'children'> {
-	// InputWrapper props
-	label?: string
-	description?: string
-	error?: boolean
-	errorMessage?: React.ReactNode
-	required?: boolean
-	// InputBox props
-	leftAdornment?: React.ReactNode
-	rightAdornment?: React.ReactNode
-	// TextInput props
+export interface Props
+	extends DefaultProps<HTMLInputElement, 'children'>,
+		ExternalInputWrapperProps,
+		ExternalInputBoxProps {
 	value?: string
 	disabled?: boolean
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-	const {
-		label,
-		description,
-		required,
-		disabled,
-		error,
-		errorMessage,
-		leftAdornment,
-		rightAdornment,
-		value,
-		onChange,
-		id,
-		className,
-		...otherProps
-	} = props
+	const { disabled, required, value, onChange, id, className } = props
 	const _id = useId(id)
 
+	const inputWrapperProps = extractInputWrapperProps(props)
+	const inputBoxProps = extractInputBoxProps(props)
+	const otherProps = omit(props, [...Object.keys(inputWrapperProps), ...Object.keys([inputBoxProps])])
+
 	return (
-		<InputWrapper
-			label={label}
-			labelFor={_id}
-			description={description}
-			required={required}
-			error={error}
-			errorMessage={errorMessage}
-			className={className}>
-			<InputBox error={error} disabled={disabled} leftAdornment={leftAdornment} rightAdornment={rightAdornment}>
+		<InputWrapper labelFor={_id} className={className} {...inputWrapperProps}>
+			<InputBox {...inputBoxProps}>
 				<input
 					id={_id}
 					ref={ref}
