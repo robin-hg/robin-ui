@@ -24,6 +24,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	startAdornment?: React.ReactNode
 	endAdornment?: React.ReactNode
 	disabled?: boolean
+	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 	as?: React.ElementType
 }
 
