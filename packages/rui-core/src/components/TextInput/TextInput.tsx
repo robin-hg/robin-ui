@@ -37,12 +37,12 @@ export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) 
 		className,
 		...otherProps
 	} = props
-	const _id = useId()
+	const _id = useId(id)
 
 	return (
 		<InputWrapper
 			label={label}
-			labelFor={id || _id}
+			labelFor={_id}
 			description={description}
 			required={required}
 			error={error}
@@ -50,7 +50,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) 
 			className={className}>
 			<InputBox error={error} disabled={disabled} leftAdornment={leftAdornment} rightAdornment={rightAdornment}>
 				<input
-					id={id || _id}
+					id={_id}
 					ref={ref}
 					type="text"
 					value={value}

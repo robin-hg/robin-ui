@@ -33,7 +33,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		className,
 		...otherProps
 	} = props
-	const _id = useId()
+	const _id = useId(id)
 
 	const [uncontrolled, setUncontrolled] = useState(!!defaultValue)
 	const isUncontrolled = checked === undefined
@@ -45,11 +45,11 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 			color={color}
 			disabled={disabled}
 			label={label}
-			labelFor={id || _id}
+			labelFor={_id}
 			labelPosition={labelPosition}
 			className={className}>
 			<Box
-				id={id || _id}
+				id={_id}
 				type="checkbox"
 				checked={_checked || !!indeterminate}
 				onChange={event => {

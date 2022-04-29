@@ -1,6 +1,6 @@
 import { useId as _useId } from 'react'
 
-export const useId = () => {
+export const useId = (staticId?: string) => {
 	const id = _useId()
-	return `rui-${id}`
+	return staticId || `rui-${id}`
 }

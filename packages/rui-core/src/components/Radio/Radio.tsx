@@ -39,7 +39,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 		value: groupValue,
 		onChange: groupOnChange
 	} = useContext(RadioGroupContext)
-	const _id = useId()
+	const _id = useId(id)
 
 	const [uncontrolled, setUncontrolled] = useState(!!defaultValue)
 	const inGroup = !!groupOnChange
@@ -51,11 +51,11 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 			ref={ref}
 			disabled={disabled}
 			label={label}
-			labelFor={id || _id}
+			labelFor={_id}
 			labelPosition={labelPosition}
 			className={className}>
 			<Circle
-				id={id || _id}
+				id={_id}
 				type="radio"
 				checked={inGroup ? value === groupValue : _checked}
 				onChange={event => {
