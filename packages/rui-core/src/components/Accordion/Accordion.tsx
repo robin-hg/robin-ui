@@ -1,6 +1,5 @@
 import type { DefaultProps } from '@rui/types'
 import React, { useContext, useEffect, useState } from 'react'
-import { handleKeyPress } from '@rui/utils'
 import { useId } from '@rui/hooks'
 import { PaperContext } from '../Paper'
 
@@ -48,7 +47,6 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				$paperColor={paperColor}
 				disabled={!!disabled}
 				onClick={toggleOpen}
-				onKeyDown={handleKeyPress('Enter', toggleOpen)}
 				tabIndex={expandable ? 0 : -1}
 				id={summaryId}
 				aria-controls={bodyId}
