@@ -1,35 +1,34 @@
 import type { DefaultProps } from '@rui/types'
 import React from 'react'
+import { omit, pick } from '@rui/utils'
 import { useId } from '@rui/hooks'
 
-import { extractInputBoxProps, InputBox, type ExternalInputBoxProps } from '../InputBox'
-import { InputWrapper, extractInputWrapperProps, type ExternalInputWrapperProps } from '../InputWrapper'
-import { omit } from '@rui/utils'
+import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../InputWrapper'
+import { InputBox, inputBoxProps, type InputBoxProps } from '../InputBox'
 
-export interface Props
-	extends DefaultProps<HTMLInputElement, 'children'>,
-		ExternalInputWrapperProps,
-		ExternalInputBoxProps {
+export interface Props extends DefaultProps<HTMLInputElement, 'children'>, InputWrapperProps, InputBoxProps {
+	placeholder?: string
 	value?: string
 	disabled?: boolean
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-	const { disabled, required, value, onChange, id, className } = props
+	const { placeholder, disabled, required, value, onChange, id, className } = props
 	const _id = useId(id)
 
-	const inputWrapperProps = extractInputWrapperProps(props)
-	const inputBoxProps = extractInputBoxProps(props)
-	const otherProps = omit(props, [...Object.keys(inputWrapperProps), ...Object.keys([inputBoxProps])])
+	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
+	const extractedInputBoxProps = pick(props, inputBoxProps.concat())
+	const otherProps = omit(props, [...inputWrapperProps, ...inputBoxProps])
 
 	return (
-		<InputWrapper labelFor={_id} className={className} {...inputWrapperProps}>
-			<InputBox {...inputBoxProps}>
+		<InputWrapper labelFor={_id} className={className} {...extractedInputWrapperProps}>
+			<InputBox {...extractedInputBoxProps}>
 				<input
 					id={_id}
 					ref={ref}
 					type="text"
+					placeholder={placeholder}
 					value={value}
 					required={required}
 					disabled={disabled}

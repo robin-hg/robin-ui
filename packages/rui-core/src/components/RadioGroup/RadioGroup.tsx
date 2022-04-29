@@ -2,7 +2,7 @@ import type { DefaultProps } from '@rui/types'
 import React, { useMemo, useState } from 'react'
 import { useId } from '@rui/hooks'
 
-import { InputWrapper, type ExternalInputWrapperProps } from '../InputWrapper'
+import { InputWrapper, type InputWrapperProps } from '../InputWrapper'
 import { RadioContainer } from './RadioGroup.style'
 
 export const RadioGroupContext = React.createContext<{
@@ -12,7 +12,7 @@ export const RadioGroupContext = React.createContext<{
 	onChange?: (value?: string | number) => void
 }>({})
 
-export interface Props extends DefaultProps<HTMLDivElement, 'onChange'>, ExternalInputWrapperProps {
+export interface Props extends DefaultProps<HTMLDivElement, 'onChange'>, InputWrapperProps {
 	direction?: React.CSSProperties['flexDirection']
 	value?: string | number
 	defaultValue?: string | number
