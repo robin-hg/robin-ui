@@ -1,11 +1,6 @@
-import { useRef } from 'react'
-
-const generateId = () =>
-	Math.random()
-		.toString(36)
-		.replace(/[^a-z]+/g, '')
+import { useId as _useId } from 'react'
 
 export const useId = () => {
-	const id = useRef(generateId())
-	return `rui-${id.current}`
+	const id = _useId()
+	return `rui-${id}`
 }
