@@ -1,9 +1,0 @@
-import { Meta } from '@storybook/addon-docs'
-
-<Meta title="Hooks/useSetState" />
-
-# useSetState
-
-A version of `useState` that manages an object with a `setState` function that shallow merges values.
-
-`const useSetState: <T extends Record<string, any>>(initialState: T) => [T, (value: Partial<T> | ((current: T) => Partial<T>)) => void]`
