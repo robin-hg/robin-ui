@@ -10,7 +10,7 @@ export const Label = styled(_Label)(({ theme }) => ({
 }))
 
 export const Description = styled(Text)(({ theme }) => ({
-	marginTop: `-${theme.spacing.sm}`,
+	marginTop: `-${theme.spacing.xs}`,
 	marginBottom: theme.spacing.sm
 }))
 
