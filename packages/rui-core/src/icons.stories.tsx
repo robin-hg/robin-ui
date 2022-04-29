@@ -12,8 +12,7 @@ export default {
 		color: 'inherit'
 	},
 	argTypes: {
-		size: { control: { type: 'range', min: 12, max: 36, step: 4 } },
-		color: { control: { type: 'color' } }
+		size: { control: { type: 'range', min: 12, max: 36, step: 4 } }
 	}
 } as Meta<Props>
 

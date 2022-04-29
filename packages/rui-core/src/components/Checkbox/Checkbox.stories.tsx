@@ -11,9 +11,7 @@ export default {
 		checked: false,
 		disabled: false
 	},
-	argTypes: {
-		color: { control: { type: 'color' } }
-	}
+	argTypes: {}
 } as Meta<Props>
 
 export const Default: Story<Props> = args => {

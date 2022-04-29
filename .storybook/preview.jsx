@@ -37,7 +37,8 @@ export const parameters = {
 	controls: {
 		hideNoControlsWarning: true,
 		matchers: {
-			text: /^(label)$/i
+			text: /^(label)$/i,
+			color: /^(color)$/i
 		}
 	}
 }

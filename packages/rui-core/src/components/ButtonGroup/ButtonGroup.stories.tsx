@@ -11,9 +11,7 @@ export default {
 		variant: 'filled',
 		color: 'primary'
 	},
-	argTypes: {
-		color: { control: { type: 'color' } }
-	}
+	argTypes: {}
 } as Meta<Props>
 
 export const Default: Story<Props> = args => (

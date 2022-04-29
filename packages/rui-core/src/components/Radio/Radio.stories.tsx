@@ -10,9 +10,6 @@ export default {
 		label: 'Label',
 		checked: true,
 		disabled: false
-	},
-	argTypes: {
-		color: { control: { type: 'color' } }
 	}
 } as Meta<Props>
 

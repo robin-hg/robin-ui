@@ -11,9 +11,7 @@ export default {
 		totalItems: 500,
 		itemsPerPage: 10
 	},
-	argTypes: {
-		color: { control: 'color' }
-	}
+	argTypes: {}
 } as Meta<Props>
 
 export const Default: Story<Props> = args => {

@@ -12,8 +12,7 @@ export default {
 		underline: true
 	},
 	argTypes: {
-		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-		color: { control: { type: 'color' } }
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

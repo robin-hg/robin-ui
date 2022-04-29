@@ -14,7 +14,6 @@ export default {
 		value: 'react'
 	},
 	argTypes: {
-		color: { control: { type: 'color' } },
 		value: { control: { type: 'text' } }
 	}
 } as Meta<Props>
