@@ -25,6 +25,7 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 )
 
 export const Control = styled.span({
+	position: 'relative',
 	display: 'flex',
 	alignItems: 'center',
 	'& input': {
