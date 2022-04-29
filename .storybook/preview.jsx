@@ -27,10 +27,9 @@ export const parameters = {
 				'Surface',
 				'Inputs',
 				'Display',
+				'Feedback',
 				'Navigation',
-				'Shotrtcuts',
-				'Utils',
-				'Hooks'
+				'Utils'
 			]
 		}
 	},
