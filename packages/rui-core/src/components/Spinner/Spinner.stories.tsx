@@ -8,8 +8,7 @@ export default {
 	args: {
 		color: 'primary',
 		size: 'md'
-	},
-	argTypes: {}
+	}
 } as Meta<Props>
 
 export const Default: Story<Props> = args => <Spinner {...args} />

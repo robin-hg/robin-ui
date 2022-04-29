@@ -10,8 +10,7 @@ export default {
 		label: 'Label',
 		checked: false,
 		disabled: false
-	},
-	argTypes: {}
+	}
 } as Meta<Props>
 
 export const Default: Story<Props> = args => {

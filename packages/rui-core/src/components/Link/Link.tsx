@@ -1,4 +1,4 @@
-import type { DefaultProps, SizeValue } from '@rui/types'
+import type { DefaultProps, ColorToken, SizeValue } from '@rui/types'
 import React from 'react'
 
 import { StyledLink } from './Link.style'
@@ -9,7 +9,7 @@ export interface Props extends DefaultProps<HTMLAnchorElement, 'size'> {
 	 * Link color.
 	 * @default primary
 	 */
-	color?: string
+	color?: ColorToken
 	/**
 	 * Underline behavior.
 	 * @default hover

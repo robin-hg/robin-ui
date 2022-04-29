@@ -9,13 +9,13 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	labelId?: string
 	labelFor?: string
 	description?: React.ReactNode
+	error?: boolean
 	errorMessage?: React.ReactNode
 	required?: boolean
-	error?: boolean
 }
 
 export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { label, labelId, labelFor, description, errorMessage, required, error, children, ...otherProps } = props
+	const { label, labelId, labelFor, description, error, errorMessage, required, children, ...otherProps } = props
 
 	return (
 		<div ref={ref} {...otherProps}>

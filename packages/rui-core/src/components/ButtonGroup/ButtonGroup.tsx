@@ -1,4 +1,4 @@
-import type { DefaultProps, ConstrainedSize, SizeValue } from '@rui/types'
+import type { DefaultProps, ColorToken, ConstrainedSize, SizeValue } from '@rui/types'
 import React, { useMemo } from 'react'
 import { ButtonGroupContainer } from './ButtonGroup.style'
 
@@ -10,7 +10,7 @@ export const ButtonGroupContext = React.createContext<{
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
 	variant?: 'filled' | 'outlined' | 'text'
-	color?: string
+	color?: ColorToken
 	size?: ConstrainedSize
 	borderRadius?: SizeValue
 }

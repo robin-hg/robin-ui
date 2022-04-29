@@ -10,8 +10,7 @@ export default {
 		currentPage: 1,
 		totalItems: 500,
 		itemsPerPage: 10
-	},
-	argTypes: {}
+	}
 } as Meta<Props>
 
 export const Default: Story<Props> = args => {

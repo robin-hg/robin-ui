@@ -2,12 +2,12 @@ import type { DefaultProps } from '@rui/types'
 import React, { useContext, useEffect, useState } from 'react'
 import { handleKeyPress } from '@rui/utils'
 import { useId } from '@rui/hooks'
-import { ChevronDown } from '@rui/icons'
+import { PaperContext } from '../Paper'
 
 import { Text } from '../Typography'
 
 import { AccordionContainer, AccordionSummary, AccordionContent } from './Accordion.style'
-import { PaperContext } from '../Paper'
+import { ChevronDown } from '@rui/icons'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'summary'> {
 	open?: boolean

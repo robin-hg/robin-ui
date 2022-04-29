@@ -1,9 +1,9 @@
+import type { DefaultProps, ColorToken } from '@rui/types'
 import React from 'react'
-import type { DefaultProps } from '@rui/types'
 import { useTheme } from '@rui/hooks'
 
 export interface Props extends DefaultProps<SVGElement, 'children'> {
-	color?: string
+	color?: ColorToken
 	size?: number
 	strokeWidth?: number
 }
@@ -21,6 +21,7 @@ export default (icon: JSX.Element) => {
 			width: size,
 			height: size,
 			strokeWidth,
+			'aria-hidden': true,
 			...otherProps
 		})
 	})

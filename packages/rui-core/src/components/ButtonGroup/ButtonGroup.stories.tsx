@@ -10,8 +10,7 @@ export default {
 		size: 'md',
 		variant: 'filled',
 		color: 'primary'
-	},
-	argTypes: {}
+	}
 } as Meta<Props>
 
 export const Default: Story<Props> = args => (

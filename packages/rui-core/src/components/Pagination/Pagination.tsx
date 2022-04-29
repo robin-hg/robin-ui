@@ -1,10 +1,10 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps, ColorToken } from '@rui/types'
 import React from 'react'
 
 import { PaginationContainer, PageButton, Elipsis } from './Pagination.style'
 import { ChevronLeft, ChevronRight } from '@rui/icons'
 
-export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
+export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange'> {
 	totalItems: number
 	itemsPerPage: number
 	currentPage: number
@@ -22,7 +22,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
 	 * Button color.
 	 * @default primary
 	 */
-	color?: string
+	color?: ColorToken
 	onChange?: (page: number) => void
 }
 
