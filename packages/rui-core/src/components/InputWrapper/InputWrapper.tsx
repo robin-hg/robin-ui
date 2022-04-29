@@ -1,9 +1,8 @@
 import type { DefaultProps } from '@rui/types'
 import React from 'react'
+import { Text } from '../Typography'
 
-import { Text, Label } from '../Typography'
-
-import { InputContainer, Content } from './InputWrapper.style'
+import { Label, Description, ErrorMessage } from './InputWrapper.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	label?: string
@@ -19,29 +18,29 @@ export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref)
 	const { label, labelId, labelFor, description, errorMessage, required, error, children, ...otherProps } = props
 
 	return (
-		<InputContainer ref={ref} spacing="xs" {...otherProps}>
+		<div ref={ref} {...otherProps}>
 			{label && (
 				<Label as="label" id={labelId} htmlFor={labelFor} size="lg">
 					{label}
 					{required && (
-						<Label as="span" role="presentation" color="critical" aria-hidden>
+						<Text as="span" role="presentation" color="critical" aria-hidden>
 							*
-						</Label>
+						</Text>
 					)}
 				</Label>
 			)}
 			{description && (
-				<Text as="div" size="xs" color="surface.onVariant">
+				<Description as="div" size="xs" color="surface.onVariant">
 					{description}
-				</Text>
+				</Description>
 			)}
-			<Content>{children}</Content>
+			{children}
 			{error && errorMessage && (
-				<Text as="div" size="xs" color="critical">
+				<ErrorMessage as="div" size="xs" color="critical" bold>
 					{errorMessage}
-				</Text>
+				</ErrorMessage>
 			)}
-		</InputContainer>
+		</div>
 	)
 })
 

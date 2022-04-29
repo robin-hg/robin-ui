@@ -6,20 +6,20 @@ interface ButtonGroupContainerProps {
 }
 
 export const ButtonGroupContainer = styled.div<ButtonGroupContainerProps>(({ theme, $borderRadius }) => ({
-	display: 'inline-block',
+	display: 'inline-flex',
 	overflow: 'hidden',
+	gap: '-0.1rem',
 	'& > button': {
 		borderRadius: 0,
-		'&:first-child': {
+		'&:first-of-type': {
 			borderTopLeftRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
 			borderBottomLeftRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
 		},
-		'&:last-child': {
+		'&:last-of-type': {
 			borderTopRightRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
 			borderBottomRightRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
 		},
-		'&:not(:last-child)': {
-			marginRight: '-0.1rem',
+		'&:not(:last-of-type)': {
 			borderRight: 'none'
 		}
 	}

@@ -1,14 +1,19 @@
 import styled from '@rui/styles'
-import { Stack } from '../Stack'
+import { Label as _Label, Text } from '../Typography'
 
-export const InputContainer = styled(Stack)(({ theme }) => ({
-	'& > label > span': {
+export const Label = styled(_Label)(({ theme }) => ({
+	display: 'block',
+	marginBottom: theme.spacing.sm,
+	'& > span': {
 		marginLeft: theme.spacing.xs
 	}
 }))
 
-export const Content = styled.div(({ theme }) => ({
-	'&:not(:first-child)': {
-		paddingTop: theme.spacing.xs
-	}
+export const Description = styled(Text)(({ theme }) => ({
+	marginTop: `-${theme.spacing.sm}`,
+	marginBottom: theme.spacing.sm
+}))
+
+export const ErrorMessage = styled(Text)(({ theme }) => ({
+	marginTop: theme.spacing.sm
 }))
