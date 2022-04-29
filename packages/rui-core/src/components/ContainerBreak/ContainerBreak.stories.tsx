@@ -13,9 +13,9 @@ export const Default: Story<Props> = args => (
 		<ContainerBreak
 			{...args}
 			sx={{
-				width: '100%',
 				height: '30rem',
 				background: 'surface.variant'
-			}}></ContainerBreak>
+			}}
+		/>
 	</Container>
 )
