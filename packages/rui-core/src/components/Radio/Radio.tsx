@@ -8,9 +8,9 @@ import { ControlInput } from '../ControlInput'
 import { Circle } from './Radio.style'
 
 export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
-	color?: ColorToken
 	label?: number | string
 	labelPosition?: 'left' | 'right'
+	color?: ColorToken
 	value?: string | number
 	checked?: boolean
 	defaultValue?: boolean
@@ -20,9 +20,9 @@ export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'labe
 
 export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 	const {
-		color = 'primary',
 		label,
 		labelPosition,
+		color = 'primary',
 		value,
 		checked,
 		defaultValue,
@@ -49,14 +49,12 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 	return (
 		<ControlInput
 			ref={ref}
-			color={color}
 			disabled={disabled}
 			label={label}
 			labelFor={id || _id}
 			labelPosition={labelPosition}
 			className={className}>
 			<Circle
-				{...otherProps}
 				id={id || _id}
 				type="radio"
 				checked={inGroup ? value === groupValue : _checked}
@@ -72,6 +70,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 				$color={color}
 				$error={!!error || !!groupError}
 				disabled={disabled || groupDisabled}
+				{...otherProps}
 			/>
 		</ControlInput>
 	)

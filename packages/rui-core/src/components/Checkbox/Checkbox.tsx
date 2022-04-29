@@ -49,7 +49,6 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 			labelPosition={labelPosition}
 			className={className}>
 			<Box
-				{...otherProps}
 				id={id || _id}
 				type="checkbox"
 				checked={_checked || !!indeterminate}
@@ -62,6 +61,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 				$color={color}
 				$error={!!error}
 				disabled={disabled}
+				{...otherProps}
 			/>
 			{_checked ? <Check /> : indeterminate ? <Minus /> : null}
 		</ControlInput>

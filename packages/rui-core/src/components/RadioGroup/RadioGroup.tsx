@@ -1,3 +1,4 @@
+import type { DefaultProps } from '@rui/types'
 import React, { useMemo, useState } from 'react'
 import { useId } from '@rui/hooks'
 
@@ -11,7 +12,14 @@ export const RadioGroupContext = React.createContext<{
 	onChange?: (value?: string | number) => void
 }>({})
 
-export interface Props extends Omit<React.ComponentProps<typeof InputWrapper>, 'onChange'> {
+export interface Props extends DefaultProps<HTMLDivElement, 'onChange' | 'wrap'> {
+	// InputWrapper props
+	label?: string
+	description?: React.ReactNode
+	error?: boolean
+	errorMessage?: React.ReactNode
+	required?: boolean
+	// RadioGroup props
 	direction?: React.CSSProperties['flexDirection']
 	value?: string | number
 	defaultValue?: string | number
@@ -19,8 +27,23 @@ export interface Props extends Omit<React.ComponentProps<typeof InputWrapper>, '
 }
 
 export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { direction = 'row', error, disabled, value, defaultValue, onChange, children, ...otherProps } = props
-	const id = useId()
+	const {
+		label,
+		description,
+		error,
+		errorMessage,
+		required,
+		direction = 'row',
+		disabled,
+		value,
+		defaultValue,
+		onChange,
+		id,
+		className,
+		children,
+		...otherProps
+	} = props
+	const labelId = useId()
 
 	const [uncontrolled, setUncontrolled] = useState(defaultValue)
 	const isUncontrolled = value === undefined
@@ -43,8 +66,22 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 
 	return (
 		<RadioGroupContext.Provider value={ctxValue}>
-			<InputWrapper ref={ref} labelId={id} error={error} disabled={disabled} {...otherProps}>
-				<RadioContainer direction={direction} role="radiogroup" aria-labelledby={id}>
+			<InputWrapper
+				id={id}
+				label={label}
+				labelId={labelId}
+				description={description}
+				error={error}
+				errorMessage={errorMessage}
+				required={required}
+				disabled={disabled}
+				className={className}>
+				<RadioContainer
+					ref={ref}
+					direction={direction}
+					role="radiogroup"
+					aria-labelledby={labelId}
+					{...otherProps}>
 					{children}
 				</RadioContainer>
 			</InputWrapper>
