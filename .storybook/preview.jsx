@@ -37,10 +37,14 @@ export const parameters = {
 	controls: {
 		hideNoControlsWarning: true,
 		matchers: {
-			text: /^(label)$/i,
-			color: /^(color)$/i
+			text: /^(label|description|errorMessage)$/
 		}
 	}
+}
+
+export const argTypes = {
+	as: { table: { disable: true } },
+	sx: { table: { disable: true } }
 }
 
 export const decorators = [

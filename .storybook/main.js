@@ -7,5 +7,5 @@ module.exports = {
 		'storybook-dark-mode'
 	],
 	framework: '@storybook/react',
-	features: { emotionAlias: false }
+	features: { emotionAlias: false, storyStoreV7: true }
 }
