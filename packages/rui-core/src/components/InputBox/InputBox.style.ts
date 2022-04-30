@@ -11,14 +11,17 @@ export const Box = styled(BaseContainer)<BoxProps>(
 	({ theme, $leftPadding, $rightPadding }) => ({
 		position: 'relative',
 		width: '100%',
-		'& > input, & > div': {
+		color: theme.palette.surface.onVariant,
+		'& > input': {
 			padding: theme.fn.getSpacing(['sm', 0]),
 			paddingRight: $rightPadding || theme.spacing.md,
 			paddingLeft: $leftPadding || theme.spacing.md,
 			width: '100%',
-			fontSize: 'inherit',
+			fontSize: theme.typography.text.fontSize.md,
+			height: '3.6rem',
+			lineHeight: '1em',
 			background: theme.fn.getModifiedColor('surface', 'primary', 'base'),
-			color: theme.palette.surface.onVariant,
+			color: 'inherit',
 			border: `solid 0.1rem ${theme.palette.outline}`,
 			borderRadius: theme.borderRadius.sm,
 			outline: 'none',
@@ -28,26 +31,34 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			},
 			'::placeholder': {
 				color: theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')
+			},
+			'&::before': {
+				content: '"\\200b"'
 			}
 		}
 	}),
-	({ theme, $state }) => ({
-		'& > input, & > div': {
+	({ theme, $state }) =>
+		({
 			disabled: {
 				color: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')} !important`,
-				background: `${theme.fn.getAlphaColor('surface.variant', 'disabledBase')} !important`,
-				borderColor: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledBase')} !important`,
-				cursor: 'not-allowed !important'
+				'& > input': {
+					background: `${theme.fn.getAlphaColor('surface.variant', 'disabledBase')} !important`,
+					borderColor: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledBase')} !important`,
+					cursor: 'default !important'
+				}
 			},
 			error: {
-				borderColor: theme.fn.getColor('critical')
+				'& > input': {
+					borderColor: theme.fn.getColor('critical')
+				}
 			},
 			active: {
-				borderColor: theme.fn.getColor('primary')
+				'& > input': {
+					borderColor: theme.fn.getColor('primary')
+				}
 			},
 			none: null
-		}[$state]
-	})
+		}[$state])
 )
 
 interface AdornmentProps {
