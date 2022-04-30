@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { parseSize, getFocusable } from '@rui/utils'
-import { useId, useKeyPress } from '@rui/hooks'
+import { useCombinedRef, useId, useKeyPress } from '@rui/hooks'
 
 import { Popper } from '../Popper'
 
@@ -24,6 +24,7 @@ export interface Props extends React.ComponentProps<typeof Popper> {
 export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { type = 'menu', target, open, minWidth = '20rem', maxHeight = 300, onClose, children, ...otherProps } = props
 	const menuRef = useRef<HTMLDivElement>(null)
+	const combinedRef = useCombinedRef(ref, menuRef)
 	const id = useId()
 
 	useEffect(() => {
@@ -42,7 +43,8 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	useKeyPress('Escape', () => onClose?.())
 
-	const handleArrow = (direction: 'up' | 'down') => {
+	const handleArrow = (event: KeyboardEvent, direction: 'up' | 'down') => {
+		event.preventDefault()
 		if (!open) {
 			return
 		}
@@ -55,8 +57,8 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}
 
-	useKeyPress('ArrowDown', () => handleArrow('down'))
-	useKeyPress('ArrowUp', () => handleArrow('up'))
+	useKeyPress('ArrowDown', event => handleArrow(event, 'down'))
+	useKeyPress('ArrowUp', event => handleArrow(event, 'up'))
 	useKeyPress('Tab', (event: KeyboardEvent) => {
 		if (open) {
 			event.preventDefault()
@@ -70,7 +72,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<StyledMenu
-			ref={ref}
+			ref={combinedRef}
 			id={id}
 			role={type}
 			aria-orientation="vertical"
@@ -81,7 +83,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			onClick={event => event.stopPropagation()}
 			onClose={onClose}
 			{...otherProps}>
-			<div ref={menuRef}>{children}</div>
+			{children}
 		</StyledMenu>
 	)
 })
