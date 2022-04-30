@@ -28,18 +28,17 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const modalRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, modalRef)
 	const id = useId()
-	const contentId = useId()
 
 	const close = !preventClose ? onClose : undefined
 	const ctxValue = useMemo(
 		() => ({
 			id,
-			contentId,
+			contentId: `${id}-content`,
 			modalEl: modalRef.current,
 			setPreventClose,
 			onClose: close
 		}),
-		[id, contentId, modalRef, preventClose, onClose]
+		[id, modalRef, preventClose, onClose]
 	)
 
 	return (
@@ -62,7 +61,7 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 								role="dialog"
 								aria-modal="true"
 								aria-labelledby={id}
-								aria-describedby={contentId}
+								aria-describedby={`${id}-content`}
 								$size={size}
 								onClick={event => {
 									event.stopPropagation()

@@ -19,8 +19,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 	const { open: openOverride, disabled, summary, children, onToggle, ...otherProps } = props
 	const { paperColor = 'surface' } = useContext(PaperContext)
 	const [open, setOpen] = useState(!!openOverride)
-	const summaryId = useId()
-	const bodyId = useId()
+	const id = useId()
 
 	const overrideMode = openOverride !== undefined
 	const expandable = !!children && !disabled
@@ -48,8 +47,8 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				disabled={!!disabled}
 				onClick={toggleOpen}
 				tabIndex={expandable ? 0 : -1}
-				id={summaryId}
-				aria-controls={bodyId}
+				id={`${id}-summary`}
+				aria-controls={`${id}-body`}
 				aria-expanded={!!open}
 				aria-disabled={disabled}>
 				<Text as="div" bold color="inherit">
@@ -57,7 +56,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				</Text>
 				{!!children && <ChevronDown size={20} />}
 			</AccordionSummary>
-			<AccordionContent in={!disabled && open} role="region" id={bodyId} aria-labelledby={summaryId}>
+			<AccordionContent in={!disabled && open} role="region" id={`${id}-body`} aria-labelledby={`${id}-summary`}>
 				{children}
 			</AccordionContent>
 		</AccordionContainer>
