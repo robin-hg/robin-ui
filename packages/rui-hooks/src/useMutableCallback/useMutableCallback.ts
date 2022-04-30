@@ -4,5 +4,5 @@ export const useMutableCallback = <T extends (...args: Parameters<T>) => ReturnT
 	const ref = useRef<T>(callback)
 	ref.current = callback
 
-	return useCallback(ref.current, [])
+	return useCallback((...args: Parameters<T>) => ref.current(...args), [])
 }
