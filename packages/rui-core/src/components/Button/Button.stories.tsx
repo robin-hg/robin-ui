@@ -9,8 +9,7 @@ export default {
 		children: 'I am a button',
 		size: 'md',
 		variant: 'filled',
-		color: 'primary',
-		disabled: true
+		color: 'primary'
 	},
 	argTypes: {
 		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
