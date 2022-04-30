@@ -14,12 +14,12 @@ export interface Props extends DefaultProps<HTMLInputElement, 'children'>, Input
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-	const { placeholder, disabled, required, value, onChange, id, className } = props
+	const { placeholder, disabled, required, value, onChange, id, className, ...otherProps } = props
 	const _id = useId(id)
 
 	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
 	const extractedInputBoxProps = pick(props, inputBoxProps.concat())
-	const otherProps = omit(props, [...inputWrapperProps, ...inputBoxProps])
+	const rest = omit(otherProps, [...inputWrapperProps, ...inputBoxProps])
 
 	return (
 		<InputWrapper labelFor={_id} className={className} {...extractedInputWrapperProps}>
@@ -33,7 +33,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) 
 					required={required}
 					disabled={disabled}
 					onChange={onChange}
-					{...otherProps}
+					{...rest}
 				/>
 			</InputBox>
 		</InputWrapper>
