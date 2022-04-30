@@ -49,7 +49,8 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				},
 				'&[disabled]': {
 					color: `${theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')} !important`,
-					background: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`
+					background: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`,
+					cursor: 'default !important'
 				}
 			},
 			outlined: {
@@ -69,7 +70,8 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				'&[disabled]': {
 					color: `${theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')} !important`,
 					background: `transparent !important`,
-					borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`
+					borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`,
+					cursor: 'default !important'
 				}
 			},
 			text: {
@@ -87,7 +89,8 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				},
 				'&[disabled]': {
 					color: `${theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')} !important`,
-					background: `transparent !important`
+					background: `transparent !important`,
+					cursor: 'default !important'
 				}
 			}
 		}[$variant]),
