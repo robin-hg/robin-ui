@@ -42,7 +42,7 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 		color: `${theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'disabledOnBase')} !important`
 	},
 	'& > svg': {
-		transition: theme.fn.getTransition('transform'),
+		transition: theme.fn.getTransition(),
 		transform: `rotate(${$open ? 180 : 0}deg)`
 	}
 }))
