@@ -33,11 +33,15 @@ export const Default: Story<Props> = args => {
 					args.onClose?.()
 					updateArgs({ open: false })
 				}}>
-				<MenuItem disabled>Disabled</MenuItem>
-				<MenuItem active>Active</MenuItem>
-				<MenuItem>A</MenuItem>
-				<MenuItem>B</MenuItem>
-				<MenuItem>C</MenuItem>
+				<MenuItem onClick={() => updateArgs({ open: false })} disabled>
+					Disabled
+				</MenuItem>
+				<MenuItem onClick={() => updateArgs({ open: false })} active>
+					Active
+				</MenuItem>
+				<MenuItem onClick={() => updateArgs({ open: false })}>A</MenuItem>
+				<MenuItem onClick={() => updateArgs({ open: false })}>B</MenuItem>
+				<MenuItem onClick={() => updateArgs({ open: false })}>C</MenuItem>
 			</Menu>
 		</>
 	)
