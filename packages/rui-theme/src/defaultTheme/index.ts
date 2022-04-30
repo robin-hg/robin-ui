@@ -38,8 +38,8 @@ export const defaultTheme: BaseTheme = {
 	colorModifiers: {
 		base: 0.02,
 		tint: 0.05,
-		hover: 0.1,
-		focus: 0.1,
+		hover: 0.08,
+		focus: 0.12,
 		active: 0.15,
 		disabledBase: 0.12,
 		disabledOnBase: 0.5
