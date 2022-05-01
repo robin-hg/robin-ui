@@ -21,7 +21,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'target'> {
 	placement?: Placement
 	modifiers?: Modifier<StrictModifierNames>[]
 	elevation?: number
-	timeout?: number
+	duration?: number
 	disableClickOutside?: boolean
 	continuousUpdate?: boolean
 	withArrow?: boolean
@@ -35,7 +35,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		open,
 		placement = 'bottom-start',
 		modifiers = [],
-		timeout = 200,
+		duration = 200,
 		disableClickOutside,
 		withArrow,
 		continuousUpdate,
@@ -78,7 +78,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	return (
 		<Portal target={popperEl || modalEl || undefined}>
 			<PopperContext.Provider value={ctxValue}>
-				<FadeContainer in={show} timeout={timeout} unmountOnExit>
+				<FadeContainer in={show} duration={duration} unmountOnExit>
 					<PopperElement
 						ref={setInnerRef}
 						style={styles.popper}
