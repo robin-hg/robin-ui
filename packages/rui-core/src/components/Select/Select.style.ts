@@ -7,6 +7,9 @@ export const SelectBox = styled(InputBox)(({ theme, active, disabled }) => ({
 	'& > input': {
 		pointerEvents: 'none'
 	},
+	'& > select': {
+		appearance: 'none'
+	},
 	'& > span > svg': {
 		transition: theme.fn.getTransition(),
 		transform: `rotate(${!disabled && active ? 180 : 0}deg)`,

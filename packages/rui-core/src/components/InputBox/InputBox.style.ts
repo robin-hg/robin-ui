@@ -12,7 +12,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 		position: 'relative',
 		width: '100%',
 		color: theme.palette.surface.onVariant,
-		'& > input': {
+		'& > input, & > select': {
 			padding: theme.fn.getSpacing(['sm', 0]),
 			paddingRight: $rightPadding || theme.spacing.md,
 			paddingLeft: $leftPadding || theme.spacing.md,
@@ -41,14 +41,14 @@ export const Box = styled(BaseContainer)<BoxProps>(
 		({
 			disabled: {
 				color: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')} !important`,
-				'& > input': {
+				'& > input, & > select': {
 					background: `${theme.fn.getAlphaColor('surface.variant', 'disabledBase')} !important`,
 					borderColor: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledBase')} !important`,
 					cursor: 'default !important'
 				}
 			},
 			error: {
-				'& > input': {
+				'& > input, & > select': {
 					borderColor: theme.fn.getColor('critical')
 				}
 			},

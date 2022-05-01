@@ -22,6 +22,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChan
 	value?: Item['value']
 	options?: Item[]
 	disabled?: boolean
+	native?: boolean
 	onChange?: (value: Item['value']) => void
 }
 
@@ -32,6 +33,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		placeholder,
 		disabled,
 		required,
+		native,
 		onChange,
 		onClick,
 		onKeyDown,
@@ -48,7 +50,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	useEffect(() => {
 		setOpen(false)
-	}, [disabled])
+	}, [disabled, native])
 
 	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
 	const rest = omit(otherProps, [...inputWrapperProps])
@@ -59,37 +61,59 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		<InputWrapper labelFor={_id} className={className} {...extractedInputWrapperProps}>
 			<SelectBox
 				ref={combinedRef}
-				role="combobox"
+				role={!native ? 'combobox' : undefined}
 				onClick={event => {
-					setOpen(!open)
 					onClick?.(event)
+					if (!native) {
+						setOpen(!open)
+					}
 				}}
 				onKeyDown={event => {
-					if (event.key === 'Enter') {
-						setOpen(!open)
-					} else if (event.key === 'ArrowDown' || event.key === ' ') {
-						setOpen(true)
-					}
 					onKeyDown?.(event)
+					if (!native) {
+						switch (event.key) {
+							case 'Enter':
+								setOpen(!open)
+								break
+							case 'ArrowDown':
+							case ' ':
+								setOpen(true)
+						}
+					}
 				}}
 				rightAdornment={<ChevronDown />}
 				disabled={disabled}
 				active={open}
-				tabIndex={0}
+				tabIndex={native ? -1 : 0}
 				{...rest}>
-				<input type="hidden" value={item?.value} />
-				<input
-					id={_id}
-					type="text"
-					placeholder={placeholder}
-					value={item?.label ?? item?.value}
-					required={required}
-					disabled={disabled}
-					readOnly
-					tabIndex={-1}
-				/>
+				{native ? (
+					<select id={_id}>
+						<option value="" disabled hidden>
+							{placeholder ?? ''}
+						</option>
+						{options.map(option => (
+							<option key={option.value} value={option.value}>
+								{option.label ?? option.value}
+							</option>
+						))}
+					</select>
+				) : (
+					<>
+						<input type="hidden" value={item?.value} />
+						<input
+							id={_id}
+							type="text"
+							placeholder={placeholder}
+							value={item?.label ?? item?.value}
+							required={required}
+							disabled={disabled}
+							readOnly
+							tabIndex={-1}
+						/>
+					</>
+				)}
 			</SelectBox>
-			{!disabled && (
+			{!native && !disabled && (
 				<Menu
 					type="listbox"
 					aria-labelledby={_id}

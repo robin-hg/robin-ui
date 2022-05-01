@@ -39,6 +39,9 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		if (!open) {
 			target?.focus()
 		}
+		if (target) {
+			target.setAttribute('aria-expanded', 'true')
+		}
 	}, [open])
 
 	useKeyPress('Escape', () => onClose?.())
