@@ -15,19 +15,19 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	disableResizeWidth?: boolean
 }
 
-type Stages = 'preparing' | 'updating' | 'finished'
+type Stages = 'preparing' | 'updating' | 'standby'
 
 export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { duration = 200, disableResizeHeight, disableResizeWidth, children, ...otherProps } = props
-	const [stage, setStage] = useState<Stages>('finished')
+	const [stage, setStage] = useState<Stages>('standby')
 	const contentRef = useRef<HTMLDivElement>(null)
 	const size = useSize(contentRef.current, [children])
 	const previousSize = usePreviousState(size)
 
 	useIsomorphicLayoutEffect(() => {
 		setStage('preparing')
-		const prepareTimeout = window.setTimeout(() => flushSync(() => setStage('updating')))
-		const updateTimeout = window.setTimeout(() => flushSync(() => setStage('finished')), duration)
+		const prepareTimeout = window.setTimeout(() => flushSync(() => setStage('updating')), 10)
+		const updateTimeout = window.setTimeout(() => flushSync(() => setStage('standby')), duration - 10)
 		return () => {
 			window.clearTimeout(prepareTimeout)
 			window.clearTimeout(updateTimeout)
@@ -40,7 +40,7 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
 				return [previousSize?.width, previousSize?.height]
 			case 'updating':
 				return [size?.width, size?.height]
-			case 'finished':
+			case 'standby':
 			default:
 				return ['auto', 'auto']
 		}
