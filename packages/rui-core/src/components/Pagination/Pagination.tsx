@@ -67,9 +67,9 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 				color="surface.onBase"
 				disabled={currentPage === 1}
 				onClick={() => navigate(currentPage - 1)}
-				startAdornment={<ChevronLeft />}
-				aria-label={`Go to previous page`}
-			/>
+				aria-label={`Go to previous page`}>
+				<ChevronLeft />
+			</PageButton>
 			{visiblePages.map((page, i) => {
 				switch (i) {
 					case 0:
@@ -107,9 +107,9 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 				color="surface.onBase"
 				disabled={currentPage === numberOfPages}
 				onClick={() => navigate(currentPage + 1)}
-				endAdornment={<ChevronRight />}
-				aria-label={`Go to next page`}
-			/>
+				aria-label={`Go to next page`}>
+				<ChevronRight />
+			</PageButton>
 		</PaginationContainer>
 	)
 })

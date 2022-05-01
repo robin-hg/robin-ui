@@ -2,7 +2,7 @@ import type { DefaultProps, ColorToken, SizeValue, ConstrainedSize } from '@rui/
 import React, { useContext } from 'react'
 import { ButtonGroupContext } from '../ButtonGroup'
 
-import { Adornment, Content, StyledButton } from './Button.style'
+import { Item, Content, StyledButton } from './Button.style'
 
 export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> {
 	/**
@@ -21,8 +21,8 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	 * @default primary
 	 */
 	color?: ColorToken
-	startAdornment?: React.ReactNode
-	endAdornment?: React.ReactNode
+	leftAdornment?: React.ReactNode
+	rightAdornment?: React.ReactNode
 	disabled?: boolean
 	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 	as?: React.ElementType
@@ -35,8 +35,8 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 		size = 'md',
 		color = 'primary',
 		borderRadius = 'sm',
-		startAdornment,
-		endAdornment,
+		leftAdornment,
+		rightAdornment,
 		disabled,
 		onClick,
 		children,
@@ -64,9 +64,9 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 			tabIndex={disabled ? -1 : 0}
 			{...otherProps}>
 			<Content key={size} disableResizeHeight>
-				{startAdornment && <Adornment $position={children ? 'start' : undefined}>{startAdornment}</Adornment>}
-				{children && children}
-				{endAdornment && <Adornment $position={children ? 'end' : undefined}>{endAdornment}</Adornment>}
+				{leftAdornment && <Item $position={children ? 'start' : undefined}>{leftAdornment}</Item>}
+				<Item>{children}</Item>
+				{rightAdornment && <Item $position={children ? 'end' : undefined}>{rightAdornment}</Item>}
 			</Content>
 		</StyledButton>
 	)
