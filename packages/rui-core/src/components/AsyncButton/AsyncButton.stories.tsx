@@ -1,11 +1,11 @@
 import type { Story, Meta } from '@storybook/react'
 import { wait } from '@rui/utils'
 
-import ProcessButton, { type Props } from './ProcessButton'
+import { AsyncButton, type Props } from './AsyncButton'
 
 export default {
-	title: 'Inputs/ProcessButton',
-	component: ProcessButton,
+	title: 'Inputs/AsyncButton',
+	component: AsyncButton,
 	argTypes: {
 		color: { control: 'color' },
 		hoverColor: { control: 'color' },
@@ -13,18 +13,19 @@ export default {
 	}
 } as Meta<Props>
 
-const Template: Story<Props> = args => <ProcessButton {...args}>Click Me</ProcessButton>
+const Template: Story<Props> = args => <AsyncButton {...args}>Click Me</AsyncButton>
+
 export const Default = Template.bind({})
 Default.args = {
 	onClick: async () => {
-		await wait(5000)
+		await wait(3000)
 	}
 }
 
 export const WithError = Template.bind({})
 WithError.args = {
 	onClick: async () => {
-		await wait(5000)
+		await wait(3000)
 		throw Error('error')
 	}
 }
