@@ -1,11 +1,7 @@
 module.exports = {
 	core: { builder: '@storybook/builder-vite' },
 	stories: ['../packages/**/*.stories.@(tsx|mdx)'],
-	addons: [
-		{ name: '@storybook/addon-essentials', options: { backgrounds: false } },
-		'@storybook/addon-a11y',
-		'storybook-dark-mode'
-	],
+	addons: ['@storybook/addon-controls', '@storybook/addon-actions', '@storybook/addon-a11y', 'storybook-dark-mode'],
 	framework: '@storybook/react',
 	features: { emotionAlias: false, storyStoreV7: true }
 }
