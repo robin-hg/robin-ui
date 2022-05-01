@@ -20,6 +20,7 @@ interface Item {
 export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange'>, InputWrapperProps, InputBoxProps {
 	placeholder?: string
 	value?: Item['value']
+	defaultValue?: Item['value']
 	options?: Item[]
 	disabled?: boolean
 	native?: boolean
@@ -30,6 +31,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
 		options = [],
 		value,
+		defaultValue,
 		placeholder,
 		disabled,
 		required,
@@ -48,6 +50,10 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const size = useSize(boxRef.current, [value])
 	useForceUpdate(true)
 
+	const [uncontrolled, setUncontrolled] = useState(defaultValue)
+	const isUncontrolled = value === undefined
+	const _value = isUncontrolled ? uncontrolled : value
+
 	useEffect(() => {
 		setOpen(false)
 	}, [disabled, native])
@@ -55,7 +61,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
 	const rest = omit(otherProps, [...inputWrapperProps])
 
-	const item = options.find(option => option.value === value)
+	const item = options.find(option => option.value === _value)
 
 	return (
 		<InputWrapper labelFor={_id} className={className} {...extractedInputWrapperProps}>
@@ -87,10 +93,15 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				tabIndex={native ? -1 : 0}
 				{...rest}>
 				{native ? (
-					<select id={_id}>
-						<option value="" disabled hidden>
-							{placeholder ?? ''}
-						</option>
+					<select
+						id={_id}
+						value={item?.value}
+						onChange={event => {
+							onChange?.(event.target.value)
+							if (isUncontrolled) {
+								setUncontrolled(event.target.value)
+							}
+						}}>
 						{options.map(option => (
 							<option key={option.value} value={option.value}>
 								{option.label ?? option.value}
@@ -99,12 +110,12 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					</select>
 				) : (
 					<>
-						<input type="hidden" value={item?.value} />
+						<input type="hidden" value={item?.value ?? ''} />
 						<input
 							id={_id}
 							type="text"
 							placeholder={placeholder}
-							value={item?.label ?? item?.value}
+							value={item?.label ?? item?.value ?? ''}
 							required={required}
 							disabled={disabled}
 							readOnly
@@ -128,6 +139,9 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 							onClick={() => {
 								onChange?.(option.value)
 								setOpen(false)
+								if (isUncontrolled) {
+									setUncontrolled(option.value)
+								}
 							}}
 							active={value === option.value}>
 							{option.label ?? option.value}
