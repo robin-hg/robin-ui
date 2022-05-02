@@ -8,14 +8,14 @@ import { Text } from '../Typography'
 import { AccordionContainer, AccordionSummary, AccordionContent } from './Accordion.style'
 import { ChevronDown } from '@rui/icons'
 
-export interface Props extends DefaultProps<HTMLDivElement, 'summary'> {
+export interface Props extends DefaultProps<HTMLDivElement, 'summary' | 'title'> {
 	open?: boolean
 	disabled?: boolean
-	summary?: React.ReactNode
+	title?: React.ReactNode
 }
 
 export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { open: openOverride, disabled, summary, children, ...otherProps } = props
+	const { open: openOverride, disabled, title, children, ...otherProps } = props
 	const { paperColor = 'surface' } = useContext(PaperContext)
 	const [open, setOpen] = useState(!!openOverride)
 	const id = useId()
@@ -50,7 +50,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				aria-expanded={!!open}
 				aria-disabled={disabled}>
 				<Text as="div" bold color="inherit">
-					{summary}
+					{title}
 				</Text>
 				{!!children && <ChevronDown size={20} />}
 			</AccordionSummary>
