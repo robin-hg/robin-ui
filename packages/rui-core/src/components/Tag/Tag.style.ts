@@ -1,10 +1,10 @@
-import type { ColorToken, ConstrainedSize } from '@rui/types'
+import type { ColorToken, Size } from '@rui/types'
 import styled from '@rui/styles'
 
 interface TagContainerProps {
 	$variant: 'filled' | 'outlined'
 	$color: ColorToken
-	$size: ConstrainedSize
+	$size: Size
 }
 
 export const TagContainer = styled.span<TagContainerProps>(

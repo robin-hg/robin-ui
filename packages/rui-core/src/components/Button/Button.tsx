@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, SizeValue, ConstrainedSize } from '@rui/types'
+import type { DefaultProps, ColorToken, SizeValue, Size } from '@rui/types'
 import React, { useContext } from 'react'
 import { ButtonGroupContext } from '../ButtonGroup'
 
@@ -14,7 +14,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	 * Button size
 	 * @default md
 	 */
-	size?: ConstrainedSize
+	size?: Size
 	borderRadius?: SizeValue
 	/**
 	 * Button color

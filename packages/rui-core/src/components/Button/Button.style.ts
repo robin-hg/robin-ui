@@ -1,10 +1,10 @@
-import type { ColorToken, ConstrainedSize, SizeValue } from '@rui/theme'
+import type { ColorToken, Size, SizeValue } from '@rui/theme'
 import styled from '@rui/styles'
 import { DynamicResizer } from '../DynamicResizer'
 
 interface StyledButtonProps {
 	$variant: 'filled' | 'outlined' | 'text'
-	$size: ConstrainedSize
+	$size: Size
 	$color: ColorToken
 	$borderRadius: SizeValue
 }
@@ -96,6 +96,10 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		}[$variant]),
 	({ theme, $size }) =>
 		({
+			xs: {
+				height: '2.4rem',
+				padding: theme.fn.getSpacing(['xs', 'xs'])
+			},
 			sm: {
 				height: '3.2rem',
 				padding: theme.fn.getSpacing(['xs', 'sm'])
@@ -107,6 +111,10 @@ export const StyledButton = styled.button<StyledButtonProps>(
 			lg: {
 				height: '4.8rem',
 				padding: theme.fn.getSpacing(['sm', 'lg'])
+			},
+			xl: {
+				height: '5.6rem',
+				padding: theme.fn.getSpacing(['md', 'xl'])
 			}
 		}[$size])
 )

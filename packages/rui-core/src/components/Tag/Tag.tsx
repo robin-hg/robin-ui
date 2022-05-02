@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, ConstrainedSize } from '@rui/types'
+import type { DefaultProps, ColorToken, Size } from '@rui/types'
 import React from 'react'
 
 import { TagContainer } from './Tag.style'
@@ -14,7 +14,7 @@ export interface Props extends DefaultProps<HTMLSpanElement, 'size'> {
 	 * Tag size.
 	 * @default md
 	 */
-	size?: ConstrainedSize
+	size?: Size
 }
 
 export const Tag = React.forwardRef<HTMLSpanElement, Props>((props, ref) => {

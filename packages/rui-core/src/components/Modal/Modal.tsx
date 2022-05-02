@@ -1,4 +1,4 @@
-import type { DefaultProps, ConstrainedSize } from '@rui/types'
+import type { DefaultProps, Size } from '@rui/types'
 import React, { useMemo, useRef, useState } from 'react'
 import { useCombinedRef, useId } from '@rui/hooks'
 
@@ -17,7 +17,7 @@ export const ModalContext = React.createContext<{
 }>({})
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
-	size?: ConstrainedSize | 'full'
+	size?: Size | 'full'
 	open?: boolean
 	onClose?: () => void
 }

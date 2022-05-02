@@ -7,8 +7,6 @@ export type DerrivedColorMode = 'light' | 'dark'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number
-export type ConstrainedSize = 'sm' | 'md' | 'lg'
-export type ConstrainedSizeValue = ConstrainedSize | string | number
 
 export type Modifier = 'base' | 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
 
@@ -91,7 +89,7 @@ export interface BaseTheme {
 	typography: {
 		heading: TypographyProperties<Size>
 		text: TypographyProperties<Size>
-		label: TypographyProperties<ConstrainedSize>
+		label: TypographyProperties<Size>
 	}
 	colors: Record<DefaultColor, ColorObj> & AdditionalColors
 	lightPalette: Palette

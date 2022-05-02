@@ -1,4 +1,4 @@
-import type { ConstrainedSize } from '@rui/theme'
+import type { Size } from '@rui/theme'
 import styled from '@rui/styles'
 import { Paper } from '../Paper'
 
@@ -18,7 +18,7 @@ export const ModalContainer = styled.div({
 })
 
 interface ModalPaperProps {
-	$size: ConstrainedSize | 'full'
+	$size: Size | 'full'
 }
 
 export const ModalPaper = styled(Paper)<ModalPaperProps>(
@@ -31,9 +31,11 @@ export const ModalPaper = styled(Paper)<ModalPaperProps>(
 	}),
 	({ $size }) =>
 		({
-			sm: { width: '32rem' },
+			xs: { width: '32rem' },
+			sm: { width: '36rem' },
 			md: { width: '44rem' },
-			lg: { width: '64rem' },
+			lg: { width: '56rem' },
+			xl: { width: '64rem' },
 			full: {
 				width: '100%',
 				minHeight: '100vh',
