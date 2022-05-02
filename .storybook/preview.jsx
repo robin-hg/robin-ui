@@ -36,7 +36,8 @@ export const parameters = {
 	controls: {
 		hideNoControlsWarning: true,
 		matchers: {
-			text: /^(label|description|errorMessage)$/
+			text: /^(label|description|errorMessage)$/,
+			color: /^(color)$/
 		}
 	}
 }
