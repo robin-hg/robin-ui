@@ -1,39 +1,37 @@
-import type { DefaultProps } from '@rui/types'
 import React from 'react'
 import { omit, pick } from '@rui/utils'
 import { useId } from '@rui/hooks'
 
 import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../InputWrapper'
-import { InputBox, inputBoxProps, type InputBoxProps } from '../InputBox'
+import { InputBox } from '../InputBox'
 
-export interface Props extends DefaultProps<HTMLInputElement, 'children'>, InputWrapperProps, InputBoxProps {
+export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children'>, InputWrapperProps {
 	placeholder?: string
 	value?: string
 	disabled?: boolean
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+	inputProps?: React.HTMLProps<HTMLInputElement>
 }
 
-export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-	const { placeholder, disabled, required, value, onChange, id, className, ...otherProps } = props
+export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+	const { placeholder, disabled, required, value, onChange, id, className, inputProps, ...otherProps } = props
 	const _id = useId(id)
 
 	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
-	const extractedInputBoxProps = pick(props, inputBoxProps.concat())
-	const rest = omit(otherProps, [...inputWrapperProps, ...inputBoxProps])
+	const rest = omit(otherProps, [...inputWrapperProps])
 
 	return (
 		<InputWrapper labelFor={_id} className={className} {...extractedInputWrapperProps}>
-			<InputBox {...extractedInputBoxProps}>
+			<InputBox ref={ref} {...rest}>
 				<input
 					id={_id}
-					ref={ref}
 					type="text"
 					placeholder={placeholder}
 					value={value}
 					required={required}
 					disabled={disabled}
 					onChange={onChange}
-					{...rest}
+					{...inputProps}
 				/>
 			</InputBox>
 		</InputWrapper>

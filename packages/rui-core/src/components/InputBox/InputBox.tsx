@@ -4,10 +4,6 @@ import { useForceUpdate, useSize } from '@rui/hooks'
 
 import { Box, Adornment } from './InputBox.style'
 
-export const inputBoxProps = ['active', 'error', 'disabled', 'leftAdornment', 'rightAdornment'] as const
-
-export type InputBoxProps = Pick<Props, typeof inputBoxProps[number]>
-
 export interface Props extends DefaultProps<HTMLDivElement> {
 	active?: boolean
 	error?: boolean

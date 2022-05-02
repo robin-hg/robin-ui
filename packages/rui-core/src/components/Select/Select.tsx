@@ -1,10 +1,9 @@
-import type { DefaultProps } from '@rui/types'
 import React, { useEffect, useRef, useState } from 'react'
 import { omit, pick } from '@rui/utils'
 import { useCombinedRef, useForceUpdate, useId, useSize } from '@rui/hooks'
 
 import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../InputWrapper'
-import { type InputBoxProps } from '../InputBox'
+import { InputBox } from '../InputBox'
 import { Menu } from '../Menu'
 import { MenuItem } from '../MenuItem'
 
@@ -17,7 +16,7 @@ interface Item {
 	disabled?: boolean
 }
 
-export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange'>, InputWrapperProps, InputBoxProps {
+export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'>, InputWrapperProps {
 	placeholder?: string
 	value?: Item['value']
 	defaultValue?: Item['value']
