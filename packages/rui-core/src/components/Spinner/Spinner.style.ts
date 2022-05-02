@@ -1,4 +1,4 @@
-import type { ColorToken, ConstrainedSize } from '@rui/theme'
+import type { ColorToken, SizeValue } from '@rui/theme'
 import styled, { keyframes } from '@rui/styles'
 
 const spin = keyframes`
@@ -13,31 +13,16 @@ const spin = keyframes`
 
 interface SpinnerContainerProps {
 	$color: ColorToken
-	$size: ConstrainedSize
+	$size: SizeValue
 }
 
-export const SpinnerContainer = styled.div<SpinnerContainerProps>(
-	({ theme, $color }) => ({
-		position: 'relative',
-		display: 'inline-block',
-		color: theme.fn.getColor($color)
-	}),
-	({ $size }) =>
-		({
-			sm: {
-				width: '1.6rem',
-				height: '1.6rem'
-			},
-			md: {
-				width: '2.4rem',
-				height: '2.4rem'
-			},
-			lg: {
-				width: '3.2rem',
-				height: '3.2rem'
-			}
-		}[$size])
-)
+export const SpinnerContainer = styled.div<SpinnerContainerProps>(({ theme, $color, $size }) => ({
+	position: 'relative',
+	display: 'inline-block',
+	color: theme.fn.getColor($color),
+	width: theme.fn.getSize($size, theme.size),
+	height: theme.fn.getSize($size, theme.size)
+}))
 
 interface StyledSpinnerProps {
 	$speed: string

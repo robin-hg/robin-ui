@@ -1,10 +1,10 @@
-import type { DefaultProps, ColorToken, ConstrainedSize } from '@rui/types'
+import type { DefaultProps, ColorToken, SizeValue } from '@rui/types'
 import React from 'react'
 import { SpinnerContainer, StyledSpinner } from './Spinner.style'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'size'> {
 	color?: ColorToken
-	size?: ConstrainedSize
+	size?: SizeValue
 	speed?: number
 }
 

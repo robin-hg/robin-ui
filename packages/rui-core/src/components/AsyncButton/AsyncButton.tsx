@@ -82,7 +82,7 @@ export const AsyncButton = React.forwardRef<HTMLButtonElement, Props>((props, re
 	const [text, icon] = (() => {
 		switch (state) {
 			case 'loading':
-				return [loadingText, <Spinner key="loading" color="inherit" size="sm" />]
+				return [loadingText, <Spinner key="loading" color="inherit" size="xs" />]
 			case 'complete':
 				return [completeText, <Check key="complete" />]
 			case 'error':
