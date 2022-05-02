@@ -5,6 +5,7 @@ import { StyledText } from './Typography.style'
 
 export interface Props extends DefaultProps<HTMLParagraphElement, 'size'> {
 	size?: SizeValue
+	fontSize?: string | number
 	fontWeight?: number
 	bold?: boolean
 	color?: ColorToken
@@ -28,6 +29,7 @@ const TypographyFactory = (variant: Variant) => {
 		const {
 			as,
 			size = 'md',
+			fontSize,
 			fontWeight,
 			bold,
 			color = 'inherit',
@@ -48,6 +50,7 @@ const TypographyFactory = (variant: Variant) => {
 				as={defaultComponent}
 				$variant={variant}
 				$size={size}
+				$fontSize={fontSize}
 				$fontWeight={fontWeight}
 				$bold={!!bold}
 				$color={color}

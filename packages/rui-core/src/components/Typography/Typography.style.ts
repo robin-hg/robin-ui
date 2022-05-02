@@ -1,5 +1,6 @@
 import type { SizeValue, ColorToken } from '@rui/types'
 import styled from '@rui/styles'
+import { parseSize } from '@rui/utils'
 
 interface StyledTextProps {
 	$variant: 'heading' | 'text' | 'label'
@@ -9,15 +10,16 @@ interface StyledTextProps {
 	$bold: boolean
 	$italic: boolean
 	$decoration: string
+	$fontSize?: string | number
 	$fontWeight?: number
 }
 
 export const StyledText = styled.div<StyledTextProps>(
-	({ theme, $variant, $size, $color, $decoration, $highlight, $fontWeight, $italic, $bold }) => ({
+	({ theme, $variant, $size, $color, $decoration, $highlight, $fontSize, $fontWeight, $italic, $bold }) => ({
 		margin: 0,
 		fontFamily: theme.typography[$variant].fontFamily,
 		fontWeight: $fontWeight || ($bold ? 'bold' : theme.typography[$variant].fontWeight),
-		fontSize: theme.fn.getSize($size, theme.typography[$variant].fontSize),
+		fontSize: $fontSize ? parseSize($fontSize) : theme.fn.getSize($size, theme.typography[$variant].fontSize),
 		fontStyle: $italic ? 'italic' : 'normal',
 		lineHeight: theme.fn.getSize($size, theme.typography[$variant].lineHeight, false) || 'normal',
 		color: theme.fn.getColor($color),
