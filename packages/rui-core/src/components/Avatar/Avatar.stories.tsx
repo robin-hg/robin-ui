@@ -8,8 +8,12 @@ export default {
 	args: {
 		color: 'primary',
 		size: 'lg',
+		borderRadius: 'xl',
 		src: 'https://bit.ly/dan-abramov',
 		alt: 'Dan Abramov'
+	},
+	argTypes: {
+		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

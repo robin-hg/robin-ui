@@ -9,7 +9,11 @@ export default {
 	args: {
 		size: 'md',
 		variant: 'filled',
-		color: 'primary'
+		color: 'primary',
+		borderRadius: 'sm'
+	},
+	argTypes: {
+		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

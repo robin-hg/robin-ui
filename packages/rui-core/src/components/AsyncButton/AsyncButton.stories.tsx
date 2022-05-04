@@ -6,10 +6,16 @@ import { AsyncButton, type Props } from './AsyncButton'
 export default {
 	title: 'Inputs/AsyncButton',
 	component: AsyncButton,
-	argTypes: {
-		color: { control: 'color' },
-		hoverColor: { control: 'color' },
-		component: { control: null }
+	args: {
+		spinnerPosition: 'right',
+		loadingText: 'Loading',
+		completeText: 'Complete',
+		loadingDuration: 500,
+		completeDuration: 1000,
+		errorDuration: 1000,
+		size: 'md',
+		variant: 'filled',
+		color: 'primary'
 	}
 } as Meta<Props>
 
