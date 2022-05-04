@@ -9,5 +9,8 @@ export const StyledContainer = styled.div<StyledContainerProps>(({ theme, $maxWi
 	boxSizing: 'content-box',
 	maxWidth: theme.fn.getSize($maxWidth, theme.breakpoints),
 	padding: theme.fn.getSpacing([0, 'md']),
-	margin: '0 auto'
+	margin: '0 auto',
+	[theme.media.sm]: {
+		padding: theme.fn.getSpacing([0, 'sm'])
+	}
 }))

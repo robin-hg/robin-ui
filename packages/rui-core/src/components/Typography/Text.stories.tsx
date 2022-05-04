@@ -10,6 +10,7 @@ export default {
 	args: {
 		size: 'md',
 		color: 'inherit',
+		fontWeight: 400,
 		children: 'Lorem ipsum'
 	},
 	argTypes: {

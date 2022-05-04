@@ -16,6 +16,7 @@ interface StyledTextProps {
 
 export const StyledText = styled.div<StyledTextProps>(
 	({ theme, $variant, $size, $color, $decoration, $highlight, $fontSize, $fontWeight, $italic, $bold }) => ({
+		display: 'inline-block',
 		margin: 0,
 		fontFamily: theme.typography[$variant].fontFamily,
 		fontWeight: $fontWeight || ($bold ? 'bold' : theme.typography[$variant].fontWeight),
