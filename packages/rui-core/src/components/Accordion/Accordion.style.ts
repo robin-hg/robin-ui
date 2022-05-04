@@ -32,7 +32,7 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 	},
 	'&:focus-visible': {
 		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'focus'),
-		outlineColor: theme.fn.getColor('primary')
+		outlineColor: theme.palette.primary.base
 	},
 	'&:active': {
 		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'active')

@@ -3,7 +3,6 @@ import { Button } from '../Button'
 
 interface MenuItemContainerProps {
 	$active: boolean
-	disabled: boolean
 }
 
 export const MenuItemContainer = styled(Button)<MenuItemContainerProps>(

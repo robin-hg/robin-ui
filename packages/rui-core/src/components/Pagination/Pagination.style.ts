@@ -35,7 +35,7 @@ export const PageButton = styled(Button)({
 
 export const Elipsis = styled.div(({ theme }) => ({
 	width: '3.2rem',
-	color: theme.fn.getColor('surface.onBase'),
+	color: theme.palette.surface.onBase,
 	textAlign: 'center',
 	'&::before': {
 		content: '"..."'

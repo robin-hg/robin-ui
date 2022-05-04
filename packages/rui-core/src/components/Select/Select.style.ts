@@ -17,7 +17,7 @@ export const SelectBox = styled(InputBox)(({ theme, active, disabled }) => ({
 	},
 	'&:focus': {
 		'& > input': {
-			borderColor: theme.fn.getColor('primary')
+			borderColor: theme.palette.primary.base
 		}
 	}
 }))

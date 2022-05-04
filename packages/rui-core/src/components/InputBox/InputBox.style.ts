@@ -27,7 +27,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			outline: 'none',
 			transition: theme.fn.getTransition(),
 			'&:focus': {
-				borderColor: theme.fn.getColor('primary')
+				borderColor: theme.palette.primary.base
 			},
 			'::placeholder': {
 				color: theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')
@@ -49,12 +49,12 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			},
 			error: {
 				'& > input, & > select': {
-					borderColor: theme.fn.getColor('critical')
+					borderColor: theme.palette.critical.base
 				}
 			},
 			active: {
 				'& > input': {
-					borderColor: theme.fn.getColor('primary')
+					borderColor: theme.palette.primary.base
 				}
 			},
 			none: null

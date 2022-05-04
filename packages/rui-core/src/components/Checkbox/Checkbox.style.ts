@@ -30,7 +30,7 @@ export const Box = styled.input<BoxProps>(
 			pointerEvents: 'none'
 		}
 	}),
-	({ theme, $color, checked, $error }) => {
+	({ theme, checked, $color, $error }) => {
 		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
 		const onColor = theme.fn.getOnColor(color)
 		const borderColor = $error ? 'critical' : color
