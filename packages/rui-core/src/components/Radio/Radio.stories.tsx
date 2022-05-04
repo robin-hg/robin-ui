@@ -8,7 +8,7 @@ export default {
 	component: Radio,
 	args: {
 		label: 'Label',
-		checked: true,
+		checked: false,
 		disabled: false
 	}
 } as Meta<Props>

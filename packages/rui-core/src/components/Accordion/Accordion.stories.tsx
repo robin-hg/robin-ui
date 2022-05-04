@@ -6,10 +6,7 @@ export default {
 	title: 'Surface/Accordion',
 	component: Accordion,
 	args: {
-		title: 'title'
-	},
-	argTypes: {
-		onClick: { action: 'clicked' }
+		title: 'Title'
 	}
 } as Meta<Props>
 

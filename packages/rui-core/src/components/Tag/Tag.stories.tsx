@@ -12,7 +12,7 @@ export default {
 		children: 'I am a Tag'
 	},
 	argTypes: {
-		size: { control: { type: 'radio' }, options: ['sm', 'md', 'lg'] }
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

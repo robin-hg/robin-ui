@@ -13,6 +13,9 @@ export default {
 	subcomponents: { ModalHeader, ModalContent, ModalFooter },
 	args: {
 		size: 'md'
+	},
+	argTypes: {
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

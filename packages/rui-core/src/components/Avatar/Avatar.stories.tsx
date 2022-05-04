@@ -13,6 +13,7 @@ export default {
 		alt: 'Dan Abramov'
 	},
 	argTypes: {
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
 		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>

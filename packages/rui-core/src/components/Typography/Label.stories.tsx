@@ -14,7 +14,7 @@ export default {
 		children: 'Lorem ipsum'
 	},
 	argTypes: {
-		size: { control: { type: 'radio' }, options: ['sm', 'md', 'lg'] },
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
 		highlight: { control: { type: 'color' } },
 		fontWeight: { control: { type: 'select' }, options: [400, 600] }
 	}
