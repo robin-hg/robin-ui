@@ -1,6 +1,5 @@
 import type { ColorToken, SizeValue } from '@rui/theme'
 import styled from '@rui/styles'
-import { get } from '@rui/utils'
 
 interface StyledLinkProps {
 	$size: SizeValue
@@ -10,7 +9,7 @@ interface StyledLinkProps {
 
 export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $underline }) => ({
 	fontFamily: theme.typography.text.fontFamily,
-	fontSize: get(theme.typography.text.fontSize, $size as string, $size as string),
+	fontSize: theme.fn.getSize($size, theme.typography.text.fontSize),
 	fontWeight: 'bold',
 	color: theme.fn.getColor($color),
 	textDecoration: $underline ? 'underline' : 'none',
