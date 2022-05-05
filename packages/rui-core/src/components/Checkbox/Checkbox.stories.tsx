@@ -9,6 +9,7 @@ export default {
 	args: {
 		label: 'Label',
 		checked: false,
+		indeterminate: false,
 		disabled: false
 	}
 } as Meta<Props>

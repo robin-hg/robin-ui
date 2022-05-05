@@ -63,7 +63,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 				disabled={disabled}
 				{...otherProps}
 			/>
-			{_checked ? <Check /> : indeterminate ? <Minus /> : null}
+			{indeterminate ? <Minus /> : <Check />}
 		</ControlInput>
 	)
 })

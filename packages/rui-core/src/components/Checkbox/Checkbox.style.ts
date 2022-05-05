@@ -27,7 +27,8 @@ export const Box = styled.input<BoxProps>(
 			left: 0,
 			width: '100%',
 			height: '100%',
-			pointerEvents: 'none'
+			pointerEvents: 'none',
+			transition: theme.fn.getTransition()
 		}
 	}),
 	({ theme, checked, $color, $error }) => {
@@ -39,7 +40,8 @@ export const Box = styled.input<BoxProps>(
 			background: checked || $error ? theme.fn.getColor(color) : 'transparent',
 			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'surface.onBase'),
 			'& + svg': {
-				color: onColor
+				color: onColor,
+				opacity: checked ? 1 : 0
 			},
 			'&:hover': {
 				background:
