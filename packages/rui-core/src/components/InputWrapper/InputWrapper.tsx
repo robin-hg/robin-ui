@@ -1,8 +1,9 @@
 import type { DefaultProps } from '@rui/types'
 import React from 'react'
+import { Stack } from '../Stack'
 import { Text } from '../Typography'
 
-import { Label, Description, ErrorMessage } from './InputWrapper.style'
+import { Label, Description } from './InputWrapper.style'
 
 export const inputWrapperProps = ['label', 'description', 'error', 'errorMessage', 'required'] as const
 
@@ -22,7 +23,7 @@ export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref)
 	const { label, labelId, labelFor, description, error, errorMessage, required, children, ...otherProps } = props
 
 	return (
-		<div ref={ref} {...otherProps}>
+		<Stack ref={ref} spacing="sm" {...otherProps}>
 			{label && (
 				<Label as="label" id={labelId} htmlFor={labelFor} size="lg">
 					{label}
@@ -40,11 +41,11 @@ export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref)
 			)}
 			{children}
 			{error && errorMessage && (
-				<ErrorMessage as="div" size="xs" color="critical" bold>
+				<Text as="div" size="xs" color="critical" bold>
 					{errorMessage}
-				</ErrorMessage>
+				</Text>
 			)}
-		</div>
+		</Stack>
 	)
 })
 
