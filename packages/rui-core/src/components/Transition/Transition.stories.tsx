@@ -12,6 +12,7 @@ export default {
 	title: 'Utils/Transitions',
 	component: FadeTransition,
 	args: {
+		in: false,
 		ease: 'easeOut',
 		duration: 200
 	},

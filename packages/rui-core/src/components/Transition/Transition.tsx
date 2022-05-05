@@ -1,7 +1,7 @@
 import type { DefaultProps } from '@rui/types'
 import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
-import { AnimatePresence, motion, type Variants } from 'framer-motion'
+import { AnimatePresence, m, type Variants } from 'framer-motion'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	in?: boolean
@@ -27,7 +27,7 @@ const TransitionFactory = (animation: Variants) => {
 		const animate = inProp ? 'enter' : 'exit'
 
 		const transition = (
-			<motion.div
+			<m.div
 				initial={unmountOnExit ? 'exit' : false}
 				animate={animate}
 				exit="exit"
@@ -36,7 +36,7 @@ const TransitionFactory = (animation: Variants) => {
 				<div ref={ref} {...otherProps}>
 					{children}
 				</div>
-			</motion.div>
+			</m.div>
 		)
 
 		if (motionOnly) {
@@ -57,8 +57,8 @@ export const Fade = TransitionFactory({
 })
 
 export const Collapse = TransitionFactory({
-	enter: { height: 'auto' },
-	exit: { height: 0, overflow: 'hidden' }
+	enter: { opacity: 1, height: 'auto' },
+	exit: { opacity: 0, height: 0, overflow: 'hidden' }
 })
 
 export const Grow = TransitionFactory({
