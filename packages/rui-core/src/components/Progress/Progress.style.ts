@@ -3,7 +3,7 @@ import styled, { keyframes } from '@rui/styles'
 
 const pulse = keyframes`
 	from {
-		transform: translateX(-100%);
+		width: 0%;
 		opacity: 0;
 	}
 
@@ -12,7 +12,7 @@ const pulse = keyframes`
 	}
 
 	to {
-		transform: translateX(100%);
+		width: 110%;
 		opacity: 0;
 	}
 `
@@ -34,8 +34,8 @@ export const Track = styled.div<TrackProps>(({ theme, $thickness, $trackColor, $
 interface BarProps {
 	$color: string
 	$borderRadius: SizeValue
+	$indeterminate: boolean
 	$animated: boolean
-	$fullWidth: number
 }
 
 export const Bar = styled.div<BarProps>(
@@ -47,21 +47,28 @@ export const Bar = styled.div<BarProps>(
 		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
 		overflow: 'hidden'
 	}),
-	({ theme, $color, $borderRadius, $animated, $fullWidth }) =>
-		$animated && {
+	({ theme, $color, $borderRadius, $indeterminate, $animated }) =>
+		($indeterminate || $animated) && {
 			'&:after': {
 				content: '""',
 				position: 'absolute',
 				top: 0,
 				left: 0,
-				width: `${$fullWidth}px`,
 				height: '100%',
 				background: `linear-gradient(90deg, transparent, ${theme.fn.getAlphaColor(
 					theme.fn.getOnColor($color),
 					0.5
 				)})`,
 				borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
-				animation: `${pulse} 2s linear 0.5s infinite`
+				animation: `${pulse} 1.2s ease-out 0.5s infinite`
+			}
+		},
+	({ theme, $color, $indeterminate }) =>
+		$indeterminate && {
+			width: '100% !important',
+			background: 'transparent',
+			'&:after': {
+				background: `linear-gradient(90deg, transparent, ${theme.fn.getColor($color)})`
 			}
 		}
 )

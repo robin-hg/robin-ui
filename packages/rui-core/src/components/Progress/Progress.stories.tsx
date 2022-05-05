@@ -7,9 +7,16 @@ export default {
 	component: Progress,
 	args: {
 		percent: 50,
+		color: 'primary',
+		trackColor: 'surface.variant',
+		thickness: 'sm',
+		borderRadius: 'md',
+		indeterminate: false,
 		animated: true
 	},
 	argTypes: {
+		thickness: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
 		percent: { control: { type: 'range', min: 0, max: 100, step: 1 } },
 		trackColor: { control: 'color' }
 	}
