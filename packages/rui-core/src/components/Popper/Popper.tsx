@@ -73,8 +73,6 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		return null
 	}
 
-	const finalPlacement = (attributes?.popper?.['data-popper-placement'] || 'bottom') as Placement
-
 	return (
 		<Portal target={popperEl || modalEl || undefined}>
 			<PopperContext.Provider value={ctxValue}>
@@ -82,7 +80,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					<PopperElement
 						ref={setInnerRef}
 						style={styles.popper}
-						placement={finalPlacement}
+						placement={(attributes?.popper?.['data-popper-placement'] || 'bottom') as Placement}
 						withArrow={!!withArrow}
 						update={update}
 						setHovering={setHovering}
@@ -90,7 +88,7 @@ export const Popper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 						{...attributes}>
 						<Paper ref={ref} variant="outlined" {...otherProps}>
 							{children}
-							{withArrow && <Arrow ref={setArrowRef} $placement={finalPlacement} style={styles.arrow} />}
+							{withArrow && <Arrow ref={setArrowRef} data-element="arrow" style={styles.arrow} />}
 						</Paper>
 					</PopperElement>
 				</FadeContainer>
