@@ -19,7 +19,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 }
 
 export const TransitionSwitch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { currentKey, transition = 'fade', duration = 400, children, ...otherProps } = props
+	const { currentKey, transition = 'fade', duration = 200, children, ...otherProps } = props
 
 	const Transition = defaultTransitions[transition] || Fade
 
