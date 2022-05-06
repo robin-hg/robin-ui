@@ -11,7 +11,9 @@ export default {
 		description: 'Description',
 		placeholder: 'Placeholder',
 		value: '',
-		required: true
+		required: true,
+		disabled: false,
+		error: false
 	}
 } as Meta<Props>
 

@@ -25,7 +25,9 @@ export default {
 			{ value: 'J' },
 			{ value: 'K' }
 		],
-		required: true
+		required: true,
+		disabled: false,
+		error: false
 	}
 } as Meta<Props>
 
