@@ -5,6 +5,12 @@ import { AnimatePresence } from 'framer-motion'
 
 import { Fade, Collapse, Grow } from '../Transition'
 
+const defaultTransitions = {
+	collapse: Collapse,
+	grow: Grow,
+	fade: Fade
+}
+
 export interface Props extends DefaultProps<HTMLDivElement> {
 	currentKey: string | number
 	transition?: 'fade' | 'collapse' | 'grow'
@@ -15,17 +21,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 export const TransitionSwitch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { currentKey, transition = 'fade', duration = 400, children, ...otherProps } = props
 
-	const Transition = (() => {
-		switch (transition) {
-			case 'collapse':
-				return Collapse
-			case 'grow':
-				return Grow
-			case 'fade':
-			default:
-				return Fade
-		}
-	})()
+	const Transition = defaultTransitions[transition] || Fade
 
 	return (
 		<AnimatePresence exitBeforeEnter>
