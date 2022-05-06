@@ -10,5 +10,6 @@ export const StyledMenu = styled(Popper)<MenuProps>(({ theme, $minWidth, $maxHei
 	minWidth: $minWidth,
 	maxHeight: $maxHeight,
 	padding: theme.spacing.xs,
-	overflow: 'auto'
+	overflow: 'auto',
+	outline: 'none'
 }))

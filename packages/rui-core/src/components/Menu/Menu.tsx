@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { parseSize, getFocusable } from '@rui/utils'
-import { useCombinedRef, useId, useKeyPress } from '@rui/hooks'
+import { useCombinedRef, useId } from '@rui/hooks'
 
 import { Popper } from '../Popper'
 
@@ -36,7 +36,9 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}, [target])
 
 	useEffect(() => {
-		if (!open) {
+		if (open) {
+			menuRef.current?.focus()
+		} else {
 			target?.focus()
 		}
 		if (target) {
@@ -44,30 +46,33 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}, [open])
 
-	useKeyPress('Escape', () => onClose?.())
-
-	const handleArrow = (event: KeyboardEvent, direction: 'up' | 'down') => {
-		event.preventDefault()
-		if (!open) {
-			return
+	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+		const handleArrow = (direction: 'up' | 'down') => {
+			const focusable = getFocusable(menuRef.current)
+			const itemIndex = focusable.findIndex(element => element === document.activeElement)
+			const nextIndex = itemIndex + (direction === 'up' ? -1 : 1)
+			const nextTarget = focusable[nextIndex] as HTMLElement
+			if (nextTarget) {
+				nextTarget.focus()
+			}
 		}
-		const focusable = getFocusable(menuRef.current)
-		const itemIndex = focusable.findIndex(element => element === document.activeElement)
-		const nextIndex = itemIndex + (direction === 'up' ? -1 : 1)
-		const nextTarget = focusable[nextIndex] as HTMLElement
-		if (nextTarget) {
-			nextTarget.focus()
+
+		switch (event.key) {
+			case 'ArrowUp':
+				event.preventDefault()
+				handleArrow('up')
+				break
+			case 'ArrowDown':
+				event.preventDefault()
+				handleArrow('down')
+				break
+			case 'Tab':
+			case 'Escape':
+				event.preventDefault()
+				onClose?.()
+				break
 		}
 	}
-
-	useKeyPress('ArrowDown', event => handleArrow(event, 'down'))
-	useKeyPress('ArrowUp', event => handleArrow(event, 'up'))
-	useKeyPress('Tab', (event: KeyboardEvent) => {
-		if (open) {
-			event.preventDefault()
-			onClose?.()
-		}
-	})
 
 	if (!target) {
 		return null
@@ -81,10 +86,12 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			aria-orientation="vertical"
 			target={target}
 			open={open}
+			onKeyDown={handleKeyPress}
 			$minWidth={parseSize(minWidth)}
 			$maxHeight={parseSize(maxHeight)}
 			onClick={event => event.stopPropagation()}
 			onClose={onClose}
+			tabIndex={-1}
 			{...otherProps}>
 			{children}
 		</StyledMenu>
