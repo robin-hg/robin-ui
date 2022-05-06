@@ -26,9 +26,6 @@ export default {
 			{ value: 'K' }
 		],
 		required: true
-	},
-	argTypes: {
-		value: { control: 'text' }
 	}
 } as Meta<Props>
 
