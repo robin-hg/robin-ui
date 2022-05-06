@@ -1,15 +1,21 @@
-export const getFocusable = (node?: HTMLElement | null) => {
+export const getFocusable = (node?: HTMLElement | null, ignoreTabIndex?: boolean) => {
 	if (!node) {
 		return []
 	}
-	const elements = [
-		...node.querySelectorAll('a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])')
-	] as HTMLElement[]
+	const ignored = [
+		'a[href]',
+		'button',
+		'input',
+		'textarea',
+		'select',
+		'details',
+		!ignoreTabIndex && '[tabindex]:not([tabindex="-1"]'
+	]
+	const elements = [...node.querySelectorAll(ignored.join(', '))] as HTMLElement[]
 	return elements.filter(
 		element =>
 			!element.hasAttribute('disabled') &&
 			!element.getAttribute('aria-hidden') &&
-			!parseInt(element.getAttribute('tabindex') || '', 10) &&
 			element.style.display !== 'none'
 	)
 }

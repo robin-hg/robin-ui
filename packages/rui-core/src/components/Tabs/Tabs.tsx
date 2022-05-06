@@ -1,5 +1,6 @@
 import type { DefaultProps, ColorToken } from '@rui/types'
-import React, { Children, useState } from 'react'
+import { getFocusable } from '@rui/utils'
+import React, { Children, useRef, useState } from 'react'
 
 import type { Props as TabPanelProps } from '../TabPanel'
 import { TransitionSwitch } from '../TransitionSwitch'
@@ -16,10 +17,35 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
 
 export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { color = 'primary', activeTab, defaultTab, onChange, children, ...otherProps } = props
+	const tabGroupRef = useRef<HTMLDivElement>(null)
 
 	const [uncontrolled, setUncontrolled] = useState(defaultTab || 0)
 	const isUncontrolled = activeTab === undefined
 	const _activeTab = isUncontrolled ? uncontrolled : activeTab
+
+	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+		const handleArrow = (direction: 'right' | 'left') => {
+			const focusable = getFocusable(tabGroupRef.current, true)
+			const itemIndex = focusable.findIndex(element => element === document.activeElement)
+			const nextIndex = itemIndex + (direction === 'left' ? -1 : 1)
+			const nextTarget = focusable[nextIndex] as HTMLElement
+			if (nextTarget) {
+				nextTarget.focus()
+				nextTarget.click()
+			}
+		}
+
+		switch (event.key) {
+			case 'ArrowRight':
+				event.preventDefault()
+				handleArrow('right')
+				break
+			case 'ArrowLeft':
+				event.preventDefault()
+				handleArrow('left')
+				break
+		}
+	}
 
 	const tabs = Children.toArray(children) as React.ReactElement<TabPanelProps>[]
 	const activePanel = tabs.find((tab, i) =>
@@ -28,7 +54,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<div ref={ref} {...otherProps}>
-			<TabGroup role="tablist" aria-orientation="horizontal">
+			<TabGroup ref={tabGroupRef} role="tablist" aria-orientation="horizontal" onKeyDown={handleKeyPress}>
 				{tabs.map((tab, i) => {
 					const key = tab.props?.tabKey || i
 					const active = _activeTab === key
