@@ -33,6 +33,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		defaultValue,
 		placeholder,
 		disabled,
+		error,
 		required,
 		native,
 		onChange,
@@ -88,6 +89,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				}}
 				rightAdornment={<ChevronDown />}
 				disabled={disabled}
+				error={error}
 				active={open}
 				tabIndex={native ? -1 : 0}
 				{...rest}>
