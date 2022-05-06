@@ -43,8 +43,11 @@ export const Box = styled(BaseContainer)<BoxProps>(
 				color: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')} !important`,
 				'& > input, & > select': {
 					background: `${theme.fn.getAlphaColor('surface.variant', 'disabledBase')} !important`,
-					borderColor: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledBase')} !important`,
-					cursor: 'default !important'
+					borderColor: `${theme.fn.getAlphaColor('outline', 'disabledOnBase')} !important`,
+					cursor: 'default !important',
+					'::placeholder': {
+						color: theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')
+					}
 				}
 			},
 			error: {
