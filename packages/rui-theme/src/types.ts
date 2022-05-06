@@ -69,6 +69,7 @@ export type ColorToken =
 	| `${PaletteKeyWithVariant}.${keyof PaletteColorWithVariant}`
 	| `${PaletteKey}.${keyof PaletteColor}`
 	| `${DefaultColor}.${keyof ColorObj}`
+	| 'outline'
 	| (`${keyof AdditionalPalette}` & Record<never, never>)
 	| (string & Record<never, never>)
 

@@ -7,7 +7,11 @@ const DEFAULT_SHADE = 500
 export const getColorFunctions = (theme: AugumentedTheme) => ({
 	getColor: memoize((color: ColorToken) => {
 		const [base, shade] = color.split('.')
-		return get(theme.palette, [base, shade || 'base'], get(theme.colors, [base, shade || DEFAULT_SHADE], color))
+		return get(
+			theme.palette,
+			[base, shade || 'base'],
+			get(theme.palette, [base], get(theme.colors, [base, shade || DEFAULT_SHADE], color))
+		)
 	}),
 	getAlphaColor(color: ColorToken, modifier: Modifier | number) {
 		const c = this.getColor(color)
