@@ -7,7 +7,7 @@ import { Popper } from '../Popper'
 import { StyledMenu } from './Menu.style'
 
 export interface Props extends React.ComponentProps<typeof Popper> {
-	type?: 'menu' | 'listbox'
+	role?: 'menu' | 'listbox'
 	/**
 	 * Min menu width.
 	 * @default 20rem
@@ -22,7 +22,7 @@ export interface Props extends React.ComponentProps<typeof Popper> {
 }
 
 export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { type = 'menu', target, open, minWidth = '20rem', maxHeight = 300, onClose, children, ...otherProps } = props
+	const { role = 'menu', target, open, minWidth = '20rem', maxHeight = 300, onClose, children, ...otherProps } = props
 	const menuRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, menuRef)
 	const id = useId()
@@ -30,7 +30,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	useEffect(() => {
 		if (target) {
 			target.setAttribute('aria-controls', id)
-			target.setAttribute('aria-haspopup', type)
+			target.setAttribute('aria-haspopup', role)
 			target.setAttribute('aria-expanded', 'false')
 		}
 	}, [target])
@@ -77,7 +77,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		<StyledMenu
 			ref={combinedRef}
 			id={id}
-			role={type}
+			role={role}
 			aria-orientation="vertical"
 			target={target}
 			open={open}

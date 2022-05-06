@@ -125,7 +125,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			</SelectBox>
 			{!native && !disabled && (
 				<Menu
-					type="listbox"
+					role="listbox"
 					aria-labelledby={_id}
 					target={boxRef.current}
 					minWidth={size?.width}
