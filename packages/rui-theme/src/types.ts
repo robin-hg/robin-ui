@@ -8,7 +8,7 @@ export type DerrivedColorMode = 'light' | 'dark'
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number
 
-export type Modifier = 'base' | 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
+export type Modifier = 'backgroundTint' | 'tint' | 'hover' | 'focus' | 'active' | 'disabledBase' | 'disabledOnBase'
 
 type DefaultColor =
 	| 'gray'

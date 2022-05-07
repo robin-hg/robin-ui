@@ -11,7 +11,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 	({ theme, $leftPadding, $rightPadding }) => ({
 		position: 'relative',
 		width: '100%',
-		color: theme.palette.surface.onVariant,
+		color: theme.palette.surface.onBase,
 		'& > input, & > select': {
 			padding: theme.fn.getSpacing(['sm', 0]),
 			paddingRight: $rightPadding || theme.spacing.md,
@@ -20,7 +20,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			fontSize: theme.typography.text.fontSize.md,
 			height: '3.6rem',
 			lineHeight: '1em',
-			background: theme.fn.getModifiedColor('surface', 'primary', 'base'),
+			background: 'transparent',
 			color: 'inherit',
 			border: `solid 0.1rem ${theme.palette.outline}`,
 			borderRadius: theme.borderRadius.sm,

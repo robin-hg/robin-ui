@@ -19,6 +19,7 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 		overflow: 'hidden',
 		padding: theme.fn.getSpacing($padding),
 		transition: theme.fn.getTransition(),
+		border: 'solid 0.1rem transparent',
 		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
 	}),
 	({ theme, $surfaceColor, $tint }) =>
@@ -39,7 +40,7 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 				boxShadow: theme.shadow.generateShadow($elevation)
 			},
 			outlined: {
-				border: `solid 0.1rem ${theme.palette.outline}`
+				borderColor: theme.palette.outline
 			}
 		}[$variant])
 )
