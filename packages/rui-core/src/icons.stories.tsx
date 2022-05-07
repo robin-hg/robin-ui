@@ -1,8 +1,9 @@
 import type { Story, Meta } from '@storybook/react'
+import { useState } from 'react'
 
 import * as Icons from '@rui/icons'
 import { type Props } from '@rui/icons/src/createIcon'
-import { FlexBox, Text } from './'
+import { FlexBox, Text, TextInput } from './'
 
 export default {
 	title: 'Icons/Icons',
@@ -16,27 +17,40 @@ export default {
 	}
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
-	<div>
-		<FlexBox justifyContent="flex-start" wrap>
-			{Object.entries(Icons).map(i => {
-				const Icon = i[1]
-				return (
-					<FlexBox
-						direction="column"
-						key={i[0]}
-						spacing="sm"
-						sx={{
-							width: '8rem',
-							margin: '2rem'
-						}}>
-						<Icon {...args} />
-						<Text size="sm" sx={{ marginTop: 8 }}>
-							{i[0]}
-						</Text>
-					</FlexBox>
-				)
-			})}
-		</FlexBox>
-	</div>
-)
+export const Default: Story<Props> = args => {
+	const [search, setSearch] = useState('')
+
+	return (
+		<>
+			<TextInput
+				placeholder="Search Icon"
+				value={search}
+				onChange={e => setSearch(e.target.value)}
+				sx={{ marginBottom: '1.6rem' }}
+			/>
+			<FlexBox justifyContent="flex-start" wrap>
+				{Object.entries(Icons).map(i => {
+					if (search.trim() !== '' && !i[0].toLowerCase().includes(search.toLowerCase())) {
+						return null
+					}
+					const Icon = i[1]
+					return (
+						<FlexBox
+							direction="column"
+							key={i[0]}
+							spacing="sm"
+							sx={{
+								width: '8rem',
+								margin: '2rem'
+							}}>
+							<Icon {...args} />
+							<Text size="sm" sx={{ marginTop: 8 }}>
+								{i[0]}
+							</Text>
+						</FlexBox>
+					)
+				})}
+			</FlexBox>
+		</>
+	)
+}
