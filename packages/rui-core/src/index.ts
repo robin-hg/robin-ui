@@ -1,6 +1,7 @@
 export * from '@rui/types'
 
 export { Accordion } from './components/Accordion'
+export { Alert } from './components/Alert'
 export { AsyncButton } from './components/AsyncButton'
 export { Avatar } from './components/Avatar'
 export { Badge } from './components/Badge'
