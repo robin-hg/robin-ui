@@ -1,12 +1,12 @@
 import styled from '@rui/styles'
-import { Popper } from '../Popper'
+import { Floating } from '../Floating'
 
 interface MenuProps {
 	$minWidth: string
 	$maxHeight: string
 }
 
-export const StyledMenu = styled(Popper)<MenuProps>(({ theme, $minWidth, $maxHeight }) => ({
+export const StyledMenu = styled(Floating)<MenuProps>(({ theme, $minWidth, $maxHeight }) => ({
 	minWidth: $minWidth,
 	maxHeight: $maxHeight,
 	padding: theme.spacing.xs,

@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import { parseSize, getFocusable } from '@rui/utils'
 import { useCombinedRef, useId } from '@rui/hooks'
 
-import { Popper } from '../Popper'
+import { Floating } from '../Floating'
 
 import { StyledMenu } from './Menu.style'
 
-export interface Props extends React.ComponentProps<typeof Popper> {
+export interface Props extends React.ComponentProps<typeof Floating> {
 	role?: 'menu' | 'listbox'
 	/**
 	 * Min menu width.

@@ -1,12 +1,38 @@
 import styled from '@rui/styles'
-import type { Placement } from '@popperjs/core'
+import type { Placement } from '@floating-ui/react-dom'
+import { Paper } from '../Paper'
+import { Fade } from '../Transition'
 
-interface PopperElementContainerProps {
+export const FadeContainer = styled(Fade)({
+	position: 'absolute',
+	top: 0,
+	left: 0,
+	zIndex: 5,
+	width: 0,
+	height: 0
+})
+
+export const Arrow = styled.span(({ theme }) => ({
+	position: 'absolute',
+	zIndex: -1,
+	width: '0.8rem',
+	height: '0.8rem',
+	'&::before': {
+		display: 'block',
+		margin: 'auto',
+		content: '""',
+		border: `0.4rem solid ${theme.palette.surface.base}`,
+		borderRadius: '0.1rem',
+		transform: 'rotate(45deg)'
+	}
+}))
+
+interface FloatingElementProps {
 	$placement: Placement
 	$withArrow: boolean
 }
 
-export const PopperElementContainer = styled.div<PopperElementContainerProps>(
+export const FloatingElement = styled(Paper)<FloatingElementProps>(
 	{
 		maxWidth: 'calc(100vw - 3.2rem)',
 		height: 'auto'
