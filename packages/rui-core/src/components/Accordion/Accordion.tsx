@@ -1,7 +1,6 @@
 import type { DefaultProps } from '@rui/types'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useId } from '@rui/hooks'
-import { PaperContext } from '../Paper'
 
 import { Text } from '../Typography'
 
@@ -16,7 +15,6 @@ export interface Props extends DefaultProps<HTMLDivElement, 'summary' | 'title'>
 
 export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { open: openOverride, disabled, title, children, ...otherProps } = props
-	const { paperColor = 'surface' } = useContext(PaperContext)
 	const [open, setOpen] = useState(!!openOverride)
 	const id = useId()
 
@@ -41,7 +39,6 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				role="button"
 				$open={open}
 				$expandable={expandable}
-				$paperColor={paperColor}
 				disabled={!!disabled}
 				onClick={toggleOpen}
 				tabIndex={expandable ? 0 : -1}

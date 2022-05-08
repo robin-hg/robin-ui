@@ -1,4 +1,3 @@
-import type { ColorToken } from '@rui/theme'
 import styled from '@rui/styles'
 import { BaseContainer } from '../BaseContainer'
 import { Collapse } from '../Transition'
@@ -10,10 +9,9 @@ export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
 interface AccordionSummaryProps {
 	$open: boolean
 	$expandable: boolean
-	$paperColor: ColorToken
 }
 
-export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $expandable, $open, $paperColor }) => ({
+export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $expandable, $open }) => ({
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'space-between',
@@ -28,18 +26,18 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 	color: 'inherit',
 	transition: theme.fn.getTransition(['background', 'color']),
 	'&:hover': {
-		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'hover')
+		background: theme.fn.getAlphaColor('surface.onVariant', 'hover')
 	},
 	'&:focus-visible': {
-		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'focus'),
+		background: theme.fn.getAlphaColor('surface.onVariant', 'focus'),
 		outlineColor: theme.palette.primary.base
 	},
 	'&:active': {
-		background: theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'active')
+		background: theme.fn.getAlphaColor('surface.onVariant', 'active')
 	},
 	'&[disabled]': {
-		background: `${theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'disabledBase')} !important`,
-		color: `${theme.fn.getAlphaColor(theme.fn.getOnColor($paperColor), 'disabledOnBase')} !important`
+		background: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledBase')} !important`,
+		color: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')} !important`
 	},
 	'& > svg': {
 		transition: theme.fn.getTransition(),
