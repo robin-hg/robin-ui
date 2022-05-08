@@ -7,16 +7,16 @@ export default {
 	component: Alert,
 	args: {
 		status: 'critical',
-		variant: 'flat'
+		variant: 'flat',
+		title: 'Title',
+		children: 'Description'
 	},
 	argTypes: {
 		status: { control: { type: 'radio' }, options: ['none', 'success', 'info', 'warning', 'critical'] },
-		variant: { control: { type: 'radio' }, options: ['flat', 'outlined'] }
+		variant: { control: { type: 'radio' }, options: ['flat', 'outlined'] },
+		title: { control: { type: 'text' } },
+		children: { control: { type: 'text' } }
 	}
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
-	<Alert {...args} title="Alert">
-		Alert
-	</Alert>
-)
+export const Default: Story<Props> = args => <Alert {...args} />

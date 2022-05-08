@@ -7,6 +7,9 @@ export default {
 	component: Accordion,
 	args: {
 		title: 'Title'
+	},
+	argTypes: {
+		title: { control: { type: 'text' } }
 	}
 } as Meta<Props>
 

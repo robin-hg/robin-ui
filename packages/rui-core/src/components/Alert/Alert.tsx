@@ -1,6 +1,5 @@
+import type { DefaultProps, SizeValue } from '@rui/types'
 import React from 'react'
-
-import { Paper } from '../Paper'
 
 import { AlertContainer, AlertTitle } from './Alert.style'
 import { AlertCircle, AlertTriangle, CheckCircle, Info } from '@rui/icons'
@@ -14,11 +13,13 @@ const statusIcon = {
 	critical: <AlertCircle />
 }
 
-export interface Props extends Omit<React.ComponentProps<typeof Paper>, 'title'> {
+export interface Props extends DefaultProps<HTMLDivElement, 'title'> {
 	status?: 'none' | 'success' | 'info' | 'warning' | 'critical'
 	variant?: 'flat' | 'outlined'
 	icon?: React.ReactNode
 	title?: React.ReactNode
+	padding?: SizeValue | SizeValue[]
+	borderRadius?: SizeValue
 }
 
 export const Alert = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
