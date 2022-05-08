@@ -31,9 +31,11 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 		onChange,
 		id,
 		className,
+		name,
 		...otherProps
 	} = props
 	const {
+		name: groupName,
 		error: groupError,
 		disabled: groupDisabled,
 		value: groupValue,
@@ -53,6 +55,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 			className={className}>
 			<Circle
 				id={_id}
+				name={name || groupName}
 				type="radio"
 				checked={_checked}
 				onChange={event => {

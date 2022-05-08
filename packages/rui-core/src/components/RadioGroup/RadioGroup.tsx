@@ -6,6 +6,7 @@ import { InputWrapper, type InputWrapperProps } from '../InputWrapper'
 import { RadioContainer } from './RadioGroup.style'
 
 export const RadioGroupContext = React.createContext<{
+	name?: string
 	error?: boolean
 	disabled?: boolean
 	value?: string | number
@@ -20,12 +21,13 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange'>, InputWr
 }
 
 export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { error, direction = 'row', disabled, value, defaultValue, onChange, children, ...otherProps } = props
+	const { error, direction = 'row', disabled, value, defaultValue, onChange, name, children, ...otherProps } = props
 	const labelId = useId()
 	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 
 	const ctxValue = useMemo(
 		() => ({
+			name,
 			error,
 			disabled,
 			value: _value,
@@ -34,7 +36,7 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 				onChange?.(newValue)
 			}
 		}),
-		[_value, onChange]
+		[_value, name, error, disabled, onChange]
 	)
 
 	return (

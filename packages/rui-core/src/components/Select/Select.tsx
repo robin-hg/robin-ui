@@ -41,6 +41,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		onKeyDown,
 		id,
 		className,
+		name,
 		...otherProps
 	} = props
 	const boxRef = useRef<HTMLDivElement>(null)
@@ -105,7 +106,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					</select>
 				) : (
 					<>
-						<input type="hidden" value={item?.value ?? ''} />
+						<input type="hidden" name={name} value={item?.value ?? ''} />
 						<input
 							id={_id}
 							type="text"
