@@ -20,7 +20,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			fontSize: theme.typography.text.fontSize.md,
 			height: '3.6rem',
 			lineHeight: '1em',
-			background: 'transparent',
+			background: theme.fn.getModifiedColor('surface', 'primary', 'backgroundTint'),
 			color: 'inherit',
 			border: `0.1rem solid ${theme.palette.outline}`,
 			borderRadius: theme.borderRadius.sm,
