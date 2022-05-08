@@ -20,7 +20,7 @@ export const Arrow = styled.span(({ theme }) => ({
 		display: 'block',
 		margin: 'auto',
 		content: '""',
-		border: `solid 0.4rem ${theme.palette.surface.base}`,
+		border: `0.4rem solid ${theme.palette.surface.base}`,
 		borderRadius: '0.1rem',
 		transform: 'rotate(45deg)'
 	}

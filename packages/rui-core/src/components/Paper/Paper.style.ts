@@ -19,7 +19,7 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 		overflow: 'hidden',
 		padding: theme.fn.getSpacing($padding),
 		transition: theme.fn.getTransition(),
-		border: 'solid 0.1rem transparent',
+		border: '0.1rem solid transparent',
 		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
 	}),
 	({ theme, $surfaceColor, $tint }) =>

@@ -22,7 +22,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			lineHeight: '1em',
 			background: 'transparent',
 			color: 'inherit',
-			border: `solid 0.1rem ${theme.palette.outline}`,
+			border: `0.1rem solid ${theme.palette.outline}`,
 			borderRadius: theme.borderRadius.sm,
 			outline: 'none',
 			transition: theme.fn.getTransition(),

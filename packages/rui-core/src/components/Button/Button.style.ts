@@ -26,7 +26,7 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		whiteSpace: 'nowrap',
 		cursor: 'pointer',
 		userSelect: 'none',
-		border: 'solid 0.1rem transparent',
+		border: '0.1rem solid transparent',
 		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',

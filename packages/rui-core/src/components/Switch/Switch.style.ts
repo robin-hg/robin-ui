@@ -16,7 +16,7 @@ export const Box = styled.input<BoxProps>(
 		justifyContent: 'center',
 		width: '3.6rem',
 		height: '1.8rem',
-		border: 'solid 0.1rem transparent',
+		border: '0.1rem solid transparent',
 		borderRadius: theme.borderRadius.xl,
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',

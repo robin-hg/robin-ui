@@ -38,7 +38,7 @@ export const TagContainer = styled.span<TagContainerProps>(
 			outlined: {
 				background: 'transparent',
 				color: theme.fn.getColor($color),
-				border: `solid 0.1rem ${theme.fn.getColor($color)}`
+				border: `0.1rem solid ${theme.fn.getColor($color)}`
 			}
 		}[$variant])
 )
