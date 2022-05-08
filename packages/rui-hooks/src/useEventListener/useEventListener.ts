@@ -23,9 +23,9 @@ export const useEventListener: IUseEventListener = <
 	const savedHandler = useMutableCallback(handler)
 
 	useIsomorphicLayoutEffect(() => {
-		el.addEventListener(eventName, savedHandler, { capture: true })
+		el.addEventListener(eventName, savedHandler)
 		return () => {
-			el.removeEventListener(eventName, savedHandler, { capture: true })
+			el.removeEventListener(eventName, savedHandler)
 		}
 	}, [])
 }
