@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { omit, pick } from '@rui/utils'
-import { useCombinedRef, useForceUpdate, useId, useSize, useUncontrolled } from '@rui/hooks'
+import { useCombinedRef, useId, useSize, useUncontrolled } from '@rui/hooks'
 
 import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../InputWrapper'
 import { InputBox } from '../InputBox'
@@ -49,7 +49,6 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const _id = useId(id)
 	const size = useSize(boxRef.current, [value])
 	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
-	useForceUpdate(true)
 
 	useEffect(() => {
 		setOpen(false)

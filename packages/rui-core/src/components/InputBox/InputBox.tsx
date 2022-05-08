@@ -1,6 +1,6 @@
 import type { DefaultProps } from '@rui/types'
 import React, { useRef } from 'react'
-import { useForceUpdate, useSize } from '@rui/hooks'
+import { useSize } from '@rui/hooks'
 
 import { Box, Adornment } from './InputBox.style'
 
@@ -18,7 +18,6 @@ export const InputBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	const rightAdornmentRef = useRef<HTMLSpanElement>(null)
 	const leftAdornmentSize = useSize(leftAdornmentRef.current)
 	const rightAdornmentSize = useSize(rightAdornmentRef.current)
-	useForceUpdate(true)
 
 	const state = disabled ? 'disabled' : error ? 'error' : active ? 'active' : 'none'
 

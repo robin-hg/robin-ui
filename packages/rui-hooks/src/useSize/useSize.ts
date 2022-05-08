@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { useEventListener } from '../useEventListener'
+import { useForceUpdate } from '../useForceUpdate'
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
 export const useSize = (element: HTMLElement | null, dependencies: React.DependencyList = []) => {
 	const [size, setSize] = useState<DOMRect>()
+	useForceUpdate(true)
 
 	const getSize = () => {
 		const rect = element?.getBoundingClientRect()
