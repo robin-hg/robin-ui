@@ -5,6 +5,7 @@ import { ModalContext } from '../Modal'
 import { Button } from '../Button'
 import { Spinner } from '../Spinner'
 import { Check, X } from '@rui/icons'
+import { StyledButton } from './AsyncButton.style'
 
 type States = 'ready' | 'loading' | 'complete' | 'error'
 
@@ -93,14 +94,15 @@ export const AsyncButton = React.forwardRef<HTMLButtonElement, Props>((props, re
 	})()
 
 	return (
-		<Button
+		<StyledButton
 			ref={ref}
 			onClick={process}
 			leftAdornment={(spinnerPosition === 'left' && icon) || leftAdornment}
 			rightAdornment={(spinnerPosition === 'right' && icon) || rightAdornment}
+			$loading={state !== 'ready'}
 			{...otherProps}>
 			{text}
-		</Button>
+		</StyledButton>
 	)
 })
 
