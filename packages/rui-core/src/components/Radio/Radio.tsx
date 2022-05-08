@@ -1,6 +1,6 @@
 import type { DefaultProps, ColorToken } from '@rui/types'
-import React, { useContext, useState } from 'react'
-import { useId } from '@rui/hooks'
+import React, { useContext } from 'react'
+import { useId, useUncontrolled } from '@rui/hooks'
 import { RadioGroupContext } from '../RadioGroup'
 
 import { ControlInput } from '../ControlInput'
@@ -40,11 +40,8 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 		onChange: groupOnChange
 	} = useContext(RadioGroupContext)
 	const _id = useId(id)
-
-	const [uncontrolled, setUncontrolled] = useState(!!defaultValue)
 	const inGroup = !!groupOnChange
-	const isUncontrolled = !inGroup && checked === undefined
-	const _checked = isUncontrolled ? uncontrolled : !!checked
+	const [_checked, setUncontrolled] = useUncontrolled(!!defaultValue, inGroup ? value === groupValue : checked)
 
 	return (
 		<ControlInput
@@ -57,14 +54,12 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 			<Circle
 				id={_id}
 				type="radio"
-				checked={inGroup ? value === groupValue : _checked}
+				checked={_checked}
 				onChange={event => {
 					if (inGroup) {
 						groupOnChange(value)
 					}
-					if (isUncontrolled) {
-						setUncontrolled(event.target.checked)
-					}
+					setUncontrolled(event.target.checked)
 					onChange?.(event)
 				}}
 				$color={color}

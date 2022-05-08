@@ -1,6 +1,6 @@
 import type { DefaultProps, ColorToken } from '@rui/types'
-import React, { useState } from 'react'
-import { useId } from '@rui/hooks'
+import React from 'react'
+import { useId, useUncontrolled } from '@rui/hooks'
 
 import { ControlInput } from '../ControlInput'
 
@@ -33,10 +33,7 @@ export const Switch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		...otherProps
 	} = props
 	const _id = useId(id)
-
-	const [uncontrolled, setUncontrolled] = useState(!!defaultValue)
-	const isUncontrolled = checked === undefined
-	const _checked = isUncontrolled ? uncontrolled : checked
+	const [_checked, setUncontrolled] = useUncontrolled(!!defaultValue, checked)
 
 	return (
 		<ControlInput
@@ -52,9 +49,7 @@ export const Switch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				type="checkbox"
 				checked={_checked || !!indeterminate}
 				onChange={event => {
-					if (isUncontrolled) {
-						setUncontrolled(event.target.checked)
-					}
+					setUncontrolled(event.target.checked)
 					onChange?.(event)
 				}}
 				$color={color}

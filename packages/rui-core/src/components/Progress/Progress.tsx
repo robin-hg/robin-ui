@@ -5,7 +5,7 @@ import { Bar, Track } from './Progress.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	/** Number between 0~100. */
-	percent: number
+	value?: number
 	/**
 	 * Progress bar color.
 	 * @default primary
@@ -16,39 +16,47 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	borderRadius?: SizeValue
 	indeterminate?: boolean
 	animated?: boolean
+	noAria?: boolean
 }
 
 export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
-		percent,
+		value = 0,
 		color = 'primary',
 		trackColor = 'surface.variant',
 		thickness = 'sm',
 		borderRadius = 'md',
 		indeterminate,
 		animated,
+		noAria,
 		...otherProps
 	} = props
+
+	const ariaProps = !noAria
+		? {
+				role: 'progressbar',
+				'aria-label': 'loading',
+				'aria-valuemin': 0,
+				'aria-valuemax': 100,
+				'aria-valuenow': indeterminate ? undefined : value
+		  }
+		: {}
 
 	return (
 		<Track
 			ref={ref}
-			role="progressbar"
-			aria-label="loading"
-			aria-valuemin={0}
-			aria-valuemax={100}
-			aria-valuenow={indeterminate ? undefined : percent}
 			$thickness={thickness}
 			$trackColor={trackColor}
 			$borderRadius={borderRadius}
+			{...ariaProps}
 			{...otherProps}>
 			<Bar
-				$percent={Math.max(0, Math.min(100, percent))}
+				$percent={Math.max(0, Math.min(100, value))}
 				$color={color}
 				$borderRadius={borderRadius}
 				$indeterminate={!!indeterminate}
 				$animated={!!animated}
-				style={{ width: `${percent}%` }}
+				style={{ width: `${value}%` }}
 			/>
 		</Track>
 	)

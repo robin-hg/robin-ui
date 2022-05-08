@@ -1,6 +1,7 @@
+import { useUncontrolled } from '@rui/hooks'
 import type { DefaultProps, ColorToken } from '@rui/types'
 import { getFocusable } from '@rui/utils'
-import React, { Children, useRef, useState } from 'react'
+import React, { Children, useRef } from 'react'
 
 import type { Props as TabPanelProps } from '../TabPanel'
 import { TransitionSwitch } from '../TransitionSwitch'
@@ -16,12 +17,10 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
 }
 
 export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { color = 'primary', activeTab, defaultTab, onChange, children, ...otherProps } = props
+	const { color = 'primary', activeTab, defaultTab = 0, onChange, children, ...otherProps } = props
 	const tabGroupRef = useRef<HTMLDivElement>(null)
 
-	const [uncontrolled, setUncontrolled] = useState(defaultTab || 0)
-	const isUncontrolled = activeTab === undefined
-	const _activeTab = isUncontrolled ? uncontrolled : activeTab
+	const [_activeTab, setUncontrolled] = useUncontrolled(defaultTab, activeTab)
 
 	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
 		const handleArrow = (direction: 'right' | 'left') => {

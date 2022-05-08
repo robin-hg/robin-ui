@@ -6,7 +6,7 @@ export default {
 	title: 'Feedback/Progress',
 	component: Progress,
 	args: {
-		percent: 50,
+		value: 50,
 		color: 'primary',
 		trackColor: 'surface.variant',
 		thickness: 'sm',
@@ -15,10 +15,10 @@ export default {
 		animated: true
 	},
 	argTypes: {
+		value: { control: { type: 'range', min: 0, max: 100, step: 1 } },
+		trackColor: { control: 'color' },
 		thickness: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-		percent: { control: { type: 'range', min: 0, max: 100, step: 1 } },
-		trackColor: { control: 'color' }
+		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

@@ -1,6 +1,6 @@
 import type { DefaultProps } from '@rui/types'
-import React, { useMemo, useState } from 'react'
-import { useId } from '@rui/hooks'
+import React, { useMemo } from 'react'
+import { useId, useUncontrolled } from '@rui/hooks'
 
 import { InputWrapper, type InputWrapperProps } from '../InputWrapper'
 import { RadioContainer } from './RadioGroup.style'
@@ -22,10 +22,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange'>, InputWr
 export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { error, direction = 'row', disabled, value, defaultValue, onChange, children, ...otherProps } = props
 	const labelId = useId()
-
-	const [uncontrolled, setUncontrolled] = useState(defaultValue)
-	const isUncontrolled = value === undefined
-	const _value = isUncontrolled ? uncontrolled : value
+	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 
 	const ctxValue = useMemo(
 		() => ({
@@ -33,9 +30,7 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 			disabled,
 			value: _value,
 			onChange: (newValue?: string | number) => {
-				if (isUncontrolled) {
-					setUncontrolled(newValue)
-				}
+				setUncontrolled(newValue)
 				onChange?.(newValue)
 			}
 		}),

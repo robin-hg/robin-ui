@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { omit, pick } from '@rui/utils'
-import { useCombinedRef, useForceUpdate, useId, useSize } from '@rui/hooks'
+import { useCombinedRef, useForceUpdate, useId, useSize, useUncontrolled } from '@rui/hooks'
 
 import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../InputWrapper'
 import { InputBox } from '../InputBox'
@@ -48,11 +48,8 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const [open, setOpen] = useState(false)
 	const _id = useId(id)
 	const size = useSize(boxRef.current, [value])
+	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 	useForceUpdate(true)
-
-	const [uncontrolled, setUncontrolled] = useState(defaultValue)
-	const isUncontrolled = value === undefined
-	const _value = isUncontrolled ? uncontrolled : value
 
 	useEffect(() => {
 		setOpen(false)
@@ -99,9 +96,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 						value={item?.value}
 						onChange={event => {
 							onChange?.(event.target.value)
-							if (isUncontrolled) {
-								setUncontrolled(event.target.value)
-							}
+							setUncontrolled(event.target.value)
 						}}>
 						{options.map(option => (
 							<option key={option.value} value={option.value}>
@@ -140,9 +135,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 							onClick={() => {
 								onChange?.(option.value)
 								setOpen(false)
-								if (isUncontrolled) {
-									setUncontrolled(option.value)
-								}
+								setUncontrolled(option.value)
 							}}
 							active={value === option.value}>
 							{option.label ?? option.value}
