@@ -1,3 +1,4 @@
+export { clampNumber } from './clampNumber'
 export { get } from './get'
 export { getFocusable } from './getFocusable'
 export { handleKeyPress } from './handleKeyPress'

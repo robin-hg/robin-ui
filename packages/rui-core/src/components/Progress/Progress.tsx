@@ -1,5 +1,6 @@
 import type { DefaultProps, SizeValue } from '@rui/types'
 import React from 'react'
+import { clampNumber } from '@rui/utils'
 
 import { Bar, Track } from './Progress.style'
 
@@ -51,7 +52,7 @@ export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 			{...ariaProps}
 			{...otherProps}>
 			<Bar
-				$percent={Math.max(0, Math.min(100, value))}
+				$percent={clampNumber(value, 0, 100)}
 				$color={color}
 				$borderRadius={borderRadius}
 				$indeterminate={!!indeterminate}
