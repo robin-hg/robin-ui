@@ -8,7 +8,7 @@ export default {
 	component: ButtonGroup,
 	args: {
 		size: 'md',
-		variant: 'filled',
+		variant: 'outlined',
 		color: 'primary',
 		borderRadius: 'sm'
 	},

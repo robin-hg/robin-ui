@@ -7,9 +7,8 @@ interface ButtonGroupContainerProps {
 
 export const ButtonGroupContainer = styled.div<ButtonGroupContainerProps>(({ theme, $borderRadius }) => ({
 	display: 'inline-flex',
-	overflow: 'hidden',
-	gap: '-0.1rem',
 	'& > button': {
+		position: 'relative',
 		borderRadius: 0,
 		'&:first-of-type': {
 			borderTopLeftRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
@@ -19,8 +18,11 @@ export const ButtonGroupContainer = styled.div<ButtonGroupContainerProps>(({ the
 			borderTopRightRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
 			borderBottomRightRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
 		},
-		'&:not(:last-of-type)': {
-			borderRight: 'none'
+		'&:not(:first-of-type)': {
+			marginLeft: '-0.1rem'
+		},
+		'&:focus-visible': {
+			zIndex: 1
 		}
 	}
 }))
