@@ -49,7 +49,7 @@ export const Bar = styled.div<BarProps>(
 	}),
 	({ theme, $color, $borderRadius, $indeterminate, $animated }) =>
 		($indeterminate || $animated) && {
-			'&:after': {
+			'&::after': {
 				content: '""',
 				position: 'absolute',
 				top: 0,
@@ -67,7 +67,7 @@ export const Bar = styled.div<BarProps>(
 		$indeterminate && {
 			width: '100% !important',
 			background: 'transparent',
-			'&:after': {
+			'&::after': {
 				background: `linear-gradient(90deg, transparent, ${theme.fn.getColor($color)})`
 			}
 		}
