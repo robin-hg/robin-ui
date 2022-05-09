@@ -12,7 +12,7 @@ const pulse = keyframes`
 	}
 
 	to {
-		width: 110%;
+		width: 120%;
 		opacity: 0;
 	}
 `
@@ -53,7 +53,7 @@ export const Bar = styled.div<BarProps>(
 				content: '""',
 				position: 'absolute',
 				top: 0,
-				left: 0,
+				left: '-10%',
 				height: '100%',
 				background: `linear-gradient(90deg, transparent, ${theme.fn.getAlphaColor(
 					theme.fn.getOnColor($color),
