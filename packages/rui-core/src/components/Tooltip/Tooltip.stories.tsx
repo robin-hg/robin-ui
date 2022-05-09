@@ -2,6 +2,7 @@ import type { Story, Meta } from '@storybook/react'
 
 import { Tooltip, type Props } from './Tooltip'
 import { FlexBox } from '../FlexBox'
+import { Button } from '../Button'
 
 export default {
 	title: 'Overlay/Tooltip',
@@ -35,7 +36,7 @@ export const Default: Story<Props> = args => {
 	return (
 		<FlexBox justifyContent="center" sx={{ height: '50rem' }}>
 			<Tooltip {...args}>
-				<span>Hover me.</span>
+				<Button>Hover me.</Button>
 			</Tooltip>
 		</FlexBox>
 	)
