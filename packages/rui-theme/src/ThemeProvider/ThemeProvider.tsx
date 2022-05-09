@@ -9,13 +9,13 @@ import { Global } from './Global'
 interface Props {
 	colorMode?: ColorMode
 	forcedColorMode?: boolean
-	addGlobalCss?: boolean
+	addGlobalCSS?: boolean
 	theme?: Partial<BaseTheme>
 	children?: React.ReactNode
 }
 
 export const ThemeProvider: React.FC<Props> = props => {
-	const { colorMode: initialMode = 'light', forcedColorMode, addGlobalCss, theme = {}, children } = props
+	const { colorMode: initialMode = 'light', forcedColorMode, addGlobalCSS, theme = {}, children } = props
 	const [colorMode] = useColorMode(initialMode)
 	const themeFinal = themeFactory(
 		merge(defaultTheme, theme),
@@ -24,7 +24,7 @@ export const ThemeProvider: React.FC<Props> = props => {
 
 	return (
 		<EmThemeProvider theme={themeFinal}>
-			{addGlobalCss && <Global />}
+			{addGlobalCSS && <Global />}
 			{children}
 		</EmThemeProvider>
 	)
