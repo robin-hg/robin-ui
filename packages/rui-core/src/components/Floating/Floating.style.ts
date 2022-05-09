@@ -12,76 +12,50 @@ export const FadeContainer = styled(Fade)({
 	height: 0
 })
 
-export const Arrow = styled.span(({ theme }) => ({
-	position: 'absolute',
-	zIndex: -1,
-	width: '0.8rem',
-	height: '0.8rem',
-	'&::before': {
-		display: 'block',
-		margin: 'auto',
-		content: '""',
-		border: `0.4rem solid ${theme.palette.surface.base}`,
-		borderRadius: '0.1rem',
-		transform: 'rotate(45deg)'
-	}
-}))
-
 interface FloatingElementProps {
 	$placement: Placement
-	$withArrow: boolean
 }
 
-export const FloatingElement = styled(Paper)<FloatingElementProps>(
-	{
-		maxWidth: 'calc(100vw - 3.2rem)',
-		height: 'auto'
-	},
-	({ $withArrow, $placement }) => {
-		if (!$withArrow) {
-			return null
-		}
+export const Arrow = styled.span<FloatingElementProps>(
+	({ theme }) => ({
+		position: 'absolute',
+		zIndex: -1,
+		border: `0.4rem solid ${theme.palette.surface.base}`,
+		transform: 'rotate(45deg)',
+		transition: theme.fn.getTransition()
+	}),
+	({ $placement }) => {
 		switch ($placement) {
 			case 'top':
 			case 'top-end':
 			case 'top-start':
 				return {
-					paddingBottom: '0.8rem',
-					'& div[data-element="arrow"]': {
-						bottom: '0.3rem',
-						transform: 'translateY(50%)'
-					}
+					bottom: '-0.5rem !important'
 				}
 			case 'right':
 			case 'right-end':
 			case 'right-start':
 				return {
-					paddingLeft: '0.8rem',
-					'& div[data-element="arrow"]': {
-						left: '0.3rem',
-						transform: 'translateX(-50%)'
-					}
+					left: '-0.5rem !important'
 				}
 			case 'bottom':
 			case 'bottom-end':
 			case 'bottom-start':
 				return {
-					paddingTop: '0.8rem',
-					'& div[data-element="arrow"]': {
-						top: '0.3rem',
-						transform: 'translateY(-50%)'
-					}
+					top: '-0.5rem !important'
 				}
 			case 'left':
 			case 'left-end':
 			case 'left-start':
 				return {
-					paddingRight: '0.8rem',
-					'& div[data-element="arrow"]': {
-						right: '0.3rem',
-						transform: 'translateX(50%)'
-					}
+					right: '-0.5rem !important'
 				}
 		}
 	}
 )
+
+export const FloatingElement = styled(Paper)({
+	maxWidth: 'calc(100vw - 3.2rem)',
+	height: 'auto',
+	overflow: 'visible'
+})
