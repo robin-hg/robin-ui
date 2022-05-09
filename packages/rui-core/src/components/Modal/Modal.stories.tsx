@@ -8,7 +8,7 @@ import { ModalFooter } from '../ModalFooter'
 import { Button } from '../Button'
 
 export default {
-	title: 'Display/Modal',
+	title: 'Overlay/Modal',
 	component: Modal,
 	subcomponents: { ModalHeader, ModalContent, ModalFooter },
 	args: {

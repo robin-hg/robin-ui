@@ -7,7 +7,7 @@ import { MenuItem } from '../MenuItem'
 import { Button } from '../Button'
 
 export default {
-	title: 'Display/Menu',
+	title: 'Overlay/Menu',
 	component: Menu,
 	subcomponents: { MenuItem },
 	argTypes: {

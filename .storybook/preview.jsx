@@ -27,6 +27,7 @@ export const parameters = {
 				'Surface',
 				'Inputs',
 				'Display',
+				'Overlay',
 				'Feedback',
 				'Navigation',
 				'Utils'

@@ -4,7 +4,7 @@ import { Tooltip, type Props } from './Tooltip'
 import { FlexBox } from '../FlexBox'
 
 export default {
-	title: 'Display/Tooltip',
+	title: 'Overlay/Tooltip',
 	component: Tooltip,
 	args: {
 		label: 'Tooltip',
