@@ -8,13 +8,13 @@ export default {
 	args: {
 		children: 'I am a button',
 		size: 'md',
-		borderRadius: 'sm',
+		radius: 'sm',
 		variant: 'filled',
 		color: 'primary'
 	},
 	argTypes: {
 		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+		radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

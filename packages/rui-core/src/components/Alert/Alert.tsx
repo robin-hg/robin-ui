@@ -19,16 +19,23 @@ export interface Props extends DefaultProps<HTMLDivElement, 'title'> {
 	icon?: React.ReactNode
 	title?: React.ReactNode
 	padding?: SizeValue | SizeValue[]
-	borderRadius?: SizeValue
+	radius?: SizeValue
 }
 
 export const Alert = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { status = 'critical', variant = 'flat', title, children, ...otherProps } = props
+	const { status = 'critical', variant = 'flat', radius = 'md', title, children, ...otherProps } = props
 
 	const icon = statusIcon[status]
 
 	return (
-		<AlertContainer ref={ref} role="alert" variant="flat" $color={status} $variant={variant} {...otherProps}>
+		<AlertContainer
+			ref={ref}
+			role="alert"
+			variant="flat"
+			radius={radius}
+			$color={status}
+			$variant={variant}
+			{...otherProps}>
 			<AlertTitle>
 				{icon}
 				{title && <Label size="xl">{title}</Label>}

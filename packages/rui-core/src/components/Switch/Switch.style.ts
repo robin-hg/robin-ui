@@ -17,7 +17,7 @@ export const Box = styled.input<BoxProps>(
 		width: '3.6rem',
 		height: '1.8rem',
 		border: '0.1rem solid transparent',
-		borderRadius: theme.borderRadius.xl,
+		borderRadius: theme.radius.xl,
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
 		transition: theme.fn.getTransition(['background', 'border-color']),
@@ -25,7 +25,7 @@ export const Box = styled.input<BoxProps>(
 			content: '""',
 			width: '1.2rem',
 			height: '1.2rem',
-			borderRadius: theme.borderRadius.xl,
+			borderRadius: theme.radius.xl,
 			transition: theme.fn.getTransition()
 		}
 	}),

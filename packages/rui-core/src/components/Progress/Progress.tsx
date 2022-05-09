@@ -14,7 +14,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	color?: string
 	trackColor?: string
 	thickness?: SizeValue
-	borderRadius?: SizeValue
+	radius?: SizeValue
 	indeterminate?: boolean
 	animated?: boolean
 	noAria?: boolean
@@ -26,7 +26,7 @@ export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		color = 'primary',
 		trackColor = 'surface.variant',
 		thickness = 'sm',
-		borderRadius = 'md',
+		radius = 'md',
 		indeterminate,
 		animated,
 		noAria,
@@ -48,13 +48,13 @@ export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 			ref={ref}
 			$thickness={thickness}
 			$trackColor={trackColor}
-			$borderRadius={borderRadius}
+			$radius={radius}
 			{...ariaProps}
 			{...otherProps}>
 			<Bar
 				$percent={clampNumber(value, 0, 100)}
 				$color={color}
-				$borderRadius={borderRadius}
+				$radius={radius}
 				$indeterminate={!!indeterminate}
 				$animated={!!animated}
 				style={{ width: `${value}%` }}

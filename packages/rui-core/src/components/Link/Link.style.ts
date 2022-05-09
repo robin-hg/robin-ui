@@ -16,7 +16,7 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 	textDecorationThickness: '0.1rem',
 	textUnderlineOffset: '0.2rem',
 	textDecorationColor: 'transparent',
-	borderRadius: theme.borderRadius.sm,
+	borderRadius: theme.radius.sm,
 	outline: '0.2rem solid transparent',
 	outlineOffset: '0.2rem',
 	cursor: 'pointer',

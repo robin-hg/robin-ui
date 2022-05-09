@@ -6,12 +6,12 @@ export default {
 	title: 'Feedback/Skeleton',
 	component: Skeleton,
 	args: {
-		borderRadius: 'sm',
+		radius: 'sm',
 		animated: true,
 		loading: true
 	},
 	argTypes: {
-		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+		radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

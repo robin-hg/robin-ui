@@ -20,34 +20,34 @@ const pulse = keyframes`
 interface TrackProps {
 	$thickness: SizeValue
 	$trackColor: ColorToken
-	$borderRadius: SizeValue
+	$radius: SizeValue
 }
 
-export const Track = styled.div<TrackProps>(({ theme, $thickness, $trackColor, $borderRadius }) => ({
+export const Track = styled.div<TrackProps>(({ theme, $thickness, $trackColor, $radius }) => ({
 	width: '100%',
 	height: theme.fn.getSize($thickness, theme.spacing),
 	overflow: 'hidden',
 	background: theme.fn.getColor($trackColor),
-	borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
+	borderRadius: theme.fn.getSize($radius, theme.radius)
 }))
 
 interface BarProps {
 	$color: string
-	$borderRadius: SizeValue
+	$radius: SizeValue
 	$indeterminate: boolean
 	$animated: boolean
 }
 
 export const Bar = styled.div<BarProps>(
-	({ theme, $color, $borderRadius }) => ({
+	({ theme, $color, $radius }) => ({
 		position: 'relative',
 		height: '100%',
 		background: theme.fn.getColor($color),
 		transition: theme.fn.getTransition(),
-		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
+		borderRadius: theme.fn.getSize($radius, theme.radius),
 		overflow: 'hidden'
 	}),
-	({ theme, $color, $borderRadius, $indeterminate, $animated }) =>
+	({ theme, $color, $radius, $indeterminate, $animated }) =>
 		($indeterminate || $animated) && {
 			'&::after': {
 				content: '""',
@@ -60,7 +60,7 @@ export const Bar = styled.div<BarProps>(
 					theme.fn.getOnColor($color),
 					'disabledOnBase'
 				)})`,
-				borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
+				borderRadius: theme.fn.getSize($radius, theme.radius),
 				animation: `${pulse} 1.5s ease-out 0.5s infinite`
 			}
 		},

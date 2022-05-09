@@ -23,7 +23,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			background: theme.fn.getModifiedColor('surface', 'primary', 'backgroundTint'),
 			color: 'inherit',
 			border: `0.1rem solid ${theme.palette.outline}`,
-			borderRadius: theme.borderRadius.sm,
+			borderRadius: theme.radius.sm,
 			outline: 'none',
 			transition: theme.fn.getTransition(),
 			'&:focus': {

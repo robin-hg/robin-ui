@@ -20,17 +20,17 @@ const pulse = keyframes`
 interface SkeletonContainerProps {
 	$animated: boolean
 	$loading: boolean
-	$borderRadius: SizeValue
+	$radius: SizeValue
 }
 
 export const SkeletonContainer = styled.div<SkeletonContainerProps>(
-	({ theme, $loading, $animated, $borderRadius }) =>
+	({ theme, $loading, $animated, $radius }) =>
 		$loading && {
 			position: 'relative',
 			overflow: 'hidden',
 			color: 'transparent',
 			background: theme.palette.surface.variant,
-			borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
+			borderRadius: theme.fn.getSize($radius, theme.radius),
 			'&::after': {
 				content: '""',
 				position: 'absolute',
@@ -42,7 +42,7 @@ export const SkeletonContainer = styled.div<SkeletonContainerProps>(
 					theme.palette.surface.onVariant,
 					'disabledBase'
 				)})`,
-				borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
+				borderRadius: theme.fn.getSize($radius, theme.radius),
 				animation: $animated ? `${pulse} 1.5s ease-out 0.5s infinite` : 'none'
 			},
 			'& > *': {

@@ -15,7 +15,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	 * @default md
 	 */
 	size?: Size
-	borderRadius?: SizeValue
+	radius?: SizeValue
 	/**
 	 * Button color
 	 * @default primary
@@ -34,7 +34,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 		variant = 'filled',
 		size = 'md',
 		color = 'primary',
-		borderRadius = 'sm',
+		radius = 'sm',
 		leftAdornment,
 		rightAdornment,
 		disabled,
@@ -51,7 +51,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 			$variant={groupVariant || variant}
 			$color={groupColor || color}
 			$size={groupSize || size}
-			$borderRadius={borderRadius}
+			$radius={radius}
 			type="button"
 			onClick={event => {
 				if (disabled) {

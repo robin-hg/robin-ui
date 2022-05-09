@@ -27,7 +27,7 @@ export const BadgeCircle = styled.div<BadgeCircleProps>(
 		fontSize: theme.fn.getSize($size, theme.typography.label.fontSize),
 		color: theme.fn.getOnColor($color),
 		background: theme.fn.getColor($color),
-		borderRadius: theme.borderRadius.xl,
+		borderRadius: theme.radius.xl,
 		transition: theme.fn.getTransition()
 	}),
 	({ $position, $small }) =>

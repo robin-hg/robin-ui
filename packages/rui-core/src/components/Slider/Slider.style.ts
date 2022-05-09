@@ -29,7 +29,7 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 		transform: 'translate(-50%, -50%)',
 		width: theme.fn.getSize($size, theme.size),
 		height: theme.fn.getSize($size, theme.size),
-		borderRadius: theme.borderRadius.xl,
+		borderRadius: theme.radius.xl,
 		background: $disabled
 			? theme.fn.getModifiedColor('surface', 'surface.onVariant', 'disabledOnBase')
 			: theme.fn.getOnColor($color),

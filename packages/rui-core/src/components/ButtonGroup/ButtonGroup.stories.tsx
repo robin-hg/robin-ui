@@ -10,11 +10,11 @@ export default {
 		size: 'md',
 		variant: 'outlined',
 		color: 'primary',
-		borderRadius: 'sm'
+		radius: 'sm'
 	},
 	argTypes: {
 		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-		borderRadius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+		radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

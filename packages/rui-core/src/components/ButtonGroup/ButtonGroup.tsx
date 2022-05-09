@@ -12,11 +12,11 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
 	variant?: 'filled' | 'outlined' | 'text'
 	color?: ColorToken
 	size?: Size
-	borderRadius?: SizeValue
+	radius?: SizeValue
 }
 
 export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { variant = 'filled', color = 'primary', size = 'md', borderRadius = 'sm', children, ...otherProps } = props
+	const { variant = 'filled', color = 'primary', size = 'md', radius = 'sm', children, ...otherProps } = props
 	const ctxValue = useMemo(
 		() => ({ groupVariant: variant, groupColor: color, groupSize: size }),
 		[variant, color, size]
@@ -24,7 +24,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 
 	return (
 		<ButtonGroupContext.Provider value={ctxValue}>
-			<ButtonGroupContainer ref={ref} $borderRadius={borderRadius} {...otherProps}>
+			<ButtonGroupContainer ref={ref} $radius={radius} {...otherProps}>
 				{children}
 			</ButtonGroupContainer>
 		</ButtonGroupContext.Provider>

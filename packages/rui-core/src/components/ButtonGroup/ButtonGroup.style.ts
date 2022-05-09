@@ -2,21 +2,21 @@ import type { SizeValue } from '@rui/theme'
 import styled from '@rui/styles'
 
 interface ButtonGroupContainerProps {
-	$borderRadius: SizeValue
+	$radius: SizeValue
 }
 
-export const ButtonGroupContainer = styled.div<ButtonGroupContainerProps>(({ theme, $borderRadius }) => ({
+export const ButtonGroupContainer = styled.div<ButtonGroupContainerProps>(({ theme, $radius }) => ({
 	display: 'inline-flex',
 	'& > button': {
 		position: 'relative',
 		borderRadius: 0,
 		'&:first-of-type': {
-			borderTopLeftRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
-			borderBottomLeftRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
+			borderTopLeftRadius: theme.fn.getSize($radius, theme.radius),
+			borderBottomLeftRadius: theme.fn.getSize($radius, theme.radius)
 		},
 		'&:last-of-type': {
-			borderTopRightRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
-			borderBottomRightRadius: theme.fn.getSize($borderRadius, theme.borderRadius)
+			borderTopRightRadius: theme.fn.getSize($radius, theme.radius),
+			borderBottomRightRadius: theme.fn.getSize($radius, theme.radius)
 		},
 		'&:not(:first-of-type)': {
 			marginLeft: '-0.1rem'

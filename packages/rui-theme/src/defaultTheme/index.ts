@@ -27,7 +27,7 @@ export const defaultTheme: BaseTheme = {
 		lg: '2.4rem',
 		xl: '3.6rem'
 	},
-	borderRadius: {
+	radius: {
 		xs: 0,
 		sm: '0.4rem',
 		md: '0.8rem',

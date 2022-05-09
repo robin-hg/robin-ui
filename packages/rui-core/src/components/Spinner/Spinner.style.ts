@@ -39,7 +39,7 @@ export const StyledSpinner = styled.div<StyledSpinnerProps>(({ theme, $speed, $t
 	border: '0.2rem solid transparent',
 	borderTopColor: 'currentColor',
 	borderRightColor: 'currentColor',
-	borderRadius: theme.borderRadius.xl,
+	borderRadius: theme.radius.xl,
 	animation: `${spin} ${$speed} linear infinite`,
 	opacity: $trail ? 0.5 : 1
 }))

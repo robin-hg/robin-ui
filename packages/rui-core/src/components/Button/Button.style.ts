@@ -6,11 +6,11 @@ interface StyledButtonProps {
 	$variant: 'filled' | 'outlined' | 'text'
 	$size: Size
 	$color: ColorToken
-	$borderRadius: SizeValue
+	$radius: SizeValue
 }
 
 export const StyledButton = styled.button<StyledButtonProps>(
-	({ theme, $size, $borderRadius }) => ({
+	({ theme, $size, $radius }) => ({
 		boxSizing: 'border-box',
 		display: 'inline-flex',
 		alignItems: 'center',
@@ -27,7 +27,7 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		cursor: 'pointer',
 		userSelect: 'none',
 		border: '0.1rem solid transparent',
-		borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
+		borderRadius: theme.fn.getSize($radius, theme.radius),
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
 		transition: theme.fn.getTransition(['color', 'background-color', 'border-color'])
