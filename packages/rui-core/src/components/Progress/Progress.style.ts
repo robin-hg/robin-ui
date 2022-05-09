@@ -12,7 +12,7 @@ const pulse = keyframes`
 	}
 
 	to {
-		width: 120%;
+		width: 150%;
 		opacity: 0;
 	}
 `
@@ -53,14 +53,15 @@ export const Bar = styled.div<BarProps>(
 				content: '""',
 				position: 'absolute',
 				top: 0,
-				left: '-10%',
+				left: '-20%',
+				right: '-20%',
 				height: '100%',
 				background: `linear-gradient(90deg, transparent, ${theme.fn.getAlphaColor(
 					theme.fn.getOnColor($color),
-					0.5
+					'disabledOnBase'
 				)})`,
 				borderRadius: theme.fn.getSize($borderRadius, theme.borderRadius),
-				animation: `${pulse} 1.2s ease-out 0.5s infinite`
+				animation: `${pulse} 1.5s ease-out 0.5s infinite`
 			}
 		},
 	({ theme, $color, $indeterminate }) =>
