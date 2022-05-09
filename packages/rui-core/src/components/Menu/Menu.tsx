@@ -22,27 +22,36 @@ export interface Props extends React.ComponentProps<typeof Floating> {
 }
 
 export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { role = 'menu', target, open, minWidth = '20rem', maxHeight = 300, onClose, children, ...otherProps } = props
+	const {
+		role = 'menu',
+		trigger,
+		open,
+		minWidth = '20rem',
+		maxHeight = 300,
+		onClose,
+		children,
+		...otherProps
+	} = props
 	const menuRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, menuRef)
 	const id = useId()
 
 	useEffect(() => {
-		if (target) {
-			target.setAttribute('aria-controls', id)
-			target.setAttribute('aria-haspopup', role)
-			target.setAttribute('aria-expanded', 'false')
+		if (trigger) {
+			trigger.setAttribute('aria-controls', id)
+			trigger.setAttribute('aria-haspopup', role)
+			trigger.setAttribute('aria-expanded', 'false')
 		}
-	}, [target])
+	}, [trigger])
 
 	useEffect(() => {
 		if (open) {
 			menuRef.current?.focus()
 		} else {
-			target?.focus()
+			trigger?.focus()
 		}
-		if (target) {
-			target.setAttribute('aria-expanded', 'true')
+		if (trigger) {
+			trigger.setAttribute('aria-expanded', 'true')
 		}
 	}, [open])
 
@@ -74,7 +83,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}
 
-	if (!target) {
+	if (!trigger) {
 		return null
 	}
 
@@ -84,7 +93,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			id={id}
 			role={role}
 			aria-orientation="vertical"
-			target={target}
+			trigger={trigger}
 			open={open}
 			onKeyDown={handleKeyPress}
 			$minWidth={parseSize(minWidth)}

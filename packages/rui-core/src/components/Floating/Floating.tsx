@@ -12,8 +12,8 @@ export const FloatingContext = React.createContext<{
 	floatinghEl?: HTMLElement | null
 }>({})
 
-export interface Props extends DefaultProps<HTMLDivElement, 'target'> {
-	target?: HTMLElement | null
+export interface Props extends DefaultProps<HTMLDivElement> {
+	trigger?: HTMLElement | null
 	open?: boolean
 	placement?: Placement
 	elevation?: number
@@ -25,7 +25,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'target'> {
 
 export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
-		target,
+		trigger,
 		open,
 		placement = 'bottom-start',
 		duration = 200,
@@ -56,10 +56,10 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	const floatingRef = useCombinedRef(floating, ref)
 
 	useIsomorphicLayoutEffect(() => {
-		if (target) {
-			reference(target)
+		if (trigger) {
+			reference(trigger)
 		}
-	}, [target])
+	}, [trigger])
 
 	const show = open || (hovering && interactive)
 
@@ -69,14 +69,14 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		}
 	}, [show])
 
-	useClickOutside([target, refs.floating.current], () => {
+	useClickOutside([trigger, refs.floating.current], () => {
 		onClose?.()
 	})
 
 	const ctxValue = useMemo(() => ({ floatinghEl: refs.floating.current }), [refs.floating.current])
 
 	return (
-		<Portal target={floatinghEl || modalEl || undefined}>
+		<Portal container={floatinghEl || modalEl || undefined}>
 			<FloatingContext.Provider value={ctxValue}>
 				<FadeContainer in={show} duration={duration} unmountOnExit>
 					<FloatingElement

@@ -28,7 +28,7 @@ export const Default: Story<Props> = args => {
 			</Button>
 			<Menu
 				{...args}
-				target={ref.current}
+				trigger={ref.current}
 				onClose={() => {
 					args.onClose?.()
 					updateArgs({ open: false })

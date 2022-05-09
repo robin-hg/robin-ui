@@ -9,7 +9,7 @@ export default {
 	title: 'Utils/Portal',
 	component: Portal,
 	argTypes: {
-		target: { control: null }
+		container: { control: null }
 	}
 } as Meta<Props>
 
@@ -20,7 +20,7 @@ export const Default: Story<Props> = args => {
 		<Stack>
 			<Paper variant="flat">
 				I should be rendered in here.
-				<Portal {...args} target={ref.current}>
+				<Portal {...args} container={ref.current}>
 					But I am rendered here.
 				</Portal>
 			</Paper>

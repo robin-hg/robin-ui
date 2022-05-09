@@ -124,7 +124,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				<Menu
 					role="listbox"
 					aria-labelledby={_id}
-					target={boxRef.current}
+					trigger={boxRef.current}
 					minWidth={size?.width}
 					open={open}
 					onClose={() => setOpen(false)}>
