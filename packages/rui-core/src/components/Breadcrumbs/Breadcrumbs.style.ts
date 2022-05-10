@@ -9,5 +9,6 @@ interface BreadcrumbsContainerProps {
 export const BreadcrumbsContainer = styled(BaseContainer)<BreadcrumbsContainerProps>(({ theme, $spacing }) => ({
 	display: 'flex',
 	alignItems: 'center',
-	gap: theme.fn.getSize($spacing, theme.spacing)
+	gap: theme.fn.getSize($spacing, theme.spacing),
+	color: theme.palette.surface.onVariant
 }))
