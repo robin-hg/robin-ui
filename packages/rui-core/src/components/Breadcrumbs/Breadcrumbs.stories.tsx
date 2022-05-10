@@ -7,7 +7,12 @@ export default {
 	title: 'Navigation/Breadcrumbs',
 	component: Breadcrumbs,
 	args: {
-		separator: '/'
+		separator: '/',
+		spacing: 'md'
+	},
+	argTypes: {
+		separator: { control: { type: 'text' } },
+		spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 
