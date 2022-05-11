@@ -30,7 +30,7 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		borderRadius: theme.fn.getSize($radius, theme.radius),
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
-		transition: theme.fn.getTransition(['color', 'background-color', 'border-color'])
+		transition: theme.fn.getTransition()
 	}),
 	({ theme, $variant, $color }) =>
 		({

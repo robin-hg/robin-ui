@@ -20,7 +20,7 @@ export const Box = styled.input<BoxProps>(
 		borderRadius: theme.radius.xl,
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
-		transition: theme.fn.getTransition(['background', 'border-color']),
+		transition: theme.fn.getTransition(),
 		'&::after': {
 			content: '""',
 			width: '1.2rem',

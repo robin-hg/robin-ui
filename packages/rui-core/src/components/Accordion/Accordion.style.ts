@@ -24,7 +24,7 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(({ theme, $
 	outline: '0.2rem solid transparent',
 	border: 'none',
 	color: 'inherit',
-	transition: theme.fn.getTransition(['background', 'color']),
+	transition: theme.fn.getTransition(),
 	'&:hover': {
 		background: theme.fn.getAlphaColor('surface.onVariant', 'hover')
 	},
