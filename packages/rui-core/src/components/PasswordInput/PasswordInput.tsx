@@ -4,10 +4,10 @@ import { TextInput } from '../TextInput'
 import { Button } from '../Button'
 import { Eye, EyeOff } from '@rui/icons'
 
-export interface Props extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment'> {}
+export interface Props extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
 
 export const PasswordInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { inputProps, ...otherProps } = props
+	const { ...otherProps } = props
 	const [hidden, setHidden] = useState(true)
 
 	return (
@@ -24,10 +24,7 @@ export const PasswordInput = React.forwardRef<HTMLDivElement, Props>((props, ref
 					{hidden ? <Eye /> : <EyeOff />}
 				</Button>
 			}
-			inputProps={{
-				...inputProps,
-				type: hidden ? 'password' : 'text'
-			}}
+			type={hidden ? 'password' : 'text'}
 			{...otherProps}
 		/>
 	)

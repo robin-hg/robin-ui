@@ -14,8 +14,20 @@ export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'chil
 }
 
 export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { placeholder, disabled, error, required, value, onChange, id, className, name, inputProps, ...otherProps } =
-		props
+	const {
+		placeholder,
+		disabled,
+		error,
+		required,
+		value,
+		onChange,
+		id,
+		className,
+		name,
+		type = 'text',
+		inputProps,
+		...otherProps
+	} = props
 	const _id = useId(id)
 
 	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
@@ -26,7 +38,7 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 			<InputBox ref={ref} disabled={disabled} error={error} {...rest}>
 				<input
 					id={_id}
-					type="text"
+					type={type}
 					name={name}
 					placeholder={placeholder}
 					value={value}
