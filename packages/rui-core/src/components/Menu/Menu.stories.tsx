@@ -10,11 +10,9 @@ export default {
 	title: 'Overlay/Menu',
 	component: Menu,
 	subcomponents: { MenuItem },
-	argTypes: {
-		width: { control: 'number' },
-		modifiers: { control: null },
-		tooltipComponent: { control: null },
-		tooltipProps: { control: null }
+	args: {
+		minWidth: '20rem',
+		maxHeight: '30rem'
 	}
 } as Meta<Props>
 

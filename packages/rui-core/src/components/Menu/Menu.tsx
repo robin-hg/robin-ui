@@ -29,6 +29,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		minWidth = '20rem',
 		maxHeight = 300,
 		onClose,
+		onKeyDown,
 		children,
 		...otherProps
 	} = props
@@ -46,6 +47,8 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}, [open])
 
 	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+		onKeyDown?.(event)
+
 		const handleArrow = (direction: 'up' | 'down') => {
 			const focusable = getFocusable(menuRef.current)
 			const itemIndex = focusable.findIndex(element => element === document.activeElement)
@@ -83,7 +86,6 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			onKeyDown={handleKeyPress}
 			$minWidth={parseSize(minWidth)}
 			$maxHeight={parseSize(maxHeight)}
-			onClick={event => event.stopPropagation()}
 			onClose={onClose}
 			trapFocus
 			{...otherProps}>

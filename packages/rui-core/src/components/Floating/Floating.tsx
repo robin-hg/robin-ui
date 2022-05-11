@@ -90,6 +90,7 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 								top: y ?? '',
 								left: x ?? ''
 							}}
+							radius="sm"
 							tabIndex={-1}
 							{...otherProps}>
 							{children}
