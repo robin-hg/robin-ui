@@ -57,5 +57,6 @@ export const Arrow = styled.span<FloatingElementProps>(
 export const FloatingElement = styled(Paper)({
 	maxWidth: 'calc(100vw - 3.2rem)',
 	height: 'auto',
-	overflow: 'visible'
+	overflow: 'visible',
+	outline: 'none'
 })
