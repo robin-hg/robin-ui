@@ -12,7 +12,7 @@ export interface Props extends Omit<React.ComponentProps<typeof Floating>, 'labe
 }
 
 export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { open: openOverride, label, id, children, ...otherProps } = props
+	const { open: openOverride, label, placement = 'bottom', id, children, ...otherProps } = props
 	const [open, setOpen] = useState(false)
 	const targetRef = useRef<HTMLElement>(null)
 	const { colorMode } = useTheme()
@@ -29,6 +29,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					withArrow
 					padding={['xs', 'sm']}
 					borderRadius="sm"
+					placement={placement}
 					{...otherProps}>
 					{label}
 				</TooltipContainer>
