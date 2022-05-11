@@ -2,6 +2,7 @@ import type { DefaultProps } from '@rui/types'
 import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
 import { AnimatePresence, m, type Variants } from 'framer-motion'
+import { sxc } from '@rui/styles'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	in?: boolean
@@ -33,9 +34,9 @@ const TransitionFactory = (animation: Variants) => {
 				exit="exit"
 				variants={animation}
 				transition={{ duration: duration / 1000, ease }}>
-				<div ref={ref} {...otherProps}>
+				<sxc.div ref={ref} {...otherProps}>
 					{children}
-				</div>
+				</sxc.div>
 			</m.div>
 		)
 
