@@ -27,7 +27,8 @@ export const ModalPaper = styled(Paper)<ModalPaperProps>(
 		flexDirection: 'column',
 		gap: theme.spacing.md,
 		margin: theme.fn.getSpacing(['xl', 'md']),
-		maxWidth: '100%'
+		maxWidth: '100%',
+		outline: 'none'
 	}),
 	({ $size }) =>
 		({

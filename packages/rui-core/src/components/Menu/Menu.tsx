@@ -34,25 +34,15 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	} = props
 	const menuRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, menuRef)
-	const id = useId()
+	const _id = useId(trigger?.id)
 
 	useEffect(() => {
-		if (trigger) {
-			trigger.setAttribute('aria-controls', id)
-			trigger.setAttribute('aria-haspopup', role)
-			trigger.setAttribute('aria-expanded', 'false')
-		}
+		trigger?.setAttribute('aria-controls', _id)
+		trigger?.setAttribute('aria-haspopup', role)
 	}, [trigger])
 
 	useEffect(() => {
-		if (open) {
-			menuRef.current?.focus()
-		} else {
-			trigger?.focus()
-		}
-		if (trigger) {
-			trigger.setAttribute('aria-expanded', 'true')
-		}
+		trigger?.setAttribute('aria-expanded', open ? 'true' : 'false')
 	}, [open])
 
 	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -61,9 +51,8 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			const itemIndex = focusable.findIndex(element => element === document.activeElement)
 			const nextIndex = itemIndex + (direction === 'up' ? -1 : 1)
 			const nextTarget = focusable[nextIndex] as HTMLElement
-			if (nextTarget) {
-				nextTarget.focus()
-			}
+
+			nextTarget?.focus()
 		}
 
 		switch (event.key) {
@@ -83,14 +72,10 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}
 
-	if (!trigger) {
-		return null
-	}
-
 	return (
 		<StyledMenu
 			ref={combinedRef}
-			id={id}
+			id={_id}
 			role={role}
 			aria-orientation="vertical"
 			trigger={trigger}
@@ -100,7 +85,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			$maxHeight={parseSize(maxHeight)}
 			onClick={event => event.stopPropagation()}
 			onClose={onClose}
-			tabIndex={-1}
+			trapFocus
 			{...otherProps}>
 			{children}
 		</StyledMenu>

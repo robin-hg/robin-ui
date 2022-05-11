@@ -1,5 +1,5 @@
 import type { DefaultProps, Size } from '@rui/types'
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useCombinedRef, useId } from '@rui/hooks'
 
 import { Fade } from '../Transition'
@@ -29,6 +29,12 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const combinedRef = useCombinedRef(ref, modalRef)
 	const id = useId()
 
+	useEffect(() => {
+		if (open) {
+			modalRef.current?.focus()
+		}
+	}, [open])
+
 	const close = !preventClose ? onClose : undefined
 	const ctxValue = useMemo(
 		() => ({
@@ -55,7 +61,7 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 								close?.()
 							}
 						}}>
-						<FocusTrap autofocus restoreFocus>
+						<FocusTrap restoreFocus>
 							<ModalPaper
 								ref={combinedRef}
 								role="dialog"
@@ -67,6 +73,7 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 									event.stopPropagation()
 									onClick?.(event)
 								}}
+								tabIndex={-1}
 								{...otherProps}>
 								{children}
 							</ModalPaper>

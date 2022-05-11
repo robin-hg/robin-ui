@@ -28,10 +28,9 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			const itemIndex = focusable.findIndex(element => element === document.activeElement)
 			const nextIndex = itemIndex + (direction === 'left' ? -1 : 1)
 			const nextTarget = focusable[nextIndex] as HTMLElement
-			if (nextTarget) {
-				nextTarget.focus()
-				nextTarget.click()
-			}
+
+			nextTarget?.focus()
+			nextTarget?.click()
 		}
 
 		switch (event.key) {

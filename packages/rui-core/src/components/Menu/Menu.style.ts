@@ -10,6 +10,5 @@ export const StyledMenu = styled(Floating)<MenuProps>(({ theme, $minWidth, $maxH
 	minWidth: $minWidth,
 	maxHeight: $maxHeight,
 	padding: theme.spacing.xs,
-	overflow: 'auto',
-	outline: 'none'
+	overflow: 'auto'
 }))
