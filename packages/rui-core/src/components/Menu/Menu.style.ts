@@ -1,14 +1,13 @@
 import styled from '@rui/styles'
-import { Floating } from '../Floating'
+import { Popover } from '../Popover'
 
 interface MenuProps {
 	$minWidth: string
 	$maxHeight: string
 }
 
-export const StyledMenu = styled(Floating)<MenuProps>(({ theme, $minWidth, $maxHeight }) => ({
+export const StyledMenu = styled(Popover)<MenuProps>(({ $minWidth, $maxHeight }) => ({
 	minWidth: $minWidth,
 	maxHeight: $maxHeight,
-	padding: theme.spacing.xs,
 	overflow: 'auto'
 }))

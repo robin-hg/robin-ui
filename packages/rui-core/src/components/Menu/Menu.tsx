@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { parseSize, getFocusable } from '@rui/utils'
-import { useCombinedRef, useId } from '@rui/hooks'
+import { useCombinedRef } from '@rui/hooks'
 
-import { Floating } from '../Floating'
+import { Popover } from '../Popover'
 
 import { StyledMenu } from './Menu.style'
 
-export interface Props extends React.ComponentProps<typeof Floating> {
+export interface Props extends React.ComponentProps<typeof Popover> {
 	role?: 'menu' | 'listbox'
 	/**
 	 * Min menu width.
@@ -24,10 +24,8 @@ export interface Props extends React.ComponentProps<typeof Floating> {
 export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
 		role = 'menu',
-		trigger,
-		open,
 		minWidth = '20rem',
-		maxHeight = 300,
+		maxHeight = '30rem',
 		onClose,
 		onKeyDown,
 		children,
@@ -35,16 +33,6 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	} = props
 	const menuRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, menuRef)
-	const _id = useId(trigger?.id)
-
-	useEffect(() => {
-		trigger?.setAttribute('aria-controls', _id)
-		trigger?.setAttribute('aria-haspopup', role)
-	}, [trigger])
-
-	useEffect(() => {
-		trigger?.setAttribute('aria-expanded', open ? 'true' : 'false')
-	}, [open])
 
 	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
 		onKeyDown?.(event)
@@ -78,16 +66,13 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	return (
 		<StyledMenu
 			ref={combinedRef}
-			id={_id}
 			role={role}
 			aria-orientation="vertical"
-			trigger={trigger}
-			open={open}
 			onKeyDown={handleKeyPress}
+			onClose={onClose}
+			padding="xs"
 			$minWidth={parseSize(minWidth)}
 			$maxHeight={parseSize(maxHeight)}
-			onClose={onClose}
-			trapFocus
 			{...otherProps}>
 			{children}
 		</StyledMenu>
