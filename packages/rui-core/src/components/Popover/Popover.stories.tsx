@@ -1,6 +1,6 @@
 import type { Story, Meta } from '@storybook/react'
-import { useRef } from 'react'
 import { useArgs } from '@storybook/client-api'
+import { useRef } from 'react'
 
 import { Popover, type Props } from './Popover'
 import { Button } from '../Button'
