@@ -40,7 +40,7 @@ export const SkeletonContainer = styled.div<SkeletonContainerProps>(
 				height: '100%',
 				background: `linear-gradient(90deg, transparent, ${theme.fn.getAlphaColor(
 					theme.palette.surface.onVariant,
-					'disabledBase'
+					'fadedBase'
 				)})`,
 				borderRadius: theme.fn.getSize($radius, theme.radius),
 				animation: $animated ? `${pulse} 1.5s ease-out 0.5s infinite` : 'none'

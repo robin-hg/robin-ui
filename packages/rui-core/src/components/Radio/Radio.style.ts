@@ -63,10 +63,10 @@ export const Circle = styled.input<CircleProps>(
 	},
 	({ theme }) => ({
 		'&[disabled]': {
-			background: `${theme.fn.getAlphaColor('surface.base', 'disabledBase')} !important`,
-			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`,
+			background: `${theme.fn.getAlphaColor('surface.base', 'fadedBase')} !important`,
+			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
 			'&::before': {
-				background: `${theme.fn.getAlphaColor('surface.onBase', 'disabledBase')} !important`
+				background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`
 			}
 		}
 	})

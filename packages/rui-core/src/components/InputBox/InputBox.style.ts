@@ -30,7 +30,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 				borderColor: theme.palette.primary.base
 			},
 			'::placeholder': {
-				color: theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')
+				color: theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')
 			},
 			'&::before': {
 				content: '"\\200b"'
@@ -40,13 +40,13 @@ export const Box = styled(BaseContainer)<BoxProps>(
 	({ theme, $state }) =>
 		({
 			disabled: {
-				color: `${theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')} !important`,
+				color: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')} !important`,
 				'& > input, & > select': {
-					background: `${theme.fn.getAlphaColor('surface.variant', 'disabledBase')} !important`,
-					borderColor: `${theme.fn.getAlphaColor('outline', 'disabledOnBase')} !important`,
+					background: `${theme.fn.getAlphaColor('surface.variant', 'fadedBase')} !important`,
+					borderColor: `${theme.fn.getAlphaColor('outline', 'fadedOnBase')} !important`,
 					cursor: 'default !important',
 					'::placeholder': {
-						color: theme.fn.getAlphaColor('surface.onVariant', 'disabledOnBase')
+						color: theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')
 					}
 				}
 			},

@@ -48,8 +48,8 @@ export const defaultTheme: BaseTheme = {
 		hover: 0.08,
 		focus: 0.12,
 		active: 0.15,
-		disabledBase: 0.12,
-		disabledOnBase: 0.5
+		fadedBase: 0.12,
+		fadedOnBase: 0.5
 	},
 	transition: {
 		duration: '200ms',

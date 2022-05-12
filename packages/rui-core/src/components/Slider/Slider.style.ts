@@ -10,7 +10,7 @@ export const SliderContainer = styled.div(({ theme }) => ({
 	'&[disabled]': {
 		cursor: 'default',
 		'& > div:first-of-type > div': {
-			background: theme.fn.getModifiedColor('surface', 'surface.onVariant', 'disabledOnBase')
+			background: theme.fn.getModifiedColor('surface', 'surface.onVariant', 'fadedOnBase')
 		}
 	}
 }))
@@ -31,7 +31,7 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 		height: theme.fn.getSize($size, theme.size),
 		borderRadius: theme.radius.xl,
 		background: $disabled
-			? theme.fn.getModifiedColor('surface', 'surface.onVariant', 'disabledOnBase')
+			? theme.fn.getModifiedColor('surface', 'surface.onVariant', 'fadedOnBase')
 			: theme.fn.getOnColor($color),
 		transition: theme.fn.getTransition(),
 		border: `0.1rem solid ${theme.palette.outline}`,

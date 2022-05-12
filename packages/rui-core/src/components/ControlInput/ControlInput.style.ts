@@ -14,7 +14,7 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 		userSelect: 'none',
 		'&[disabled]': {
 			cursor: 'default !important',
-			color: theme.fn.getAlphaColor('surface.onBase', 'disabledOnBase')
+			color: theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')
 		},
 		'& > label': {
 			paddingLeft: $labelPosition === 'right' ? theme.spacing.sm : 0,
