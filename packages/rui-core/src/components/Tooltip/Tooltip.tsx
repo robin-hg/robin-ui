@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { ThemeProvider } from '@rui/theme'
-import { useId, useTheme } from '@rui/hooks'
+import { useId, useKeyPress, useTheme } from '@rui/hooks'
 
 import { Floating } from '../Floating'
 
@@ -18,12 +18,15 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { colorMode } = useTheme()
 	const _id = useId(id)
 
+	useKeyPress('Escape', () => setOpen(false))
+
 	return (
 		<>
 			<ThemeProvider colorMode={colorMode === 'light' ? 'dark' : 'light'} forcedColorMode>
 				<TooltipContainer
 					ref={ref}
 					id={_id}
+					role="tooltip"
 					trigger={targetRef.current}
 					open={openOverride || open}
 					withArrow
@@ -38,6 +41,12 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				React.cloneElement(children, {
 					ref: targetRef,
 					'aria-describedby': open ? _id : undefined,
+					onKeyDown: (event: React.KeyboardEvent) => {
+						children.props.onKeyDown?.(event)
+						if (event.key === 'Escape') {
+							setOpen(false)
+						}
+					},
 					onPointerOver: (event: React.PointerEvent) => {
 						children.props.onMouseOver?.(event)
 						setOpen(true)
