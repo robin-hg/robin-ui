@@ -3,13 +3,13 @@ import React, { useMemo } from 'react'
 import { ButtonGroupContainer } from './ButtonGroup.style'
 
 export const ButtonGroupContext = React.createContext<{
-	groupVariant?: 'filled' | 'outlined' | 'text'
+	groupVariant?: 'filled' | 'faded' | 'outlined' | 'text'
 	groupColor?: string
 	groupSize?: Size
 }>({})
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
-	variant?: 'filled' | 'outlined' | 'text'
+	variant?: 'filled' | 'faded' | 'outlined' | 'text'
 	color?: ColorToken
 	size?: Size
 	radius?: SizeValue

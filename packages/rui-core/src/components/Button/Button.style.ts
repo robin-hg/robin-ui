@@ -3,7 +3,7 @@ import styled from '@rui/styles'
 import { DynamicResizer } from '../DynamicResizer'
 
 interface StyledButtonProps {
-	$variant: 'filled' | 'outlined' | 'text'
+	$variant: 'filled' | 'faded' | 'outlined' | 'text'
 	$size: Size
 	$color: ColorToken
 	$radius: SizeValue
@@ -46,6 +46,25 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				},
 				'&:active': {
 					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
+				},
+				'&[disabled]': {
+					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
+					background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+					cursor: 'default !important'
+				}
+			},
+			faded: {
+				color: theme.fn.getColor($color),
+				background: theme.fn.getAlphaColor($color, 'fadedBase'),
+				'&:hover': {
+					background: theme.fn.getAlphaColor($color, 'hover')
+				},
+				'&:focus-visible': {
+					background: theme.fn.getAlphaColor($color, 'hover'),
+					outlineColor: theme.fn.getColor($color)
+				},
+				'&:active': {
+					background: theme.fn.getAlphaColor($color, 'active')
 				},
 				'&[disabled]': {
 					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,

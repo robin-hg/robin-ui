@@ -9,7 +9,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 	 * Button variant
 	 * @default filled
 	 */
-	variant?: 'filled' | 'outlined' | 'text'
+	variant?: 'filled' | 'faded' | 'outlined' | 'text'
 	/**
 	 * Button size
 	 * @default md
