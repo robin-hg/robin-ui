@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { ThemeProvider } from '@rui/theme'
-import { useId, useKeyPress, useTheme } from '@rui/hooks'
+import { useId, useKeyDown, useTheme } from '@rui/hooks'
 
 import { Floating } from '../Floating'
 
@@ -18,7 +18,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { colorMode } = useTheme()
 	const _id = useId(id)
 
-	useKeyPress('Escape', () => setOpen(false))
+	useKeyDown('Escape', () => setOpen(false))
 
 	return (
 		<>

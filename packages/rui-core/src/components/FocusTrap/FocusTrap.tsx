@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { getFocusable } from '@rui/utils'
-import { useKeyPress } from '@rui/hooks'
+import { useKeyDown } from '@rui/hooks'
 
 export interface Props {
 	autofocus?: boolean
@@ -29,7 +29,7 @@ export const FocusTrap: React.FC<Props> = props => {
 		}
 	}, [autofocus])
 
-	useKeyPress('Tab', event => {
+	useKeyDown('Tab', event => {
 		const focusable = getFocusable(ref.current)
 
 		if (!focusable.length || disabled) {
