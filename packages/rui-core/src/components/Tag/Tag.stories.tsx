@@ -6,13 +6,15 @@ export default {
 	title: 'Display/Tag',
 	component: Tag,
 	args: {
-		variant: 'filled',
+		variant: 'outlined',
 		size: 'md',
+		radius: 'sm',
 		color: 'primary',
 		children: 'I am a Tag'
 	},
 	argTypes: {
-		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+		radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

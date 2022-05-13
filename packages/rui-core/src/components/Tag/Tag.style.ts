@@ -1,14 +1,15 @@
-import type { ColorToken, Size } from '@rui/types'
+import type { ColorToken, Size, SizeValue } from '@rui/types'
 import styled from '@rui/styles'
 
 interface TagContainerProps {
-	$variant: 'filled' | 'outlined'
+	$variant: 'filled' | 'faded' | 'outlined'
 	$color: ColorToken
 	$size: Size
+	$radius: SizeValue
 }
 
 export const TagContainer = styled.span<TagContainerProps>(
-	({ theme, $size, $color }) => ({
+	({ theme, $size, $color, $radius }) => ({
 		display: 'inline-flex',
 		alignItems: 'center',
 		padding: theme.fn.getSpacing(['xs', 'sm']),
@@ -20,7 +21,7 @@ export const TagContainer = styled.span<TagContainerProps>(
 		color: theme.fn.getOnColor($color),
 		textOverflow: 'ellipsis',
 		whiteSpace: 'nowrap',
-		borderRadius: '1em',
+		borderRadius: theme.fn.getSize($radius, theme.radius),
 		'&::before': {
 			content: '"\\200b"'
 		},
@@ -34,6 +35,10 @@ export const TagContainer = styled.span<TagContainerProps>(
 			filled: {
 				background: theme.fn.getColor($color),
 				color: theme.fn.getOnColor($color)
+			},
+			faded: {
+				background: theme.fn.getAlphaColor($color, 'fadedBase'),
+				color: theme.fn.getColor($color)
 			},
 			outlined: {
 				background: 'transparent',
