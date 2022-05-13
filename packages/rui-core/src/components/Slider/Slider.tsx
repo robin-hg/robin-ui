@@ -7,6 +7,7 @@ import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../Inpu
 import { Progress } from '../Progress'
 
 import { SliderContainer, SliderThumb } from './Slider.style'
+import { Tooltip } from '../Tooltip'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange' | 'size'>, InputWrapperProps {
 	color?: ColorToken
@@ -125,24 +126,26 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<InputWrapper ref={ref} labelId={_id} className={className} {...extractedInputWrapperProps}>
-			<SliderContainer ref={sliderRef} disabled={disabled} {...rest}>
+			<SliderContainer ref={sliderRef} disabled={disabled} $active={active} {...rest}>
 				<Progress value={percentValue} color={sliderColor} noAria />
-				<SliderThumb
-					ref={thumbRef}
-					role="slider"
-					aria-labelledby={_id}
-					aria-valuenow={value}
-					aria-valuemin={min}
-					aria-valuemax={max}
-					tabIndex={0}
-					onKeyDown={handleKeyPress}
-					$active={active}
-					$size={size}
-					$color={sliderColor}
-					$disabled={!!disabled}
-					style={{ left: `${percentValue}%` }}
-				/>
-				<input type="hidden" name={name} value={value} />
+				<Tooltip label={_value} placement="top" open={active} continuousUpdate>
+					<SliderThumb
+						ref={thumbRef}
+						role="slider"
+						aria-labelledby={_id}
+						aria-valuenow={_value}
+						aria-valuemin={min}
+						aria-valuemax={max}
+						tabIndex={0}
+						onKeyDown={handleKeyPress}
+						$active={active}
+						$size={size}
+						$color={sliderColor}
+						$disabled={!!disabled}
+						style={{ left: `${percentValue}%` }}
+					/>
+				</Tooltip>
+				<input type="hidden" name={name} value={_value} />
 			</SliderContainer>
 		</InputWrapper>
 	)

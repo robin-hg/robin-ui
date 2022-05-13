@@ -1,19 +1,31 @@
 import type { ColorToken, SizeValue } from '@rui/theme'
 import styled from '@rui/styles'
 
-export const SliderContainer = styled.div(({ theme }) => ({
-	position: 'relative',
-	padding: `calc(${theme.size.xs} / 2) 0`,
-	cursor: 'pointer',
-	userSelect: 'none',
-	touchAction: 'none',
-	'&[disabled]': {
-		cursor: 'default',
-		'& > div:first-of-type > div': {
-			background: theme.fn.getModifiedColor('surface', 'surface.onVariant', 'fadedOnBase')
+interface SliderContainerProps {
+	$active: boolean
+}
+
+export const SliderContainer = styled.div<SliderContainerProps>(
+	({ theme }) => ({
+		position: 'relative',
+		padding: `calc(${theme.size.xs} / 2) 0`,
+		cursor: 'pointer',
+		userSelect: 'none',
+		touchAction: 'none',
+		'&[disabled]': {
+			cursor: 'default',
+			'& > div:first-of-type > div': {
+				background: theme.fn.getModifiedColor('surface', 'surface.onVariant', 'fadedOnBase')
+			}
 		}
-	}
-}))
+	}),
+	({ $active }) =>
+		$active && {
+			'& > div:first-of-type > div': {
+				transition: 'none'
+			}
+		}
+)
 
 interface SliderThumbProps {
 	$active: boolean
@@ -42,6 +54,7 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 	}),
 	({ theme, $color, $active }) =>
 		$active && {
-			outlineColor: theme.fn.getColor($color)
+			outlineColor: theme.fn.getColor($color),
+			transition: 'none'
 		}
 )

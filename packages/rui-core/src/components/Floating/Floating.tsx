@@ -20,6 +20,7 @@ export interface Props extends React.ComponentProps<typeof Paper> {
 	duration?: number
 	withArrow?: boolean
 	trapFocus?: boolean
+	continuousUpdate?: boolean
 	onClose?: () => void
 }
 
@@ -31,6 +32,7 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		duration = 200,
 		withArrow,
 		trapFocus,
+		continuousUpdate,
 		onClose,
 		children,
 		style,
@@ -50,10 +52,11 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		middlewareData: { arrow: { x: arrowX, y: arrowY } = {} }
 	} = useFloating({
 		placement,
-		whileElementsMounted: autoUpdate,
+		whileElementsMounted: (referenceEl, floatingEl, update) =>
+			autoUpdate(referenceEl, floatingEl, update, { animationFrame: continuousUpdate }),
 		middleware: [offset(withArrow ? 8 : 4), flip(), shift(), arrow({ element: arrowRef })]
 	})
-	const floatingRef = useCombinedRef(floating, ref)
+	const combinedRef = useCombinedRef(floating, ref)
 
 	useEffect(() => {
 		if (open && trapFocus) {
@@ -83,7 +86,7 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 				<FadeContainer in={open} duration={duration} unmountOnExit>
 					<FocusTrap restoreFocus disabled={!trapFocus}>
 						<FloatingElement
-							ref={floatingRef}
+							ref={combinedRef}
 							style={{
 								...style,
 								position: strategy,
