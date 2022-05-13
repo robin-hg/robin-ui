@@ -25,6 +25,7 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 		className,
 		name,
 		type = 'text',
+		inputMode,
 		inputProps,
 		...otherProps
 	} = props
@@ -39,6 +40,7 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				<input
 					id={_id}
 					type={type}
+					inputMode={inputMode}
 					name={name}
 					placeholder={placeholder}
 					value={value}
