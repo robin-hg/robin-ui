@@ -23,11 +23,9 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 	)
 
 	return (
-		<ButtonGroupContext.Provider value={ctxValue}>
-			<ButtonGroupContainer ref={ref} $radius={radius} {...otherProps}>
-				{children}
-			</ButtonGroupContainer>
-		</ButtonGroupContext.Provider>
+		<ButtonGroupContainer ref={ref} $radius={radius} {...otherProps}>
+			<ButtonGroupContext.Provider value={ctxValue}>{children}</ButtonGroupContext.Provider>
+		</ButtonGroupContainer>
 	)
 })
 

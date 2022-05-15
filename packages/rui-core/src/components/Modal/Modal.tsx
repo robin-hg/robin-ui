@@ -49,38 +49,36 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<Portal>
-			<ModalContext.Provider value={ctxValue}>
-				<Fade in={open} unmountOnExit>
-					<Backdrop />
-					<ModalContainer
-						tabIndex={-1}
-						onClick={close}
-						onKeyDown={event => {
-							if (event.key === 'Escape') {
+			<Fade in={open} unmountOnExit>
+				<Backdrop />
+				<ModalContainer
+					tabIndex={-1}
+					onClick={close}
+					onKeyDown={event => {
+						if (event.key === 'Escape') {
+							event.stopPropagation()
+							close?.()
+						}
+					}}>
+					<FocusTrap restoreFocus>
+						<ModalPaper
+							ref={combinedRef}
+							role="dialog"
+							aria-modal="true"
+							aria-labelledby={id}
+							aria-describedby={`${id}-content`}
+							$size={size}
+							onClick={event => {
 								event.stopPropagation()
-								close?.()
-							}
-						}}>
-						<FocusTrap restoreFocus>
-							<ModalPaper
-								ref={combinedRef}
-								role="dialog"
-								aria-modal="true"
-								aria-labelledby={id}
-								aria-describedby={`${id}-content`}
-								$size={size}
-								onClick={event => {
-									event.stopPropagation()
-									onClick?.(event)
-								}}
-								tabIndex={-1}
-								{...otherProps}>
-								{children}
-							</ModalPaper>
-						</FocusTrap>
-					</ModalContainer>
-				</Fade>
-			</ModalContext.Provider>
+								onClick?.(event)
+							}}
+							tabIndex={-1}
+							{...otherProps}>
+							<ModalContext.Provider value={ctxValue}>{children}</ModalContext.Provider>
+						</ModalPaper>
+					</FocusTrap>
+				</ModalContainer>
+			</Fade>
 		</Portal>
 	)
 })

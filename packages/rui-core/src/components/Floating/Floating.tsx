@@ -82,35 +82,33 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 
 	return (
 		<Portal container={floatinghEl || modalEl || undefined}>
-			<FloatingContext.Provider value={ctxValue}>
-				<FadeContainer in={open} duration={duration} unmountOnExit>
-					<FocusTrap restoreFocus disabled={!trapFocus}>
-						<FloatingElement
-							ref={combinedRef}
-							style={{
-								...style,
-								position: strategy,
-								top: y ?? '',
-								left: x ?? ''
-							}}
-							radius="sm"
-							tabIndex={-1}
-							{...otherProps}>
-							{children}
-							{withArrow && (
-								<Arrow
-									ref={arrowRef}
-									style={{
-										left: arrowX ? `${arrowX}px` : undefined,
-										top: arrowY ? `${arrowY}px` : undefined
-									}}
-									$placement={finalPlacement}
-								/>
-							)}
-						</FloatingElement>
-					</FocusTrap>
-				</FadeContainer>
-			</FloatingContext.Provider>
+			<FadeContainer in={open} duration={duration} unmountOnExit>
+				<FocusTrap restoreFocus disabled={!trapFocus}>
+					<FloatingElement
+						ref={combinedRef}
+						style={{
+							...style,
+							position: strategy,
+							top: y ?? '',
+							left: x ?? ''
+						}}
+						radius="sm"
+						tabIndex={-1}
+						{...otherProps}>
+						<FloatingContext.Provider value={ctxValue}>{children}</FloatingContext.Provider>
+						{withArrow && (
+							<Arrow
+								ref={arrowRef}
+								style={{
+									left: arrowX ? `${arrowX}px` : undefined,
+									top: arrowY ? `${arrowY}px` : undefined
+								}}
+								$placement={finalPlacement}
+							/>
+						)}
+					</FloatingElement>
+				</FocusTrap>
+			</FadeContainer>
 		</Portal>
 	)
 })
