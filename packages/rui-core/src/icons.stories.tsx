@@ -25,7 +25,7 @@ export const Default: Story<Props> = args => {
 			<TextInput
 				placeholder="Search Icon"
 				value={search}
-				onChange={e => setSearch(e.target.value)}
+				onChange={event => setSearch(event.target.value)}
 				sx={{ marginBottom: '1.6rem' }}
 			/>
 			<FlexBox justifyContent="flex-start" wrap>
