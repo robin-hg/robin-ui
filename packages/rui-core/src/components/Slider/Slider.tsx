@@ -1,15 +1,15 @@
 import type { DefaultProps, ColorToken, SizeValue } from '@rui/types'
-import React, { useEffect, useRef, useState } from 'react'
-import { clampNumber, omit, pick } from '@rui/utils'
-import { useId, useSize, useUncontrolled } from '@rui/hooks'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { clampNumber } from '@rui/utils'
+import { useCombinedRef, useSize, useUncontrolled } from '@rui/hooks'
+import { InputWrapperContext } from '../InputWrapper'
 
-import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../InputWrapper'
 import { Progress } from '../Progress'
 
 import { SliderContainer, SliderThumb } from './Slider.style'
 import { Tooltip } from '../Tooltip'
 
-export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange' | 'size'>, InputWrapperProps {
+export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange' | 'size'> {
 	color?: ColorToken
 	size?: SizeValue
 	value?: number
@@ -18,6 +18,13 @@ export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChan
 	max?: number
 	step?: number
 	precision?: number
+
+	// state props
+	error?: boolean
+	required?: boolean
+	disabled?: boolean
+
+	// fn props
 	onChange?: (value: number) => void
 }
 
@@ -31,21 +38,31 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		max = 100,
 		step = 1,
 		precision = 0,
-		error,
-		disabled,
+		error: inputError,
+		required: inputRequired,
+		disabled: inputDisabled,
 		onChange,
-		id,
-		className,
 		name,
 		...otherProps
 	} = props
 	const [active, setActive] = useState(false)
 	const sliderRef = useRef<HTMLDivElement>(null)
+	const combinedRef = useCombinedRef(ref, sliderRef)
 	const thumbRef = useRef<HTMLDivElement>(null)
 	const sliderSize = useSize(sliderRef.current)
-	const _id = useId(id)
 	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 	const frame = useRef(0)
+
+	const {
+		labelId,
+		error: wrapperError,
+		required: wrapperRequired,
+		disabled: wrapperDisabled
+	} = useContext(InputWrapperContext)
+
+	const error = wrapperError || inputError
+	const required = wrapperRequired || inputRequired
+	const disabled = wrapperDisabled || inputDisabled
 
 	useEffect(() => {
 		const handleChange = (x: number) => {
@@ -97,9 +114,6 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}, [disabled, sliderSize])
 
-	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
-	const rest = omit(otherProps, [...inputWrapperProps])
-
 	const percentValue = (_value / (max - min)) * 100
 	const sliderColor = error ? 'critical' : color
 
@@ -125,29 +139,27 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}
 
 	return (
-		<InputWrapper ref={ref} labelId={_id} className={className} {...extractedInputWrapperProps}>
-			<SliderContainer ref={sliderRef} disabled={disabled} $active={active} {...rest}>
-				<Progress value={percentValue} color={sliderColor} noAria />
-				<Tooltip label={_value} placement="top" open={active} continuousUpdate>
-					<SliderThumb
-						ref={thumbRef}
-						role="slider"
-						aria-labelledby={_id}
-						aria-valuenow={_value}
-						aria-valuemin={min}
-						aria-valuemax={max}
-						tabIndex={0}
-						onKeyDown={handleKeyPress}
-						$active={active}
-						$size={size}
-						$color={sliderColor}
-						$disabled={!!disabled}
-						style={{ left: `${percentValue}%` }}
-					/>
-				</Tooltip>
-				<input type="hidden" name={name} value={_value} />
-			</SliderContainer>
-		</InputWrapper>
+		<SliderContainer ref={combinedRef} disabled={disabled} $active={active} {...otherProps}>
+			<Progress value={percentValue} color={sliderColor} noAria />
+			<Tooltip label={_value} placement="top" open={active} continuousUpdate>
+				<SliderThumb
+					ref={thumbRef}
+					role="slider"
+					aria-labelledby={labelId}
+					aria-valuenow={_value}
+					aria-valuemin={min}
+					aria-valuemax={max}
+					tabIndex={0}
+					onKeyDown={handleKeyPress}
+					$active={active}
+					$size={size}
+					$color={sliderColor}
+					$disabled={!!disabled}
+					style={{ left: `${percentValue}%` }}
+				/>
+			</Tooltip>
+			<input type="hidden" name={name} value={_value} required={required} />
+		</SliderContainer>
 	)
 })
 

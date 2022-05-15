@@ -12,8 +12,12 @@ export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'labe
 	labelPosition?: 'left' | 'right'
 	checked?: boolean
 	defaultValue?: boolean
+
+	// state props
 	indeterminate?: boolean
 	error?: boolean
+
+	// fn props
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 

@@ -7,13 +7,8 @@ export default {
 	title: 'Inputs/TextInput',
 	component: TextInput,
 	args: {
-		label: 'Text input label',
-		description: 'Description',
 		placeholder: 'Placeholder',
-		value: '',
-		required: true,
-		disabled: false,
-		error: false
+		value: ''
 	}
 } as Meta<Props>
 

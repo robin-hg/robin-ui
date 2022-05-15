@@ -7,11 +7,8 @@ export default {
 	title: 'Inputs/PasswordInput',
 	component: PasswordInput,
 	args: {
-		label: 'Password input label',
-		description: 'Description',
 		placeholder: 'Placeholder',
-		value: 'Password',
-		required: true
+		value: 'Password'
 	}
 } as Meta<Props>
 

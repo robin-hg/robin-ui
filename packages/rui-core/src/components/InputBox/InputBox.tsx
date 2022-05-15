@@ -5,11 +5,13 @@ import { useSize } from '@rui/hooks'
 import { Box, Adornment } from './InputBox.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
+	leftAdornment?: React.ReactNode
+	rightAdornment?: React.ReactNode
+
+	// state props
 	active?: boolean
 	error?: boolean
 	disabled?: boolean
-	leftAdornment?: React.ReactNode
-	rightAdornment?: React.ReactNode
 }
 
 export const InputBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {

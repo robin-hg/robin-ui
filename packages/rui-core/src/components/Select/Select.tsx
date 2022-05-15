@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { omit, pick } from '@rui/utils'
-import { useCombinedRef, useId, useSize, useUncontrolled } from '@rui/hooks'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { useCombinedRef, useSize, useUncontrolled } from '@rui/hooks'
+import { InputWrapperContext } from '../InputWrapper'
 
-import { InputWrapper, inputWrapperProps, type InputWrapperProps } from '../InputWrapper'
 import { InputBox } from '../InputBox'
 import { Menu } from '../Menu'
 import { MenuItem } from '../MenuItem'
@@ -16,13 +15,19 @@ interface Item {
 	disabled?: boolean
 }
 
-export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'>, InputWrapperProps {
+export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {
 	placeholder?: string
 	value?: Item['value']
 	defaultValue?: Item['value']
 	options?: Item[]
-	disabled?: boolean
 	native?: boolean
+
+	// state props
+	error?: boolean
+	required?: boolean
+	disabled?: boolean
+
+	// fn props
 	onChange?: (value: Item['value']) => void
 }
 
@@ -32,36 +37,42 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		value,
 		defaultValue,
 		placeholder,
-		disabled,
-		error,
-		required,
 		native,
+		error: inputError,
+		required: inputRequired,
+		disabled: inputDisabled,
 		onChange,
 		onClick,
 		onKeyDown,
 		id,
-		className,
 		name,
 		...otherProps
 	} = props
 	const boxRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(boxRef, ref)
 	const [open, setOpen] = useState(false)
-	const _id = useId(id)
 	const size = useSize(boxRef.current, [value])
+	const {
+		labelId,
+		labelFor,
+		error: wrapperError,
+		required: wrapperRequired,
+		disabled: wrapperDisabled
+	} = useContext(InputWrapperContext)
 	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
+
+	const error = wrapperError || inputError
+	const required = wrapperRequired || inputRequired
+	const disabled = wrapperDisabled || inputDisabled
 
 	useEffect(() => {
 		setOpen(false)
 	}, [disabled, native])
 
-	const extractedInputWrapperProps = pick(props, inputWrapperProps.concat())
-	const rest = omit(otherProps, [...inputWrapperProps])
-
 	const item = options.find(option => option.value === _value)
 
 	return (
-		<InputWrapper labelFor={_id} className={className} {...extractedInputWrapperProps}>
+		<>
 			<SelectBox
 				ref={combinedRef}
 				role={!native ? 'combobox' : undefined}
@@ -86,18 +97,20 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				}}
 				rightAdornment={<ChevronDown />}
 				disabled={disabled}
-				error={error}
+				error={wrapperError || error}
 				active={open}
 				tabIndex={native ? -1 : 0}
-				{...rest}>
+				{...otherProps}>
 				{native ? (
 					<select
-						id={_id}
+						id={labelFor || id}
 						value={item?.value}
 						onChange={event => {
 							onChange?.(event.target.value)
 							setUncontrolled(event.target.value)
-						}}>
+						}}
+						required={required}
+						disabled={disabled}>
 						{options.map(option => (
 							<option key={option.value} value={option.value}>
 								{option.label ?? option.value}
@@ -106,9 +119,9 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					</select>
 				) : (
 					<>
-						<input type="hidden" name={name} value={item?.value ?? ''} />
+						<input type="hidden" name={name} value={item?.value ?? ''} required={required} />
 						<input
-							id={_id}
+							id={labelFor || id}
 							type="text"
 							placeholder={placeholder}
 							value={item?.label ?? item?.value ?? ''}
@@ -123,7 +136,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			{!native && !disabled && (
 				<Menu
 					role="listbox"
-					aria-labelledby={_id}
+					aria-labelledby={labelId || id}
 					trigger={boxRef.current}
 					minWidth={size?.width}
 					open={open}
@@ -143,7 +156,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					))}
 				</Menu>
 			)}
-		</InputWrapper>
+		</>
 	)
 })
 

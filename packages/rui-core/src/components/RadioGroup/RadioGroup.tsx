@@ -1,52 +1,77 @@
 import type { DefaultProps } from '@rui/types'
-import React, { useMemo } from 'react'
-import { useId, useUncontrolled } from '@rui/hooks'
+import React, { useContext, useMemo } from 'react'
+import { useUncontrolled } from '@rui/hooks'
+import { InputWrapperContext } from '../InputWrapper'
 
-import { InputWrapper, type InputWrapperProps } from '../InputWrapper'
 import { RadioContainer } from './RadioGroup.style'
 
 export const RadioGroupContext = React.createContext<{
 	name?: string
-	error?: boolean
-	disabled?: boolean
 	value?: string | number
+	error?: boolean
+	required?: boolean
+	disabled?: boolean
 	onChange?: (value?: string | number) => void
 }>({})
 
-export interface Props extends DefaultProps<HTMLDivElement, 'onChange'>, InputWrapperProps {
+export interface Props extends DefaultProps<HTMLDivElement, 'onChange' | 'wrap'> {
 	direction?: React.CSSProperties['flexDirection']
 	value?: string | number
 	defaultValue?: string | number
+
+	// state props
+	error?: boolean
+	required?: boolean
+	disabled?: boolean
+
+	// fn props
 	onChange?: (value?: string | number) => void
 }
 
 export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { error, direction = 'row', disabled, value, defaultValue, onChange, name, children, ...otherProps } = props
-	const labelId = useId()
+	const {
+		direction = 'row',
+		value,
+		defaultValue,
+		error: inputError,
+		required: inputRequired,
+		disabled: inputDisabled,
+		onChange,
+		name,
+		children,
+		...otherProps
+	} = props
+	const {
+		labelId,
+		error: wrapperError,
+		required: wrapperRequired,
+		disabled: wrapperDisabled
+	} = useContext(InputWrapperContext)
 	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
+
+	const error = wrapperError || inputError
+	const required = wrapperRequired || inputRequired
+	const disabled = wrapperDisabled || inputDisabled
 
 	const ctxValue = useMemo(
 		() => ({
 			name,
-			error,
-			disabled,
 			value: _value,
+			error,
+			required,
+			disabled,
 			onChange: (newValue?: string | number) => {
 				setUncontrolled(newValue)
 				onChange?.(newValue)
 			}
 		}),
-		[_value, name, error, disabled, onChange]
+		[name, _value, error, required, disabled, onChange]
 	)
 
 	return (
-		<RadioGroupContext.Provider value={ctxValue}>
-			<InputWrapper labelId={labelId} error={error} {...otherProps}>
-				<RadioContainer ref={ref} direction={direction} role="radiogroup" aria-labelledby={labelId}>
-					{children}
-				</RadioContainer>
-			</InputWrapper>
-		</RadioGroupContext.Provider>
+		<RadioContainer ref={ref} direction={direction} role="radiogroup" aria-labelledby={labelId} {...otherProps}>
+			<RadioGroupContext.Provider value={ctxValue}>{children}</RadioGroupContext.Provider>
+		</RadioContainer>
 	)
 })
 

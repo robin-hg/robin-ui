@@ -7,13 +7,7 @@ export default {
 	title: 'Inputs/Slider',
 	component: Slider,
 	args: {
-		label: 'Label',
-		description: 'Description',
-		errorMessage: 'Error message',
-		value: 0,
-		required: true,
-		disabled: false,
-		error: false
+		value: 0
 	},
 	argTypes: {
 		value: { control: { type: 'range', min: 0, max: 100, step: 1 } }

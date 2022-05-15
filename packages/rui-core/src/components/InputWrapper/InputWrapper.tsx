@@ -1,26 +1,59 @@
+import { useId } from '@rui/hooks'
 import type { DefaultProps } from '@rui/types'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Stack } from '../Stack'
 import { Text } from '../Typography'
 
 import { Label, Description } from './InputWrapper.style'
 
-export const inputWrapperProps = ['label', 'description', 'error', 'errorMessage', 'required'] as const
-
-export type InputWrapperProps = Pick<Props, typeof inputWrapperProps[number]>
+export const InputWrapperContext = React.createContext<{
+	labelId?: string
+	labelFor?: string
+	error?: boolean
+	required?: boolean
+	disabled?: boolean
+}>({})
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	label?: string
 	labelId?: string
 	labelFor?: string
 	description?: React.ReactNode
-	error?: boolean
 	errorMessage?: React.ReactNode
+
+	// state props
+	error?: boolean
 	required?: boolean
+	disabled?: boolean
 }
 
 export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { label, labelId, labelFor, description, error, errorMessage, required, children, ...otherProps } = props
+	const {
+		label,
+		labelId: labelIdOverride,
+		labelFor: labelForOverride,
+		description,
+		error,
+		errorMessage,
+		required,
+		disabled,
+		children,
+		...otherProps
+	} = props
+
+	const labelId = useId(labelIdOverride)
+	const labelFor = useId(labelForOverride)
+
+	const ctxValue = useMemo(
+		() => ({
+			labelId,
+			labelFor,
+			error,
+			required,
+			disabled
+		}),
+		[error, required, disabled]
+	)
 
 	return (
 		<Stack ref={ref} spacing="sm" {...otherProps}>
@@ -39,7 +72,7 @@ export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref)
 					{description}
 				</Description>
 			)}
-			{children}
+			<InputWrapperContext.Provider value={ctxValue}>{children}</InputWrapperContext.Provider>
 			{error && errorMessage && (
 				<Text as="div" size="xs" color="critical" bold>
 					{errorMessage}

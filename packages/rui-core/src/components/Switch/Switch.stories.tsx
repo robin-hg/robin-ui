@@ -8,8 +8,7 @@ export default {
 	component: Switch,
 	args: {
 		label: 'Label',
-		checked: false,
-		disabled: false
+		checked: false
 	}
 } as Meta<Props>
 

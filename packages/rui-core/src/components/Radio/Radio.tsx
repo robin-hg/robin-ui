@@ -14,7 +14,11 @@ export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'labe
 	value?: string | number
 	checked?: boolean
 	defaultValue?: boolean
+
+	// state props
 	error?: boolean
+
+	// fn props
 	onChange?: (checked: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -27,6 +31,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 		checked,
 		defaultValue,
 		error,
+		required,
 		disabled,
 		onChange,
 		id,
@@ -37,6 +42,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 	const {
 		name: groupName,
 		error: groupError,
+		required: groupRequired,
 		disabled: groupDisabled,
 		value: groupValue,
 		onChange: groupOnChange
@@ -67,6 +73,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 				}}
 				$color={color}
 				$error={!!error || !!groupError}
+				required={required || groupRequired}
 				disabled={disabled || groupDisabled}
 				{...otherProps}
 			/>

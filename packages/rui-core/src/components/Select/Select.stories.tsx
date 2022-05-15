@@ -7,10 +7,6 @@ export default {
 	title: 'Inputs/Select',
 	component: Select,
 	args: {
-		label: 'Label',
-		placeholder: 'Placeholder',
-		description: 'Description',
-		errorMessage: 'Error message',
 		value: '',
 		options: [
 			{ value: 'A' },
@@ -24,10 +20,7 @@ export default {
 			{ value: 'I' },
 			{ value: 'J' },
 			{ value: 'K' }
-		],
-		required: true,
-		disabled: false,
-		error: false
+		]
 	}
 } as Meta<Props>
 

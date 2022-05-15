@@ -8,13 +8,17 @@ import { Box } from './Checkbox.style'
 import { Check, Minus } from '@rui/icons'
 
 export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
+	checked?: boolean
+	defaultValue?: boolean
 	color?: ColorToken
 	label?: number | string
 	labelPosition?: 'left' | 'right'
-	checked?: boolean
-	defaultValue?: boolean
+
+	// state props
 	indeterminate?: boolean
 	error?: boolean
+
+	// fn props
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 

@@ -8,9 +8,6 @@ export default {
 	title: 'Inputs/RadioGroup',
 	component: RadioGroup,
 	args: {
-		label: 'Radio group label',
-		description: 'Description',
-		errorMessage: 'Error message',
 		value: 'react'
 	},
 	argTypes: {
@@ -30,6 +27,7 @@ export const Default: Story<Props> = args => {
 			}}>
 			<Radio value="react" label="React" />
 			<Radio value="vue" label="Vue" />
+			<Radio value="svelte" label="Svelte" />
 		</RadioGroup>
 	)
 }
