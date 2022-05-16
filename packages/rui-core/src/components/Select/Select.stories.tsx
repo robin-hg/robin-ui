@@ -21,6 +21,9 @@ export default {
 			{ value: 'J' },
 			{ value: 'K' }
 		]
+	},
+	argTypes: {
+		value: { control: { type: 'text' } }
 	}
 } as Meta<Props>
 
