@@ -1,15 +1,15 @@
 import { useState } from 'react'
 
-export const useUncontrolled = <P>(defaultValue: P, controlledValue?: P): [P, (newValue: P) => void] => {
+export const useUncontrolled = <P>(defaultValue: P, controlledValue?: P): [P, (value: P) => void] => {
 	const [uncontrolled, setUncontrolled] = useState(defaultValue)
 	const isUncontrolled = controlledValue === undefined
-	const value = isUncontrolled ? uncontrolled : controlledValue
+	const _value = isUncontrolled ? uncontrolled : controlledValue
 
-	const updateUncontrolled = (newValue: P) => {
+	const updateUncontrolled = (value: P) => {
 		if (isUncontrolled) {
-			setUncontrolled(newValue)
+			setUncontrolled(value)
 		}
 	}
 
-	return [value, updateUncontrolled]
+	return [_value, updateUncontrolled]
 }
