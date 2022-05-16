@@ -22,6 +22,7 @@ export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'chil
 export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
 		value,
+		defaultValue,
 		placeholder,
 		error: inputError,
 		required: inputRequired,
@@ -56,6 +57,7 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				inputMode={inputMode}
 				name={name}
 				value={value}
+				defaultValue={defaultValue}
 				placeholder={placeholder}
 				required={required}
 				readOnly={readOnly}
