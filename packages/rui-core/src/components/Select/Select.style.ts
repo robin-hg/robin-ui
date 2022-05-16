@@ -1,14 +1,15 @@
 import styled from '@rui/styles'
 import { InputBox } from '../InputBox'
 
-export const SelectBox = styled(InputBox)(({ theme, active, disabled }) => ({
+export const SelectBox = styled(InputBox)(({ theme, active, disabled, readOnly }) => ({
 	outline: 'none',
-	cursor: disabled ? 'default' : 'pointer',
+	cursor: disabled || readOnly ? 'default' : 'pointer',
 	'& > input': {
 		pointerEvents: 'none'
 	},
 	'& > select': {
-		appearance: 'none'
+		appearance: 'none',
+		pointerEvents: readOnly ? 'none' : 'auto'
 	},
 	'& > span > svg': {
 		transition: theme.fn.getTransition(),

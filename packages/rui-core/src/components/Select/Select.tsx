@@ -40,6 +40,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		native,
 		error: inputError,
 		required: inputRequired,
+		readOnly: inputReadOnly,
 		disabled: inputDisabled,
 		onChange,
 		onClick,
@@ -57,12 +58,14 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		labelFor,
 		error: wrapperError,
 		required: wrapperRequired,
+		readOnly: wrapperReadOnly,
 		disabled: wrapperDisabled
 	} = useContext(InputWrapperContext)
 	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 
 	const error = wrapperError || inputError
 	const required = wrapperRequired || inputRequired
+	const readOnly = wrapperReadOnly || inputReadOnly
 	const disabled = wrapperDisabled || inputDisabled
 
 	useEffect(() => {
@@ -96,6 +99,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					}
 				}}
 				rightAdornment={<ChevronDown />}
+				readOnly={readOnly}
 				disabled={disabled}
 				error={wrapperError || error}
 				active={open}
@@ -112,7 +116,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 						required={required}
 						disabled={disabled}>
 						{options.map(option => (
-							<option key={option.value} value={option.value}>
+							<option key={option.value} value={option.value} disabled={option.disabled}>
 								{option.label ?? option.value}
 							</option>
 						))}
@@ -133,7 +137,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					</>
 				)}
 			</SelectBox>
-			{!native && !disabled && (
+			{!native && !disabled && !readOnly && (
 				<Menu
 					role="listbox"
 					aria-labelledby={labelId || id}

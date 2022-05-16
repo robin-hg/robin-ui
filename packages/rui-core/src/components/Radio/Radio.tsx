@@ -32,6 +32,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 		defaultValue,
 		error,
 		required,
+		readOnly,
 		disabled,
 		onChange,
 		id,
@@ -43,6 +44,7 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 		name: groupName,
 		error: groupError,
 		required: groupRequired,
+		readOnly: groupReadOnly,
 		disabled: groupDisabled,
 		value: groupValue,
 		onChange: groupOnChange
@@ -72,9 +74,10 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 					onChange?.(event)
 				}}
 				$color={color}
-				$error={!!error || !!groupError}
-				required={required || groupRequired}
-				disabled={disabled || groupDisabled}
+				$error={!!groupError || !!error}
+				required={groupRequired || required}
+				readOnly={groupReadOnly || readOnly}
+				disabled={groupDisabled || disabled}
 				{...otherProps}
 			/>
 		</ControlInput>

@@ -10,6 +10,7 @@ export const RadioGroupContext = React.createContext<{
 	value?: string | number
 	error?: boolean
 	required?: boolean
+	readOnly?: boolean
 	disabled?: boolean
 	onChange?: (value?: string | number) => void
 }>({})
@@ -22,6 +23,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange' | 'wrap'>
 	// state props
 	error?: boolean
 	required?: boolean
+	readOnly?: boolean
 	disabled?: boolean
 
 	// fn props
@@ -35,6 +37,7 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 		defaultValue,
 		error: inputError,
 		required: inputRequired,
+		readOnly: inputReadOnly,
 		disabled: inputDisabled,
 		onChange,
 		name,
@@ -45,12 +48,14 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 		labelId,
 		error: wrapperError,
 		required: wrapperRequired,
+		readOnly: wrapperReadOnly,
 		disabled: wrapperDisabled
 	} = useContext(InputWrapperContext)
 	const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 
 	const error = wrapperError || inputError
 	const required = wrapperRequired || inputRequired
+	const readOnly = wrapperReadOnly || inputReadOnly
 	const disabled = wrapperDisabled || inputDisabled
 
 	const ctxValue = useMemo(
@@ -59,13 +64,14 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 			value: _value,
 			error,
 			required,
+			readOnly,
 			disabled,
 			onChange: (newValue?: string | number) => {
 				setUncontrolled(newValue)
 				onChange?.(newValue)
 			}
 		}),
-		[name, _value, error, required, disabled, onChange]
+		[name, _value, error, required, readOnly, disabled, onChange]
 	)
 
 	return (

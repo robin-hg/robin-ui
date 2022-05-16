@@ -23,9 +23,10 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 	const {
 		value,
 		placeholder,
-		disabled: inputDisabled,
 		error: inputError,
 		required: inputRequired,
+		readOnly: inputReadOnly,
+		disabled: inputDisabled,
 		onChange,
 		id,
 		name,
@@ -38,11 +39,13 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 		labelFor,
 		error: wrapperError,
 		required: wrapperRequired,
+		readOnly: wrapperReadOnly,
 		disabled: wrapperDisabled
 	} = useContext(InputWrapperContext)
 
 	const error = wrapperError || inputError
 	const required = wrapperRequired || inputRequired
+	const readOnly = wrapperReadOnly || inputReadOnly
 	const disabled = wrapperDisabled || inputDisabled
 
 	return (
@@ -55,6 +58,7 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				value={value}
 				placeholder={placeholder}
 				required={required}
+				readOnly={readOnly}
 				disabled={disabled}
 				onChange={onChange}
 				{...inputProps}

@@ -40,6 +40,7 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		precision = 0,
 		error: inputError,
 		required: inputRequired,
+		readOnly: inputReadOnly,
 		disabled: inputDisabled,
 		onChange,
 		name,
@@ -57,11 +58,13 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		labelId,
 		error: wrapperError,
 		required: wrapperRequired,
+		readOnly: wrapperReadOnly,
 		disabled: wrapperDisabled
 	} = useContext(InputWrapperContext)
 
 	const error = wrapperError || inputError
 	const required = wrapperRequired || inputRequired
+	const readOnly = wrapperReadOnly || inputReadOnly
 	const disabled = wrapperDisabled || inputDisabled
 
 	useEffect(() => {
@@ -87,6 +90,9 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		const handleMove = (event: PointerEvent) => handleChange(event.clientX)
 
 		const start = (event: PointerEvent) => {
+			if (disabled || readOnly) {
+				return
+			}
 			event.preventDefault()
 			setActive(true)
 			handleChange(event.clientX)
@@ -141,7 +147,7 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	return (
 		<SliderContainer ref={combinedRef} disabled={disabled} $active={active} {...otherProps}>
 			<Progress value={percentValue} color={sliderColor} noAria />
-			<Tooltip label={_value} placement="top" open={active} continuousUpdate>
+			<Tooltip label={_value} placement="top" open={!disabled && active} continuousUpdate>
 				<SliderThumb
 					ref={thumbRef}
 					role="slider"
@@ -154,11 +160,11 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					$active={active}
 					$size={size}
 					$color={sliderColor}
-					$disabled={!!disabled}
+					$disabled={!!disabled || !!readOnly}
 					style={{ left: `${percentValue}%` }}
 				/>
 			</Tooltip>
-			<input type="hidden" name={name} value={_value} required={required} />
+			<input type="hidden" name={name} value={_value} required={required} disabled={disabled} />
 		</SliderContainer>
 	)
 })

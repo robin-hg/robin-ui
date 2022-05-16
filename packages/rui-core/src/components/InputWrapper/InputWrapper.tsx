@@ -11,6 +11,7 @@ export const InputWrapperContext = React.createContext<{
 	labelFor?: string
 	error?: boolean
 	required?: boolean
+	readOnly?: boolean
 	disabled?: boolean
 }>({})
 
@@ -24,6 +25,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	// state props
 	error?: boolean
 	required?: boolean
+	readOnly?: boolean
 	disabled?: boolean
 }
 
@@ -36,6 +38,7 @@ export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref)
 		error,
 		errorMessage,
 		required,
+		readOnly,
 		disabled,
 		children,
 		...otherProps
@@ -50,9 +53,10 @@ export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref)
 			labelFor,
 			error,
 			required,
+			readOnly,
 			disabled
 		}),
-		[error, required, disabled]
+		[error, required, readOnly, disabled]
 	)
 
 	return (
