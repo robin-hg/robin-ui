@@ -76,6 +76,7 @@ export const Adornment = styled.span<AdornmentProps>(
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
+		gap: theme.spacing.sm,
 		padding: theme.fn.getSpacing([0, 'sm'])
 	}),
 	({ $position }) =>
