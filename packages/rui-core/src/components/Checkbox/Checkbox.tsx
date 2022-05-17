@@ -1,6 +1,6 @@
 import type { DefaultProps, ColorToken } from '@rui/types'
-import React from 'react'
-import { useId, useUncontrolled } from '@rui/hooks'
+import React, { useRef } from 'react'
+import { useId, useIsomorphicLayoutEffect, useUncontrolled } from '@rui/hooks'
 
 import { ControlInput } from '../ControlInput'
 
@@ -38,7 +38,14 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		...otherProps
 	} = props
 	const _id = useId(id)
+	const boxRef = useRef<HTMLInputElement>(null)
 	const [_checked, setUncontrolled] = useUncontrolled(!!defaultValue, checked)
+
+	useIsomorphicLayoutEffect(() => {
+		if (boxRef.current) {
+			boxRef.current.indeterminate = !!indeterminate
+		}
+	}, [indeterminate])
 
 	return (
 		<ControlInput
@@ -50,6 +57,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 			labelPosition={labelPosition}
 			className={className}>
 			<Box
+				ref={boxRef}
 				id={_id}
 				type="checkbox"
 				checked={_checked || !!indeterminate}
