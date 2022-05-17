@@ -2,8 +2,8 @@ import { Global as EmotionGlobal } from '@emotion/react'
 
 export const Global = () => (
 	<EmotionGlobal
-		styles={[
-			theme => ({
+		styles={theme => ({
+			'@layer rui': {
 				':root': {
 					colorScheme: theme.colorMode,
 					accentColor: theme.palette.primary.base
@@ -42,8 +42,8 @@ export const Global = () => (
 						transitionDuration: '0ms !important'
 					}
 				}
-			}),
-			theme => theme.global
-		]}
+			},
+			...theme.global
+		})}
 	/>
 )
