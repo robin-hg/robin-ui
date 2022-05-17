@@ -8,6 +8,7 @@ export default {
 	component: Select,
 	args: {
 		value: '',
+		placeholder: 'Placeholder',
 		options: [
 			{ value: 'A' },
 			{ value: 'B', disabled: true },
