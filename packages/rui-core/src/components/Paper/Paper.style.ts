@@ -20,7 +20,17 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 		padding: theme.fn.getSpacing($padding),
 		transition: theme.fn.getTransition(),
 		border: '0.1rem solid transparent',
-		borderRadius: theme.fn.getSize($radius, theme.radius)
+		borderRadius: theme.fn.getSize($radius, theme.radius),
+		'&::-webkit-scrollbar': {
+			width: '1rem',
+			background: theme.fn.getAlphaColor('surface.variant', 'fadedOnBase')
+		},
+		'&::-webkit-scrollbar-thumb': {
+			background: theme.fn.getAlphaColor('surface.onVariant', 0.5),
+			'&:active': {
+				background: theme.fn.getAlphaColor('surface.onVariant', 0.6)
+			}
+		}
 	}),
 	({ theme, $surfaceColor, $tint }) =>
 		({
