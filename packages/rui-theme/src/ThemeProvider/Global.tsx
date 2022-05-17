@@ -4,6 +4,9 @@ export const Global = () => (
 	<EmotionGlobal
 		styles={[
 			theme => ({
+				':root': {
+					colorScheme: theme.colorMode
+				},
 				html: {
 					padding: 0,
 					margin: 0,
