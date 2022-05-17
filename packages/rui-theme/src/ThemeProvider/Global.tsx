@@ -5,7 +5,8 @@ export const Global = () => (
 		styles={[
 			theme => ({
 				':root': {
-					colorScheme: theme.colorMode
+					colorScheme: theme.colorMode,
+					accentColor: theme.palette.primary.base
 				},
 				html: {
 					padding: 0,
