@@ -59,8 +59,12 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	const combinedRef = useCombinedRef(floating, ref)
 
 	useEffect(() => {
-		if (open && trapFocus) {
-			refs.floating.current?.focus()
+		if (trapFocus) {
+			if (open) {
+				refs.floating.current?.focus()
+			} else {
+				trigger?.focus()
+			}
 		}
 	}, [open])
 
@@ -83,7 +87,7 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	return (
 		<Portal container={floatinghEl || modalEl || undefined}>
 			<FadeContainer in={open} duration={duration} unmountOnExit>
-				<FocusTrap restoreFocus disabled={!trapFocus}>
+				<FocusTrap disabled={!trapFocus}>
 					<FloatingElement
 						ref={combinedRef}
 						style={{
