@@ -4,6 +4,7 @@ import { InputBox } from '../InputBox'
 export const SelectBox = styled(InputBox)(({ theme, active, disabled, readOnly }) => ({
 	outline: 'none',
 	cursor: disabled || readOnly ? 'default' : 'pointer',
+	userSelect: 'none',
 	'& > input': {
 		pointerEvents: 'none'
 	},
