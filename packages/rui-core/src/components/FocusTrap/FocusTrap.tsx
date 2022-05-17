@@ -25,7 +25,7 @@ export const FocusTrap: React.FC<Props> = props => {
 	useEffect(() => {
 		if (autoFocus && !disabled) {
 			const focusable = getFocusable(ref.current)
-			focusable[0]?.focus()
+			focusable.at(0)?.focus()
 		}
 	}, [autoFocus])
 
@@ -36,8 +36,8 @@ export const FocusTrap: React.FC<Props> = props => {
 			return
 		}
 
-		const first = focusable[0]
-		const last = focusable[focusable.length - 1]
+		const first = focusable.at(0) as HTMLElement
+		const last = focusable.at(-1) as HTMLElement
 
 		const next = event.shiftKey ? last : first
 		const leaving = event.shiftKey ? document.activeElement !== first : document.activeElement !== last
