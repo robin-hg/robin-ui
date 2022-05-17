@@ -3,14 +3,14 @@ import { getFocusable } from '@rui/utils'
 import { useKeyDown } from '@rui/hooks'
 
 export interface Props {
-	autofocus?: boolean
+	autoFocus?: boolean
 	restoreFocus?: boolean
 	disabled?: boolean
 	children?: React.ReactNode
 }
 
 export const FocusTrap: React.FC<Props> = props => {
-	const { autofocus, restoreFocus, disabled, children } = props
+	const { autoFocus, restoreFocus, disabled, children } = props
 	const ref = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
@@ -23,11 +23,11 @@ export const FocusTrap: React.FC<Props> = props => {
 	}, [restoreFocus])
 
 	useEffect(() => {
-		if (autofocus && !disabled) {
+		if (autoFocus && !disabled) {
 			const focusable = getFocusable(ref.current)
 			focusable[0]?.focus()
 		}
-	}, [autofocus])
+	}, [autoFocus])
 
 	useKeyDown('Tab', event => {
 		const focusable = getFocusable(ref.current)
