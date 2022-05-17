@@ -1,6 +1,6 @@
 import type { DefaultProps, Size } from '@rui/types'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useCombinedRef, useId } from '@rui/hooks'
+import { useCombinedRef, useId, useLockWindowScroll } from '@rui/hooks'
 
 import { Fade } from '../Transition'
 import { FocusTrap } from '../FocusTrap'
@@ -28,6 +28,7 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const modalRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, modalRef)
 	const id = useId()
+	useLockWindowScroll(!!open)
 
 	useEffect(() => {
 		if (open) {
