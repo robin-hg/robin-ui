@@ -48,9 +48,9 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
 		<StyledButton
 			ref={ref}
 			as={as}
-			$variant={groupVariant || variant}
-			$color={groupColor || color}
-			$size={groupSize || size}
+			$variant={groupVariant ?? variant}
+			$color={groupColor ?? color}
+			$size={groupSize ?? size}
 			$radius={radius}
 			type="button"
 			onClick={event => {

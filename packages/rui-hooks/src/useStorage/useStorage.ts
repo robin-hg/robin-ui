@@ -22,7 +22,7 @@ export const useStorage = <T>(
 		return item ? (JSON.parse(item) as T) : undefined
 	})
 
-	const [storedValue, setStoredValue] = useState(getValue() || initialValue)
+	const [storedValue, setStoredValue] = useState(getValue() ?? initialValue)
 
 	const setValue = useMutableCallback((value: T | ((current?: T) => T)) => {
 		if (value === undefined) {

@@ -52,7 +52,7 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 	return (
 		<InputBox ref={ref} disabled={disabled} error={error} {...otherProps}>
 			<input
-				id={labelFor || id}
+				id={labelFor ?? id}
 				type={type}
 				inputMode={inputMode}
 				name={name}

@@ -66,7 +66,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 	const [internalValue, setInternalValue] = useState(value?.toString() ?? defaultValue?.toString() ?? '')
 
 	useEffect(() => {
-		setInternalValue(value?.toString() || '')
+		setInternalValue(value?.toString() ?? '')
 	}, [value])
 
 	const error = wrapperError || inputError
@@ -111,7 +111,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 			}
 			{...otherProps}>
 			<NumberFormat
-				id={labelFor || id}
+				id={labelFor ?? id}
 				inputMode={inputMode}
 				name={name}
 				value={internalValue}

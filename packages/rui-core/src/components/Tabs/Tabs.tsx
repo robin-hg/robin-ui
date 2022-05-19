@@ -55,7 +55,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		<sxc.div ref={ref} {...otherProps}>
 			<TabGroup ref={tabGroupRef} role="tablist" aria-orientation="horizontal" onKeyDown={handleKeyPress}>
 				{tabs.map((tab, i) => {
-					const key = tab.props?.tabKey || i
+					const key = tab.props?.tabKey ?? i
 					const active = _activeTab === key
 					return (
 						<Tab

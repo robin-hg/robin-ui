@@ -27,8 +27,8 @@ export const InputBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		<Box
 			ref={ref}
 			$state={state}
-			$leftPadding={leftAdornmentSize?.width || 0}
-			$rightPadding={rightAdornmentSize?.width || 0}
+			$leftPadding={leftAdornmentSize?.width}
+			$rightPadding={rightAdornmentSize?.width}
 			{...otherProps}>
 			{leftAdornment && (
 				<Adornment ref={leftAdornmentRef} $position="left">

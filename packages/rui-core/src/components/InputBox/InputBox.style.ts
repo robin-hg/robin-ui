@@ -3,8 +3,8 @@ import { BaseContainer } from '../BaseContainer'
 
 interface BoxProps {
 	$state: 'disabled' | 'error' | 'active' | 'none'
-	$leftPadding: number
-	$rightPadding: number
+	$leftPadding?: number
+	$rightPadding?: number
 }
 
 export const Box = styled(BaseContainer)<BoxProps>(
@@ -14,8 +14,8 @@ export const Box = styled(BaseContainer)<BoxProps>(
 		color: theme.palette.surface.onBase,
 		'& > input, & > select': {
 			padding: theme.fn.getSpacing(['sm', 0]),
-			paddingRight: $rightPadding || theme.spacing.md,
-			paddingLeft: $leftPadding || theme.spacing.md,
+			paddingRight: $rightPadding ?? theme.spacing.md,
+			paddingLeft: $leftPadding ?? theme.spacing.md,
 			width: '100%',
 			fontSize: theme.typography.text.fontSize.md,
 			height: '3.6rem',

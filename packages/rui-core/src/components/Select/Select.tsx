@@ -107,7 +107,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 				{...otherProps}>
 				{native ? (
 					<select
-						id={labelFor || id}
+						id={labelFor ?? id}
 						value={item?.value}
 						onChange={event => {
 							onChange?.(event.target.value)
@@ -125,7 +125,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					<>
 						<input type="hidden" name={name} value={item?.value ?? ''} required={required} />
 						<input
-							id={labelFor || id}
+							id={labelFor ?? id}
 							type="text"
 							placeholder={placeholder}
 							value={item?.label ?? item?.value ?? ''}
@@ -140,7 +140,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			{!native && !disabled && !readOnly && (
 				<Menu
 					role="listbox"
-					aria-labelledby={labelId || id}
+					aria-labelledby={labelId ?? id}
 					trigger={boxRef.current}
 					minWidth={size?.width}
 					open={open}

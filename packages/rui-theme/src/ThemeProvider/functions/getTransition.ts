@@ -16,7 +16,7 @@ export const getTransition =
 		return props
 			.map(
 				property =>
-					`${property} ${parseDuration(duration || theme.transition.duration)} ${theme.transition.ease}`
+					`${property} ${parseDuration(duration ?? theme.transition.duration)} ${theme.transition.ease}`
 			)
 			.join(', ')
 	}
