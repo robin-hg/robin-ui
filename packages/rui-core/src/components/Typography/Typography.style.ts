@@ -27,6 +27,7 @@ export const StyledText = styled.div<StyledTextProps>(
 		textDecoration: $decoration,
 		letterSpacing: 'normal',
 		background: theme.fn.getColor($highlight),
+		transition: theme.fn.getTransition(),
 		'& small': {
 			fontSize: '0.7em'
 		}

@@ -21,9 +21,6 @@ export const Box = styled.input<BoxProps>(
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
 		transition: theme.fn.getTransition(),
-		'&:active': {
-			outlineOffset: '0.1rem'
-		},
 		'& + svg': {
 			position: 'absolute',
 			top: 0,
@@ -41,7 +38,7 @@ export const Box = styled.input<BoxProps>(
 
 		return {
 			background: checked || $error ? theme.fn.getColor(color) : 'transparent',
-			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'surface.onBase'),
+			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline'),
 			'& + svg': {
 				color: onColor,
 				opacity: checked ? 1 : 0
@@ -55,7 +52,7 @@ export const Box = styled.input<BoxProps>(
 			},
 			'&:focus-visible': {
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus'),
-				outlineColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus')
+				outlineColor: theme.fn.getColor($color)
 			},
 			'&:active': {
 				background:
@@ -68,11 +65,11 @@ export const Box = styled.input<BoxProps>(
 	},
 	({ theme }) => ({
 		'&[disabled]': {
+			background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
 			'& + svg': {
 				color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`
-			},
-			background: `${theme.fn.getAlphaColor('surface.base', 'fadedBase')} !important`,
-			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`
+			}
 		}
 	})
 )

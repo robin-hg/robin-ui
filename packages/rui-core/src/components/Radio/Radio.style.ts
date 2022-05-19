@@ -19,10 +19,7 @@ export const Circle = styled.input<CircleProps>(
 		borderRadius: '100%',
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
-		transition: theme.fn.getTransition(),
-		'&:active': {
-			outlineOffset: '0.1rem'
-		}
+		transition: theme.fn.getTransition()
 	}),
 	({ theme, checked, $color, $error }) => {
 		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
@@ -31,7 +28,7 @@ export const Circle = styled.input<CircleProps>(
 
 		return {
 			background: checked || $error ? theme.fn.getColor(color) : 'transparent',
-			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'surface.onBase'),
+			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline'),
 			'&:hover': {
 				background:
 					checked || $error
@@ -41,7 +38,7 @@ export const Circle = styled.input<CircleProps>(
 			},
 			'&:focus-visible': {
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus'),
-				outlineColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus')
+				outlineColor: theme.fn.getColor($color)
 			},
 			'&:active': {
 				background:
@@ -66,10 +63,10 @@ export const Circle = styled.input<CircleProps>(
 	},
 	({ theme }) => ({
 		'&[disabled]': {
-			background: `${theme.fn.getAlphaColor('surface.base', 'fadedBase')} !important`,
+			background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
 			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
 			'&::before': {
-				background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`
+				background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`
 			}
 		}
 	})

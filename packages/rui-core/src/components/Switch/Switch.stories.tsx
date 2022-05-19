@@ -8,6 +8,7 @@ export default {
 	component: Switch,
 	args: {
 		label: 'Label',
+		labelPosition: 'right',
 		checked: false
 	}
 } as Meta<Props>

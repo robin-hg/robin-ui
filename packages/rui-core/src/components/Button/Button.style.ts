@@ -30,10 +30,7 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		borderRadius: theme.fn.getSize($radius, theme.radius),
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
-		transition: theme.fn.getTransition(),
-		'&:active': {
-			outlineOffset: '0.1rem'
-		}
+		transition: theme.fn.getTransition()
 	}),
 	({ theme, $variant, $color }) =>
 		({
@@ -45,7 +42,7 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				},
 				'&:focus-visible': {
 					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'focus'),
-					outlineColor: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'focus')
+					outlineColor: theme.fn.getColor($color)
 				},
 				'&:active': {
 					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')

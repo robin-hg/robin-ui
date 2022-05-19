@@ -16,6 +16,7 @@ export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'labe
 	// state props
 	indeterminate?: boolean
 	error?: boolean
+	disabled?: boolean
 
 	// fn props
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void

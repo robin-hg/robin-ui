@@ -21,13 +21,11 @@ export const Box = styled.input<BoxProps>(
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
 		transition: theme.fn.getTransition(),
-		'&:active': {
-			outlineOffset: '0.1rem'
-		},
 		'&::after': {
 			content: '""',
 			width: '1.2rem',
 			height: '1.2rem',
+			border: '0.1rem solid transparent',
 			borderRadius: theme.radius.xl,
 			transition: theme.fn.getTransition()
 		}
@@ -38,38 +36,42 @@ export const Box = styled.input<BoxProps>(
 		const borderColor = $error ? 'critical' : color
 
 		return {
-			background: checked || $error ? theme.fn.getColor(color) : 'transparent',
-			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'surface.onBase'),
+			background:
+				checked || $error ? theme.fn.getColor(color) : theme.fn.getAlphaColor('surface.onVariant', 'fadedBase'),
+			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline'),
 			'::after': {
 				background: onColor,
-				transform: `translateX(${checked ? 8 : -8}px)`
+				transform: `translateX(${checked ? 8 : -8}px)`,
+				borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline')
 			},
 			'&:hover': {
-				background:
-					checked || $error
-						? theme.fn.getModifiedColor(color, onColor, 'hover')
-						: theme.fn.getAlphaColor(color, 'hover'),
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
+				'&::after': {
+					background: theme.fn.getModifiedColor('surface', color, 'hover'),
+					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
+				}
 			},
 			'&:focus-visible': {
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus'),
-				outlineColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus')
+				outlineColor: theme.fn.getColor($color),
+				'&::after': {
+					background: theme.fn.getModifiedColor('surface', color, 'focus'),
+					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus')
+				}
 			},
 			'&:active': {
-				background:
-					checked || $error
-						? theme.fn.getModifiedColor(color, onColor, 'active')
-						: theme.fn.getAlphaColor(color, 'active'),
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
+				'&::after': {
+					background: theme.fn.getModifiedColor('surface', color, 'active'),
+					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
+				}
 			}
 		}
 	},
 	({ theme }) => ({
 		'&[disabled]': {
 			'&::after': {
-				background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`
+				background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+				borderColor: `${theme.fn.getColor('outline')} !important`
 			},
-			background: `${theme.fn.getAlphaColor('surface.base', 'fadedBase')} !important`,
+			background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
 			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`
 		}
 	})

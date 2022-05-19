@@ -157,9 +157,9 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					aria-valuemax={max}
 					tabIndex={0}
 					onKeyDown={handleKeyPress}
-					$active={active}
 					$size={size}
 					$color={sliderColor}
+					$error={!!error}
 					$disabled={!!disabled || !!readOnly}
 					style={{ left: `${percentValue}%` }}
 				/>
