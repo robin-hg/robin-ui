@@ -21,6 +21,9 @@ export const Box = styled.input<BoxProps>(
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
 		transition: theme.fn.getTransition(),
+		'&:active': {
+			outlineOffset: '0.1rem'
+		},
 		'& + svg': {
 			position: 'absolute',
 			top: 0,

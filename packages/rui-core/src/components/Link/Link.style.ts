@@ -33,7 +33,8 @@ export const StyledLink = styled.a<StyledLinkProps>(({ theme, $size, $color, $un
 		outlineColor: 'currentColor'
 	},
 	'&:active': {
-		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
+		color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active'),
+		outlineOffset: '0.1rem'
 	},
 	'&[disabled]': {
 		color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
