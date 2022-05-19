@@ -1,26 +1,28 @@
-import type { SizeValue } from '@rui/types'
+import type { SizeValue, ColorToken } from '@rui/types'
 import styled from '@rui/styles'
 import { BaseContainer } from '../BaseContainer'
 
 interface PaperContainerProps {
 	$variant: 'flat' | 'elevated' | 'outlined'
 	$surfaceColor: 'base' | 'variant'
-	$tint: string
+	$tint: ColorToken
 	$elevation: number
 	$padding: SizeValue | SizeValue[]
 	$radius: SizeValue
 }
 
 export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
-	({ theme, $padding, $radius }) => ({
+	({ theme, $padding, $radius, $surfaceColor, $tint }) => ({
 		position: 'relative',
 		zIndex: 0,
 		boxSizing: 'border-box',
 		overflow: 'hidden',
 		padding: theme.fn.getSpacing($padding),
-		transition: theme.fn.getTransition(),
+		background: theme.fn.getModifiedColor(`surface.${$surfaceColor}`, $tint, 'tint'),
+		color: theme.fn.getOnColor(`surface.${$surfaceColor}`),
 		border: '0.1rem solid transparent',
 		borderRadius: theme.fn.getSize($radius, theme.radius),
+		transition: theme.fn.getTransition(),
 		'&::-webkit-scrollbar': {
 			width: '1rem',
 			background: theme.fn.getAlphaColor('surface.variant', 'fadedOnBase')
@@ -32,17 +34,6 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 			}
 		}
 	}),
-	({ theme, $surfaceColor, $tint }) =>
-		({
-			base: {
-				background: theme.fn.getModifiedColor('surface', $tint, 'tint'),
-				color: theme.palette.surface.onBase
-			},
-			variant: {
-				background: theme.fn.getModifiedColor('surface.variant', $tint, 'tint'),
-				color: theme.palette.surface.onVariant
-			}
-		}[$surfaceColor]),
 	({ theme, $variant, $elevation }) =>
 		({
 			flat: {},
