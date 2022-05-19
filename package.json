@@ -21,7 +21,6 @@
 		"@storybook/addon-actions": "^6.5.0",
 		"@storybook/addon-controls": "^6.5.0",
 		"@storybook/builder-vite": "^0.1.34",
-		"@storybook/core-common": "^6.5.0",
 		"@storybook/react": "^6.5.0",
 		"@types/react": "^18.0.9",
 		"@types/react-dom": "^18.0.4",

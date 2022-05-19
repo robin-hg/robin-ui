@@ -2766,7 +2766,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-common@npm:6.5.0, @storybook/core-common@npm:^6.5.0":
+"@storybook/core-common@npm:6.5.0":
   version: 6.5.0
   resolution: "@storybook/core-common@npm:6.5.0"
   dependencies:
@@ -3481,9 +3481,9 @@ __metadata:
   linkType: hard
 
 "@types/mdx@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "@types/mdx@npm:2.0.1"
-  checksum: 521ee9f976af45859a4dd60b159e1cc09109de49ec5570fe70f34cddb0a7b5472b87c1bea743429270398207a997821dec34fd7bd63cbc2a1e5f2f6c701dd1c2
+  version: 2.0.2
+  resolution: "@types/mdx@npm:2.0.2"
+  checksum: a10b78946019fe78f7dba749e90924c29a59b23171e7c6aa41f3220a491723c14729212b99eb4e9e1f847d5f4a574ddc4e03c49a2621470e9c822082874eeafc
   languageName: node
   linkType: hard
 
@@ -12556,7 +12556,6 @@ __metadata:
     "@storybook/addon-actions": ^6.5.0
     "@storybook/addon-controls": ^6.5.0
     "@storybook/builder-vite": ^0.1.34
-    "@storybook/core-common": ^6.5.0
     "@storybook/react": ^6.5.0
     "@types/react": ^18.0.9
     "@types/react-dom": ^18.0.4
