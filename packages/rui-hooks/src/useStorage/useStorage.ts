@@ -1,7 +1,7 @@
 import { runIfFn } from '@rui/utils'
 import { useState } from 'react'
 import { useEventListener } from '../useEventListener'
-import { useMutableCallback } from '../useMutableCallback'
+import { useEvent } from '../useEvent'
 
 declare global {
 	interface WindowEventMap {
@@ -17,14 +17,14 @@ export const useStorage = <T>(
 ): [T | undefined, (value: T | ((current?: T) => T)) => void] => {
 	const storage = storageType === 'session' ? sessionStorage : localStorage
 
-	const getValue = useMutableCallback(() => {
+	const getValue = useEvent(() => {
 		const item = storage.getItem(key)
 		return item ? (JSON.parse(item) as T) : undefined
 	})
 
 	const [storedValue, setStoredValue] = useState(getValue() ?? initialValue)
 
-	const setValue = useMutableCallback((value: T | ((current?: T) => T)) => {
+	const setValue = useEvent((value: T | ((current?: T) => T)) => {
 		if (value === undefined) {
 			storage.removeItem(key)
 			setStoredValue(undefined)

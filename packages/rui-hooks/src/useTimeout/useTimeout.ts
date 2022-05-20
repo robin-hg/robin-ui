@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { useMutableCallback } from '../useMutableCallback'
+import { useEvent } from '../useEvent'
 
 export const useTimeout = (callback: () => void, ms = 500, dependencies: React.DependencyList = []) => {
-	const savedCallback = useMutableCallback(callback)
+	const savedCallback = useEvent(callback)
 
 	useEffect(() => {
 		const timeoutId = window.setTimeout(savedCallback, ms)

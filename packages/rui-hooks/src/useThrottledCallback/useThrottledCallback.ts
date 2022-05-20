@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { useMutableCallback } from '../useMutableCallback'
+import { useEvent } from '../useEvent'
 
 export const useThrottledCallback = <T extends (...args: Parameters<T>) => void>(callback: T, delay = 500) => {
 	const timeout = useRef<number>()
@@ -7,7 +7,7 @@ export const useThrottledCallback = <T extends (...args: Parameters<T>) => void>
 
 	useEffect(() => () => window.clearTimeout(timeout.current))
 
-	return useMutableCallback((...args: Parameters<T>) => {
+	return useEvent((...args: Parameters<T>) => {
 		if (timeout.current) {
 			waitingValue.current = args
 			return

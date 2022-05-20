@@ -1,5 +1,5 @@
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
-import { useMutableCallback } from '../useMutableCallback'
+import { useEvent } from '../useEvent'
 
 type IUseEventListener = {
 	<K extends keyof WindowEventMap>(eventName: K, handler: (event: WindowEventMap[K]) => void): void
@@ -20,7 +20,7 @@ export const useEventListener: IUseEventListener = <
 	element?: T | null
 ) => {
 	const el = element || window
-	const savedHandler = useMutableCallback(handler)
+	const savedHandler = useEvent(handler)
 
 	useIsomorphicLayoutEffect(() => {
 		el.addEventListener(eventName, savedHandler)

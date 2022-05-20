@@ -1,10 +1,10 @@
 import { useRef } from 'react'
-import { useMutableCallback } from '../useMutableCallback'
+import { useEvent } from '../useEvent'
 
 export const useDebouncedCallback = <T extends (...args: Parameters<T>) => void>(callback: T, delay = 500) => {
 	const timeout = useRef<number>()
 
-	return useMutableCallback((...args: Parameters<T>) => {
+	return useEvent((...args: Parameters<T>) => {
 		if (timeout.current) {
 			window.clearTimeout(timeout.current)
 		}
