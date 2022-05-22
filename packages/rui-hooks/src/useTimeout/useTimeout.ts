@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useEvent } from '../useEvent'
 
-export const useTimeout = (callback: () => void, ms = 500, dependencies: React.DependencyList = []) => {
+export const useTimeout = (callback: () => void, ms = 500) => {
 	const savedCallback = useEvent(callback)
 
 	useEffect(() => {
@@ -9,5 +9,5 @@ export const useTimeout = (callback: () => void, ms = 500, dependencies: React.D
 		return () => {
 			window.clearTimeout(timeoutId)
 		}
-	}, dependencies)
+	}, [ms, savedCallback])
 }

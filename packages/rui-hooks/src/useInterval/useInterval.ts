@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useEvent } from '../useEvent'
 
-export const useInterval = (callback: () => void, ms = 500, dependencies: React.DependencyList = []) => {
+export const useInterval = (callback: () => void, ms = 500) => {
 	const savedCallback = useEvent(callback)
 
 	useEffect(() => {
@@ -9,5 +9,5 @@ export const useInterval = (callback: () => void, ms = 500, dependencies: React.
 		return () => {
 			clearInterval(intervalId)
 		}
-	}, dependencies)
+	}, [ms, savedCallback])
 }
