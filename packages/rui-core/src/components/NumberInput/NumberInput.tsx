@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import NumberFormat, { type NumberFormatProps } from 'react-number-format'
 import { ChevronDown, ChevronUp } from '@rui/icons'
 
@@ -64,10 +64,9 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 		disabled: wrapperDisabled
 	} = useContext(InputWrapperContext)
 	const [internalValue, setInternalValue] = useState(value?.toString() ?? defaultValue?.toString() ?? '')
-
-	useEffect(() => {
-		setInternalValue(value?.toString() ?? '')
-	}, [value])
+	const inputRef = useRef<HTMLInputElement>(null)
+	const timeoutRef = useRef<number>()
+	const intervalRef = useRef<number>()
 
 	const error = wrapperError || inputError
 	const required = wrapperRequired || inputRequired
@@ -75,11 +74,33 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 	const disabled = wrapperDisabled || inputDisabled
 
 	const handleStep = (direction: 'up' | 'down') => {
-		const parsedNumber = parseFloat(internalValue ?? '0')
-		const numberValue = isNaN(parsedNumber) ? 0 : parsedNumber
-		const diff = direction === 'up' ? step : -step
-		setInternalValue(clampNumber(numberValue + diff, min, max).toString())
+		requestAnimationFrame(() => {
+			setInternalValue(state => {
+				const parsedNumber = parseFloat(state ?? '0')
+				const numberValue = isNaN(parsedNumber) ? 0 : parsedNumber
+				const diff = direction === 'up' ? step : -step
+				return clampNumber(numberValue + diff, min, max).toString()
+			})
+			inputRef.current?.focus()
+		})
 	}
+
+	const handleStepHold = (direction: 'up' | 'down') => {
+		timeoutRef.current = window.setTimeout(() => {
+			intervalRef.current = window.setInterval(() => {
+				handleStep(direction)
+			}, 50)
+		}, 300)
+	}
+
+	const handleStepRelease = () => {
+		clearTimeout(timeoutRef.current)
+		clearInterval(intervalRef.current)
+	}
+
+	useEffect(() => {
+		return handleStepRelease
+	}, [])
 
 	return (
 		<InputBox
@@ -95,14 +116,20 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 								variant="text"
 								size="xs"
 								color="surface.onBase"
-								onClick={() => handleStep('up')}>
+								onPointerDown={() => handleStepHold('up')}
+								onPointerUp={() => handleStepRelease()}
+								onPointerOut={() => handleStepRelease()}
+								tabIndex={-1}>
 								<ChevronUp />
 							</IconButton>
 							<IconButton
 								variant="text"
 								size="xs"
 								color="surface.onBase"
-								onClick={() => handleStep('down')}>
+								onPointerDown={() => handleStepHold('down')}
+								onPointerUp={() => handleStepRelease()}
+								onPointerOut={() => handleStepRelease()}
+								tabIndex={-1}>
 								<ChevronDown />
 							</IconButton>
 						</StepButtons>
@@ -111,6 +138,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 			}
 			{...otherProps}>
 			<NumberFormat
+				getInputRef={inputRef}
 				id={labelFor ?? id}
 				inputMode={inputMode}
 				name={name}
@@ -120,6 +148,20 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 				disabled={disabled}
 				readOnly={readOnly}
 				isNumericString
+				onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
+					switch (event.key) {
+						case 'ArrowUp': {
+							event.preventDefault()
+							handleStep('up')
+							break
+						}
+						case 'ArrowDown': {
+							event.preventDefault()
+							handleStep('down')
+							break
+						}
+					}
+				}}
 				onValueChange={values => {
 					onChange?.({ value: values.value, formattedValue: values.formattedValue })
 					setInternalValue(values.value)
