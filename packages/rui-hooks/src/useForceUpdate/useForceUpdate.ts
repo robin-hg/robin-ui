@@ -2,9 +2,9 @@ import { useCallback, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
 export const useForceUpdate = (onMount?: boolean) => {
-	const [, update] = useState({})
+	const [, setUpdate] = useState({})
 
-	const forceUpdate = useCallback(() => update({}), [])
+	const forceUpdate = useCallback(() => setUpdate({}), [])
 
 	useIsomorphicLayoutEffect(() => {
 		if (onMount) {
