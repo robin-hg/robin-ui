@@ -5,9 +5,9 @@ export const useInterval = (callback: () => void, ms = 500) => {
 	const savedCallback = useEvent(callback)
 
 	useEffect(() => {
-		const intervalId = setInterval(savedCallback, ms)
+		const intervalId = window.setInterval(savedCallback, ms)
 		return () => {
-			clearInterval(intervalId)
+			window.clearInterval(intervalId)
 		}
 	}, [ms, savedCallback])
 }
