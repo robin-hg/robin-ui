@@ -48,7 +48,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 						}
 					},
 					onPointerOver: (event: React.PointerEvent) => {
-						children.props.onMouseOver?.(event)
+						children.props.onPointerOver?.(event)
 						setOpen(true)
 					},
 					onPointerLeave: (event: React.PointerEvent) => {
