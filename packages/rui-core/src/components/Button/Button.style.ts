@@ -139,13 +139,11 @@ export const StyledButton = styled.button<StyledButtonProps>(
 )
 
 export const Content = styled(DynamicResizer)(({ theme }) => ({
-	'& > div': {
-		display: 'inline-flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		gap: theme.spacing.sm,
-		overflow: 'hidden'
-	}
+	display: 'inline-flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	gap: theme.spacing.sm,
+	overflow: 'hidden'
 }))
 
 export const Item = styled.span({

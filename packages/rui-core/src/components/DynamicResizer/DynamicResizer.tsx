@@ -1,9 +1,9 @@
 import type { DefaultProps } from '@rui/types'
-import React, { useRef, useState } from 'react'
-import { flushSync } from 'react-dom'
-import { useIsomorphicLayoutEffect, usePreviousState, useSize } from '@rui/hooks'
+import React, { useRef } from 'react'
+import { m } from 'framer-motion'
+import { useSize } from '@rui/hooks'
 
-import { DynamicResizeContainer } from './DynamicResizer.style'
+import { Content } from './DynamicResizer.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	/**
@@ -15,46 +15,23 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 	disableResizeWidth?: boolean
 }
 
-type Stages = 'preparing' | 'updating' | 'ready'
-
 export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { duration = 200, disableResizeHeight, disableResizeWidth, children, ...otherProps } = props
-	const [stage, setStage] = useState<Stages>('ready')
 	const contentRef = useRef<HTMLDivElement>(null)
 	const size = useSize(contentRef.current)
-	const previousSize = usePreviousState(size)
-
-	useIsomorphicLayoutEffect(() => {
-		setStage('preparing')
-		const prepareTimeout = window.setTimeout(() => flushSync(() => setStage('updating')), 10)
-		const updateTimeout = window.setTimeout(() => flushSync(() => setStage('ready')), duration - 10)
-		return () => {
-			window.clearTimeout(prepareTimeout)
-			window.clearTimeout(updateTimeout)
-		}
-	}, [children])
-
-	const [width, height] = (() => {
-		switch (stage) {
-			case 'preparing':
-				return [previousSize?.width, previousSize?.height]
-			case 'updating':
-				return [size?.width, size?.height]
-			case 'ready':
-			default:
-				return ['auto', 'auto']
-		}
-	})()
 
 	return (
-		<DynamicResizeContainer
+		<m.div
 			ref={ref}
-			$width={disableResizeWidth ? 'auto' : width}
-			$height={disableResizeHeight ? 'auto' : height}
-			$duration={duration}
-			{...otherProps}>
-			<div ref={contentRef}>{children}</div>
-		</DynamicResizeContainer>
+			animate={{
+				height: (!disableResizeHeight && size?.height) || 'auto',
+				width: (!disableResizeWidth && size?.width) || 'auto'
+			}}
+			transition={{ duration: duration / 1000, ease: 'easeOut' }}>
+			<Content ref={contentRef} {...otherProps}>
+				{children}
+			</Content>
+		</m.div>
 	)
 })
 
