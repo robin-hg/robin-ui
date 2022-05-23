@@ -3,6 +3,8 @@ import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
 import { AnimatePresence, m, type Variants } from 'framer-motion'
 import { sxc } from '@rui/styles'
+import { useTheme } from '@rui/hooks'
+import { camelCase } from '@rui/utils'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	in?: boolean
@@ -17,17 +19,19 @@ const TransitionFactory = (animation: Variants) => {
 		const {
 			in: inProp,
 			duration = 200,
-			ease = 'easeOut',
+			ease: easeOverride,
 			unmountOnExit,
 			motionOnly,
 			children,
 			...otherProps
 		} = props
+		const { transition } = useTheme()
+		const ease = easeOverride || camelCase(transition.ease || '')
 
 		const show = unmountOnExit ? inProp : true
 		const animate = inProp ? 'enter' : 'exit'
 
-		const transition = (
+		const transitionComponent = (
 			<m.div
 				initial={unmountOnExit ? 'exit' : false}
 				animate={animate}
@@ -41,10 +45,10 @@ const TransitionFactory = (animation: Variants) => {
 		)
 
 		if (motionOnly) {
-			return transition
+			return transitionComponent
 		}
 
-		return <AnimatePresence initial={false}>{show && transition}</AnimatePresence>
+		return <AnimatePresence initial={false}>{show && transitionComponent}</AnimatePresence>
 	})
 
 	Transition.displayName = 'Collapse'
