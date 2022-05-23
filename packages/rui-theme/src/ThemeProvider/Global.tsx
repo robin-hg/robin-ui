@@ -30,10 +30,6 @@ export const Global = () => (
 					padding: 0,
 					boxSizing: 'inherit'
 				},
-				'img, picture, video, canvas, svg': {
-					display: 'block',
-					maxWidth: '100%'
-				},
 				'@media (prefers-reduced-motion)': {
 					html: {
 						scrollBehavior: 'auto'
