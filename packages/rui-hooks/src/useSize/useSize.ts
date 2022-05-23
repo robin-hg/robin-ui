@@ -1,9 +1,8 @@
-import { useState, startTransition } from 'react'
-import { useEventListener } from '../useEventListener'
+import { useState, startTransition, useEffect } from 'react'
 import { useForceUpdate } from '../useForceUpdate'
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
-export const useSize = (element: HTMLElement | null, dependencies: React.DependencyList = []) => {
+export const useSize = (element: HTMLElement | null) => {
 	const [size, setSize] = useState<DOMRect>()
 	useForceUpdate(true)
 
@@ -13,8 +12,17 @@ export const useSize = (element: HTMLElement | null, dependencies: React.Depende
 			setSize(rect)
 		})
 
-	useIsomorphicLayoutEffect(getSize, [element, ...dependencies])
-	useEventListener('resize', getSize)
+	useIsomorphicLayoutEffect(getSize, [element])
+
+	useEffect(() => {
+		const observer = new ResizeObserver(getSize)
+		if (element) {
+			observer.observe(element)
+			return () => {
+				observer.unobserve(element)
+			}
+		}
+	}, [element])
 
 	return size
 }

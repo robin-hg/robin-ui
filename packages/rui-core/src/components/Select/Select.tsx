@@ -52,7 +52,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const boxRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(boxRef, ref)
 	const [open, setOpen] = useState(false)
-	const size = useSize(boxRef.current, [value])
+	const size = useSize(boxRef.current)
 	const {
 		labelId,
 		labelFor,
