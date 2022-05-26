@@ -18,7 +18,7 @@ export const TableCaption = React.forwardRef<HTMLTableCaptionElement, Props>((pr
 		<StyledTableCaption
 			ref={ref}
 			$align={align}
-			$padding={padding || tablePadding}
+			$padding={padding ?? tablePadding}
 			$captionSide={captionSide}
 			{...otherProps}>
 			{children}
