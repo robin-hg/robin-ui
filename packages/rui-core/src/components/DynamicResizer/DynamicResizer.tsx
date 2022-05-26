@@ -32,8 +32,8 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
 	const { transition } = useTheme()
 
 	const ease = easeOverride || camelCase(transition.ease || '')
-	const height = size?.height || 0
-	const width = size?.width || 0
+	const height = size?.height || 'auto'
+	const width = size?.width || 'auto'
 
 	return (
 		<m.div
