@@ -11,7 +11,7 @@
 		"@rui/theme": "workspace:*",
 		"@rui/types": "workspace:*",
 		"@rui/utils": "workspace:*",
-		"framer-motion": "^6.3.3",
+		"framer-motion": "^6.3.4",
 		"react-number-format": "^4.9.3"
 	},
 	"peerDependencies": {
