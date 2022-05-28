@@ -4,7 +4,7 @@
 	"main": "./src/index.ts",
 	"sideEffects": false,
 	"scripts": {
-		"clean": "rm -rf dist *.tsbuildinfo",
+		"clean": "rm -rf dist tsconfig.prod.tsbuildinfo",
 		"build": "yarn clean && tsc -p ./tsconfig.prod.json"
 	},
 	"dependencies": {
