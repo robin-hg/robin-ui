@@ -10,9 +10,6 @@
 		"allowSyntheticDefaultImports": true,
 		"preserveValueImports": true,
 		"isolatedModules": true,
-		"sourceMap": true,
-		"declaration": true,
-		"declarationDir": "dist",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"forceConsistentCasingInFileNames": true

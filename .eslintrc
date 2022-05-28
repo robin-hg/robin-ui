@@ -18,6 +18,9 @@
 			"version": "detect"
 		}
 	},
+	"env": {
+		"node": true
+	},
 	"rules": {
 		"curly": "error",
 		"dot-notation": "error",

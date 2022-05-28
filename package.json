@@ -8,7 +8,7 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build": "rm -rf dist && tsc -p ./tsconfig.prod.json && tsc-alias -p tsconfig.prod.json",
+		"build": "yarn workspaces foreach -vip run build",
 		"build:storybook": "rm -rf demo && build-storybook -o demo",
 		"dev": "start-storybook -p 5000 --ci",
 		"lint": "eslint --ext .ts,.tsx packages && tsc -p tsconfig.json --noEmit"
