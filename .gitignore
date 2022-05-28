@@ -27,6 +27,8 @@ demo
 .npm
 .env
 
+*.tsbuildinfo
+
 .pnp.*
 .yarn/*
 !.yarn/patches
