@@ -2,13 +2,13 @@ name: Chromatic Workflow
 
 on:
   push:
-    branches: [$default-branch]
+    branches:
+      - master
   pull_request:
 
 jobs:
   chromatic-deployment:
     name: Chromatic Deployment
-    runs-on: ubuntu-latest
     steps:
       - name: Setup
         uses: ./.github/workflows/setup.yaml
