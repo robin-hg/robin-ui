@@ -7,18 +7,16 @@ on:
   pull_request:
 
 jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    uses: ./.github/workflows/setup.yaml
+
   chromatic-deployment:
     name: Chromatic Deployment
+    needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Setup
-        uses: ./.github/workflows/setup.yaml
-
       - name: Lint
         run: yarn lint
 

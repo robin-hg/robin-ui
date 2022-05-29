@@ -5,13 +5,16 @@ on:
     types: [created]
 
 jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    uses: ./.github/workflows/setup.yaml
+
   release:
-    name: Release
+    name: Chromatic Deployment
+    needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Setup
         uses: ./.github/workflows/setup.yaml
 
