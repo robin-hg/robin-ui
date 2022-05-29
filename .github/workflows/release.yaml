@@ -5,16 +5,13 @@ on:
     types: [created]
 
 jobs:
-  setup:
-    uses: ./.github/workflows/setup.yaml
-
   release:
     name: Chromatic Deployment
     needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Setup
-        uses: ./.github/workflows/setup.yaml
+        uses: './.github/actions/setup.yaml'
 
       - name: Lint
         run: yarn lint
