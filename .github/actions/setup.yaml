@@ -3,11 +3,6 @@ name: Setup
 runs:
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-
     - name: Get Yarn cache path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
