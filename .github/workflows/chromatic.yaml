@@ -9,7 +9,6 @@ on:
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/setup.yaml
 
   chromatic-deployment:
