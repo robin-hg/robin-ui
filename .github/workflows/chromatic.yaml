@@ -16,8 +16,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup
-        uses: './.github/actions/setup.yaml'
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --immutable
 
       - name: Lint
         run: yarn lint
