@@ -6,7 +6,6 @@ on:
 
 jobs:
   setup:
-    name: Setup
     uses: ./.github/workflows/setup.yaml
 
   release:
