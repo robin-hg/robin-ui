@@ -6,6 +6,8 @@ on:
 jobs:
   setup:
     name: Setup
+    runs-on: ubuntu-latest
+    steps:
       - name: Get Yarn cache path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
