@@ -2,6 +2,7 @@ name: Chromatic Workflow
 
 on:
   push:
+    branches: [$default-branch]
   pull_request:
 
 jobs:
@@ -9,30 +10,8 @@ jobs:
     name: Chromatic Deployment
     runs-on: ubuntu-latest
     steps:
-      - name: Get Yarn cache path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: yarn install --immutable
-
-      - name: Load Yarn cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - name: Setup
+        uses: ./.github/workflows/setup.yaml
 
       - name: Lint
         run: yarn lint
