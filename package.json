@@ -8,8 +8,10 @@
 		"packages/*"
 	],
 	"scripts": {
+		"clean": "yarn workspaces foreach -vip run clean",
+		"clean:storybook": "rm -rf demo",
 		"build": "yarn workspaces foreach -vip run build",
-		"build:storybook": "rm -rf demo && build-storybook -o demo",
+		"build:storybook": "yarn clean && build-storybook -o demo",
 		"dev": "start-storybook -p 5000 --ci",
 		"lint": "eslint --ext .ts,.tsx packages && tsc -p tsconfig.json --noEmit",
 		"release": "yarn workspaces foreach npm publish"

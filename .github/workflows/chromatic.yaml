@@ -1,12 +1,12 @@
-name: Release Workflow
+name: Chromatic Workflow
 
 on:
-  release:
-    types: [created]
+  push:
+  pull_request:
 
 jobs:
-  release:
-    name: Release
+  chromatic-deployment:
+    name: Chromatic Deployment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,13 +23,8 @@ jobs:
       - name: Lint
         run: yarn lint
 
-      # - name: Test
-      #   run: yarn test
-
-      - name: Build
-        run: yarn build
-
-      - name: Publish
-        run: yarn release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Build & Deploy
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: build:storybook
