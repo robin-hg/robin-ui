@@ -7,7 +7,6 @@ on:
 jobs:
   release:
     name: Chromatic Deployment
-    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Setup
