@@ -6,5 +6,14 @@
 	"bracketSameLine": true,
 	"printWidth": 120,
 	"trailingComma": "none",
-	"arrowParens": "avoid"
+	"arrowParens": "avoid",
+	"overrides": [
+		{
+			"files": "*.yaml",
+			"options": {
+				"tabWidth": 2,
+				"useTabs": false
+			}
+		}
+	]
 }
