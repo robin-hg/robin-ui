@@ -2,6 +2,10 @@
 	"name": "@rui/styles",
 	"packageManager": "yarn@3.2.0",
 	"main": "dist/index.ts",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist tsconfig.prod.tsbuildinfo",
