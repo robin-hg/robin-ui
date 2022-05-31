@@ -45,21 +45,18 @@ export const Box = styled.input<BoxProps>(
 				borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline')
 			},
 			'&:hover': {
-				'&::after': {
-					background: theme.fn.getModifiedColor('surface', color, 'hover'),
+				'&, &::after': {
 					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
 				}
 			},
 			'&:focus-visible': {
 				outlineColor: theme.fn.getColor($color),
-				'&::after': {
-					background: theme.fn.getModifiedColor('surface', color, 'focus'),
+				'&, &::after': {
 					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus')
 				}
 			},
 			'&:active': {
-				'&::after': {
-					background: theme.fn.getModifiedColor('surface', color, 'active'),
+				'&, &::after': {
 					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
 				}
 			}

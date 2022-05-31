@@ -35,27 +35,16 @@ interface SliderThumbProps {
 }
 
 export const SliderThumb = styled.div<SliderThumbProps>(
-	({ theme, $color, $size, $disabled }) => ({
+	({ theme, $size }) => ({
 		position: 'absolute',
 		top: '50%',
 		transform: 'translate(-50%, -50%)',
 		width: theme.fn.getSize($size, theme.size),
 		height: theme.fn.getSize($size, theme.size),
 		borderRadius: theme.radius.xl,
-		background: $disabled
-			? theme.fn.getModifiedColor('surface', 'surface.onVariant', 'fadedOnBase')
-			: theme.fn.getOnColor($color),
 		transition: theme.fn.getTransition(['background', 'border', 'outline']),
 		border: `0.1rem solid ${theme.palette.outline}`,
-		outline: '0.2rem solid transparent',
-		'&:hover': {
-			background: theme.fn.getModifiedColor('surface', $color, 'hover'),
-			borderColor: theme.fn.getColor($color)
-		},
-		'&:focus-visible': {
-			borderColor: theme.fn.getColor($color),
-			outlineColor: theme.fn.getColor($color)
-		}
+		outline: '0.2rem solid transparent'
 	}),
 	({ theme, $color, $error }) => {
 		const color = $error ? 'critical.variant' : $color
@@ -63,12 +52,9 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 		const borderColor = $error ? 'critical' : color
 
 		return {
-			background: theme.fn.getColor($error ? color : 'surface'),
+			background: onColor,
 			borderColor: theme.fn.getColor($error ? borderColor : 'outline'),
 			'&:hover': {
-				background: $error
-					? theme.fn.getModifiedColor(color, onColor, 'hover')
-					: theme.fn.getModifiedColor('surface', color, 'hover'),
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
 			},
 			'&:focus-visible': {
@@ -76,9 +62,6 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 				outlineColor: theme.fn.getColor($color)
 			},
 			'&:active': {
-				background: $error
-					? theme.fn.getModifiedColor(color, onColor, 'active')
-					: theme.fn.getModifiedColor('surface', color, 'active'),
 				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
 			}
 		}
