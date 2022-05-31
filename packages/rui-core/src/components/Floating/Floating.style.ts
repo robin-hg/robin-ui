@@ -21,8 +21,7 @@ export const Arrow = styled.span<FloatingElementProps>(
 		position: 'absolute',
 		zIndex: -1,
 		border: `0.4rem solid ${theme.palette.surface.base}`,
-		transform: 'rotate(45deg)',
-		transition: theme.fn.getTransition()
+		transform: 'rotate(45deg)'
 	}),
 	({ $placement }) => {
 		switch ($placement) {
@@ -59,5 +58,6 @@ export const FloatingElement = styled(Paper)({
 	height: 'auto',
 	minWidth: 'max-content',
 	overflow: 'visible',
-	outline: 'none'
+	outline: 'none',
+	transition: 'none'
 })
