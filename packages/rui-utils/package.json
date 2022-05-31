@@ -1,14 +1,18 @@
 {
 	"name": "@rui/utils",
-	"packageManager": "yarn@3.2.0",
-	"main": "dist/index.js",
+	"main": "src/index.ts",
 	"types": "dist/index.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"src"
 	],
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist tsconfig.prod.tsbuildinfo",
 		"build": "yarn clean && tsc -p ./tsconfig.prod.json"
-	}
+	},
+	"publishConfig": {
+		"main": "dist/index.js"
+	},
+	"packageManager": "yarn@3.2.0"
 }
