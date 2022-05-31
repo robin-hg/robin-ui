@@ -1,7 +1,7 @@
 {
 	"name": "@rui/icons",
 	"packageManager": "yarn@3.2.0",
-	"main": "./src/index.ts",
+	"main": "dist/index.ts",
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist tsconfig.prod.tsbuildinfo",
