@@ -16,7 +16,7 @@
 		"lint": "yarn lint:code && yarn lint:types",
 		"lint:code": "eslint packages/**/src --ext .ts,.tsx",
 		"lint:types": "tsc --noEmit",
-		"release": "yarn workspaces foreach npm publish"
+		"release": "yarn workspaces foreach --no-private npm publish"
 	},
 	"devDependencies": {
 		"@emotion/react": "^11.9.0",
