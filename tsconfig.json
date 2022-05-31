@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
-		"target": "ES6",
-		"module": "esnext",
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"target": "ES2018",
+		"module": "ESNext",
+		"lib": ["DOM", "DOM.Iterable"],
 		"jsx": "react-jsxdev",
 		"strict": true,
 		"moduleResolution": "Node",
@@ -15,5 +15,5 @@
 		"forceConsistentCasingInFileNames": true
 	},
 	"include": ["packages"],
-	"exclude": ["**/node_modules"]
+	"exclude": ["**/node_modules", "**/dist"]
 }
