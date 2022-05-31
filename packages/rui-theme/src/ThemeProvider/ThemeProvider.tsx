@@ -15,7 +15,7 @@ interface Props {
 }
 
 export const ThemeProvider: React.FC<Props> = props => {
-	const { colorMode: initialMode = 'light', forcedColorMode, addGlobalCSS, theme = {}, children } = props
+	const { colorMode: initialMode = 'system', forcedColorMode, addGlobalCSS, theme = {}, children } = props
 	const [colorMode] = useColorMode(initialMode)
 	const themeFinal = themeFactory(
 		merge(defaultTheme, theme),
