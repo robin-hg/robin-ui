@@ -10,25 +10,6 @@ export default {
 	args: {
 		label: 'Tooltip',
 		placement: 'bottom'
-	},
-	argTypes: {
-		placement: {
-			control: { type: 'radio' },
-			options: [
-				'top',
-				'top-start',
-				'top-end',
-				'right',
-				'right-start',
-				'right-end',
-				'bottom',
-				'bottom-start',
-				'bottom-end',
-				'left',
-				'left-start',
-				'left-end'
-			]
-		}
 	}
 } as Meta<Props>
 
