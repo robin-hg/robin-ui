@@ -45,7 +45,7 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 		background: $disabled
 			? theme.fn.getModifiedColor('surface', 'surface.onVariant', 'fadedOnBase')
 			: theme.fn.getOnColor($color),
-		transition: theme.fn.getTransition(),
+		transition: theme.fn.getTransition(['background', 'border', 'outline']),
 		border: `0.1rem solid ${theme.palette.outline}`,
 		outline: '0.2rem solid transparent',
 		'&:hover': {
