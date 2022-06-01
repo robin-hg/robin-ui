@@ -123,7 +123,7 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const percentValue = (_value / (max - min)) * 100
 	const sliderColor = error ? 'critical' : color
 
-	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+	const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
 		const handleArrow = (direction: 'up' | 'down') => {
 			const newValue = clampNumber(_value + (direction === 'up' ? 1 : -1), min, max)
 			setUncontrolled(newValue)
@@ -156,7 +156,7 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					aria-valuemin={min}
 					aria-valuemax={max}
 					tabIndex={0}
-					onKeyDown={handleKeyPress}
+					onKeyDown={handleKeyDown}
 					$size={size}
 					$color={sliderColor}
 					$error={!!error}

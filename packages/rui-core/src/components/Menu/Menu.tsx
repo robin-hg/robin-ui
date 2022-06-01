@@ -34,7 +34,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const menuRef = useRef<HTMLDivElement>(null)
 	const combinedRef = useCombinedRef(ref, menuRef)
 
-	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+	const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
 		onKeyDown?.(event)
 
 		const handleArrow = (direction: 'up' | 'down') => {
@@ -68,7 +68,7 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			ref={combinedRef}
 			role={role}
 			aria-orientation="vertical"
-			onKeyDown={handleKeyPress}
+			onKeyDown={handleKeyDown}
 			onClose={onClose}
 			padding="xs"
 			$minWidth={parseSize(minWidth)}

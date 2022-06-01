@@ -23,7 +23,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	const [_activeTab, setUncontrolled] = useUncontrolled(defaultTab, activeTab)
 
-	const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+	const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
 		const handleArrow = (direction: 'right' | 'left') => {
 			const focusable = getFocusable(tabGroupRef.current, true)
 			const itemIndex = focusable.findIndex(element => element === document.activeElement)
@@ -53,7 +53,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<sxc.div ref={ref} {...otherProps}>
-			<TabGroup ref={tabGroupRef} role="tablist" aria-orientation="horizontal" onKeyDown={handleKeyPress}>
+			<TabGroup ref={tabGroupRef} role="tablist" aria-orientation="horizontal" onKeyDown={handleKeyDown}>
 				{tabs.map((tab, i) => {
 					const key = tab.props?.tabKey ?? i
 					const active = _activeTab === key
