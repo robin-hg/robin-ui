@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export const useThrottle = <T>(value: T, delay = 500) => {
+export const useThrottledValue = <T>(value: T, delay = 500) => {
 	const [throttledValue, setThrottledValue] = useState(value)
 	const timeout = useRef<number>()
 	const waitingValue = useRef<T>()
