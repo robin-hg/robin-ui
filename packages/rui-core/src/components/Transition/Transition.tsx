@@ -3,7 +3,7 @@ import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
 import { AnimatePresence, m, type Variants } from 'framer-motion'
 import { sxc } from '@rui/styles'
-import { useTheme } from '@rui/hooks'
+import { useTheme, useReducedMotion } from '@rui/hooks'
 import { camelCase } from '@rui/utils'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
@@ -27,6 +27,7 @@ const TransitionFactory = (animation: Variants) => {
 		} = props
 		const { transition } = useTheme()
 		const ease = easeOverride || camelCase(transition.ease || '')
+		const reducedMotion = useReducedMotion()
 
 		const show = unmountOnExit ? inProp : true
 		const animate = inProp ? 'enter' : 'exit'
@@ -37,7 +38,7 @@ const TransitionFactory = (animation: Variants) => {
 				animate={animate}
 				exit="exit"
 				variants={animation}
-				transition={{ duration: duration / 1000, ease }}>
+				transition={{ duration: reducedMotion ? 0 : duration / 1000, ease }}>
 				<sxc.div ref={ref} {...otherProps}>
 					{children}
 				</sxc.div>
