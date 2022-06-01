@@ -1,6 +1,6 @@
 {
 	"$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-	"changelog": ["@changesets/cli/changelog", { "repo": "robinh-jsx/robin-ui" }],
+	"changelog": ["@changesets/changelog-github", { "repo": "robinh-jsx/robin-ui" }],
 	"commit": false,
 	"fixed": [],
 	"linked": [],
