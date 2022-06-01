@@ -18,6 +18,9 @@
 		"lint:types": "tsc --noEmit",
 		"release": "yarn workspaces foreach -vip --no-private npm publish"
 	},
+	"resolutions": {
+		"@types/react": "^18.0.10"
+	},
 	"devDependencies": {
 		"@changesets/cli": "^2.22.0",
 		"@emotion/react": "^11.9.0",
