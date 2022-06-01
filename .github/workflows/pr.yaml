@@ -1,9 +1,6 @@
 name: Chromatic Workflow
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
 
 jobs:
@@ -28,7 +25,9 @@ jobs:
       - name: Lint
         run: yarn lint
 
-      - name: Build & Deploy
+      # test
+
+      - name: Build & deploy to chromatic
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

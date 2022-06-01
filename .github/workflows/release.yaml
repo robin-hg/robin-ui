@@ -30,7 +30,10 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Publish
-        run: yarn release
+      - name: Create changeset / publish to npm
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
