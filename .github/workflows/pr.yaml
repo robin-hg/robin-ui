@@ -1,11 +1,11 @@
-name: Chromatic Workflow
+name: PR Workflow
 
 on:
   pull_request:
 
 jobs:
-  chromatic-deployment:
-    name: Chromatic Deployment
+  pr-ci:
+    name: PR CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
