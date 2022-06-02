@@ -15,8 +15,8 @@ export const ImageContainer = styled.div<ImageContainerProps>(({ theme, $radius,
 	'& > img': {
 		display: 'block',
 		objectFit: $fit,
-		height: $height,
 		width: $width,
+		height: $height,
 		borderRadius: theme.fn.getSize($radius, theme.radius)
 	}
 }))

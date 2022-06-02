@@ -9,7 +9,14 @@ interface StyledButtonProps {
 export const StyledButton = styled(Button)<StyledButtonProps>(({ theme, $size }) => ({
 	boxSizing: 'content-box',
 	padding: theme.spacing.xs,
-	height: theme.fn.getSize($size, theme.size),
 	width: theme.fn.getSize($size, theme.size),
-	minWidth: 0
+	height: theme.fn.getSize($size, theme.size),
+	minWidth: 0,
+	'& > div': {
+		width: '100% !important',
+		'& svg': {
+			maxWidth: '100%',
+			maxHeight: '100%'
+		}
+	}
 }))

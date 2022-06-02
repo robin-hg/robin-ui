@@ -26,15 +26,15 @@ export const PaginationContainer = styled.div<PaginationContainerProps>(
 		}[$align])
 )
 
-export const PageButton = styled(Button)({
-	minWidth: '3.2rem',
-	height: '3.2rem',
+export const PageButton = styled(Button)(({ theme }) => ({
+	minWidth: theme.size.lg,
+	height: theme.size.lg,
 	padding: 0,
 	fontWeight: 'normal'
-})
+}))
 
 export const Elipsis = styled.div(({ theme }) => ({
-	width: '3.2rem',
+	width: theme.size.lg,
 	color: theme.palette.surface.onBase,
 	textAlign: 'center',
 	'&::before': {

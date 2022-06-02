@@ -8,7 +8,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 }
 
 export const Container = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { maxWidth = '60ch', children, ...otherProps } = props
+	const { maxWidth = '80ch', children, ...otherProps } = props
 	return (
 		<StyledContainer ref={ref} $maxWidth={maxWidth} {...otherProps}>
 			{children}
