@@ -18,7 +18,9 @@ export const Global = () => (
 				body: {
 					margin: 0,
 					padding: 0,
-					lineHeight: 1.5,
+					fontFamily: theme.typography.text.fontFamily,
+					fontSize: theme.typography.text.fontSize.md,
+					lineHeight: theme.typography.text.lineHeight.md,
 					minHeight: ['100vh', '-webkit-fill-available'],
 					background: theme.fn.getModifiedColor('background', 'primary', 'backgroundTint'),
 					color: theme.palette.background.onBase,

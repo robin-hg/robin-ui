@@ -49,7 +49,7 @@ export const decorators = [
 		const darkMode = useDarkMode()
 		return (
 			<RUIProvider colorMode={darkMode ? 'dark' : 'light'} forcedColorMode>
-				<BaseContainer>{Story()}</BaseContainer>
+				{Story()}
 			</RUIProvider>
 		)
 	}
