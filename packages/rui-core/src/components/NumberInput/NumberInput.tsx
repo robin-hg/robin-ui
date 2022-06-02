@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import NumberFormat, { type NumberFormatProps } from 'react-number-format'
-import { ChevronDown, ChevronUp } from '@rui/icons'
+import { clampNumber } from '@rui/utils'
+import { ChevronDown, ChevronUp, Minus, Plus } from '@rui/icons'
 
-import { InputBox } from '../InputBox'
 import { InputWrapperContext } from '../InputWrapper'
+import { InputBox } from '../InputBox'
 import { IconButton } from '../IconButton'
 
-import { StepButtons } from './NumberInput.style'
-import { clampNumber } from '@rui/utils'
+import { StepButtons, BigStepButton } from './NumberInput.style'
 
 export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {
 	placeholder?: string
@@ -44,6 +44,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 		precision,
 		showControl,
 		showBigControl,
+		leftAdornment,
 		rightAdornment,
 		error: inputError,
 		required: inputRequired,
@@ -86,6 +87,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 	}
 
 	const handleStepHold = (direction: 'up' | 'down') => {
+		handleStep(direction)
 		timeoutRef.current = window.setTimeout(() => {
 			intervalRef.current = window.setInterval(() => {
 				handleStep(direction)
@@ -107,9 +109,42 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 			ref={ref}
 			disabled={disabled}
 			error={error}
+			leftAdornment={
+				<>
+					{showBigControl && (
+						<BigStepButton position="left">
+							<IconButton
+								variant="text"
+								size="xs"
+								color="surface.onBase"
+								onPointerDown={() => handleStepHold('down')}
+								onPointerUp={() => handleStepRelease()}
+								onPointerOut={() => handleStepRelease()}
+								tabIndex={-1}>
+								<Minus />
+							</IconButton>
+						</BigStepButton>
+					)}
+					{leftAdornment}
+				</>
+			}
 			rightAdornment={
 				<>
 					{rightAdornment}
+					{showBigControl && (
+						<BigStepButton position="right">
+							<IconButton
+								variant="text"
+								size="xs"
+								color="surface.onBase"
+								onPointerDown={() => handleStepHold('up')}
+								onPointerUp={() => handleStepRelease()}
+								onPointerOut={() => handleStepRelease()}
+								tabIndex={-1}>
+								<Plus />
+							</IconButton>
+						</BigStepButton>
+					)}
 					{showControl && !showBigControl && (
 						<StepButtons>
 							<IconButton
