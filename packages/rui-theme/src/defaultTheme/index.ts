@@ -7,11 +7,11 @@ export const defaultTheme: BaseTheme = {
 	global: {},
 	componentStyles: {},
 	breakpoints: {
-		xs: 0,
+		xs: 320,
 		sm: 600,
 		md: 900,
 		lg: 1200,
-		xl: 1536
+		xl: 1440
 	},
 	size: {
 		xs: '1.6rem',
