@@ -5,7 +5,9 @@ export const useBreakpoint = () => {
 	const { width } = useViewportSize()
 	const theme = useTheme()
 
-	if (width < theme.breakpoints.sm) {
+	if (width < theme.breakpoints.xs) {
+		return 'xs'
+	} else if (width < theme.breakpoints.sm) {
 		return 'sm'
 	} else if (width < theme.breakpoints.md) {
 		return 'md'
