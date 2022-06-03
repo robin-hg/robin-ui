@@ -6,6 +6,7 @@ import { InputBox } from '../InputBox'
 export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children'> {
 	placeholder?: string
 	value?: string
+	defaultValue?: string
 
 	// state props
 	error?: boolean
