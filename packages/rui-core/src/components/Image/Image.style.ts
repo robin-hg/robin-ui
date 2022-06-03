@@ -10,8 +10,12 @@ interface ImageContainerProps {
 }
 
 export const ImageContainer = styled.div<ImageContainerProps>(({ theme, $radius, $width, $height, $fit }) => ({
-	position: 'relative',
-	minHeight: theme.size.xl,
+	display: 'grid',
+	gridTemplateColumns: '1fr',
+	'& > *': {
+		gridRowStart: 1,
+		gridColumnStart: 1
+	},
 	'& > img': {
 		display: 'block',
 		objectFit: $fit,
@@ -22,13 +26,11 @@ export const ImageContainer = styled.div<ImageContainerProps>(({ theme, $radius,
 }))
 
 export const Placeholder = styled(Fade)(({ theme }) => ({
-	position: 'absolute',
-	top: 0,
-	left: 0,
 	width: '100%',
 	height: '100%',
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'center',
+	padding: theme.spacing.md,
 	background: theme.palette.surface.variant
 }))
