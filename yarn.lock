@@ -2532,7 +2532,7 @@ __metadata:
     "@rui/theme": "workspace:*"
     "@rui/types": "workspace:*"
     "@rui/utils": "workspace:*"
-    framer-motion: ^6.3.6
+    framer-motion: ^6.3.8
     react-number-format: ^4.9.3
   peerDependencies:
     "@emotion/react": ^11
@@ -8552,9 +8552,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^6.3.6":
-  version: 6.3.6
-  resolution: "framer-motion@npm:6.3.6"
+"framer-motion@npm:^6.3.8":
+  version: 6.3.8
+  resolution: "framer-motion@npm:6.3.8"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     framesync: 6.0.1
@@ -8568,7 +8568,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 2d82ff7ce3fdac97a2e52aa6d92907f3ff4ba37389202e0b5efd2b0e9842ca5b3913ed325783e29edea8ccf7ba16077a0b48ec5ae548283f96b6e81ac6ae6cc5
+  checksum: 7d89b8ef21aaab7b27466cdb8b1010d64404b06dfa0f3a05ebc962254fece3e7313b03fbd7bc58945074a37b26c341a699e63b09b20c39f38787fca849f1f82b
   languageName: node
   linkType: hard
 
