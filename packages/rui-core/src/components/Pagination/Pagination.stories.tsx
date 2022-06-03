@@ -7,10 +7,9 @@ export default {
 	title: 'Navigation/Pagination',
 	component: Pagination,
 	args: {
-		currentPage: 1,
-		totalItems: 500,
-		itemsPerPage: 10,
-		maxButtons: 7,
+		page: 1,
+		count: 50,
+		siblings: 1,
 		size: 'md',
 		align: 'center'
 	},
@@ -26,7 +25,7 @@ export const Default: Story<Props> = args => {
 			{...args}
 			onChange={newPage => {
 				args.onChange?.(newPage)
-				updateArgs({ currentPage: newPage })
+				updateArgs({ page: newPage })
 			}}
 		/>
 	)

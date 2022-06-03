@@ -18,7 +18,7 @@ export const StyledButton = styled(Button)<StyledButtonProps>(({ theme, $size })
 	padding: theme.spacing.xs,
 	width: theme.fn.getSize($size, defaultSizes),
 	height: theme.fn.getSize($size, defaultSizes),
-	minWidth: 0,
+	minWidth: theme.fn.getSize($size, defaultSizes),
 	'& > div': {
 		width: '100% !important',
 		'& svg': {

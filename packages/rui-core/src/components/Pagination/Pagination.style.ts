@@ -1,5 +1,4 @@
 import styled from '@rui/styles'
-
 import { IconButton } from '../IconButton'
 
 interface PaginationContainerProps {
@@ -27,7 +26,7 @@ export const PaginationContainer = styled.div<PaginationContainerProps>(
 )
 
 export const PageButton = styled(IconButton)({
-	padding: 0,
+	width: 'auto',
 	fontWeight: 'normal',
 	transition: 'none'
 })
