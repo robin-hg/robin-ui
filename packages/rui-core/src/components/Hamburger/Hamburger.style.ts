@@ -2,17 +2,26 @@ import type { Size } from '@rui/theme'
 import styled from '@rui/styles'
 import { IconButton } from '../IconButton'
 
-export const StyledButton = styled(IconButton)(({ theme }) => ({
-	padding: theme.spacing.sm
-}))
+const defaultSizes = {
+	xs: '1.6rem',
+	sm: '2rem',
+	md: '2.4rem',
+	lg: '3.2rem',
+	xl: '4.4rem'
+}
 
-const lineWidth = {
+const defaultLineWidth = {
 	xs: '0.1rem',
-	sm: '0.1rem',
+	sm: '0.2rem',
 	md: '0.2rem',
 	lg: '0.3rem',
 	xl: '0.4rem'
 }
+
+export const StyledButton = styled(IconButton)(({ theme }) => ({
+	boxSizing: 'content-box',
+	padding: theme.spacing.xs
+}))
 
 interface LinesProp {
 	$open: boolean
@@ -24,22 +33,22 @@ export const Lines = styled.div<LinesProp>(
 		position: 'relative',
 		display: 'flex',
 		alignItems: 'center',
-		width: theme.fn.getSize($size, theme.size),
-		height: theme.fn.getSize($size, theme.size),
+		width: defaultSizes[$size],
+		height: defaultSizes[$size],
 		'& > span': {
 			display: 'block',
 			width: '100%',
-			height: lineWidth[$size],
+			height: defaultLineWidth[$size],
 			background: 'currentColor',
 			borderRadius: theme.radius.xl,
 			transition: theme.fn.getTransition(),
 			'&::before': {
 				content: '""',
 				position: 'absolute',
-				top: `calc(${lineWidth[$size]} * 2)`,
+				top: `calc(${defaultLineWidth[$size]} * 2)`,
 				left: 0,
 				width: '100%',
-				height: lineWidth[$size],
+				height: defaultLineWidth[$size],
 				background: 'currentColor',
 				borderRadius: theme.radius.xl,
 				transformOrigin: 'center',
@@ -48,10 +57,10 @@ export const Lines = styled.div<LinesProp>(
 			'&::after': {
 				content: '""',
 				position: 'absolute',
-				bottom: `calc(${lineWidth[$size]} * 2)`,
+				bottom: `calc(${defaultLineWidth[$size]} * 2)`,
 				left: 0,
 				width: '100%',
-				height: lineWidth[$size],
+				height: defaultLineWidth[$size],
 				background: 'currentColor',
 				borderRadius: theme.radius.xl,
 				transformOrigin: 'center',

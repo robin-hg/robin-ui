@@ -10,7 +10,8 @@ export default {
 		value: 0
 	},
 	argTypes: {
-		value: { control: { type: 'range', min: 0, max: 100, step: 1 } }
+		value: { control: { type: 'range', min: 0, max: 100, step: 1 } },
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

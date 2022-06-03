@@ -14,8 +14,8 @@ export const Spinner = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<SpinnerContainer ref={ref} $color={color} $size={size}>
-			<StyledSpinner $speed={`${speed}ms`} />
-			<StyledSpinner $speed={`${speed * 1.5}ms`} $trail />
+			<StyledSpinner $size={size} $speed={`${speed}ms`} />
+			<StyledSpinner $size={size} $speed={`${speed * 1.5}ms`} $trail />
 			<VisuallyHidden>Loading</VisuallyHidden>
 		</SpinnerContainer>
 	)

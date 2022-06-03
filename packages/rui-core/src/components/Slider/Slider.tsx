@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, SizeValue } from '@rui/types'
+import type { DefaultProps, ColorToken, Size } from '@rui/types'
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { clampNumber } from '@rui/utils'
 import { useCombinedRef, useSize, useUncontrolled } from '@rui/hooks'
@@ -11,7 +11,7 @@ import { Tooltip } from '../Tooltip'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange' | 'size'> {
 	color?: ColorToken
-	size?: SizeValue
+	size?: Size
 	value?: number
 	defaultValue?: number
 	min?: number
@@ -31,7 +31,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChan
 export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const {
 		color = 'primary',
-		size = 'xs',
+		size = 'md',
 		value,
 		defaultValue = 0,
 		min = 0,
@@ -145,8 +145,8 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}
 
 	return (
-		<SliderContainer ref={combinedRef} disabled={disabled} $active={active} {...otherProps}>
-			<Progress value={percentValue} color={sliderColor} noAria />
+		<SliderContainer ref={combinedRef} disabled={disabled} $active={active} $size={size} {...otherProps}>
+			<Progress value={percentValue} color={sliderColor} thickness={size} noAria />
 			<Tooltip label={_value} placement="top" open={!disabled && active} continuousUpdate>
 				<SliderThumb
 					ref={thumbRef}

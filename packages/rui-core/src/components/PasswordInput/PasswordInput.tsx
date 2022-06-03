@@ -19,7 +19,7 @@ export const PasswordInput = React.forwardRef<HTMLDivElement, Props>((props, ref
 					variant="text"
 					color="inherit"
 					onClick={() => setHidden(!hidden)}
-					aria-hidden="true"
+					aria-hidden
 					tabIndex={-1}>
 					{hidden ? <Eye /> : <EyeOff />}
 				</Button>

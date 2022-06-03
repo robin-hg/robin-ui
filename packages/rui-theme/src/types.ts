@@ -85,7 +85,6 @@ export interface BaseTheme {
 	componentStyles: Record<string, CSSObject>
 	breakpoints: Record<Size, number | string>
 	spacing: Record<Size, number | string>
-	size: Record<Size, number | string>
 	radius: Record<Size, React.CSSProperties['borderRadius']>
 	typography: {
 		heading: TypographyProperties<Size>

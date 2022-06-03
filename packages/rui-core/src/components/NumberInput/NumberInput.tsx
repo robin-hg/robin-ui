@@ -115,7 +115,6 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 						<BigStepButton position="left">
 							<IconButton
 								variant="text"
-								size="xs"
 								color="surface.onBase"
 								onPointerDown={() => handleStepHold('down')}
 								onPointerUp={() => handleStepRelease()}
@@ -135,7 +134,6 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 						<BigStepButton position="right">
 							<IconButton
 								variant="text"
-								size="xs"
 								color="surface.onBase"
 								onPointerDown={() => handleStepHold('up')}
 								onPointerUp={() => handleStepRelease()}
@@ -149,7 +147,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 						<StepButtons>
 							<IconButton
 								variant="text"
-								size="xs"
+								size="sm"
 								color="surface.onBase"
 								onPointerDown={() => handleStepHold('up')}
 								onPointerUp={() => handleStepRelease()}
@@ -159,7 +157,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 							</IconButton>
 							<IconButton
 								variant="text"
-								size="xs"
+								size="sm"
 								color="surface.onBase"
 								onPointerDown={() => handleStepHold('down')}
 								onPointerUp={() => handleStepRelease()}

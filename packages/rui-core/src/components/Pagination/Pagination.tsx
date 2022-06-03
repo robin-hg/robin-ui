@@ -1,10 +1,10 @@
-import type { DefaultProps, ColorToken } from '@rui/types'
+import type { DefaultProps, SizeValue, ColorToken } from '@rui/types'
 import React from 'react'
 
-import { PaginationContainer, PageButton, Elipsis } from './Pagination.style'
-import { ChevronLeft, ChevronRight } from '@rui/icons'
+import { PaginationContainer, PageButton } from './Pagination.style'
+import { ChevronLeft, ChevronRight, MoreHorizontal } from '@rui/icons'
 
-export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange'> {
+export interface Props extends DefaultProps<HTMLDivElement, 'size' | 'children' | 'onChange'> {
 	totalItems: number
 	itemsPerPage: number
 	currentPage: number
@@ -12,7 +12,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChan
 	 * Max number of page buttons. Min 5.
 	 * @default 7
 	 */
-	maxLength?: number
+	maxButtons?: number
 	/**
 	 * Alignment.
 	 * @default right
@@ -23,6 +23,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChan
 	 * @default primary
 	 */
 	color?: ColorToken
+	size?: SizeValue
 	onChange?: (page: number) => void
 }
 
@@ -31,26 +32,24 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 		totalItems,
 		itemsPerPage,
 		currentPage,
-		maxLength = 7,
-		align = 'right',
+		maxButtons = 7,
+		align = 'center',
 		color = 'primary',
+		size = 'md',
 		onChange,
 		...otherProps
 	} = props
 
 	const numberOfPages = Math.ceil(totalItems / itemsPerPage)
-	const numSiblings = Math.max(5, maxLength) / 2
+	const numSiblings = Math.max(5, maxButtons) / 2
 	const currentIndex = currentPage - 1
 	const minIndex = currentIndex - Math.floor(numSiblings)
 	const maxIndex = currentIndex + Math.ceil(numSiblings)
 
-	const visiblePages = Array(numberOfPages)
-		.fill(null)
-		.map((_, i) => i + 1)
-		.slice(
-			Math.max(0, minIndex + Math.min(0, numberOfPages - maxIndex)),
-			Math.min(numberOfPages, maxIndex - Math.min(0, minIndex))
-		)
+	const visiblePages = Array.from({ length: numberOfPages }, (_, i) => i + 1).slice(
+		Math.max(0, minIndex + Math.min(0, numberOfPages - maxIndex)),
+		Math.min(numberOfPages, maxIndex - Math.min(0, minIndex))
+	)
 
 	const navigate = (page: number) => {
 		if (page < 1 || page > numberOfPages) {
@@ -63,12 +62,12 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 		<PaginationContainer ref={ref} $align={align} {...otherProps}>
 			<PageButton
 				variant="text"
-				size="sm"
+				size={size}
 				color="surface.onBase"
 				disabled={currentPage === 1}
 				onClick={() => navigate(currentPage - 1)}
-				aria-label={`Go to previous page`}>
-				<ChevronLeft />
+				aria-label="Go to previous page">
+				<ChevronLeft size={size} strokeWidth={1} />
 			</PageButton>
 			{visiblePages.map((page, i) => {
 				switch (i) {
@@ -77,7 +76,11 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 						break
 					case 1:
 						if (page > 2) {
-							return <Elipsis key={page} />
+							return (
+								<PageButton key="elipsis-left" size={size} variant="text" disabled aria-hidden>
+									<MoreHorizontal size={size} strokeWidth={1} />
+								</PageButton>
+							)
 						}
 						break
 					case visiblePages.length - 1:
@@ -85,7 +88,11 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 						break
 					case visiblePages.length - 2:
 						if (page < numberOfPages - 1) {
-							return <Elipsis key={page} />
+							return (
+								<PageButton key="elipsis-right" size={size} variant="text" disabled aria-hidden>
+									<MoreHorizontal size={size} strokeWidth={1} />
+								</PageButton>
+							)
 						}
 						break
 				}
@@ -93,7 +100,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 					<PageButton
 						key={page}
 						variant={page === currentPage ? 'filled' : 'text'}
-						size="sm"
+						size={size}
 						color={page === currentPage ? color : 'surface.onBase'}
 						onClick={() => navigate(page)}
 						aria-label={`Go to page ${page}`}>
@@ -103,12 +110,12 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 			})}
 			<PageButton
 				variant="text"
-				size="sm"
+				size={size}
 				color="surface.onBase"
 				disabled={currentPage === numberOfPages}
 				onClick={() => navigate(currentPage + 1)}
-				aria-label={`Go to next page`}>
-				<ChevronRight />
+				aria-label="Go to next page">
+				<ChevronRight size={size} strokeWidth={1} />
 			</PageButton>
 		</PaginationContainer>
 	)

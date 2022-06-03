@@ -9,11 +9,11 @@ export default {
 	title: 'Icons/Icons',
 	component: Icons.ChevronDown,
 	args: {
-		size: 24,
+		size: 'md',
 		color: 'inherit'
 	},
 	argTypes: {
-		size: { control: { type: 'range', min: 12, max: 36, step: 4 } }
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

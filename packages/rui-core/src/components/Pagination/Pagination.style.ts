@@ -1,6 +1,6 @@
 import styled from '@rui/styles'
 
-import { Button } from '../Button'
+import { IconButton } from '../IconButton'
 
 interface PaginationContainerProps {
 	$align: 'left' | 'right' | 'center'
@@ -26,18 +26,8 @@ export const PaginationContainer = styled.div<PaginationContainerProps>(
 		}[$align])
 )
 
-export const PageButton = styled(Button)(({ theme }) => ({
-	minWidth: theme.size.lg,
-	height: theme.size.lg,
+export const PageButton = styled(IconButton)({
 	padding: 0,
-	fontWeight: 'normal'
-}))
-
-export const Elipsis = styled.div(({ theme }) => ({
-	width: theme.size.lg,
-	color: theme.palette.surface.onBase,
-	textAlign: 'center',
-	'&::before': {
-		content: '"..."'
-	}
-}))
+	fontWeight: 'normal',
+	transition: 'none'
+})

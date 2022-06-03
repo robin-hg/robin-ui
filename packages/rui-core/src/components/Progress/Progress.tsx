@@ -25,7 +25,7 @@ export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		value = 0,
 		color = 'primary',
 		trackColor = 'surface.variant',
-		thickness = 'sm',
+		thickness = 'md',
 		radius = 'md',
 		indeterminate,
 		animated,

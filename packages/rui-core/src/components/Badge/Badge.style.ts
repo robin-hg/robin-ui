@@ -1,6 +1,14 @@
 import type { ColorToken, SizeValue } from '@rui/theme'
 import styled from '@rui/styles'
 
+const defaultSizes = {
+	xs: '1rem',
+	sm: '1.2rem',
+	md: '1.6rem',
+	lg: '2rem',
+	xl: '2.4rem'
+}
+
 export const BadgeContainer = styled.div({
 	position: 'relative',
 	display: 'inline-block'
@@ -20,10 +28,10 @@ export const BadgeCircle = styled.div<BadgeCircleProps>(
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		padding: theme.fn.getSpacing([0, $size]),
+		padding: theme.fn.getSpacing([0, 'xs']),
 		width: 'auto',
-		height: theme.fn.getSize($size, theme.size),
-		minWidth: theme.fn.getSize($size, theme.size),
+		height: theme.fn.getSize($size, defaultSizes),
+		minWidth: theme.fn.getSize($size, defaultSizes),
 		fontSize: theme.fn.getSize($size, theme.typography.label.fontSize),
 		color: theme.fn.getOnColor($color),
 		background: theme.fn.getColor($color),

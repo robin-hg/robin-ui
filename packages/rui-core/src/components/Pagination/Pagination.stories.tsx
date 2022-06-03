@@ -9,7 +9,13 @@ export default {
 	args: {
 		currentPage: 1,
 		totalItems: 500,
-		itemsPerPage: 10
+		itemsPerPage: 10,
+		maxButtons: 7,
+		size: 'md',
+		align: 'center'
+	},
+	argTypes: {
+		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>
 

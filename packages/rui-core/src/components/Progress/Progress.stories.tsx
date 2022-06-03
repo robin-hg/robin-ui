@@ -9,7 +9,7 @@ export default {
 		value: 50,
 		color: 'primary',
 		trackColor: 'surface.variant',
-		thickness: 'sm',
+		thickness: 'md',
 		radius: 'md',
 		indeterminate: false,
 		animated: true

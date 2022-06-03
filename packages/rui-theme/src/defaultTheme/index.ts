@@ -13,13 +13,6 @@ export const defaultTheme: BaseTheme = {
 		lg: 1200,
 		xl: 1440
 	},
-	size: {
-		xs: '1.6rem',
-		sm: '2rem',
-		md: '2.4rem',
-		lg: '3.2rem',
-		xl: '4.4rem'
-	},
 	spacing: {
 		xs: '0.4rem',
 		sm: '0.8rem',

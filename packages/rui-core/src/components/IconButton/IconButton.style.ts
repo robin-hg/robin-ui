@@ -2,15 +2,22 @@ import type { SizeValue } from '@rui/theme'
 import styled from '@rui/styles'
 import { Button } from '../Button'
 
+const defaultSizes = {
+	xs: '2rem',
+	sm: '2.4rem',
+	md: '2.8rem',
+	lg: '3.6rem',
+	xl: '4.8rem'
+}
+
 interface StyledButtonProps {
 	$size: SizeValue
 }
 
 export const StyledButton = styled(Button)<StyledButtonProps>(({ theme, $size }) => ({
-	boxSizing: 'content-box',
 	padding: theme.spacing.xs,
-	width: theme.fn.getSize($size, theme.size),
-	height: theme.fn.getSize($size, theme.size),
+	width: theme.fn.getSize($size, defaultSizes),
+	height: theme.fn.getSize($size, defaultSizes),
 	minWidth: 0,
 	'& > div': {
 		width: '100% !important',

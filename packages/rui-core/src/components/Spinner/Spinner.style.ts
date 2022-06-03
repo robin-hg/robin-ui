@@ -1,6 +1,22 @@
 import type { ColorToken, SizeValue } from '@rui/theme'
 import styled, { keyframes } from '@rui/styles'
 
+const defaultSizes = {
+	xs: '1.6rem',
+	sm: '2rem',
+	md: '2.4rem',
+	lg: '3.2rem',
+	xl: '4.4rem'
+}
+
+const defaultThickness = {
+	xs: '0.1rem',
+	sm: '0.2rem',
+	md: '0.2rem',
+	lg: '0.3rem',
+	xl: '0.4rem'
+}
+
 const spin = keyframes`
 	0% {
 		transform: rotate(0deg);
@@ -20,23 +36,24 @@ export const SpinnerContainer = styled.div<SpinnerContainerProps>(({ theme, $col
 	position: 'relative',
 	display: 'inline-block',
 	color: theme.fn.getColor($color),
-	width: theme.fn.getSize($size, theme.size),
-	height: theme.fn.getSize($size, theme.size)
+	width: theme.fn.getSize($size, defaultSizes),
+	height: theme.fn.getSize($size, defaultSizes)
 }))
 
 interface StyledSpinnerProps {
+	$size: SizeValue
 	$speed: string
 	$trail?: boolean
 }
 
-export const StyledSpinner = styled.div<StyledSpinnerProps>(({ theme, $speed, $trail }) => ({
+export const StyledSpinner = styled.div<StyledSpinnerProps>(({ theme, $size, $speed, $trail }) => ({
 	position: 'absolute',
 	top: 0,
 	left: 0,
 	width: '100%',
 	height: '100%',
 	display: 'inline-block',
-	border: '0.2rem solid transparent',
+	border: `${theme.fn.getSize($size, defaultThickness)} solid transparent`,
 	borderTopColor: 'currentColor',
 	borderRightColor: 'currentColor',
 	borderRadius: theme.radius.xl,

@@ -3,6 +3,14 @@ import styled from '@rui/styles'
 
 import { BaseContainer } from '../BaseContainer'
 
+const defaultSizes = {
+	xs: '2rem',
+	sm: '2.4rem',
+	md: '2.8rem',
+	lg: '3.2rem',
+	xl: '4.4rem'
+}
+
 interface AvatarContainerProps {
 	$color: ColorToken
 	$size: SizeValue
@@ -14,8 +22,8 @@ export const AvatarContainer = styled(BaseContainer)<AvatarContainerProps>(({ th
 	display: 'inline-flex',
 	alignItems: 'center',
 	justifyContent: 'center',
-	width: theme.fn.getSize($size, theme.size),
-	height: theme.fn.getSize($size, theme.size),
+	width: theme.fn.getSize($size, defaultSizes),
+	height: theme.fn.getSize($size, defaultSizes),
 	fontSize: theme.fn.getSize($size, theme.typography.label.fontSize),
 	lineHeight: '100%',
 	color: theme.fn.getOnColor($color),

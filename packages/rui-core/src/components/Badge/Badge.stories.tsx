@@ -7,10 +7,10 @@ export default {
 	title: 'Display/Badge',
 	component: Badge,
 	args: {
-		position: 'top-start',
+		position: 'top-end',
 		color: 'primary',
-		size: 'xs',
-		content: 'New'
+		size: 'md',
+		content: '3'
 	},
 	argTypes: {
 		position: { control: { type: 'radio' }, options: ['top-start', 'top-end', 'bottom-start', 'bottom-end'] },

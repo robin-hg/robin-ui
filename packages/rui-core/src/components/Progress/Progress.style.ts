@@ -1,6 +1,14 @@
 import type { ColorToken, SizeValue } from '@rui/theme'
 import styled, { keyframes } from '@rui/styles'
 
+const defaultThickness = {
+	xs: '0.4rem',
+	sm: '0.6rem',
+	md: '0.8rem',
+	lg: '1rem',
+	xl: '1.2rem'
+}
+
 const pulse = keyframes`
 	from {
 		width: 0%;
@@ -25,7 +33,7 @@ interface TrackProps {
 
 export const Track = styled.div<TrackProps>(({ theme, $thickness, $trackColor, $radius }) => ({
 	width: '100%',
-	height: theme.fn.getSize($thickness, theme.spacing),
+	height: theme.fn.getSize($thickness, defaultThickness),
 	overflow: 'hidden',
 	background: theme.fn.getColor($trackColor),
 	borderRadius: theme.fn.getSize($radius, theme.radius)
