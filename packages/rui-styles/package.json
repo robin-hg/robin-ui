@@ -13,8 +13,7 @@
 		"build": "yarn clean && tsc -p ./tsconfig.prod.json"
 	},
 	"dependencies": {
-		"@rui/theme": "workspace:*",
-		"@rui/utils": "workspace:*"
+		"@rui/theme": "workspace:*"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",

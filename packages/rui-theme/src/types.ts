@@ -1,5 +1,4 @@
 import type { CSSObject } from '@emotion/react'
-import type { SX } from '@rui/styles'
 import { createThemeFunctions } from './ThemeProvider/functions'
 
 export type ColorMode = 'light' | 'dark' | 'system'
@@ -81,7 +80,7 @@ export interface TypographyProperties<V extends Size> {
 }
 
 export interface BaseTheme {
-	global: SX
+	global: CSSObject
 	componentStyles: Record<string, CSSObject>
 	breakpoints: Record<Size, number | string>
 	spacing: Record<Size, number | string>
