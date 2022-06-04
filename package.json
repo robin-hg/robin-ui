@@ -15,7 +15,7 @@
 		"lint": "yarn lint:code && yarn lint:types",
 		"lint:code": "eslint packages/**/src --ext .ts,.tsx",
 		"lint:types": "tsc --noEmit",
-		"release": "yarn workspaces foreach -vip --no-private npm publish"
+		"release": "yarn build && yarn workspaces foreach -vip --no-private npm publish"
 	},
 	"resolutions": {
 		"@types/react": "^18.0.10"

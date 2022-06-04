@@ -28,9 +28,6 @@ jobs:
       # - name: Test
       #   run: yarn test
 
-      - name: Build
-        run: yarn build
-
       - name: Create changeset / publish to npm
         uses: changesets/action@v1
         with:
