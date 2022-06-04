@@ -1,4 +1,4 @@
-import { Global as EmotionGlobal } from '@emotion/react'
+import { Global as EmotionGlobal } from '@rui/styles'
 
 export const Global = () => (
 	<EmotionGlobal
