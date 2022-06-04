@@ -2575,7 +2575,6 @@ __metadata:
   resolution: "@rui/styles@workspace:packages/rui-styles"
   dependencies:
     "@rui/theme": "workspace:*"
-    "@rui/utils": "workspace:*"
   peerDependencies:
     "@emotion/react": ^11
     "@emotion/styled": ^11
@@ -2589,7 +2588,6 @@ __metadata:
   dependencies:
     "@ctrl/tinycolor": ^3.4.1
     "@rui/hooks": "workspace:*"
-    "@rui/styles": "workspace:*"
     "@rui/utils": "workspace:*"
     deepmerge: ^4.2.2
   peerDependencies:
