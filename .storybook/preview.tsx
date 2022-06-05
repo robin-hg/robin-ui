@@ -1,8 +1,9 @@
 import { themes } from '@storybook/theming'
+import type { DecoratorFn } from '@storybook/react'
 import { useDarkMode } from 'storybook-dark-mode'
 import { dark, gray } from '../packages/rui-theme/src/defaultTheme/colors'
 
-import { BaseContainer, RUIProvider } from '../packages/rui-core'
+import { RUIProvider } from '../packages/rui-core'
 
 export const parameters = {
 	previewTabs: {
@@ -44,7 +45,7 @@ export const argTypes = {
 	sx: { table: { disable: true } }
 }
 
-export const decorators = [
+export const decorators: DecoratorFn[] = [
 	Story => {
 		const darkMode = useDarkMode()
 		return (
