@@ -96,8 +96,8 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 	}
 
 	const handleStepRelease = () => {
-		clearTimeout(timeoutRef.current)
-		clearInterval(intervalRef.current)
+		window.clearTimeout(timeoutRef.current)
+		window.clearInterval(intervalRef.current)
 	}
 
 	useEffect(() => {

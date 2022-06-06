@@ -5,9 +5,9 @@ export const useTimeout = (callback: () => void, ms = 500) => {
 	const savedCallback = useEvent(callback)
 
 	useEffect(() => {
-		const timeoutId = window.setTimeout(savedCallback, ms)
+		const timeout = window.setTimeout(savedCallback, ms)
 		return () => {
-			window.clearTimeout(timeoutId)
+			window.clearTimeout(timeout)
 		}
 	}, [ms, savedCallback])
 }
