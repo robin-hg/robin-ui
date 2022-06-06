@@ -16,6 +16,7 @@ export const useStorage = <T>(
 	initialValue?: T
 ): [T | undefined, (value: T | ((current?: T) => T)) => void] => {
 	const storage = storageType === 'session' ? sessionStorage : localStorage
+	const eventName = storageType === 'session' ? 'session-storage' : 'local-storage'
 
 	const getValue = useEvent(() => {
 		const item = storage.getItem(key)
@@ -32,11 +33,11 @@ export const useStorage = <T>(
 		}
 		const newValue = runIfFn(value, storedValue)
 		storage.setItem(key, JSON.stringify(newValue))
-		dispatchEvent(new Event(storageType === 'session' ? 'session-storage' : 'local-storage'))
+		dispatchEvent(new Event(eventName))
 		setStoredValue(newValue)
 	})
 
-	useEventListener('storage', () => setStoredValue(getValue()))
+	useEventListener(eventName, () => setStoredValue(getValue()))
 
 	return [storedValue, setValue]
 }
