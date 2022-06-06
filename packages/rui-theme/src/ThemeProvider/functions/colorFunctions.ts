@@ -1,6 +1,6 @@
 import type { AugumentedTheme, ColorToken, Modifier } from '../../types'
 import tinycolor, { mostReadable } from '@ctrl/tinycolor'
-import { get, memoize } from '@rui/utils'
+import { get, memoize } from '@robin-ui/utils'
 
 const DEFAULT_SHADE = 500
 

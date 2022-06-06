@@ -1,5 +1,5 @@
 {
-	"name": "@rui/theme",
+	"name": "@robin-ui/theme",
 	"version": "0.1.0",
 	"main": "src/index.ts",
 	"types": "dist/index.d.ts",
@@ -14,8 +14,8 @@
 	},
 	"dependencies": {
 		"@ctrl/tinycolor": "^3.4.1",
-		"@rui/hooks": "workspace:*",
-		"@rui/utils": "workspace:*",
+		"@robin-ui/hooks": "workspace:*",
+		"@robin-ui/utils": "workspace:*",
 		"deepmerge": "^4.2.2"
 	},
 	"peerDependencies": {

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import NumberFormat, { type NumberFormatProps } from 'react-number-format'
-import { clampNumber } from '@rui/utils'
-import { ChevronDown, ChevronUp, Minus, Plus } from '@rui/icons'
+import { clampNumber } from '@robin-ui/utils'
+import { ChevronDown, ChevronUp, Minus, Plus } from '@robin-ui/icons'
 
 import { InputWrapperContext } from '../InputWrapper'
 import { InputBox } from '../InputBox'

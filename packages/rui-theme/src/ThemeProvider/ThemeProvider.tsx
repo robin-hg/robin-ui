@@ -1,7 +1,7 @@
 import type { BaseTheme, ColorMode } from '../types'
 import merge from 'deepmerge'
 import { ThemeProvider as EmThemeProvider } from '@emotion/react'
-import { useColorMode } from '@rui/hooks'
+import { useColorMode } from '@robin-ui/hooks'
 import { themeFactory } from './themeFactory'
 import { defaultTheme } from '../defaultTheme'
 

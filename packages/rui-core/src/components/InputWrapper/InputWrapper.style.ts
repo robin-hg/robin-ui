@@ -1,4 +1,4 @@
-import styled from '@rui/styles'
+import styled from '@robin-ui/styles'
 import { Label as _Label, Text } from '../Typography'
 
 export const Label = styled(_Label)(({ theme }) => ({

@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, SizeValue, Size } from '@rui/types'
+import type { DefaultProps, ColorToken, SizeValue, Size } from '@robin-ui/types'
 import React, { useContext } from 'react'
 import { ButtonGroupContext } from '../ButtonGroup'
 

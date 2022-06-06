@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useRef } from 'react'
 import { useFloating, shift, arrow, autoUpdate, type Placement, offset, flip } from '@floating-ui/react-dom'
-import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@rui/hooks'
+import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@robin-ui/hooks'
 import { ModalContext } from '../Modal'
 
 import { Portal } from '../Portal'

@@ -2,7 +2,16 @@
 	"$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
 	"changelog": ["@changesets/changelog-github", { "repo": "robinh-jsx/robin-ui" }],
 	"commit": false,
-	"fixed": [["@rui/core", "@rui/hooks", "@rui/icons", "@rui/styles", "@rui/theme", "@rui/types"]],
+	"fixed": [
+		[
+			"@robin-ui/core",
+			"@robin-ui/hooks",
+			"@robin-ui/icons",
+			"@robin-ui/styles",
+			"@robin-ui/theme",
+			"@robin-ui/types"
+		]
+	],
 	"linked": [],
 	"access": "public",
 	"baseBranch": "master",

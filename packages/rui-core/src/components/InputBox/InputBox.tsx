@@ -1,6 +1,6 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps } from '@robin-ui/types'
 import React, { useRef } from 'react'
-import { useSize } from '@rui/hooks'
+import { useSize } from '@robin-ui/hooks'
 
 import { Box, Adornment } from './InputBox.style'
 

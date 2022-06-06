@@ -1,4 +1,4 @@
-import styled from '@rui/styles'
+import styled from '@robin-ui/styles'
 
 export const StyledBaseContainer = styled.div(({ theme }) => ({
 	fontFamily: theme.typography.text.fontFamily,

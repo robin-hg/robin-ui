@@ -1,5 +1,5 @@
-import type { SizeValue } from '@rui/types'
-import styled from '@rui/styles'
+import type { SizeValue } from '@robin-ui/types'
+import styled from '@robin-ui/styles'
 
 interface StyledContainerProps {
 	$maxWidth: SizeValue

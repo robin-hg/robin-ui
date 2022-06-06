@@ -1,4 +1,4 @@
-# @rui/theme
+# @robin-ui/theme
 
 Robin UI default theme configuration with dark mode support.
 

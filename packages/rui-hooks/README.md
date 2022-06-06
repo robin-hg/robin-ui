@@ -1,4 +1,4 @@
-# @rui/hooks
+# @robin-ui/hooks
 
 A collection of handy React hooks
 

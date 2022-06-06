@@ -1,9 +1,9 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps } from '@robin-ui/types'
 import type { Easing } from 'framer-motion/types/types'
 import React, { useRef } from 'react'
 import { m } from 'framer-motion'
-import { useSize, useTheme, useReducedMotion } from '@rui/hooks'
-import { camelCase } from '@rui/utils'
+import { useSize, useTheme, useReducedMotion } from '@robin-ui/hooks'
+import { camelCase } from '@robin-ui/utils'
 
 import { Content } from './DynamicResizer.style'
 

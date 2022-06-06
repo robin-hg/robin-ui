@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import { wait } from '@rui/utils'
+import { wait } from '@robin-ui/utils'
 
 import { AsyncButton, type Props } from './AsyncButton'
 

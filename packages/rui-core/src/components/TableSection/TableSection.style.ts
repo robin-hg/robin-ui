@@ -1,4 +1,4 @@
-import styled from '@rui/styles'
+import styled from '@robin-ui/styles'
 
 interface StyledTableSectionProps {
 	$variant: 'thead' | 'tbody' | 'tfoot'

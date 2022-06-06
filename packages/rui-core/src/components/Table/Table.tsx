@@ -1,4 +1,4 @@
-import type { DefaultProps, SizeValue, ColorToken } from '@rui/types'
+import type { DefaultProps, SizeValue, ColorToken } from '@robin-ui/types'
 import React, { useMemo } from 'react'
 
 export const TableContext = React.createContext<{

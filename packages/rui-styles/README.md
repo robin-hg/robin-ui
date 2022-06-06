@@ -1,4 +1,4 @@
-# @rui/styles
+# @robin-ui/styles
 
 [Emotion](https://emotion.sh/) based css-in-js for Robin-UI
 
@@ -6,10 +6,10 @@
 
 ```sh
 # yarn
-$ yarn add @rui/styles @emotion/react@^11 @emotion/styled@^11
+$ yarn add @robin-ui/styles @emotion/react@^11 @emotion/styled@^11
 
 # npm
-$ npm i @rui/styles @emotion/react@^11 @emotion/styled@^11
+$ npm i @robin-ui/styles @emotion/react@^11 @emotion/styled@^11
 ```
 
 ## License

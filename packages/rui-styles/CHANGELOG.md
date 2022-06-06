@@ -1,4 +1,4 @@
-# @rui/styles
+# @robin-ui/styles
 
 ## 0.1.0
 
@@ -9,4 +9,4 @@
 ### Patch Changes
 
 -   Updated dependencies [[`01cfedd`](https://github.com/robinh-jsx/robin-ui/commit/01cfeddd70c03119b7b8811ed47d2d88119c5075)]:
-    -   @rui/theme@0.1.0
+    -   @robin-ui/theme@0.1.0

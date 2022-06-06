@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
-import { wait } from '@rui/utils'
+import { wait } from '@robin-ui/utils'
 import { ModalContext } from '../Modal'
 
 import { Button } from '../Button'
 import { Spinner } from '../Spinner'
-import { Check, X } from '@rui/icons'
+import { Check, X } from '@robin-ui/icons'
 import { StyledButton } from './AsyncButton.style'
 
 type States = 'ready' | 'loading' | 'complete' | 'error'

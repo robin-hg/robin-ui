@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { runIfFn } from '@rui/utils'
+import { runIfFn } from '@robin-ui/utils'
 import { useEvent } from '../useEvent'
 
 export const useSetState = <T extends Record<string, any>>(

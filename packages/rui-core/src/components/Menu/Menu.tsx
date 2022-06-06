@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
-import { parseSize, getFocusable } from '@rui/utils'
-import { useCombinedRef } from '@rui/hooks'
+import { parseSize, getFocusable } from '@robin-ui/utils'
+import { useCombinedRef } from '@robin-ui/hooks'
 
 import { Popover } from '../Popover'
 

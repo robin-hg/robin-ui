@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
-import { useTheme, useWidthQuery } from '@rui/hooks'
-import { sxc } from '@rui/styles'
+import { useTheme, useWidthQuery } from '@robin-ui/hooks'
+import { sxc } from '@robin-ui/styles'
 
 import { Grid, Stack, FlexBox, Text } from './'
 

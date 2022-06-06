@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { getFocusable } from '@rui/utils'
-import { useKeyDown } from '@rui/hooks'
+import { getFocusable } from '@robin-ui/utils'
+import { useKeyDown } from '@robin-ui/hooks'
 
 export interface Props {
 	autoFocus?: boolean

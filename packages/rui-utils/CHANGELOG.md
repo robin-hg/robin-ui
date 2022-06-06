@@ -1,4 +1,4 @@
-# @rui/utils
+# @robin-ui/utils
 
 ## 0.1.0
 

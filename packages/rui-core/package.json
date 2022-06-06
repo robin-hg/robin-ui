@@ -1,5 +1,5 @@
 {
-	"name": "@rui/core",
+	"name": "@robin-ui/core",
 	"version": "0.1.0",
 	"main": "src/index.ts",
 	"types": "dist/index.d.ts",
@@ -14,12 +14,12 @@
 	},
 	"dependencies": {
 		"@floating-ui/react-dom": "^0.7.1",
-		"@rui/hooks": "workspace:*",
-		"@rui/icons": "workspace:*",
-		"@rui/styles": "workspace:*",
-		"@rui/theme": "workspace:*",
-		"@rui/types": "workspace:*",
-		"@rui/utils": "workspace:*",
+		"@robin-ui/hooks": "workspace:*",
+		"@robin-ui/icons": "workspace:*",
+		"@robin-ui/styles": "workspace:*",
+		"@robin-ui/theme": "workspace:*",
+		"@robin-ui/types": "workspace:*",
+		"@robin-ui/utils": "workspace:*",
 		"framer-motion": "^6.3.10",
 		"react-number-format": "^4.9.3"
 	},

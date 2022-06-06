@@ -1,10 +1,10 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps } from '@robin-ui/types'
 import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
 import { AnimatePresence, m, type Variants } from 'framer-motion'
-import { sxc } from '@rui/styles'
-import { useTheme, useReducedMotion } from '@rui/hooks'
-import { camelCase } from '@rui/utils'
+import { sxc } from '@robin-ui/styles'
+import { useTheme, useReducedMotion } from '@robin-ui/hooks'
+import { camelCase } from '@robin-ui/utils'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	in?: boolean

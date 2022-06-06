@@ -1,5 +1,5 @@
-import type { ColorToken, SizeValue } from '@rui/theme'
-import styled, { keyframes } from '@rui/styles'
+import type { ColorToken, SizeValue } from '@robin-ui/theme'
+import styled, { keyframes } from '@robin-ui/styles'
 
 const defaultThickness = {
 	xs: '0.4rem',

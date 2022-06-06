@@ -1,6 +1,6 @@
-import type { DefaultProps, ColorToken } from '@rui/types'
+import type { DefaultProps, ColorToken } from '@robin-ui/types'
 import React from 'react'
-import { useId, useUncontrolled } from '@rui/hooks'
+import { useId, useUncontrolled } from '@robin-ui/hooks'
 
 import { ControlInput } from '../ControlInput'
 

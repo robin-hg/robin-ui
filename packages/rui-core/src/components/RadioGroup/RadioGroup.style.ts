@@ -1,4 +1,4 @@
-import styled from '@rui/styles'
+import styled from '@robin-ui/styles'
 import { FlexBox } from '../FlexBox'
 
 export const RadioContainer = styled(FlexBox)({

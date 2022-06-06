@@ -1,8 +1,8 @@
-import type { DefaultProps, ColorToken } from '@rui/types'
+import type { DefaultProps, ColorToken } from '@robin-ui/types'
 import React, { Children, useRef } from 'react'
-import { useUncontrolled } from '@rui/hooks'
-import { getFocusable } from '@rui/utils'
-import { sxc } from '@rui/styles'
+import { useUncontrolled } from '@robin-ui/hooks'
+import { getFocusable } from '@robin-ui/utils'
+import { sxc } from '@robin-ui/styles'
 
 import type { Props as TabPanelProps } from '../TabPanel'
 import { TransitionSwitch } from '../TransitionSwitch'

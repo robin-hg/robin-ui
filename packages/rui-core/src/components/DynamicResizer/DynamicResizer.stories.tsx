@@ -1,6 +1,6 @@
 import type { Story, Meta } from '@storybook/react'
 import { useState } from 'react'
-import { sxc } from '@rui/styles'
+import { sxc } from '@robin-ui/styles'
 
 import { DynamicResizer, type Props } from './'
 import { Paper } from '../Paper'

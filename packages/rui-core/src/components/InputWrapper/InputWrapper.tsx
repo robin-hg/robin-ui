@@ -1,5 +1,5 @@
-import { useId } from '@rui/hooks'
-import type { DefaultProps } from '@rui/types'
+import { useId } from '@robin-ui/hooks'
+import type { DefaultProps } from '@robin-ui/types'
 import React, { useMemo } from 'react'
 import { Stack } from '../Stack'
 import { Text } from '../Typography'

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
-import { ThemeProvider } from '@rui/theme'
-import { useId, useKeyDown, useTheme } from '@rui/hooks'
+import { ThemeProvider } from '@robin-ui/theme'
+import { useId, useKeyDown, useTheme } from '@robin-ui/hooks'
 
 import { Floating } from '../Floating'
 

@@ -1,4 +1,4 @@
-import type { RUITheme } from '@rui/theme'
+import type { RUITheme } from '@robin-ui/theme'
 export { css, keyframes, jsx, Global, useTheme } from '@emotion/react'
 export { default, sxc } from './styled'
 

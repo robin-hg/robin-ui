@@ -1,7 +1,7 @@
 import type { Story, Meta } from '@storybook/react'
 
 import { IconButton, type Props } from './IconButton'
-import { Settings } from '@rui/icons'
+import { Settings } from '@robin-ui/icons'
 
 export default {
 	title: 'Inputs/IconButton',

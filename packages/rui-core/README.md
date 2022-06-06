@@ -1,13 +1,13 @@
-# @rui/core
+# @robin-ui/core
 
 ## Installation
 
 ```sh
 # yarn
-$ yarn add @rui/core @emotion/react@^11 @emotion/styled@^11
+$ yarn add @robin-ui/core @emotion/react@^11 @emotion/styled@^11
 
 # npm
-$ npm i @rui/core @emotion/react@^11 @emotion/styled@^11
+$ npm i @robin-ui/core @emotion/react@^11 @emotion/styled@^11
 ```
 
 ## License

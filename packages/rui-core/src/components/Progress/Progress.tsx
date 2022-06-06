@@ -1,6 +1,6 @@
-import type { DefaultProps, SizeValue } from '@rui/types'
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
-import { clampNumber } from '@rui/utils'
+import { clampNumber } from '@robin-ui/utils'
 
 import { Bar, Track } from './Progress.style'
 

@@ -1,4 +1,4 @@
-import type { DefaultProps, SizeValue } from '@rui/types'
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import React, { useContext } from 'react'
 import { TableContext } from '../Table/Table'
 

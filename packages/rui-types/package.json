@@ -1,5 +1,5 @@
 {
-	"name": "@rui/types",
+	"name": "@robin-ui/types",
 	"version": "0.1.0",
 	"main": "src/index.ts",
 	"types": "dist/index.d.ts",
@@ -13,8 +13,8 @@
 		"build": "yarn clean && tsc -p ./tsconfig.prod.json"
 	},
 	"dependencies": {
-		"@rui/styles": "workspace:*",
-		"@rui/theme": "workspace:*"
+		"@robin-ui/styles": "workspace:*",
+		"@robin-ui/theme": "workspace:*"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",

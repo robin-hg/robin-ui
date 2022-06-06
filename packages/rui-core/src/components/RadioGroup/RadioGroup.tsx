@@ -1,6 +1,6 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps } from '@robin-ui/types'
 import React, { useContext, useMemo } from 'react'
-import { useUncontrolled } from '@rui/hooks'
+import { useUncontrolled } from '@robin-ui/hooks'
 import { InputWrapperContext } from '../InputWrapper'
 
 import { RadioContainer } from './RadioGroup.style'

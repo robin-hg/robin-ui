@@ -1,4 +1,4 @@
-import { Global as EmotionGlobal } from '@rui/styles'
+import { Global as EmotionGlobal } from '@robin-ui/styles'
 
 export const Global = () => (
 	<EmotionGlobal

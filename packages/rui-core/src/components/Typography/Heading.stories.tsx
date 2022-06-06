@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import { useTheme } from '@rui/hooks'
+import { useTheme } from '@robin-ui/hooks'
 
 import { Heading, type Props } from './Typography'
 import { Stack } from '../Stack'

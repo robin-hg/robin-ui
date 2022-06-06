@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { TextInput } from '../TextInput'
 import { Button } from '../Button'
-import { Eye, EyeOff } from '@rui/icons'
+import { Eye, EyeOff } from '@robin-ui/icons'
 
 export interface Props extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
 

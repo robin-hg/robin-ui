@@ -1,4 +1,4 @@
-import styled from '@rui/styles'
+import styled from '@robin-ui/styles'
 import { InputBox } from '../InputBox'
 
 export const SelectBox = styled(InputBox)(({ theme, active, disabled, readOnly }) => ({

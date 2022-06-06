@@ -1,5 +1,5 @@
-import type { ColorToken, Size, SizeValue } from '@rui/types'
-import styled from '@rui/styles'
+import type { ColorToken, Size, SizeValue } from '@robin-ui/types'
+import styled from '@robin-ui/styles'
 
 interface TagContainerProps {
 	$variant: 'filled' | 'faded' | 'outlined'

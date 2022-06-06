@@ -1,5 +1,5 @@
-import type { ColorToken, Size, SizeValue } from '@rui/theme'
-import styled from '@rui/styles'
+import type { ColorToken, Size, SizeValue } from '@robin-ui/theme'
+import styled from '@robin-ui/styles'
 import { DynamicResizer } from '../DynamicResizer'
 
 interface StyledButtonProps {

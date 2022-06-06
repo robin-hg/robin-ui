@@ -2511,27 +2511,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^4.2.0":
-  version: 4.2.1
-  resolution: "@rollup/pluginutils@npm:4.2.1"
-  dependencies:
-    estree-walker: ^2.0.1
-    picomatch: ^2.2.2
-  checksum: 6bc41f22b1a0f1efec3043899e4d3b6b1497b3dea4d94292d8f83b4cf07a1073ecbaedd562a22d11913ff7659f459677b01b09e9598a98936e746780ecc93a12
-  languageName: node
-  linkType: hard
-
-"@rui/core@workspace:packages/rui-core":
+"@robin-ui/core@workspace:packages/rui-core":
   version: 0.0.0-use.local
-  resolution: "@rui/core@workspace:packages/rui-core"
+  resolution: "@robin-ui/core@workspace:packages/rui-core"
   dependencies:
     "@floating-ui/react-dom": ^0.7.1
-    "@rui/hooks": "workspace:*"
-    "@rui/icons": "workspace:*"
-    "@rui/styles": "workspace:*"
-    "@rui/theme": "workspace:*"
-    "@rui/types": "workspace:*"
-    "@rui/utils": "workspace:*"
+    "@robin-ui/hooks": "workspace:*"
+    "@robin-ui/icons": "workspace:*"
+    "@robin-ui/styles": "workspace:*"
+    "@robin-ui/theme": "workspace:*"
+    "@robin-ui/types": "workspace:*"
+    "@robin-ui/utils": "workspace:*"
     framer-motion: ^6.3.10
     react-number-format: ^4.9.3
   peerDependencies:
@@ -2542,13 +2532,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rui/hooks@workspace:*, @rui/hooks@workspace:packages/rui-hooks":
+"@robin-ui/hooks@workspace:*, @robin-ui/hooks@workspace:packages/rui-hooks":
   version: 0.0.0-use.local
-  resolution: "@rui/hooks@workspace:packages/rui-hooks"
+  resolution: "@robin-ui/hooks@workspace:packages/rui-hooks"
   dependencies:
-    "@rui/styles": "workspace:*"
-    "@rui/types": "workspace:*"
-    "@rui/utils": "workspace:*"
+    "@robin-ui/styles": "workspace:*"
+    "@robin-ui/types": "workspace:*"
+    "@robin-ui/utils": "workspace:*"
   peerDependencies:
     "@emotion/react": ^11
     "@emotion/styled": ^11
@@ -2556,13 +2546,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rui/icons@workspace:*, @rui/icons@workspace:packages/rui-icons":
+"@robin-ui/icons@workspace:*, @robin-ui/icons@workspace:packages/rui-icons":
   version: 0.0.0-use.local
-  resolution: "@rui/icons@workspace:packages/rui-icons"
+  resolution: "@robin-ui/icons@workspace:packages/rui-icons"
   dependencies:
-    "@rui/hooks": "workspace:*"
-    "@rui/styles": "workspace:*"
-    "@rui/types": "workspace:*"
+    "@robin-ui/hooks": "workspace:*"
+    "@robin-ui/styles": "workspace:*"
+    "@robin-ui/types": "workspace:*"
   peerDependencies:
     "@emotion/react": ^11
     "@emotion/styled": ^11
@@ -2570,11 +2560,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rui/styles@workspace:*, @rui/styles@workspace:packages/rui-styles":
+"@robin-ui/styles@workspace:*, @robin-ui/styles@workspace:packages/rui-styles":
   version: 0.0.0-use.local
-  resolution: "@rui/styles@workspace:packages/rui-styles"
+  resolution: "@robin-ui/styles@workspace:packages/rui-styles"
   dependencies:
-    "@rui/theme": "workspace:*"
+    "@robin-ui/theme": "workspace:*"
   peerDependencies:
     "@emotion/react": ^11
     "@emotion/styled": ^11
@@ -2582,13 +2572,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rui/theme@workspace:*, @rui/theme@workspace:packages/rui-theme":
+"@robin-ui/theme@workspace:*, @robin-ui/theme@workspace:packages/rui-theme":
   version: 0.0.0-use.local
-  resolution: "@rui/theme@workspace:packages/rui-theme"
+  resolution: "@robin-ui/theme@workspace:packages/rui-theme"
   dependencies:
     "@ctrl/tinycolor": ^3.4.1
-    "@rui/hooks": "workspace:*"
-    "@rui/utils": "workspace:*"
+    "@robin-ui/hooks": "workspace:*"
+    "@robin-ui/utils": "workspace:*"
     deepmerge: ^4.2.2
   peerDependencies:
     "@emotion/react": ^11
@@ -2597,12 +2587,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rui/types@workspace:*, @rui/types@workspace:packages/rui-types":
+"@robin-ui/types@workspace:*, @robin-ui/types@workspace:packages/rui-types":
   version: 0.0.0-use.local
-  resolution: "@rui/types@workspace:packages/rui-types"
+  resolution: "@robin-ui/types@workspace:packages/rui-types"
   dependencies:
-    "@rui/styles": "workspace:*"
-    "@rui/theme": "workspace:*"
+    "@robin-ui/styles": "workspace:*"
+    "@robin-ui/theme": "workspace:*"
   peerDependencies:
     "@emotion/react": ^11
     "@emotion/styled": ^11
@@ -2610,11 +2600,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rui/utils@workspace:*, @rui/utils@workspace:packages/rui-utils":
+"@robin-ui/utils@workspace:*, @robin-ui/utils@workspace:packages/rui-utils":
   version: 0.0.0-use.local
-  resolution: "@rui/utils@workspace:packages/rui-utils"
+  resolution: "@robin-ui/utils@workspace:packages/rui-utils"
   languageName: unknown
   linkType: soft
+
+"@rollup/pluginutils@npm:^4.2.0":
+  version: 4.2.1
+  resolution: "@rollup/pluginutils@npm:4.2.1"
+  dependencies:
+    estree-walker: ^2.0.1
+    picomatch: ^2.2.2
+  checksum: 6bc41f22b1a0f1efec3043899e4d3b6b1497b3dea4d94292d8f83b4cf07a1073ecbaedd562a22d11913ff7659f459677b01b09e9598a98936e746780ecc93a12
+  languageName: node
+  linkType: hard
 
 "@storybook/addon-a11y@npm:^6.5.6":
   version: 6.5.6

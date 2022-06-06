@@ -1,5 +1,5 @@
-import type { ColorToken, SizeValue } from '@rui/theme'
-import styled from '@rui/styles'
+import type { ColorToken, SizeValue } from '@robin-ui/theme'
+import styled from '@robin-ui/styles'
 
 const defaultSizes = {
 	xs: '1rem',

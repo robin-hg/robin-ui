@@ -1,5 +1,5 @@
-import type { ColorToken } from '@rui/theme'
-import styled from '@rui/styles'
+import type { ColorToken } from '@robin-ui/theme'
+import styled from '@robin-ui/styles'
 import { Paper } from '../Paper'
 
 interface AlertContainerProps {

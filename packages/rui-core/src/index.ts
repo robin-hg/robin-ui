@@ -1,4 +1,4 @@
-export * from '@rui/types'
+export * from '@robin-ui/types'
 
 export { Accordion } from './components/Accordion'
 export { Alert } from './components/Alert'

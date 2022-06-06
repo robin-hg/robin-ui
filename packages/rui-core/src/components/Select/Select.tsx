@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { useCombinedRef, useSize, useUncontrolled } from '@rui/hooks'
+import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
 import { InputWrapperContext } from '../InputWrapper'
 
 import { InputBox } from '../InputBox'
@@ -7,7 +7,7 @@ import { Menu } from '../Menu'
 import { MenuItem } from '../MenuItem'
 
 import { SelectBox } from './Select.style'
-import { ChevronDown } from '@rui/icons'
+import { ChevronDown } from '@robin-ui/icons'
 
 interface Item {
 	value: string | number

@@ -1,10 +1,10 @@
-import type { DefaultProps, SizeValue, ColorToken } from '@rui/types'
+import type { DefaultProps, SizeValue, ColorToken } from '@robin-ui/types'
 import React from 'react'
 
 import { PaginationContainer, PageButton } from './Pagination.style'
-import { ChevronLeft, ChevronRight, MoreHorizontal } from '@rui/icons'
-import { clampNumber, range } from '@rui/utils'
-import { useUncontrolled } from '@rui/hooks'
+import { ChevronLeft, ChevronRight, MoreHorizontal } from '@robin-ui/icons'
+import { clampNumber, range } from '@robin-ui/utils'
+import { useUncontrolled } from '@robin-ui/hooks'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size' | 'children' | 'onChange'> {
 	count: number

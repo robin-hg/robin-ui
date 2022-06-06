@@ -1,7 +1,7 @@
-import type { DefaultProps, ColorToken, Size } from '@rui/types'
+import type { DefaultProps, ColorToken, Size } from '@robin-ui/types'
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { clampNumber } from '@rui/utils'
-import { useCombinedRef, useSize, useUncontrolled } from '@rui/hooks'
+import { clampNumber } from '@robin-ui/utils'
+import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
 import { InputWrapperContext } from '../InputWrapper'
 
 import { Progress } from '../Progress'

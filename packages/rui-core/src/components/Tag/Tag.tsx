@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, Size, SizeValue } from '@rui/types'
+import type { DefaultProps, ColorToken, Size, SizeValue } from '@robin-ui/types'
 import React from 'react'
 
 import { TagContainer } from './Tag.style'

@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@rui/theme'
+import { ThemeProvider } from '@robin-ui/theme'
 import { LazyMotion, domAnimation } from 'framer-motion'
 import { Global } from './Global'
 

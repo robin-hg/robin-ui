@@ -1,4 +1,4 @@
-# @rui/utils
+# @robin-ui/utils
 
 A collection of handy functions
 

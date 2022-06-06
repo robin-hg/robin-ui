@@ -1,4 +1,4 @@
-# @rui/core
+# @robin-ui/core
 
 ## 0.1.0
 
@@ -9,9 +9,9 @@
 ### Patch Changes
 
 -   Updated dependencies [[`01cfedd`](https://github.com/robinh-jsx/robin-ui/commit/01cfeddd70c03119b7b8811ed47d2d88119c5075)]:
-    -   @rui/hooks@0.1.0
-    -   @rui/icons@0.1.0
-    -   @rui/styles@0.1.0
-    -   @rui/theme@0.1.0
-    -   @rui/types@0.1.0
-    -   @rui/utils@0.1.0
+    -   @robin-ui/hooks@0.1.0
+    -   @robin-ui/icons@0.1.0
+    -   @robin-ui/styles@0.1.0
+    -   @robin-ui/theme@0.1.0
+    -   @robin-ui/types@0.1.0
+    -   @robin-ui/utils@0.1.0

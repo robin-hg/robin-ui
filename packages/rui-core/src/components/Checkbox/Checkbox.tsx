@@ -1,11 +1,11 @@
-import type { DefaultProps, ColorToken } from '@rui/types'
+import type { DefaultProps, ColorToken } from '@robin-ui/types'
 import React, { useRef } from 'react'
-import { useId, useIsomorphicLayoutEffect, useUncontrolled } from '@rui/hooks'
+import { useId, useIsomorphicLayoutEffect, useUncontrolled } from '@robin-ui/hooks'
 
 import { ControlInput } from '../ControlInput'
 
 import { Box } from './Checkbox.style'
-import { Check, Minus } from '@rui/icons'
+import { Check, Minus } from '@robin-ui/icons'
 
 export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
 	checked?: boolean

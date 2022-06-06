@@ -1,5 +1,5 @@
 {
-	"name": "@rui/hooks",
+	"name": "@robin-ui/hooks",
 	"version": "0.1.0",
 	"main": "src/index.ts",
 	"types": "dist/index.d.ts",
@@ -13,9 +13,9 @@
 		"build": "yarn clean && tsc -p ./tsconfig.prod.json"
 	},
 	"dependencies": {
-		"@rui/styles": "workspace:*",
-		"@rui/types": "workspace:*",
-		"@rui/utils": "workspace:*"
+		"@robin-ui/styles": "workspace:*",
+		"@robin-ui/types": "workspace:*",
+		"@robin-ui/utils": "workspace:*"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",

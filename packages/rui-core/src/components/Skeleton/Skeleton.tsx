@@ -1,4 +1,4 @@
-import type { DefaultProps, SizeValue } from '@rui/types'
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
 
 import { SkeletonContainer } from './Skeleton.style'

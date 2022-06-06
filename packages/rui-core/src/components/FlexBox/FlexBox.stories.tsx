@@ -1,5 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
-import styled from '@rui/styles'
+import styled from '@robin-ui/styles'
 
 import { FlexBox, type Props } from './FlexBox'
 import { Paper } from '../Paper'

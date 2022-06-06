@@ -1,8 +1,8 @@
-# @rui/types
+# @robin-ui/types
 
 Contains common types used within Robin-UI
 
-Note: These types are also re-exported by `@rui/core`
+Note: These types are also re-exported by `@robin-ui/core`
 
 ## License
 

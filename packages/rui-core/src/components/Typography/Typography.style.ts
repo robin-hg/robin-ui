@@ -1,6 +1,6 @@
-import type { SizeValue, ColorToken } from '@rui/types'
-import styled from '@rui/styles'
-import { parseSize } from '@rui/utils'
+import type { SizeValue, ColorToken } from '@robin-ui/types'
+import styled from '@robin-ui/styles'
+import { parseSize } from '@robin-ui/utils'
 
 interface StyledTextProps {
 	$variant: 'heading' | 'text' | 'label'

@@ -1,4 +1,4 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
 
 import { GridItemContainer } from './GridItem.style'

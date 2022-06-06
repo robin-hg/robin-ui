@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { useForceUpdate } from '@rui/hooks'
+import { useForceUpdate } from '@robin-ui/hooks'
 
 export interface Props {
 	/**

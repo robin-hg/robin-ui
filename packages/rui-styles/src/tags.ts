@@ -93,7 +93,7 @@ export const tags = [
 	'source',
 	'span',
 	'strong',
-	'@rui/style',
+	'@robin-ui/style',
 	'sub',
 	'summary',
 	'sup',

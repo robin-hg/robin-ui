@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, SizeValue } from '@rui/types'
+import type { DefaultProps, ColorToken, SizeValue } from '@robin-ui/types'
 import React from 'react'
 
 import { BadgeContainer, BadgeCircle } from './Badge.style'

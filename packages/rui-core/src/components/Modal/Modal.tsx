@@ -1,6 +1,6 @@
-import type { DefaultProps, Size } from '@rui/types'
+import type { DefaultProps, Size } from '@robin-ui/types'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useCombinedRef, useId, useLockWindowScroll } from '@rui/hooks'
+import { useCombinedRef, useId, useLockWindowScroll } from '@robin-ui/hooks'
 
 import { Fade } from '../Transition'
 import { FocusTrap } from '../FocusTrap'

@@ -1,7 +1,7 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps } from '@robin-ui/types'
 import React, { useRef } from 'react'
-import { useClickOutside, useCombinedRef } from '@rui/hooks'
-import { sxc } from '@rui/styles'
+import { useClickOutside, useCombinedRef } from '@robin-ui/hooks'
+import { sxc } from '@robin-ui/styles'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	onClickAway: (event: PointerEvent) => void

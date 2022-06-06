@@ -1,5 +1,5 @@
 import type { Size, SizeValue } from '../../types'
-import { parseSize, get } from '@rui/utils'
+import { parseSize, get } from '@robin-ui/utils'
 
 export const getSize = (
 	size: SizeValue,

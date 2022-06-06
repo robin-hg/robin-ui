@@ -1,5 +1,5 @@
-import type { Size } from '@rui/types'
-import { parseSize } from '@rui/utils'
+import type { Size } from '@robin-ui/types'
+import { parseSize } from '@robin-ui/utils'
 import { useTheme } from '../useTheme'
 import { useMediaQuery } from '../useMediaQuery'
 

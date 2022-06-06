@@ -1,4 +1,4 @@
-import type { SizeValue } from '@rui/theme'
+import type { SizeValue } from '@robin-ui/theme'
 import React from 'react'
 import { Button } from '../Button'
 import { StyledButton } from './IconButton.style'

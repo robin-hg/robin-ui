@@ -1,4 +1,4 @@
-import type { DefaultProps } from '@rui/types'
+import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
 import type { Easing } from 'framer-motion/types/types'
 import { AnimatePresence } from 'framer-motion'

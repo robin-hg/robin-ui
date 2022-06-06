@@ -1,4 +1,4 @@
-import type { Size } from '@rui/theme'
+import type { Size } from '@robin-ui/theme'
 import type { Theme, CSSObject, Interpolation } from '@emotion/react'
 import type { PropsWithSX } from '../types'
 import { colorProperties, spacingProperties } from './properties'
