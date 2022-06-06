@@ -2511,9 +2511,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@robin-ui/core@workspace:packages/rui-core":
+"@robin-ui/core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@robin-ui/core@workspace:packages/rui-core"
+  resolution: "@robin-ui/core@workspace:packages/core"
   dependencies:
     "@floating-ui/react-dom": ^0.7.1
     "@robin-ui/hooks": "workspace:*"
@@ -2532,9 +2532,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@robin-ui/hooks@workspace:*, @robin-ui/hooks@workspace:packages/rui-hooks":
+"@robin-ui/hooks@workspace:*, @robin-ui/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
-  resolution: "@robin-ui/hooks@workspace:packages/rui-hooks"
+  resolution: "@robin-ui/hooks@workspace:packages/hooks"
   dependencies:
     "@robin-ui/styles": "workspace:*"
     "@robin-ui/types": "workspace:*"
@@ -2546,9 +2546,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@robin-ui/icons@workspace:*, @robin-ui/icons@workspace:packages/rui-icons":
+"@robin-ui/icons@workspace:*, @robin-ui/icons@workspace:packages/icons":
   version: 0.0.0-use.local
-  resolution: "@robin-ui/icons@workspace:packages/rui-icons"
+  resolution: "@robin-ui/icons@workspace:packages/icons"
   dependencies:
     "@robin-ui/hooks": "workspace:*"
     "@robin-ui/styles": "workspace:*"
@@ -2560,9 +2560,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@robin-ui/styles@workspace:*, @robin-ui/styles@workspace:packages/rui-styles":
+"@robin-ui/styles@workspace:*, @robin-ui/styles@workspace:packages/styles":
   version: 0.0.0-use.local
-  resolution: "@robin-ui/styles@workspace:packages/rui-styles"
+  resolution: "@robin-ui/styles@workspace:packages/styles"
   dependencies:
     "@robin-ui/theme": "workspace:*"
   peerDependencies:
@@ -2572,9 +2572,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@robin-ui/theme@workspace:*, @robin-ui/theme@workspace:packages/rui-theme":
+"@robin-ui/theme@workspace:*, @robin-ui/theme@workspace:packages/theme":
   version: 0.0.0-use.local
-  resolution: "@robin-ui/theme@workspace:packages/rui-theme"
+  resolution: "@robin-ui/theme@workspace:packages/theme"
   dependencies:
     "@ctrl/tinycolor": ^3.4.1
     "@robin-ui/hooks": "workspace:*"
@@ -2587,9 +2587,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@robin-ui/types@workspace:*, @robin-ui/types@workspace:packages/rui-types":
+"@robin-ui/types@workspace:*, @robin-ui/types@workspace:packages/types":
   version: 0.0.0-use.local
-  resolution: "@robin-ui/types@workspace:packages/rui-types"
+  resolution: "@robin-ui/types@workspace:packages/types"
   dependencies:
     "@robin-ui/styles": "workspace:*"
     "@robin-ui/theme": "workspace:*"
@@ -2600,9 +2600,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@robin-ui/utils@workspace:*, @robin-ui/utils@workspace:packages/rui-utils":
+"@robin-ui/utils@workspace:*, @robin-ui/utils@workspace:packages/utils":
   version: 0.0.0-use.local
-  resolution: "@robin-ui/utils@workspace:packages/rui-utils"
+  resolution: "@robin-ui/utils@workspace:packages/utils"
   languageName: unknown
   linkType: soft
 

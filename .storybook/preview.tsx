@@ -1,9 +1,9 @@
 import { themes } from '@storybook/theming'
 import type { DecoratorFn } from '@storybook/react'
 import { useDarkMode } from 'storybook-dark-mode'
-import { dark, gray } from '../packages/rui-theme/src/defaultTheme/colors'
+import { dark, gray } from '../packages/theme/src/defaultTheme/colors'
 
-import { RUIProvider } from '../packages/rui-core'
+import { RobinProvider } from '../packages/core'
 
 export const parameters = {
 	previewTabs: {
@@ -49,9 +49,9 @@ export const decorators: DecoratorFn[] = [
 	Story => {
 		const darkMode = useDarkMode()
 		return (
-			<RUIProvider colorMode={darkMode ? 'dark' : 'light'} forcedColorMode>
+			<RobinProvider colorMode={darkMode ? 'dark' : 'light'} forcedColorMode>
 				{Story()}
-			</RUIProvider>
+			</RobinProvider>
 		)
 	}
 ]

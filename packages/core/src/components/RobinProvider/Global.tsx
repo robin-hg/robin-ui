@@ -3,7 +3,7 @@ import { Global as EmotionGlobal } from '@robin-ui/styles'
 export const Global = () => (
 	<EmotionGlobal
 		styles={theme => ({
-			'@layer rui': {
+			'@layer robin': {
 				':root': {
 					colorScheme: theme.colorMode,
 					accentColor: theme.palette.primary.base

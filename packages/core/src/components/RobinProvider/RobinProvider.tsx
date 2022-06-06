@@ -7,7 +7,7 @@ export interface Props extends React.ComponentProps<typeof ThemeProvider> {
 	addGlobalCSS?: boolean
 }
 
-export const RUIProvider: React.FC<Props> = props => {
+export const RobinProvider: React.FC<Props> = props => {
 	const { colorMode, forcedColorMode, noMotion, addGlobalCSS = true, theme, children } = props
 
 	return (

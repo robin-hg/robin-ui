@@ -110,6 +110,6 @@ export type AugumentedTheme = BaseTheme & {
 	media: Record<Size, string>
 }
 
-export interface RUITheme extends AugumentedTheme {
+export interface RobinTheme extends AugumentedTheme {
 	fn: ReturnType<typeof createThemeFunctions>
 }
