@@ -16,7 +16,9 @@ export const getColorFunctions = (theme: AugumentedTheme) => ({
 	getAlphaColor(color: ColorToken, modifier: Modifier | number) {
 		const c = this.getColor(color)
 		const colorObj = tinycolor(c)
-		return colorObj.setAlpha(typeof modifier === 'number' ? modifier : theme.colorModifiers[modifier]).toRgbString()
+		return colorObj
+			.setAlpha(typeof modifier === 'number' ? modifier : theme.colorModifiers[modifier])
+			.toHex8String()
 	},
 	getOnColor(background: ColorToken) {
 		const [base, variant = 'base'] = background.split('.')
@@ -31,12 +33,12 @@ export const getColorFunctions = (theme: AugumentedTheme) => ({
 		return (
 			mostReadable(backgroundColor, [theme.palette.surface.base, theme.palette.surface.onBase], {
 				includeFallbackColors: true
-			})?.toRgbString() || ''
+			})?.toHex8String() || ''
 		)
 	},
 	getModifiedColor(background: ColorToken, color: ColorToken, modifier: Modifier | number) {
 		const backgrounColor = this.getColor(background)
 		const layerColor = this.getAlphaColor(color, modifier)
-		return tinycolor(layerColor).onBackground(backgrounColor).toRgbString()
+		return tinycolor(layerColor).onBackground(backgrounColor).toHex8String()
 	}
 })

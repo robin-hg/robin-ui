@@ -49,7 +49,7 @@ export const defaultTheme: BaseTheme = {
 		ease: 'ease-out'
 	},
 	shadow: {
-		color: 'rgba(0, 0, 0, 0.10)',
+		color: '#0000001A',
 		generateShadow(elevation: number) {
 			if (elevation <= 0) {
 				return 'none'
