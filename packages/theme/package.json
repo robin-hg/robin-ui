@@ -2,7 +2,6 @@
 	"name": "@robin-ui/theme",
 	"version": "0.1.0",
 	"main": "src/index.ts",
-	"types": "dist/index.d.ts",
 	"files": [
 		"dist",
 		"src"
@@ -10,11 +9,10 @@
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist tsconfig.prod.tsbuildinfo",
-		"build": "yarn clean && tsc -p ./tsconfig.prod.json"
+		"build": "pnpm clean && tsc -p ./tsconfig.prod.json"
 	},
 	"dependencies": {
 		"@ctrl/tinycolor": "^3.4.1",
-		"@robin-ui/hooks": "workspace:*",
 		"@robin-ui/utils": "workspace:*",
 		"deepmerge": "^4.2.2"
 	},
@@ -24,7 +22,7 @@
 		"react": "^18"
 	},
 	"publishConfig": {
-		"main": "dist/index.js"
-	},
-	"packageManager": "yarn@3.2.0"
+		"main": "dist/index.js",
+		"types": "dist/index.d.ts"
+	}
 }

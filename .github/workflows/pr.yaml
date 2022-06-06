@@ -17,15 +17,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm i --frozen-lockfile
 
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
 
-      # test
+      # - name: Test
+      #   run: pnpm test
 
       - name: Build & deploy to chromatic
         uses: chromaui/action@v1

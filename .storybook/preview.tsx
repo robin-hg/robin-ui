@@ -1,5 +1,5 @@
-import { themes } from '@storybook/theming'
 import type { DecoratorFn } from '@storybook/react'
+import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
 import { dark, gray } from '../packages/theme/src/defaultTheme/colors'
 

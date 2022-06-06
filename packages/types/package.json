@@ -2,7 +2,6 @@
 	"name": "@robin-ui/types",
 	"version": "0.1.0",
 	"main": "src/index.ts",
-	"types": "dist/index.d.ts",
 	"files": [
 		"dist",
 		"src"
@@ -10,7 +9,7 @@
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist tsconfig.prod.tsbuildinfo",
-		"build": "yarn clean && tsc -p ./tsconfig.prod.json"
+		"build": "pnpm clean && tsc -p ./tsconfig.prod.json"
 	},
 	"dependencies": {
 		"@robin-ui/styles": "workspace:*",
@@ -22,7 +21,7 @@
 		"react": "^18"
 	},
 	"publishConfig": {
-		"main": "dist/index.js"
-	},
-	"packageManager": "yarn@3.2.0"
+		"main": "dist/index.js",
+		"types": "dist/index.d.ts"
+	}
 }

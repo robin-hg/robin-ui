@@ -1,7 +1,6 @@
 {
 	"search.exclude": {
-		"**/.yarn": true,
-		"yarn.lock": true
+		"pnpm-lock.yaml": true
 	},
 	"typescript.enablePromptUseWorkspaceTsdk": true
 }

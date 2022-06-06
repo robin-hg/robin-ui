@@ -3,5 +3,11 @@ module.exports = {
 	stories: ['../packages/**/*.stories.@(tsx|mdx)'],
 	addons: ['@storybook/addon-controls', '@storybook/addon-actions', '@storybook/addon-a11y', 'storybook-dark-mode'],
 	framework: '@storybook/react',
-	features: { emotionAlias: false, storyStoreV7: true }
+	features: { emotionAlias: false },
+	viteFinal: config => {
+		const path = require('path')
+		// workaround for hoisting issues with pnpm
+		config.root = path.dirname(require.resolve('@storybook/builder-vite'))
+		return config
+	}
 }

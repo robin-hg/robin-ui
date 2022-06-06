@@ -22,7 +22,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<>
-			<ThemeProvider colorMode={colorMode === 'light' ? 'dark' : 'light'} forcedColorMode>
+			<ThemeProvider colorMode={colorMode === 'light' ? 'dark' : 'light'}>
 				<TooltipContainer
 					ref={ref}
 					id={_id}

@@ -3,9 +3,7 @@
 	"changelog": ["@changesets/changelog-github", { "repo": "robinh-jsx/robin-ui" }],
 	"commit": false,
 	"fixed": [["@robin-ui/*"]],
-	"linked": [],
 	"access": "public",
 	"baseBranch": "master",
-	"updateInternalDependencies": "patch",
-	"ignore": []
+	"updateInternalDependencies": "patch"
 }
