@@ -5,11 +5,11 @@
 ## Installation
 
 ```sh
-# yarn
-$ yarn add @robin-ui/styles @emotion/react@^11 @emotion/styled@^11
-
 # npm
 $ npm i @robin-ui/styles @emotion/react@^11 @emotion/styled@^11
+
+# yarn
+$ yarn add @robin-ui/styles @emotion/react@^11 @emotion/styled@^11
 ```
 
 ## License

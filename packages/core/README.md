@@ -1,13 +1,15 @@
 # @robin-ui/core
 
+A simple React component library
+
 ## Installation
 
 ```sh
-# yarn
-$ yarn add @robin-ui/core @emotion/react@^11 @emotion/styled@^11
-
 # npm
 $ npm i @robin-ui/core @emotion/react@^11 @emotion/styled@^11
+
+# yarn
+$ yarn add @robin-ui/core @emotion/react@^11 @emotion/styled@^11
 ```
 
 ## License
