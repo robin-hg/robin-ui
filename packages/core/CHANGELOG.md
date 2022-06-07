@@ -1,5 +1,19 @@
 # @robin-ui/core
 
+## 0.1.2
+
+### Patch Changes
+
+-   [`24bc91d`](https://github.com/robinh-jsx/robin-ui/commit/24bc91d7b44a86207ceeb69c132686566f9a2398) Thanks [@robinh-jsx](https://github.com/robinh-jsx)! - Test release 2
+
+-   Updated dependencies [[`24bc91d`](https://github.com/robinh-jsx/robin-ui/commit/24bc91d7b44a86207ceeb69c132686566f9a2398)]:
+    -   @robin-ui/hooks@0.1.2
+    -   @robin-ui/icons@0.1.2
+    -   @robin-ui/styles@0.1.2
+    -   @robin-ui/theme@0.1.2
+    -   @robin-ui/types@0.1.2
+    -   @robin-ui/utils@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
