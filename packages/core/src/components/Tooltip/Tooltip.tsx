@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { ThemeProvider } from '@robin-ui/theme'
 import { useId, useKeyDown, useTheme } from '@robin-ui/hooks'
 
-import { Floating } from '../Floating'
+import type { Floating } from '../Floating'
 
 import { TooltipContainer } from './Tooltip.style'
 

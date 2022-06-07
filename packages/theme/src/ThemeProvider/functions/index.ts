@@ -7,7 +7,7 @@ import { getTransition } from './getTransition'
 
 type ColorFunctions = ReturnType<typeof getColorFunctions>
 
-interface ThemeFunctions extends ColorFunctions {
+export interface ThemeFunctions extends ColorFunctions {
 	getSize: typeof getSize
 	getSpacing: ReturnType<typeof getSpacing>
 	getTransition: ReturnType<typeof getTransition>

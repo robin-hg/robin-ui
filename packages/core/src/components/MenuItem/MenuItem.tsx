@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from '../Button'
+import type { Button } from '../Button'
 
 import { MenuItemContainer } from './MenuItem.style'
 

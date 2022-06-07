@@ -1,6 +1,8 @@
 import type { SizeValue } from '@robin-ui/theme'
 import React from 'react'
-import { Button } from '../Button'
+
+import type { Button } from '../Button'
+
 import { StyledButton } from './IconButton.style'
 
 export interface Props extends Omit<React.ComponentProps<typeof Button>, 'size'> {

@@ -3,8 +3,8 @@ import { useFloating, shift, arrow, autoUpdate, type Placement, offset, flip } f
 import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@robin-ui/hooks'
 import { ModalContext } from '../Modal'
 
+import type { Paper } from '../Paper'
 import { Portal } from '../Portal'
-import { Paper } from '../Paper'
 
 import { FadeContainer, Arrow, FloatingElement } from './Floating.style'
 import { FocusTrap } from '../FocusTrap'

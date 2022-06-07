@@ -1,6 +1,7 @@
 import type { Size } from '@robin-ui/theme'
 import React from 'react'
-import { IconButton } from '../IconButton'
+
+import type { IconButton } from '../IconButton'
 
 import { StyledButton, Lines } from './Hamburger.style'
 

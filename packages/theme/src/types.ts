@@ -1,5 +1,5 @@
 import type { CSSObject } from '@emotion/react'
-import { createThemeFunctions } from './ThemeProvider/functions'
+import type { ThemeFunctions } from './ThemeProvider/functions'
 
 export type ColorMode = 'light' | 'dark' | 'system'
 export type DerrivedColorMode = 'light' | 'dark'
@@ -111,5 +111,5 @@ export type AugumentedTheme = BaseTheme & {
 }
 
 export interface RobinTheme extends AugumentedTheme {
-	fn: ReturnType<typeof createThemeFunctions>
+	fn: ThemeFunctions
 }

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
 import { InputWrapperContext } from '../InputWrapper'
 
-import { InputBox } from '../InputBox'
+import type { InputBox } from '../InputBox'
 import { Menu } from '../Menu'
 import { MenuItem } from '../MenuItem'
 
