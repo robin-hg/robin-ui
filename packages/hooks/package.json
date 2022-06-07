@@ -1,6 +1,22 @@
 {
 	"name": "@robin-ui/hooks",
 	"version": "0.1.1",
+	"author": "Robin Hong <robinh.jsx@gmail.com>",
+	"description": "A collection of handy React hooks",
+	"license": "MIT",
+	"homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/robinh-jsx/robin-ui",
+		"directory": "packages/hooks"
+	},
+	"keywords": [
+		"react",
+		"hooks",
+		"library",
+		"front-end",
+		"robin ui"
+	],
 	"main": "src/index.ts",
 	"files": [
 		"dist",

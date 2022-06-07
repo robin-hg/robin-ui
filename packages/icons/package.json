@@ -1,6 +1,22 @@
 {
 	"name": "@robin-ui/icons",
 	"version": "0.1.1",
+	"author": "Robin Hong <robinh.jsx@gmail.com>",
+	"description": "A customizable React icon library made from Feather icons",
+	"license": "MIT",
+	"homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/robinh-jsx/robin-ui",
+		"directory": "packages/icons"
+	},
+	"keywords": [
+		"react",
+		"icons",
+		"library",
+		"front-end",
+		"robin ui"
+	],
 	"main": "src/index.ts",
 	"files": [
 		"dist",

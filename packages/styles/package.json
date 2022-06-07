@@ -1,6 +1,23 @@
 {
 	"name": "@robin-ui/styles",
 	"version": "0.1.1",
+	"author": "Robin Hong <robinh.jsx@gmail.com>",
+	"description": "Emotion based css-in-js solution for Robin-UI",
+	"license": "MIT",
+	"homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/robinh-jsx/robin-ui",
+		"directory": "packages/styles"
+	},
+	"keywords": [
+		"react",
+		"css-in-js",
+		"emotion",
+		"styled",
+		"front-end",
+		"robin ui"
+	],
 	"main": "src/index.ts",
 	"files": [
 		"dist",

@@ -3,6 +3,10 @@
 	"author": "Robin Hong",
 	"license": "MIT",
 	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/robinh-jsx/robin-ui"
+	},
 	"scripts": {
 		"clean": "pnpm -r --parallel clean",
 		"build": "pnpm -r --parallel build",
