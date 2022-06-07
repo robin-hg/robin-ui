@@ -26,5 +26,3 @@ demo
 *.sw?
 .npm
 .env
-
-*.tsbuildinfo
