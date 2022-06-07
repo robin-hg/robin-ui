@@ -8,7 +8,6 @@
 		"moduleResolution": "Node",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
-		"preserveValueImports": true,
 		"isolatedModules": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,

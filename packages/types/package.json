@@ -8,8 +8,10 @@
 	],
 	"sideEffects": false,
 	"scripts": {
-		"clean": "rm -rf dist tsconfig.prod.tsbuildinfo",
-		"build": "pnpm clean && tsc -p ./tsconfig.prod.json"
+		"clean": "rm -rf dist",
+		"build": "pnpm clean && concurrently pnpm:build:*",
+		"build:cjs": "tsc -p ./tsconfig.prod.json --outDir dist/cjs --module commonjs",
+		"build:esm": "tsc -p ./tsconfig.prod.json --outDir dist/esm --module esnext"
 	},
 	"dependencies": {
 		"@robin-ui/styles": "workspace:*",
@@ -21,7 +23,8 @@
 		"react": "^18"
 	},
 	"publishConfig": {
-		"main": "dist/index.js",
-		"types": "dist/index.d.ts"
+		"main": "dist/cjs/index.js",
+		"module": "dist/esm/index.js",
+		"types": "dist/types/index.d.ts"
 	}
 }

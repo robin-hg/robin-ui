@@ -4,8 +4,8 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"clean": "pnpm -r clean",
-		"build": "pnpm -r build",
+		"clean": "pnpm -r --parallel clean",
+		"build": "pnpm -r --parallel build",
 		"build:storybook": "build-storybook -o demo",
 		"dev": "start-storybook -p 5000 --ci",
 		"lint": "pnpm lint:code && pnpm lint:types",
@@ -30,6 +30,7 @@
 		"@types/react-dom": "^18.0.5",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
+		"concurrently": "^7.2.1",
 		"eslint": "^8.17.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-jsx-a11y": "^6.5.1",
