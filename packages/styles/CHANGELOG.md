@@ -1,5 +1,14 @@
 # @robin-ui/styles
 
+## 0.1.2
+
+### Patch Changes
+
+-   [`24bc91d`](https://github.com/robinh-jsx/robin-ui/commit/24bc91d7b44a86207ceeb69c132686566f9a2398) Thanks [@robinh-jsx](https://github.com/robinh-jsx)! - Test release 2
+
+-   Updated dependencies [[`24bc91d`](https://github.com/robinh-jsx/robin-ui/commit/24bc91d7b44a86207ceeb69c132686566f9a2398)]:
+    -   @robin-ui/theme@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
