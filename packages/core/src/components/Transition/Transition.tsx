@@ -3,7 +3,7 @@ import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
 import { AnimatePresence, m, type Variants } from 'framer-motion'
 import { sxc } from '@robin-ui/styles'
-import { useTheme, useReducedMotion } from '@robin-ui/hooks'
+import { useTheme } from '@robin-ui/hooks'
 import { camelCase } from '@robin-ui/utils'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
@@ -27,18 +27,14 @@ const TransitionFactory = (animation: Variants) => {
 		} = props
 		const { transition } = useTheme()
 		const ease = easeOverride || camelCase(transition.ease || '')
-		const reducedMotion = useReducedMotion()
-
-		const show = unmountOnExit ? inProp : true
-		const animate = inProp ? 'enter' : 'exit'
 
 		const transitionComponent = (
 			<m.div
 				initial={unmountOnExit ? 'exit' : false}
-				animate={animate}
+				animate={inProp ? 'enter' : 'exit'}
 				exit="exit"
 				variants={animation}
-				transition={{ duration: reducedMotion ? 0 : duration / 1000, ease }}>
+				transition={{ duration: duration / 1000, ease }}>
 				<sxc.div ref={ref} {...otherProps}>
 					{children}
 				</sxc.div>
@@ -48,6 +44,8 @@ const TransitionFactory = (animation: Variants) => {
 		if (motionOnly) {
 			return transitionComponent
 		}
+
+		const show = unmountOnExit ? inProp : true
 
 		return <AnimatePresence initial={false}>{show && transitionComponent}</AnimatePresence>
 	})

@@ -2,7 +2,7 @@ import type { DefaultProps } from '@robin-ui/types'
 import type { Easing } from 'framer-motion/types/types'
 import React, { useRef } from 'react'
 import { m } from 'framer-motion'
-import { useSize, useTheme, useReducedMotion } from '@robin-ui/hooks'
+import { useSize, useTheme } from '@robin-ui/hooks'
 import { camelCase } from '@robin-ui/utils'
 
 import { Content } from './DynamicResizer.style'
@@ -30,7 +30,6 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
 	const contentRef = useRef<HTMLDivElement>(null)
 	const size = useSize(contentRef.current)
 	const { transition } = useTheme()
-	const reducedMotion = useReducedMotion()
 
 	const ease = easeOverride || camelCase(transition.ease || '')
 	const height = size?.height || 'auto'
@@ -43,7 +42,7 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
 				height: disableResizeHeight ? 'auto' : height,
 				width: disableResizeWidth ? 'auto' : width
 			}}
-			transition={{ duration: reducedMotion ? 0 : duration / 1000, ease }}>
+			transition={{ duration: duration / 1000, ease }}>
 			<Content ref={contentRef} {...otherProps}>
 				{children}
 			</Content>
