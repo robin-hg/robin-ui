@@ -7,7 +7,8 @@ import { ControlInput } from '../ControlInput'
 
 import { Circle } from './Radio.style'
 
-export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
+export interface Props
+	extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
 	label?: number | string
 	labelPosition?: 'left' | 'right'
 	color?: ColorToken
@@ -51,7 +52,10 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 	} = useContext(RadioGroupContext)
 	const _id = useId(id)
 	const inGroup = !!groupOnChange
-	const [_checked, setUncontrolled] = useUncontrolled(!!defaultValue, inGroup ? value === groupValue : checked)
+	const [_checked, setUncontrolled] = useUncontrolled(
+		!!defaultValue,
+		inGroup ? value === groupValue : checked
+	)
 
 	return (
 		<ControlInput

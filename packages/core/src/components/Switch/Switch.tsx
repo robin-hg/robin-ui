@@ -6,7 +6,8 @@ import { ControlInput } from '../ControlInput'
 
 import { Box } from './Switch.style'
 
-export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
+export interface Props
+	extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
 	color?: ColorToken
 	label?: number | string
 	labelPosition?: 'left' | 'right'

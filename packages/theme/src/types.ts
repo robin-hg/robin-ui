@@ -7,7 +7,14 @@ export type DerrivedColorMode = 'light' | 'dark'
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number
 
-export type Modifier = 'backgroundTint' | 'tint' | 'hover' | 'focus' | 'active' | 'fadedBase' | 'fadedOnBase'
+export type Modifier =
+	| 'backgroundTint'
+	| 'tint'
+	| 'hover'
+	| 'focus'
+	| 'active'
+	| 'fadedBase'
+	| 'fadedOnBase'
 
 type DefaultColor =
 	| 'gray'
@@ -50,10 +57,18 @@ interface PaletteColorWithVariant extends PaletteColor {
 }
 
 type PaletteKey = 'background'
-type PaletteKeyWithVariant = 'primary' | 'secondary' | 'critical' | 'warning' | 'info' | 'success' | 'surface'
+type PaletteKeyWithVariant =
+	| 'primary'
+	| 'secondary'
+	| 'critical'
+	| 'warning'
+	| 'info'
+	| 'success'
+	| 'surface'
 
 // TODO: Test additional keys
-export interface AdditionalPalette extends Record<string, string | PaletteColor | PaletteColorWithVariant> {}
+export interface AdditionalPalette
+	extends Record<string, string | PaletteColor | PaletteColorWithVariant> {}
 
 interface DefaultPalette
 	extends Record<PaletteKey, PaletteColor>,

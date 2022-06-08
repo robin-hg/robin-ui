@@ -75,7 +75,12 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 	)
 
 	return (
-		<RadioContainer ref={ref} direction={direction} role="radiogroup" aria-labelledby={labelId} {...otherProps}>
+		<RadioContainer
+			ref={ref}
+			direction={direction}
+			role="radiogroup"
+			aria-labelledby={labelId}
+			{...otherProps}>
 			<RadioGroupContext.Provider value={ctxValue}>{children}</RadioGroupContext.Provider>
 		</RadioContainer>
 	)

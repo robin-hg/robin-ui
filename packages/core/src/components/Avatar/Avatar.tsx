@@ -12,7 +12,15 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
 }
 
 export const Avatar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { color = 'primary', size = 'lg', radius = 'xl', src, alt, children, ...otherProps } = props
+	const {
+		color = 'primary',
+		size = 'lg',
+		radius = 'xl',
+		src,
+		alt,
+		children,
+		...otherProps
+	} = props
 
 	return (
 		<AvatarContainer ref={ref} $color={color} $size={size} $radius={radius} {...otherProps}>

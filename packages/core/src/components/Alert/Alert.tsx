@@ -23,7 +23,14 @@ export interface Props extends DefaultProps<HTMLDivElement, 'title'> {
 }
 
 export const Alert = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { status = 'critical', variant = 'flat', radius = 'md', title, children, ...otherProps } = props
+	const {
+		status = 'critical',
+		variant = 'flat',
+		radius = 'md',
+		title,
+		children,
+		...otherProps
+	} = props
 
 	const icon = statusIcon[status]
 

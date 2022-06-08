@@ -1,6 +1,13 @@
 import _styled, { type Interpolation } from '@emotion/styled'
 import { tags } from './tags'
-import type { StyledOptions, PropsWithSX, BaseCreateStyled, StyledTags, CreateStyled, SXComponents } from './types'
+import type {
+	StyledOptions,
+	PropsWithSX,
+	BaseCreateStyled,
+	StyledTags,
+	CreateStyled,
+	SXComponents
+} from './types'
 import { transformSx } from './transformer'
 
 const excludedProps = new Set(['sx', 'css', 'as'])

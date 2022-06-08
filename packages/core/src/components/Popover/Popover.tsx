@@ -19,7 +19,14 @@ export const Popover = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}, [open])
 
 	return (
-		<Floating ref={ref} id={_id} role={role} trigger={trigger} open={open} trapFocus {...otherProps}>
+		<Floating
+			ref={ref}
+			id={_id}
+			role={role}
+			trigger={trigger}
+			open={open}
+			trapFocus
+			{...otherProps}>
 			{children}
 		</Floating>
 	)

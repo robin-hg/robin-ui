@@ -42,7 +42,10 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			disabled: {
 				color: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')} !important`,
 				'& > input, & > select': {
-					background: `${theme.fn.getAlphaColor('surface.variant', 'fadedBase')} !important`,
+					background: `${theme.fn.getAlphaColor(
+						'surface.variant',
+						'fadedBase'
+					)} !important`,
 					borderColor: `${theme.fn.getAlphaColor('outline', 'fadedOnBase')} !important`,
 					cursor: 'default !important',
 					'::placeholder': {

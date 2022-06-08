@@ -77,7 +77,11 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 	},
 	({ theme, $disabled }) =>
 		$disabled && {
-			background: `${theme.fn.getModifiedColor('surface', 'surface.onBase', 'fadedBase')} !important`,
+			background: `${theme.fn.getModifiedColor(
+				'surface',
+				'surface.onBase',
+				'fadedBase'
+			)} !important`,
 			borderColor: `${theme.fn.getColor('outline')} !important`
 		}
 )

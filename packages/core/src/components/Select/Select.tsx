@@ -15,7 +15,8 @@ interface Item {
 	disabled?: boolean
 }
 
-export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {
+export interface Props
+	extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {
 	placeholder?: string
 	value?: Item['value']
 	defaultValue?: Item['value']
@@ -116,14 +117,22 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 						required={required}
 						disabled={disabled}>
 						{options.map(option => (
-							<option key={option.value} value={option.value} disabled={option.disabled}>
+							<option
+								key={option.value}
+								value={option.value}
+								disabled={option.disabled}>
 								{option.label ?? option.value}
 							</option>
 						))}
 					</select>
 				) : (
 					<>
-						<input type="hidden" name={name} value={item?.value ?? ''} required={required} />
+						<input
+							type="hidden"
+							name={name}
+							value={item?.value ?? ''}
+							required={required}
+						/>
 						<input
 							id={labelFor ?? id}
 							type="text"

@@ -7,7 +7,8 @@ import { ControlInput } from '../ControlInput'
 import { Box } from './Checkbox.style'
 import { Check, Minus } from '@robin-ui/icons'
 
-export interface Props extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
+export interface Props
+	extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {
 	checked?: boolean
 	defaultValue?: boolean
 	color?: ColorToken

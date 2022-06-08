@@ -70,7 +70,12 @@ export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) =
 			{visiblePages.map((p, i) => {
 				if ((i === 1 && p > 2) || (i === visiblePages.length - 2 && p < count - 1)) {
 					return (
-						<PageButton key={`elipsis-${i}`} size={size} variant="text" disabled aria-hidden>
+						<PageButton
+							key={`elipsis-${i}`}
+							size={size}
+							variant="text"
+							disabled
+							aria-hidden>
 							<MoreHorizontal size={size} strokeWidth={1} />
 						</PageButton>
 					)

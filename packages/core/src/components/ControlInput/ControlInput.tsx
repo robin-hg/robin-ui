@@ -14,7 +14,11 @@ export const ControlInput = React.forwardRef<HTMLDivElement, Props>((props, ref)
 	const { label, labelFor, labelPosition = 'right', children, disabled, ...otherProps } = props
 
 	return (
-		<ControlInputContainer ref={ref} $labelPosition={labelPosition} disabled={disabled} {...otherProps}>
+		<ControlInputContainer
+			ref={ref}
+			$labelPosition={labelPosition}
+			disabled={disabled}
+			{...otherProps}>
 			<Control>{children}</Control>
 			{label && (
 				<Text as="label" size="sm" htmlFor={labelFor}>

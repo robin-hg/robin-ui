@@ -30,7 +30,10 @@ export const Default: Story<Props> = args => {
 			/>
 			<FlexBox justifyContent="flex-start" wrap>
 				{Object.entries(Icons).map(i => {
-					if (search.trim() !== '' && !i[0].toLowerCase().includes(search.toLowerCase())) {
+					if (
+						search.trim() !== '' &&
+						!i[0].toLowerCase().includes(search.toLowerCase())
+					) {
 						return null
 					}
 					const Icon = i[1]

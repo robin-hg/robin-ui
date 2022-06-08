@@ -19,10 +19,23 @@ export interface Props extends DefaultProps<HTMLSpanElement, 'size'> {
 }
 
 export const Tag = React.forwardRef<HTMLSpanElement, Props>((props, ref) => {
-	const { variant = 'filled', color = 'primary', size = 'md', radius = 'sm', children, ...otherProps } = props
+	const {
+		variant = 'filled',
+		color = 'primary',
+		size = 'md',
+		radius = 'sm',
+		children,
+		...otherProps
+	} = props
 
 	return (
-		<TagContainer ref={ref} $variant={variant} $color={color} $size={size} $radius={radius} {...otherProps}>
+		<TagContainer
+			ref={ref}
+			$variant={variant}
+			$color={color}
+			$size={size}
+			$radius={radius}
+			{...otherProps}>
 			{children}
 		</TagContainer>
 	)

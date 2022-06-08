@@ -18,7 +18,14 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
 }
 
 export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { color = 'primary', activeTab, defaultTab = 0, onChange, children, ...otherProps } = props
+	const {
+		color = 'primary',
+		activeTab,
+		defaultTab = 0,
+		onChange,
+		children,
+		...otherProps
+	} = props
 	const tabGroupRef = useRef<HTMLDivElement>(null)
 
 	const [_activeTab, setUncontrolled] = useUncontrolled(defaultTab, activeTab)
@@ -53,7 +60,11 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	return (
 		<sxc.div ref={ref} {...otherProps}>
-			<TabGroup ref={tabGroupRef} role="tablist" aria-orientation="horizontal" onKeyDown={handleKeyDown}>
+			<TabGroup
+				ref={tabGroupRef}
+				role="tablist"
+				aria-orientation="horizontal"
+				onKeyDown={handleKeyDown}>
 				{tabs.map((tab, i) => {
 					const key = tab.props?.tabKey ?? i
 					const active = _activeTab === key

@@ -1,5 +1,13 @@
 import React, { useContext, useEffect, useMemo, useRef } from 'react'
-import { useFloating, shift, arrow, autoUpdate, type Placement, offset, flip } from '@floating-ui/react-dom'
+import {
+	useFloating,
+	shift,
+	arrow,
+	autoUpdate,
+	type Placement,
+	offset,
+	flip
+} from '@floating-ui/react-dom'
 import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@robin-ui/hooks'
 import { ModalContext } from '../Modal'
 
@@ -78,7 +86,10 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 		onClose?.()
 	})
 
-	const ctxValue = useMemo(() => ({ floatinghEl: refs.floating.current }), [refs.floating.current])
+	const ctxValue = useMemo(
+		() => ({ floatinghEl: refs.floating.current }),
+		[refs.floating.current]
+	)
 
 	if (!trigger) {
 		return null
@@ -99,7 +110,9 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 						radius="sm"
 						tabIndex={-1}
 						{...otherProps}>
-						<FloatingContext.Provider value={ctxValue}>{children}</FloatingContext.Provider>
+						<FloatingContext.Provider value={ctxValue}>
+							{children}
+						</FloatingContext.Provider>
 						{withArrow && (
 							<Arrow
 								ref={arrowRef}

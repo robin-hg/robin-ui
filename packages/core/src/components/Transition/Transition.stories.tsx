@@ -42,7 +42,11 @@ export const Fade: Story<Props> = args => {
 
 	return (
 		<>
-			<Switch label="Toggle" checked={args.in} onChange={event => updateArgs({ in: event.target.checked })} />
+			<Switch
+				label="Toggle"
+				checked={args.in}
+				onChange={event => updateArgs({ in: event.target.checked })}
+			/>
 			<FadeTransition {...args}>
 				<Paper variant="flat">Content</Paper>
 			</FadeTransition>
@@ -55,7 +59,11 @@ export const Collapse: Story<Props> = args => {
 
 	return (
 		<>
-			<Switch label="Toggle" checked={args.in} onChange={event => updateArgs({ in: event.target.checked })} />
+			<Switch
+				label="Toggle"
+				checked={args.in}
+				onChange={event => updateArgs({ in: event.target.checked })}
+			/>
 			<CollapseTransition {...args}>
 				<Paper variant="flat">Content</Paper>
 			</CollapseTransition>
@@ -68,7 +76,11 @@ export const Grow: Story<Props> = args => {
 
 	return (
 		<>
-			<Switch label="Toggle" checked={args.in} onChange={event => updateArgs({ in: event.target.checked })} />
+			<Switch
+				label="Toggle"
+				checked={args.in}
+				onChange={event => updateArgs({ in: event.target.checked })}
+			/>
 			<GrowTransition {...args}>
 				<Paper variant="flat">Content</Paper>
 			</GrowTransition>

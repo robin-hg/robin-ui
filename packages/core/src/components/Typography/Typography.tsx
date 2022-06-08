@@ -41,7 +41,9 @@ const TypographyFactory = (variant: Variant) => {
 			...otherProps
 		} = props
 
-		const decoration = `${underline ? 'underline' : ''} ${strikethrough ? 'line-through' : ''}`.trim() || 'none'
+		const decoration =
+			`${underline ? 'underline' : ''} ${strikethrough ? 'line-through' : ''}`.trim() ||
+			'none'
 		const defaultComponent = as || variantComponentMap[variant]
 
 		return (

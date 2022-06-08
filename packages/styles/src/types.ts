@@ -35,10 +35,10 @@ export interface BaseCreateStyled {
 		React.ComponentProps<C> & { sx?: SX }
 	>
 
-	<Tag extends keyof JSX.IntrinsicElements>(component: Tag, options?: StyledOptions): CreateStyledComponent<
-		{ sx?: SX; as?: React.ElementType },
-		JSX.IntrinsicElements[Tag]
-	>
+	<Tag extends keyof JSX.IntrinsicElements>(
+		component: Tag,
+		options?: StyledOptions
+	): CreateStyledComponent<{ sx?: SX; as?: React.ElementType }, JSX.IntrinsicElements[Tag]>
 }
 
 export type StyledTags = {

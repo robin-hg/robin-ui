@@ -40,7 +40,10 @@ const traverse = <P extends PropsWithSX>(style: Interpolation<P>, theme: Theme):
 		return {}
 	}
 	return Object.fromEntries(
-		Object.entries(style).map(([key, value]) => [replaceKey(key, theme), replaceValue(key, value, theme)])
+		Object.entries(style).map(([key, value]) => [
+			replaceKey(key, theme),
+			replaceValue(key, value, theme)
+		])
 	)
 }
 

@@ -9,21 +9,23 @@ interface ImageContainerProps {
 	$fit: React.CSSProperties['objectFit']
 }
 
-export const ImageContainer = styled.div<ImageContainerProps>(({ theme, $radius, $width, $height, $fit }) => ({
-	display: 'grid',
-	gridTemplateColumns: '1fr',
-	'& > *': {
-		gridRowStart: 1,
-		gridColumnStart: 1
-	},
-	'& > img': {
-		display: 'block',
-		objectFit: $fit,
-		width: $width,
-		height: $height,
-		borderRadius: theme.fn.getSize($radius, theme.radius)
-	}
-}))
+export const ImageContainer = styled.div<ImageContainerProps>(
+	({ theme, $radius, $width, $height, $fit }) => ({
+		display: 'grid',
+		gridTemplateColumns: '1fr',
+		'& > *': {
+			gridRowStart: 1,
+			gridColumnStart: 1
+		},
+		'& > img': {
+			display: 'block',
+			objectFit: $fit,
+			width: $width,
+			height: $height,
+			borderRadius: theme.fn.getSize($radius, theme.radius)
+		}
+	})
+)
 
 export const Placeholder = styled(Fade)(({ theme }) => ({
 	width: '100%',

@@ -14,12 +14,25 @@ interface StyledTextProps {
 }
 
 export const StyledText = styled.div<StyledTextProps>(
-	({ theme, $variant, $size, $color, $decoration, $highlight, $fontSize, $fontWeight, $italic, $bold }) => ({
+	({
+		theme,
+		$variant,
+		$size,
+		$color,
+		$decoration,
+		$highlight,
+		$fontSize,
+		$fontWeight,
+		$italic,
+		$bold
+	}) => ({
 		display: 'block',
 		margin: 0,
 		fontFamily: theme.typography[$variant].fontFamily,
 		fontWeight: $fontWeight ?? ($bold ? 'bold' : theme.typography[$variant].fontWeight),
-		fontSize: $fontSize ? $fontSize : theme.fn.getSize($size, theme.typography[$variant].fontSize),
+		fontSize: $fontSize
+			? $fontSize
+			: theme.fn.getSize($size, theme.typography[$variant].fontSize),
 		fontStyle: $italic ? 'italic' : 'normal',
 		lineHeight: theme.fn.getSize($size, theme.typography[$variant].lineHeight, 'normal'),
 		color: theme.fn.getColor($color),

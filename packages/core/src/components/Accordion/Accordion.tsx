@@ -51,7 +51,11 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
 				</Text>
 				{!!children && <ChevronDown size={20} />}
 			</AccordionSummary>
-			<AccordionContent in={!disabled && open} role="region" id={`${id}-body`} aria-labelledby={`${id}-summary`}>
+			<AccordionContent
+				in={!disabled && open}
+				role="region"
+				id={`${id}-body`}
+				aria-labelledby={`${id}-summary`}>
 				{children}
 			</AccordionContent>
 		</AccordionContainer>

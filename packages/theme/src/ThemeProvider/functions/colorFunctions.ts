@@ -31,9 +31,13 @@ export const getColorFunctions = (theme: AugumentedTheme) => ({
 
 		const backgroundColor = this.getColor(background)
 		return (
-			mostReadable(backgroundColor, [theme.palette.surface.base, theme.palette.surface.onBase], {
-				includeFallbackColors: true
-			})?.toHex8String() || ''
+			mostReadable(
+				backgroundColor,
+				[theme.palette.surface.base, theme.palette.surface.onBase],
+				{
+					includeFallbackColors: true
+				}
+			)?.toHex8String() || ''
 		)
 	},
 	getModifiedColor(background: ColorToken, color: ColorToken, modifier: Modifier | number) {

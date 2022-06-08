@@ -2,8 +2,10 @@ import type { RobinTheme, BaseTheme, AugumentedTheme, DerrivedColorMode } from '
 import { createThemeFunctions } from './functions'
 import { parseSize } from '@robin-ui/utils'
 
-export const createMediaBreakpoint = (theme: BaseTheme, breakpoint: keyof BaseTheme['breakpoints']) =>
-	`@media screen and (max-width: ${parseSize(theme.breakpoints[breakpoint])})`
+export const createMediaBreakpoint = (
+	theme: BaseTheme,
+	breakpoint: keyof BaseTheme['breakpoints']
+) => `@media screen and (max-width: ${parseSize(theme.breakpoints[breakpoint])})`
 
 export const themeFactory = (theme: BaseTheme, colorMode: DerrivedColorMode): RobinTheme => {
 	const palette = colorMode === 'light' ? theme.lightPalette : theme.darkPalette

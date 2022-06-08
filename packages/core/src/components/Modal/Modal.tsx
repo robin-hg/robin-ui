@@ -75,7 +75,9 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 							}}
 							tabIndex={-1}
 							{...otherProps}>
-							<ModalContext.Provider value={ctxValue}>{children}</ModalContext.Provider>
+							<ModalContext.Provider value={ctxValue}>
+								{children}
+							</ModalContext.Provider>
 						</ModalPaper>
 					</FocusTrap>
 				</ModalContainer>

@@ -2,7 +2,10 @@ import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 import { useEvent } from '../useEvent'
 
 type IUseEventListener = {
-	<K extends keyof WindowEventMap>(eventName: K, handler: (event: WindowEventMap[K]) => void): void
+	<K extends keyof WindowEventMap>(
+		eventName: K,
+		handler: (event: WindowEventMap[K]) => void
+	): void
 	<K extends keyof HTMLElementEventMap, T extends HTMLElement>(
 		eventName: K,
 		handler: (event: HTMLElementEventMap[K]) => void,

@@ -42,7 +42,12 @@ const Colors = () => {
 											<Text sx={{ textTransform: 'capitalize' }}>
 												{colorName} {shade}
 											</Text>
-											<Text size="sm" sx={{ textTransform: 'uppercase', userSelect: 'all' }}>
+											<Text
+												size="sm"
+												sx={{
+													textTransform: 'uppercase',
+													userSelect: 'all'
+												}}>
 												{colorHex}
 											</Text>
 										</div>

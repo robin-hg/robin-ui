@@ -15,7 +15,8 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 }
 
 export const InputBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { active, error, disabled, leftAdornment, rightAdornment, children, ...otherProps } = props
+	const { active, error, disabled, leftAdornment, rightAdornment, children, ...otherProps } =
+		props
 	const leftAdornmentRef = useRef<HTMLSpanElement>(null)
 	const rightAdornmentRef = useRef<HTMLSpanElement>(null)
 	const leftAdornmentSize = useSize(leftAdornmentRef.current)

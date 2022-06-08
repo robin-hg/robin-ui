@@ -4,7 +4,7 @@
 	"semi": false,
 	"singleQuote": true,
 	"bracketSameLine": true,
-	"printWidth": 120,
+	"printWidth": 100,
 	"trailingComma": "none",
 	"arrowParens": "avoid",
 	"overrides": [

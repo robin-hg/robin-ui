@@ -40,7 +40,9 @@ export const FocusTrap: React.FC<Props> = props => {
 		const last = focusable.at(-1) as HTMLElement
 
 		const next = event.shiftKey ? last : first
-		const leaving = event.shiftKey ? document.activeElement !== first : document.activeElement !== last
+		const leaving = event.shiftKey
+			? document.activeElement !== first
+			: document.activeElement !== last
 
 		if (leaving) {
 			return

@@ -4,7 +4,8 @@ import { TextInput } from '../TextInput'
 import { Button } from '../Button'
 import { Eye, EyeOff } from '@robin-ui/icons'
 
-export interface Props extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
+export interface Props
+	extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
 
 export const PasswordInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { ...otherProps } = props

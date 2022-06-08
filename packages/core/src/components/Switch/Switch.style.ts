@@ -37,7 +37,9 @@ export const Box = styled.input<BoxProps>(
 
 		return {
 			background:
-				checked || $error ? theme.fn.getColor(color) : theme.fn.getAlphaColor('surface.onVariant', 'fadedBase'),
+				checked || $error
+					? theme.fn.getColor(color)
+					: theme.fn.getAlphaColor('surface.onVariant', 'fadedBase'),
 			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline'),
 			'::after': {
 				background: onColor,

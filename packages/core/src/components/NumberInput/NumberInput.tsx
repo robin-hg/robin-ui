@@ -9,7 +9,8 @@ import { IconButton } from '../IconButton'
 
 import { StepButtons, BigStepButton } from './NumberInput.style'
 
-export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {
+export interface Props
+	extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {
 	placeholder?: string
 	value?: string | number
 	defaultValue?: string | number
@@ -64,7 +65,9 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 		readOnly: wrapperReadOnly,
 		disabled: wrapperDisabled
 	} = useContext(InputWrapperContext)
-	const [internalValue, setInternalValue] = useState(value?.toString() ?? defaultValue?.toString() ?? '')
+	const [internalValue, setInternalValue] = useState(
+		value?.toString() ?? defaultValue?.toString() ?? ''
+	)
 	const inputRef = useRef<HTMLInputElement>(null)
 	const timeoutRef = useRef<number>()
 	const intervalRef = useRef<number>()

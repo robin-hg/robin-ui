@@ -19,7 +19,12 @@ export const ModalHeader = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 				{children}
 			</Text>
 			{onClose && (
-				<Button onClick={onClose} variant="text" color="surface.onBase" size="sm" aria-label="Close">
+				<Button
+					onClick={onClose}
+					variant="text"
+					color="surface.onBase"
+					size="sm"
+					aria-label="Close">
 					<X />
 				</Button>
 			)}

@@ -38,18 +38,33 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				color: theme.fn.getOnColor($color),
 				background: theme.fn.getColor($color),
 				'&:hover': {
-					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover')
+					background: theme.fn.getModifiedColor(
+						$color,
+						theme.fn.getOnColor($color),
+						'hover'
+					)
 				},
 				'&:focus-visible': {
-					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'focus'),
+					background: theme.fn.getModifiedColor(
+						$color,
+						theme.fn.getOnColor($color),
+						'focus'
+					),
 					outlineColor: theme.fn.getColor($color)
 				},
 				'&:active': {
-					background: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
+					background: theme.fn.getModifiedColor(
+						$color,
+						theme.fn.getOnColor($color),
+						'active'
+					)
 				},
 				'&[disabled]': {
 					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
-					background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+					background: `${theme.fn.getAlphaColor(
+						'surface.onBase',
+						'fadedBase'
+					)} !important`,
 					cursor: 'default !important'
 				}
 			},
@@ -68,7 +83,10 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				},
 				'&[disabled]': {
 					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
-					background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+					background: `${theme.fn.getAlphaColor(
+						'surface.onBase',
+						'fadedBase'
+					)} !important`,
 					cursor: 'default !important'
 				}
 			},
@@ -89,7 +107,10 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				'&[disabled]': {
 					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
 					background: `transparent !important`,
-					borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+					borderColor: `${theme.fn.getAlphaColor(
+						'surface.onBase',
+						'fadedBase'
+					)} !important`,
 					cursor: 'default !important'
 				}
 			},

@@ -13,7 +13,13 @@ export interface Props {
 }
 
 export const RobinProvider: React.FC<Props> = props => {
-	const { colorMode: fixedColorMode, defaultColorMode = 'system', addGlobalCSS = true, theme, children } = props
+	const {
+		colorMode: fixedColorMode,
+		defaultColorMode = 'system',
+		addGlobalCSS = true,
+		theme,
+		children
+	} = props
 	const [colorMode] = useColorMode(defaultColorMode)
 	const reducedMotion = useReducedMotion()
 

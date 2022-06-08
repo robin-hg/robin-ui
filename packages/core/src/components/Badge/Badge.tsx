@@ -11,11 +11,22 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size' | 'content'> 
 }
 
 export const Badge = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { position = 'top-end', color = 'primary', size = 'xs', content, children, ...otherProps } = props
+	const {
+		position = 'top-end',
+		color = 'primary',
+		size = 'xs',
+		content,
+		children,
+		...otherProps
+	} = props
 
 	return (
 		<BadgeContainer ref={ref} {...otherProps}>
-			<BadgeCircle $position={position} $color={color} $size={size} $small={content === undefined}>
+			<BadgeCircle
+				$position={position}
+				$color={color}
+				$size={size}
+				$small={content === undefined}>
 				{content}
 			</BadgeCircle>
 			{children}

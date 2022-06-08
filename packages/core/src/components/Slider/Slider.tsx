@@ -145,7 +145,12 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}
 
 	return (
-		<SliderContainer ref={combinedRef} disabled={disabled} $active={active} $size={size} {...otherProps}>
+		<SliderContainer
+			ref={combinedRef}
+			disabled={disabled}
+			$active={active}
+			$size={size}
+			{...otherProps}>
 			<Progress value={percentValue} color={sliderColor} thickness={size} noAria />
 			<Tooltip label={_value} placement="top" open={!disabled && active} continuousUpdate>
 				<SliderThumb
@@ -164,7 +169,13 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					style={{ left: `${percentValue}%` }}
 				/>
 			</Tooltip>
-			<input type="hidden" name={name} value={_value} required={required} disabled={disabled} />
+			<input
+				type="hidden"
+				name={name}
+				value={_value}
+				required={required}
+				disabled={disabled}
+			/>
 		</SliderContainer>
 	)
 })

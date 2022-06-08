@@ -20,7 +20,10 @@ export const Default: Story<Props> = args => {
 	const [page, setPage] = useState(0)
 	return (
 		<TransitionSwitch {...args} currentKey={page}>
-			<Paper onClick={() => setPage((page + 1) % 3)} variant="flat" sx={{ width: '100%', height: '10rem' }}>
+			<Paper
+				onClick={() => setPage((page + 1) % 3)}
+				variant="flat"
+				sx={{ width: '100%', height: '10rem' }}>
 				Page {page + 1}
 			</Paper>
 		</TransitionSwitch>

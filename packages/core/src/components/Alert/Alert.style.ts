@@ -11,7 +11,8 @@ export const AlertContainer = styled(Paper)<AlertContainerProps>(
 	({ theme, $color, $variant }) =>
 		({
 			flat: {
-				background: $color !== 'none' ? theme.fn.getAlphaColor($color, 'active') : undefined,
+				background:
+					$color !== 'none' ? theme.fn.getAlphaColor($color, 'active') : undefined,
 				color: theme.palette.surface.onBase,
 				'& > div': {
 					color: $color !== 'none' ? theme.fn.getColor($color) : undefined

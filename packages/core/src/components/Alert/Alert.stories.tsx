@@ -12,7 +12,10 @@ export default {
 		children: 'Description'
 	},
 	argTypes: {
-		status: { control: { type: 'radio' }, options: ['none', 'success', 'info', 'warning', 'critical'] },
+		status: {
+			control: { type: 'radio' },
+			options: ['none', 'success', 'info', 'warning', 'critical']
+		},
 		variant: { control: { type: 'radio' }, options: ['flat', 'outlined'] },
 		title: { control: { type: 'text' } },
 		children: { control: { type: 'text' } }

@@ -12,7 +12,12 @@ export const Stack = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const { spacing, direction = 'column', children, ...otherProps } = props
 
 	return (
-		<StackContainer ref={ref} direction={direction} alignItems="flex-start" spacing={spacing} {...otherProps}>
+		<StackContainer
+			ref={ref}
+			direction={direction}
+			alignItems="flex-start"
+			spacing={spacing}
+			{...otherProps}>
 			{children}
 		</StackContainer>
 	)

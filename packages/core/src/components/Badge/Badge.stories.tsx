@@ -13,7 +13,10 @@ export default {
 		content: '3'
 	},
 	argTypes: {
-		position: { control: { type: 'radio' }, options: ['top-start', 'top-end', 'bottom-start', 'bottom-end'] },
+		position: {
+			control: { type: 'radio' },
+			options: ['top-start', 'top-end', 'bottom-start', 'bottom-end']
+		},
 		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
 	}
 } as Meta<Props>

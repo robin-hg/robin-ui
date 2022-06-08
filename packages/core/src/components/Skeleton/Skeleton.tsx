@@ -13,7 +13,12 @@ export const Skeleton = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	const { animated = true, loading = true, radius = 'sm', children, ...otherProps } = props
 
 	return (
-		<SkeletonContainer ref={ref} $animated={!!animated} $loading={!!loading} $radius={radius} {...otherProps}>
+		<SkeletonContainer
+			ref={ref}
+			$animated={!!animated}
+			$loading={!!loading}
+			$radius={radius}
+			{...otherProps}>
 			{children}
 		</SkeletonContainer>
 	)

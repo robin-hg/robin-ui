@@ -16,7 +16,14 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
 }
 
 export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { variant = 'filled', color = 'primary', size = 'md', radius = 'sm', children, ...otherProps } = props
+	const {
+		variant = 'filled',
+		color = 'primary',
+		size = 'md',
+		radius = 'sm',
+		children,
+		...otherProps
+	} = props
 	const ctxValue = useMemo(
 		() => ({ groupVariant: variant, groupColor: color, groupSize: size }),
 		[variant, color, size]

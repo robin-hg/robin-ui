@@ -35,7 +35,13 @@ export const Image = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	const [error, setError] = useState(false)
 
 	return (
-		<ImageContainer ref={ref} $radius={radius} $fit={fit} $height={height} $width={width} {...otherProps}>
+		<ImageContainer
+			ref={ref}
+			$radius={radius}
+			$fit={fit}
+			$height={height}
+			$width={width}
+			{...otherProps}>
 			<Placeholder in={loading || error} unmountOnExit>
 				{error
 					? errorFallback ?? <ImageIcon color="surface.onVariant" size="lg" />

@@ -5,11 +5,14 @@ export const useOnScreen = (element: HTMLElement | null, options: IntersectionOb
 	const [isIntersecting, setIsIntersecting] = useState(false)
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(([entry]) => setIsIntersecting(entry.isIntersecting), {
-			root,
-			rootMargin,
-			threshold
-		})
+		const observer = new IntersectionObserver(
+			([entry]) => setIsIntersecting(entry.isIntersecting),
+			{
+				root,
+				rootMargin,
+				threshold
+			}
+		)
 		if (element) {
 			observer.observe(element)
 			return () => {
