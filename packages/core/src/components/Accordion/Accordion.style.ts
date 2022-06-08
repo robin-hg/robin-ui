@@ -36,13 +36,15 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(
 		'&:active': {
 			background: theme.fn.getAlphaColor('surface.onVariant', 'active')
 		},
-		'&[disabled]': {
-			background: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedBase')} !important`,
-			color: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')} !important`
-		},
 		'& > svg': {
 			transition: theme.fn.getTransition(),
 			transform: `rotate(${$open ? 180 : 0}deg)`
+		}
+	}),
+	({ theme }) => ({
+		'&[disabled]': {
+			background: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedBase')} !important`,
+			color: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')} !important`
 		}
 	})
 )

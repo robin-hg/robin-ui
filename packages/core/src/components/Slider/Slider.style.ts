@@ -20,20 +20,26 @@ export const SliderContainer = styled.div<SliderContainerProps>(
 		padding: `calc(${theme.fn.getSize($size, defaultThumbSizes)} / 2) 0`,
 		cursor: 'pointer',
 		userSelect: 'none',
-		touchAction: 'none',
-		'&[disabled]': {
-			cursor: 'default',
-			'& > div:first-of-type > div': {
-				background: theme.fn.getModifiedColor('surface', 'surface.onVariant', 'fadedOnBase')
-			}
-		}
+		touchAction: 'none'
 	}),
 	({ $active }) =>
 		$active && {
 			'& > div:first-of-type > div': {
 				transition: 'none'
 			}
+		},
+	({ theme }) => ({
+		'&[disabled]': {
+			cursor: 'default !important',
+			'& > div:first-of-type > div': {
+				background: `${theme.fn.getModifiedColor(
+					'surface',
+					'surface.onVariant',
+					'fadedOnBase'
+				)} !important`
+			}
 		}
+	})
 )
 
 interface SliderThumbProps {

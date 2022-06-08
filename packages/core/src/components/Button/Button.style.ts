@@ -32,6 +32,29 @@ export const StyledButton = styled.button<StyledButtonProps>(
 		outlineOffset: '0.2rem',
 		transition: theme.fn.getTransition()
 	}),
+	({ theme, $size }) =>
+		({
+			xs: {
+				height: '2.4rem',
+				padding: theme.fn.getSpacing(['xs', 'xs'])
+			},
+			sm: {
+				height: '3.2rem',
+				padding: theme.fn.getSpacing(['xs', 'sm'])
+			},
+			md: {
+				height: '4rem',
+				padding: theme.fn.getSpacing(['xs', 'md'])
+			},
+			lg: {
+				height: '4.8rem',
+				padding: theme.fn.getSpacing(['sm', 'lg'])
+			},
+			xl: {
+				height: '5.6rem',
+				padding: theme.fn.getSpacing(['md', 'xl'])
+			}
+		}[$size]),
 	({ theme, $variant, $color }) =>
 		({
 			filled: {
@@ -133,30 +156,7 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					cursor: 'default !important'
 				}
 			}
-		}[$variant]),
-	({ theme, $size }) =>
-		({
-			xs: {
-				height: '2.4rem',
-				padding: theme.fn.getSpacing(['xs', 'xs'])
-			},
-			sm: {
-				height: '3.2rem',
-				padding: theme.fn.getSpacing(['xs', 'sm'])
-			},
-			md: {
-				height: '4rem',
-				padding: theme.fn.getSpacing(['xs', 'md'])
-			},
-			lg: {
-				height: '4.8rem',
-				padding: theme.fn.getSpacing(['sm', 'lg'])
-			},
-			xl: {
-				height: '5.6rem',
-				padding: theme.fn.getSpacing(['md', 'xl'])
-			}
-		}[$size])
+		}[$variant])
 )
 
 export const Content = styled(DynamicResizer)(({ theme }) => ({
