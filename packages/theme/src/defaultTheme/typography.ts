@@ -1,7 +1,7 @@
 import type { TypographyProperties, Size } from '../types'
 
 export const heading: TypographyProperties<Size> = {
-	fontFamily: '"Noto Serif", Arial, sans-serif',
+	fontFamily: '"Noto Serif Display", Georgia, serif',
 	fontWeight: 400,
 	fontSize: {
 		xs: '2.8rem',
@@ -20,7 +20,7 @@ export const heading: TypographyProperties<Size> = {
 }
 
 export const text: TypographyProperties<Size> = {
-	fontFamily: '"Noto Sans", Arial, sans-serif',
+	fontFamily: '"Noto Sans", Helvetica, Arial, sans-serif',
 	fontWeight: 400,
 	fontSize: {
 		xs: '1.2rem',
@@ -39,7 +39,7 @@ export const text: TypographyProperties<Size> = {
 }
 
 export const label: TypographyProperties<Size> = {
-	fontFamily: '"Noto Sans", Arial, sans-serif',
+	fontFamily: '"Noto Sans", Helvetica, Arial, sans-serif',
 	fontWeight: 600,
 	fontSize: {
 		xs: '1rem',

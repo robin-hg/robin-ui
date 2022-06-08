@@ -5,6 +5,13 @@ import { dark, gray } from '../packages/theme/src/defaultTheme/colors'
 
 import { RobinProvider } from '../packages/core'
 
+import '@fontsource/noto-sans/400.css'
+import '@fontsource/noto-sans/600.css'
+import '@fontsource/noto-serif-display/400.css'
+import '@fontsource/noto-serif-display/600.css'
+import '@fontsource/noto-sans-mono/400.css'
+import '@fontsource/noto-sans-mono/700.css'
+
 export const parameters = {
 	previewTabs: {
 		'storybook/docs/panel': {
@@ -48,10 +55,6 @@ export const argTypes = {
 export const decorators: DecoratorFn[] = [
 	Story => {
 		const darkMode = useDarkMode()
-		return (
-			<RobinProvider colorMode={darkMode ? 'dark' : 'light'} forcedColorMode>
-				{Story()}
-			</RobinProvider>
-		)
+		return <RobinProvider colorMode={darkMode ? 'dark' : 'light'}>{Story()}</RobinProvider>
 	}
 ]
