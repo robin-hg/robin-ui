@@ -1,3 +1,4 @@
+import type { DeepPartial } from '@robin-ui/types'
 import type { BaseTheme, ColorMode, DerrivedColorMode } from '@robin-ui/theme'
 import { ThemeProvider } from '@robin-ui/theme'
 import { useColorMode, useReducedMotion } from '@robin-ui/hooks'
@@ -8,7 +9,7 @@ export interface Props {
 	colorMode?: DerrivedColorMode
 	defaultColorMode?: ColorMode
 	addGlobalCSS?: boolean
-	theme?: Partial<BaseTheme>
+	theme?: DeepPartial<BaseTheme>
 	children?: React.ReactNode
 }
 

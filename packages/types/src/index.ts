@@ -1,5 +1,5 @@
 import type { SX } from '@robin-ui/styles'
-export type { RobinTheme, Size, SizeValue, ColorToken } from '@robin-ui/theme'
+export type { RobinTheme, Size, SizeValue, ColorToken, DeepPartial } from '@robin-ui/theme'
 
 export type DefaultProps<
 	C,

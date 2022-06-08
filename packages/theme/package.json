@@ -30,8 +30,7 @@
 	},
 	"dependencies": {
 		"@ctrl/tinycolor": "^3.4.1",
-		"@robin-ui/utils": "workspace:*",
-		"deepmerge": "^4.2.2"
+		"@robin-ui/utils": "workspace:*"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",

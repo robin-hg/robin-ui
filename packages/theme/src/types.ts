@@ -1,6 +1,12 @@
 import type { CSSObject } from '@emotion/react'
 import type { ThemeFunctions } from './ThemeProvider/functions'
 
+export type DeepPartial<T> = T extends object
+	? {
+			[P in keyof T]?: DeepPartial<T[P]>
+	  }
+	: T
+
 export type ColorMode = 'light' | 'dark' | 'system'
 export type DerrivedColorMode = 'light' | 'dark'
 
