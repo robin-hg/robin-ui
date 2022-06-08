@@ -160,12 +160,12 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					aria-valuenow={_value}
 					aria-valuemin={min}
 					aria-valuemax={max}
-					tabIndex={0}
+					tabIndex={!!disabled || !!readOnly ? -1 : 0}
 					onKeyDown={handleKeyDown}
 					$size={size}
 					$color={sliderColor}
 					$error={!!error}
-					$disabled={!!disabled || !!readOnly}
+					disabled={!!disabled || !!readOnly}
 					style={{ left: `${percentValue}%` }}
 				/>
 			</Tooltip>

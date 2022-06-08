@@ -40,7 +40,6 @@ interface SliderThumbProps {
 	$color: ColorToken
 	$size: Size
 	$error: boolean
-	$disabled: boolean
 }
 
 export const SliderThumb = styled.div<SliderThumbProps>(
@@ -75,8 +74,8 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 			}
 		}
 	},
-	({ theme, $disabled }) =>
-		$disabled && {
+	({ theme }) => ({
+		'&[disabled]': {
 			background: `${theme.fn.getModifiedColor(
 				'surface',
 				'surface.onBase',
@@ -84,4 +83,5 @@ export const SliderThumb = styled.div<SliderThumbProps>(
 			)} !important`,
 			borderColor: `${theme.fn.getColor('outline')} !important`
 		}
+	})
 )
