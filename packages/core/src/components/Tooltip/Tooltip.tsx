@@ -28,7 +28,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					id={_id}
 					role="tooltip"
 					trigger={targetRef.current}
-					open={openOverride || open}
+					open={openOverride !== undefined ? openOverride : open}
 					withArrow
 					padding={['xs', 'sm']}
 					borderRadius="sm"
