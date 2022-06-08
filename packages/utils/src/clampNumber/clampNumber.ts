@@ -1,9 +1,9 @@
 export const clampNumber = (value: number, min?: number, max?: number) => {
 	let number = value
-	if (min && min > number) {
+	if (min !== undefined && min > number) {
 		number = min
 	}
-	if (max && max < number) {
+	if (max !== undefined && max < number) {
 		number = max
 	}
 	return number
