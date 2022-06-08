@@ -1,5 +1,4 @@
 import _styled, { type Interpolation } from '@emotion/styled'
-import { tags } from './tags'
 import type {
 	StyledOptions,
 	PropsWithSX,
@@ -30,6 +29,7 @@ const styled: BaseCreateStyled =
 		return _styled(component, options)(...styles, augumentStyle)
 	}
 
+const tags = Object.keys(_styled) as (keyof JSX.IntrinsicElements)[]
 const styledTags = tags.reduce((acc, tag) => ({ ...acc, [tag]: styled(tag) }), {}) as StyledTags
 export const sxc = tags.reduce((acc, tag) => ({ ...acc, [tag]: styled(tag)() }), {}) as SXComponents
 
