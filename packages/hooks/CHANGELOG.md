@@ -1,5 +1,16 @@
 # @robin-ui/hooks
 
+## 0.1.3
+
+### Patch Changes
+
+-   [`fd4d793`](https://github.com/robinh-jsx/robin-ui/commit/fd4d793fcfde4d45486458835457b4e5766bfca8) Thanks [@robinh-jsx](https://github.com/robinh-jsx)! - Test release 3
+
+-   Updated dependencies [[`fd4d793`](https://github.com/robinh-jsx/robin-ui/commit/fd4d793fcfde4d45486458835457b4e5766bfca8)]:
+    -   @robin-ui/styles@0.1.3
+    -   @robin-ui/types@0.1.3
+    -   @robin-ui/utils@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
