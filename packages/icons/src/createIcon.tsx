@@ -1,6 +1,6 @@
 import type { DefaultProps, ColorToken, SizeValue } from '@robin-ui/types'
 import React from 'react'
-import { useTheme } from '@robin-ui/hooks'
+import { useTheme } from '@robin-ui/styles'
 
 const defaultSizes = {
 	xs: '1.6rem',

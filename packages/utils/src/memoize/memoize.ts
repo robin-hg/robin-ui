@@ -1,14 +1,17 @@
 export const memoize = <T extends (...args: Parameters<T>) => ReturnType<T>>(fn: T) => {
 	const cache = new Map<string, ReturnType<T>>()
 
-	return (...args: Parameters<T>) => {
+	return function (this: any, ...args: Parameters<T>) {
 		const key = JSON.stringify(args)
-		const value = cache.get(key)
+		const savedValue = cache.get(key)
 
-		if (value) {
-			return value
+		if (savedValue !== undefined) {
+			return savedValue
 		}
 
-		return fn.apply(this, args)
+		const value = fn.apply(this, args)
+		cache.set(key, value)
+
+		return value
 	}
 }

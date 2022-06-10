@@ -1,7 +1,8 @@
-import type { Size } from '@robin-ui/theme'
 import type { Theme, CSSObject, Interpolation } from '@emotion/react'
 import type { PropsWithSX } from '../types'
 import { colorProperties, spacingProperties } from './properties'
+
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 type ValueOf<T> = T[keyof T]
 const replaceValue = (key: string, value: ValueOf<CSSObject>, theme: Theme) => {

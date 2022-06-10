@@ -26,12 +26,7 @@
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist",
-		"build": "pnpm clean && concurrently pnpm:build:*",
-		"build:cjs": "tsc -p ./tsconfig.prod.json --outDir dist/cjs --module commonjs",
-		"build:esm": "tsc -p ./tsconfig.prod.json --outDir dist/esm --module esnext"
-	},
-	"dependencies": {
-		"@robin-ui/theme": "workspace:*"
+		"build": "pnpm clean && rollup -c ../../rollup.config.ts"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",

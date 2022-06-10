@@ -24,9 +24,7 @@
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist",
-		"build": "pnpm clean && concurrently pnpm:build:*",
-		"build:cjs": "tsc -p ./tsconfig.prod.json --outDir dist/cjs --module commonjs",
-		"build:esm": "tsc -p ./tsconfig.prod.json --outDir dist/esm --module esnext"
+		"build": "pnpm clean && rollup -c ../../rollup.config.ts"
 	},
 	"dependencies": {
 		"@ctrl/tinycolor": "^3.4.1",
