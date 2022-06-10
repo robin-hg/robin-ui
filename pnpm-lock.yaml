@@ -117,7 +117,10 @@ importers:
       '@robin-ui/types': link:../types
 
   packages/styles:
-    specifiers: {}
+    specifiers:
+      '@robin-ui/theme': workspace:*
+    dependencies:
+      '@robin-ui/theme': link:../theme
 
   packages/theme:
     specifiers:
