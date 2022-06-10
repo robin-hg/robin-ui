@@ -26,13 +26,13 @@
 		"@fontsource/noto-sans-mono": "^4.5.9",
 		"@fontsource/noto-serif-display": "^4.5.11",
 		"@mdx-js/react": "^2.1.1",
-		"@storybook/addon-a11y": "^6.5.6",
-		"@storybook/addon-actions": "^6.5.6",
-		"@storybook/addon-controls": "^6.5.6",
+		"@storybook/addon-a11y": "^6.5.8",
+		"@storybook/addon-actions": "^6.5.8",
+		"@storybook/addon-controls": "^6.5.8",
 		"@storybook/builder-vite": "^0.1.36",
-		"@storybook/client-api": "^6.5.7",
-		"@storybook/react": "^6.5.6",
-		"@storybook/theming": "^6.5.7",
+		"@storybook/client-api": "^6.5.8",
+		"@storybook/react": "^6.5.8",
+		"@storybook/theming": "^6.5.8",
 		"@types/react": "^18.0.12",
 		"@types/react-dom": "^18.0.5",
 		"@typescript-eslint/eslint-plugin": "^5.27.1",
@@ -54,6 +54,24 @@
 	},
 	"engines": {
 		"pnpm": "^7.0.0"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"allowedVersions": {
+				"react": "^18",
+				"react-dom": "^18"
+			},
+			"ignoreMissing": [
+				"@babel/core",
+				"@storybook/addons",
+				"@storybook/api",
+				"@storybook/components",
+				"@storybook/core-common",
+				"@storybook/core-events",
+				"@storybook/node-logger",
+				"require-from-string"
+			]
+		}
 	},
 	"packageManager": "pnpm@7.1.9"
 }
