@@ -1,5 +1,9 @@
 # Robin UI
 
+[![MIT License](https://img.shields.io/github/license/robinh-jsx/robin-ui?color=blue)](https://github.com/robinh-jsx/robin-ui/blob/HEAD/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/@robin-ui/core)](https://www.npmjs.com/package/@robin-ui/core)
+![Bundle Size](https://img.shields.io/bundlephobia/minzip/@robin-ui/core)
+
 A simple React UI library for bleeding-edge web development.
 
 ## Documentation & Storybook
