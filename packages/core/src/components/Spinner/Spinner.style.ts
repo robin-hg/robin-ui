@@ -41,22 +41,28 @@ export const SpinnerContainer = styled.div<SpinnerContainerProps>(({ theme, $col
 }))
 
 interface StyledSpinnerProps {
-	$size: SizeValue
 	$speed: string
+	$thickness?: SizeValue
 	$trail?: boolean
+	$custom?: boolean
 }
 
-export const StyledSpinner = styled.div<StyledSpinnerProps>(({ theme, $size, $speed, $trail }) => ({
-	position: 'absolute',
-	top: 0,
-	left: 0,
-	width: '100%',
-	height: '100%',
-	display: 'inline-block',
-	border: `${theme.fn.getSize($size, defaultThickness)} solid transparent`,
-	borderTopColor: 'currentColor',
-	borderRightColor: 'currentColor',
-	borderRadius: theme.radius.xl,
-	animation: `${spin} ${$speed} linear infinite`,
-	opacity: $trail ? 0.5 : 1
-}))
+export const StyledSpinner = styled.div<StyledSpinnerProps>(
+	({ theme, $speed }) => ({
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		width: '100%',
+		height: '100%',
+		display: 'inline-block',
+		borderRadius: theme.radius.xl,
+		animation: `${spin} ${$speed} linear infinite`
+	}),
+	({ theme, $custom, $thickness = 'md', $trail }) =>
+		!$custom && {
+			border: `${theme.fn.getSize($thickness, defaultThickness)} solid transparent`,
+			borderTopColor: 'currentColor',
+			borderRightColor: 'currentColor',
+			opacity: $trail ? 0.5 : 1
+		}
+)
