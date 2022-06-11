@@ -27,7 +27,8 @@
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist",
-		"build": "pnpm clean && rollup -c ../../rollup.config.ts"
+		"build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
+		"build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
 	},
 	"dependencies": {
 		"@floating-ui/react-dom": "^0.7.1",

@@ -2,7 +2,8 @@
 	"extends": "../../tsconfig.prod.json",
 	"compilerOptions": {
 		"rootDir": "src",
-		"declarationDir": "dist/types"
+		"declarationDir": "dist/types",
+		"tsBuildInfoFile": "node_modules/.cache/tsconfig.tsbuildinfo"
 	},
 	"include": ["src"]
 }

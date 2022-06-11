@@ -24,7 +24,8 @@
 	"sideEffects": false,
 	"scripts": {
 		"clean": "rm -rf dist",
-		"build": "pnpm clean && rollup -c ../../rollup.config.ts"
+		"build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
+		"build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
 	},
 	"dependencies": {
 		"@ctrl/tinycolor": "^3.4.1",
