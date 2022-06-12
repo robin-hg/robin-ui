@@ -37,6 +37,7 @@ export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 	}, [open])
 
 	const close = !preventClose ? onClose : undefined
+
 	const ctxValue = useMemo(
 		() => ({
 			id,

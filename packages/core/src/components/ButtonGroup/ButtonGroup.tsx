@@ -24,6 +24,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 		children,
 		...otherProps
 	} = props
+
 	const ctxValue = useMemo(
 		() => ({ groupVariant: variant, groupColor: color, groupSize: size }),
 		[variant, color, size]

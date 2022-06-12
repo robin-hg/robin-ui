@@ -18,6 +18,7 @@ export interface Props extends DefaultProps<HTMLTableElement, 'cellPadding'> {
 
 export const Table = React.forwardRef<HTMLTableElement, Props>((props, ref) => {
 	const { align = 'left', cellPadding = 'sm', radius = 'md', children, ...otherProps } = props
+
 	const ctxValue = useMemo(() => ({ align, cellPadding }), [align, cellPadding])
 
 	return (
