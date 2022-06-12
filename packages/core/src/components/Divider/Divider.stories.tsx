@@ -1,4 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
+import { sxc } from '@robin-ui/styles'
 
 import { Divider, type Props } from './Divider'
 
@@ -17,9 +18,9 @@ export default {
 } as Meta<Props>
 
 export const Default: Story<Props> = args => (
-	<div>
+	<sxc.div sx={{ height: 100 }}>
 		Content
 		<Divider {...args} />
 		Content
-	</div>
+	</sxc.div>
 )
