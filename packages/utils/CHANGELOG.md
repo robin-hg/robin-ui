@@ -1,5 +1,12 @@
 # @robin-ui/utils
 
+## 0.1.4
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @robin-ui/types@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @robin-ui/types
 
+## 0.1.4
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @robin-ui/styles@0.1.4
+    -   @robin-ui/theme@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
