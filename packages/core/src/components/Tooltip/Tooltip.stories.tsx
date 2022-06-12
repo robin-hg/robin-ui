@@ -9,7 +9,7 @@ export default {
 	component: Tooltip,
 	args: {
 		label: 'Tooltip',
-		placement: 'bottom'
+		withArrow: true
 	}
 } as Meta<Props>
 
