@@ -7,11 +7,9 @@ export default {
 	component: SkipNav
 } as Meta<Props>
 
-const Template: Story<Props> = () => (
+export const Default: Story<Props> = () => (
 	<>
 		<SkipNav contentId="content" />
 		<div id="content">Press tab to focus</div>
 	</>
 )
-
-export const Default = Template.bind({})
