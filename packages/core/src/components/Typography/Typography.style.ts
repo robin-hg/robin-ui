@@ -2,7 +2,7 @@ import type { SizeValue, ColorToken } from '@robin-ui/types'
 import styled from '@robin-ui/styles'
 
 interface StyledTextProps {
-	$variant: 'heading' | 'text' | 'label'
+	$variant: 'heading' | 'text' | 'label' | 'code'
 	$size: SizeValue
 	$color: ColorToken
 	$highlight: ColorToken
@@ -43,5 +43,13 @@ export const StyledText = styled.div<StyledTextProps>(
 		'& small': {
 			fontSize: '0.7em'
 		}
-	})
+	}),
+	({ theme, $variant }) =>
+		$variant === 'code' && {
+			display: 'inline-block',
+			padding: theme.fn.getSpacing([0, 'xs']),
+			background: theme.fn.getAlphaColor('surface.variant', 'fadedOnBase'),
+			border: `solid 0.1rem ${theme.palette.outline}`,
+			borderRadius: theme.radius.sm
+		}
 )

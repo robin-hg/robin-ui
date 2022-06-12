@@ -10,7 +10,6 @@ import '@fontsource/noto-sans/600.css'
 import '@fontsource/noto-serif-display/400.css'
 import '@fontsource/noto-serif-display/600.css'
 import '@fontsource/noto-sans-mono/400.css'
-import '@fontsource/noto-sans-mono/700.css'
 
 export const parameters = {
 	previewTabs: {

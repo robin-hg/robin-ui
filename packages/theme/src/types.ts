@@ -110,6 +110,7 @@ export interface BaseTheme {
 		heading: TypographyProperties<Size>
 		text: TypographyProperties<Size>
 		label: TypographyProperties<Size>
+		code: TypographyProperties<Size>
 	}
 	colors: Record<DefaultColor, ColorObj> & AdditionalColors
 	lightPalette: Palette

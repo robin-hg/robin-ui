@@ -1,6 +1,6 @@
 import { colors } from './colors'
 import { lightPalette, darkPalette } from './palette'
-import { heading, text, label } from './typography'
+import { heading, text, label, code } from './typography'
 import type { BaseTheme } from '../types'
 
 export const defaultTheme: BaseTheme = {
@@ -30,7 +30,8 @@ export const defaultTheme: BaseTheme = {
 	typography: {
 		heading,
 		text,
-		label
+		label,
+		code
 	},
 	colors,
 	lightPalette,
@@ -41,7 +42,7 @@ export const defaultTheme: BaseTheme = {
 		hover: 0.08,
 		focus: 0.12,
 		active: 0.15,
-		fadedBase: 0.12,
+		fadedBase: 0.15,
 		fadedOnBase: 0.5
 	},
 	transition: {

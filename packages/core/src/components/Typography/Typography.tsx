@@ -16,12 +16,13 @@ export interface Props extends DefaultProps<HTMLParagraphElement, 'size'> {
 	as?: React.ElementType
 }
 
-type Variant = 'heading' | 'text' | 'label'
+type Variant = 'heading' | 'text' | 'label' | 'code'
 
 const variantComponentMap: Record<Variant, keyof JSX.IntrinsicElements> = {
 	heading: 'h2',
 	text: 'p',
-	label: 'span'
+	label: 'span',
+	code: 'code'
 }
 
 const TypographyFactory = (variant: Variant) => {
@@ -73,3 +74,4 @@ const TypographyFactory = (variant: Variant) => {
 export const Text = TypographyFactory('text')
 export const Heading = TypographyFactory('heading')
 export const Label = TypographyFactory('label')
+export const Code = TypographyFactory('code')
