@@ -46,11 +46,6 @@ export const parameters = {
 	}
 }
 
-export const argTypes = {
-	as: { table: { disable: true } },
-	sx: { table: { disable: true } }
-}
-
 export const decorators: DecoratorFn[] = [
 	Story => {
 		const darkMode = useDarkMode()
