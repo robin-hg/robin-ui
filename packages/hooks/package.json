@@ -1,6 +1,6 @@
 {
 	"name": "@robin-ui/hooks",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"author": "Robin Hong <robinh.jsx@gmail.com>",
 	"description": "A collection of handy React hooks",
 	"license": "MIT",
