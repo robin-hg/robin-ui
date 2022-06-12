@@ -19,7 +19,7 @@ export const Default: Story<Props> = args => {
 			sx={{ display: 'inline-block', userSelect: 'none' }}>
 			<DynamicResizer {...args}>
 				{!toggle ? (
-					'Click Me'
+					<sxc.div sx={{ whiteSpace: 'nowrap' }}>Click Me</sxc.div>
 				) : (
 					<sxc.div sx={{ width: '50rem' }}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis nunc,
