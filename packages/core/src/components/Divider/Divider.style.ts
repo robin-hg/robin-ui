@@ -18,18 +18,18 @@ export const DividerLine = styled.div<DividerLineProps>(
 				gap: $hasChildren ? theme.spacing.md : 0,
 				width: '100%',
 				margin: theme.fn.getSpacing([$spacing, 0]),
-				'&:before, &:after': {
+				'&::before, &::after': {
 					content: '""',
 					flex: 1,
 					borderTopStyle: 'solid' as React.CSSProperties['borderTopStyle'],
 					borderWidth: $thickness,
 					borderColor: theme.palette.outline
 				},
-				'&:before': $alignLabel === 'start' && {
+				'&::before': $alignLabel === 'start' && {
 					flex: 'unset',
 					width: '5%'
 				},
-				'&:after': $alignLabel === 'end' && {
+				'&::after': $alignLabel === 'end' && {
 					flex: 'unset',
 					width: '5%'
 				}
@@ -42,18 +42,18 @@ export const DividerLine = styled.div<DividerLineProps>(
 				verticalAlign: 'top',
 				height: '100%',
 				margin: theme.fn.getSpacing([0, $spacing]),
-				'&:before, &:after': {
+				'&::before, &::after': {
 					content: '""',
 					flex: 1,
 					borderRightStyle: 'solid' as React.CSSProperties['borderRightStyle'],
 					borderWidth: $thickness,
 					borderColor: theme.palette.outline
 				},
-				'&:before': $alignLabel === 'start' && {
+				'&::before': $alignLabel === 'start' && {
 					flex: 'unset',
 					height: '5%'
 				},
-				'&:after': $alignLabel === 'end' && {
+				'&::after': $alignLabel === 'end' && {
 					flex: 'unset',
 					height: '5%'
 				}
