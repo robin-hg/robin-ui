@@ -1,4 +1,4 @@
-export const pick = <O extends Record<PropertyKey, unknown>, K extends string>(
+export const pick = <O extends Record<PropertyKey, unknown>, K extends keyof O>(
 	obj: O,
 	keys: K[]
 ) => {

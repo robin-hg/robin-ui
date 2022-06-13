@@ -37,8 +37,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      # - name: Test
-      #   run: pnpm test
+      - name: Test
+        run: pnpm test
 
       - name: Build & deploy to chromatic
         uses: chromaui/action@v1

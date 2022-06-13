@@ -1,3 +1,4 @@
 export const range = (start: number, end: number) => {
-	return Array.from({ length: end - start + 1 }, (_, n) => n + start)
+	const i = start > end ? -1 : 1
+	return Array.from({ length: Math.abs(end - start + i) }, (_, n) => n * i + start)
 }

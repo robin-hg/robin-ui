@@ -30,8 +30,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      # - name: Test
-      #   run: pnpm test
+      - name: Test
+        run: pnpm test
 
       - name: Create changeset / publish to npm
         uses: changesets/action@v1
