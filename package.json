@@ -20,8 +20,8 @@
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.4.5",
 		"@changesets/cli": "^2.23.0",
-		"@emotion/react": "^11.9.0",
-		"@emotion/styled": "^11.8.1",
+		"@emotion/react": "^11.9.3",
+		"@emotion/styled": "^11.9.3",
 		"@fontsource/noto-sans": "^4.5.10",
 		"@fontsource/noto-sans-mono": "^4.5.9",
 		"@fontsource/noto-serif-display": "^4.5.11",
