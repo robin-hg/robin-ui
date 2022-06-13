@@ -1,6 +1,5 @@
 import type { DeepPartial } from '@robin-ui/types'
-
-const isObj = (obj: unknown) => typeof obj === 'object' && obj !== null
+import { isObject } from '../isObject'
 
 export const mergeConfig = <T extends Record<string, unknown>>(
 	target: T,
@@ -12,7 +11,7 @@ export const mergeConfig = <T extends Record<string, unknown>>(
 		const sourceItem = source[key]
 		if (Array.isArray(targetItem) && Array.isArray(sourceItem)) {
 			result[key] = [...(targetItem as unknown[]), ...(sourceItem as unknown[])]
-		} else if (isObj(targetItem) && isObj(sourceItem)) {
+		} else if (isObject(targetItem) && isObject(sourceItem)) {
 			result[key] = mergeConfig(
 				targetItem as Record<string, unknown>,
 				sourceItem as Record<string, unknown>
