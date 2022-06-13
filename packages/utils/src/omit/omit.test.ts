@@ -14,8 +14,7 @@ describe('omit', () => {
 	}
 
 	it('should remove the given keys from object', () => {
-		const result = omit(obj, ['b', 'd'])
-		expect(result).toEqual({
+		expect(omit(obj, ['b', 'd'])).toEqual({
 			a: 1,
 			c: 3,
 			e: {
@@ -26,7 +25,6 @@ describe('omit', () => {
 	})
 
 	it('should not omit anything if no keys are given', () => {
-		const result = omit(obj, [])
-		expect(result).toEqual(obj)
+		expect(omit(obj, [])).toEqual(obj)
 	})
 })

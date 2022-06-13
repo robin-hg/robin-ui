@@ -14,12 +14,10 @@ describe('pick', () => {
 	}
 
 	it('should pick the correct keys from object', () => {
-		const result = pick(obj, ['a', 'b', 'd'])
-		expect(result).toEqual({ a: 1, b: 2, d: [4, 5, 6] })
+		expect(pick(obj, ['a', 'b', 'd'])).toEqual({ a: 1, b: 2, d: [4, 5, 6] })
 	})
 
 	it('should pick nothing if no keys are given', () => {
-		const result = pick(obj, [])
-		expect(result).toEqual({})
+		expect(pick(obj, [])).toEqual({})
 	})
 })

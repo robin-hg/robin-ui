@@ -8,18 +8,9 @@ describe('runIfFn', () => {
 		expect(fn).toHaveBeenCalledOnce()
 	})
 
-	it('should return a number', () => {
-		const result = runIfFn(1)
-		expect(result).toEqual(1)
-	})
-
-	it('should return an object', () => {
-		const result = runIfFn({ a: 1 })
-		expect(result).toEqual({ a: 1 })
-	})
-
-	it('should return an array', () => {
-		const result = runIfFn([1, 2, 3])
-		expect(result).toEqual([1, 2, 3])
+	it('should return value', () => {
+		expect(runIfFn(1)).toEqual(1)
+		expect(runIfFn({ a: 1 })).toEqual({ a: 1 })
+		expect(runIfFn([1, 2, 3])).toEqual([1, 2, 3])
 	})
 })

@@ -3,17 +3,15 @@ import { parseSize } from './parseSize'
 
 describe('parseSize', () => {
 	it('should return a string with px', () => {
-		const result = parseSize(50)
-		expect(result).toEqual('50px')
+		expect(parseSize(50)).toBe('50px')
 	})
 
 	it('should return a string with px - zero', () => {
-		const result = parseSize(0)
-		expect(result).toEqual('0px')
+		expect(parseSize(0)).toBe('0px')
 	})
 
 	it('should return the given value as is', () => {
-		const result = parseSize('5rem')
-		expect(result).toEqual('5rem')
+		expect(parseSize('5rem')).toBe('5rem')
+		expect(parseSize('')).toBe('')
 	})
 })

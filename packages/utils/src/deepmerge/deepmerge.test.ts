@@ -13,8 +13,7 @@ describe('deepmerge', () => {
 			e: 5,
 			f: 6
 		}
-		const result = deepmerge(obj1, obj2)
-		expect(result).toEqual({
+		expect(deepmerge(obj1, obj2)).toEqual({
 			a: 1,
 			b: 2,
 			c: 3,
@@ -35,8 +34,7 @@ describe('deepmerge', () => {
 			c: 5,
 			d: 6
 		}
-		const result = deepmerge(obj1, obj2)
-		expect(result).toEqual({
+		expect(deepmerge(obj1, obj2)).toEqual({
 			a: 1,
 			b: 4,
 			c: 5,
@@ -55,8 +53,7 @@ describe('deepmerge', () => {
 			c: [5, 6],
 			d: 6
 		}
-		const result = deepmerge(obj1, obj2)
-		expect(result).toEqual({
+		expect(deepmerge(obj1, obj2)).toEqual({
 			a: 1,
 			b: 4,
 			c: [1, 2, 3, 5, 6],
@@ -86,8 +83,7 @@ describe('deepmerge', () => {
 				}
 			}
 		}
-		const result = deepmerge(obj1, obj2)
-		expect(result).toEqual({
+		expect(deepmerge(obj1, obj2)).toEqual({
 			a: 1,
 			b: {
 				q: 0,

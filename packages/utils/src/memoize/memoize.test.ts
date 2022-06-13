@@ -17,10 +17,10 @@ describe('memoize', () => {
 		expect(fn(1)).toBe(1)
 		expect(mockFn).toBeCalledTimes(1)
 
-		expect(fn(1)).toEqual(1)
+		expect(fn(1)).toBe(1)
 		expect(mockFn).toBeCalledTimes(1)
 
-		expect(fn(2)).toEqual(2)
+		expect(fn(2)).toBe(2)
 		expect(mockFn).toBeCalledTimes(2)
 	})
 })
