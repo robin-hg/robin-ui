@@ -12,7 +12,7 @@ interface Props {
 
 export const ThemeProvider: React.FC<Props> = props => {
 	const { colorMode, theme = {}, children } = props
-	const themeFinal = themeFactory(mergeConfig(defaultTheme, theme), colorMode)
+	const themeFinal = themeFactory(mergeConfig<BaseTheme>(defaultTheme, theme), colorMode)
 
 	return <EmThemeProvider theme={themeFinal}>{children}</EmThemeProvider>
 }

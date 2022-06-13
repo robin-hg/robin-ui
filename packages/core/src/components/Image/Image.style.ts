@@ -6,7 +6,7 @@ interface ImageContainerProps {
 	$radius: SizeValue
 	$width: string | number
 	$height: string | number
-	$fit: React.CSSProperties['objectFit']
+	$fit: NonNullable<React.CSSProperties['objectFit']>
 }
 
 export const ImageContainer = styled.div<ImageContainerProps>(

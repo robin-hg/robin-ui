@@ -1,14 +1,13 @@
 {
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		}
+		"project": ["./tsconfig.json"]
 	},
 	"plugins": ["@typescript-eslint", "react-hooks", "prefer-arrow", "jsx-a11y"],
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
 		"plugin:react/recommended",
 		"plugin:prettier/recommended",
 		"plugin:jsx-a11y/recommended"
@@ -17,9 +16,6 @@
 		"react": {
 			"version": "detect"
 		}
-	},
-	"env": {
-		"node": true
 	},
 	"rules": {
 		"curly": "error",
@@ -30,14 +26,12 @@
 		"spaced-comment": "error",
 		"@typescript-eslint/consistent-type-imports": "error",
 		"@typescript-eslint/prefer-optional-chain": "error",
-		"@typescript-eslint/no-namespace": "off",
 		"@typescript-eslint/no-empty-interface": "off",
 		"@typescript-eslint/no-empty-function": "off",
-		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
 		"react/react-in-jsx-scope": "off",
 		"react/prop-types": "off",
 		"react/jsx-boolean-value": "error",
-		"react/prefer-stateless-function": "error",
 		"react-hooks/rules-of-hooks": "error",
 		"prefer-arrow/prefer-arrow-functions": "error"
 	}

@@ -36,12 +36,11 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
 	const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
 		onKeyDown?.(event)
-
 		const handleArrow = (direction: 'up' | 'down') => {
 			const focusable = getFocusable(menuRef.current)
 			const itemIndex = focusable.findIndex(element => element === document.activeElement)
 			const nextIndex = itemIndex + (direction === 'up' ? -1 : 1)
-			const nextTarget = focusable[nextIndex] as HTMLElement
+			const nextTarget = focusable[nextIndex]
 
 			nextTarget?.focus()
 		}

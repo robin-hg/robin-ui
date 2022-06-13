@@ -19,7 +19,7 @@ export interface Props extends React.ComponentProps<typeof Button> {
 	errorDuration?: number
 	onClick?: (event: React.MouseEvent) => Promise<void> | void
 	onComplete?: () => Promise<void> | void
-	onError?: (error: any) => Promise<void> | void
+	onError?: (error: unknown) => Promise<void> | void
 }
 
 export const AsyncButton = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {

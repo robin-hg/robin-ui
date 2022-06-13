@@ -16,12 +16,12 @@ export interface Props extends DefaultProps<HTMLAnchorElement, 'size'> {
 	 */
 	underline?: boolean
 	disabled?: boolean
-	component?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+	as?: React.ElementType
 }
 
 export const Link = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => {
 	const {
-		component,
+		as,
 		size = 'md',
 		color = 'primary',
 		underline = true,
@@ -34,7 +34,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => {
 	return (
 		<StyledLink
 			ref={ref}
-			as={component}
+			as={as}
 			$size={size}
 			$color={color}
 			$underline={underline}

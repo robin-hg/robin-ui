@@ -43,7 +43,7 @@ const traverse = <P extends PropsWithSX>(style: Interpolation<P>, theme: Theme):
 	return Object.fromEntries(
 		Object.entries(style).map(([key, value]) => [
 			replaceKey(key, theme),
-			replaceValue(key, value, theme)
+			replaceValue(key, value as ValueOf<CSSObject>, theme)
 		])
 	)
 }

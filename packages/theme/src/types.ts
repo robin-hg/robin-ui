@@ -36,19 +36,8 @@ type DefaultColor =
 	| 'yellow'
 	| 'orange'
 
-export interface ColorObj {
-	0: string
-	50: string
-	100: string
-	200: string
-	300: string
-	400: string
-	500: string
-	600: string
-	700: string
-	800: string
-	900: string
-}
+type Intensity = 0 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+export type ColorObj = Record<Intensity, string>
 
 export interface AdditionalColors extends Record<string, ColorObj> {}
 
@@ -94,18 +83,18 @@ export type ColorToken =
 	| (string & Record<never, never>)
 
 export interface TypographyProperties<V extends Size> {
-	fontFamily: React.CSSProperties['fontFamily']
-	fontWeight: React.CSSProperties['fontWeight']
-	fontSize: Record<V, React.CSSProperties['fontSize']>
-	lineHeight: Record<V, React.CSSProperties['lineHeight']>
+	fontFamily: NonNullable<React.CSSProperties['fontFamily']>
+	fontWeight: NonNullable<React.CSSProperties['fontWeight']>
+	fontSize: Record<V, NonNullable<React.CSSProperties['fontSize']>>
+	lineHeight: Record<V, NonNullable<React.CSSProperties['lineHeight']>>
 }
 
-export interface BaseTheme {
+export interface BaseTheme extends Record<string, unknown> {
 	global: CSSObject
 	componentStyles: Record<string, CSSObject>
 	breakpoints: Record<Size, number | string>
 	spacing: Record<Size, number | string>
-	radius: Record<Size, React.CSSProperties['borderRadius']>
+	radius: Record<Size, NonNullable<React.CSSProperties['borderRadius']>>
 	typography: {
 		heading: TypographyProperties<Size>
 		text: TypographyProperties<Size>
@@ -117,8 +106,8 @@ export interface BaseTheme {
 	darkPalette: Palette
 	colorModifiers: Record<Modifier, number>
 	transition: {
-		duration: React.CSSProperties['transitionDuration']
-		ease: React.CSSProperties['transitionTimingFunction']
+		duration: NonNullable<React.CSSProperties['transitionDuration']>
+		ease: NonNullable<React.CSSProperties['transitionTimingFunction']>
 	}
 	shadow: {
 		color: string

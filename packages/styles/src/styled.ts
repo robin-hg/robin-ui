@@ -20,7 +20,7 @@ const augumentStyle = <P extends PropsWithSX>(props: P, label = '') => {
 }
 
 const styled: BaseCreateStyled =
-	(component: any, options?: StyledOptions) =>
+	(component: React.ComponentType, options?: StyledOptions) =>
 	<P extends PropsWithSX>(...styles: Interpolation<P>[]) => {
 		if (options?.shouldForwardProp) {
 			options.shouldForwardProp = shouldForwardProp

@@ -50,27 +50,14 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 					ref: targetRef,
 					'aria-describedby': open ? _id : undefined,
 					onKeyDown: (event: React.KeyboardEvent) => {
-						children.props.onKeyDown?.(event)
 						if (event.key === 'Escape') {
 							setOpen(false)
 						}
 					},
-					onPointerOver: (event: React.PointerEvent) => {
-						children.props.onPointerOver?.(event)
-						setOpen(true)
-					},
-					onPointerLeave: (event: React.PointerEvent) => {
-						children.props.onPointerLeave?.(event)
-						setOpen(false)
-					},
-					onFocus: (event: React.FocusEvent) => {
-						children.props.onFocus?.(event)
-						setOpen(true)
-					},
-					onBlur: (event: React.FocusEvent) => {
-						children.props.onBlur?.(event)
-						setOpen(false)
-					}
+					onPointerOver: () => setOpen(true),
+					onPointerLeave: () => setOpen(false),
+					onFocus: () => setOpen(true),
+					onBlur: () => setOpen(false)
 				})}
 		</>
 	)

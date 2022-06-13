@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { StyledComponent } from '@emotion/styled'
 import type { Theme, Interpolation, CSSObject } from '@emotion/react'
 
@@ -21,9 +22,9 @@ export interface PropsWithSX {
 }
 
 interface CreateStyledComponent<
-	ComponentProps extends Record<string, any> = Record<string, any>,
-	SpecificComponentProps extends Record<string, any> = Record<string, any>,
-	JSXProps extends Record<string, any> = Record<string, any>
+	ComponentProps extends Record<string, any> = Record<string, unknown>,
+	SpecificComponentProps extends Record<string, any> = Record<string, unknown>,
+	JSXProps extends Record<string, any> = Record<string, unknown>
 > {
 	<AdditionalProps extends Record<string, any>>(
 		...styles: Interpolation<AdditionalProps & ComponentProps & PropsWithSX>[]

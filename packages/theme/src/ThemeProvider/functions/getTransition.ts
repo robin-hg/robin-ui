@@ -6,11 +6,10 @@ export interface TransitionOptions {
 }
 
 type Properties =
-	| React.CSSProperties['transitionProperty']
-	| React.CSSProperties['transitionProperty'][]
+	| NonNullable<React.CSSProperties['transitionProperty']>
+	| NonNullable<React.CSSProperties['transitionProperty']>[]
 
-const parseDuration = (value?: number | string) =>
-	typeof value === 'number' ? `${value}ms` : value
+const parseDuration = (value: number | string) => (typeof value === 'number' ? `${value}ms` : value)
 
 export const getTransition =
 	(theme: BaseTheme) =>

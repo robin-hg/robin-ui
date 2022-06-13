@@ -2,9 +2,9 @@ import type { SizeValue } from '@robin-ui/types'
 import styled from '@robin-ui/styles'
 
 interface FlexBoxContainerProps {
-	$direction: React.CSSProperties['flexDirection']
-	$alignItems: React.CSSProperties['alignItems']
-	$justifyContent: React.CSSProperties['justifyContent']
+	$direction: NonNullable<React.CSSProperties['flexDirection']>
+	$alignItems: NonNullable<React.CSSProperties['alignItems']>
+	$justifyContent: NonNullable<React.CSSProperties['justifyContent']>
 	$spacing: SizeValue | [SizeValue, SizeValue]
 	$wrap: boolean
 }

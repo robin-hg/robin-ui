@@ -1,4 +1,7 @@
-export const omit = <O extends Record<string, any>, K extends string>(obj: O, keys: K[]) => {
+export const omit = <O extends Record<PropertyKey, unknown>, K extends keyof O>(
+	obj: O,
+	keys: K[]
+) => {
 	return Object.fromEntries(
 		Object.keys(obj)
 			.filter(key => !(keys as string[]).includes(key))
