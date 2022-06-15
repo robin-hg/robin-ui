@@ -96,14 +96,14 @@ importers:
       framer-motion: ^6.3.10
       react-number-format: ^4.9.3
     dependencies:
-      '@floating-ui/react-dom': 0.7.1
+      '@floating-ui/react-dom': 0.7.2
       '@robin-ui/hooks': link:../hooks
       '@robin-ui/icons': link:../icons
       '@robin-ui/styles': link:../styles
       '@robin-ui/theme': link:../theme
       '@robin-ui/types': link:../types
       '@robin-ui/utils': link:../utils
-      framer-motion: 6.3.10
+      framer-motion: 6.3.11
       react-number-format: 4.9.3
 
   packages/hooks:
@@ -147,10 +147,7 @@ importers:
       '@robin-ui/theme': link:../theme
 
   packages/utils:
-    specifiers:
-      '@robin-ui/types': workspace:*
-    dependencies:
-      '@robin-ui/types': link:../types
+    specifiers: {}
 
 packages:
 
@@ -2349,23 +2346,23 @@ packages:
       - supports-color
     dev: true
 
-  /@floating-ui/core/0.7.2:
-    resolution: {integrity: sha512-FRVAkSNU/vGXLIsgbggcs70GkXKEOXgBBbNpYPNHSaKsCAMMd00NrjbtKTesxkdv9xm9N3+XiDlcFGY6WnatBg==}
+  /@floating-ui/core/0.7.3:
+    resolution: {integrity: sha512-buc8BXHmG9l82+OQXOFU3Kr2XQx9ys01U/Q9HMIrZ300iLc8HLMgh7dcCqgYzAzf4BkoQvDcXf5Y+CuEZ5JBYg==}
     dev: false
 
-  /@floating-ui/dom/0.5.2:
-    resolution: {integrity: sha512-z1DnEa7F3d8Fm/eXSbii8UEGpcjZGkQaYYUI0WpEVgD3vBfebDW8j/3ysusxonuMexoigA+A3b/fYH7sEqiwyg==}
+  /@floating-ui/dom/0.5.3:
+    resolution: {integrity: sha512-vpjWB1uC7rajvgA58uzlJZgtWqrdDQLw+XVA3w63ZTmsWwRmVd0Gl5Dy9VMAViI9cP7hBWaJt23Jy3AVgVYnoQ==}
     dependencies:
-      '@floating-ui/core': 0.7.2
+      '@floating-ui/core': 0.7.3
     dev: false
 
-  /@floating-ui/react-dom/0.7.1:
-    resolution: {integrity: sha512-Dd7e8AupUjzcjeGf1g3EItf/QRtEWKF5GGyEs5WA5n3zlHvEgZ4XrZM6ANhUnzgE3pUQAaXkcXLnibgFp1YBRw==}
+  /@floating-ui/react-dom/0.7.2:
+    resolution: {integrity: sha512-1T0sJcpHgX/u4I1OzIEhlcrvkUN8ln39nz7fMoE/2HDHrPiMFoOGR7++GYyfUmIQHkkrTinaeQsO3XWubjSvGg==}
     peerDependencies:
       react: '>=16.8.0 || ^18'
       react-dom: '>=16.8.0 || ^18'
     dependencies:
-      '@floating-ui/dom': 0.5.2
+      '@floating-ui/dom': 0.5.3
       use-isomorphic-layout-effect: 1.1.2
     transitivePeerDependencies:
       - '@types/react'
@@ -5083,7 +5080,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -7402,8 +7399,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/6.3.10:
-    resolution: {integrity: sha512-modFplFb1Fznsm0MrmRAJUC32UDA5jbGU9rDvkGzhAHksru2tnoKbU/Pa3orzdsJI0CJviG4NGBrmwGveU98Cg==}
+  /framer-motion/6.3.11:
+    resolution: {integrity: sha512-xQLk+ZSklNs5QNCUmdWPpKMOuWiB8ZETsvcIOWw8xvri9K3TamuifgCI/B6XpaEDR0/V2ZQF2Wm+gUAZrXo+rw==}
     peerDependencies:
       react: '>=16.8 || ^17.0.0 || ^18.0.0 || ^18'
       react-dom: '>=16.8 || ^17.0.0 || ^18.0.0 || ^18'
@@ -10190,6 +10187,17 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
