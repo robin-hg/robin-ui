@@ -92,7 +92,7 @@ export interface TypographyProperties<V extends Size> {
 export interface BaseTheme extends Record<string, unknown> {
 	global: CSSObject
 	componentStyles: Record<string, CSSObject>
-	breakpoints: Record<Size, number | string>
+	breakpoints: Record<Size, number>
 	spacing: Record<Size, number | string>
 	radius: Record<Size, NonNullable<React.CSSProperties['borderRadius']>>
 	typography: {
