@@ -1,4 +1,3 @@
-import { describe, it, expect, vi } from 'vitest'
 import { runIfFn } from './runIfFn'
 
 describe('runIfFn', () => {

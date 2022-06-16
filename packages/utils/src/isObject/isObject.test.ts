@@ -1,4 +1,3 @@
-import { describe, it, expect } from 'vitest'
 import { isObject } from './isObject'
 
 describe('isObject', () => {

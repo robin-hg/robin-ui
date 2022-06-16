@@ -1,4 +1,3 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { memoize } from './memoize'
 
 describe('memoize', () => {

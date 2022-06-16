@@ -15,7 +15,7 @@
 		"lint": "pnpm lint:code && pnpm lint:types",
 		"lint:code": "eslint ./packages/*/src/** --ext .ts,.tsx",
 		"lint:types": "tsc --noEmit --skipLibCheck",
-		"test": "vitest --coverage --dom packages",
+		"test": "vitest packages",
 		"release": "pnpm build && changeset publish"
 	},
 	"devDependencies": {

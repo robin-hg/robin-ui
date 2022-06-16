@@ -4,6 +4,7 @@
 		"module": "ESNext",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"jsx": "react-jsxdev",
+		"types": ["vitest/globals"],
 		"strict": true,
 		"moduleResolution": "Node",
 		"esModuleInterop": true,
@@ -12,7 +13,5 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"forceConsistentCasingInFileNames": true
-	},
-	"include": ["packages"],
-	"exclude": ["**/node_modules", "**/dist"]
+	}
 }

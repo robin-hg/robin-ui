@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { wait } from './wait'
 
 describe('wait', () => {

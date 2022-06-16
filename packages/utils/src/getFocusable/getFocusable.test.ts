@@ -1,4 +1,3 @@
-import { describe, it, expect } from 'vitest'
 import { Window } from 'happy-dom'
 import { getFocusable } from './getFocusable'
 
