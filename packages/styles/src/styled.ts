@@ -7,7 +7,7 @@ import type {
 	CreateStyled,
 	SXComponents
 } from './types'
-import { transformSx } from './transformer'
+import { transformSx } from './transformSx'
 
 const excludedProps = new Set(['sx', 'css', 'as'])
 
