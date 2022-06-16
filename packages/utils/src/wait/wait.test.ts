@@ -4,10 +4,14 @@ import { wait } from './wait'
 describe('wait', () => {
 	beforeEach(() => {
 		vi.useFakeTimers()
-		vi.clearAllMocks()
 	})
 
-	it('waits for 1 seconds', async () => {
+	afterEach(() => {
+		vi.runOnlyPendingTimers()
+		vi.useRealTimers()
+	})
+
+	it('waits for 1 second', async () => {
 		const fn = vi.fn()
 		const testFn = async () => {
 			await wait(1000)

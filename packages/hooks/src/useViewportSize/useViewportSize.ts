@@ -3,15 +3,15 @@ import { useEventListener } from '../useEventListener'
 
 export const useViewportSize = () => {
 	const [size, setSize] = useState({
-		width: document?.documentElement.clientWidth ?? 0,
-		height: document?.documentElement.clientHeight ?? 0
+		width: innerWidth ?? 0,
+		height: innerHeight ?? 0
 	})
 
 	const updateSize = () =>
 		startTransition(() =>
 			setSize({
-				width: document?.documentElement.clientWidth ?? 0,
-				height: document?.documentElement.clientHeight ?? 0
+				width: innerWidth ?? 0,
+				height: innerHeight ?? 0
 			})
 		)
 

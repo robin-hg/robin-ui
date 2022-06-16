@@ -3,7 +3,11 @@ import { memoize } from './memoize'
 describe('memoize', () => {
 	beforeEach(() => {
 		vi.useFakeTimers()
-		vi.clearAllMocks()
+	})
+
+	afterEach(() => {
+		vi.runOnlyPendingTimers()
+		vi.useRealTimers()
 	})
 
 	it('should properly memoize values', () => {
