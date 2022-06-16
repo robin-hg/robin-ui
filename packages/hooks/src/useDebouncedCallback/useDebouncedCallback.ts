@@ -5,14 +5,14 @@ export const useDebouncedCallback = <T extends (...args: Parameters<T>) => void>
 	callback: T,
 	delay = 500
 ) => {
-	const timeout = useRef<number>()
+	const timeout = useRef<ReturnType<typeof setTimeout>>()
 
 	return useEvent((...args: Parameters<T>) => {
 		if (timeout.current) {
-			window.clearTimeout(timeout.current)
+			clearTimeout(timeout.current)
 		}
 
-		timeout.current = window.setTimeout(() => {
+		timeout.current = setTimeout(() => {
 			callback(...args)
 		}, delay)
 	})

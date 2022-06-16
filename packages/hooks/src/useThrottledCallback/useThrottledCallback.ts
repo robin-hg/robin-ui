@@ -5,11 +5,11 @@ export const useThrottledCallback = <T extends (...args: Parameters<T>) => void>
 	callback: T,
 	delay = 500
 ) => {
-	const timeout = useRef<number>()
+	const timeout = useRef<ReturnType<typeof setTimeout> | number>()
 	const waitingValue = useRef<Parameters<T>>()
 
 	useEffect(() => {
-		return () => window.clearTimeout(timeout.current)
+		return () => clearTimeout(timeout.current)
 	}, [])
 
 	return useEvent((...args: Parameters<T>) => {
@@ -23,12 +23,12 @@ export const useThrottledCallback = <T extends (...args: Parameters<T>) => void>
 			if (waitingValue.current) {
 				callback(...waitingValue.current)
 				waitingValue.current = undefined
-				timeout.current = window.setTimeout(callback, delay)
+				timeout.current = setTimeout(callback, delay)
 			} else {
 				timeout.current = undefined
 			}
 		}
 
-		timeout.current = window.setTimeout(timeoutCallback, delay)
+		timeout.current = setTimeout(timeoutCallback, delay)
 	})
 }

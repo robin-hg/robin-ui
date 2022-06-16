@@ -69,8 +69,8 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 		value?.toString() ?? defaultValue?.toString() ?? ''
 	)
 	const inputRef = useRef<HTMLInputElement>(null)
-	const timeoutRef = useRef<number>()
-	const intervalRef = useRef<number>()
+	const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
+	const intervalRef = useRef<ReturnType<typeof setInterval>>()
 
 	const error = wrapperError || inputError
 	const required = wrapperRequired || inputRequired
@@ -91,16 +91,16 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 
 	const handleStepHold = (direction: 'up' | 'down') => {
 		handleStep(direction)
-		timeoutRef.current = window.setTimeout(() => {
-			intervalRef.current = window.setInterval(() => {
+		timeoutRef.current = setTimeout(() => {
+			intervalRef.current = setInterval(() => {
 				handleStep(direction)
 			}, 50)
 		}, 300)
 	}
 
 	const handleStepRelease = () => {
-		window.clearTimeout(timeoutRef.current)
-		window.clearInterval(intervalRef.current)
+		clearTimeout(timeoutRef.current)
+		clearInterval(intervalRef.current)
 	}
 
 	useEffect(() => {
