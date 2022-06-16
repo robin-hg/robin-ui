@@ -8,6 +8,7 @@
 	"sideEffects": false,
 	"main": "src/index.ts",
 	"dependencies": {
+		"@robin-ui/core": "workspace:*",
 		"@testing-library/react": "^13.3.0"
 	},
 	"peerDependencies": {

@@ -27,6 +27,7 @@
 		"@fontsource/noto-sans-mono": "^4.5.9",
 		"@fontsource/noto-serif-display": "^4.5.11",
 		"@mdx-js/react": "^2.1.1",
+		"@robin-ui/test-utils": "workspace:*",
 		"@storybook/addon-a11y": "^6.5.9",
 		"@storybook/addon-actions": "^6.5.9",
 		"@storybook/addon-controls": "^6.5.9",
