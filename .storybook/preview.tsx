@@ -1,4 +1,5 @@
 import type { DecoratorFn } from '@storybook/react'
+import React from 'react'
 import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
 import { dark, gray } from '../packages/theme/src/defaultTheme/colors'
@@ -49,6 +50,10 @@ export const parameters = {
 export const decorators: DecoratorFn[] = [
 	Story => {
 		const darkMode = useDarkMode()
-		return <RobinProvider colorMode={darkMode ? 'dark' : 'light'}>{Story()}</RobinProvider>
+		return (
+			<React.StrictMode>
+				<RobinProvider colorMode={darkMode ? 'dark' : 'light'}>{Story()}</RobinProvider>
+			</React.StrictMode>
+		)
 	}
 ]
