@@ -22,25 +22,6 @@ export type Modifier =
 	| 'fadedBase'
 	| 'fadedOnBase'
 
-type DefaultColor =
-	| 'gray'
-	| 'red'
-	| 'pink'
-	| 'violet'
-	| 'indigo'
-	| 'blue'
-	| 'cyan'
-	| 'teal'
-	| 'green'
-	| 'lime'
-	| 'yellow'
-	| 'orange'
-
-type Intensity = 0 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
-export type ColorObj = Record<Intensity, string>
-
-export interface AdditionalColors extends Record<string, ColorObj> {}
-
 interface PaletteColor {
 	base: string
 	onBase: string
@@ -77,7 +58,6 @@ export type ColorToken =
 	| `${keyof DefaultPalette}`
 	| `${PaletteKeyWithVariant}.${keyof PaletteColorWithVariant}`
 	| `${PaletteKey}.${keyof PaletteColor}`
-	| `${DefaultColor}.${keyof ColorObj}`
 	| 'outline'
 	| (`${keyof AdditionalPalette}` & Record<never, never>)
 	| (string & Record<never, never>)
@@ -101,7 +81,6 @@ export interface BaseTheme extends Record<string, unknown> {
 		label: TypographyProperties<Size>
 		code: TypographyProperties<Size>
 	}
-	colors: Record<DefaultColor, ColorObj> & AdditionalColors
 	lightPalette: Palette
 	darkPalette: Palette
 	colorModifiers: Record<Modifier, number>

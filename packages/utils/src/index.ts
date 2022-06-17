@@ -1,5 +1,6 @@
 export { camelCase } from './camelCase'
 export { clampNumber } from './clampNumber'
+export { colord, generatePalette } from './color'
 export { deepmerge } from './deepmerge'
 export { get } from './get'
 export { getFocusable } from './getFocusable'

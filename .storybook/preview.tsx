@@ -2,7 +2,7 @@ import type { DecoratorFn } from '@storybook/react'
 import React from 'react'
 import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
-import { dark, gray } from '../packages/theme/src/defaultTheme/colors'
+import { colors } from '../packages/theme/src/colors'
 
 import { RobinProvider } from '../packages/core'
 
@@ -14,8 +14,13 @@ import '@fontsource/noto-sans-mono/400.css'
 
 export const parameters = {
 	darkMode: {
-		dark: { ...themes.dark, appBg: dark[800], barBg: dark[800], appContentBg: dark[800] },
-		light: { ...themes.light, appBg: gray[50] }
+		dark: {
+			...themes.dark,
+			appBg: colors.neutral[10],
+			barBg: colors.neutral[10],
+			appContentBg: colors.neutral[10]
+		},
+		light: { ...themes.light, appBg: colors.neutral[90] }
 	},
 	actions: { argTypesRegex: '^on[A-Z].*' },
 	options: {

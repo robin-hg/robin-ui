@@ -1,48 +1,48 @@
 import type { AugumentedTheme, ColorToken, Modifier } from '../../types'
-import tinycolor, { mostReadable } from '@ctrl/tinycolor'
-import { get, memoize } from '@robin-ui/utils'
+import { get, memoize, colord } from '@robin-ui/utils'
 
-const DEFAULT_SHADE = 500
-
-export const getColorFunctions = (theme: AugumentedTheme) => ({
-	getColor: memoize((color: ColorToken) => {
+export const getColorFunctions = (theme: AugumentedTheme) => {
+	const getColor = memoize((color: ColorToken) => {
 		const [base, shade] = color.split('.')
-		return get(
-			theme.palette,
-			[base, shade || 'base'],
-			get(theme.palette, [base], get(theme.colors, [base, shade || DEFAULT_SHADE], color))
-		)
-	}),
-	getAlphaColor(color: ColorToken, modifier: Modifier | number) {
-		const c = this.getColor(color)
-		const colorObj = tinycolor(c)
-		return colorObj
-			.setAlpha(typeof modifier === 'number' ? modifier : theme.colorModifiers[modifier])
-			.toHex8String()
-	},
-	getOnColor(background: ColorToken) {
-		const [base, variant = 'base'] = background.split('.')
-		const v = variant === 'base' ? 'onBase' : 'onVariant'
-		const onColor = get<string | undefined>(theme.palette, [base, v])
+		return get(theme.palette, [base, shade || 'base'], get(theme.palette, [base], color))
+	})
 
-		if (onColor) {
-			return onColor
-		}
+	return {
+		getColor,
+		getAlphaColor: memoize((color: ColorToken, modifier: Modifier | number) => {
+			const c = getColor(color)
+			return colord(c)
+				.alpha(typeof modifier === 'number' ? modifier : theme.colorModifiers[modifier])
+				.toHex()
+		}),
+		getOnColor: memoize((background: ColorToken) => {
+			const [base, variant = 'base'] = background.split('.')
+			const v = variant === 'base' ? 'onBase' : 'onVariant'
+			const onColor = get<string | undefined>(theme.palette, [base, v])
 
-		const backgroundColor = this.getColor(background)
-		return (
-			mostReadable(
-				backgroundColor,
-				[theme.palette.surface.base, theme.palette.surface.onBase],
-				{
-					includeFallbackColors: true
-				}
-			)?.toHex8String() || ''
+			if (onColor) {
+				return onColor
+			}
+
+			const backgroundColor = getColor(background)
+			const baseContrast = colord(backgroundColor).contrast(theme.palette.surface.base)
+			const onBaseContrast = colord(backgroundColor).contrast(theme.palette.surface.onBase)
+
+			return baseContrast > onBaseContrast
+				? theme.palette.surface.base
+				: theme.palette.surface.onBase
+		}),
+		getModifiedColor: memoize(
+			(background: ColorToken, color: ColorToken, modifier: Modifier | number) => {
+				const backgrounColor = getColor(background)
+				const layerColor = getColor(color)
+				return colord(backgrounColor)
+					.mix(
+						layerColor,
+						typeof modifier === 'number' ? modifier : theme.colorModifiers[modifier]
+					)
+					.toHex()
+			}
 		)
-	},
-	getModifiedColor(background: ColorToken, color: ColorToken, modifier: Modifier | number) {
-		const backgrounColor = this.getColor(background)
-		const layerColor = this.getAlphaColor(color, modifier)
-		return tinycolor(layerColor).onBackground(backgrounColor).toHex8String()
 	}
-})
+}

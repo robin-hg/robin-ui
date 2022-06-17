@@ -1,4 +1,3 @@
-import { colors } from './colors'
 import { lightPalette, darkPalette } from './palette'
 import { heading, text, label, code } from './typography'
 import type { BaseTheme } from '../types'
@@ -33,7 +32,6 @@ export const defaultTheme: BaseTheme = {
 		label,
 		code
 	},
-	colors,
 	lightPalette,
 	darkPalette,
 	colorModifiers: {
