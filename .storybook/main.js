@@ -1,3 +1,5 @@
+const { mergeConfig } = require('vite')
+
 module.exports = {
 	core: { builder: '@storybook/builder-vite', disableTelemetry: true },
 	stories: ['../packages/core/src/**/*.stories.@(tsx|mdx)'],
@@ -12,7 +14,9 @@ module.exports = {
 	viteFinal: config => {
 		const path = require('path')
 		// workaround for hoisting issues with pnpm
-		config.root = path.dirname(require.resolve('@storybook/builder-vite'))
-		return config
+		return mergeConfig(config, {
+			root: path.dirname(require.resolve('@storybook/builder-vite')),
+			esbuild: { logOverride: { 'this-is-undefined-in-esm': 'silent' } }
+		})
 	}
 }

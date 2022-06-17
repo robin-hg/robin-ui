@@ -53,7 +53,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		}
 	}
 
-	const tabs = Children.toArray(children) as React.ReactElement<TabPanelProps>[]
+	const tabs = Children.toArray(children) as React.ReactElement<TabPanelProps | undefined>[]
 	const activePanel = tabs.find((tab, i) =>
 		typeof _activeTab === 'number' ? _activeTab === i : _activeTab === tab.props?.tabKey
 	)
