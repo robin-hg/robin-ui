@@ -50,5 +50,8 @@ const traverse = <P extends StyleProps>(style: Interpolation<P>, theme: Theme): 
 }
 
 export const transformSx = (style?: SX) => (props: StyleProps) => {
+	if (Array.isArray(style)) {
+		return style.map(item => traverse(runIfFn(item, props.theme), props.theme))
+	}
 	return traverse(runIfFn(style, props.theme), props.theme)
 }

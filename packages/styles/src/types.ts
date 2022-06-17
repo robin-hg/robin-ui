@@ -10,7 +10,8 @@ type SXStyle = CSSObject & {
 	_xl?: CSSObject
 }
 
-export type SX = SXStyle | ((theme: Theme) => SXStyle)
+type SXItem = SXStyle | ((theme: Theme) => SXStyle)
+export type SX = SXItem | SXItem[]
 
 export interface StyledOptions {
 	label?: string
