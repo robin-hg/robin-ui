@@ -30,7 +30,8 @@
 		"build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
 	},
 	"dependencies": {
-		"@robin-ui/theme": "workspace:*"
+		"@robin-ui/theme": "workspace:*",
+		"@robin-ui/utils": "workspace:*"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11",

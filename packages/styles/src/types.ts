@@ -2,7 +2,7 @@
 import type { StyledComponent } from '@emotion/styled'
 import type { Theme, Interpolation, CSSObject } from '@emotion/react'
 
-export type SX = CSSObject & {
+type SXStyle = CSSObject & {
 	_sx?: CSSObject
 	_sm?: CSSObject
 	_md?: CSSObject
@@ -10,13 +10,15 @@ export type SX = CSSObject & {
 	_xl?: CSSObject
 }
 
+export type SX = SXStyle | ((theme: Theme) => SXStyle)
+
 export interface StyledOptions {
 	label?: string
 	shouldForwardProp?: (key: string) => boolean
 }
 
 export { Theme }
-export interface PropsWithSX {
+export interface StyleProps {
 	theme: Theme
 	sx?: SX
 }
@@ -27,7 +29,7 @@ interface CreateStyledComponent<
 	JSXProps extends Record<string, any> = Record<string, unknown>
 > {
 	<AdditionalProps extends Record<string, any>>(
-		...styles: Interpolation<AdditionalProps & ComponentProps & PropsWithSX>[]
+		...styles: Interpolation<AdditionalProps & ComponentProps & StyleProps>[]
 	): StyledComponent<ComponentProps & AdditionalProps, SpecificComponentProps, JSXProps>
 }
 

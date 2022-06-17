@@ -1,6 +1,7 @@
 import type { Theme, CSSObject, Interpolation } from '@emotion/react'
-import type { PropsWithSX } from '../types'
+import type { StyleProps, SX } from '../types'
 import { colorProperties, spacingProperties } from './properties'
+import { runIfFn } from '@robin-ui/utils'
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
@@ -36,7 +37,7 @@ const replaceKey = (key: string, theme: Theme) => {
 	}
 }
 
-const traverse = <P extends PropsWithSX>(style: Interpolation<P>, theme: Theme): CSSObject => {
+const traverse = <P extends StyleProps>(style: Interpolation<P>, theme: Theme): CSSObject => {
 	if (!style) {
 		return {}
 	}
@@ -48,6 +49,6 @@ const traverse = <P extends PropsWithSX>(style: Interpolation<P>, theme: Theme):
 	)
 }
 
-export const transformSx = (style?: CSSObject) => (props: PropsWithSX) => {
-	return traverse(style, props.theme)
+export const transformSx = (style?: SX) => (props: StyleProps) => {
+	return traverse(runIfFn(style, props.theme), props.theme)
 }
