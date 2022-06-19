@@ -1,6 +1,7 @@
 import { generatePalette } from '@robin-ui/utils'
 
-type Intensity = 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100
+type Intensity = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+
 type ColorObj = Record<Intensity, string>
 
 type BaseColor =
@@ -37,8 +38,11 @@ const baseColors: Record<BaseColor, string> = {
 export const colors = Object.fromEntries(
 	Object.entries(baseColors).map(([colorName, baseColor]) => {
 		const palette = Object.fromEntries(
-			generatePalette(baseColor).map((color, i) => [(i + 1) * 10, color])
+			generatePalette(baseColor).map((color, i) => [i + 1, color])
 		) as ColorObj
 		return [colorName, palette]
 	})
 ) as Record<BaseColor, ColorObj>
+
+export const black = '#000000'
+export const white = '#ffffff'

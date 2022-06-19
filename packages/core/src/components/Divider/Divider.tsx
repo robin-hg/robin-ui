@@ -1,11 +1,12 @@
-import type { DefaultProps, SizeValue } from '@robin-ui/types'
+import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
 
 import { DividerLine } from './Divider.style'
 
 export interface Props extends DefaultProps<HTMLHRElement> {
 	orientation?: 'horizontal' | 'vertical'
-	thickness?: number | string
+	color?: ColorToken
+	thickness?: SizeValue
 	spacing?: SizeValue
 	alignLabel?: 'start' | 'center' | 'end'
 }
@@ -13,7 +14,8 @@ export interface Props extends DefaultProps<HTMLHRElement> {
 export const Divider = React.forwardRef<HTMLHRElement, Props>((props, ref) => {
 	const {
 		orientation = 'horizontal',
-		thickness = 1,
+		color = 'outline',
+		thickness = 'xs',
 		spacing = 'md',
 		alignLabel = 'center',
 		children,
@@ -25,6 +27,7 @@ export const Divider = React.forwardRef<HTMLHRElement, Props>((props, ref) => {
 			ref={ref}
 			role="separator"
 			$orientation={orientation}
+			$color={color}
 			$thickness={thickness}
 			$spacing={spacing}
 			$alignLabel={alignLabel}

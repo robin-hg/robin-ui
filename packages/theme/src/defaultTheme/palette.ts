@@ -1,102 +1,104 @@
-import { colors } from './colors'
+import { colors, white } from '../colors'
 import type { Palette } from '../types'
 
 export const lightPalette: Palette = {
 	primary: {
-		base: colors.blue[600],
-		onBase: colors.blue[0],
-		variant: colors.blue[300],
-		onVariant: colors.gray[800]
+		base: colors.blue[6],
+		onBase: white,
+		variant: colors.blue[3],
+		onVariant: colors.blue[8]
 	},
 	secondary: {
-		base: colors.red[600],
-		onBase: colors.red[0],
-		variant: colors.red[300],
-		onVariant: colors.gray[800]
+		base: colors.teal[6],
+		onBase: white,
+		variant: colors.teal[2],
+		onVariant: colors.teal[8]
 	},
 	critical: {
-		base: colors.red[900],
-		onBase: colors.red[50],
-		variant: colors.red[900],
-		onVariant: colors.red[50]
+		base: colors.red[6],
+		onBase: white,
+		variant: colors.red[2],
+		onVariant: colors.red[8]
 	},
 	warning: {
-		base: colors.yellow[900],
-		onBase: colors.yellow[50],
-		variant: colors.yellow[900],
-		onVariant: colors.yellow[50]
-	},
-	info: {
-		base: colors.blue[900],
-		onBase: colors.blue[50],
-		variant: colors.blue[900],
-		onVariant: colors.blue[50]
+		base: colors.yellow[6],
+		onBase: white,
+		variant: colors.yellow[2],
+		onVariant: colors.yellow[8]
 	},
 	success: {
-		base: colors.green[900],
-		onBase: colors.green[50],
-		variant: colors.green[900],
-		onVariant: colors.green[50]
+		base: colors.green[6],
+		onBase: white,
+		variant: colors.green[2],
+		onVariant: colors.green[8]
+	},
+	info: {
+		base: colors.blue[6],
+		onBase: white,
+		variant: colors.blue[3],
+		onVariant: colors.blue[8]
 	},
 	surface: {
-		base: colors.gray[0],
-		onBase: colors.gray[900],
-		variant: colors.gray[200],
-		onVariant: colors.gray[700]
+		base: colors.neutral[1],
+		onBase: colors.neutral[9],
+		variant: colors.neutral[2],
+		onVariant: colors.neutral[7]
 	},
 	background: {
-		base: colors.gray[0],
-		onBase: colors.gray[700]
+		base: white,
+		onBase: colors.neutral[7]
 	},
-	outline: colors.gray[400]
+	outline: colors.neutral[4],
+	tint: colors.blue[7]
 }
 
 export const darkPalette: Palette = {
 	primary: {
-		base: colors.blue[600],
-		onBase: colors.blue[0],
-		variant: colors.blue[300],
-		onVariant: colors.gray[800]
+		base: colors.blue[3],
+		onBase: colors.blue[9],
+		variant: colors.blue[7],
+		onVariant: colors.blue[2]
 	},
 	secondary: {
-		base: colors.blue[600],
-		onBase: colors.blue[0],
-		variant: colors.blue[300],
-		onVariant: colors.gray[800]
+		base: colors.teal[3],
+		onBase: colors.teal[9],
+		variant: colors.teal[7],
+		onVariant: colors.teal[2]
 	},
 	critical: {
-		base: colors.red[500],
-		onBase: colors.red[50],
-		variant: colors.red[900],
-		onVariant: colors.red[50]
+		base: colors.red[3],
+		onBase: colors.red[8],
+		variant: colors.red[9],
+		onVariant: colors.red[2]
 	},
 	warning: {
-		base: colors.yellow[500],
-		onBase: colors.yellow[50],
-		variant: colors.yellow[900],
-		onVariant: colors.yellow[50]
-	},
-	info: {
-		base: colors.blue[500],
-		onBase: colors.blue[50],
-		variant: colors.blue[900],
-		onVariant: colors.blue[50]
+		base: colors.yellow[3],
+		onBase: colors.yellow[8],
+		variant: colors.yellow[9],
+		onVariant: colors.yellow[2]
 	},
 	success: {
-		base: colors.green[500],
-		onBase: colors.green[50],
-		variant: colors.green[900],
-		onVariant: colors.green[50]
+		base: colors.lime[3],
+		onBase: colors.lime[8],
+		variant: colors.lime[9],
+		onVariant: colors.lime[2]
+	},
+	info: {
+		base: colors.blue[3],
+		onBase: colors.blue[8],
+		variant: colors.blue[9],
+		onVariant: colors.blue[2]
 	},
 	surface: {
-		base: colors.dark[600],
-		onBase: colors.dark[50],
-		variant: colors.dark[800],
-		onVariant: colors.dark[100]
+		base: colors.neutral[9],
+		onBase: colors.neutral[3],
+		variant: colors.neutral[8],
+		onVariant: colors.neutral[3]
 	},
 	background: {
-		base: colors.dark[700],
-		onBase: colors.dark[50]
+		base: colors.neutral[10],
+		onBase: colors.neutral[3]
 	},
-	outline: colors.dark[400]
+	outline: colors.neutral[3],
+	tint: colors.blue[7]
 }

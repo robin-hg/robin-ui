@@ -1,16 +1,25 @@
-import type { SizeValue } from '@robin-ui/types'
+import type { ColorToken, SizeValue } from '@robin-ui/types'
 import styled from '@robin-ui/styles'
+
+const defaultThickness = {
+	xs: '0.1rem',
+	sm: '0.2rem',
+	md: '0.2rem',
+	lg: '0.3rem',
+	xl: '0.4rem'
+}
 
 interface DividerLineProps {
 	$orientation: 'horizontal' | 'vertical'
-	$thickness: string | number
+	$color: ColorToken
+	$thickness: SizeValue
 	$spacing: SizeValue
 	$alignLabel: 'start' | 'center' | 'end'
 	$hasChildren: boolean
 }
 
 export const DividerLine = styled.div<DividerLineProps>(
-	({ theme, $orientation, $spacing, $thickness, $alignLabel, $hasChildren }) =>
+	({ theme, $orientation, $spacing, $thickness, $color, $alignLabel, $hasChildren }) =>
 		({
 			horizontal: {
 				display: 'flex',
@@ -22,8 +31,8 @@ export const DividerLine = styled.div<DividerLineProps>(
 					content: '""',
 					flex: 1,
 					borderTopStyle: 'solid' as React.CSSProperties['borderTopStyle'],
-					borderWidth: $thickness,
-					borderColor: theme.palette.outline
+					borderWidth: theme.fn.getSize($thickness, defaultThickness),
+					borderColor: theme.fn.getColor($color)
 				},
 				'&::before': $alignLabel === 'start' && {
 					flex: 'unset',

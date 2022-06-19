@@ -13,14 +13,7 @@ export type DerrivedColorMode = 'light' | 'dark'
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number
 
-export type Modifier =
-	| 'backgroundTint'
-	| 'tint'
-	| 'hover'
-	| 'focus'
-	| 'active'
-	| 'fadedBase'
-	| 'fadedOnBase'
+export type Modifier = 'tint' | 'hover' | 'focus' | 'active' | 'fadedBase' | 'fadedOnBase'
 
 interface PaletteColor {
 	base: string
@@ -50,6 +43,7 @@ interface DefaultPalette
 	extends Record<PaletteKey, PaletteColor>,
 		Record<PaletteKeyWithVariant, PaletteColorWithVariant> {
 	outline: string
+	tint: string
 }
 
 export type Palette = DefaultPalette & AdditionalPalette

@@ -14,7 +14,8 @@ export default {
 	},
 	argTypes: {
 		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-		radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+		radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+		color: { control: { type: 'text' } }
 	}
 } as Meta<Props>
 

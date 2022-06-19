@@ -2,7 +2,7 @@ import type { DecoratorFn } from '@storybook/react'
 import React from 'react'
 import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
-import { colors } from '../packages/theme/src/colors'
+import { colors, white } from '../packages/theme'
 
 import { RobinProvider } from '../packages/core'
 
@@ -20,7 +20,10 @@ export const parameters = {
 			barBg: colors.neutral[10],
 			appContentBg: colors.neutral[10]
 		},
-		light: { ...themes.light, appBg: colors.neutral[90] }
+		light: {
+			...themes.light,
+			appBg: white
+		}
 	},
 	actions: { argTypesRegex: '^on[A-Z].*' },
 	options: {

@@ -35,12 +35,11 @@ export const defaultTheme: BaseTheme = {
 	lightPalette,
 	darkPalette,
 	colorModifiers: {
-		backgroundTint: 0.02,
 		tint: 0.05,
-		hover: 0.08,
+		hover: 0.12,
 		focus: 0.12,
-		active: 0.15,
-		fadedBase: 0.15,
+		active: 0.18,
+		fadedBase: 0.1,
 		fadedOnBase: 0.5
 	},
 	transition: {
