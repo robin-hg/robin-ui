@@ -18,6 +18,7 @@ export const Global = () => (
 				body: {
 					margin: 0,
 					padding: 0,
+					fontDisplay: 'block',
 					fontFamily: theme.typography.text.fontFamily,
 					fontSize: theme.typography.text.fontSize.md,
 					lineHeight: theme.typography.text.lineHeight.md,
