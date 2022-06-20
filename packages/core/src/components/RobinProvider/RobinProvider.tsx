@@ -27,7 +27,9 @@ export const RobinProvider: React.FC<Props> = props => {
 	const reducedMotion = useReducedMotion()
 
 	useEffect(() => {
-		document.fonts.onloadingdone = () => setFontLoaded(true)
+		if (document.fonts) {
+			document.fonts.onloadingdone = () => setFontLoaded(true)
+		}
 	}, [])
 
 	return (
