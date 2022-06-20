@@ -1,12 +1,11 @@
 import type { DeepPartial } from '@robin-ui/types'
 import type { BaseTheme, ColorMode, DerrivedColorMode } from '@robin-ui/theme'
-import { useEffect, useState } from 'react'
 import { ThemeProvider } from '@robin-ui/theme'
-import { useColorMode, useReducedMotion } from '@robin-ui/hooks'
-import { LazyMotion, domAnimation } from 'framer-motion'
+import { useColorMode } from '@robin-ui/hooks'
 import { Global } from './Global'
+import { MotionProvider } from './MotionProvider'
 
-export interface Props {
+interface Props {
 	colorMode?: DerrivedColorMode
 	defaultColorMode?: ColorMode
 	addGlobalCSS?: boolean
@@ -22,24 +21,12 @@ export const RobinProvider: React.FC<Props> = props => {
 		theme,
 		children
 	} = props
-	const [fontLoaded, setFontLoaded] = useState(false)
 	const [colorMode] = useColorMode(defaultColorMode)
-	const reducedMotion = useReducedMotion()
-
-	useEffect(() => {
-		if (document.fonts) {
-			document.fonts.onloadingdone = () => setFontLoaded(true)
-		}
-	}, [])
 
 	return (
 		<ThemeProvider colorMode={fixedColorMode || colorMode} theme={theme}>
 			{addGlobalCSS && <Global />}
-			{fontLoaded && !reducedMotion ? (
-				<LazyMotion features={domAnimation}>{children}</LazyMotion>
-			) : (
-				children
-			)}
+			<MotionProvider>{children}</MotionProvider>
 		</ThemeProvider>
 	)
 }

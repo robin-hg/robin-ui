@@ -86,7 +86,7 @@ export interface BaseTheme extends Record<string, unknown> {
 	darkPalette: Palette
 	colorModifiers: Record<Modifier, number>
 	transition: {
-		duration: NonNullable<React.CSSProperties['transitionDuration']>
+		duration: string | number
 		ease: NonNullable<React.CSSProperties['transitionTimingFunction']>
 	}
 	shadow: {

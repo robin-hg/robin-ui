@@ -3,12 +3,10 @@ import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
 import { AnimatePresence, m, type Variants } from 'framer-motion'
 import { sxc } from '@robin-ui/styles'
-import { useTheme } from '@robin-ui/hooks'
-import { camelCase } from '@robin-ui/utils'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
 	in?: boolean
-	duration?: number
+	duration?: string | number
 	ease?: Easing
 	unmountOnExit?: boolean
 	motionOnly?: boolean
@@ -18,15 +16,13 @@ const TransitionFactory = (animation: Variants) => {
 	const Transition = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		const {
 			in: inProp,
-			duration = 200,
-			ease: easeOverride,
+			duration,
+			ease,
 			unmountOnExit,
 			motionOnly,
 			children,
 			...otherProps
 		} = props
-		const { transition } = useTheme()
-		const ease = easeOverride || camelCase(transition.ease || '')
 
 		const transitionComponent = (
 			<m.div
@@ -34,7 +30,10 @@ const TransitionFactory = (animation: Variants) => {
 				animate={inProp ? 'enter' : 'exit'}
 				exit="exit"
 				variants={animation}
-				transition={{ duration: duration / 1000, ease }}>
+				transition={{
+					duration: typeof duration === 'number' ? duration / 1000 : duration,
+					ease
+				}}>
 				<sxc.div ref={ref} {...otherProps}>
 					{children}
 				</sxc.div>
