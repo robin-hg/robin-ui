@@ -1,6 +1,6 @@
 {
 	"name": "@robin-ui/icons",
-	"version": "0.1.4",
+	"version": "0.2.0",
 	"author": "Robin Hong <robinh.jsx@gmail.com>",
 	"description": "A customizable React icon library made from Feather icons",
 	"license": "MIT",

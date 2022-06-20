@@ -1,5 +1,11 @@
 # @robin-ui/utils
 
+## 0.2.0
+
+### Minor Changes
+
+-   [`f76d40f`](https://github.com/robinh-jsx/robin-ui/commit/f76d40f7edad9e1e3eabf451ab03af58bbc166b2) Thanks [@robinh-jsx](https://github.com/robinh-jsx)! - Updated palette + design tokens
+
 ## 0.1.4
 
 ### Patch Changes
