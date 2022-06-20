@@ -57,7 +57,6 @@ export const FloatingElement = styled(Paper)({
 	maxWidth: 'calc(100vw - 3.2rem)',
 	height: 'auto',
 	minWidth: 'max-content',
-	overflow: 'visible',
 	outline: 'none',
 	transition: 'none'
 })

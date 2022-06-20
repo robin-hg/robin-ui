@@ -32,14 +32,14 @@ export const getColorFunctions = (theme: AugumentedTheme) => {
 				? theme.palette.surface.base
 				: theme.palette.surface.onBase
 		}),
-		getModifiedColor: memoize(
-			(background: ColorToken, color: ColorToken, modifier: Modifier | number) => {
+		getMixedColor: memoize(
+			(background: ColorToken, color: ColorToken, ratio: Modifier | number) => {
 				const backgrounColor = getColor(background)
 				const layerColor = getColor(color)
 				return colord(backgrounColor)
 					.mix(
 						layerColor,
-						typeof modifier === 'number' ? modifier : theme.colorModifiers[modifier]
+						typeof ratio === 'number' ? ratio : theme.colorModifiers[ratio]
 					)
 					.toHex()
 			}

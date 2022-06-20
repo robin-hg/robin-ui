@@ -20,7 +20,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 			height: '3.6rem',
 			fontSize: theme.typography.text.fontSize.md,
 			lineHeight: '1em',
-			background: theme.fn.getModifiedColor('surface', 'tint', 'tint'),
+			background: theme.fn.getMixedColor('surface.base', 'tint', 'surfaceTint'),
 			color: 'inherit',
 			border: `0.1rem solid ${theme.palette.outline}`,
 			borderRadius: theme.radius.sm,
@@ -30,7 +30,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
 				borderColor: theme.palette.primary.base
 			},
 			'::placeholder': {
-				color: theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')
+				color: theme.fn.getAlphaColor('surface.onBase', 0.5)
 			},
 			'&::before': {
 				content: '"\\200b"'
@@ -40,17 +40,15 @@ export const Box = styled(BaseContainer)<BoxProps>(
 	({ theme, $state }) =>
 		({
 			disabled: {
-				color: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')} !important`,
+				color: `${theme.fn.getAlphaColor('surface.onBase', 'disabled')} !important`,
 				'& > input, & > select': {
-					background: `${theme.fn.getAlphaColor(
-						'surface.variant',
-						'fadedBase'
+					background: `${theme.fn.getAlphaColor('surface.base', 'disabled')} !important`,
+					borderColor: `${theme.fn.getMixedColor(
+						'surface.base',
+						'outline',
+						'disabled'
 					)} !important`,
-					borderColor: `${theme.fn.getAlphaColor('outline', 'fadedOnBase')} !important`,
-					cursor: 'default !important',
-					'::placeholder': {
-						color: theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')
-					}
+					cursor: 'default !important'
 				}
 			},
 			error: {

@@ -22,7 +22,7 @@ export const Global = () => (
 					fontSize: theme.typography.text.fontSize.md,
 					lineHeight: theme.typography.text.lineHeight.md,
 					minHeight: ['100vh', '-webkit-fill-available'],
-					background: theme.fn.getModifiedColor('background', 'tint', 'tint'),
+					background: theme.fn.getMixedColor('background', 'tint', 'backgroundTint'),
 					color: theme.palette.background.onBase,
 					textRendering: 'optimizeLegibility',
 					WebkitFontSmoothing: 'antialiased'

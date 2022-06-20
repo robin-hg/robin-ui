@@ -17,22 +17,12 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
 		zIndex: 0,
 		boxSizing: 'border-box',
 		overflow: 'hidden',
-		padding: theme.fn.getSpacing($padding),
-		background: theme.fn.getModifiedColor(`surface.${$surfaceColor}`, $tint, 'tint'),
+		background: theme.fn.getMixedColor(`surface.${$surfaceColor}`, $tint, 'surfaceTint'),
 		color: theme.fn.getOnColor(`surface.${$surfaceColor}`),
 		border: '0.1rem solid transparent',
 		borderRadius: theme.fn.getSize($radius, theme.radius),
 		transition: theme.fn.getTransition(),
-		'&::-webkit-scrollbar': {
-			width: '1rem',
-			background: theme.fn.getAlphaColor('surface.variant', 'fadedOnBase')
-		},
-		'&::-webkit-scrollbar-thumb': {
-			background: theme.fn.getAlphaColor('surface.onVariant', 0.5),
-			'&:active': {
-				background: theme.fn.getAlphaColor('surface.onVariant', 0.6)
-			}
-		}
+		padding: theme.fn.getSpacing($padding)
 	}),
 	({ theme, $variant, $elevation }) =>
 		({

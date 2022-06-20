@@ -21,7 +21,7 @@ export const ControlInputContainer = styled(BaseContainer)<ControlInputContainer
 	({ theme }) => ({
 		'&[disabled]': {
 			cursor: 'default !important',
-			color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`
+			color: `${theme.fn.getAlphaColor('surface.onBase', 'disabled')} !important`
 		}
 	})
 )

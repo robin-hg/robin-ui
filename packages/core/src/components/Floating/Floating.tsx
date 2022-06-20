@@ -13,9 +13,9 @@ import { ModalContext } from '../Modal'
 
 import type { Paper } from '../Paper'
 import { Portal } from '../Portal'
+import { FocusTrap } from '../FocusTrap'
 
 import { FadeContainer, Arrow, FloatingElement } from './Floating.style'
-import { FocusTrap } from '../FocusTrap'
 
 export const FloatingContext = React.createContext<{
 	floatinghEl?: HTMLElement | null
@@ -83,7 +83,9 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	}, [trigger])
 
 	useClickOutside([trigger, refs.floating.current], () => {
-		onClose?.()
+		if (open) {
+			onClose?.()
+		}
 	})
 
 	const ctxValue = useMemo(

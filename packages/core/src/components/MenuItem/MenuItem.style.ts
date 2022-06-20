@@ -29,6 +29,6 @@ export const MenuItemContainer = styled(Button)<MenuItemContainerProps>(
 		},
 	({ theme, $active }) =>
 		$active && {
-			background: theme.fn.getModifiedColor('surface.variant', 'primary', 'tint')
+			background: theme.fn.getMixedColor('surface.variant', 'primary', 'surfaceTint')
 		}
 )

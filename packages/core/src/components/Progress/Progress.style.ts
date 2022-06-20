@@ -66,7 +66,7 @@ export const Bar = styled.div<BarProps>(
 				height: '100%',
 				background: `linear-gradient(90deg, transparent, ${theme.fn.getAlphaColor(
 					theme.fn.getOnColor($color),
-					'fadedOnBase'
+					'faded'
 				)})`,
 				borderRadius: theme.fn.getSize($radius, theme.radius),
 				animation: `${pulse} 1.5s ease-out 0.5s infinite`

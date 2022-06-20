@@ -24,7 +24,7 @@ export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 	const {
 		value = 0,
 		color = 'primary',
-		trackColor = 'surface.variant',
+		trackColor = 'surface.base',
 		thickness = 'md',
 		radius = 'md',
 		indeterminate,

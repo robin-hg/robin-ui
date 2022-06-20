@@ -27,14 +27,14 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(
 		color: 'inherit',
 		transition: theme.fn.getTransition(),
 		'&:hover': {
-			background: theme.fn.getAlphaColor('surface.onVariant', 'hover')
+			background: theme.fn.getAlphaColor('surface.variant', 'hover')
 		},
 		'&:focus-visible': {
-			background: theme.fn.getAlphaColor('surface.onVariant', 'focus'),
+			background: theme.fn.getAlphaColor('surface.variant', 'focus'),
 			outlineColor: theme.palette.primary.base
 		},
 		'&:active': {
-			background: theme.fn.getAlphaColor('surface.onVariant', 'active')
+			background: theme.fn.getAlphaColor('surface.variant', 'active')
 		},
 		'& > svg': {
 			transition: theme.fn.getTransition(),
@@ -43,8 +43,12 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(
 	}),
 	({ theme }) => ({
 		'&[disabled]': {
-			background: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedBase')} !important`,
-			color: `${theme.fn.getAlphaColor('surface.onVariant', 'fadedOnBase')} !important`
+			background: `${theme.fn.getAlphaColor('surface.variant', 'disabled')} !important`,
+			color: `${theme.fn.getMixedColor(
+				'surface.variant',
+				'surface.onVariant',
+				'disabled'
+			)} !important`
 		}
 	})
 )

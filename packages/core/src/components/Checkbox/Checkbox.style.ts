@@ -46,29 +46,37 @@ export const Box = styled.input<BoxProps>(
 			'&:hover': {
 				background:
 					checked || $error
-						? theme.fn.getModifiedColor(color, onColor, 'hover')
+						? theme.fn.getMixedColor(color, onColor, 'hover')
 						: theme.fn.getAlphaColor(color, 'hover'),
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'hover')
 			},
 			'&:focus-visible': {
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus'),
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'focus'),
 				outlineColor: theme.fn.getColor($color)
 			},
 			'&:active': {
 				background:
 					checked || $error
-						? theme.fn.getModifiedColor(color, onColor, 'active')
+						? theme.fn.getMixedColor(color, onColor, 'active')
 						: theme.fn.getAlphaColor(color, 'active'),
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'active')
 			}
 		}
 	},
 	({ theme }) => ({
 		'&[disabled]': {
-			background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
-			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+			background: `${theme.fn.getAlphaColor('surface.base', 'disabled')} !important`,
+			borderColor: `${theme.fn.getMixedColor(
+				'surface.base',
+				'outline',
+				'disabled'
+			)} !important`,
 			'& + svg': {
-				color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`
+				color: `${theme.fn.getMixedColor(
+					'surface.base',
+					'surface.onBase',
+					'disabled'
+				)} !important`
 			}
 		}
 	})

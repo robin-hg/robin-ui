@@ -32,46 +32,54 @@ export const Box = styled.input<BoxProps>(
 	}),
 	({ theme, checked, $color, $error }) => {
 		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
-		const onColor = theme.fn.getOnColor(color)
+		const onColor = theme.fn.getOnColor(checked ? color : 'surface.base')
 		const borderColor = $error ? 'critical' : color
 
 		return {
 			background:
 				checked || $error
 					? theme.fn.getColor(color)
-					: theme.fn.getAlphaColor('surface.onVariant', 'fadedBase'),
+					: theme.fn.getAlphaColor('surface.base', 'faded'),
 			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline'),
 			'::after': {
 				background: onColor,
-				transform: `translateX(${checked ? 8 : -8}px)`,
-				borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline')
+				transform: `translateX(${checked ? 8 : -8}px)`
 			},
 			'&:hover': {
-				'&, &::after': {
-					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
-				}
+				background:
+					checked || $error
+						? theme.fn.getMixedColor(color, onColor, 'hover')
+						: theme.fn.getAlphaColor(color, 'hover'),
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'hover')
 			},
 			'&:focus-visible': {
 				outlineColor: theme.fn.getColor($color),
-				'&, &::after': {
-					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus')
-				}
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'focus')
 			},
 			'&:active': {
-				'&, &::after': {
-					borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
-				}
+				background:
+					checked || $error
+						? theme.fn.getMixedColor(color, onColor, 'active')
+						: theme.fn.getAlphaColor(color, 'active'),
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'active')
 			}
 		}
 	},
 	({ theme }) => ({
 		'&[disabled]': {
 			'&::after': {
-				background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
-				borderColor: `${theme.fn.getColor('outline')} !important`
+				background: `${theme.fn.getMixedColor(
+					'surface.base',
+					'surface.onBase',
+					'disabled'
+				)} !important`
 			},
-			background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
-			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`
+			background: `${theme.fn.getAlphaColor('surface.base', 'disabled')} !important`,
+			borderColor: `${theme.fn.getMixedColor(
+				'surface.base',
+				'outline',
+				'disabled'
+			)} !important`
 		}
 	})
 )

@@ -35,19 +35,20 @@ export const defaultTheme: BaseTheme = {
 	lightPalette,
 	darkPalette,
 	colorModifiers: {
-		tint: 0.05,
-		hover: 0.12,
-		focus: 0.12,
-		active: 0.18,
-		fadedBase: 0.1,
-		fadedOnBase: 0.5
+		backgroundTint: 0.03,
+		surfaceTint: 0.08,
+		faded: 0.15,
+		hover: 0.18,
+		focus: 0.18,
+		active: 0.24,
+		disabled: 0.5
 	},
 	transition: {
 		duration: '200ms',
 		ease: 'ease-out'
 	},
 	shadow: {
-		color: '#0000001A',
+		color: '#0000001f',
 		generateShadow(elevation: number) {
 			if (elevation <= 0) {
 				return 'none'

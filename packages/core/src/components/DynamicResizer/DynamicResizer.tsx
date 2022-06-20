@@ -32,15 +32,13 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
 	const { transition } = useTheme()
 
 	const ease = easeOverride || camelCase(transition.ease || '')
-	const height = size?.height || 'auto'
-	const width = size?.width || 'auto'
 
 	return (
 		<m.div
 			ref={ref}
 			animate={{
-				height: disableResizeHeight ? 'auto' : height,
-				width: disableResizeWidth ? 'auto' : width
+				height: disableResizeHeight ? 'auto' : size?.height,
+				width: disableResizeWidth ? 'auto' : size?.width
 			}}
 			transition={{ duration: duration / 1000, ease }}>
 			<Content ref={contentRef} {...otherProps}>

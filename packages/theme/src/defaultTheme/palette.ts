@@ -48,8 +48,8 @@ export const lightPalette: Palette = {
 		base: white,
 		onBase: colors.neutral[7]
 	},
-	outline: colors.neutral[4],
-	tint: colors.blue[7]
+	outline: colors.neutral[2],
+	tint: colors.blue[3]
 }
 
 export const darkPalette: Palette = {
@@ -99,6 +99,6 @@ export const darkPalette: Palette = {
 		base: colors.neutral[10],
 		onBase: colors.neutral[3]
 	},
-	outline: colors.neutral[3],
+	outline: colors.neutral[7],
 	tint: colors.blue[7]
 }

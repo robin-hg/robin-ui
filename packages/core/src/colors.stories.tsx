@@ -49,7 +49,7 @@ const PaletteBlock = styled.div<PaletteBlockProps>(
 	}),
 	({ theme, color, tinted }) =>
 		tinted && {
-			background: theme.fn.getModifiedColor(color, 'primary', 'tint')
+			background: theme.fn.getMixedColor(color, 'primary', 'surfaceTint')
 		}
 )
 

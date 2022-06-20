@@ -61,14 +61,10 @@ export const StyledButton = styled.button<StyledButtonProps>(
 				color: theme.fn.getOnColor($color),
 				background: theme.fn.getColor($color),
 				'&:hover': {
-					background: theme.fn.getModifiedColor(
-						$color,
-						theme.fn.getOnColor($color),
-						'hover'
-					)
+					background: theme.fn.getMixedColor($color, theme.fn.getOnColor($color), 'hover')
 				},
 				'&:focus-visible': {
-					background: theme.fn.getModifiedColor(
+					background: theme.fn.getMixedColor(
 						$color,
 						theme.fn.getOnColor($color),
 						'focus'
@@ -76,24 +72,25 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					outlineColor: theme.fn.getColor($color)
 				},
 				'&:active': {
-					background: theme.fn.getModifiedColor(
+					background: theme.fn.getMixedColor(
 						$color,
 						theme.fn.getOnColor($color),
 						'active'
 					)
 				},
 				'&[disabled]': {
-					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
-					background: `${theme.fn.getAlphaColor(
+					color: `${theme.fn.getMixedColor(
+						'surface.base',
 						'surface.onBase',
-						'fadedBase'
+						'disabled'
 					)} !important`,
+					background: `${theme.fn.getAlphaColor('surface.base', 'disabled')} !important`,
 					cursor: 'default !important'
 				}
 			},
 			faded: {
 				color: theme.fn.getColor($color),
-				background: theme.fn.getAlphaColor($color, 'fadedBase'),
+				background: theme.fn.getAlphaColor($color, 'faded'),
 				'&:hover': {
 					background: theme.fn.getAlphaColor($color, 'hover')
 				},
@@ -105,11 +102,12 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					background: theme.fn.getAlphaColor($color, 'active')
 				},
 				'&[disabled]': {
-					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
-					background: `${theme.fn.getAlphaColor(
+					color: `${theme.fn.getMixedColor(
+						'surface.base',
 						'surface.onBase',
-						'fadedBase'
+						'disabled'
 					)} !important`,
+					background: `${theme.fn.getAlphaColor('surface.base', 'faded')} !important`,
 					cursor: 'default !important'
 				}
 			},
@@ -128,11 +126,15 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					background: theme.fn.getAlphaColor($color, 'active')
 				},
 				'&[disabled]': {
-					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
+					color: `${theme.fn.getMixedColor(
+						'surface.base',
+						'surface.onBase',
+						'disabled'
+					)} !important`,
 					background: `transparent !important`,
 					borderColor: `${theme.fn.getAlphaColor(
 						'surface.onBase',
-						'fadedBase'
+						'disabled'
 					)} !important`,
 					cursor: 'default !important'
 				}
@@ -151,7 +153,11 @@ export const StyledButton = styled.button<StyledButtonProps>(
 					background: theme.fn.getAlphaColor($color, 'active')
 				},
 				'&[disabled]': {
-					color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
+					color: `${theme.fn.getMixedColor(
+						'surface.base',
+						'surface.onBase',
+						'disabled'
+					)} !important`,
 					background: `transparent !important`,
 					cursor: 'default !important'
 				}

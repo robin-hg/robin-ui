@@ -29,7 +29,7 @@ export const SkeletonContainer = styled.div<SkeletonContainerProps>(
 			position: 'relative',
 			overflow: 'hidden',
 			color: 'transparent',
-			background: theme.palette.surface.variant,
+			background: theme.palette.surface.base,
 			borderRadius: theme.fn.getSize($radius, theme.radius),
 			'&::after': {
 				content: '""',
@@ -39,8 +39,8 @@ export const SkeletonContainer = styled.div<SkeletonContainerProps>(
 				right: '-20%',
 				height: '100%',
 				background: `linear-gradient(90deg, transparent, ${theme.fn.getAlphaColor(
-					theme.palette.surface.onVariant,
-					'fadedBase'
+					theme.palette.surface.onBase,
+					'faded'
 				)})`,
 				borderRadius: theme.fn.getSize($radius, theme.radius),
 				animation: $animated ? `${pulse} 1.5s ease-out 0.5s infinite` : 'none'

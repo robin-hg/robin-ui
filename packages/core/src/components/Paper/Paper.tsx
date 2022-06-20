@@ -18,7 +18,7 @@ export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 		variant = 'elevated',
 		elevation = 1,
 		surfaceColor = 'base',
-		tint = 'primary',
+		tint = 'tint',
 		padding = 'md',
 		radius = 'md',
 		as,

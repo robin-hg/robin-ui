@@ -61,7 +61,7 @@ export const Fade = TransitionFactory({
 })
 
 export const Collapse = TransitionFactory({
-	enter: { opacity: 1, height: 'auto' },
+	enter: { opacity: 1, height: 'auto', overflow: 'hidden' },
 	exit: { opacity: 0, height: 0, overflow: 'hidden' }
 })
 

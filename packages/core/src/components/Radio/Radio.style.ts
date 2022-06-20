@@ -19,7 +19,17 @@ export const Circle = styled.input<CircleProps>(
 		borderRadius: '100%',
 		outline: '0.2rem solid transparent',
 		outlineOffset: '0.2rem',
-		transition: theme.fn.getTransition()
+		transition: theme.fn.getTransition(),
+		'&::before': {
+			content: '""',
+			position: 'absolute',
+			top: '50%',
+			left: '50%',
+			width: '0.8rem',
+			height: '0.8rem',
+			borderRadius: '100%',
+			transition: theme.fn.getTransition()
+		}
 	}),
 	({ theme, checked, $color, $error }) => {
 		const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
@@ -29,44 +39,44 @@ export const Circle = styled.input<CircleProps>(
 		return {
 			background: checked || $error ? theme.fn.getColor(color) : 'transparent',
 			borderColor: theme.fn.getColor(checked || $error ? borderColor : 'outline'),
+			'&::before': {
+				background: onColor,
+				transform: `translate(-50%, -50%) scale(${checked ? 1 : 0})`
+			},
 			'&:hover': {
 				background:
 					checked || $error
-						? theme.fn.getModifiedColor(color, onColor, 'hover')
+						? theme.fn.getMixedColor(color, onColor, 'hover')
 						: theme.fn.getAlphaColor(color, 'hover'),
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'hover')
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'hover')
 			},
 			'&:focus-visible': {
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'focus'),
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'focus'),
 				outlineColor: theme.fn.getColor($color)
 			},
 			'&:active': {
 				background:
 					checked || $error
-						? theme.fn.getModifiedColor(color, onColor, 'active')
+						? theme.fn.getMixedColor(color, onColor, 'active')
 						: theme.fn.getAlphaColor(color, 'active'),
-				borderColor: theme.fn.getModifiedColor(borderColor, onColor, 'active')
-			},
-			'&::before': {
-				content: '""',
-				position: 'absolute',
-				top: '50%',
-				left: '50%',
-				width: '0.8rem',
-				height: '0.8rem',
-				background: onColor,
-				borderRadius: '100%',
-				transform: `translate(-50%, -50%) scale(${checked ? 1 : 0})`,
-				transition: theme.fn.getTransition()
+				borderColor: theme.fn.getMixedColor(borderColor, onColor, 'active')
 			}
 		}
 	},
 	({ theme }) => ({
 		'&[disabled]': {
-			background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
-			borderColor: `${theme.fn.getAlphaColor('surface.onBase', 'fadedBase')} !important`,
+			background: `${theme.fn.getAlphaColor('surface.onBase', 'disabled')} !important`,
+			borderColor: `${theme.fn.getMixedColor(
+				'surface.base',
+				'surface.onBase',
+				'disabled'
+			)} !important`,
 			'&::before': {
-				background: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`
+				background: `${theme.fn.getMixedColor(
+					'surface.base',
+					'surface.onBase',
+					'disabled'
+				)} !important`
 			}
 		}
 	})

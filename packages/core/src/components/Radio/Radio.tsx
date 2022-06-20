@@ -18,6 +18,7 @@ export interface Props
 
 	// state props
 	error?: boolean
+	disabled?: boolean
 
 	// fn props
 	onChange?: (checked: React.ChangeEvent<HTMLInputElement>) => void

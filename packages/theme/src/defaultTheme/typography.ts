@@ -61,17 +61,17 @@ export const code: TypographyProperties<Size> = {
 	fontFamily: '"Noto Sans Mono", monospace',
 	fontWeight: 400,
 	fontSize: {
-		xs: '1.2rem',
-		sm: '1.4rem',
-		md: '1.6rem',
-		lg: '1.8rem',
-		xl: '2.2rem'
+		xs: '1.1rem',
+		sm: '1.2rem',
+		md: '1.4rem',
+		lg: '1.6rem',
+		xl: '1.8rem'
 	},
 	lineHeight: {
-		xs: 1.3,
-		sm: 1.4,
-		md: 1.5,
-		lg: 1.4,
-		xl: 1.3
+		xs: 1.2,
+		sm: 1.2,
+		md: 1.1,
+		lg: 1,
+		xl: 1
 	}
 }

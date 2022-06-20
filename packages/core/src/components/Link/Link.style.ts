@@ -26,20 +26,24 @@ export const StyledLink = styled.a<StyledLinkProps>(
 			content: '"\\200b"'
 		},
 		'&:hover': {
-			color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover'),
+			color: theme.fn.getMixedColor($color, theme.fn.getOnColor($color), 'hover'),
 			textDecorationColor: 'currentColor'
 		},
 		'&:focus-visible': {
-			color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'hover'),
+			color: theme.fn.getMixedColor($color, theme.fn.getOnColor($color), 'focus'),
 			outlineColor: 'currentColor'
 		},
 		'&:active': {
-			color: theme.fn.getModifiedColor($color, theme.fn.getOnColor($color), 'active')
+			color: theme.fn.getMixedColor($color, theme.fn.getOnColor($color), 'active')
 		}
 	}),
 	({ theme }) => ({
 		'&[disabled]': {
-			color: `${theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase')} !important`,
+			color: `${theme.fn.getMixedColor(
+				'surface.base',
+				'surface.base',
+				'disabled'
+			)} !important`,
 			textDecoration: 'none !important',
 			cursor: 'default !important'
 		}

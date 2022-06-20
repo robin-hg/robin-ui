@@ -3,6 +3,7 @@ import { getFocusable } from '@robin-ui/utils'
 import { useCombinedRef } from '@robin-ui/hooks'
 
 import type { Popover } from '../Popover'
+import { ScrollContainer } from '../ScrollContainer'
 
 import { StyledMenu } from './Menu.style'
 
@@ -69,11 +70,11 @@ export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 			aria-orientation="vertical"
 			onKeyDown={handleKeyDown}
 			onClose={onClose}
-			padding="xs"
+			padding={0}
 			$minWidth={minWidth}
 			$maxHeight={maxHeight}
 			{...otherProps}>
-			{children}
+			<ScrollContainer>{children}</ScrollContainer>
 		</StyledMenu>
 	)
 })

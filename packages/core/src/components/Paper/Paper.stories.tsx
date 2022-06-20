@@ -8,7 +8,7 @@ export default {
 	args: {
 		variant: 'elevated',
 		surfaceColor: 'base',
-		tint: 'primary',
+		tint: 'tint',
 		elevation: 1
 	},
 	argTypes: {

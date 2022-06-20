@@ -13,7 +13,14 @@ export type DerrivedColorMode = 'light' | 'dark'
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number
 
-export type Modifier = 'tint' | 'hover' | 'focus' | 'active' | 'fadedBase' | 'fadedOnBase'
+export type Modifier =
+	| 'backgroundTint'
+	| 'surfaceTint'
+	| 'faded'
+	| 'hover'
+	| 'focus'
+	| 'active'
+	| 'disabled'
 
 interface PaletteColor {
 	base: string

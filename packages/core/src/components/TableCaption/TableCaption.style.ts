@@ -10,7 +10,7 @@ interface StyledTableCaptionProps {
 export const StyledTableCaption = styled.caption<StyledTableCaptionProps>(
 	({ theme, $align, $padding, $captionSide }) => ({
 		padding: $padding && theme.fn.getSpacing($padding),
-		color: theme.fn.getAlphaColor('surface.onBase', 'fadedOnBase'),
+		color: theme.palette.surface.onBase,
 		fontSize: theme.typography.label.fontSize.lg,
 		textAlign: $align || 'left',
 		captionSide: $captionSide

@@ -37,7 +37,7 @@ export const TagContainer = styled.span<TagContainerProps>(
 				color: theme.fn.getOnColor($color)
 			},
 			faded: {
-				background: theme.fn.getAlphaColor($color, 'fadedBase'),
+				background: theme.fn.getAlphaColor($color, 'faded'),
 				color: theme.fn.getColor($color)
 			},
 			outlined: {
