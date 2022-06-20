@@ -46,7 +46,7 @@ const TransitionFactory = (animation: Variants) => {
 
 		const show = unmountOnExit ? inProp : true
 
-		return <AnimatePresence initial={false}>{show && transitionComponent}</AnimatePresence>
+		return <AnimatePresence>{show && transitionComponent}</AnimatePresence>
 	})
 
 	Transition.displayName = 'Collapse'
