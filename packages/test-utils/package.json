@@ -11,8 +11,8 @@
 		"@robin-ui/core": "workspace:*",
 		"@testing-library/react": "^13.3.0"
 	},
-	"peerDependencies": {
-		"react": "^18",
-		"react-dom": "^18"
+	"devDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	}
 }
