@@ -1,19 +1,9 @@
 {
-	"tabWidth": 4,
-	"useTabs": true,
-	"semi": false,
-	"singleQuote": true,
-	"bracketSameLine": true,
-	"printWidth": 100,
-	"trailingComma": "none",
-	"arrowParens": "avoid",
-	"overrides": [
-		{
-			"files": "*.yaml",
-			"options": {
-				"tabWidth": 2,
-				"useTabs": false
-			}
-		}
-	]
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true,
+  "bracketSameLine": true,
+  "arrowParens": "avoid",
+  "printWidth": 100,
+  "tabWidth": 2
 }

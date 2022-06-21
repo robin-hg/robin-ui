@@ -1,11 +1,11 @@
 {
-	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"jsx": "react-jsx",
-		"composite": true,
-		"sourceMap": true,
-		"declaration": true,
-		"declarationMap": true
-	},
-	"exclude": ["**/*.stories.tsx", "**/*.test.ts"]
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "composite": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "exclude": ["**/*.stories.tsx", "**/*.test.ts"]
 }

@@ -5,30 +5,30 @@ import { Button } from '../Button'
 import { Eye, EyeOff } from '@robin-ui/icons'
 
 export interface Props
-	extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
+  extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
 
 export const PasswordInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { ...otherProps } = props
-	const [hidden, setHidden] = useState(true)
+  const { ...otherProps } = props
+  const [hidden, setHidden] = useState(true)
 
-	return (
-		<TextInput
-			ref={ref}
-			rightAdornment={
-				<Button
-					size="xs"
-					variant="text"
-					color="inherit"
-					onClick={() => setHidden(!hidden)}
-					aria-hidden
-					tabIndex={-1}>
-					{hidden ? <Eye /> : <EyeOff />}
-				</Button>
-			}
-			type={hidden ? 'password' : 'text'}
-			{...otherProps}
-		/>
-	)
+  return (
+    <TextInput
+      ref={ref}
+      rightAdornment={
+        <Button
+          size="xs"
+          variant="text"
+          color="inherit"
+          onClick={() => setHidden(!hidden)}
+          aria-hidden
+          tabIndex={-1}>
+          {hidden ? <Eye /> : <EyeOff />}
+        </Button>
+      }
+      type={hidden ? 'password' : 'text'}
+      {...otherProps}
+    />
+  )
 })
 
 PasswordInput.displayName = 'PasswordInput'

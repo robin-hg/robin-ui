@@ -9,82 +9,80 @@ import { Portal } from '../Portal'
 import { Backdrop, ModalContainer, ModalPaper } from './Modal.style'
 
 export const ModalContext = React.createContext<{
-	id?: string
-	contentId?: string
-	modalEl?: HTMLDivElement | null
-	onClose?: () => void
-	setPreventClose?: (state: boolean) => void
+  id?: string
+  contentId?: string
+  modalEl?: HTMLDivElement | null
+  onClose?: () => void
+  setPreventClose?: (state: boolean) => void
 }>({})
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
-	size?: Size | 'full'
-	open?: boolean
-	onClose?: () => void
+  size?: Size | 'full'
+  open?: boolean
+  onClose?: () => void
 }
 
 export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { size = 'md', open, onClose, onClick, children, ...otherProps } = props
-	const [preventClose, setPreventClose] = useState(false)
-	const modalRef = useRef<HTMLDivElement>(null)
-	const combinedRef = useCombinedRef(ref, modalRef)
-	const id = useId()
-	useLockWindowScroll(!!open)
+  const { size = 'md', open, onClose, onClick, children, ...otherProps } = props
+  const [preventClose, setPreventClose] = useState(false)
+  const modalRef = useRef<HTMLDivElement>(null)
+  const combinedRef = useCombinedRef(ref, modalRef)
+  const id = useId()
+  useLockWindowScroll(!!open)
 
-	useEffect(() => {
-		if (open) {
-			modalRef.current?.focus()
-		}
-	}, [open])
+  useEffect(() => {
+    if (open) {
+      modalRef.current?.focus()
+    }
+  }, [open])
 
-	const close = !preventClose ? onClose : undefined
+  const close = !preventClose ? onClose : undefined
 
-	const ctxValue = useMemo(
-		() => ({
-			id,
-			contentId: `${id}-content`,
-			modalEl: modalRef.current,
-			setPreventClose,
-			onClose: close
-		}),
-		[id, modalRef, preventClose, onClose]
-	)
+  const ctxValue = useMemo(
+    () => ({
+      id,
+      contentId: `${id}-content`,
+      modalEl: modalRef.current,
+      setPreventClose,
+      onClose: close
+    }),
+    [id, modalRef, preventClose, onClose]
+  )
 
-	return (
-		<Portal>
-			<Fade in={open} unmountOnExit>
-				<Backdrop />
-				<ModalContainer
-					tabIndex={-1}
-					onClick={close}
-					onKeyDown={event => {
-						if (event.key === 'Escape') {
-							event.stopPropagation()
-							close?.()
-						}
-					}}>
-					<FocusTrap restoreFocus>
-						<ModalPaper
-							ref={combinedRef}
-							role="dialog"
-							aria-modal="true"
-							aria-labelledby={id}
-							aria-describedby={`${id}-content`}
-							$size={size}
-							onClick={event => {
-								event.stopPropagation()
-								onClick?.(event)
-							}}
-							tabIndex={-1}
-							{...otherProps}>
-							<ModalContext.Provider value={ctxValue}>
-								{children}
-							</ModalContext.Provider>
-						</ModalPaper>
-					</FocusTrap>
-				</ModalContainer>
-			</Fade>
-		</Portal>
-	)
+  return (
+    <Portal>
+      <Fade in={open} unmountOnExit>
+        <Backdrop />
+        <ModalContainer
+          tabIndex={-1}
+          onClick={close}
+          onKeyDown={event => {
+            if (event.key === 'Escape') {
+              event.stopPropagation()
+              close?.()
+            }
+          }}>
+          <FocusTrap restoreFocus>
+            <ModalPaper
+              ref={combinedRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={id}
+              aria-describedby={`${id}-content`}
+              $size={size}
+              onClick={event => {
+                event.stopPropagation()
+                onClick?.(event)
+              }}
+              tabIndex={-1}
+              {...otherProps}>
+              <ModalContext.Provider value={ctxValue}>{children}</ModalContext.Provider>
+            </ModalPaper>
+          </FocusTrap>
+        </ModalContainer>
+      </Fade>
+    </Portal>
+  )
 })
 
 Modal.displayName = 'Modal'

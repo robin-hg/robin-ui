@@ -6,23 +6,23 @@ import { FlexBox } from '../FlexBox'
 import { Button } from '../Button'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {
-	closeButton?: React.ReactNode
+  closeButton?: React.ReactNode
 }
 
 export const ModalFooter = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { closeButton = 'Close', children, ...otherProps } = props
-	const { onClose } = useContext(ModalContext)
+  const { closeButton = 'Close', children, ...otherProps } = props
+  const { onClose } = useContext(ModalContext)
 
-	return (
-		<FlexBox ref={ref} justifyContent="flex-end" {...otherProps}>
-			{closeButton && onClose && (
-				<Button onClick={onClose} variant="text" color="surface.onBase">
-					{closeButton}
-				</Button>
-			)}
-			{children}
-		</FlexBox>
-	)
+  return (
+    <FlexBox ref={ref} justifyContent="flex-end" {...otherProps}>
+      {closeButton && onClose && (
+        <Button onClick={onClose} variant="text" color="surface.onBase">
+          {closeButton}
+        </Button>
+      )}
+      {children}
+    </FlexBox>
+  )
 })
 
 ModalFooter.displayName = 'ModalFooter'

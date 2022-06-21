@@ -6,27 +6,27 @@ import { Global } from './Global'
 import { MotionProvider } from './MotionProvider'
 
 interface Props {
-	colorMode?: DerrivedColorMode
-	defaultColorMode?: ColorMode
-	addGlobalCSS?: boolean
-	theme?: DeepPartial<BaseTheme>
-	children?: React.ReactNode
+  colorMode?: DerrivedColorMode
+  defaultColorMode?: ColorMode
+  addGlobalCSS?: boolean
+  theme?: DeepPartial<BaseTheme>
+  children?: React.ReactNode
 }
 
 export const RobinProvider: React.FC<Props> = props => {
-	const {
-		colorMode: fixedColorMode,
-		defaultColorMode = 'system',
-		addGlobalCSS = true,
-		theme,
-		children
-	} = props
-	const [colorMode] = useColorMode(defaultColorMode)
+  const {
+    colorMode: fixedColorMode,
+    defaultColorMode = 'system',
+    addGlobalCSS = true,
+    theme,
+    children
+  } = props
+  const [colorMode] = useColorMode(defaultColorMode)
 
-	return (
-		<ThemeProvider colorMode={fixedColorMode || colorMode} theme={theme}>
-			{addGlobalCSS && <Global />}
-			<MotionProvider>{children}</MotionProvider>
-		</ThemeProvider>
-	)
+  return (
+    <ThemeProvider colorMode={fixedColorMode || colorMode} theme={theme}>
+      {addGlobalCSS && <Global />}
+      <MotionProvider>{children}</MotionProvider>
+    </ThemeProvider>
+  )
 }

@@ -5,43 +5,43 @@ import { Code, type Props } from '../Typography'
 import { Stack } from '../../Stack'
 
 export default {
-	title: 'Typography/Code',
-	component: Code,
-	args: {
-		size: 'md',
-		color: 'inherit',
-		fontWeight: 400,
-		children: 'Lorem ipsum'
-	},
-	argTypes: {
-		size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-		highlight: { control: { type: 'color' } },
-		fontWeight: { control: { type: 'select' }, options: [400, 600] }
-	}
+  title: 'Typography/Code',
+  component: Code,
+  args: {
+    size: 'md',
+    color: 'inherit',
+    fontWeight: 400,
+    children: 'Lorem ipsum'
+  },
+  argTypes: {
+    size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+    highlight: { control: { type: 'color' } },
+    fontWeight: { control: { type: 'select' }, options: [400, 600] }
+  }
 } as Meta<Props>
 
 export const Default: Story<Props> = args => <Code {...args} />
 
 const List = () => {
-	const theme = useTheme()
-	return (
-		<Stack>
-			<Code size="xl">
-				Code<small> - Size xl ({theme.typography.text.fontSize.xl})</small>
-			</Code>
-			<Code size="lg">
-				Code<small> - Size lg ({theme.typography.text.fontSize.lg})</small>
-			</Code>
-			<Code size="md">
-				Code<small> - Size md ({theme.typography.text.fontSize.md})</small>
-			</Code>
-			<Code size="sm">
-				Code<small> - Size sm ({theme.typography.text.fontSize.sm})</small>
-			</Code>
-			<Code size="xs">
-				Code<small> - Size xs ({theme.typography.text.fontSize.xs})</small>
-			</Code>
-		</Stack>
-	)
+  const theme = useTheme()
+  return (
+    <Stack>
+      <Code size="xl">
+        Code<small> - Size xl ({theme.typography.text.fontSize.xl})</small>
+      </Code>
+      <Code size="lg">
+        Code<small> - Size lg ({theme.typography.text.fontSize.lg})</small>
+      </Code>
+      <Code size="md">
+        Code<small> - Size md ({theme.typography.text.fontSize.md})</small>
+      </Code>
+      <Code size="sm">
+        Code<small> - Size sm ({theme.typography.text.fontSize.sm})</small>
+      </Code>
+      <Code size="xs">
+        Code<small> - Size xs ({theme.typography.text.fontSize.xs})</small>
+      </Code>
+    </Stack>
+  )
 }
 export const Sizes = () => <List />

@@ -1,65 +1,65 @@
 {
-	"name": "@robin-ui/core",
-	"version": "0.2.0",
-	"author": "Robin Hong <robinh.jsx@gmail.com>",
-	"description": "A simple React component library",
-	"license": "MIT",
-	"homepage": "https://github.com/robinh-jsx/robin-ui#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/robinh-jsx/robin-ui",
-		"directory": "packages/core"
-	},
-	"keywords": [
-		"react",
-		"components",
-		"library",
-		"frontend",
-		"accessibility",
-		"front-end",
-		"robin ui"
-	],
-	"main": "src/index.ts",
-	"files": [
-		"dist",
-		"src"
-	],
-	"sideEffects": false,
-	"scripts": {
-		"clean": "rm -rf dist",
-		"build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
-		"build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
-	},
-	"dependencies": {
-		"@floating-ui/react-dom": "^0.7.1",
-		"@robin-ui/hooks": "workspace:*",
-		"@robin-ui/icons": "workspace:*",
-		"@robin-ui/styles": "workspace:*",
-		"@robin-ui/theme": "workspace:*",
-		"@robin-ui/types": "workspace:*",
-		"@robin-ui/utils": "workspace:*",
-		"react-number-format": "^4.9.3"
-	},
-	"peerDependencies": {
-		"@emotion/react": "^11",
-		"@emotion/styled": "^11",
-		"@types/react": "^18",
-		"framer-motion": "^6",
-		"react": "^18",
-		"react-dom": "^18"
-	},
-	"peerDependenciesMeta": {
-		"@types/react": {
-			"optional": true
-		}
-	},
-	"devDependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"publishConfig": {
-		"main": "dist/cjs/index.js",
-		"module": "dist/esm/index.js",
-		"types": "dist/types/index.d.ts"
-	}
+  "name": "@robin-ui/core",
+  "version": "0.2.0",
+  "author": "Robin Hong <robinh.jsx@gmail.com>",
+  "description": "A simple React component library",
+  "license": "MIT",
+  "homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinh-jsx/robin-ui",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "library",
+    "frontend",
+    "accessibility",
+    "front-end",
+    "robin ui"
+  ],
+  "main": "src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
+    "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@floating-ui/react-dom": "^0.7.1",
+    "@robin-ui/hooks": "workspace:*",
+    "@robin-ui/icons": "workspace:*",
+    "@robin-ui/styles": "workspace:*",
+    "@robin-ui/theme": "workspace:*",
+    "@robin-ui/types": "workspace:*",
+    "@robin-ui/utils": "workspace:*",
+    "react-number-format": "^4.9.3"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@types/react": "^18",
+    "framer-motion": "^6",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "publishConfig": {
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts"
+  }
 }

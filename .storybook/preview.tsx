@@ -13,50 +13,50 @@ import '@fontsource/noto-serif-display/600.css'
 import '@fontsource/noto-sans-mono/400.css'
 
 export const parameters = {
-	darkMode: {
-		dark: {
-			...themes.dark,
-			appBg: colors.neutral[10],
-			barBg: colors.neutral[10],
-			appContentBg: colors.neutral[10]
-		},
-		light: {
-			...themes.light,
-			appBg: white
-		}
-	},
-	actions: { argTypesRegex: '^on[A-Z].*' },
-	options: {
-		panelPosition: 'right',
-		storySort: {
-			method: 'alphabetical',
-			order: [
-				'Colors',
-				'Icons',
-				'Typography',
-				'Layout',
-				'Surface',
-				'Inputs',
-				'Display',
-				'Overlay',
-				'Feedback',
-				'Navigation',
-				'Utils'
-			]
-		}
-	},
-	controls: {
-		hideNoControlsWarning: true
-	}
+  darkMode: {
+    dark: {
+      ...themes.dark,
+      appBg: colors.neutral[10],
+      barBg: colors.neutral[10],
+      appContentBg: colors.neutral[10]
+    },
+    light: {
+      ...themes.light,
+      appBg: white
+    }
+  },
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  options: {
+    panelPosition: 'right',
+    storySort: {
+      method: 'alphabetical',
+      order: [
+        'Colors',
+        'Icons',
+        'Typography',
+        'Layout',
+        'Surface',
+        'Inputs',
+        'Display',
+        'Overlay',
+        'Feedback',
+        'Navigation',
+        'Utils'
+      ]
+    }
+  },
+  controls: {
+    hideNoControlsWarning: true
+  }
 }
 
 export const decorators: DecoratorFn[] = [
-	Story => {
-		const darkMode = useDarkMode()
-		return (
-			<React.StrictMode>
-				<RobinProvider colorMode={darkMode ? 'dark' : 'light'}>{Story()}</RobinProvider>
-			</React.StrictMode>
-		)
-	}
+  Story => {
+    const darkMode = useDarkMode()
+    return (
+      <React.StrictMode>
+        <RobinProvider colorMode={darkMode ? 'dark' : 'light'}>{Story()}</RobinProvider>
+      </React.StrictMode>
+    )
+  }
 ]

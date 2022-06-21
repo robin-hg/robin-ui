@@ -1,49 +1,49 @@
 {
-	"name": "@robin-ui/theme",
-	"version": "0.2.0",
-	"author": "Robin Hong <robinh.jsx@gmail.com>",
-	"description": "Default theme configuration for Robin-UI",
-	"license": "MIT",
-	"homepage": "https://github.com/robinh-jsx/robin-ui#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/robinh-jsx/robin-ui",
-		"directory": "packages/theme"
-	},
-	"keywords": [
-		"react",
-		"theme",
-		"front-end",
-		"robin ui"
-	],
-	"main": "src/index.ts",
-	"files": [
-		"dist",
-		"src"
-	],
-	"sideEffects": false,
-	"scripts": {
-		"clean": "rm -rf dist",
-		"build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
-		"build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
-	},
-	"dependencies": {
-		"@robin-ui/utils": "workspace:*"
-	},
-	"peerDependencies": {
-		"@emotion/react": "^11",
-		"@emotion/styled": "^11",
-		"@types/react": "^18",
-		"react": "^18"
-	},
-	"peerDependenciesMeta": {
-		"@types/react": {
-			"optional": true
-		}
-	},
-	"publishConfig": {
-		"main": "dist/cjs/index.js",
-		"module": "dist/esm/index.js",
-		"types": "dist/types/index.d.ts"
-	}
+  "name": "@robin-ui/theme",
+  "version": "0.2.0",
+  "author": "Robin Hong <robinh.jsx@gmail.com>",
+  "description": "Default theme configuration for Robin-UI",
+  "license": "MIT",
+  "homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinh-jsx/robin-ui",
+    "directory": "packages/theme"
+  },
+  "keywords": [
+    "react",
+    "theme",
+    "front-end",
+    "robin ui"
+  ],
+  "main": "src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
+    "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@robin-ui/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@types/react": "^18",
+    "react": "^18"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts"
+  }
 }

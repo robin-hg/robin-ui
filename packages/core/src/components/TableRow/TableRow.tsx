@@ -5,13 +5,13 @@ import { StyledTableRow } from './TableRow.style'
 export interface Props extends DefaultProps<HTMLTableRowElement> {}
 
 const TableRow = React.forwardRef<HTMLTableRowElement, Props>((props, ref) => {
-	const { children, ...otherProps } = props
+  const { children, ...otherProps } = props
 
-	return (
-		<StyledTableRow ref={ref} {...otherProps}>
-			{children}
-		</StyledTableRow>
-	)
+  return (
+    <StyledTableRow ref={ref} {...otherProps}>
+      {children}
+    </StyledTableRow>
+  )
 })
 
 TableRow.displayName = 'TableRow'

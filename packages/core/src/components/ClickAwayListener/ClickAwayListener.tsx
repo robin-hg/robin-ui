@@ -4,21 +4,21 @@ import { useClickOutside, useCombinedRef } from '@robin-ui/hooks'
 import { sxc } from '@robin-ui/styles'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
-	onClickAway: (event: PointerEvent) => void
+  onClickAway: (event: PointerEvent) => void
 }
 
 export const ClickAwayListener = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { onClickAway, children, ...otherProps } = props
-	const listenerRef = useRef<HTMLDivElement>(null)
-	const combinedRef = useCombinedRef(ref, listenerRef)
+  const { onClickAway, children, ...otherProps } = props
+  const listenerRef = useRef<HTMLDivElement>(null)
+  const combinedRef = useCombinedRef(ref, listenerRef)
 
-	useClickOutside(listenerRef.current, onClickAway)
+  useClickOutside(listenerRef.current, onClickAway)
 
-	return (
-		<sxc.div ref={combinedRef} {...otherProps}>
-			{children}
-		</sxc.div>
-	)
+  return (
+    <sxc.div ref={combinedRef} {...otherProps}>
+      {children}
+    </sxc.div>
+  )
 })
 
 ClickAwayListener.displayName = 'ClickAwayListener'

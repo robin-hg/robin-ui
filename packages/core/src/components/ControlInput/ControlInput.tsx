@@ -5,28 +5,28 @@ import { Text } from '../Typography'
 import { ControlInputContainer, Control } from './ControlInput.style'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'label'> {
-	label?: number | string
-	labelFor?: string
-	labelPosition?: 'left' | 'right'
+  label?: number | string
+  labelFor?: string
+  labelPosition?: 'left' | 'right'
 }
 
 export const ControlInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { label, labelFor, labelPosition = 'right', children, disabled, ...otherProps } = props
+  const { label, labelFor, labelPosition = 'right', children, disabled, ...otherProps } = props
 
-	return (
-		<ControlInputContainer
-			ref={ref}
-			$labelPosition={labelPosition}
-			disabled={disabled}
-			{...otherProps}>
-			<Control>{children}</Control>
-			{label && (
-				<Text as="label" size="sm" htmlFor={labelFor}>
-					{label}
-				</Text>
-			)}
-		</ControlInputContainer>
-	)
+  return (
+    <ControlInputContainer
+      ref={ref}
+      $labelPosition={labelPosition}
+      disabled={disabled}
+      {...otherProps}>
+      <Control>{children}</Control>
+      {label && (
+        <Text as="label" size="sm" htmlFor={labelFor}>
+          {label}
+        </Text>
+      )}
+    </ControlInputContainer>
+  )
 })
 
 ControlInput.displayName = 'ControlInput'

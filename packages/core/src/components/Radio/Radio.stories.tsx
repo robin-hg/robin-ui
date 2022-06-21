@@ -4,24 +4,24 @@ import { useArgs } from '@storybook/client-api'
 import { Radio, type Props } from './Radio'
 
 export default {
-	title: 'Inputs/Radio',
-	component: Radio,
-	args: {
-		label: 'Label',
-		checked: false
-	}
+  title: 'Inputs/Radio',
+  component: Radio,
+  args: {
+    label: 'Label',
+    checked: false
+  }
 } as Meta<Props>
 
 export const Default: Story<Props> = args => {
-	const [, updateArgs] = useArgs()
+  const [, updateArgs] = useArgs()
 
-	return (
-		<Radio
-			{...args}
-			onChange={event => {
-				args.onChange?.(event)
-				updateArgs({ checked: event.target.checked })
-			}}
-		/>
-	)
+  return (
+    <Radio
+      {...args}
+      onChange={event => {
+        args.onChange?.(event)
+        updateArgs({ checked: event.target.checked })
+      }}
+    />
+  )
 }

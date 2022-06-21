@@ -6,19 +6,19 @@ import { StyledTableSection } from './TableSection.style'
 export interface Props extends DefaultProps<HTMLTableSectionElement> {}
 
 const TableSectionFactory = (variant: 'thead' | 'tbody' | 'tfoot') => {
-	const TableSection = React.forwardRef<HTMLTableSectionElement, Props>((props, ref) => {
-		const { children, ...otherProps } = props
+  const TableSection = React.forwardRef<HTMLTableSectionElement, Props>((props, ref) => {
+    const { children, ...otherProps } = props
 
-		return (
-			<StyledTableSection ref={ref} as={variant} $variant={variant} {...otherProps}>
-				{children}
-			</StyledTableSection>
-		)
-	})
+    return (
+      <StyledTableSection ref={ref} as={variant} $variant={variant} {...otherProps}>
+        {children}
+      </StyledTableSection>
+    )
+  })
 
-	TableSection.displayName = 'TableSection'
+  TableSection.displayName = 'TableSection'
 
-	return TableSection
+  return TableSection
 }
 
 export const Thead = TableSectionFactory('thead')

@@ -3,26 +3,26 @@ import { useForceUpdate } from '../useForceUpdate'
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
 export const useSize = (element: HTMLElement | null) => {
-	const [size, setSize] = useState<DOMRect>()
-	useForceUpdate(true)
+  const [size, setSize] = useState<DOMRect>()
+  useForceUpdate(true)
 
-	const getSize = () =>
-		startTransition(() => {
-			const rect = element?.getBoundingClientRect()
-			setSize(rect)
-		})
+  const getSize = () =>
+    startTransition(() => {
+      const rect = element?.getBoundingClientRect()
+      setSize(rect)
+    })
 
-	useIsomorphicLayoutEffect(getSize, [element])
+  useIsomorphicLayoutEffect(getSize, [element])
 
-	useEffect(() => {
-		const observer = new ResizeObserver(getSize)
-		if (element) {
-			observer.observe(element)
-			return () => {
-				observer.unobserve(element)
-			}
-		}
-	}, [element])
+  useEffect(() => {
+    const observer = new ResizeObserver(getSize)
+    if (element) {
+      observer.observe(element)
+      return () => {
+        observer.unobserve(element)
+      }
+    }
+  }, [element])
 
-	return size
+  return size
 }

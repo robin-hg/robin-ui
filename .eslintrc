@@ -1,38 +1,38 @@
 {
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"project": ["./tsconfig.json"]
-	},
-	"plugins": ["@typescript-eslint", "react-hooks", "prefer-arrow", "jsx-a11y"],
-	"extends": [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/recommended-requiring-type-checking",
-		"plugin:react/recommended",
-		"plugin:prettier/recommended",
-		"plugin:jsx-a11y/recommended"
-	],
-	"settings": {
-		"react": {
-			"version": "detect"
-		}
-	},
-	"rules": {
-		"curly": "error",
-		"dot-notation": "error",
-		"no-eval": "error",
-		"no-shadow": ["error", { "hoist": "all" }],
-		"no-console": ["error", { "allow": ["info", "warn", "error"] }],
-		"spaced-comment": "error",
-		"@typescript-eslint/consistent-type-imports": "error",
-		"@typescript-eslint/prefer-optional-chain": "error",
-		"@typescript-eslint/no-empty-interface": "off",
-		"@typescript-eslint/no-empty-function": "off",
-		"@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
-		"react/react-in-jsx-scope": "off",
-		"react/prop-types": "off",
-		"react/jsx-boolean-value": "error",
-		"react-hooks/rules-of-hooks": "error",
-		"prefer-arrow/prefer-arrow-functions": "error"
-	}
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["@typescript-eslint", "react-hooks", "prefer-arrow", "jsx-a11y"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "curly": "error",
+    "dot-notation": "error",
+    "no-eval": "error",
+    "no-shadow": ["error", { "hoist": "all" }],
+    "no-console": ["error", { "allow": ["info", "warn", "error"] }],
+    "spaced-comment": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/jsx-boolean-value": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "prefer-arrow/prefer-arrow-functions": "error"
+  }
 }

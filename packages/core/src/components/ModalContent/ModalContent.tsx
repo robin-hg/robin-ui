@@ -7,14 +7,14 @@ import { ModalContentContainer } from './ModalContent.style'
 export interface Props extends DefaultProps<HTMLDivElement> {}
 
 export const ModalContent = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-	const { children, ...otherProps } = props
-	const { contentId } = useContext(ModalContext)
+  const { children, ...otherProps } = props
+  const { contentId } = useContext(ModalContext)
 
-	return (
-		<ModalContentContainer ref={ref} id={contentId} {...otherProps}>
-			{children}
-		</ModalContentContainer>
-	)
+  return (
+    <ModalContentContainer ref={ref} id={contentId} {...otherProps}>
+      {children}
+    </ModalContentContainer>
+  )
 })
 
 ModalContent.displayName = 'ModalContent'

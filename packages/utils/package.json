@@ -1,38 +1,38 @@
 {
-	"name": "@robin-ui/utils",
-	"version": "0.2.0",
-	"author": "Robin Hong <robinh.jsx@gmail.com>",
-	"description": "A collection of handy functions for Robin UI",
-	"license": "MIT",
-	"homepage": "https://github.com/robinh-jsx/robin-ui#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/robinh-jsx/robin-ui",
-		"directory": "packages/utils"
-	},
-	"keywords": [
-		"utilities",
-		"library",
-		"front-end",
-		"robin ui"
-	],
-	"main": "src/index.ts",
-	"files": [
-		"dist",
-		"src"
-	],
-	"sideEffects": false,
-	"scripts": {
-		"clean": "rm -rf dist",
-		"build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
-		"build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
-	},
-	"publishConfig": {
-		"main": "dist/cjs/index.js",
-		"module": "dist/esm/index.js",
-		"types": "dist/types/index.d.ts"
-	},
-	"dependencies": {
-		"colord": "^2.9.2"
-	}
+  "name": "@robin-ui/utils",
+  "version": "0.2.0",
+  "author": "Robin Hong <robinh.jsx@gmail.com>",
+  "description": "A collection of handy functions for Robin UI",
+  "license": "MIT",
+  "homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinh-jsx/robin-ui",
+    "directory": "packages/utils"
+  },
+  "keywords": [
+    "utilities",
+    "library",
+    "front-end",
+    "robin ui"
+  ],
+  "main": "src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
+    "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
+  },
+  "publishConfig": {
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts"
+  },
+  "dependencies": {
+    "colord": "^2.9.2"
+  }
 }
