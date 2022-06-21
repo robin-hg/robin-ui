@@ -52,7 +52,7 @@ describe('deepmerge', () => {
       c: [5, 6],
       d: 6
     }
-    expect(deepmerge(obj1, obj2)).toEqual({
+    expect(deepmerge(obj1, obj2, { concatArrays: true })).toEqual({
       a: 1,
       b: 4,
       c: [1, 2, 3, 5, 6],
@@ -86,7 +86,7 @@ describe('deepmerge', () => {
       a: 1,
       b: {
         q: 0,
-        w: [1, 2],
+        w: [2],
         e: {
           r: 5
         },
