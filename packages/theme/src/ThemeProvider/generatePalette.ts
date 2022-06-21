@@ -19,11 +19,11 @@ const darkIndex = {
 }
 
 export const generatePalette = (
-  brandColor: string | [string, string],
+  dynamicColor: string | [string, string],
   colorMode: DerrivedColorMode
 ) => {
   const index = colorMode === 'light' ? lightIndex : darkIndex
-  const colorArray = typeof brandColor === 'string' ? [brandColor] : brandColor
+  const colorArray = typeof dynamicColor === 'string' ? [dynamicColor] : dynamicColor
 
   return Object.fromEntries(
     colorArray.map((color, i) => {

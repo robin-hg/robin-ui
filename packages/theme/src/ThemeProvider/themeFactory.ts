@@ -9,14 +9,14 @@ const createMediaBreakpoint = (theme: BaseTheme, breakpoint: keyof BaseTheme['br
 export const themeFactory = (
   theme: BaseTheme,
   colorMode: DerrivedColorMode,
-  brandColor?: string | [string, string]
+  dynamicColor?: string | [string, string]
 ): RobinTheme => {
   let palette = colorMode === 'light' ? theme.lightPalette : theme.darkPalette
 
-  if (brandColor) {
+  if (dynamicColor) {
     palette = {
       ...palette,
-      ...generatePalette(brandColor, colorMode)
+      ...generatePalette(dynamicColor, colorMode)
     }
   }
 
