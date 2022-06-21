@@ -27,7 +27,7 @@ interface PaletteColor {
   onBase: string
 }
 
-interface PaletteColorWithVariant extends PaletteColor {
+export interface PaletteColorWithVariant extends PaletteColor {
   variant: string
   onVariant: string
 }

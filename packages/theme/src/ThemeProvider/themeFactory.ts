@@ -1,7 +1,7 @@
 import type { RobinTheme, BaseTheme, AugumentedTheme, DerivedColorMode } from '../types'
 import { createThemeFunctions } from './functions'
 import { parseSize } from '@robin-ui/utils'
-import { generatePalette } from './generatePalette'
+import { derivePalette } from './derivePalette'
 
 const createMediaBreakpoint = (theme: BaseTheme, breakpoint: keyof BaseTheme['breakpoints']) =>
   `@media screen and (max-width: ${parseSize(theme.breakpoints[breakpoint])})`
@@ -16,7 +16,7 @@ export const themeFactory = (
   if (dynamicColor) {
     palette = {
       ...palette,
-      ...generatePalette(dynamicColor, colorMode)
+      ...derivePalette(dynamicColor, palette)
     }
   }
 
