@@ -9,7 +9,7 @@ extend([lchPlugin, mixPlugin, a11yPlugin])
 
 export const colord = _colord
 
-export const generatePalette = (baseColor: string, steps = 10) => {
+export const generateShades = (baseColor: string, steps = 10) => {
   const lch = colord(baseColor).toLch()
   const palette = range(steps, 1).map(i => {
     const half = steps / 2

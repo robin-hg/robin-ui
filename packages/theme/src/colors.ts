@@ -1,4 +1,4 @@
-import { generatePalette } from '@robin-ui/utils'
+import { generateShades } from '@robin-ui/utils'
 
 type Intensity = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 
@@ -38,7 +38,7 @@ const baseColors: Record<BaseColor, string> = {
 export const colors = Object.fromEntries(
   Object.entries(baseColors).map(([colorName, baseColor]) => {
     const palette = Object.fromEntries(
-      generatePalette(baseColor).map((color, i) => [i + 1, color])
+      generateShades(baseColor).map((color, i) => [i + 1, color])
     ) as ColorObj
     return [colorName, palette]
   })

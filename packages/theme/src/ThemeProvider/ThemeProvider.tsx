@@ -6,13 +6,14 @@ import { defaultTheme } from '../defaultTheme'
 
 interface Props {
   colorMode: DerrivedColorMode
+  brandColor?: string | [string, string]
   theme?: DeepPartial<BaseTheme>
   children?: React.ReactNode
 }
 
 export const ThemeProvider: React.FC<Props> = props => {
-  const { colorMode, theme = {}, children } = props
-  const themeFinal = themeFactory(deepmerge(defaultTheme, theme), colorMode)
+  const { colorMode, brandColor, theme = {}, children } = props
+  const themeFinal = themeFactory(deepmerge(defaultTheme, theme), colorMode, brandColor)
 
   return <EmThemeProvider theme={themeFinal}>{children}</EmThemeProvider>
 }
