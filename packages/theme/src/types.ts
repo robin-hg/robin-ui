@@ -8,7 +8,7 @@ export type DeepPartial<T> = T extends object
   : T
 
 export type ColorMode = 'light' | 'dark' | 'system'
-export type DerrivedColorMode = 'light' | 'dark'
+export type DerivedColorMode = 'light' | 'dark'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SizeValue = Size | string | number

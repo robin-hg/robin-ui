@@ -1,11 +1,11 @@
-import type { BaseTheme, DerrivedColorMode, DeepPartial } from '../types'
+import type { BaseTheme, DerivedColorMode, DeepPartial } from '../types'
 import { ThemeProvider as EmThemeProvider } from '@emotion/react'
 import { deepmerge } from '@robin-ui/utils'
 import { themeFactory } from './themeFactory'
 import { defaultTheme } from '../defaultTheme'
 
 interface Props {
-  colorMode: DerrivedColorMode
+  colorMode: DerivedColorMode
   dynamicColor?: string | [string, string]
   theme?: DeepPartial<BaseTheme>
   children?: React.ReactNode

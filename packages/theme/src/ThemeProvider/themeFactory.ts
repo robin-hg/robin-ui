@@ -1,4 +1,4 @@
-import type { RobinTheme, BaseTheme, AugumentedTheme, DerrivedColorMode } from '../types'
+import type { RobinTheme, BaseTheme, AugumentedTheme, DerivedColorMode } from '../types'
 import { createThemeFunctions } from './functions'
 import { parseSize } from '@robin-ui/utils'
 import { generatePalette } from './generatePalette'
@@ -8,7 +8,7 @@ const createMediaBreakpoint = (theme: BaseTheme, breakpoint: keyof BaseTheme['br
 
 export const themeFactory = (
   theme: BaseTheme,
-  colorMode: DerrivedColorMode,
+  colorMode: DerivedColorMode,
   dynamicColor?: string | [string, string]
 ): RobinTheme => {
   let palette = colorMode === 'light' ? theme.lightPalette : theme.darkPalette

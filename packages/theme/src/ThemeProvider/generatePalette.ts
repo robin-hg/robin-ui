@@ -1,4 +1,4 @@
-import type { DerrivedColorMode } from '../types'
+import type { DerivedColorMode } from '../types'
 import { generateShades } from '@robin-ui/utils'
 import { white } from '../colors'
 
@@ -20,7 +20,7 @@ const darkIndex = {
 
 export const generatePalette = (
   dynamicColor: string | [string, string],
-  colorMode: DerrivedColorMode
+  colorMode: DerivedColorMode
 ) => {
   const index = colorMode === 'light' ? lightIndex : darkIndex
   const colorArray = typeof dynamicColor === 'string' ? [dynamicColor] : dynamicColor
