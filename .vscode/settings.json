@@ -1,6 +1,0 @@
-{
-  "search.exclude": {
-    "pnpm-lock.yaml": true
-  },
-  "typescript.enablePromptUseWorkspaceTsdk": true
-}
