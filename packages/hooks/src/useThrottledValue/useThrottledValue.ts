@@ -6,6 +6,12 @@ export const useThrottledValue = <T>(value: T, delay = 500) => {
   const waitingValue = useRef<T>()
 
   useEffect(() => {
+    return () => {
+      clearTimeout(timeout.current)
+    }
+  }, [])
+
+  useEffect(() => {
     if (timeout.current) {
       waitingValue.current = value
       return
@@ -23,9 +29,6 @@ export const useThrottledValue = <T>(value: T, delay = 500) => {
     }
 
     timeout.current = setTimeout(timeoutCallback, delay)
-    return () => {
-      clearTimeout(timeout.current)
-    }
   }, [value, delay])
 
   return throttledValue

@@ -9,7 +9,9 @@ export const useThrottledCallback = <T extends (...args: Parameters<T>) => void>
   const waitingValue = useRef<Parameters<T>>()
 
   useEffect(() => {
-    return () => clearTimeout(timeout.current)
+    return () => {
+      clearTimeout(timeout.current)
+    }
   }, [])
 
   return useEvent((...args: Parameters<T>) => {
