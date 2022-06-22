@@ -28,8 +28,14 @@ describe('useThrottledValue', () => {
     expect(result.current).toBe(1)
 
     act(() => {
-      vi.advanceTimersByTime(1000)
+      vi.advanceTimersByTime(500)
     })
     expect(result.current).toBe(5)
+
+    rerender({ value: 6 })
+    act(() => {
+      vi.advanceTimersByTime(1000)
+    })
+    expect(result.current).toBe(6)
   })
 })
