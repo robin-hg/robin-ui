@@ -1,27 +1,42 @@
 import type { DefaultProps } from '@robin-ui/types'
 import type { Easing } from 'framer-motion/types/types'
 import React from 'react'
-import { AnimatePresence, m, type Variants } from 'framer-motion'
+import { AnimatePresence, m, type Variant } from 'framer-motion'
 import { sxc } from '@robin-ui/styles'
+
+type Animation = {
+  enter: Variant
+  exit: Variant
+}
 
 export interface Props extends DefaultProps<HTMLDivElement> {
   in?: boolean
+  variants?: Animation
   duration?: string | number
   ease?: Easing
   unmountOnExit?: boolean
   motionOnly?: boolean
 }
 
-const TransitionFactory = (animation: Variants) => {
-  const Transition = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-    const { in: inProp, duration, ease, unmountOnExit, motionOnly, children, ...otherProps } = props
+const TransitionFactory = (defaultAnimation?: Animation) => {
+  const BaseTransition = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+    const {
+      in: inProp,
+      variants,
+      duration,
+      ease,
+      unmountOnExit,
+      motionOnly,
+      children,
+      ...otherProps
+    } = props
 
     const transitionComponent = (
       <m.div
         initial={unmountOnExit ? 'exit' : false}
         animate={inProp ? 'enter' : 'exit'}
         exit="exit"
-        variants={animation}
+        variants={variants || defaultAnimation}
         transition={{
           duration: typeof duration === 'number' ? duration / 1000 : duration,
           ease
@@ -40,11 +55,12 @@ const TransitionFactory = (animation: Variants) => {
 
     return <AnimatePresence>{show && transitionComponent}</AnimatePresence>
   })
+  BaseTransition.displayName = 'Transition'
 
-  Transition.displayName = 'Collapse'
-
-  return Transition
+  return BaseTransition
 }
+
+export const Transition = TransitionFactory()
 
 export const Fade = TransitionFactory({
   enter: { opacity: 1 },
