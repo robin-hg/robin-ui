@@ -1,4 +1,5 @@
 import type { Story, Meta } from '@storybook/react'
+import { sxc } from '@robin-ui/styles'
 
 import { Container, type Props } from './Container'
 
@@ -14,11 +15,12 @@ export default {
 } as Meta<Props>
 
 export const Default: Story<Props> = args => (
-  <Container
-    {...args}
-    sx={{
-      height: '30rem',
-      background: 'surface.variant'
-    }}
-  />
+  <Container {...args}>
+    <sxc.div
+      sx={{
+        height: '30rem',
+        background: 'surface.variant'
+      }}
+    />
+  </Container>
 )
