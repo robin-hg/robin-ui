@@ -1,14 +1,14 @@
 import type { DefaultProps } from '@robin-ui/types'
-import type { Easing } from 'framer-motion/types/types'
 import React, { useRef } from 'react'
 import { m } from 'framer-motion'
 import { useSize } from '@robin-ui/hooks'
+import { camelCase } from '@robin-ui/utils'
 
 import { Content } from './DynamicResizer.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
   duration?: string | number
-  ease?: Easing
+  ease?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
   disableResizeHeight?: boolean
   disableResizeWidth?: boolean
 }
@@ -27,7 +27,7 @@ export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, re
       }}
       transition={{
         duration: typeof duration === 'number' ? duration / 1000 : duration,
-        ease
+        ease: ease ? camelCase(ease) : undefined
       }}>
       <Content ref={contentRef} {...otherProps}>
         {children}

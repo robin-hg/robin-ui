@@ -1,9 +1,8 @@
 import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
-import type { Easing } from 'framer-motion/types/types'
 import { AnimatePresence } from 'framer-motion'
 
-import { Fade, Collapse, Grow } from '../Transition'
+import { Fade, Collapse, Grow, type Props as TransitionProps } from '../Transition'
 
 const defaultTransitions = {
   collapse: Collapse,
@@ -15,7 +14,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   currentKey: string | number
   transition?: 'fade' | 'collapse' | 'grow'
   duration?: number
-  ease?: Easing
+  ease?: TransitionProps['ease']
 }
 
 export const TransitionSwitch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
