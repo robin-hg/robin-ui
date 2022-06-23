@@ -34,7 +34,7 @@ importers:
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-react: ^7.30.0
       eslint-plugin-react-hooks: ^4.6.0
-      framer-motion: ^6.3.11
+      framer-motion: ^6.3.13
       happy-dom: ^5.3.1
       husky: ^8.0.1
       lint-staged: ^13.0.2
@@ -47,7 +47,7 @@ importers:
       storybook-dark-mode: ^1.1.0
       typescript: ^4.7.4
       vite: ^2.9.12
-      vitest: ^0.15.1
+      vitest: ^0.15.2
     devDependencies:
       '@changesets/changelog-github': 0.4.5
       '@changesets/cli': 2.23.0
@@ -79,7 +79,7 @@ importers:
       eslint-plugin-prettier: 4.0.0_xu6ewijrtliw5q5lksq5uixwby
       eslint-plugin-react: 7.30.0_eslint@8.18.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.18.0
-      framer-motion: 6.3.11_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 6.3.13_biqbaboplfbrettd7655fr4n2y
       happy-dom: 5.3.1
       husky: 8.0.1
       lint-staged: 13.0.2
@@ -92,7 +92,7 @@ importers:
       storybook-dark-mode: 1.1.0_@storybook+theming@6.5.9
       typescript: 4.7.4
       vite: 2.9.12
-      vitest: 0.15.1_c8@7.11.3+happy-dom@5.3.1
+      vitest: 0.15.2_c8@7.11.3+happy-dom@5.3.1
 
   packages/core:
     specifiers:
@@ -287,7 +287,7 @@ packages:
       '@babel/compat-data': 7.18.5
       '@babel/core': 7.18.5
       '@babel/helper-validator-option': 7.16.7
-      browserslist: 4.20.4
+      browserslist: 4.21.0
       semver: 6.3.0
     dev: true
 
@@ -4709,7 +4709,7 @@ packages:
     resolution: {integrity: sha512-eM9d/swFopRt5gdJ7jrpCwgvEMIayITpojhkkSMRsFHYuH5bkSQ4p/9qTEHtmNudUZh22Tehu7I6CxAW0IXTKA==}
     hasBin: true
     dependencies:
-      browserslist: 4.20.4
+      browserslist: 4.21.0
       caniuse-lite: 1.0.30001358
       normalize-range: 0.1.2
       num2fraction: 1.2.2
@@ -5087,16 +5087,15 @@ packages:
       pako: 1.0.11
     dev: true
 
-  /browserslist/4.20.4:
-    resolution: {integrity: sha512-ok1d+1WpnU24XYN7oC3QWgTyMhY/avPJ/r9T00xxvUOIparA/gc+UPUMaod3i+G6s+nI2nUb9xZ5k794uIwShw==}
+  /browserslist/4.21.0:
+    resolution: {integrity: sha512-UQxE0DIhRB5z/zDz9iA03BOfxaN2+GQdBYH/2WrSIWEUrnpzTPJbhqt+umq6r3acaPRTW1FNTkrcp0PXgtFkvA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001358
-      electron-to-chromium: 1.4.163
-      escalade: 3.1.1
+      electron-to-chromium: 1.4.167
       node-releases: 2.0.5
-      picocolors: 1.0.0
+      update-browserslist-db: 1.0.3_browserslist@4.21.0
     dev: true
 
   /buffer-from/1.1.2:
@@ -5161,7 +5160,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -5670,7 +5669,7 @@ packages:
   /core-js-compat/3.23.2:
     resolution: {integrity: sha512-lrgZvxFwbQp9v7E8mX0rJ+JX7Bvh4eGULZXA1IAyjlsnWvCdw6TF8Tg6xtaSUSJMrSrMaLdpmk+V54LM1dvfOA==}
     dependencies:
-      browserslist: 4.20.4
+      browserslist: 4.21.0
       semver: 7.0.0
     dev: true
 
@@ -6192,8 +6191,8 @@ packages:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
     dev: true
 
-  /electron-to-chromium/1.4.163:
-    resolution: {integrity: sha512-c9q94pUVqIdc8hyr7jZDB4bNEoNF3QJ7y35lnddMD+mXtiv5GsL1bT/RmfW/KEOmvlNg5Oy1qioiy4tA7e864Q==}
+  /electron-to-chromium/1.4.167:
+    resolution: {integrity: sha512-lPHuHXBwpkr4RcfaZBKm6TKOWG/1N9mVggUpP4fY3l1JIUU2x4fkM8928smYdZ5lF+6KCTAxo1aK9JmqT+X71Q==}
     dev: true
 
   /element-resize-detector/1.2.4:
@@ -6791,7 +6790,7 @@ packages:
       emoji-regex: 9.2.2
       eslint: 8.18.0
       has: 1.0.3
-      jsx-ast-utils: 3.3.0
+      jsx-ast-utils: 3.3.1
       language-tags: 1.0.5
       minimatch: 3.1.2
     dev: true
@@ -6841,7 +6840,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.18.0
       estraverse: 5.3.0
-      jsx-ast-utils: 3.3.0
+      jsx-ast-utils: 3.3.1
       minimatch: 3.1.2
       object.entries: 1.1.5
       object.fromentries: 2.0.5
@@ -7531,8 +7530,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/6.3.11_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-xQLk+ZSklNs5QNCUmdWPpKMOuWiB8ZETsvcIOWw8xvri9K3TamuifgCI/B6XpaEDR0/V2ZQF2Wm+gUAZrXo+rw==}
+  /framer-motion/6.3.13_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-z6UIxENuqa9bh/xE1fit7IUT+07TKSp81TE+C0DDBe9ly4bdEafpZUbcDZxNiN6UBU5hYdEY7rKhk+X1JlIkhg==}
     peerDependencies:
       react: '>=16.8 || ^17.0.0 || ^18.0.0 || ^18'
       react-dom: '>=16.8 || ^17.0.0 || ^18.0.0 || ^18'
@@ -8838,8 +8837,8 @@ packages:
       graceful-fs: 4.2.10
     dev: true
 
-  /jsx-ast-utils/3.3.0:
-    resolution: {integrity: sha512-XzO9luP6L0xkxwhIJMTJQpZo/eeN60K08jHdexfD569AGxeNug6UketeHXEhROoM8aR7EcUoOQmIhcJQjcuq8Q==}
+  /jsx-ast-utils/3.3.1:
+    resolution: {integrity: sha512-pxrjmNpeRw5wwVeWyEAk7QJu2GnBO3uzPFmHCKJJFPKK2Cy0cWL23krGtLdnMmbIi6/FjlrQpPyfQI19ByPOhQ==}
     engines: {node: '>=4.0'}
     dependencies:
       array-includes: 3.1.5
@@ -10443,6 +10442,17 @@ packages:
         optional: true
     dev: true
 
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
+    dev: true
+
   /promise.allsettled/1.0.5:
     resolution: {integrity: sha512-tVDqeZPoBC0SlzJHzWGZ2NKAguVq2oiYj7gbggbiTvH2itHohijTp7njOUA0aQ/nl+0lr/r6egmhoYu63UZ/pQ==}
     engines: {node: '>= 0.4'}
@@ -11591,6 +11601,7 @@ packages:
 
   /stable/0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
+    deprecated: 'Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility'
     dev: true
 
   /stackframe/1.3.4:
@@ -12480,6 +12491,17 @@ packages:
     dev: true
     optional: true
 
+  /update-browserslist-db/1.0.3_browserslist@4.21.0:
+    resolution: {integrity: sha512-ufSazemeh9Gty0qiWtoRpJ9F5Q5W3xdIPm1UZQqYQv/q0Nyb9EMHUB2lu+O9x1re9WsorpMAUu4Y6Lxcs5n+XQ==}
+    hasBin: true
+    peerDependencies:
+      browserslist: '>= 4.21.0'
+    dependencies:
+      browserslist: 4.21.0
+      escalade: 3.1.1
+      picocolors: 1.0.0
+    dev: true
+
   /uri-js/4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
@@ -12657,8 +12679,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.15.1_c8@7.11.3+happy-dom@5.3.1:
-    resolution: {integrity: sha512-NaNFi93JKSuvV4YGnfQ0l0GKYxH0EsLcTrrXaCzd6qfVEZM/RJpjwSevg6waNFqu2DyN6e0aHHdrCZW5/vh5NA==}
+  /vitest/0.15.2_c8@7.11.3+happy-dom@5.3.1:
+    resolution: {integrity: sha512-cMabuUqu+nNHafkdN7H8Z20+UZTrrUfqjGwAoLwUwrqFGWBz3gXwxndjbLf6mgSFs9lF/JWjKeNM1CXKwtk26w==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -12864,7 +12886,7 @@ packages:
       '@webassemblyjs/wasm-parser': 1.11.1
       acorn: 8.7.1
       acorn-import-assertions: 1.8.0_acorn@8.7.1
-      browserslist: 4.20.4
+      browserslist: 4.21.0
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.9.3
       es-module-lexer: 0.9.3
