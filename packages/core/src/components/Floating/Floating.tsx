@@ -4,9 +4,9 @@ import {
   shift,
   arrow,
   autoUpdate,
-  type Placement,
   offset,
-  flip
+  flip,
+  type Placement
 } from '@floating-ui/react-dom'
 import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@robin-ui/hooks'
 import { ModalContext } from '../Modal'
@@ -88,7 +88,7 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
     }
   })
 
-  const ctxValue = useMemo(() => ({ floatinghEl: refs.floating.current }), [refs.floating.current])
+  const ctxValue = useMemo(() => ({ floatinghEl: refs.floating.current }), [refs.floating])
 
   if (!trigger) {
     return null
