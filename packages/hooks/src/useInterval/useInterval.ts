@@ -1,13 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useEvent } from '../useEvent'
 
 export const useInterval = (callback: () => void, ms = 500) => {
   const savedCallback = useEvent(callback)
+  const interval = useRef<ReturnType<typeof setInterval>>()
 
   useEffect(() => {
-    const interval = setInterval(savedCallback, ms)
+    interval.current = setInterval(savedCallback, ms)
     return () => {
-      clearInterval(interval)
+      clearInterval(interval.current)
     }
   }, [ms, savedCallback])
+
+  return interval.current
 }
