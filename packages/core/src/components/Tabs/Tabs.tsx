@@ -59,7 +59,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         aria-orientation="horizontal"
         onKeyDown={handleKeyDown}>
         {tabs.map((tab, i) => {
-          const key = tab.props?.tabKey ?? tab.key ?? i
+          const key = tab.props?.tabKey ?? i.toString()
           const active = _activeTab === key
           return (
             <Tab
