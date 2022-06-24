@@ -1,9 +1,9 @@
 import { renderHook } from '@robin-ui/test-utils'
-import { useMediaQuery } from './useMediaQuery'
+import { useWidthQuery } from './useWidthQuery'
 
 const re = /(\d+)/
 
-describe('useMediaQuery', () => {
+describe('useWidthQuery', () => {
   beforeEach(() => {
     vi.spyOn(window, 'matchMedia').mockImplementation(query => {
       const width = re.exec(query)?.[0] || '0'
@@ -24,8 +24,13 @@ describe('useMediaQuery', () => {
     vi.spyOn(window, 'matchMedia').mockRestore()
   })
 
-  it('should return true if media query matches', () => {
-    const { result } = renderHook(() => useMediaQuery('(max-width: 600px)'))
+  it('should return true when screen width is below md breakpoint', () => {
+    const { result } = renderHook(() => useWidthQuery('md'))
     expect(result.current).toBe(true)
+  })
+
+  it('should return true when screen width is above md breakpoint', () => {
+    const { result } = renderHook(() => useWidthQuery('md', 'up'))
+    expect(result.current).toBe(false)
   })
 })

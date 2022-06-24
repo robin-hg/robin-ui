@@ -14,7 +14,7 @@ export const useStorage = <T>(
   storageType: 'local' | 'session',
   key: string,
   initialValue?: T
-): [T | undefined, (value: T | ((current?: T) => T)) => void] => {
+): [T | undefined, (value?: T | ((current?: T) => T)) => void] => {
   const storage = storageType === 'session' ? sessionStorage : localStorage
   const eventName = storageType === 'session' ? 'session-storage' : 'local-storage'
 
@@ -25,7 +25,7 @@ export const useStorage = <T>(
 
   const [storedValue, setStoredValue] = useState(getValue() ?? initialValue)
 
-  const setValue = useEvent((value: T | ((current?: T) => T)) => {
+  const setValue = useEvent((value?: T | ((current?: T) => T)) => {
     if (value === undefined) {
       storage.removeItem(key)
       setStoredValue(undefined)
