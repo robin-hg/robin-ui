@@ -1,5 +1,4 @@
 import { act, renderHook } from '@robin-ui/test-utils'
-
 import { useSetState } from './useSetState'
 
 describe('useSetState', () => {

@@ -1,5 +1,4 @@
 import { renderHook } from '@robin-ui/test-utils'
-
 import { useTraceUpdate } from './useTraceUpdate'
 
 describe('useTraceUpdate', () => {

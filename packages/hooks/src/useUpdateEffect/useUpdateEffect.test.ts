@@ -1,5 +1,4 @@
 import { renderHook } from '@robin-ui/test-utils'
-
 import { useUpdateEffect } from './useUpdateEffect'
 
 describe('useUpdateEffect', () => {
