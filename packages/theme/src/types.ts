@@ -67,7 +67,7 @@ export interface TypographyProperties<V extends Size> {
   fontFamily: NonNullable<React.CSSProperties['fontFamily']>
   fontWeight: NonNullable<React.CSSProperties['fontWeight']>
   fontSize: Record<V, NonNullable<React.CSSProperties['fontSize']>>
-  lineHeight: Record<V, NonNullable<React.CSSProperties['lineHeight']>>
+  lineHeight: NonNullable<React.CSSProperties['lineHeight']>
 }
 
 export interface BaseTheme extends Record<string, unknown> {

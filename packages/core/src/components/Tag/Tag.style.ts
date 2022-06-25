@@ -17,7 +17,7 @@ export const TagContainer = styled.span<TagContainerProps>(
     fontFamily: theme.typography.label.fontFamily,
     fontSize: theme.typography.label.fontSize[$size],
     fontWeight: theme.typography.label.fontWeight,
-    lineHeight: theme.typography.label.lineHeight[$size],
+    lineHeight: theme.typography.label.lineHeight,
     color: theme.fn.getOnColor($color),
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',

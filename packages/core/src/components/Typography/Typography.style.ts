@@ -32,7 +32,7 @@ export const StyledText = styled.div<StyledTextProps>(
     fontWeight: $fontWeight ?? ($bold ? 'bold' : theme.typography[$variant].fontWeight),
     fontSize: $fontSize ? $fontSize : theme.fn.getSize($size, theme.typography[$variant].fontSize),
     fontStyle: $italic ? 'italic' : 'normal',
-    lineHeight: theme.fn.getSize($size, theme.typography[$variant].lineHeight, 'normal'),
+    lineHeight: theme.typography[$variant].lineHeight,
     color: theme.fn.getColor($color),
     textDecoration: $decoration,
     letterSpacing: 'normal',

@@ -21,7 +21,7 @@ export const Global = () => (
           fontDisplay: 'block',
           fontFamily: theme.typography.text.fontFamily,
           fontSize: theme.typography.text.fontSize.md,
-          lineHeight: theme.typography.text.lineHeight.md,
+          lineHeight: theme.typography.text.lineHeight,
           minHeight: ['100vh', '-webkit-fill-available'],
           background: theme.fn.getMixedColor('background', 'tint', 'backgroundTint'),
           color: theme.palette.background.onBase,
