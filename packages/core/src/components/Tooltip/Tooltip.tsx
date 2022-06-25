@@ -39,7 +39,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           open={openOverride !== undefined ? openOverride : open}
           withArrow={withArrow}
           padding={['xs', 'sm']}
-          borderRadius="sm"
+          radius="sm"
           placement={placement}
           {...otherProps}>
           {label}

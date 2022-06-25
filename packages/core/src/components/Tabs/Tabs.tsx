@@ -7,7 +7,9 @@ import { sxc } from '@robin-ui/styles'
 import type { Props as TabPanelProps } from '../TabPanel'
 import { TransitionSwitch } from '../TransitionSwitch'
 
-import { Tab, TabGroup } from './Tabs.style'
+import { TabGroup, TabIndicator } from './Tabs.style'
+import { Button } from '../Button'
+import { Fade } from '../Transition'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
   color?: ColorToken
@@ -62,21 +64,24 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           const key = tab.props?.tabKey ?? i
           const active = _activeTab === key
           return (
-            <Tab
-              key={key}
-              $active={active}
-              role="tab"
-              variant="text"
-              borderRadius="xs"
-              color={active ? color : 'surface.onVariant'}
-              onClick={() => {
-                onChange?.(key)
-                setUncontrolled(key)
-              }}
-              tabIndex={active ? 0 : -1}
-              aria-selected={active}>
-              {tab.props?.label}
-            </Tab>
+            <div key={key}>
+              <Button
+                role="tab"
+                variant="text"
+                radius="xs"
+                color={active ? color : 'surface.onVariant'}
+                onClick={() => {
+                  onChange?.(key)
+                  setUncontrolled(key)
+                }}
+                tabIndex={active ? 0 : -1}
+                aria-selected={active}>
+                {tab.props?.label}
+              </Button>
+              <Fade in={active}>
+                <TabIndicator key={key} layoutId="underline" />
+              </Fade>
+            </div>
           )
         })}
       </TabGroup>
