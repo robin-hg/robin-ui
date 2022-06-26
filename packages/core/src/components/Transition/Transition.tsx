@@ -2,7 +2,6 @@ import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
 import { AnimatePresence, m, type Variant } from 'framer-motion'
 import { sxc } from '@robin-ui/styles'
-import { camelCase } from '@robin-ui/utils'
 
 type Animation = {
   enter: Variant
@@ -12,7 +11,7 @@ type Animation = {
 export interface Props extends DefaultProps<HTMLDivElement> {
   in?: boolean
   variants?: Animation
-  duration?: string | number
+  duration?: number
   ease?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
   unmountOnExit?: boolean
   motionOnly?: boolean
@@ -38,8 +37,8 @@ const TransitionFactory = (defaultAnimation?: Animation) => {
         exit="exit"
         variants={variants || defaultAnimation}
         transition={{
-          duration: typeof duration === 'number' ? duration / 1000 : duration,
-          ease: ease ? camelCase(ease) : undefined
+          duration: duration !== undefined ? duration / 1000 : duration,
+          ease: ease || undefined
         }}>
         <sxc.div ref={ref} {...otherProps}>
           {children}

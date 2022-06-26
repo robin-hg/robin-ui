@@ -44,7 +44,7 @@ export const defaultTheme: BaseTheme = {
     disabled: 0.5
   },
   transition: {
-    duration: '200ms',
+    duration: 200,
     ease: 'ease-out'
   },
   shadow: {

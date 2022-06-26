@@ -30,10 +30,7 @@ export const MotionProvider: React.FC<Props> = props => {
   return (
     <LazyMotion features={domAnimation}>
       <MotionConfig
-        transition={{
-          duration: typeof duration === 'number' ? duration / 1000 : duration,
-          ease: camelCase(ease)
-        }}
+        transition={{ duration: duration / 1000, ease: camelCase(ease) }}
         reducedMotion="user">
         {children}
       </MotionConfig>

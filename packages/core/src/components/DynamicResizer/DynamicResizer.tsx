@@ -7,7 +7,7 @@ import { camelCase } from '@robin-ui/utils'
 import { Content } from './DynamicResizer.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
-  duration?: string | number
+  duration?: number
   ease?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
   disableResizeHeight?: boolean
   disableResizeWidth?: boolean
