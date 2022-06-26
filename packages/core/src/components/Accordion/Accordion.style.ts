@@ -1,6 +1,5 @@
 import styled from '@robin-ui/styles'
 import { BaseContainer } from '../BaseContainer'
-import { Collapse } from '../Transition'
 
 export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
   borderBottom: `solid 0.1rem ${theme.palette.outline}`
@@ -53,6 +52,6 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(
   })
 )
 
-export const AccordionContent = styled(Collapse)(({ theme }) => ({
+export const AccordionContent = styled.div(({ theme }) => ({
   padding: theme.spacing.md
 }))

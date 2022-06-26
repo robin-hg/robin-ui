@@ -6,6 +6,7 @@ import { NotificationsManagerContext } from '../NotificationsManager'
 import { Portal } from '../Portal'
 
 import { NotificationContainer } from './Notification.style'
+import { Fade } from '../Transition'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'title'> {
   icon?: React.ReactNode
@@ -27,13 +28,15 @@ export const Notification = React.forwardRef<HTMLDivElement, Props>((props, ref)
   }, duration)
 
   const notification = (
-    <NotificationContainer ref={ref} {...otherProps}>
-      {icon}
-      <div>
-        {title}
-        {children}
-      </div>
-    </NotificationContainer>
+    <Fade in unmountOnExit layout motionOnly>
+      <NotificationContainer ref={ref} {...otherProps}>
+        {icon}
+        <div>
+          {title}
+          {children}
+        </div>
+      </NotificationContainer>
+    </Fade>
   )
 
   if (!managed && managerEl) {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion'
+import { LazyMotion, MotionConfig, domMax } from 'framer-motion'
 import { useReducedMotion, useTheme } from '@robin-ui/hooks'
 import { camelCase } from '@robin-ui/utils'
 
@@ -28,7 +28,7 @@ export const MotionProvider: React.FC<Props> = props => {
   const { duration, ease = '' } = transition
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={domMax}>
       <MotionConfig
         transition={{ duration: duration / 1000, ease: camelCase(ease) }}
         reducedMotion="user">

@@ -1,20 +1,20 @@
-import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
-import { AnimatePresence, m, type Variant } from 'framer-motion'
-import { sxc } from '@robin-ui/styles'
+import { AnimatePresence, m, type MotionProps, type Variant } from 'framer-motion'
+import { camelCase } from '@robin-ui/utils'
 
 type Animation = {
   enter: Variant
   exit: Variant
 }
 
-export interface Props extends DefaultProps<HTMLDivElement> {
+export interface Props extends MotionProps {
   in?: boolean
   variants?: Animation
   duration?: number
   ease?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
   unmountOnExit?: boolean
   motionOnly?: boolean
+  children?: React.ReactNode
 }
 
 const TransitionFactory = (defaultAnimation?: Animation) => {
@@ -32,27 +32,25 @@ const TransitionFactory = (defaultAnimation?: Animation) => {
 
     const transitionComponent = (
       <m.div
+        ref={ref}
         initial={unmountOnExit ? 'exit' : false}
-        animate={inProp ? 'enter' : 'exit'}
+        animate={unmountOnExit || inProp ? 'enter' : 'exit'}
         exit="exit"
         variants={variants || defaultAnimation}
         transition={{
           duration: duration !== undefined ? duration / 1000 : duration,
-          ease: ease || undefined
-        }}>
-        <sxc.div ref={ref} {...otherProps}>
-          {children}
-        </sxc.div>
+          ease: ease !== undefined ? camelCase(ease) : undefined
+        }}
+        {...otherProps}>
+        {children}
       </m.div>
     )
 
-    if (motionOnly) {
+    if (!unmountOnExit || motionOnly) {
       return transitionComponent
     }
 
-    const show = unmountOnExit ? inProp : true
-
-    return <AnimatePresence>{show && transitionComponent}</AnimatePresence>
+    return <AnimatePresence>{inProp && transitionComponent}</AnimatePresence>
   })
   BaseTransition.displayName = 'Transition'
 

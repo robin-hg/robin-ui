@@ -3,7 +3,6 @@ import { AnimatePresence } from 'framer-motion'
 import React, { useMemo, useRef, useState } from 'react'
 import { Notification } from '../Notification'
 import { Portal } from '../Portal'
-import { Fade } from '../Transition'
 
 import { NotificationsContainer } from './NotificationsManager.style'
 
@@ -54,17 +53,16 @@ export const NotificationsManager: React.FC<Props> = props => {
             {queue.map(notification => {
               const { content, onClose, ...notificationProps } = notification
               return (
-                <Fade key={notification.id} in unmountOnExit motionOnly>
-                  <Notification
-                    {...notificationProps}
-                    onClose={() => {
-                      onClose?.()
-                      removeNotification(notification.id)
-                    }}
-                    managed>
-                    {content}
-                  </Notification>
-                </Fade>
+                <Notification
+                  key={notification.id}
+                  {...notificationProps}
+                  onClose={() => {
+                    onClose?.()
+                    removeNotification(notification.id)
+                  }}
+                  managed>
+                  {content}
+                </Notification>
               )
             })}
           </AnimatePresence>

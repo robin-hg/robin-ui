@@ -6,6 +6,7 @@ import { Text } from '../Typography'
 
 import { AccordionContainer, AccordionSummary, AccordionContent } from './Accordion.style'
 import { ChevronDown } from '@robin-ui/icons'
+import { Collapse } from '../Transition'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'summary' | 'title'> {
   open?: boolean
@@ -51,13 +52,11 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
         </Text>
         {!!children && <ChevronDown size={20} />}
       </AccordionSummary>
-      <AccordionContent
-        in={!disabled && open}
-        role="region"
-        id={`${id}-body`}
-        aria-labelledby={`${id}-summary`}>
-        {children}
-      </AccordionContent>
+      <Collapse in={!disabled && open}>
+        <AccordionContent role="region" id={`${id}-body`} aria-labelledby={`${id}-summary`}>
+          {children}
+        </AccordionContent>
+      </Collapse>
     </AccordionContainer>
   )
 })

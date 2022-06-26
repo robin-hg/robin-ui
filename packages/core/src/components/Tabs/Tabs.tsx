@@ -9,7 +9,6 @@ import { TransitionSwitch } from '../TransitionSwitch'
 
 import { TabGroup, TabIndicator } from './Tabs.style'
 import { Button } from '../Button'
-import { Fade } from '../Transition'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
   color?: ColorToken
@@ -78,9 +77,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
                 aria-selected={active}>
                 {tab.props?.label}
               </Button>
-              <Fade in={active}>
-                <TabIndicator key={key} layoutId="underline" />
-              </Fade>
+              {active && <TabIndicator key={key} layoutId="underline" />}
             </div>
           )
         })}
