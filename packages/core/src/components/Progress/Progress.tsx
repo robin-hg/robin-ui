@@ -54,7 +54,6 @@ export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
       <Bar
         $percent={clampNumber(value, 0, 100)}
         $color={color}
-        $radius={radius}
         $indeterminate={!!indeterminate}
         $animated={!!animated}
         style={{ width: `${value}%` }}

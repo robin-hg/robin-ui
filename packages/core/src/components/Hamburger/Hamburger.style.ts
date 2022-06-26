@@ -50,7 +50,7 @@ export const Lines = styled.div<LinesProp>(
         width: '100%',
         height: defaultLineWidth[$size],
         background: 'currentColor',
-        borderRadius: theme.radius.xl,
+        borderRadius: 'inherit',
         transformOrigin: 'center',
         transition: 'transform 100ms ease-out, top 100ms 100ms ease-out'
       },
@@ -62,7 +62,7 @@ export const Lines = styled.div<LinesProp>(
         width: '100%',
         height: defaultLineWidth[$size],
         background: 'currentColor',
-        borderRadius: theme.radius.xl,
+        borderRadius: 'inherit',
         transformOrigin: 'center',
         transition: 'transform 100ms ease-out, bottom 100ms 100ms ease-out'
       }

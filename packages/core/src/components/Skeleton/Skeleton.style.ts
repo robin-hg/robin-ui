@@ -42,7 +42,7 @@ export const SkeletonContainer = styled.div<SkeletonContainerProps>(
           theme.palette.surface.onBase,
           'faded'
         )})`,
-        borderRadius: theme.fn.getSize($radius, theme.radius),
+        borderRadius: 'inherit',
         animation: $animated ? `${pulse} 1.5s ease-out 0.5s infinite` : 'none'
       },
       '& > *': {

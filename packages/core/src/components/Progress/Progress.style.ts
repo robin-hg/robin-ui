@@ -41,21 +41,20 @@ export const Track = styled.div<TrackProps>(({ theme, $thickness, $trackColor, $
 
 interface BarProps {
   $color: string
-  $radius: SizeValue
   $indeterminate: boolean
   $animated: boolean
 }
 
 export const Bar = styled.div<BarProps>(
-  ({ theme, $color, $radius }) => ({
+  ({ theme, $color }) => ({
     position: 'relative',
     height: '100%',
     background: theme.fn.getColor($color),
     transition: theme.fn.getTransition(),
-    borderRadius: theme.fn.getSize($radius, theme.radius),
+    borderRadius: 'inherit',
     overflow: 'hidden'
   }),
-  ({ theme, $color, $radius, $indeterminate, $animated }) =>
+  ({ theme, $color, $indeterminate, $animated }) =>
     ($indeterminate || $animated) && {
       '&::after': {
         content: '""',
@@ -68,7 +67,7 @@ export const Bar = styled.div<BarProps>(
           theme.fn.getOnColor($color),
           'faded'
         )})`,
-        borderRadius: theme.fn.getSize($radius, theme.radius),
+        borderRadius: 'inherit',
         animation: `${pulse} 1.5s ease-out 0.5s infinite`
       }
     },

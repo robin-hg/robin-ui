@@ -16,7 +16,7 @@ export const Circle = styled.input<CircleProps>(
     width: '1.8rem',
     height: '1.8rem',
     border: '0.1rem solid transparent',
-    borderRadius: '100%',
+    borderRadius: theme.radius.xl,
     outline: '0.2rem solid transparent',
     outlineOffset: '0.2rem',
     transition: theme.fn.getTransition(),
@@ -27,7 +27,7 @@ export const Circle = styled.input<CircleProps>(
       left: '50%',
       width: '0.8rem',
       height: '0.8rem',
-      borderRadius: '100%',
+      borderRadius: 'inherit',
       transition: theme.fn.getTransition()
     }
   }),

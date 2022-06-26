@@ -26,7 +26,7 @@ export const Box = styled.input<BoxProps>(
       width: '1.2rem',
       height: '1.2rem',
       border: '0.1rem solid transparent',
-      borderRadius: theme.radius.xl,
+      borderRadius: 'inherit',
       transition: theme.fn.getTransition()
     }
   }),
