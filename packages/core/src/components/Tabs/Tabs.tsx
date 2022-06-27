@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken } from '@robin-ui/types'
+import type { ColorToken, DefaultProps } from '@robin-ui/types'
 import React, { Children, useRef } from 'react'
 import { useUncontrolled } from '@robin-ui/hooks'
 import { getFocusable } from '@robin-ui/utils'

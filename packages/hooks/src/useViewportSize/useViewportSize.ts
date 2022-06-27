@@ -1,4 +1,4 @@
-import { useState, startTransition } from 'react'
+import { startTransition, useState } from 'react'
 import { useEventListener } from '../useEventListener'
 
 export const useViewportSize = () => {

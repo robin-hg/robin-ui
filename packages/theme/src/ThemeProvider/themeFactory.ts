@@ -1,7 +1,7 @@
-import type { RobinTheme, BaseTheme, AugumentedTheme, DerivedColorMode } from '../types'
+import type { AugumentedTheme, BaseTheme, DerivedColorMode, RobinTheme } from '../types'
 import { createThemeFunctions } from './functions'
-import { parseSize } from '@robin-ui/utils'
 import { derivePalette } from './derivePalette'
+import { parseSize } from '@robin-ui/utils'
 
 const createMediaBreakpoint = (theme: BaseTheme, breakpoint: keyof BaseTheme['breakpoints']) =>
   `@media screen and (max-width: ${parseSize(theme.breakpoints[breakpoint])})`

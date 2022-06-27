@@ -1,5 +1,5 @@
+import { colord, get, memoize } from '@robin-ui/utils'
 import type { AugumentedTheme, ColorToken, Modifier } from '../../types'
-import { get, memoize, colord } from '@robin-ui/utils'
 
 export const getColorFunctions = (theme: AugumentedTheme) => {
   const getColor = memoize((color: ColorToken) => {

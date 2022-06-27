@@ -1,4 +1,4 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
 import { Breadcrumbs, type Props } from './Breadcrumbs'
 import { Link } from '../Link'

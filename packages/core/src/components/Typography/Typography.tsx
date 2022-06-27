@@ -1,4 +1,4 @@
-import type { DefaultProps, SizeValue, ColorToken } from '@robin-ui/types'
+import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
 
 import { StyledText } from './Typography.style'

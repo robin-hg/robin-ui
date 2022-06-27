@@ -4,7 +4,7 @@ import { useId } from '@robin-ui/hooks'
 
 import { Text } from '../Typography'
 
-import { AccordionContainer, AccordionSummary, AccordionContent } from './Accordion.style'
+import { AccordionContainer, AccordionContent, AccordionSummary } from './Accordion.style'
 import { ChevronDown } from '@robin-ui/icons'
 import { Collapse } from '../Transition'
 

@@ -1,4 +1,4 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
 import { Alert, type Props } from './Alert'
 

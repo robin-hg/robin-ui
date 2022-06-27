@@ -1,4 +1,4 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
 import { Grid, type Props } from './Grid'
 import { GridItem } from '../GridItem'

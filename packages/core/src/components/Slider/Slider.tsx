@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, Size } from '@robin-ui/types'
+import type { ColorToken, DefaultProps, Size } from '@robin-ui/types'
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { clampNumber } from '@robin-ui/utils'
 import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'

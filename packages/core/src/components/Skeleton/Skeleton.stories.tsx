@@ -1,6 +1,6 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
-import { Skeleton, type Props } from './'
+import { type Props, Skeleton } from './'
 
 export default {
   title: 'Feedback/Skeleton',

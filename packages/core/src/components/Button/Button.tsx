@@ -1,8 +1,8 @@
-import type { DefaultProps, ColorToken, SizeValue, Size } from '@robin-ui/types'
+import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
 import React, { useContext } from 'react'
 import { ButtonGroupContext } from '../ButtonGroup'
 
-import { Item, Content, StyledButton } from './Button.style'
+import { Content, Item, StyledButton } from './Button.style'
 
 export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> {
   /**

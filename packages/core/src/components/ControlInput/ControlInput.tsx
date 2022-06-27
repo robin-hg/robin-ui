@@ -2,7 +2,7 @@ import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
 import { Text } from '../Typography'
 
-import { ControlInputContainer, Control } from './ControlInput.style'
+import { Control, ControlInputContainer } from './ControlInput.style'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'label'> {
   label?: number | string

@@ -1,9 +1,8 @@
-import { range } from '../range'
-
 import { colord as _colord, extend } from 'colord'
+import a11yPlugin from 'colord/plugins/a11y'
 import lchPlugin from 'colord/plugins/lch'
 import mixPlugin from 'colord/plugins/mix'
-import a11yPlugin from 'colord/plugins/a11y'
+import { range } from '../range'
 
 extend([lchPlugin, mixPlugin, a11yPlugin])
 

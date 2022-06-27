@@ -1,7 +1,7 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import { Slider, type Props } from './Slider'
+import { type Props, Slider } from './Slider'
 
 export default {
   title: 'Inputs/Slider',

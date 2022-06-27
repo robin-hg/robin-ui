@@ -1,8 +1,8 @@
 import {
-  render,
-  renderHook,
+  type RenderHookOptions,
   type RenderOptions,
-  type RenderHookOptions
+  render,
+  renderHook
 } from '@testing-library/react'
 import { RobinProvider } from '@robin-ui/core'
 

@@ -1,6 +1,6 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
-import { Tag, type Props } from './Tag'
+import { type Props, Tag } from './Tag'
 
 export default {
   title: 'Display/Tag',

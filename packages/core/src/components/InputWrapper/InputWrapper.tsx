@@ -4,7 +4,7 @@ import React, { useMemo } from 'react'
 import { Stack } from '../Stack'
 import { Text } from '../Typography'
 
-import { Label, Description } from './InputWrapper.style'
+import { Description, Label } from './InputWrapper.style'
 
 export const InputWrapperContext = React.createContext<{
   labelId?: string

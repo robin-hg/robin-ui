@@ -1,4 +1,4 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
 import { ContainerBreak, type Props } from './ContainerBreak'
 import { Container } from '../Container'

@@ -1,7 +1,7 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import { Switch, type Props } from './Switch'
+import { type Props, Switch } from './Switch'
 
 export default {
   title: 'Inputs/Switch',

@@ -1,6 +1,6 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
-import { Tabs, type Props } from './Tabs'
+import { type Props, Tabs } from './Tabs'
 import { TabPanel } from '../TabPanel'
 
 export default {

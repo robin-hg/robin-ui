@@ -3,7 +3,7 @@ import React from 'react'
 
 import type { IconButton } from '../IconButton'
 
-import { StyledButton, Lines } from './Hamburger.style'
+import { Lines, StyledButton } from './Hamburger.style'
 
 export interface Props extends Omit<React.ComponentProps<typeof IconButton>, 'children'> {
   open?: boolean

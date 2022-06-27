@@ -1,4 +1,4 @@
-import type { SizeValue, ColorToken } from '@robin-ui/types'
+import type { ColorToken, SizeValue } from '@robin-ui/types'
 import styled from '@robin-ui/styles'
 
 interface StyledTextProps {

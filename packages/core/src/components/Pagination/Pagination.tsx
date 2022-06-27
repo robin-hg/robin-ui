@@ -1,7 +1,7 @@
-import type { DefaultProps, SizeValue, ColorToken } from '@robin-ui/types'
+import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
 
-import { PaginationContainer, PageButton } from './Pagination.style'
+import { PageButton, PaginationContainer } from './Pagination.style'
 import { ChevronLeft, ChevronRight, MoreHorizontal } from '@robin-ui/icons'
 import { clampNumber, range } from '@robin-ui/utils'
 import { useUncontrolled } from '@robin-ui/hooks'

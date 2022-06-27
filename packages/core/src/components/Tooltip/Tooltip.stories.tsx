@@ -1,6 +1,6 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
-import { Tooltip, type Props } from './Tooltip'
+import { type Props, Tooltip } from './Tooltip'
 import { FlexBox } from '../FlexBox'
 import { Button } from '../Button'
 

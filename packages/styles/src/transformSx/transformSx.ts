@@ -1,5 +1,5 @@
-import type { Theme, CSSObject, Interpolation } from '@emotion/react'
-import type { StyleProps, SX } from '../types'
+import type { CSSObject, Interpolation, Theme } from '@emotion/react'
+import type { SX, StyleProps } from '../types'
 import { colorProperties, spacingProperties } from './properties'
 import { runIfFn } from '@robin-ui/utils'
 

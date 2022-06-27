@@ -1,6 +1,6 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
-import { Spinner, type Props } from './Spinner'
+import { type Props, Spinner } from './Spinner'
 import { Loader } from '@robin-ui/icons'
 
 export default {

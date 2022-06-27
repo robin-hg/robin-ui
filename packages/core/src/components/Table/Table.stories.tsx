@@ -1,9 +1,9 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
-import { Table, type Props } from './Table'
-import { Thead, Tbody, Tfoot } from '../TableSection'
+import { type Props, Table } from './Table'
+import { Tbody, Tfoot, Thead } from '../TableSection'
 import { Tr } from '../TableRow'
-import { Th, Td } from '../TableCell'
+import { Td, Th } from '../TableCell'
 import { TableCaption } from '../TableCaption'
 
 export default {

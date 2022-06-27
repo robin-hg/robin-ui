@@ -1,4 +1,4 @@
-import type { TypographyProperties, Size } from '../types'
+import type { Size, TypographyProperties } from '../types'
 
 export const heading: TypographyProperties<Size> = {
   fontFamily: '"Noto Serif Display", Georgia, serif',

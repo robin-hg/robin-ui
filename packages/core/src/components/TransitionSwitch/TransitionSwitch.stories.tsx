@@ -1,7 +1,7 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 import { useState } from 'react'
 
-import { TransitionSwitch, type Props } from './TransitionSwitch'
+import { type Props, TransitionSwitch } from './TransitionSwitch'
 import { Paper } from '../Paper'
 
 export default {

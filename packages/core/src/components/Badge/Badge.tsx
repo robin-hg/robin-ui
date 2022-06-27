@@ -1,7 +1,7 @@
-import type { DefaultProps, ColorToken, SizeValue } from '@robin-ui/types'
+import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
 
-import { BadgeContainer, BadgeCircle } from './Badge.style'
+import { BadgeCircle, BadgeContainer } from './Badge.style'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size' | 'content'> {
   position?: 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end'

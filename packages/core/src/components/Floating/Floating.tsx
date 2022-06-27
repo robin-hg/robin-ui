@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useMemo, useRef } from 'react'
 import {
-  useFloating,
-  shift,
+  type Placement,
   arrow,
   autoUpdate,
-  offset,
   flip,
-  type Placement
+  offset,
+  shift,
+  useFloating
 } from '@floating-ui/react-dom'
 import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@robin-ui/hooks'
 import { ModalContext } from '../Modal'
@@ -15,7 +15,7 @@ import type { Paper } from '../Paper'
 import { Portal } from '../Portal'
 import { FocusTrap } from '../FocusTrap'
 
-import { FadeContainer, Arrow, FloatingElement } from './Floating.style'
+import { Arrow, FadeContainer, FloatingElement } from './Floating.style'
 
 export const FloatingContext = React.createContext<{
   floatinghEl?: HTMLElement | null

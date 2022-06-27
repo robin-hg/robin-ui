@@ -1,5 +1,5 @@
 import styled from '@robin-ui/styles'
-import { Label as _Label, Text } from '../Typography'
+import { Text, Label as _Label } from '../Typography'
 
 export const Label = styled(_Label)(({ theme }) => ({
   width: 'auto',

@@ -1,7 +1,7 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 import { useTheme } from '@robin-ui/hooks'
 
-import { Text, type Props } from '../Typography'
+import { type Props, Text } from '../Typography'
 import { Stack } from '../../Stack'
 
 export default {

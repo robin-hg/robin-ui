@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnimatePresence, m, type MotionProps, type Variant } from 'framer-motion'
+import { AnimatePresence, type MotionProps, type Variant, m } from 'framer-motion'
 import { camelCase } from '@robin-ui/utils'
 
 type Animation = {

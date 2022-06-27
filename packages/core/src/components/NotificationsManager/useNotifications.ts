@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { NotificationsManagerContext, type Notification } from './NotificationsManager'
+import { type Notification, NotificationsManagerContext } from './NotificationsManager'
 
 const generateId = () =>
   Math.random()

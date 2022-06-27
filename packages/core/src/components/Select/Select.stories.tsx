@@ -1,7 +1,7 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import { Select, type Props } from './Select'
+import { type Props, Select } from './Select'
 
 export default {
   title: 'Inputs/Select',

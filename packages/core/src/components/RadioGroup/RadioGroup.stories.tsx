@@ -1,7 +1,7 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import { RadioGroup, type Props } from './RadioGroup'
+import { type Props, RadioGroup } from './RadioGroup'
 import { Radio } from '../Radio'
 
 export default {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import type { CSSObject, Interpolation, Theme } from '@emotion/react'
 import type { StyledComponent } from '@emotion/styled'
-import type { Theme, Interpolation, CSSObject } from '@emotion/react'
 
 type SXStyle = CSSObject & {
   _sx?: CSSObject

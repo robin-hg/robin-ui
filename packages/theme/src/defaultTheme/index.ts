@@ -1,5 +1,5 @@
-import { lightPalette, darkPalette } from './palette'
-import { heading, text, label, code } from './typography'
+import { code, heading, label, text } from './typography'
+import { darkPalette, lightPalette } from './palette'
 import type { BaseTheme } from '../types'
 
 export const defaultTheme: BaseTheme = {

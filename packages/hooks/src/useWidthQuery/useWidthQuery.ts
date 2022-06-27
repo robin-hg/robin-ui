@@ -1,7 +1,7 @@
 import type { Size } from '@robin-ui/types'
 import { parseSize } from '@robin-ui/utils'
-import { useTheme } from '../useTheme'
 import { useMediaQuery } from '../useMediaQuery'
+import { useTheme } from '../useTheme'
 
 export const useWidthQuery = (breakpoint: Size | number, direction: 'up' | 'down' = 'down') => {
   const theme = useTheme()

@@ -1,11 +1,11 @@
 import _styled, { type Interpolation } from '@emotion/styled'
 import type {
-  StyledOptions,
-  StyleProps,
   BaseCreateStyled,
-  StyledTags,
   CreateStyled,
-  SXComponents
+  SXComponents,
+  StyleProps,
+  StyledOptions,
+  StyledTags
 } from './types'
 import { transformSx } from './transformSx'
 

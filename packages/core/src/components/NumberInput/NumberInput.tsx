@@ -7,7 +7,7 @@ import { InputWrapperContext } from '../InputWrapper'
 import { InputBox } from '../InputBox'
 import { IconButton } from '../IconButton'
 
-import { StepButtons, BigStepButton } from './NumberInput.style'
+import { BigStepButton, StepButtons } from './NumberInput.style'
 
 export interface Props
   extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {

@@ -1,8 +1,8 @@
-import type { Story, Meta } from '@storybook/react'
+import type { Meta, Story } from '@storybook/react'
 
 import { List, type Props } from './List'
 import { ListItem } from '../ListItem'
-import { Plus, Minus } from '@robin-ui/icons'
+import { Minus, Plus } from '@robin-ui/icons'
 
 export default {
   title: 'Display/List',

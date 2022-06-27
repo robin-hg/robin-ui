@@ -1,4 +1,4 @@
-import type { DefaultProps, ColorToken, Size, SizeValue } from '@robin-ui/types'
+import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
 import React, { useMemo } from 'react'
 import { ButtonGroupContainer } from './ButtonGroup.style'
 

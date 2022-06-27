@@ -2,7 +2,7 @@ import type { DefaultProps } from '@robin-ui/types'
 import React, { useRef } from 'react'
 import { useSize } from '@robin-ui/hooks'
 
-import { Box, Adornment } from './InputBox.style'
+import { Adornment, Box } from './InputBox.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
   leftAdornment?: React.ReactNode
