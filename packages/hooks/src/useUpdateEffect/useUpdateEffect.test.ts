@@ -8,6 +8,6 @@ describe('useUpdateEffect', () => {
 
     expect(fn).not.toHaveBeenCalled()
     rerender(1)
-    expect(fn).toHaveBeenCalled()
+    expect(fn).toHaveBeenCalledOnce()
   })
 })

@@ -4,7 +4,7 @@ import { useWidthQuery } from './useWidthQuery'
 const re = /(\d+)/
 
 describe('useWidthQuery', () => {
-  beforeEach(() => {
+  beforeAll(() => {
     vi.spyOn(window, 'matchMedia').mockImplementation(query => {
       const width = re.exec(query)?.[0] || '0'
       return {
@@ -20,7 +20,7 @@ describe('useWidthQuery', () => {
     })
   })
 
-  afterAll(() => {
+  afterEach(() => {
     vi.spyOn(window, 'matchMedia').mockRestore()
   })
 

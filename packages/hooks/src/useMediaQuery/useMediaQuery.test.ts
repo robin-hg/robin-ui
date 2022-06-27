@@ -20,7 +20,7 @@ describe('useMediaQuery', () => {
     })
   })
 
-  afterAll(() => {
+  afterEach(() => {
     vi.spyOn(window, 'matchMedia').mockRestore()
   })
 

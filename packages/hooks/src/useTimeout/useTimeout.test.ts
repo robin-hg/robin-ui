@@ -17,6 +17,6 @@ describe('useTimeout', () => {
 
     expect(fn).not.toHaveBeenCalled()
     vi.advanceTimersByTime(1000)
-    expect(fn).toHaveBeenCalled()
+    expect(fn).toHaveBeenCalledOnce()
   })
 })
