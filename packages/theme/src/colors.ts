@@ -1,25 +1,9 @@
 import { generateShades } from '@robin-ui/utils'
 
 type Intensity = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
-
 type ColorObj = Record<Intensity, string>
 
-type BaseColor =
-  | 'neutral'
-  | 'red'
-  | 'pink'
-  | 'purple'
-  | 'violet'
-  | 'indigo'
-  | 'blue'
-  | 'cyan'
-  | 'teal'
-  | 'green'
-  | 'lime'
-  | 'yellow'
-  | 'orange'
-
-const baseColors: Record<BaseColor, string> = {
+const baseColors = {
   neutral: '#495057',
   red: '#f03e3e',
   pink: '#d6336c',
@@ -42,7 +26,7 @@ export const colors = Object.fromEntries(
     ) as ColorObj
     return [colorName, palette]
   })
-) as Record<BaseColor, ColorObj>
+) as Record<keyof typeof baseColors, ColorObj>
 
 export const black = '#000000'
 export const white = '#ffffff'
