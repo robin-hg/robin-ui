@@ -21,7 +21,7 @@ export const StyledLink = styled.a<StyledLinkProps>(
     outline: '0.2rem solid transparent',
     outlineOffset: '0.2rem',
     cursor: 'pointer',
-    transition: theme.fn.getTransition('color', 'text-decoration-color'),
+    transition: theme.fn.getTransition(),
     '&::before': {
       content: '"\\200b"'
     },

@@ -8,7 +8,7 @@ export default {
   title: 'Utils/TransitionSwitch',
   component: TransitionSwitch,
   args: {
-    transition: 'fade',
+    type: 'fade',
     duration: 400
   },
   argTypes: {
