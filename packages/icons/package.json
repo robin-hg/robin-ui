@@ -26,7 +26,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "pnpm clean && rollup -c ../../rollup.config.ts && pnpm build:types",
-    "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
+    "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly",
+    "update-icons": "ts-node ./scripts/update-icons.ts && prettier --write src"
   },
   "dependencies": {
     "@robin-ui/styles": "workspace:*",
@@ -42,6 +43,14 @@
     "@types/react": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@robin-ui/utils": "workspace:*",
+    "@types/feather-icons": "^4.7.0",
+    "@types/node": "^18.0.0",
+    "feather-icons": "^4.29.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
   },
   "publishConfig": {
     "main": "dist/cjs/index.js",

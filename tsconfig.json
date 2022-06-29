@@ -13,5 +13,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "ts-node": { "compilerOptions": { "module": "CommonJS" } }
 }

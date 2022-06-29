@@ -16,7 +16,7 @@ export interface Props extends DefaultProps<SVGElement, 'children' | 'size'> {
   strokeWidth?: number
 }
 
-export default (icon: JSX.Element) => {
+export default (icon: JSX.Element, name: string) => {
   const Icon = React.forwardRef<SVGElement, Props>((props, ref) => {
     const { color = 'inherit', size = 'md', strokeWidth = 2, sx, ...otherProps } = props
 
@@ -32,7 +32,7 @@ export default (icon: JSX.Element) => {
       ...otherProps
     })
   })
-  Icon.displayName = 'SVGIcon'
+  Icon.displayName = name
 
   return Icon
 }
