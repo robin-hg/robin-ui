@@ -1,4 +1,4 @@
-import externals from 'rollup-plugin-node-externals'
+import { externals } from 'rollup-plugin-node-externals'
 import esbuild from 'rollup-plugin-esbuild'
 
 export default {
