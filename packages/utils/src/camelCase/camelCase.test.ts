@@ -6,5 +6,6 @@ describe('camelCase', () => {
     expect(camelCase('string-with-kebab')).toBe('stringWithKebab')
     expect(camelCase('string_with_underscore')).toBe('stringWithUnderscore')
     expect(camelCase('string-with_mixed')).toBe('stringWithMixed')
+    expect(camelCase('string-withCamel')).toBe('stringWithCamel')
   })
 })
