@@ -15,7 +15,7 @@ export const getFocusable = (node?: HTMLElement | null, ignoreTabIndex?: boolean
   return elements.filter(
     element =>
       !element.hasAttribute('disabled') &&
-      !element.getAttribute('aria-hidden') &&
+      element.getAttribute('aria-hidden') !== 'true' &&
       element.style.display !== 'none'
   )
 }
