@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 import { TextInput } from '../TextInput'
-import { Button } from '../Button'
 import { Eye, EyeOff } from '@robin-ui/icons'
+import { IconButton } from '../IconButton'
 
 export interface Props
   extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
@@ -15,15 +15,14 @@ export const PasswordInput = React.forwardRef<HTMLDivElement, Props>((props, ref
     <TextInput
       ref={ref}
       rightAdornment={
-        <Button
-          size="xs"
+        <IconButton
           variant="text"
           color="inherit"
           onClick={() => setHidden(!hidden)}
           aria-hidden
           tabIndex={-1}>
           {hidden ? <Eye /> : <EyeOff />}
-        </Button>
+        </IconButton>
       }
       type={hidden ? 'password' : 'text'}
       {...otherProps}

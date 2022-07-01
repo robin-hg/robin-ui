@@ -8,7 +8,7 @@ export default {
   component: PasswordInput,
   args: {
     placeholder: 'Placeholder',
-    value: 'Password'
+    value: 'Super Secret'
   }
 } as Meta<Props>
 
