@@ -18,8 +18,7 @@ export interface Props
   max?: number
   step?: number
   precision?: number
-  showControl?: boolean
-  showBigControl?: boolean
+  showControl?: boolean | 'big'
 
   // state props
   error?: boolean
@@ -44,7 +43,6 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
     step = 1,
     precision,
     showControl,
-    showBigControl,
     leftAdornment,
     rightAdornment,
     error: inputError,
@@ -71,6 +69,8 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
   const inputRef = useRef<HTMLInputElement>(null)
   const timeout = useRef<ReturnType<typeof setTimeout>>()
   const interval = useRef<ReturnType<typeof setInterval>>()
+
+  const showBigControl = showControl === 'big'
 
   const error = wrapperError || inputError
   const required = wrapperRequired || inputRequired
@@ -118,7 +118,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
             <BigStepButton position="left">
               <IconButton
                 variant="text"
-                color="surface.onBase"
+                color="inherit"
                 onPointerDown={() => handleStepHold('down')}
                 onPointerUp={() => handleStepRelease()}
                 onPointerOut={() => handleStepRelease()}
@@ -137,7 +137,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
             <BigStepButton position="right">
               <IconButton
                 variant="text"
-                color="surface.onBase"
+                color="inherit"
                 onPointerDown={() => handleStepHold('up')}
                 onPointerUp={() => handleStepRelease()}
                 onPointerOut={() => handleStepRelease()}
@@ -151,7 +151,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
               <IconButton
                 variant="text"
                 size="sm"
-                color="surface.onBase"
+                color="inherit"
                 onPointerDown={() => handleStepHold('up')}
                 onPointerUp={() => handleStepRelease()}
                 onPointerOut={() => handleStepRelease()}
@@ -161,7 +161,7 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
               <IconButton
                 variant="text"
                 size="sm"
-                color="surface.onBase"
+                color="inherit"
                 onPointerDown={() => handleStepHold('down')}
                 onPointerUp={() => handleStepRelease()}
                 onPointerOut={() => handleStepRelease()}
