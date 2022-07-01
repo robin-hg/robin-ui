@@ -13,6 +13,8 @@ export const StyledLink = styled.a<StyledLinkProps>(
     fontSize: theme.fn.getSize($size, theme.typography.text.fontSize),
     fontWeight: 'bold',
     color: theme.fn.getColor($color),
+    background: 'none',
+    border: 'none',
     textDecoration: $underline ? 'underline' : 'none',
     textDecorationThickness: '0.1rem',
     textUnderlineOffset: '0.2rem',

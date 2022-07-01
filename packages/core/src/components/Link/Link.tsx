@@ -26,6 +26,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => {
     color = 'primary',
     underline = true,
     disabled,
+    href,
     onClick,
     children,
     ...otherProps
@@ -34,7 +35,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => {
   return (
     <StyledLink
       ref={ref}
-      as={as}
+      as={as || (href ? 'a' : 'button')}
       $size={size}
       $color={color}
       $underline={underline}

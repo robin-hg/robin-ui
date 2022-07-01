@@ -40,6 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
     disabled,
     onClick,
     children,
+    href,
     ...otherProps
   } = props
   const { groupVariant, groupColor, groupSize } = useContext(ButtonGroupContext)
@@ -47,7 +48,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
   return (
     <StyledButton
       ref={ref}
-      as={as}
+      as={as || (href ? 'a' : 'button')}
       $variant={groupVariant ?? variant}
       $color={groupColor ?? color}
       $size={groupSize ?? size}
@@ -62,6 +63,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
       }}
       disabled={disabled}
       tabIndex={disabled ? -1 : 0}
+      href={href}
       {...otherProps}>
       <Content disableResizeHeight>
         {leftAdornment && <Item $position={children ? 'start' : undefined}>{leftAdornment}</Item>}
