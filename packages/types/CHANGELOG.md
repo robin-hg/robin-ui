@@ -1,5 +1,17 @@
 # @robin-ui/types
 
+## 0.3.0
+
+### Minor Changes
+
+- [`c204314`](https://github.com/robinh-jsx/robin-ui/commit/c2043149118598151693ce379257323fb21c9dd4) Thanks [@robinh-jsx](https://github.com/robinh-jsx)! - New features - Notification, dynamic color and better animations
+
+### Patch Changes
+
+- Updated dependencies [[`c204314`](https://github.com/robinh-jsx/robin-ui/commit/c2043149118598151693ce379257323fb21c9dd4)]:
+  - @robin-ui/styles@0.3.0
+  - @robin-ui/theme@0.3.0
+
 ## 0.2.0
 
 ### Minor Changes

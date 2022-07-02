@@ -1,5 +1,11 @@
 # @robin-ui/utils
 
+## 0.3.0
+
+### Minor Changes
+
+- [`c204314`](https://github.com/robinh-jsx/robin-ui/commit/c2043149118598151693ce379257323fb21c9dd4) Thanks [@robinh-jsx](https://github.com/robinh-jsx)! - New features - Notification, dynamic color and better animations
+
 ## 0.2.0
 
 ### Minor Changes
