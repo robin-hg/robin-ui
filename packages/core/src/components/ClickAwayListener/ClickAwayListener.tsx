@@ -4,7 +4,7 @@ import { useClickOutside, useCombinedRef } from '@robin-ui/hooks'
 import { sxc } from '@robin-ui/styles'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
-  onClickAway: (event: PointerEvent) => void
+  onClickAway: (event: MouseEvent) => void
 }
 
 export const ClickAwayListener = React.forwardRef<HTMLDivElement, Props>((props, ref) => {

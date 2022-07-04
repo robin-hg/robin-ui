@@ -11,7 +11,7 @@ describe('useClickOutside', () => {
       fireEvent.click(element)
     })
 
-    expect(fn).not.toBeCalled()
+    expect(fn).not.toHaveBeenCalled()
   })
 
   it('should fire the function when the user clicks outside the element', () => {
@@ -23,6 +23,6 @@ describe('useClickOutside', () => {
       fireEvent.click(document.body)
     })
 
-    expect(fn).toBeCalled()
+    expect(fn).toHaveBeenCalled()
   })
 })

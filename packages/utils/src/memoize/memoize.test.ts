@@ -18,12 +18,12 @@ describe('memoize', () => {
     })
 
     expect(fn(1)).toBe(1)
-    expect(mockFn).toBeCalledTimes(1)
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
     expect(fn(1)).toBe(1)
-    expect(mockFn).toBeCalledTimes(1)
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
     expect(fn(2)).toBe(2)
-    expect(mockFn).toBeCalledTimes(2)
+    expect(mockFn).toHaveBeenCalledTimes(2)
   })
 })
