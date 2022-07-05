@@ -16,4 +16,9 @@ describe('useColorMode', () => {
     })
     expect(result.current[0]).toBe('dark')
   })
+
+  it('should handle set color mode', () => {
+    const { result } = renderHook(() => useColorMode('dark'))
+    expect(result.current[0]).toBe('dark')
+  })
 })
