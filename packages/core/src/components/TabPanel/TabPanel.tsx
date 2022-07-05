@@ -9,7 +9,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'label'> {
 }
 
 export const TabPanel = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const { label, tabKey, children, ...otherProps } = props
 
   return (

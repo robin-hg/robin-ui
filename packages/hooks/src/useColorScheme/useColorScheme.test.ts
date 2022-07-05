@@ -3,6 +3,7 @@ import { useColorScheme } from './useColorScheme'
 
 describe('useColorScheme', () => {
   it('should return the current color mode', () => {
+    // global mock for matchQuery will return false for (prefers-color-scheme: dark)
     const { result } = renderHook(() => useColorScheme())
     expect(result.current).toBe('light')
   })

@@ -16,24 +16,4 @@ describe('useColorMode', () => {
     })
     expect(result.current[0]).toBe('dark')
   })
-
-  it('should return the current color mode - dark', () => {
-    vi.spyOn(window, 'matchMedia').mockImplementation(query => {
-      return {
-        matches: true,
-        media: query,
-        addListener: () => {},
-        removeListener: () => {},
-        addEventListener: () => {},
-        removeEventListener: () => {},
-        onchange: () => {},
-        dispatchEvent: () => false
-      }
-    })
-
-    const { result } = renderHook(() => useColorMode())
-    expect(result.current[0]).toBe('dark')
-
-    vi.spyOn(window, 'matchMedia').mockRestore()
-  })
 })
