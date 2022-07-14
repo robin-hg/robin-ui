@@ -15,8 +15,7 @@ module.exports = {
     const path = require('path')
     // workaround for hoisting issues with pnpm
     return mergeConfig(config, {
-      root: path.dirname(require.resolve('@storybook/builder-vite')),
-      esbuild: { logOverride: { 'this-is-undefined-in-esm': 'silent' } }
+      root: path.dirname(require.resolve('@storybook/builder-vite'))
     })
   }
 }
