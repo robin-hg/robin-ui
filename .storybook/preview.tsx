@@ -9,7 +9,7 @@ import { RobinProvider } from '../packages/core'
 import '@fontsource/noto-sans/400.css'
 import '@fontsource/noto-sans/600.css'
 import '@fontsource/noto-serif/400.css'
-import '@fontsource/noto-serif/600.css'
+import '@fontsource/noto-serif/700.css'
 import '@fontsource/noto-sans-mono/400.css'
 
 export const parameters = {
