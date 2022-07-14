@@ -88,5 +88,5 @@
   "lint-staged": {
     "**/*.{ts,tsx,js,jsx}": "eslint"
   },
-  "packageManager": "pnpm@7.4.1"
+  "packageManager": "pnpm@7.5.1"
 }
