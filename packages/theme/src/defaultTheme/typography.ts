@@ -1,7 +1,7 @@
 import type { Size, TypographyProperties } from '../types'
 
 export const heading: TypographyProperties<Size> = {
-  fontFamily: '"Noto Serif Display", Georgia, serif',
+  fontFamily: '"Noto Serif", Georgia, serif',
   fontWeight: 400,
   fontSize: {
     xs: '2.8rem',
