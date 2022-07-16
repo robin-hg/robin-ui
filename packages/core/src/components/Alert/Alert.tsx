@@ -28,12 +28,13 @@ export const Alert = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     status = 'critical',
     variant = 'flat',
     radius = 'md',
+    icon: iconOverride,
     title,
     children,
     ...otherProps
   } = props
 
-  const icon = statusIcon[status]
+  const icon = iconOverride || statusIcon[status]
 
   return (
     <AlertContainer
