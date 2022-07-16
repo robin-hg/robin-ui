@@ -1,15 +1,6 @@
 import { memoize } from './memoize'
 
 describe('memoize', () => {
-  beforeEach(() => {
-    vi.useFakeTimers()
-  })
-
-  afterEach(() => {
-    vi.runOnlyPendingTimers()
-    vi.useRealTimers()
-  })
-
   it('should properly memoize values', () => {
     const mockFn = vi.fn()
     const fn = memoize((v: number) => {
