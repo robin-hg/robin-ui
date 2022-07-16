@@ -61,20 +61,16 @@ export const AsyncButton = React.forwardRef<HTMLButtonElement, Props>((props, re
       if (duration < loadingDuration) {
         await wait(loadingDuration - duration)
       }
-      if (completeDuration > 0) {
-        setState('complete')
-        await wait(completeDuration)
-        await onComplete?.()
-      }
+      setState('complete')
+      await onComplete?.()
+      await wait(completeDuration)
     } catch (error) {
       if (duration < loadingDuration) {
         await wait(loadingDuration - duration)
       }
-      if (errorDuration > 0) {
-        setState('error')
-        await onError?.(error)
-        await wait(errorDuration)
-      }
+      setState('error')
+      await onError?.(error)
+      await wait(errorDuration)
     } finally {
       setState('ready')
       setPreventClose?.(false)
