@@ -3,7 +3,7 @@ import { act, render, screen } from '@robin-ui/test-utils'
 import { Accordion } from './Accordion'
 
 describe('Accordion', () => {
-  it('should render', done => {
+  it('should render', () => {
     render(<Accordion title="Title">Content</Accordion>)
     const title = screen.getByRole('button')
     const content = screen.getByRole('region')
@@ -19,11 +19,10 @@ describe('Accordion', () => {
     setTimeout(() => {
       expect(content).toBeVisible()
       expect(content).toHaveTextContent('Content')
-      done()
-    }, 1000)
+    }, 200)
   })
 
-  it('should handle disabled', done => {
+  it('should handle disabled', () => {
     render(
       <Accordion title="Title" disabled>
         Content
@@ -41,8 +40,7 @@ describe('Accordion', () => {
 
     setTimeout(() => {
       expect(content).not.toBeVisible()
-      done()
-    }, 1000)
+    }, 200)
   })
 
   it('should handle open', () => {
