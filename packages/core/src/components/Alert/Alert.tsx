@@ -45,10 +45,12 @@ export const Alert = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       $color={status}
       $variant={variant}
       {...otherProps}>
-      <AlertTitle>
-        {icon}
-        {title && <Label size="xl">{title}</Label>}
-      </AlertTitle>
+      {icon && title && (
+        <AlertTitle>
+          {icon}
+          {title && <Label size="xl">{title}</Label>}
+        </AlertTitle>
+      )}
       {children}
     </AlertContainer>
   )
