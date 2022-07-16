@@ -1,7 +1,8 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { type Props, Tabs } from './Tabs'
 import { TabPanel } from '../TabPanel'
+
+import { type Props, Tabs } from './Tabs'
 
 export default {
   title: 'Navigation/Tabs',

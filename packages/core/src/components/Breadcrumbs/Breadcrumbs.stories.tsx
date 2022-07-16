@@ -1,7 +1,8 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { Breadcrumbs, type Props } from './Breadcrumbs'
 import { Link } from '../Link'
+
+import { Breadcrumbs, type Props } from './Breadcrumbs'
 
 export default {
   title: 'Navigation/Breadcrumbs',

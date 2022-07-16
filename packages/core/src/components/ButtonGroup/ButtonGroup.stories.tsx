@@ -1,7 +1,8 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { ButtonGroup, type Props } from './ButtonGroup'
 import { Button } from '../Button'
+
+import { ButtonGroup, type Props } from './ButtonGroup'
 
 export default {
   title: 'Inputs/ButtonGroup',

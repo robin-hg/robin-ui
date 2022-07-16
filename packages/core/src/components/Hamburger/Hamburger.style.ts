@@ -1,5 +1,6 @@
 import type { Size } from '@robin-ui/theme'
 import styled from '@robin-ui/styles'
+
 import { IconButton } from '../IconButton'
 
 const defaultSizes = {

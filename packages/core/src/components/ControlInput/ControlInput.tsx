@@ -1,5 +1,6 @@
 import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
+
 import { Text } from '../Typography'
 
 import { Control, ControlInputContainer } from './ControlInput.style'

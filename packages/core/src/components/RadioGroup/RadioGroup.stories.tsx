@@ -1,8 +1,9 @@
 import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import { type Props, RadioGroup } from './RadioGroup'
 import { Radio } from '../Radio'
+
+import { type Props, RadioGroup } from './RadioGroup'
 
 export default {
   title: 'Inputs/RadioGroup',

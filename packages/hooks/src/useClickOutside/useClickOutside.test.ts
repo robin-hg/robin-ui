@@ -1,4 +1,5 @@
 import { act, fireEvent, renderHook } from '@robin-ui/test-utils'
+
 import { useClickOutside } from './useClickOutside'
 
 describe('useClickOutside', () => {

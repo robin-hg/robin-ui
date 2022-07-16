@@ -1,11 +1,11 @@
 import type { ColorToken, DefaultProps } from '@robin-ui/types'
 import React, { useRef } from 'react'
 import { useId, useIsomorphicLayoutEffect, useUncontrolled } from '@robin-ui/hooks'
+import { Check, Minus } from '@robin-ui/icons'
 
 import { ControlInput } from '../ControlInput'
 
 import { Box } from './Checkbox.style'
-import { Check, Minus } from '@robin-ui/icons'
 
 export interface Props
   extends DefaultProps<HTMLInputElement, 'children' | 'label' | 'defaultValue'> {

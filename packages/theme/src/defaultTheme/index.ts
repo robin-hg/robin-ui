@@ -1,6 +1,7 @@
+import type { BaseTheme } from '../types'
+
 import { code, heading, label, text } from './typography'
 import { darkPalette, lightPalette } from './palette'
-import type { BaseTheme } from '../types'
 
 export const defaultTheme: BaseTheme = {
   global: {},

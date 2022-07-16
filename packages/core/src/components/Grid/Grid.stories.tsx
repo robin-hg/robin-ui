@@ -1,8 +1,9 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { Grid, type Props } from './Grid'
 import { GridItem } from '../GridItem'
 import { Paper } from '../Paper'
+
+import { Grid, type Props } from './Grid'
 
 export default {
   title: 'Layout/Grid',

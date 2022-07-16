@@ -1,7 +1,8 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { Badge, type Props } from './Badge'
 import { Paper } from '../Paper'
+
+import { Badge, type Props } from './Badge'
 
 export default {
   title: 'Display/Badge',

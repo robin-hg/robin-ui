@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+
 import { type Notification, NotificationsManagerContext } from './NotificationsManager'
 
 const generateId = () =>

@@ -1,7 +1,9 @@
 import type { CSSObject, Interpolation, Theme } from '@emotion/react'
-import type { SX, StyleProps } from '../types'
-import { colorProperties, spacingProperties } from './properties'
 import { runIfFn } from '@robin-ui/utils'
+
+import type { SX, StyleProps } from '../types'
+
+import { colorProperties, spacingProperties } from './properties'
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 

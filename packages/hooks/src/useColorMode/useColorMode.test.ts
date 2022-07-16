@@ -1,4 +1,5 @@
 import { act, renderHook } from '@robin-ui/test-utils'
+
 import { useColorMode } from './useColorMode'
 
 describe('useColorMode', () => {

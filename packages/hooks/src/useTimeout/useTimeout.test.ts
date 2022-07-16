@@ -1,4 +1,5 @@
 import { renderHook } from '@robin-ui/test-utils'
+
 import { useTimeout } from './useTimeout'
 
 describe('useTimeout', () => {

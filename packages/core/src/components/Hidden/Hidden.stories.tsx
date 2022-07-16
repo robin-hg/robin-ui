@@ -1,7 +1,8 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { Hidden, type Props } from './Hidden'
 import { Paper } from '../Paper'
+
+import { Hidden, type Props } from './Hidden'
 
 export default {
   title: 'Layout/Hidden',

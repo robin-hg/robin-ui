@@ -2,8 +2,9 @@ import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 import { useRef } from 'react'
 
-import { Popover, type Props } from './Popover'
 import { Button } from '../Button'
+
+import { Popover, type Props } from './Popover'
 
 export default {
   title: 'Overlay/Popover',

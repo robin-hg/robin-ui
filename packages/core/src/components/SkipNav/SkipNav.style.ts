@@ -1,4 +1,5 @@
 import styled from '@robin-ui/styles'
+
 import { Link } from '../Link'
 
 export const StyledLink = styled(Link)(({ theme }) => ({

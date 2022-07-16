@@ -1,5 +1,6 @@
-import type { Palette, PaletteColorWithVariant } from '../types'
 import { colord } from '@robin-ui/utils'
+
+import type { Palette, PaletteColorWithVariant } from '../types'
 
 const keys = ['primary', 'secondary']
 

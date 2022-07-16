@@ -1,4 +1,5 @@
 import { act, renderHook } from '@robin-ui/test-utils'
+
 import { useForceUpdate } from './useForceUpdate'
 
 describe('useForceUpdate', () => {

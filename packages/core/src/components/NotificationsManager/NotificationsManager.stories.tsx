@@ -1,4 +1,5 @@
 import type { Meta, Story } from '@storybook/react'
+
 import { Button } from '../Button'
 
 import { NotificationsManager, type Props } from './NotificationsManager'

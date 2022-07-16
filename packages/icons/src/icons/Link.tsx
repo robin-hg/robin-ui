@@ -1,5 +1,6 @@
-import createIcon from '../createIcon'
 import { sxc } from '@robin-ui/styles'
+
+import createIcon from '../createIcon'
 
 export default createIcon(
   <sxc.svg

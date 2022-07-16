@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { Eye, EyeOff } from '@robin-ui/icons'
 
 import { TextInput } from '../TextInput'
-import { Eye, EyeOff } from '@robin-ui/icons'
 import { IconButton } from '../IconButton'
 
 export interface Props

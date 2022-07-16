@@ -1,7 +1,8 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { ContainerBreak, type Props } from './ContainerBreak'
 import { Container } from '../Container'
+
+import { ContainerBreak, type Props } from './ContainerBreak'
 
 export default {
   title: 'Layout/ContainerBreak',

@@ -1,5 +1,6 @@
 import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
+
 import { StyledTableRow } from './TableRow.style'
 
 export interface Props extends DefaultProps<HTMLTableRowElement> {}

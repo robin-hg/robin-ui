@@ -1,5 +1,6 @@
 import type { DefaultProps } from '@robin-ui/types'
 import React from 'react'
+
 import { HiddenContainer } from './VisuallyHidden.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {}

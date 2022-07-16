@@ -1,4 +1,5 @@
 import styled from '@robin-ui/styles'
+
 import { BaseContainer } from '../BaseContainer'
 
 export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({

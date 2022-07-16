@@ -4,9 +4,9 @@ import { useTimeout } from '@robin-ui/hooks'
 
 import { NotificationsManagerContext } from '../NotificationsManager'
 import { Portal } from '../Portal'
+import { Fade } from '../Transition'
 
 import { NotificationContainer } from './Notification.style'
-import { Fade } from '../Transition'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'title'> {
   icon?: React.ReactNode

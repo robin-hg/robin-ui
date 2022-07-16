@@ -1,7 +1,7 @@
 import type { DefaultProps } from '@robin-ui/types'
 import React, { useContext } from 'react'
-import { ModalContext } from '../Modal'
 
+import { ModalContext } from '../Modal'
 import { FlexBox } from '../FlexBox'
 import { Button } from '../Button'
 

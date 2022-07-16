@@ -1,8 +1,9 @@
 import type { Meta, Story } from '@storybook/react'
 import styled from '@robin-ui/styles'
 
-import { type Props, Stack } from './Stack'
 import { Paper } from '../Paper'
+
+import { type Props, Stack } from './Stack'
 
 export default {
   title: 'Layout/Stack',

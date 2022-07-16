@@ -2,12 +2,12 @@ import type { ColorToken, DefaultProps, Size } from '@robin-ui/types'
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { clampNumber } from '@robin-ui/utils'
 import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
-import { InputWrapperContext } from '../InputWrapper'
 
+import { InputWrapperContext } from '../InputWrapper'
 import { Progress } from '../Progress'
+import { Tooltip } from '../Tooltip'
 
 import { SliderContainer, SliderThumb } from './Slider.style'
-import { Tooltip } from '../Tooltip'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChange' | 'size'> {
   color?: ColorToken

@@ -1,5 +1,6 @@
 import type { Size } from '@robin-ui/theme'
 import styled from '@robin-ui/styles'
+
 import { Paper } from '../Paper'
 
 export const ModalContainer = styled.div({

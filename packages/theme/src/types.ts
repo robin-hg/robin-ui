@@ -1,4 +1,5 @@
 import type { CSSObject } from '@emotion/react'
+
 import type { ThemeFunctions } from './ThemeProvider/functions'
 
 export type DeepPartial<T> = T extends object

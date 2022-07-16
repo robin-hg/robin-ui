@@ -1,4 +1,5 @@
 import type { BaseTheme, SizeValue } from '../../types'
+
 import { getSize } from './getSize'
 
 export const getSpacing = (theme: BaseTheme) => (size: SizeValue | SizeValue[]) => {

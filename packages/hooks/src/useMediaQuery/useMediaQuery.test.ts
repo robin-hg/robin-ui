@@ -1,4 +1,5 @@
 import { renderHook } from '@robin-ui/test-utils'
+
 import { useMediaQuery } from './useMediaQuery'
 
 const re = /(\d+)/

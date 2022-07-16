@@ -1,7 +1,9 @@
+import { parseSize } from '@robin-ui/utils'
+
 import type { AugumentedTheme, BaseTheme, DerivedColorMode, RobinTheme } from '../types'
+
 import { createThemeFunctions } from './functions'
 import { derivePalette } from './derivePalette'
-import { parseSize } from '@robin-ui/utils'
 
 const createMediaBreakpoint = (theme: BaseTheme, breakpoint: keyof BaseTheme['breakpoints']) =>
   `@media screen and (max-width: ${parseSize(theme.breakpoints[breakpoint])})`

@@ -1,11 +1,12 @@
 import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
-import { Modal, type Props } from './Modal'
 import { ModalHeader } from '../ModalHeader'
 import { ModalContent } from '../ModalContent'
 import { ModalFooter } from '../ModalFooter'
 import { Button } from '../Button'
+
+import { Modal, type Props } from './Modal'
 
 export default {
   title: 'Overlay/Modal',

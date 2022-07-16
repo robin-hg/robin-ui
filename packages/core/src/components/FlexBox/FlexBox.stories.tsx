@@ -1,8 +1,9 @@
 import type { Meta, Story } from '@storybook/react'
 import styled from '@robin-ui/styles'
 
-import { FlexBox, type Props } from './FlexBox'
 import { Paper } from '../Paper'
+
+import { FlexBox, type Props } from './FlexBox'
 
 export default {
   title: 'Layout/FlexBox',

@@ -1,9 +1,10 @@
 import type { Meta, Story } from '@storybook/react'
 import { useRef } from 'react'
 
-import { Portal, type Props } from './Portal'
 import { Stack } from '../Stack'
 import { Paper } from '../Paper'
+
+import { Portal, type Props } from './Portal'
 
 export default {
   title: 'Utils/Portal',

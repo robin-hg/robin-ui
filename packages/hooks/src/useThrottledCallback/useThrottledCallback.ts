@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+
 import { useEvent } from '../useEvent'
 
 export const useThrottledCallback = <T extends (...args: Parameters<T>) => void>(

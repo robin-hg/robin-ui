@@ -1,5 +1,6 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import React, { useContext } from 'react'
+
 import { TableContext } from '../Table/Table'
 
 import { StyledTableCaption } from './TableCaption.style'

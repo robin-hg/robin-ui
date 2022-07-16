@@ -1,4 +1,5 @@
 import _styled, { type Interpolation } from '@emotion/styled'
+
 import type {
   BaseCreateStyled,
   CreateStyled,

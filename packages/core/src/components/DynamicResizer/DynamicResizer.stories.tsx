@@ -2,8 +2,9 @@ import type { Meta, Story } from '@storybook/react'
 import { useState } from 'react'
 import { sxc } from '@robin-ui/styles'
 
-import { DynamicResizer, type Props } from './'
 import { Paper } from '../Paper'
+
+import { DynamicResizer, type Props } from './'
 
 export default {
   title: 'Utils/DynamicResizer',

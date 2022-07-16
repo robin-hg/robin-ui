@@ -1,4 +1,5 @@
 import { act, render, screen } from '@robin-ui/test-utils'
+
 import { Accordion } from './Accordion'
 
 describe('Accordion', () => {

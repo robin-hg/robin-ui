@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+
 import { useEvent } from '../useEvent'
 
 export const useInterval = (callback: () => void, ms = 500) => {

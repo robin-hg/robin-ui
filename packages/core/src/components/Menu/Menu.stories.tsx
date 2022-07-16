@@ -2,9 +2,10 @@ import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 import { useRef } from 'react'
 
-import { Menu, type Props } from './Menu'
 import { MenuItem } from '../MenuItem'
 import { Button } from '../Button'
+
+import { Menu, type Props } from './Menu'
 
 export default {
   title: 'Overlay/Menu',

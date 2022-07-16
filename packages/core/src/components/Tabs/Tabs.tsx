@@ -6,9 +6,9 @@ import { sxc } from '@robin-ui/styles'
 
 import type { Props as TabPanelProps } from '../TabPanel'
 import { TransitionSwitch } from '../TransitionSwitch'
+import { Button } from '../Button'
 
 import { TabGroup, TabIndicator } from './Tabs.style'
-import { Button } from '../Button'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
   color?: ColorToken

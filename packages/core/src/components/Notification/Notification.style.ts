@@ -1,4 +1,5 @@
 import styled from '@robin-ui/styles'
+
 import { Paper } from '../Paper'
 
 export const NotificationContainer = styled(Paper)(({ theme }) => ({

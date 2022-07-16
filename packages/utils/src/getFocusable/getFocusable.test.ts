@@ -1,4 +1,5 @@
 import { Window } from 'happy-dom'
+
 import { getFocusable } from './getFocusable'
 
 describe('getFocusable', () => {

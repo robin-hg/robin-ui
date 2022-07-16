@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
 export const useForceUpdate = (onMount?: boolean) => {

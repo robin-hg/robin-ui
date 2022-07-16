@@ -9,8 +9,8 @@ import {
   useFloating
 } from '@floating-ui/react-dom'
 import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@robin-ui/hooks'
-import { ModalContext } from '../Modal'
 
+import { ModalContext } from '../Modal'
 import type { Paper } from '../Paper'
 import { Portal } from '../Portal'
 import { FocusTrap } from '../FocusTrap'

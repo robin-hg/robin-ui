@@ -1,5 +1,6 @@
 import type { DefaultProps } from '@robin-ui/types'
 import React, { useContext } from 'react'
+
 import { ModalContext } from '../Modal'
 
 import { ModalContentContainer } from './ModalContent.style'

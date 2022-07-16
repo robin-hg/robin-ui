@@ -1,8 +1,9 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { FocusTrap, type Props } from './FocusTrap'
 import { Paper } from '../Paper'
 import { Stack } from '../Stack'
+
+import { FocusTrap, type Props } from './FocusTrap'
 
 export default {
   title: 'Utils/FocusTrap',

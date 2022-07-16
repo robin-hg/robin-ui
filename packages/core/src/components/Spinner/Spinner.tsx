@@ -1,6 +1,8 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
+
 import { VisuallyHidden } from '../VisuallyHidden'
+
 import { SpinnerContainer, StyledSpinner } from './Spinner.style'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size'> {

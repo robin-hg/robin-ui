@@ -1,9 +1,10 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import React from 'react'
+import { AlertCircle, AlertTriangle, CheckCircle, Info } from '@robin-ui/icons'
+
+import { Label } from '../Typography'
 
 import { AlertContainer, AlertTitle } from './Alert.style'
-import { AlertCircle, AlertTriangle, CheckCircle, Info } from '@robin-ui/icons'
-import { Label } from '../Typography'
 
 const statusIcon = {
   none: null,

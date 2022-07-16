@@ -1,14 +1,15 @@
 import type { Meta, Story } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
+import { Paper } from '../Paper'
+import { Switch } from '../Switch'
+
 import {
   Collapse as CollapseTransition,
   Fade as FadeTransition,
   Grow as GrowTransition,
   type Props
 } from './Transition'
-import { Paper } from '../Paper'
-import { Switch } from '../Switch'
 
 export default {
   title: 'Utils/Transitions',

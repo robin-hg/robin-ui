@@ -1,12 +1,12 @@
 import type { DefaultProps } from '@robin-ui/types'
 import React, { useEffect, useState } from 'react'
 import { useId } from '@robin-ui/hooks'
+import { ChevronDown } from '@robin-ui/icons'
 
+import { Collapse } from '../Transition'
 import { Text } from '../Typography'
 
 import { AccordionContainer, AccordionContent, AccordionSummary } from './Accordion.style'
-import { ChevronDown } from '@robin-ui/icons'
-import { Collapse } from '../Transition'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'summary' | 'title'> {
   open?: boolean

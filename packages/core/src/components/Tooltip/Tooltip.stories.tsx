@@ -1,8 +1,9 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { type Props, Tooltip } from './Tooltip'
 import { FlexBox } from '../FlexBox'
 import { Button } from '../Button'
+
+import { type Props, Tooltip } from './Tooltip'
 
 export default {
   title: 'Overlay/Tooltip',

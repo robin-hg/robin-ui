@@ -1,10 +1,11 @@
 import type { Meta, Story } from '@storybook/react'
 
-import { type Props, Table } from './Table'
 import { Tbody, Tfoot, Thead } from '../TableSection'
 import { Tr } from '../TableRow'
 import { Td, Th } from '../TableCell'
 import { TableCaption } from '../TableCaption'
+
+import { type Props, Table } from './Table'
 
 export default {
   title: 'Display/Table',

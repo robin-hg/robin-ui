@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+
 import { useEvent } from '../useEvent'
 
 export const useDebouncedCallback = <T extends (...args: Parameters<T>) => void>(

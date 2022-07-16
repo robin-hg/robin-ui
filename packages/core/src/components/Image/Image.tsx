@@ -1,8 +1,8 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import React, { useState } from 'react'
+import { Image as ImageIcon } from '@robin-ui/icons'
 
 import { Spinner } from '../Spinner'
-import { Image as ImageIcon } from '@robin-ui/icons'
 
 import { ImageContainer, Placeholder } from './Image.style'
 
