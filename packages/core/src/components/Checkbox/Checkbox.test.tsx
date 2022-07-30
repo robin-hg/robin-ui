@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@robin-ui/test-utils'
+import { act, render, screen } from '@robin-ui/test-utils'
 
 import { Checkbox } from './Checkbox'
 
@@ -10,8 +10,7 @@ describe('Checkbox', () => {
     expect(element).toBeVisible()
     expect(element).not.toBeChecked()
     act(() => {
-      // TODO: remove workaround for happy dom not triggering onChange on click when fixed
-      fireEvent.change(element, { target: { checked: true } })
+      element.click()
     })
     expect(element).toBeChecked()
   })

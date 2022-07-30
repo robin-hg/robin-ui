@@ -1,16 +1,13 @@
-import { Window } from 'happy-dom'
-
 import { getFocusable } from './getFocusable'
 
 describe('getFocusable', () => {
   it('should only get focusable elements', () => {
-    const window = new Window()
-    const document = window.document
-    document.body.innerHTML = `
+    const node = document.createElement('div')
+    node.innerHTML = `
       <div id="test">
         <input />
         <div>
-          <textarea />
+          <input />
         </div>
         <input aria-hidden="true" />
         <button>Button</button>
@@ -19,7 +16,7 @@ describe('getFocusable', () => {
         <a>Link</a>
       </div>
     `
-    const el = document.querySelector('#test') as unknown as HTMLElement
+    const el = node.querySelector('#test') as HTMLElement
     expect(getFocusable(el)).toHaveLength(4)
   })
 

@@ -3,17 +3,8 @@ import { act, renderHook } from '@robin-ui/test-utils'
 import { useStorage } from './useStorage'
 
 describe('useStorage', () => {
-  beforeEach(() => {
-    const store = new Map<string, string>()
-    vi.spyOn(localStorage, 'getItem').mockImplementation(key => store.get(key) || '')
-    vi.spyOn(localStorage, 'removeItem').mockImplementation(key => store.delete(key))
-    vi.spyOn(localStorage, 'setItem').mockImplementation((key, item) => store.set(key, item))
-  })
-
   afterEach(() => {
-    vi.spyOn(localStorage, 'getItem').mockRestore()
-    vi.spyOn(localStorage, 'removeItem').mockRestore()
-    vi.spyOn(localStorage, 'setItem').mockRestore()
+    localStorage.clear()
   })
 
   it('should save initial value in storage', () => {
