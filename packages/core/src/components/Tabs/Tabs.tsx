@@ -26,7 +26,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     const handleArrow = (direction: 'right' | 'left') => {
-      const focusable = getFocusable(tabGroupRef.current, true)
+      const focusable = getFocusable(tabGroupRef.current)
       const itemIndex = focusable.findIndex(element => element === document.activeElement)
       const nextIndex = itemIndex + (direction === 'left' ? -1 : 1)
       const nextTarget = focusable[nextIndex]
@@ -74,7 +74,8 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
                   setUncontrolled(key)
                 }}
                 tabIndex={active ? 0 : -1}
-                aria-selected={active}>
+                aria-selected={active}
+                disabled={tab.props?.disabled}>
                 {tab.props?.label}
               </Button>
               {active && <TabIndicator key={key} layoutId="underline" />}

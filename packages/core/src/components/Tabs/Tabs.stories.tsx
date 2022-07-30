@@ -19,6 +19,11 @@ export const Default: Story<Props> = args => {
       }}>
       <TabPanel label="Panel 1">Panel 1</TabPanel>
       <TabPanel label="Panel 2">Panel 2</TabPanel>
+      <TabPanel label="Panel 3" disabled>
+        Panel 3
+      </TabPanel>
+      <TabPanel label="Panel 4">Panel 4</TabPanel>
+      <TabPanel label="Panel 5">Panel 5</TabPanel>
     </Tabs>
   )
 }

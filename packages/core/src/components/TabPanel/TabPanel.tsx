@@ -6,6 +6,7 @@ import { TabPanelContainer } from './TabPanel.style'
 export interface Props extends DefaultProps<HTMLDivElement, 'label'> {
   label?: React.ReactNode
   tabKey?: string | number
+  disabled?: boolean
 }
 
 export const TabPanel = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
