@@ -1,4 +1,4 @@
-export const getFocusable = (node?: HTMLElement | null, ignoreTabIndex?: boolean) => {
+export const getFocusable = (node?: HTMLElement | null) => {
   if (!node) {
     return []
   }
@@ -9,7 +9,7 @@ export const getFocusable = (node?: HTMLElement | null, ignoreTabIndex?: boolean
     'textarea',
     'select',
     'details',
-    !ignoreTabIndex && '[tabindex]:not([tabindex="-1"]'
+    '[tabindex]:not([tabindex="-1"]'
   ]
   const elements = [...node.querySelectorAll(ignored.join(', '))] as HTMLElement[]
   return elements.filter(
