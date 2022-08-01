@@ -1,5 +1,4 @@
-import { render, screen } from '@robin-ui/test-utils'
-import userEvent from '@testing-library/user-event'
+import { render, screen, userEvent } from '@robin-ui/test-utils'
 
 import { FocusTrap } from './FocusTrap'
 

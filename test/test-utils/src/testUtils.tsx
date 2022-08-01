@@ -4,6 +4,7 @@ import {
   render,
   renderHook
 } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { RobinProvider } from '@robin-ui/core'
 
 const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -19,4 +20,4 @@ const customRenderHook = <Result, Props>(
 ) => renderHook<Result, Props>(hook, { wrapper: Wrapper, ...options })
 
 export * from '@testing-library/react'
-export { customRender as render, customRenderHook as renderHook }
+export { customRender as render, customRenderHook as renderHook, userEvent }
