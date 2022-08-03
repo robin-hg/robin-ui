@@ -14,9 +14,6 @@ module.exports = {
   viteFinal: config => {
     const path = require('path')
     // workaround for hoisting issues with pnpm
-    console.log(
-      `${path.relative(config.root, path.resolve(__dirname, '../packages'))}/**/*.stories.tsx`
-    )
     return mergeConfig(config, {
       root: path.dirname(require.resolve('@storybook/builder-vite')),
       optimizeDeps: {
