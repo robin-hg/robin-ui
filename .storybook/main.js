@@ -19,16 +19,16 @@ module.exports = {
       optimizeDeps: {
         include: [
           ...(config.optimizeDeps?.include ?? []),
-          '@storybook/theming',
-          'storybook-dark-mode',
           '@emotion/react',
-          'framer-motion',
           '@floating-ui/react-dom',
-          'react-number-format',
+          '@storybook/theming',
           'colord',
           'colord/plugins/a11y',
           'colord/plugins/lch',
-          'colord/plugins/mix'
+          'colord/plugins/mix',
+          'framer-motion',
+          'react-number-format',
+          'storybook-dark-mode'
         ]
       }
     })
