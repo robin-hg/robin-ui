@@ -3,7 +3,7 @@ import { render, screen, userEvent } from '@robin-ui/test-utils'
 import { FocusTrap } from './FocusTrap'
 
 describe('FocusTrap', () => {
-  it('should trap focus', () => {
+  it('should trap focus', async () => {
     render(
       <div>
         <FocusTrap>
@@ -18,13 +18,13 @@ describe('FocusTrap', () => {
 
     input1.focus()
     expect(input1).toHaveFocus()
-    void userEvent.tab()
+    await userEvent.tab()
     expect(input2).toHaveFocus()
-    void userEvent.tab()
+    await userEvent.tab()
     expect(input1).toHaveFocus()
   })
 
-  it('should not trap focus if disabled', () => {
+  it('should not trap focus if disabled', async () => {
     render(
       <div>
         <FocusTrap disabled>
@@ -40,9 +40,9 @@ describe('FocusTrap', () => {
 
     input1.focus()
     expect(input1).toHaveFocus()
-    void userEvent.tab()
+    await userEvent.tab()
     expect(input2).toHaveFocus()
-    void userEvent.tab()
+    await userEvent.tab()
     expect(input3).toHaveFocus()
   })
 
