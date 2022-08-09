@@ -21,12 +21,12 @@
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.6",
-    "@changesets/cli": "^2.24.1",
+    "@changesets/cli": "^2.24.2",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "@fontsource/noto-sans": "^4.5.10",
-    "@fontsource/noto-sans-mono": "^4.5.9",
-    "@fontsource/noto-serif": "^4.5.9",
+    "@fontsource/noto-sans": "^4.5.11",
+    "@fontsource/noto-sans-mono": "^4.5.10",
+    "@fontsource/noto-serif": "^4.5.10",
     "@mdx-js/react": "^2.1.2",
     "@robin-ui/test-utils": "workspace:0.3.0",
     "@storybook/addon-a11y": "^6.5.10",
@@ -39,13 +39,13 @@
     "@testing-library/dom": "^8.16.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^14.4.2",
-    "@types/react": "^18.0.15",
+    "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@typescript-eslint/eslint-plugin": "^5.32.0",
-    "@typescript-eslint/parser": "^5.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "@vitejs/plugin-react": "^2.0.0",
-    "esbuild": "^0.14.53",
+    "esbuild": "^0.14.54",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.4.0",
@@ -68,7 +68,7 @@
     "storybook-dark-mode": "^1.1.0",
     "typescript": "^4.7.4",
     "vite": "^3.0.4",
-    "vitest": "^0.20.3"
+    "vitest": "^0.21.0"
   },
   "pnpm": {
     "peerDependencyRules": {
