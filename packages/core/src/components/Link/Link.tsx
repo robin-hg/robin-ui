@@ -48,6 +48,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => {
       }}
       disabled={!!disabled}
       tabIndex={disabled ? -1 : 0}
+      href={href}
       {...otherProps}>
       {children}
     </StyledLink>
