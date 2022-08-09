@@ -3,14 +3,6 @@ import { act, render, screen, waitFor } from '@robin-ui/test-utils'
 import { AsyncButton } from './AsyncButton'
 
 describe('AsyncButton', () => {
-  it('should render', () => {
-    render(<AsyncButton>Content</AsyncButton>)
-    const element = screen.getByRole('button')
-
-    expect(element).toBeVisible()
-    expect(element).toHaveTextContent('Content')
-  })
-
   it('should handle click', async () => {
     const fn = vi.fn()
     const completeFn = vi.fn()

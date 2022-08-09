@@ -2,12 +2,10 @@ import { renderHook } from '@robin-ui/test-utils'
 
 import { useWidthQuery } from './useWidthQuery'
 
-const re = /(\d+)/
-
 describe('useWidthQuery', () => {
   beforeAll(() => {
     vi.spyOn(window, 'matchMedia').mockImplementation(query => {
-      const width = re.exec(query)?.[0] || '0'
+      const width = /(\d+)/.exec(query)?.[0] || '0'
       return {
         matches: parseInt(width) > 500,
         media: query,

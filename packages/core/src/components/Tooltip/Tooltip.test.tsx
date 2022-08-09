@@ -3,7 +3,7 @@ import { act, fireEvent, render, screen } from '@robin-ui/test-utils'
 import { Tooltip } from './Tooltip'
 
 describe('Tooltip', () => {
-  it('should render on hover', () => {
+  it('should display on hover', () => {
     render(
       <Tooltip label="Tooltip">
         <div>Trigger</div>

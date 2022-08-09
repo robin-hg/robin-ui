@@ -3,14 +3,6 @@ import { act, render, screen } from '@robin-ui/test-utils'
 import { Button } from './Button'
 
 describe('Button', () => {
-  it('should render', () => {
-    render(<Button>Content</Button>)
-    const element = screen.getByRole('button')
-
-    expect(element).toBeVisible()
-    expect(element).toHaveTextContent('Content')
-  })
-
   it('should handle click', () => {
     const fn = vi.fn()
     render(<Button onClick={fn}>Content</Button>)

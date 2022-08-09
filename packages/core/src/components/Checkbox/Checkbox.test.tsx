@@ -3,7 +3,7 @@ import { act, render, screen } from '@robin-ui/test-utils'
 import { Checkbox } from './Checkbox'
 
 describe('Checkbox', () => {
-  it('should render', () => {
+  it('should toggle correctly - uncontrolled', () => {
     render(<Checkbox />)
     const element = screen.getByRole('checkbox')
 
@@ -15,7 +15,7 @@ describe('Checkbox', () => {
     expect(element).toBeChecked()
   })
 
-  it('should render - controlled', () => {
+  it('should toggle correctly - controlled', () => {
     const { rerender } = render(<Checkbox checked />)
     const element = screen.getByRole('checkbox')
 

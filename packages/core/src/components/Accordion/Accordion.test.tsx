@@ -3,7 +3,7 @@ import { act, render, screen } from '@robin-ui/test-utils'
 import { Accordion } from './Accordion'
 
 describe('Accordion', () => {
-  it('should render', () => {
+  it('should expand + collapse', () => {
     render(<Accordion title="Title">Content</Accordion>)
     const title = screen.getByRole('button')
     const content = screen.getByRole('region')
