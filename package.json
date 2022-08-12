@@ -36,15 +36,15 @@
     "@storybook/client-api": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@storybook/theming": "^6.5.10",
-    "@testing-library/dom": "^8.16.1",
+    "@testing-library/dom": "^8.17.1",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/user-event": "^14.4.2",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
-    "@vitejs/plugin-react": "^2.0.0",
+    "@vitejs/plugin-react": "^2.0.1",
     "esbuild": "^0.14.54",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
@@ -55,20 +55,20 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "framer-motion": "^7.0.0",
+    "framer-motion": "^7.1.0",
     "husky": "^8.0.1",
     "jsdom": "^20.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^2.77.2",
+    "rollup": "^2.77.3",
     "rollup-plugin-esbuild": "^4.9.1",
     "rollup-plugin-node-externals": "^4.1.1",
     "storybook-dark-mode": "^1.1.0",
     "typescript": "^4.7.4",
-    "vite": "^3.0.4",
-    "vitest": "^0.21.0"
+    "vite": "^3.0.6",
+    "vitest": "^0.21.1"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -86,5 +86,5 @@
   "lint-staged": {
     "**/*.{ts,tsx,js,jsx}": "eslint"
   },
-  "packageManager": "pnpm@7.9.0"
+  "packageManager": "pnpm@7.9.1"
 }
