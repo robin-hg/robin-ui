@@ -21,7 +21,7 @@ export const TransitionSwitch = React.forwardRef<HTMLDivElement, Props>((props, 
   const Transition = defaultTransitions[type] || Fade
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       <Transition ref={ref} key={currentKey} unmountOnExit motionOnly {...otherProps}>
         {children}
       </Transition>
