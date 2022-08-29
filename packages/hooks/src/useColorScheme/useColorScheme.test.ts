@@ -10,7 +10,7 @@ describe('useColorScheme', () => {
   })
 
   it('should return the current color mode - dark', () => {
-    vi.spyOn(window, 'matchMedia').mockImplementation(query => {
+    const spy = vi.spyOn(window, 'matchMedia').mockImplementation(query => {
       return {
         matches: true,
         media: query,
@@ -26,6 +26,6 @@ describe('useColorScheme', () => {
     const { result } = renderHook(() => useColorScheme())
     expect(result.current).toBe('dark')
 
-    vi.spyOn(window, 'matchMedia').mockRestore()
+    spy.mockRestore()
   })
 })
