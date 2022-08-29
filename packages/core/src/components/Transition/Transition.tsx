@@ -1,6 +1,6 @@
 import React from 'react'
 import { AnimatePresence, type MotionProps, type Variant, m } from 'framer-motion'
-import { camelCase } from '@robin-ui/utils'
+import { useTransition } from '@robin-ui/hooks'
 
 type Animation = {
   enter: Variant
@@ -29,18 +29,15 @@ const TransitionFactory = (defaultAnimation?: Animation) => {
       children,
       ...otherProps
     } = props
+    const transition = useTransition(duration, ease)
 
     const transitionComponent = (
       <m.div
         ref={ref}
         initial={unmountOnExit ? 'exit' : false}
         animate={unmountOnExit || inProp ? 'enter' : 'exit'}
-        exit="exit"
         variants={variants || defaultAnimation}
-        transition={{
-          duration: duration !== undefined ? duration / 1000 : duration,
-          ease: ease !== undefined ? camelCase(ease) : undefined
-        }}
+        transition={transition}
         {...otherProps}>
         {children}
       </m.div>
