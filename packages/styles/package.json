@@ -2,7 +2,7 @@
   "name": "@robin-ui/styles",
   "version": "0.3.0",
   "author": "Robin Hong <robinh.jsx@gmail.com>",
-  "description": "Emotion based css-in-js solution for Robin-UI",
+  "description": "Emotion based css-in-js solution for Robin UI",
   "license": "MIT",
   "homepage": "https://github.com/robinh-jsx/robin-ui#readme",
   "repository": {

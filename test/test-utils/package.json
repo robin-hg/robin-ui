@@ -4,8 +4,6 @@
   "private": true,
   "author": "Robin Hong <robinh.jsx@gmail.com>",
   "description": "Testing utilities for Robin UI",
-  "license": "MIT",
-  "sideEffects": false,
   "main": "src/index.ts",
   "dependencies": {
     "@robin-ui/core": "workspace:*",

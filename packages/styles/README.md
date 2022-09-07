@@ -1,6 +1,6 @@
 # @robin-ui/styles
 
-[Emotion](https://emotion.sh/) based css-in-js for Robin-UI
+[Emotion](https://emotion.sh/) based css-in-js for Robin UI
 
 ## Installation
 
