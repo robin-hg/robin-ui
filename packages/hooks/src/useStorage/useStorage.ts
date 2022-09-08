@@ -1,4 +1,4 @@
-import { runIfFn } from '@robin-ui/utils'
+import { isServer, runIfFn } from '@robin-ui/utils'
 import { useState } from 'react'
 
 import { useEventListener } from '../useEventListener'
@@ -9,10 +9,10 @@ export const useStorage = <T>(
   key: string,
   initialValue?: T
 ): [T | undefined, (value?: T | ((current?: T) => T)) => void] => {
-  const storage = storageType === 'session' ? sessionStorage : localStorage
+  const storage = isServer ? null : storageType === 'session' ? sessionStorage : localStorage
 
   const getValue = useEvent(() => {
-    const item = storage.getItem(key)
+    const item = storage?.getItem(key)
     return item ? (JSON.parse(item) as T) : undefined
   })
 
@@ -20,12 +20,12 @@ export const useStorage = <T>(
 
   const setValue = useEvent((value?: T | ((current?: T) => T)) => {
     if (value === undefined) {
-      storage.removeItem(key)
+      storage?.removeItem(key)
       setStoredValue(undefined)
       return
     }
     const newValue = runIfFn(value, storedValue)
-    storage.setItem(key, JSON.stringify(newValue))
+    storage?.setItem(key, JSON.stringify(newValue))
     setStoredValue(newValue)
   })
 

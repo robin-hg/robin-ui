@@ -1,12 +1,16 @@
+import { isServer } from '@robin-ui/utils'
 import { useState } from 'react'
 
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
 export const useMediaQuery = (query: string) => {
-  const mediaQuery = matchMedia(query)
-  const [matches, setMatches] = useState(!!mediaQuery.matches)
+  const mediaQuery = !isServer ? matchMedia(query) : null
+  const [matches, setMatches] = useState(!!mediaQuery?.matches)
 
   useIsomorphicLayoutEffect(() => {
+    if (!mediaQuery) {
+      return
+    }
     setMatches(mediaQuery.matches)
     const listener = (event: MediaQueryListEvent) => setMatches(event.matches)
 

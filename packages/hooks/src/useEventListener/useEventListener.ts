@@ -1,3 +1,5 @@
+import { isServer } from '@robin-ui/utils'
+
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 import { useEvent } from '../useEvent'
 
@@ -19,13 +21,13 @@ export const useEventListener: IUseEventListener = <
   handler: (event: WindowEventMap[KW] | HTMLElementEventMap[KH] | Event) => void,
   element?: T | null
 ) => {
-  const el = element || window
+  const el = element || (!isServer ? window : null)
   const savedHandler = useEvent(handler)
 
   useIsomorphicLayoutEffect(() => {
-    el.addEventListener(eventName, savedHandler)
+    el?.addEventListener(eventName, savedHandler)
     return () => {
-      el.removeEventListener(eventName, savedHandler)
+      el?.removeEventListener(eventName, savedHandler)
     }
   }, [])
 }
