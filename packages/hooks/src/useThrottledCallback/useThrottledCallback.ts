@@ -24,7 +24,6 @@ export const useThrottledCallback = <T extends (...args: Parameters<T>) => void>
 
     const timeoutCallback = () => {
       if (waitingValue.current) {
-        // TODO: type inference was broken in ts 4.8. use explicit type for now and investigate later
         const nextArgs: Parameters<T> = waitingValue.current
         callback(...nextArgs)
         waitingValue.current = undefined
