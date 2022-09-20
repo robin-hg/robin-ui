@@ -8,7 +8,12 @@ import {
   shift,
   useFloating
 } from '@floating-ui/react-dom'
-import { useClickOutside, useCombinedRef, useIsomorphicLayoutEffect } from '@robin-ui/hooks'
+import {
+  useClickOutside,
+  useCombinedRef,
+  useForceUpdate,
+  useIsomorphicLayoutEffect
+} from '@robin-ui/hooks'
 
 import { ModalContext } from '../Modal'
 import type { Paper } from '../Paper'
@@ -65,6 +70,7 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
     middleware: [offset(withArrow ? 8 : 4), flip(), shift(), arrow({ element: arrowRef })]
   })
   const combinedRef = useCombinedRef(floating, ref)
+  useForceUpdate(true)
 
   useEffect(() => {
     if (trapFocus) {
