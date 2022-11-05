@@ -3,17 +3,18 @@ import esbuild from 'rollup-plugin-esbuild'
 
 export default {
   input: 'src/index.ts',
-  preserveModules: true,
   plugins: [externals(), esbuild({ tsconfig: './tsconfig.prod.json', sourceMap: true })],
   output: [
     {
       dir: `dist/cjs`,
       format: 'cjs',
-      exports: 'named'
+      exports: 'named',
+      preserveModules: true
     },
     {
       dir: `dist/esm`,
-      format: 'esm'
+      format: 'esm',
+      preserveModules: true
     }
   ]
 }
