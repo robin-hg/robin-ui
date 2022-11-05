@@ -33,6 +33,6 @@
     "types": "dist/types/index.d.ts"
   },
   "dependencies": {
-    "colord": "^2.9.2"
+    "colord": "^2.9.3"
   }
 }

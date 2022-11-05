@@ -31,14 +31,14 @@
     "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
   },
   "dependencies": {
-    "@floating-ui/react-dom": "^0.7.1",
+    "@floating-ui/react-dom": "^0.7.2",
     "@robin-ui/hooks": "workspace:*",
     "@robin-ui/icons": "workspace:*",
     "@robin-ui/styles": "workspace:*",
     "@robin-ui/theme": "workspace:*",
     "@robin-ui/types": "workspace:*",
     "@robin-ui/utils": "workspace:*",
-    "react-number-format": "^4.9.3"
+    "react-number-format": "^4.9.4"
   },
   "peerDependencies": {
     "@emotion/react": "^11",

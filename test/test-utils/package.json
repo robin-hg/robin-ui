@@ -7,7 +7,7 @@
   "main": "src/index.ts",
   "dependencies": {
     "@robin-ui/core": "workspace:*",
-    "@testing-library/react": "^13.3.0"
+    "@testing-library/react": "^13.4.0"
   },
   "devDependencies": {
     "react": "^18.2.0",
