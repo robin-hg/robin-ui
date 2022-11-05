@@ -25,7 +25,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
-    "build:bundle": "rollup -c ../../rollup.config.ts",
+    "build:bundle": "rollup -c ../../rollup.config.ts --configPlugin rollup-plugin-esbuild",
     "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
   },
   "publishConfig": {

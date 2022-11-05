@@ -29,7 +29,7 @@
     "@fontsource/noto-sans-mono": "^4.5.12",
     "@fontsource/noto-serif": "^4.5.11",
     "@mdx-js/react": "^2.1.5",
-    "@robin-ui/test-utils": "workspace:*",
+    "@robin-ui/test-utils": "workspace:0.3.0",
     "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-controls": "^6.5.13",
@@ -63,7 +63,7 @@
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^2.79.1",
+    "rollup": "^3.2.5",
     "rollup-plugin-esbuild": "^4.10.1",
     "rollup-plugin-node-externals": "^5.0.2",
     "storybook-dark-mode": "^1.1.2",
@@ -80,7 +80,8 @@
       "ignoreMissing": [
         "@babel/core",
         "@storybook/*",
-        "require-from-string"
+        "require-from-string",
+        "rollup"
       ]
     }
   },
