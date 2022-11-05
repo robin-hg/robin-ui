@@ -14,7 +14,7 @@
     "build:storybook": "build-storybook -o demo",
     "dev": "start-storybook -p 5000 --ci",
     "dev:docs": "pnpm run -C docs dev",
-    "lint": "pnpm run lint:eslint && pnpm run lint:typecheck",
+    "lint": "pnpm lint:eslint && pnpm lint:typecheck",
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:typecheck": "tsc --noEmit --skipLibCheck",
     "test": "vitest packages",
