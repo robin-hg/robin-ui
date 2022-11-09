@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Accordion, type Props } from './Accordion'
 
@@ -13,7 +13,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <Accordion {...args}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum suscipit rutrum. Vivamus
     tristique quis risus nec sodales. Mauris vel nulla ut ex dictum posuere. Cras ut ligula sit amet

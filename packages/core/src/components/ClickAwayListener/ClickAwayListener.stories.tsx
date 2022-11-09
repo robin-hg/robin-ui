@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Paper } from '../Paper'
 
@@ -9,7 +9,7 @@ export default {
   component: ClickAwayListener
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <Paper>
     Outside
     <ClickAwayListener {...args}>

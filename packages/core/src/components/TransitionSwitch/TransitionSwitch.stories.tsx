@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
 
 import { Paper } from '../Paper'
@@ -17,7 +17,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   const [page, setPage] = useState(0)
   return (
     <TransitionSwitch {...args} currentKey={page}>

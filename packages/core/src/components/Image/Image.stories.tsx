@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Image, type Props } from './Image'
 
@@ -15,4 +15,4 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => <Image {...args} />
+export const Default: StoryFn<Props> = args => <Image {...args} />

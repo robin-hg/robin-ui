@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Avatar, type Props } from './Avatar'
 
@@ -18,4 +18,4 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => <Avatar {...args}>DA</Avatar>
+export const Default: StoryFn<Props> = args => <Avatar {...args}>DA</Avatar>

@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Container } from '../Container'
 
@@ -9,7 +9,7 @@ export default {
   component: ContainerBreak
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <Container>
     <ContainerBreak
       {...args}

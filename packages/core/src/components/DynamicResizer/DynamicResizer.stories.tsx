@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
 import { sxc } from '@robin-ui/styles'
 
@@ -11,7 +11,7 @@ export default {
   component: DynamicResizer
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   const [toggle, setToggle] = useState(false)
   return (
     <Paper

@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Button, type Props } from './Button'
 
@@ -19,4 +19,4 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => <Button {...args} />
+export const Default: StoryFn<Props> = args => <Button {...args} />

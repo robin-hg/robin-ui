@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { Minus, Plus } from '@robin-ui/icons'
 
 import { ListItem } from '../ListItem'
@@ -11,7 +11,7 @@ export default {
   subcomponents: { ListItem }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <List {...args}>
     <ListItem>Item 1</ListItem>
     <ListItem>Item 2</ListItem>
@@ -19,7 +19,7 @@ export const Default: Story<Props> = args => (
   </List>
 )
 
-export const WithIcons: Story<Props> = args => (
+export const WithIcons: StoryFn<Props> = args => (
   <List {...args} marker={<Plus />}>
     <ListItem>Item 1</ListItem>
     <ListItem>Item 2</ListItem>

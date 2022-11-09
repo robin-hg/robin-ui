@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import styled from '@robin-ui/styles'
 
 import { Paper } from '../Paper'
@@ -27,7 +27,7 @@ const Element = styled(Paper)({
   height: '10rem'
 })
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <FlexBox {...args}>
     <Element variant="flat">1</Element>
     <Element variant="flat">2</Element>

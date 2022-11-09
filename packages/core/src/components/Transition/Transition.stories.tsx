@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
 import { Paper } from '../Paper'
@@ -27,7 +27,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Fade: Story<Props> = args => {
+export const Fade: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()
 
   return (
@@ -44,7 +44,7 @@ export const Fade: Story<Props> = args => {
   )
 }
 
-export const Collapse: Story<Props> = args => {
+export const Collapse: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()
 
   return (
@@ -61,7 +61,7 @@ export const Collapse: Story<Props> = args => {
   )
 }
 
-export const Grow: Story<Props> = args => {
+export const Grow: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()
 
   return (

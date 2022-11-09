@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { FlexBox } from '../FlexBox'
 import { Button } from '../Button'
@@ -14,7 +14,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   return (
     <FlexBox justifyContent="center" sx={{ height: '50rem' }}>
       <Tooltip {...args}>

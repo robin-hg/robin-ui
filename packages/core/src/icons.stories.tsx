@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
 import * as Icons from '@robin-ui/icons'
 import { type Props } from '@robin-ui/icons/src/createIcon'
@@ -17,7 +17,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   const [search, setSearch] = useState('')
 
   return (

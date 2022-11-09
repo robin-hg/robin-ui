@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { wait } from '@robin-ui/utils'
 
 import { AsyncButton, type Props } from './AsyncButton'
@@ -22,7 +22,7 @@ export default {
   }
 } as Meta<Props>
 
-const Template: Story<Props> = args => <AsyncButton {...args}>Click Me</AsyncButton>
+const Template: StoryFn<Props> = args => <AsyncButton {...args}>Click Me</AsyncButton>
 
 export const Default = Template.bind({})
 Default.args = {

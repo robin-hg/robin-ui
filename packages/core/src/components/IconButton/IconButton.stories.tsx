@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { Settings } from '@robin-ui/icons'
 
 import { IconButton, type Props } from './IconButton'
@@ -19,4 +19,4 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => <IconButton {...args} />
+export const Default: StoryFn<Props> = args => <IconButton {...args} />

@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 
 import { ModalHeader } from '../ModalHeader'
@@ -20,7 +20,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()
   return (
     <>

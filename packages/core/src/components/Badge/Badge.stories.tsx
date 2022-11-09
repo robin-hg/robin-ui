@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Paper } from '../Paper'
 
@@ -22,7 +22,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <Badge {...args}>
     <Paper variant="flat" sx={{ width: '4rem', height: '4rem' }} />
   </Badge>

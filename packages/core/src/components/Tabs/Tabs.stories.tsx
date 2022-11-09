@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { TabPanel } from '../TabPanel'
 
@@ -10,7 +10,7 @@ export default {
   component: Tabs
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   return (
     <Tabs
       {...args}

@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { type Props, Skeleton } from './'
 
@@ -15,4 +15,4 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => <Skeleton {...args}>Loading complete</Skeleton>
+export const Default: StoryFn<Props> = args => <Skeleton {...args}>Loading complete</Skeleton>

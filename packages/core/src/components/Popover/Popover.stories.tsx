@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
 import { useRef } from 'react'
 
@@ -11,7 +11,7 @@ export default {
   component: Popover
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   const ref = useRef<HTMLButtonElement>(null)
   const [, updateArgs] = useArgs()
   return (

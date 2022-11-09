@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Button } from '../Button'
 
@@ -26,7 +26,7 @@ const Add: React.FC = () => {
   )
 }
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <NotificationsManager {...args}>
     <Add />
   </NotificationsManager>

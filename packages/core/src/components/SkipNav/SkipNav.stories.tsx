@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { type Props, SkipNav } from './SkipNav'
 
@@ -7,7 +7,7 @@ export default {
   component: SkipNav
 } as Meta<Props>
 
-export const Default: Story<Props> = () => (
+export const Default: StoryFn<Props> = () => (
   <>
     <SkipNav contentId="content" />
     <div id="content">Press tab to focus</div>

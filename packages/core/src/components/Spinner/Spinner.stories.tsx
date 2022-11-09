@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { Loader } from '@robin-ui/icons'
 
 import { type Props, Spinner } from './Spinner'
@@ -15,9 +15,9 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => <Spinner {...args} />
+export const Default: StoryFn<Props> = args => <Spinner {...args} />
 
-export const Custom: Story<Props> = args => (
+export const Custom: StoryFn<Props> = args => (
   <Spinner {...args}>
     <Loader />
   </Spinner>

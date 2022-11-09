@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useTheme } from '@robin-ui/hooks'
 
 import { Code, type Props } from '../Typography'
@@ -20,7 +20,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => <Code {...args} />
+export const Default: StoryFn<Props> = args => <Code {...args} />
 
 const List = () => {
   const theme = useTheme()

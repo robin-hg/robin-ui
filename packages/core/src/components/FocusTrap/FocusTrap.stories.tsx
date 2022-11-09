@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Paper } from '../Paper'
 import { Stack } from '../Stack'
@@ -10,7 +10,7 @@ export default {
   component: FocusTrap
 } as Meta<Props>
 
-export const Default: Story<Props> = args => (
+export const Default: StoryFn<Props> = args => (
   <Stack>
     <FocusTrap {...args}>
       <Paper variant="flat" sx={{ padding: '2rem' }}>

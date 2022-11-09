@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { useRef } from 'react'
 
 import { Stack } from '../Stack'
@@ -14,7 +14,7 @@ export default {
   }
 } as Meta<Props>
 
-export const Default: Story<Props> = args => {
+export const Default: StoryFn<Props> = args => {
   const ref = useRef<HTMLDivElement>(null)
 
   return (
