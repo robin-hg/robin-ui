@@ -1,7 +1,8 @@
+import type { StorybookConfig } from '@storybook/react-vite'
 import { mergeConfig } from 'vite'
 import path from 'path'
 
-export default {
+const storybokConfig: StorybookConfig = {
   stories: ['../packages/core/src/**/*.stories.tsx'],
   addons: ['@storybook/addon-controls', '@storybook/addon-a11y', 'storybook-dark-mode'],
   framework: {
@@ -14,3 +15,5 @@ export default {
       root: path.dirname(require.resolve('@storybook/builder-vite'))
     })
 }
+
+export default storybokConfig

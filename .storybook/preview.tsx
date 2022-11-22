@@ -1,4 +1,4 @@
-import type { DecoratorFn } from '@storybook/react'
+import type { Decorator } from '@storybook/react'
 import React from 'react'
 import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
@@ -49,7 +49,7 @@ export const parameters = {
   }
 }
 
-export const decorators: DecoratorFn[] = [
+export const decorators: Decorator[] = [
   Story => {
     const darkMode = useDarkMode()
     return (
