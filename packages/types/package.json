@@ -38,6 +38,6 @@
   },
   "publishConfig": {
     "main": "",
-    "types": "dist/types/index.d.ts"
+    "types": "dist/index.d.ts"
   }
 }

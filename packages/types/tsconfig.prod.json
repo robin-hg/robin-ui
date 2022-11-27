@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.prod.json",
   "compilerOptions": {
     "rootDir": "src",
-    "declarationDir": "dist/types",
+    "declarationDir": "dist",
     "tsBuildInfoFile": "cache/tsconfig.tsbuildinfo",
     "declarationMap": false
   },
