@@ -3,7 +3,8 @@
   "compilerOptions": {
     "rootDir": "src",
     "declarationDir": "dist/types",
-    "tsBuildInfoFile": "node_modules/.cache/tsconfig.tsbuildinfo"
+    "tsBuildInfoFile": "cache/tsconfig.tsbuildinfo",
+    "declarationMap": false
   },
   "include": ["src"]
 }

@@ -25,9 +25,9 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist cache",
     "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
-    "build:bundle": "rollup -c ../../rollup.config.ts --configPlugin rollup-plugin-esbuild",
+    "build:bundle": "rollup -c --configPlugin rollup-plugin-esbuild",
     "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
   },
   "dependencies": {

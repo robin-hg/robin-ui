@@ -1,9 +1,9 @@
+import type { RollupOptions } from 'rollup'
 import { externals } from 'rollup-plugin-node-externals'
 import esbuild from 'rollup-plugin-esbuild'
 
-export default {
+const config: RollupOptions = {
   input: 'src/index.ts',
-  plugins: [externals(), esbuild({ tsconfig: './tsconfig.prod.json', sourceMap: true })],
   output: [
     {
       dir: `dist/cjs`,
@@ -16,5 +16,8 @@ export default {
       format: 'esm',
       preserveModules: true
     }
-  ]
+  ],
+  plugins: [externals(), esbuild({ tsconfig: './tsconfig.prod.json', sourceMap: true })]
 }
+
+export default config
