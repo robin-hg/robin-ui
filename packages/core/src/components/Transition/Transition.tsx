@@ -11,6 +11,7 @@ export interface Props extends MotionProps {
   in?: boolean
   variants?: Animation
   duration?: number
+  // TODO: import Easing type when available in framer-motion
   ease?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
   unmountOnExit?: boolean
   motionOnly?: boolean
