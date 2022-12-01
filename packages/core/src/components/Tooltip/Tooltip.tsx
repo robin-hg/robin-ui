@@ -54,7 +54,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
               setOpen(false)
             }
           },
-          onPointerOver: () => setOpen(true),
+          onPointerEnter: () => setOpen(true),
           onPointerLeave: () => setOpen(false),
           onFocus: () => setOpen(true),
           onBlur: () => setOpen(false)

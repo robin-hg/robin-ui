@@ -1,9 +1,9 @@
-import { act, fireEvent, render, screen } from '@robin-ui/test-utils'
+import { act, fireEvent, render, screen, waitFor } from '@robin-ui/test-utils'
 
 import { Tooltip } from './Tooltip'
 
 describe('Tooltip', () => {
-  it('should display on hover', () => {
+  it('should display on hover', async () => {
     render(
       <Tooltip label="Tooltip">
         <div>Trigger</div>
@@ -12,11 +12,9 @@ describe('Tooltip', () => {
     const trigger = screen.getByText('Trigger')
 
     act(() => {
-      fireEvent.pointerOver(trigger)
+      fireEvent.pointerEnter(trigger)
     })
 
-    setTimeout(() => {
-      expect(screen.getByText('Tooltip')).toBeVisible()
-    }, 200)
+    await waitFor(() => expect(screen.getByText('Tooltip')).toHaveTextContent('Tooltip'))
   })
 })
