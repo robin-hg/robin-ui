@@ -28,7 +28,7 @@ export const RobinProvider: React.FC<Props> = props => {
 
   return (
     <ThemeProvider
-      colorMode={fixedColorMode || colorMode}
+      colorMode={fixedColorMode ?? colorMode}
       dynamicColor={dynamicColor}
       theme={theme}>
       {addGlobalCSS && <Global />}

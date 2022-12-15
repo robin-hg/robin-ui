@@ -8,5 +8,5 @@ export const useColorMode = (
 ): ['light' | 'dark', (mode: ColorMode) => void] => {
   const [storedMode, setMode] = useLocalStorage('robin-colorMode', initialMode)
   const preferredMode = useColorScheme()
-  return [storedMode === 'system' ? preferredMode : storedMode || 'light', setMode]
+  return [storedMode === 'system' ? preferredMode : storedMode ?? 'light', setMode]
 }

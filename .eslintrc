@@ -31,6 +31,7 @@
     "import/order": ["error", { "newlines-between": "always" }],
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],

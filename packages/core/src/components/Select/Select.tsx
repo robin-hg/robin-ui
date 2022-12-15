@@ -64,10 +64,10 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   } = useContext(InputWrapperContext)
   const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 
-  const error = wrapperError || inputError
-  const required = wrapperRequired || inputRequired
-  const readOnly = wrapperReadOnly || inputReadOnly
-  const disabled = wrapperDisabled || inputDisabled
+  const error = wrapperError ?? inputError
+  const required = wrapperRequired ?? inputRequired
+  const readOnly = wrapperReadOnly ?? inputReadOnly
+  const disabled = wrapperDisabled ?? inputDisabled
 
   useEffect(() => {
     setOpen(false)
@@ -102,7 +102,7 @@ export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         rightAdornment={<ChevronDown />}
         readOnly={readOnly}
         disabled={disabled}
-        error={wrapperError || error}
+        error={wrapperError ?? error}
         active={open}
         tabIndex={native ? -1 : 0}
         {...otherProps}>

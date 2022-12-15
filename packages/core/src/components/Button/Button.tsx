@@ -49,7 +49,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) =>
   return (
     <StyledButton
       ref={ref}
-      as={as || (href ? 'a' : 'button')}
+      as={as ?? (href ? 'a' : 'button')}
       $variant={groupVariant ?? variant}
       $color={groupColor ?? color}
       $size={groupSize ?? size}

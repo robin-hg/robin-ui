@@ -13,7 +13,7 @@ export const StyledTableCell = styled.td<StyledTableCellProps>(
       $variant === 'th' ? theme.typography.label.fontSize.lg : theme.typography.text.fontSize.md,
     fontWeight:
       $variant === 'th' ? theme.typography.label.fontWeight : theme.typography.text.fontWeight,
-    textAlign: $align || 'left',
+    textAlign: $align ?? 'left',
     padding: $padding && theme.fn.getSpacing($padding)
   })
 )

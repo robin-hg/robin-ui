@@ -79,10 +79,10 @@ export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           onChange?.(event)
         }}
         $color={color}
-        $error={!!groupError || !!error}
-        required={groupRequired || required}
-        readOnly={groupReadOnly || readOnly}
-        disabled={groupDisabled || disabled}
+        $error={!!groupError ?? !!error}
+        required={groupRequired ?? required}
+        readOnly={groupReadOnly ?? readOnly}
+        disabled={groupDisabled ?? disabled}
         {...otherProps}
       />
     </ControlInput>

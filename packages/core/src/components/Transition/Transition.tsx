@@ -36,7 +36,7 @@ const TransitionFactory = (defaultAnimation?: Animation) => {
         ref={ref}
         initial={unmountOnExit ? 'exit' : false}
         animate={unmountOnExit || inProp ? 'enter' : 'exit'}
-        variants={variants || defaultAnimation}
+        variants={variants ?? defaultAnimation}
         transition={transition}
         {...otherProps}>
         {children}

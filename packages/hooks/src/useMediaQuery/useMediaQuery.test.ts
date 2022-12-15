@@ -7,7 +7,7 @@ const re = /(\d+)/
 describe('useMediaQuery', () => {
   beforeEach(() => {
     vi.spyOn(window, 'matchMedia').mockImplementation(query => {
-      const width = re.exec(query)?.[0] || '0'
+      const width = re.exec(query)?.[0] ?? '0'
       return {
         matches: parseInt(width) > 500,
         media: query,

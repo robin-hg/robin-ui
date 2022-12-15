@@ -45,10 +45,10 @@ export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
     disabled: wrapperDisabled
   } = useContext(InputWrapperContext)
 
-  const error = wrapperError || inputError
-  const required = wrapperRequired || inputRequired
-  const readOnly = wrapperReadOnly || inputReadOnly
-  const disabled = wrapperDisabled || inputDisabled
+  const error = wrapperError ?? inputError
+  const required = wrapperRequired ?? inputRequired
+  const readOnly = wrapperReadOnly ?? inputReadOnly
+  const disabled = wrapperDisabled ?? inputDisabled
 
   return (
     <InputBox ref={ref} disabled={disabled} error={error} {...otherProps}>

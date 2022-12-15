@@ -21,7 +21,7 @@ export const useEventListener: IUseEventListener = <
   handler: (event: WindowEventMap[KW] | HTMLElementEventMap[KH] | Event) => void,
   element?: T | null
 ) => {
-  const el = element || (!isServer ? window : null)
+  const el = element ?? (!isServer ? window : null)
   const savedHandler = useEvent(handler)
 
   useIsomorphicLayoutEffect(() => {

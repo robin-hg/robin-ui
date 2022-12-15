@@ -5,7 +5,7 @@ export const deepmerge = <A extends Record<string, unknown>, B extends Record<st
   source: B,
   options?: { concatArrays?: boolean }
 ) => {
-  const { concatArrays } = options || {}
+  const { concatArrays } = options ?? {}
   const result: Record<string, unknown> = { ...target }
   Object.keys(source).forEach(key => {
     const targetItem = result[key]

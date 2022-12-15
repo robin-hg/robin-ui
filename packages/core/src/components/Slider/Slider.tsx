@@ -62,10 +62,10 @@ export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     disabled: wrapperDisabled
   } = useContext(InputWrapperContext)
 
-  const error = wrapperError || inputError
-  const required = wrapperRequired || inputRequired
-  const readOnly = wrapperReadOnly || inputReadOnly
-  const disabled = wrapperDisabled || inputDisabled
+  const error = wrapperError ?? inputError
+  const required = wrapperRequired ?? inputRequired
+  const readOnly = wrapperReadOnly ?? inputReadOnly
+  const disabled = wrapperDisabled ?? inputDisabled
 
   useEffect(() => {
     const handleChange = (x: number) => {

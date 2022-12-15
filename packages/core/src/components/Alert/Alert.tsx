@@ -34,7 +34,7 @@ export const Alert = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     ...otherProps
   } = props
 
-  const icon = iconOverride || statusIcon[status]
+  const icon = iconOverride ?? statusIcon[status]
 
   return (
     <AlertContainer

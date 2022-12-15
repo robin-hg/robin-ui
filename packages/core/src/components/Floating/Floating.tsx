@@ -101,7 +101,7 @@ export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
   }
 
   return (
-    <Portal container={floatinghEl || modalEl || undefined}>
+    <Portal container={floatinghEl ?? modalEl ?? undefined}>
       <FadeContainer in={open} duration={duration} unmountOnExit>
         <FocusTrap disabled={!trapFocus}>
           <FloatingElement

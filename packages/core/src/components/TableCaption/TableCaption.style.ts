@@ -12,7 +12,7 @@ export const StyledTableCaption = styled.caption<StyledTableCaptionProps>(
     padding: $padding && theme.fn.getSpacing($padding),
     color: theme.palette.surface.onBase,
     fontSize: theme.typography.label.fontSize.lg,
-    textAlign: $align || 'left',
+    textAlign: $align ?? 'left',
     captionSide: $captionSide
   })
 )

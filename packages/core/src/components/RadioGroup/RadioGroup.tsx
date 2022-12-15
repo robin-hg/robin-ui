@@ -54,10 +54,10 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) =
   } = useContext(InputWrapperContext)
   const [_value, setUncontrolled] = useUncontrolled(defaultValue, value)
 
-  const error = wrapperError || inputError
-  const required = wrapperRequired || inputRequired
-  const readOnly = wrapperReadOnly || inputReadOnly
-  const disabled = wrapperDisabled || inputDisabled
+  const error = wrapperError ?? inputError
+  const required = wrapperRequired ?? inputRequired
+  const readOnly = wrapperReadOnly ?? inputReadOnly
+  const disabled = wrapperDisabled ?? inputDisabled
 
   const ctxValue = useMemo(
     () => ({

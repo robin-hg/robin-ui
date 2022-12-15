@@ -5,7 +5,7 @@ import { Hidden } from './Hidden'
 describe('Hidden', () => {
   beforeAll(() => {
     vi.spyOn(window, 'matchMedia').mockImplementation(query => {
-      const width = /(\d+)/.exec(query)?.[0] || '0'
+      const width = /(\d+)/.exec(query)?.[0] ?? '0'
       return {
         matches: parseInt(width) > 500,
         media: query,

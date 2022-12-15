@@ -13,7 +13,7 @@ export const ListItem = React.forwardRef<HTMLLIElement, Props>((props, ref) => {
   const { marker, children, ...otherProps } = props
   const { marker: listMarker } = useContext(ListContext)
 
-  const itemMarker = marker || listMarker
+  const itemMarker = marker ?? listMarker
 
   return (
     <li ref={ref} {...otherProps}>

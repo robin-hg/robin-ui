@@ -44,7 +44,7 @@ const TypographyFactory = (variant: Variant) => {
 
     const decoration =
       `${underline ? 'underline' : ''} ${strikethrough ? 'line-through' : ''}`.trim() || 'none'
-    const defaultComponent = as || variantComponentMap[variant]
+    const defaultComponent = as ?? variantComponentMap[variant]
 
     return (
       <StyledText

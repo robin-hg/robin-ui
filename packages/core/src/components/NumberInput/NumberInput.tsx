@@ -72,10 +72,10 @@ export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) 
 
   const showBigControl = showControl === 'big'
 
-  const error = wrapperError || inputError
-  const required = wrapperRequired || inputRequired
-  const readOnly = wrapperReadOnly || inputReadOnly
-  const disabled = wrapperDisabled || inputDisabled
+  const error = wrapperError ?? inputError
+  const required = wrapperRequired ?? inputRequired
+  const readOnly = wrapperReadOnly ?? inputReadOnly
+  const disabled = wrapperDisabled ?? inputDisabled
 
   const handleStep = (direction: 'up' | 'down') => {
     requestAnimationFrame(() => {
