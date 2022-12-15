@@ -7,8 +7,7 @@ import { List, type Props } from './List'
 
 export default {
   title: 'Display/List',
-  component: List,
-  subcomponents: { ListItem }
+  component: List
 } satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (

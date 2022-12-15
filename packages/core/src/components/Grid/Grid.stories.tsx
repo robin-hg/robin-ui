@@ -8,7 +8,6 @@ import { Grid, type Props } from './Grid'
 export default {
   title: 'Layout/Grid',
   component: Grid,
-  subcomponents: { GridItem },
   args: {
     columns: 12,
     spacing: 'md'

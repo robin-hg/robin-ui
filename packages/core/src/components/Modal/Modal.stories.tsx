@@ -11,7 +11,6 @@ import { Modal, type Props } from './Modal'
 export default {
   title: 'Overlay/Modal',
   component: Modal,
-  subcomponents: { ModalHeader, ModalContent, ModalFooter },
   args: {
     size: 'md'
   },

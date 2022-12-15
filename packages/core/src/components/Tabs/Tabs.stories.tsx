@@ -6,7 +6,6 @@ import { type Props, Tabs } from './Tabs'
 
 export default {
   title: 'Navigation/Tabs',
-  subcomponents: { TabPanel },
   component: Tabs
 } satisfies Meta<Props>
 

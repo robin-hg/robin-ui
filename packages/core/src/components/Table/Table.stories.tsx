@@ -10,9 +10,8 @@ import { type Props, Table } from './Table'
 export default {
   title: 'Display/Table',
   component: Table,
-  subcomponents: { Thead, Tbody, Tfoot, Tr, Th, Td },
   args: {
-    variant: 'flat'
+    align: 'left'
   }
 } satisfies Meta<Props>
 

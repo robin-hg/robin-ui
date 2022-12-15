@@ -10,7 +10,6 @@ import { Menu, type Props } from './Menu'
 export default {
   title: 'Overlay/Menu',
   component: Menu,
-  subcomponents: { MenuItem },
   args: {
     minWidth: '20rem',
     maxHeight: '30rem'
