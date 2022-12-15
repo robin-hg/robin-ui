@@ -13,12 +13,12 @@ importers:
       '@fontsource/noto-serif': ^4.5.11
       '@mdx-js/react': ^2.2.1
       '@robin-ui/test-utils': workspace:0.3.0
-      '@storybook/addon-a11y': 7.0.0-beta.8
-      '@storybook/addon-controls': 7.0.0-beta.8
-      '@storybook/client-api': 7.0.0-beta.8
-      '@storybook/react': 7.0.0-beta.8
-      '@storybook/react-vite': 7.0.0-beta.8
-      '@storybook/theming': 7.0.0-beta.8
+      '@storybook/addon-a11y': ^7.0.0-beta.8
+      '@storybook/addon-controls': ^7.0.0-beta.8
+      '@storybook/client-api': ^7.0.0-beta.8
+      '@storybook/react': ^7.0.0-beta.8
+      '@storybook/react-vite': ^7.0.0-beta.8
+      '@storybook/theming': ^7.0.0-beta.8
       '@testing-library/dom': ^8.19.0
       '@testing-library/jest-dom': ^5.16.5
       '@testing-library/user-event': ^14.4.3
@@ -48,7 +48,7 @@ importers:
       rollup: ^3.7.4
       rollup-plugin-esbuild: ^5.0.0
       rollup-plugin-node-externals: ^5.0.2
-      storybook: 7.0.0-beta.8
+      storybook: ^7.0.0-beta.8
       storybook-dark-mode: ^2.0.4
       typescript: ^4.9.4
       vite: ^4.0.1
@@ -2578,7 +2578,7 @@ packages:
     resolution: {integrity: sha512-6hIHBSV+ZVehf9dcKZLT7p5PEKHGhDwky2k8RKkmOvUoYP3S+dXsKupyZpqx5apjd9f+php4vXk4LuS+ADsrWw==}
     dependencies:
       '@motionone/utils': 10.15.1
-      tslib: 2.4.0
+      tslib: 2.4.1
     dev: true
 
   /@motionone/generators/10.15.1:
@@ -3550,7 +3550,7 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 16.18.9
+      '@types/node': 18.11.15
     dev: true
 
   /@types/chai-subset/1.3.3:
@@ -3566,7 +3566,7 @@ packages:
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 16.18.9
+      '@types/node': 18.11.15
     dev: true
 
   /@types/ejs/3.1.1:
@@ -3584,7 +3584,7 @@ packages:
   /@types/express-serve-static-core/4.17.31:
     resolution: {integrity: sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q==}
     dependencies:
-      '@types/node': 16.18.9
+      '@types/node': 18.11.15
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
     dev: true
@@ -3681,7 +3681,7 @@ packages:
   /@types/node-fetch/2.6.2:
     resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
     dependencies:
-      '@types/node': 16.18.9
+      '@types/node': 18.11.15
       form-data: 3.0.1
     dev: true
 
@@ -3771,7 +3771,7 @@ packages:
     resolution: {integrity: sha512-z5xyF6uh8CbjAu9760KDKsH2FcDxZ2tFCsA4HIMWE6IkiYMXfVoa+4f9KX+FN0ZLsaMw1WNG2ETLA6N+/YA+cg==}
     dependencies:
       '@types/mime': 3.0.1
-      '@types/node': 16.18.9
+      '@types/node': 18.11.15
     dev: true
 
   /@types/stack-utils/2.0.1:
