@@ -12,7 +12,7 @@ describe('useTransition', () => {
   })
 
   it('should override default values', () => {
-    const { result } = renderHook(() => useTransition(100, 'ease-in'))
+    const { result } = renderHook(() => useTransition(100, 'easeIn'))
     expect(result.current).toEqual({
       duration: 0.1,
       ease: 'easeIn'
@@ -33,7 +33,7 @@ describe('useTransition', () => {
       }
     })
 
-    const { result } = renderHook(() => useTransition(100, 'ease-in'))
+    const { result } = renderHook(() => useTransition(100, 'easeIn'))
     expect(result.current).toEqual({
       duration: 0,
       ease: 'easeIn'

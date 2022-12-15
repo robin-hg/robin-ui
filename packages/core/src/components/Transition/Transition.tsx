@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnimatePresence, type MotionProps, type Variant, m } from 'framer-motion'
+import { AnimatePresence, type Easing, type MotionProps, type Variant, m } from 'framer-motion'
 import { useTransition } from '@robin-ui/hooks'
 
 type Animation = {
@@ -11,8 +11,7 @@ export interface Props extends MotionProps {
   in?: boolean
   variants?: Animation
   duration?: number
-  // TODO: import Easing type when available in framer-motion
-  ease?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
+  ease?: Easing
   unmountOnExit?: boolean
   motionOnly?: boolean
   children?: React.ReactNode

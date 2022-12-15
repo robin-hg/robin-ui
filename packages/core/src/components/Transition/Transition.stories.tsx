@@ -16,13 +16,13 @@ export default {
   component: FadeTransition,
   args: {
     in: false,
-    ease: 'ease-out',
+    ease: 'easeOut',
     duration: 200
   },
   argTypes: {
     ease: {
       control: 'select',
-      options: ['linear', 'ease-in', 'ease-out', 'ease-in-out']
+      options: ['linear', 'easeIn', 'easeOut', 'easeInOut']
     }
   }
 } as Meta<Props>

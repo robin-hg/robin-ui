@@ -1,20 +1,18 @@
 import { camelCase } from '@robin-ui/utils'
+import type { Easing } from 'framer-motion'
 
 import { useReducedMotion } from '../useReducedMotion'
 import { useTheme } from '../useTheme'
 
-export const useTransition = (
-  durationOverride?: number,
-  easeOverride?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
-) => {
+export const useTransition = (durationOverride?: number, easeOverride?: Easing) => {
   const { transition } = useTheme()
   const reducedMotion = useReducedMotion()
 
   const duration = durationOverride ?? transition.duration
-  const ease = easeOverride || transition.ease
+  const ease = easeOverride ?? (transition.ease ? camelCase(transition.ease) : undefined)
 
   return {
     duration: reducedMotion ? 0 : duration / 1000,
-    ease: ease ? camelCase(ease) : undefined
+    ease
   }
 }
