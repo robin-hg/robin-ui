@@ -30,8 +30,7 @@ export const List = React.forwardRef<HTMLUListElement, Props>((props, ref) => {
   return (
     <StyledList
       ref={ref}
-      as={variant === 'ordered' && marker !== undefined ? 'ol' : 'ul'}
-      $variant={variant}
+      as={variant === 'ordered' ? 'ol' : 'ul'}
       $spacing={spacing}
       $styleType={marker !== undefined ? 'none' : styleType}
       {...otherProps}>

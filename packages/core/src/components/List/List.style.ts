@@ -3,7 +3,7 @@ import styled from '@robin-ui/styles'
 
 interface StyledListProps {
   $spacing: SizeValue
-  $styleType?: React.CSSProperties['listStyleType']
+  $styleType: React.CSSProperties['listStyleType']
 }
 
 export const StyledList = styled.ul<StyledListProps>(({ theme, $spacing, $styleType }) => ({
