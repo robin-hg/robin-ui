@@ -5,7 +5,7 @@ import { type Props, SkipNav } from './SkipNav'
 export default {
   title: 'Utils/SkipNav',
   component: SkipNav
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = () => (
   <>

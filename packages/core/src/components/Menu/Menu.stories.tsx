@@ -15,7 +15,7 @@ export default {
     minWidth: '20rem',
     maxHeight: '30rem'
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const ref = useRef<HTMLButtonElement>(null)

@@ -17,7 +17,7 @@ export default {
     columns: { control: 'number' },
     spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <Grid {...args}>

@@ -15,7 +15,7 @@ export default {
     elevation: { control: { type: 'range', min: 0, max: 24, step: 1 } },
     tint: { control: { type: 'color' } }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <Paper

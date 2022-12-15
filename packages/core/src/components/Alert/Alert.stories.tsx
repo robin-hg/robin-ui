@@ -20,6 +20,6 @@ export default {
     title: { control: { type: 'text' } },
     children: { control: { type: 'text' } }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => <Alert {...args} />

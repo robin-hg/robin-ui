@@ -15,7 +15,7 @@ export default {
   argTypes: {
     currentKey: { table: { disable: true } }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const [page, setPage] = useState(0)

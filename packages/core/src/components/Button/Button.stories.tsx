@@ -17,6 +17,6 @@ export default {
     radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     color: { control: { type: 'text' } }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => <Button {...args} />

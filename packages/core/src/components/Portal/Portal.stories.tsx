@@ -12,7 +12,7 @@ export default {
   argTypes: {
     container: { control: null }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const ref = useRef<HTMLDivElement>(null)

@@ -18,7 +18,7 @@ export default {
     highlight: { control: { type: 'color' } },
     fontWeight: { control: { type: 'select' }, options: [400, 600] }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => <Text {...args} />
 

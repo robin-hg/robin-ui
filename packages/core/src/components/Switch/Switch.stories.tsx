@@ -11,7 +11,7 @@ export default {
     labelPosition: 'right',
     checked: false
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()

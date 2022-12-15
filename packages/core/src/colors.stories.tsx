@@ -6,7 +6,7 @@ import { Divider, Grid, Stack, Text } from './'
 
 export default {
   title: 'Colors/Colors'
-} as Meta
+} satisfies Meta
 
 export const Default = () => (
   <Stack spacing="md">

@@ -12,7 +12,7 @@ export default {
     label: 'Tooltip',
     withArrow: true
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   return (

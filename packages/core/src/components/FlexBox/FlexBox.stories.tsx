@@ -20,7 +20,7 @@ export default {
     alignItems: { control: { type: 'text' } },
     spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 const Element = styled(Paper)({
   width: '10rem',

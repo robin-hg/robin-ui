@@ -15,7 +15,7 @@ export default {
     thickness: { control: { type: 'range', min: 1, max: 6, step: 1 } },
     spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <sxc.div sx={{ height: 100 }}>

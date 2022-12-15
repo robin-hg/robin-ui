@@ -9,7 +9,7 @@ export default {
   title: 'Display/List',
   component: List,
   subcomponents: { ListItem }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <List {...args}>

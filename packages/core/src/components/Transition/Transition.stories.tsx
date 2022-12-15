@@ -25,7 +25,7 @@ export default {
       options: ['linear', 'easeIn', 'easeOut', 'easeInOut']
     }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Fade: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()

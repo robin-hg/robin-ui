@@ -15,7 +15,7 @@ export default {
     separator: { control: { type: 'text' } },
     spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <Breadcrumbs {...args}>

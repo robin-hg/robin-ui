@@ -11,7 +11,7 @@ export default {
     breakpoint: 'sm',
     direction: 'down'
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <Hidden {...args}>

@@ -7,7 +7,7 @@ import { ContainerBreak, type Props } from './ContainerBreak'
 export default {
   title: 'Layout/ContainerBreak',
   component: ContainerBreak
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <Container>

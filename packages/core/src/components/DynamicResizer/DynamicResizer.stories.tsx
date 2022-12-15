@@ -9,7 +9,7 @@ import { DynamicResizer, type Props } from './'
 export default {
   title: 'Utils/DynamicResizer',
   component: DynamicResizer
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const [toggle, setToggle] = useState(false)

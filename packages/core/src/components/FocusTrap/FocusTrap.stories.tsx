@@ -8,7 +8,7 @@ import { FocusTrap, type Props } from './FocusTrap'
 export default {
   title: 'Utils/FocusTrap',
   component: FocusTrap
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <Stack>

@@ -15,7 +15,7 @@ export default {
     size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()

@@ -12,7 +12,7 @@ export default {
     placement: 'top-right',
     limit: 5
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 const Add: React.FC = () => {
   const { addNotification } = useNotifications()

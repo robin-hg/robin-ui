@@ -12,7 +12,7 @@ export default {
   argTypes: {
     maxWidth: { control: 'number' }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => (
   <Container {...args}>

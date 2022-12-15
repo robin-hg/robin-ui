@@ -9,7 +9,7 @@ import { Popover, type Props } from './Popover'
 export default {
   title: 'Overlay/Popover',
   component: Popover
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const ref = useRef<HTMLButtonElement>(null)

@@ -10,7 +10,7 @@ export default {
     placeholder: 'Placeholder',
     value: ''
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 export const Default: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()

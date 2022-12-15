@@ -20,7 +20,7 @@ export default {
   argTypes: {
     size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
-} as Meta<Props>
+} satisfies Meta<Props>
 
 const Template: StoryFn<Props> = args => <AsyncButton {...args}>Click Me</AsyncButton>
 
