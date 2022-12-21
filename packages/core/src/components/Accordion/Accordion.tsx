@@ -52,7 +52,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
         </Text>
         {!!children && <ChevronDown size={20} />}
       </AccordionSummary>
-      <Collapse in={!disabled && open}>
+      <Collapse in={!disabled && open} unmountOnExit>
         <AccordionContent role="region" id={`${id}-body`} aria-labelledby={`${id}-summary`}>
           {children}
         </AccordionContent>

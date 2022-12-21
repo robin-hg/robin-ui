@@ -6,19 +6,19 @@ describe('Accordion', () => {
   it('should expand + collapse', () => {
     render(<Accordion title="Title">Content</Accordion>)
     const title = screen.getByRole('button')
-    const content = screen.getByRole('region')
 
     expect(title).toBeVisible()
     expect(title).toHaveTextContent('Title')
-    expect(content).not.toBeVisible()
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
 
     act(() => {
       title.click()
     })
 
+    expect(screen.queryByRole('region')).toBeInTheDocument()
+    expect(screen.queryByRole('region')).not.toBeVisible()
     setTimeout(() => {
-      expect(content).toBeVisible()
-      expect(content).toHaveTextContent('Content')
+      expect(screen.queryByRole('Content')).toBeVisible()
     }, 200)
   })
 
@@ -29,18 +29,15 @@ describe('Accordion', () => {
       </Accordion>
     )
     const title = screen.getByRole('button')
-    const content = screen.getByRole('region')
 
     expect(title).toBeDisabled()
-    expect(content).not.toBeVisible()
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
 
     act(() => {
       title.click()
     })
 
-    setTimeout(() => {
-      expect(content).not.toBeVisible()
-    }, 200)
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
   })
 
   it('should handle open', () => {
@@ -50,7 +47,7 @@ describe('Accordion', () => {
       </Accordion>
     )
     const content = screen.getByRole('region')
-    expect(content).toBeVisible()
+    expect(content).toBeInTheDocument()
     expect(content).toHaveTextContent('Content')
   })
 })
