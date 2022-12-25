@@ -73,9 +73,6 @@
   },
   "pnpm": {
     "peerDependencyRules": {
-      "allowedVersions": {
-        "vite": "^4"
-      },
       "ignoreMissing": [
         "@babel/core"
       ]
