@@ -45,7 +45,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@types/react": "^18",
-    "framer-motion": "^6",
+    "framer-motion": "^8",
     "react": "^18",
     "react-dom": "^18"
   },
