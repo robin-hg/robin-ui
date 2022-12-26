@@ -1,5 +1,11 @@
 # @robin-ui/utils
 
+## 0.3.1
+
+### Patch Changes
+
+- [`dade441`](https://github.com/robin-hg/robin-ui/commit/dade441b9848fd94e1e4924343f9765a9a0b091e) Thanks [@robin-hg](https://github.com/robin-hg)! - Test release + bug fixes
+
 ## 0.3.0
 
 ### Minor Changes

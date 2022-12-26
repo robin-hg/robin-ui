@@ -1,6 +1,6 @@
 {
   "name": "@robin-ui/test-utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "author": "Robin Hong <robinh.jsx@gmail.com>",
   "description": "Testing utilities for Robin UI",
