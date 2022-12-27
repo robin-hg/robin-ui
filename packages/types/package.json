@@ -18,7 +18,8 @@
   "sideEffects": false,
   "scripts": {
     "clean": "rm -rf dist cache",
-    "build": "pnpm clean && pnpm build:types",
+    "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
+    "build:bundle": "rollup -c --configPlugin rollup-plugin-esbuild",
     "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
   },
   "dependencies": {
@@ -37,7 +38,8 @@
     }
   },
   "publishConfig": {
-    "main": "",
-    "types": "dist/index.d.ts"
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts"
   }
 }
