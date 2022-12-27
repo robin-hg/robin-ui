@@ -1,5 +1,11 @@
 # @robin-ui/utils
 
+## 0.4.0
+
+### Minor Changes
+
+- [`3d8ab30`](https://github.com/robin-hg/robin-ui/commit/3d8ab30a0cd0ee1e9c5c723d6889770578b64d65) Thanks [@robin-hg](https://github.com/robin-hg)! - Fix runtime
+
 ## 0.3.1
 
 ### Patch Changes

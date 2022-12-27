@@ -1,6 +1,6 @@
 {
   "name": "@robin-ui/theme",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Robin Hong <robinh.jsx@gmail.com>",
   "description": "Default theme configuration for Robin-UI",
   "license": "MIT",
