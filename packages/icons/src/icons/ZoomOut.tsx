@@ -2,7 +2,7 @@ import { sxc } from '@robin-ui/styles'
 
 import createIcon from '../createIcon'
 
-export default createIcon(
+export const ZoomOut = createIcon(
   <sxc.svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"

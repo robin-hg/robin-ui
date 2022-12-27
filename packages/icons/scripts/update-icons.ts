@@ -25,10 +25,11 @@ Object.values(icons).forEach(icon => {
   }, '')
 
   const component = `
-import createIcon from '../createIcon'
 import { sxc } from '@robin-ui/styles'
 
-export default createIcon(
+import createIcon from '../createIcon'
+
+export const ${componentName} = createIcon(
   <sxc.svg ${attrs}>
     ${icon.contents}
   </sxc.svg>,
@@ -38,6 +39,6 @@ export default createIcon(
   const location = path.join(iconFolder, `${componentName}.tsx`)
   fs.writeFileSync(location, component, 'utf-8')
 
-  const exportString = `export { default as ${componentName} } from './icons/${componentName}'\r\n`
+  const exportString = `export { ${componentName} } from './icons/${componentName}'\r\n`
   fs.appendFileSync(indexFile, exportString, 'utf-8')
 })
