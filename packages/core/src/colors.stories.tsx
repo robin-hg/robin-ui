@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { type ColorToken, colors } from '@robin-ui/theme'
-import styled, { sxc } from '@robin-ui/styles'
+import { styled, sxc } from '@robin-ui/styles'
 
 import { Divider, Grid, Stack, Text } from './'
 

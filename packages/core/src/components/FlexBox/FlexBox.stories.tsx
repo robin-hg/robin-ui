@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react'
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 import { Paper } from '../Paper'
 
