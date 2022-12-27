@@ -19,7 +19,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'summary' | 'title'>
   title?: React.ReactNode
 
   /** Chevron position */
-  chevronPosition: 'left' | 'right'
+  chevronPosition?: 'left' | 'right'
 }
 
 export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
