@@ -1,4 +1,4 @@
-import emotionStyled, { type Interpolation } from '@emotion/styled'
+import _emotionStyled, { type Interpolation } from '@emotion/styled'
 
 import type {
   BaseCreateStyled,
@@ -9,6 +9,11 @@ import type {
   StyledTags
 } from './types'
 import { transformSx } from './transformSx'
+
+// Workaround for commonjs interop with default exports
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const emotionStyled = (_emotionStyled.default ?? _emotionStyled) as CreateStyled
 
 const excludedProps = new Set(['sx', 'css', 'as'])
 
