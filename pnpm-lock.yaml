@@ -12,7 +12,7 @@ importers:
       '@fontsource/noto-sans-mono': ^4.5.12
       '@fontsource/noto-serif': ^4.5.11
       '@mdx-js/react': ^2.2.1
-      '@robin-ui/test-utils': workspace:0.3.0
+      '@robin-ui/test-utils': workspace:*
       '@storybook/addon-a11y': 7.0.0-beta.15
       '@storybook/addon-controls': 7.0.0-beta.15
       '@storybook/client-api': 7.0.0-beta.15
