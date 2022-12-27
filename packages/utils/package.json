@@ -1,6 +1,6 @@
 {
   "name": "@robin-ui/utils",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Robin Hong <robinh.jsx@gmail.com>",
   "description": "A collection of handy functions for Robin UI",
   "license": "MIT",
