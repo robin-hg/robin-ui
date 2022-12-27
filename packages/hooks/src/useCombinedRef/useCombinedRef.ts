@@ -12,7 +12,7 @@ export const useCombinedRef = <T>(...refs: React.Ref<T>[]): React.RefCallback<T>
           return ref(value)
         }
 
-        const mutableRef = ref as React.MutableRefObject<T | null>
+        const mutableRef: React.MutableRefObject<T | null> = ref
         mutableRef.current = value
       }),
     refs

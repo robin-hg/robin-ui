@@ -6,9 +6,12 @@ export const useClickOutside = (exclude: Item | Item[], action: (event: MouseEve
   const excludedArray = Array.isArray(exclude) ? exclude : [exclude]
 
   useEventListener('click', event => {
-    const clickedExcluded = excludedArray.some(
-      target => !!target?.contains(event.target as HTMLElement)
-    )
+    const clickTarget = event.target
+    if (!(clickTarget instanceof HTMLElement)) {
+      return
+    }
+
+    const clickedExcluded = excludedArray.some(target => !!target?.contains(clickTarget))
     if (!clickedExcluded) {
       action(event)
     }

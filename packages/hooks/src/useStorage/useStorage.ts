@@ -13,7 +13,13 @@ export const useStorage = <T>(
 
   const getValue = useEvent(() => {
     const item = storage?.getItem(key)
-    return item ? (JSON.parse(item) as T) : undefined
+
+    if (!item) {
+      return undefined
+    }
+
+    const value: unknown = JSON.parse(item)
+    return value as T
   })
 
   const [storedValue, setStoredValue] = useState(getValue() ?? initialValue)

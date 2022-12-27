@@ -11,9 +11,10 @@ export const getFocusable = (node?: HTMLElement | null) => {
     'details',
     '[tabindex]:not([tabindex="-1"]'
   ]
-  const elements = [...node.querySelectorAll(ignored.join(', '))] as HTMLElement[]
+  const elements = [...node.querySelectorAll<HTMLElement>(ignored.join(', '))]
   return elements.filter(
     element =>
+      element instanceof HTMLElement &&
       !element.hasAttribute('disabled') &&
       element.getAttribute('aria-hidden') !== 'true' &&
       element.style.display !== 'none'

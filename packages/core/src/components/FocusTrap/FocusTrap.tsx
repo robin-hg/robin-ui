@@ -14,9 +14,9 @@ export const FocusTrap: React.FC<Props> = props => {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const original = document.activeElement as HTMLElement
+    const original = document.activeElement
     return () => {
-      if (restoreFocus && !disabled) {
+      if (restoreFocus && original instanceof HTMLElement && !disabled) {
         original?.focus()
       }
     }
@@ -25,7 +25,8 @@ export const FocusTrap: React.FC<Props> = props => {
   useEffect(() => {
     if (focusOnMount && !disabled) {
       const focusable = getFocusable(ref.current)
-      focusable.at(0)?.focus()
+      const item = focusable.at(0)
+      item?.focus()
     }
   }, [focusOnMount])
 
@@ -36,8 +37,8 @@ export const FocusTrap: React.FC<Props> = props => {
       return
     }
 
-    const first = focusable.at(0) as HTMLElement
-    const last = focusable.at(-1) as HTMLElement
+    const first = focusable.at(0)
+    const last = focusable.at(-1)
 
     const next = event.shiftKey ? last : first
     const leaving = event.shiftKey
@@ -49,7 +50,7 @@ export const FocusTrap: React.FC<Props> = props => {
     }
 
     event.preventDefault()
-    next.focus()
+    next?.focus()
   })
 
   return <div ref={ref}>{children}</div>

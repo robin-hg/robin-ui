@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps } from '@robin-ui/types'
-import React, { Children, useRef } from 'react'
+import React, { Children, isValidElement, useRef } from 'react'
 import { useUncontrolled } from '@robin-ui/hooks'
 import { getFocusable } from '@robin-ui/utils'
 import { sxc } from '@robin-ui/styles'
@@ -47,10 +47,16 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     }
   }
 
-  const tabs = Children.toArray(children) as React.ReactElement<TabPanelProps | undefined>[]
-  const activePanel = tabs.find((tab, i) =>
-    typeof _activeTab === 'number' ? _activeTab === i : _activeTab === tab.props?.tabKey
-  )
+  const tabs = Children.toArray(children)
+  const activePanel = tabs.find((tab, i) => {
+    if (typeof _activeTab === 'number') {
+      return _activeTab === i
+    }
+    if (isValidElement<TabPanelProps>(tab)) {
+      return _activeTab === tab.props?.tabKey
+    }
+    return false
+  })
 
   return (
     <sxc.div ref={ref} {...otherProps}>
@@ -60,6 +66,9 @@ export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         aria-orientation="horizontal"
         onKeyDown={handleKeyDown}>
         {tabs.map((tab, i) => {
+          if (!isValidElement<TabPanelProps>(tab)) {
+            return null
+          }
           const key = tab.props?.tabKey ?? i
           const active = _activeTab === key
           return (
