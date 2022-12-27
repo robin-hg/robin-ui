@@ -1,4 +1,4 @@
-import { isServer, runIfFn } from '@robin-ui/utils'
+import { isBrowser, runIfFn } from '@robin-ui/utils'
 import { useState } from 'react'
 
 import { useEventListener } from '../useEventListener'
@@ -9,7 +9,7 @@ export const useStorage = <T>(
   key: string,
   initialValue?: T
 ): [T | undefined, (value?: T | ((current?: T) => T)) => void] => {
-  const storage = isServer ? null : storageType === 'session' ? sessionStorage : localStorage
+  const storage = isBrowser() ? (storageType === 'session' ? sessionStorage : localStorage) : null
 
   const getValue = useEvent(() => {
     const item = storage?.getItem(key)
