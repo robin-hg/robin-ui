@@ -1,5 +1,5 @@
 import type { SizeValue } from '@robin-ui/theme'
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 interface StyledListProps {
   $spacing: SizeValue

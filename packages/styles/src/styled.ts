@@ -1,4 +1,4 @@
-import _styled, { type Interpolation } from '@emotion/styled'
+import emotionStyled, { type Interpolation } from '@emotion/styled'
 
 import type {
   BaseCreateStyled,
@@ -20,19 +20,21 @@ const augumentStyle = <P extends StyleProps>(props: P, label = '') => {
   return [transformSx(themeSx), transformSx(sx)]
 }
 
-const styled: BaseCreateStyled =
+const baseStyled: BaseCreateStyled =
   (component: React.ComponentType, options?: StyledOptions) =>
   <P extends StyleProps>(...styles: Interpolation<P>[]) => {
     if (options?.shouldForwardProp) {
       options.shouldForwardProp = shouldForwardProp
     }
 
-    return _styled(component, options)(...styles, augumentStyle)
+    return emotionStyled(component, options)(...styles, augumentStyle)
   }
 
-const tags = Object.keys(_styled) as (keyof JSX.IntrinsicElements)[]
-const styledTags = tags.reduce((acc, tag) => ({ ...acc, [tag]: styled(tag) }), {}) as StyledTags
-export const sxc = tags.reduce((acc, tag) => ({ ...acc, [tag]: styled(tag)() }), {}) as SXComponents
+const tags = Object.keys(emotionStyled) as (keyof JSX.IntrinsicElements)[]
+const styledTags = tags.reduce((acc, tag) => ({ ...acc, [tag]: baseStyled(tag) }), {}) as StyledTags
+export const sxc = tags.reduce(
+  (acc, tag) => ({ ...acc, [tag]: baseStyled(tag)() }),
+  {}
+) as SXComponents
 
-const newStyled: CreateStyled = Object.assign(styled, styledTags)
-export default newStyled
+export const styled: CreateStyled = Object.assign(baseStyled, styledTags)

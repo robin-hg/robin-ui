@@ -1,5 +1,5 @@
 import type { ColorToken, Size } from '@robin-ui/theme'
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 const defaultThumbSizes = {
   xs: '1.2rem',

@@ -1,5 +1,5 @@
 import type { ColorToken, SizeValue } from '@robin-ui/types'
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 import { BaseContainer } from '../BaseContainer'
 

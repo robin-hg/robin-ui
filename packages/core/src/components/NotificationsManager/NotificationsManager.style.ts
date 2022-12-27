@@ -1,4 +1,4 @@
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 interface NotificationsContainerProps {
   $placement: 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right'

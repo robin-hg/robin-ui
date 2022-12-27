@@ -1,5 +1,5 @@
 import type { ColorToken, SizeValue } from '@robin-ui/theme'
-import styled, { keyframes } from '@robin-ui/styles'
+import { keyframes, styled } from '@robin-ui/styles'
 
 const defaultSizes = {
   xs: '1.6rem',

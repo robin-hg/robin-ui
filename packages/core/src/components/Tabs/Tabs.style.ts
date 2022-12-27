@@ -1,4 +1,4 @@
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 import { m } from 'framer-motion'
 
 export const TabGroup = styled.div(({ theme }) => ({

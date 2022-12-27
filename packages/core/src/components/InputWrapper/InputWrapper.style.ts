@@ -1,4 +1,4 @@
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 import { Text, Label as _Label } from '../Typography'
 

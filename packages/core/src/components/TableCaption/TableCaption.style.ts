@@ -1,5 +1,5 @@
 import type { SizeValue } from '@robin-ui/types'
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 interface StyledTableCaptionProps {
   $align?: 'left' | 'center' | 'right'

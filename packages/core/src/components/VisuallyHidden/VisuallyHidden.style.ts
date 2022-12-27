@@ -1,4 +1,4 @@
-import styled from '@robin-ui/styles'
+import { styled } from '@robin-ui/styles'
 
 export const HiddenContainer = styled.div({
   position: 'absolute',
