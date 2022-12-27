@@ -1,6 +1,7 @@
 import { styled } from '@robin-ui/styles'
 
 import { BaseContainer } from '../BaseContainer'
+import { Paper } from '../Paper'
 
 export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
   borderBottom: `solid 0.1rem ${theme.palette.outline}`
@@ -9,13 +10,15 @@ export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
 interface AccordionSummaryProps {
   $open: boolean
   $expandable: boolean
+  $spaceBetween: boolean
 }
 
 export const AccordionSummary = styled.button<AccordionSummaryProps>(
-  ({ theme, $expandable, $open }) => ({
+  ({ theme, $expandable, $open, $spaceBetween }) => ({
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: $spaceBetween ? 'space-between' : 'flex-start',
+    gap: theme.spacing.sm,
     width: '100%',
     minHeight: '4rem',
     background: 'transparent',
@@ -39,9 +42,7 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(
     '& > svg': {
       transition: theme.fn.getTransition(),
       transform: `rotate(${$open ? 180 : 0}deg)`
-    }
-  }),
-  ({ theme }) => ({
+    },
     '&[disabled]': {
       background: `${theme.fn.getAlphaColor('surface.variant', 'disabled')} !important`,
       color: `${theme.fn.getMixedColor(
@@ -53,6 +54,14 @@ export const AccordionSummary = styled.button<AccordionSummaryProps>(
   })
 )
 
-export const AccordionContent = styled.div(({ theme }) => ({
-  padding: theme.spacing.md
+export const AccordionContent = styled(Paper)(({ theme }) => ({
+  background: 'transparent',
+  '&[disabled]': {
+    background: `${theme.fn.getAlphaColor('surface', 'disabled')} !important`,
+    color: `${theme.fn.getMixedColor(
+      'surface.variant',
+      'surface.onVariant',
+      'disabled'
+    )} !important`
+  }
 }))

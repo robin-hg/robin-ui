@@ -9,13 +9,28 @@ import { Text } from '../Typography'
 import { AccordionContainer, AccordionContent, AccordionSummary } from './Accordion.style'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'summary' | 'title'> {
+  /** Controlled open state */
   open?: boolean
+
+  /** Disables open/close */
   disabled?: boolean
+
+  /** Accordion button text */
   title?: React.ReactNode
+
+  /** Chevron position */
+  chevronPosition: 'left' | 'right'
 }
 
 export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { open: openOverride, disabled, title, children, ...otherProps } = props
+  const {
+    open: openOverride,
+    disabled,
+    title,
+    chevronPosition = 'left',
+    children,
+    ...otherProps
+  } = props
   const [open, setOpen] = useState(!!openOverride)
   const id = useId()
 
@@ -40,6 +55,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
         role="button"
         $open={open}
         $expandable={expandable}
+        $spaceBetween={chevronPosition === 'right'}
         disabled={!!disabled}
         onClick={toggleOpen}
         tabIndex={expandable ? 0 : -1}
@@ -47,13 +63,20 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>((props, ref) =>
         aria-controls={`${id}-body`}
         aria-expanded={!!open}
         aria-disabled={disabled}>
+        {!!children && chevronPosition === 'left' && <ChevronDown size={20} />}
         <Text as="div" bold color="inherit">
           {title}
         </Text>
-        {!!children && <ChevronDown size={20} />}
+        {!!children && chevronPosition === 'right' && <ChevronDown size={20} />}
       </AccordionSummary>
-      <Collapse in={!disabled && open} unmountOnExit>
-        <AccordionContent role="region" id={`${id}-body`} aria-labelledby={`${id}-summary`}>
+      <Collapse in={open} unmountOnExit>
+        <AccordionContent
+          role="region"
+          id={`${id}-body`}
+          aria-labelledby={`${id}-summary`}
+          paddin="md"
+          radius="xs"
+          disabled={!!disabled}>
           {children}
         </AccordionContent>
       </Collapse>

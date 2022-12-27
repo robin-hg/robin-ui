@@ -9,7 +9,7 @@ export const ButtonGroupContainer = styled.div<ButtonGroupContainerProps>(({ the
   display: 'inline-flex',
   '& > button': {
     position: 'relative',
-    borderRadius: 0,
+    borderRadius: theme.radius.xs,
     '&:first-of-type': {
       borderTopLeftRadius: theme.fn.getSize($radius, theme.radius),
       borderBottomLeftRadius: theme.fn.getSize($radius, theme.radius)
