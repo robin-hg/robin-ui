@@ -17,7 +17,10 @@ const config: RollupOptions = {
       preserveModules: true
     }
   ],
-  plugins: [externals(), esbuild({ tsconfig: './tsconfig.prod.json', sourceMap: true })]
+  plugins: [
+    externals(),
+    esbuild({ tsconfig: './tsconfig.prod.json', sourceMap: true, jsx: 'automatic' })
+  ]
 }
 
 export default config
