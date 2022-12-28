@@ -45,12 +45,16 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@types/react": "^18",
+    "@types/react-dom": "^18",
     "framer-motion": "^8",
     "react": "^18",
     "react-dom": "^18"
   },
   "peerDependenciesMeta": {
     "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
       "optional": true
     }
   },
