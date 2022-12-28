@@ -22,7 +22,7 @@ describe('useInterval', () => {
     vi.advanceTimersByTime(500)
     expect(fn).toHaveBeenCalledTimes(1)
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i += 1) {
       vi.advanceTimersByTime(1000)
       expect(fn).toHaveBeenCalledTimes(i + 2)
     }
