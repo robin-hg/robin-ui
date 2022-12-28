@@ -26,6 +26,7 @@ demo
 *.sw?
 .npm
 .env
+.eslintcache
 
 # next.js
 .next
