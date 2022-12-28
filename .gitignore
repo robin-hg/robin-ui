@@ -26,3 +26,10 @@ demo
 *.sw?
 .npm
 .env
+
+# next.js
+.next
+next-env.d.ts
+
+# vercel
+.vercel

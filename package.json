@@ -13,13 +13,14 @@
     "build": "pnpm -r --parallel build",
     "build:storybook": "storybook build -o demo",
     "dev": "storybook dev -p 5000 --ci",
-    "dev:docs": "pnpm run -C docs dev",
     "lint": "pnpm lint:eslint && pnpm lint:typecheck",
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:typecheck": "tsc --noEmit --skipLibCheck",
     "test": "vitest packages",
     "release": "pnpm build && changeset publish",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "docs:lint": "pnpm run -C docs lint",
+    "docs:dev": "pnpm run -C docs dev"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
