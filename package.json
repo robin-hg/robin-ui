@@ -10,7 +10,7 @@
   "scripts": {
     "prepare": "husky install",
     "clean": "pnpm -r --parallel clean",
-    "build": "pnpm -r --parallel build",
+    "build": "pnpm --filter=!docs -r --parallel build",
     "build:storybook": "storybook build -o demo",
     "dev": "storybook dev -p 5000 --ci",
     "lint": "pnpm lint:eslint && pnpm lint:typecheck",
@@ -19,6 +19,7 @@
     "test": "vitest packages",
     "release": "pnpm build && changeset publish",
     "changeset": "changeset",
+    "docs:build": "pnpm run -C docs build",
     "docs:lint": "pnpm run -C docs lint",
     "docs:dev": "pnpm run -C docs dev"
   },
