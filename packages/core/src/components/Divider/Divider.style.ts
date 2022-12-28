@@ -30,7 +30,7 @@ export const DividerLine = styled.div<DividerLineProps>(
         '&::before, &::after': {
           content: '""',
           flex: 1,
-          borderTopStyle: 'solid' as React.CSSProperties['borderTopStyle'],
+          borderTopStyle: 'solid' as const,
           borderWidth: theme.fn.getSize($thickness, defaultThickness),
           borderColor: theme.fn.getColor($color)
         },
@@ -45,7 +45,7 @@ export const DividerLine = styled.div<DividerLineProps>(
       },
       vertical: {
         display: 'inline-flex',
-        flexDirection: 'column' as React.CSSProperties['flexDirection'],
+        flexDirection: 'column' as const,
         alignItems: 'center',
         gap: $hasChildren ? theme.spacing.xs : 0,
         verticalAlign: 'top',
@@ -54,7 +54,7 @@ export const DividerLine = styled.div<DividerLineProps>(
         '&::before, &::after': {
           content: '""',
           flex: 1,
-          borderRightStyle: 'solid' as React.CSSProperties['borderRightStyle'],
+          borderRightStyle: 'solid' as const,
           borderWidth: $thickness,
           borderColor: theme.palette.outline
         },

@@ -15,34 +15,34 @@ export const NotificationsContainer = styled.div<NotificationsContainerProps>(
   ({ $placement }) =>
     ({
       top: {
-        flexDirection: 'column-reverse' as React.CSSProperties['flexDirection'],
+        flexDirection: 'column-reverse' as const,
         top: 0,
         left: '50%',
         transform: 'translateX(-50%)'
       },
       'top-left': {
-        flexDirection: 'column-reverse' as React.CSSProperties['flexDirection'],
+        flexDirection: 'column-reverse' as const,
         top: 0,
         left: 0
       },
       'top-right': {
-        flexDirection: 'column-reverse' as React.CSSProperties['flexDirection'],
+        flexDirection: 'column-reverse' as const,
         top: 0,
         right: 0
       },
       bottom: {
-        flexDirection: 'column' as React.CSSProperties['flexDirection'],
+        flexDirection: 'column' as const,
         bottom: 0,
         left: '50%',
         transform: 'translateX(-50%)'
       },
       'bottom-left': {
-        flexDirection: 'column' as React.CSSProperties['flexDirection'],
+        flexDirection: 'column' as const,
         bottom: 0,
         left: 0
       },
       'bottom-right': {
-        flexDirection: 'column' as React.CSSProperties['flexDirection'],
+        flexDirection: 'column' as const,
         bottom: 0,
         right: 0
       }

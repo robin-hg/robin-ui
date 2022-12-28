@@ -92,7 +92,7 @@ export interface BaseTheme extends Record<string, unknown> {
   }
   shadow: {
     color: string
-    generateShadow: (elevation: number) => React.CSSProperties['boxShadow']
+    generateShadow: (elevation: number) => NonNullable<React.CSSProperties['boxShadow']>
   }
 }
 
