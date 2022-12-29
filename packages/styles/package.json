@@ -36,14 +36,7 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "@types/react": "^18",
-    "react": "^18"
-  },
-  "peerDependenciesMeta": {
-    "@types/react": {
-      "optional": true
-    }
+    "@emotion/styled": "^11"
   },
   "publishConfig": {
     "main": "dist/cjs/index.js",
