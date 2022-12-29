@@ -1,6 +1,7 @@
-import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import { forwardRef, useState } from 'react'
+
 import { Image as ImageIcon } from '@robin-ui/icons'
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 
 import { Spinner } from '../Spinner'
 

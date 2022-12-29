@@ -1,5 +1,5 @@
-import type { Size } from '@robin-ui/types'
 import { useWidthQuery } from '@robin-ui/hooks'
+import type { Size } from '@robin-ui/types'
 
 export interface Props {
   breakpoint: Size

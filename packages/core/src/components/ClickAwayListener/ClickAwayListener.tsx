@@ -1,7 +1,8 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef, useRef } from 'react'
+
 import { useClickOutside, useCombinedRef, useForceUpdate } from '@robin-ui/hooks'
 import { sxc } from '@robin-ui/styles'
+import type { DefaultProps } from '@robin-ui/types'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
   onClickAway: (event: MouseEvent) => void

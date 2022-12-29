@@ -1,5 +1,6 @@
-import type { SizeValue } from '@robin-ui/theme'
 import { forwardRef } from 'react'
+
+import type { SizeValue } from '@robin-ui/theme'
 
 import type { Button } from '../Button'
 

@@ -1,5 +1,6 @@
-import { camelCase } from '@robin-ui/utils'
 import type { Easing } from 'framer-motion'
+
+import { camelCase } from '@robin-ui/utils'
 
 import { useReducedMotion } from '../useReducedMotion'
 import { useTheme } from '../useTheme'

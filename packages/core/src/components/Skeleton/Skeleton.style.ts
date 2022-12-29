@@ -1,5 +1,5 @@
-import type { SizeValue } from '@robin-ui/theme'
 import { keyframes, styled } from '@robin-ui/styles'
+import type { SizeValue } from '@robin-ui/theme'
 
 const pulse = keyframes`
   from {

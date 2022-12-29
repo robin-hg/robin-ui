@@ -1,9 +1,9 @@
 import type { Meta, StoryFn } from '@storybook/react'
 
-import { Tbody, Tfoot, Thead } from '../TableSection'
-import { Tr } from '../TableRow'
-import { Td, Th } from '../TableCell'
 import { TableCaption } from '../TableCaption'
+import { Td, Th } from '../TableCell'
+import { Tr } from '../TableRow'
+import { Tbody, Tfoot, Thead } from '../TableSection'
 
 import { type Props, Table } from './Table'
 

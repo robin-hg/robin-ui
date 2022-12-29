@@ -1,5 +1,6 @@
-import type { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
+
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Paper } from '../Paper'
 

@@ -1,5 +1,6 @@
-import { isBrowser } from '@robin-ui/utils'
 import { useState } from 'react'
+
+import { isBrowser } from '@robin-ui/utils'
 
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 

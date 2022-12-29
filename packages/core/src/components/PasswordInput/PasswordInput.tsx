@@ -1,8 +1,9 @@
 import { forwardRef, useState } from 'react'
+
 import { Eye, EyeOff } from '@robin-ui/icons'
 
-import { TextInput } from '../TextInput'
 import { IconButton } from '../IconButton'
+import { TextInput } from '../TextInput'
 
 export interface Props
   extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}

@@ -1,5 +1,6 @@
-import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import { createContext, forwardRef, useMemo } from 'react'
+
+import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 
 export const TableContext = createContext<{
   align?: 'left' | 'center' | 'right'

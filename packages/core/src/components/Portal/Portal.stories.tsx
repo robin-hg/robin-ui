@@ -1,8 +1,9 @@
-import type { Meta, StoryFn } from '@storybook/react'
 import { useRef } from 'react'
 
-import { Stack } from '../Stack'
+import type { Meta, StoryFn } from '@storybook/react'
+
 import { Paper } from '../Paper'
+import { Stack } from '../Stack'
 
 import { Portal, type Props } from './Portal'
 

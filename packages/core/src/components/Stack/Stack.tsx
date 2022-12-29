@@ -1,5 +1,6 @@
-import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import { forwardRef } from 'react'
+
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 
 import { StackContainer } from './Stack.style'
 

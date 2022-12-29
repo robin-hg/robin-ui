@@ -1,5 +1,6 @@
-import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import { createContext, forwardRef, useMemo } from 'react'
+
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 
 import { StyledList } from './List.style'
 

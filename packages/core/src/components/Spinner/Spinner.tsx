@@ -1,5 +1,6 @@
-import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import { forwardRef } from 'react'
+
+import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 
 import { VisuallyHidden } from '../VisuallyHidden'
 

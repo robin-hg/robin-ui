@@ -1,6 +1,6 @@
-import createEmotionServer from '@emotion/server/create-instance'
-import type { EmotionCache } from '@emotion/react'
 import createCache from '@emotion/cache'
+import type { EmotionCache } from '@emotion/react'
+import createEmotionServer from '@emotion/server/create-instance'
 
 const defaultCache = createCache({ key: 'robin-ui', prepend: true })
 

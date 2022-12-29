@@ -1,7 +1,7 @@
 import { forwardRef, useContext } from 'react'
 
-import { InputWrapperContext } from '../InputWrapper'
 import { InputBox } from '../InputBox'
+import { InputWrapperContext } from '../InputWrapper'
 
 export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'children'> {
   placeholder?: string

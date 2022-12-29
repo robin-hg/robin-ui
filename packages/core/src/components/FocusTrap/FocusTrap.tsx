@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { getFocusable } from '@robin-ui/utils'
+
 import { useKeyDown } from '@robin-ui/hooks'
+import { getFocusable } from '@robin-ui/utils'
 
 export interface Props {
   focusOnMount?: boolean

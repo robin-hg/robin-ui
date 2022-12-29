@@ -1,5 +1,6 @@
-import { styled } from '@robin-ui/styles'
 import type { Placement } from '@floating-ui/react-dom'
+
+import { styled } from '@robin-ui/styles'
 
 import { Paper } from '../Paper'
 import { Fade } from '../Transition'

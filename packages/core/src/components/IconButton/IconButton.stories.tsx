@@ -1,4 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react'
+
 import { Settings } from '@robin-ui/icons'
 
 import { IconButton, type Props } from './IconButton'

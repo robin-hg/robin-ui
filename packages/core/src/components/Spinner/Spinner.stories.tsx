@@ -1,4 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react'
+
 import { Loader } from '@robin-ui/icons'
 
 import { type Props, Spinner } from './Spinner'

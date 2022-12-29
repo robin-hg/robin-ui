@@ -1,5 +1,7 @@
 import { forwardRef } from 'react'
+
 import { AnimatePresence, type Easing, type MotionProps, type Variant, m } from 'framer-motion'
+
 import { useTransition } from '@robin-ui/hooks'
 
 type Animation = {

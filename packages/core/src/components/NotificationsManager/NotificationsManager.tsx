@@ -1,6 +1,8 @@
-import type { DefaultProps } from '@robin-ui/types'
-import { AnimatePresence } from 'framer-motion'
 import { createContext, useMemo, useRef, useState } from 'react'
+
+import { AnimatePresence } from 'framer-motion'
+
+import type { DefaultProps } from '@robin-ui/types'
 
 import { Notification } from '../Notification'
 import { Portal } from '../Portal'

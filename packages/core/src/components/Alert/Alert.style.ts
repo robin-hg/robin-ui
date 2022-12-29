@@ -1,5 +1,5 @@
-import type { ColorToken } from '@robin-ui/theme'
 import { styled } from '@robin-ui/styles'
+import type { ColorToken } from '@robin-ui/theme'
 
 import { Paper } from '../Paper'
 

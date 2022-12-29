@@ -1,6 +1,7 @@
 import { forwardRef, useRef } from 'react'
-import { getFocusable } from '@robin-ui/utils'
+
 import { useCombinedRef } from '@robin-ui/hooks'
+import { getFocusable } from '@robin-ui/utils'
 
 import type { Popover } from '../Popover'
 import { ScrollContainer } from '../ScrollContainer'

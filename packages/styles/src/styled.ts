@@ -1,5 +1,6 @@
 import _emotionStyled, { type Interpolation } from '@emotion/styled'
 
+import { transformSx } from './transformSx'
 import type {
   BaseCreateStyled,
   CreateStyled,
@@ -8,7 +9,6 @@ import type {
   StyledOptions,
   StyledTags
 } from './types'
-import { transformSx } from './transformSx'
 
 // Workaround for commonjs interop with default exports
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

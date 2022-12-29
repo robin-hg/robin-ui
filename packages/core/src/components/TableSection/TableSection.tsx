@@ -1,5 +1,6 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef } from 'react'
+
+import type { DefaultProps } from '@robin-ui/types'
 
 import { StyledTableSection } from './TableSection.style'
 

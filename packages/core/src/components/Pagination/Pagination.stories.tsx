@@ -1,5 +1,5 @@
-import type { Meta, StoryFn } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Pagination, type Props } from './Pagination'
 

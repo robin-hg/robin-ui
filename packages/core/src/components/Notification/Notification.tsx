@@ -1,6 +1,7 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef, useContext } from 'react'
+
 import { useTimeout } from '@robin-ui/hooks'
+import type { DefaultProps } from '@robin-ui/types'
 
 import { NotificationsManagerContext } from '../NotificationsManager'
 import { Portal } from '../Portal'

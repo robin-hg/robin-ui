@@ -1,5 +1,5 @@
-import { useViewportSize } from '../useViewportSize'
 import { useTheme } from '../useTheme'
+import { useViewportSize } from '../useViewportSize'
 
 export const useBreakpoint = () => {
   const { width } = useViewportSize()

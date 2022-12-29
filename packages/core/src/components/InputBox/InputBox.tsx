@@ -1,6 +1,7 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef, useRef } from 'react'
+
 import { useSize } from '@robin-ui/hooks'
+import type { DefaultProps } from '@robin-ui/types'
 
 import { Adornment, Box } from './InputBox.style'
 

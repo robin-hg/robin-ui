@@ -1,7 +1,7 @@
-import path from 'path'
-import fs from 'fs'
-
 import { icons } from 'feather-icons'
+import fs from 'fs'
+import path from 'path'
+
 import { camelCase, pascalCase } from '@robin-ui/utils'
 
 const rootDir = path.join(__dirname, '..')

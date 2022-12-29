@@ -1,6 +1,7 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { createContext, forwardRef, useContext, useMemo } from 'react'
+
 import { useUncontrolled } from '@robin-ui/hooks'
+import type { DefaultProps } from '@robin-ui/types'
 
 import { InputWrapperContext } from '../InputWrapper'
 

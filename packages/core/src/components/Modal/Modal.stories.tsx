@@ -1,10 +1,10 @@
-import type { Meta, StoryFn } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
+import type { Meta, StoryFn } from '@storybook/react'
 
-import { ModalHeader } from '../ModalHeader'
+import { Button } from '../Button'
 import { ModalContent } from '../ModalContent'
 import { ModalFooter } from '../ModalFooter'
-import { Button } from '../Button'
+import { ModalHeader } from '../ModalHeader'
 
 import { Modal, type Props } from './Modal'
 

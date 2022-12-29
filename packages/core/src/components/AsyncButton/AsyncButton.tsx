@@ -1,9 +1,10 @@
 import { forwardRef, useContext, useState } from 'react'
-import { wait } from '@robin-ui/utils'
-import { Check, X } from '@robin-ui/icons'
 
-import { ModalContext } from '../Modal'
+import { Check, X } from '@robin-ui/icons'
+import { wait } from '@robin-ui/utils'
+
 import type { Button } from '../Button'
+import { ModalContext } from '../Modal'
 import { Spinner } from '../Spinner'
 
 import { StyledButton } from './AsyncButton.style'

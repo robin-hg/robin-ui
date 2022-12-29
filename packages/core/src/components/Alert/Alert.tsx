@@ -1,6 +1,7 @@
-import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import { forwardRef } from 'react'
+
 import { AlertCircle, AlertTriangle, CheckCircle, Info } from '@robin-ui/icons'
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 
 import { Label } from '../Typography'
 

@@ -1,5 +1,5 @@
-import type { ColorToken, SizeValue } from '@robin-ui/types'
 import { styled } from '@robin-ui/styles'
+import type { ColorToken, SizeValue } from '@robin-ui/types'
 
 const defaultThickness = {
   xs: '0.1rem',

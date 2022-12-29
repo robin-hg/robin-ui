@@ -1,5 +1,6 @@
-import type { Size } from '@robin-ui/theme'
 import { forwardRef } from 'react'
+
+import type { Size } from '@robin-ui/theme'
 
 import type { IconButton } from '../IconButton'
 

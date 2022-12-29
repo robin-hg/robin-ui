@@ -1,7 +1,8 @@
-import { createStyleServer, getStyleTags } from '@robin-ui/ssr'
 import type { EmotionCache } from '@emotion/cache'
-import Document, { type DocumentContext, type DocumentInitialProps } from 'next/document'
 import htmlReactParser from 'html-react-parser'
+import Document, { type DocumentContext, type DocumentInitialProps } from 'next/document'
+
+import { createStyleServer, getStyleTags } from '@robin-ui/ssr'
 
 export const createGetInitialProps = (cache?: EmotionCache) => {
   const styleServer = createStyleServer(cache)

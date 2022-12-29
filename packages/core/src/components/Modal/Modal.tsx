@@ -1,10 +1,11 @@
-import type { DefaultProps, Size } from '@robin-ui/types'
 import { createContext, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
-import { useCombinedRef, useId, useLockWindowScroll } from '@robin-ui/hooks'
 
-import { Fade } from '../Transition'
+import { useCombinedRef, useId, useLockWindowScroll } from '@robin-ui/hooks'
+import type { DefaultProps, Size } from '@robin-ui/types'
+
 import { FocusTrap } from '../FocusTrap'
 import { Portal } from '../Portal'
+import { Fade } from '../Transition'
 
 import { Backdrop, ModalContainer, ModalPaper } from './Modal.style'
 

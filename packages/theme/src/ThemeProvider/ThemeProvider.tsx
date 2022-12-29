@@ -1,8 +1,9 @@
 import { ThemeProvider as EmThemeProvider } from '@emotion/react'
+
 import { deepmerge } from '@robin-ui/utils'
 
-import type { BaseTheme, DeepPartial, DerivedColorMode } from '../types'
 import { defaultTheme } from '../defaultTheme'
+import type { BaseTheme, DeepPartial, DerivedColorMode } from '../types'
 
 import { themeFactory } from './themeFactory'
 

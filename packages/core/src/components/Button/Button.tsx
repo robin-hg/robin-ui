@@ -1,5 +1,6 @@
-import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
 import { forwardRef, useContext } from 'react'
+
+import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
 
 import { ButtonGroupContext } from '../ButtonGroup'
 

@@ -1,5 +1,6 @@
-import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import { forwardRef } from 'react'
+
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import { clampNumber } from '@robin-ui/utils'
 
 import { Bar, Track } from './Progress.style'

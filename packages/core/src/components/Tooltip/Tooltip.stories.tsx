@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react'
 
-import { FlexBox } from '../FlexBox'
 import { Button } from '../Button'
+import { FlexBox } from '../FlexBox'
 
 import { type Props, Tooltip } from './Tooltip'
 

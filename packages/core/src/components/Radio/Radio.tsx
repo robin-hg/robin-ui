@@ -1,9 +1,10 @@
-import type { ColorToken, DefaultProps } from '@robin-ui/types'
 import { forwardRef, useContext } from 'react'
-import { useId, useUncontrolled } from '@robin-ui/hooks'
 
-import { RadioGroupContext } from '../RadioGroup'
+import { useId, useUncontrolled } from '@robin-ui/hooks'
+import type { ColorToken, DefaultProps } from '@robin-ui/types'
+
 import { ControlInput } from '../ControlInput'
+import { RadioGroupContext } from '../RadioGroup'
 
 import { Circle } from './Radio.style'
 

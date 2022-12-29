@@ -1,7 +1,7 @@
 import { isBrowser } from '@robin-ui/utils'
 
-import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 import { useEvent } from '../useEvent'
+import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
 
 type IUseEventListener = {
   <K extends keyof WindowEventMap>(eventName: K, handler: (event: WindowEventMap[K]) => void): void

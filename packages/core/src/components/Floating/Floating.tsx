@@ -1,4 +1,5 @@
 import { createContext, forwardRef, useContext, useEffect, useMemo, useRef } from 'react'
+
 import {
   type Placement,
   arrow,
@@ -8,6 +9,7 @@ import {
   shift,
   useFloating
 } from '@floating-ui/react-dom'
+
 import {
   useClickOutside,
   useCombinedRef,
@@ -15,10 +17,10 @@ import {
   useIsomorphicLayoutEffect
 } from '@robin-ui/hooks'
 
+import { FocusTrap } from '../FocusTrap'
 import { ModalContext } from '../Modal'
 import type { Paper } from '../Paper'
 import { Portal } from '../Portal'
-import { FocusTrap } from '../FocusTrap'
 
 import { Arrow, FadeContainer, FloatingElement } from './Floating.style'
 

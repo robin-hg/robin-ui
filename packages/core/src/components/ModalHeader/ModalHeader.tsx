@@ -1,11 +1,12 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef, useContext } from 'react'
-import { X } from '@robin-ui/icons'
 
-import { ModalContext } from '../Modal'
-import { FlexBox } from '../FlexBox'
-import { Text } from '../Typography'
+import { X } from '@robin-ui/icons'
+import type { DefaultProps } from '@robin-ui/types'
+
 import { Button } from '../Button'
+import { FlexBox } from '../FlexBox'
+import { ModalContext } from '../Modal'
+import { Text } from '../Typography'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {}
 

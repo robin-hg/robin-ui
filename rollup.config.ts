@@ -1,6 +1,6 @@
 import type { RollupOptions } from 'rollup'
-import { externals } from 'rollup-plugin-node-externals'
 import esbuild from 'rollup-plugin-esbuild'
+import { externals } from 'rollup-plugin-node-externals'
 
 const config: RollupOptions = {
   input: 'src/index.ts',

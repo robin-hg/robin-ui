@@ -1,12 +1,13 @@
-import type { ColorToken, DefaultProps } from '@robin-ui/types'
 import { Children, forwardRef, isValidElement, useRef } from 'react'
-import { useUncontrolled } from '@robin-ui/hooks'
-import { getFocusable } from '@robin-ui/utils'
-import { sxc } from '@robin-ui/styles'
 
+import { useUncontrolled } from '@robin-ui/hooks'
+import { sxc } from '@robin-ui/styles'
+import type { ColorToken, DefaultProps } from '@robin-ui/types'
+import { getFocusable } from '@robin-ui/utils'
+
+import { Button } from '../Button'
 import type { Props as TabPanelProps } from '../TabPanel'
 import { TransitionSwitch } from '../TransitionSwitch'
-import { Button } from '../Button'
 
 import { TabGroup, TabIndicator } from './Tabs.style'
 

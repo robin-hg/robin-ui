@@ -1,9 +1,10 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from 'react'
+
 import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
 import { ChevronDown } from '@robin-ui/icons'
 
-import { InputWrapperContext } from '../InputWrapper'
 import type { InputBox } from '../InputBox'
+import { InputWrapperContext } from '../InputWrapper'
 import { Menu } from '../Menu'
 import { MenuItem } from '../MenuItem'
 

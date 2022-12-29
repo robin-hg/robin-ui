@@ -1,11 +1,13 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from 'react'
-import NumberFormat, { type NumberFormatProps } from 'react-number-format'
-import { clampNumber } from '@robin-ui/utils'
-import { ChevronDown, ChevronUp, Minus, Plus } from '@robin-ui/icons'
 
-import { InputWrapperContext } from '../InputWrapper'
-import { InputBox } from '../InputBox'
+import NumberFormat, { type NumberFormatProps } from 'react-number-format'
+
+import { ChevronDown, ChevronUp, Minus, Plus } from '@robin-ui/icons'
+import { clampNumber } from '@robin-ui/utils'
+
 import { IconButton } from '../IconButton'
+import { InputBox } from '../InputBox'
+import { InputWrapperContext } from '../InputWrapper'
 
 import { BigStepButton, StepButtons } from './NumberInput.style'
 

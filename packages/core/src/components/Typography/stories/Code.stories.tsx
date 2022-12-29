@@ -1,8 +1,9 @@
 import type { Meta, StoryFn } from '@storybook/react'
+
 import { useTheme } from '@robin-ui/hooks'
 
-import { Code, type Props } from '../Typography'
 import { Stack } from '../../Stack'
+import { Code, type Props } from '../Typography'
 
 export default {
   title: 'Typography/Code',

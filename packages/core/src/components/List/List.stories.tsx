@@ -1,4 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react'
+
 import { Minus, Plus } from '@robin-ui/icons'
 
 import { ListItem } from '../ListItem'

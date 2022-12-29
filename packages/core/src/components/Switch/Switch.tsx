@@ -1,6 +1,7 @@
-import type { ColorToken, DefaultProps } from '@robin-ui/types'
 import { forwardRef } from 'react'
+
 import { useId, useUncontrolled } from '@robin-ui/hooks'
+import type { ColorToken, DefaultProps } from '@robin-ui/types'
 
 import { ControlInput } from '../ControlInput'
 

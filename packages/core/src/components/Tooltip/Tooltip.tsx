@@ -1,6 +1,7 @@
 import { cloneElement, forwardRef, useRef, useState } from 'react'
-import { ThemeProvider } from '@robin-ui/theme'
+
 import { useId, useKeyDown, useTheme } from '@robin-ui/hooks'
+import { ThemeProvider } from '@robin-ui/theme'
 
 import type { Floating } from '../Floating'
 

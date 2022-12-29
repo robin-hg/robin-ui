@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+
 import { LazyMotion, MotionConfig, domMax } from 'framer-motion'
+
 import { useTransition } from '@robin-ui/hooks'
 
 interface Props {

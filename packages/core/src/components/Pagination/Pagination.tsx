@@ -1,8 +1,9 @@
-import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
 import { forwardRef } from 'react'
-import { ChevronLeft, ChevronRight, MoreHorizontal } from '@robin-ui/icons'
-import { clampNumber, range } from '@robin-ui/utils'
+
 import { useUncontrolled } from '@robin-ui/hooks'
+import { ChevronLeft, ChevronRight, MoreHorizontal } from '@robin-ui/icons'
+import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
+import { clampNumber, range } from '@robin-ui/utils'
 
 import { PageButton, PaginationContainer } from './Pagination.style'
 

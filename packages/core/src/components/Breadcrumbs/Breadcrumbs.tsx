@@ -1,5 +1,6 @@
-import type { DefaultProps, SizeValue } from '@robin-ui/types'
 import { Fragment, forwardRef } from 'react'
+
+import type { DefaultProps, SizeValue } from '@robin-ui/types'
 
 import { BreadcrumbsContainer } from './Breadcrumbs.style'
 

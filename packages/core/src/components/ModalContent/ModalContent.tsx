@@ -1,5 +1,6 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef, useContext } from 'react'
+
+import type { DefaultProps } from '@robin-ui/types'
 
 import { ModalContext } from '../Modal'
 

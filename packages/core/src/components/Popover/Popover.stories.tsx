@@ -1,6 +1,7 @@
-import type { Meta, StoryFn } from '@storybook/react'
-import { useArgs } from '@storybook/client-api'
 import { useRef } from 'react'
+
+import { useArgs } from '@storybook/client-api'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Button } from '../Button'
 

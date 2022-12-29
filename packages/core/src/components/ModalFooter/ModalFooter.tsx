@@ -1,9 +1,10 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef, useContext } from 'react'
 
-import { ModalContext } from '../Modal'
-import { FlexBox } from '../FlexBox'
+import type { DefaultProps } from '@robin-ui/types'
+
 import { Button } from '../Button'
+import { FlexBox } from '../FlexBox'
+import { ModalContext } from '../Modal'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {
   closeButton?: React.ReactNode

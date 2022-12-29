@@ -1,7 +1,8 @@
-import type { ColorToken, DefaultProps } from '@robin-ui/types'
 import { forwardRef, useRef } from 'react'
+
 import { useId, useIsomorphicLayoutEffect, useUncontrolled } from '@robin-ui/hooks'
 import { Check, Minus } from '@robin-ui/icons'
+import type { ColorToken, DefaultProps } from '@robin-ui/types'
 
 import { ControlInput } from '../ControlInput'
 

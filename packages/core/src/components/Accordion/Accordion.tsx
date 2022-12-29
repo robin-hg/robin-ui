@@ -1,7 +1,8 @@
-import type { DefaultProps } from '@robin-ui/types'
 import { forwardRef, useEffect, useState } from 'react'
+
 import { useId } from '@robin-ui/hooks'
 import { ChevronDown } from '@robin-ui/icons'
+import type { DefaultProps } from '@robin-ui/types'
 
 import { Collapse } from '../Transition'
 import { Text } from '../Typography'

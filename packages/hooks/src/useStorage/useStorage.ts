@@ -1,8 +1,9 @@
-import { isBrowser, runIfFn } from '@robin-ui/utils'
 import { useState } from 'react'
 
-import { useEventListener } from '../useEventListener'
+import { isBrowser, runIfFn } from '@robin-ui/utils'
+
 import { useEvent } from '../useEvent'
+import { useEventListener } from '../useEventListener'
 
 export const useStorage = <T>(
   storageType: 'local' | 'session',
