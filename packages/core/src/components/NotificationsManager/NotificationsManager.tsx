@@ -1,6 +1,6 @@
 import type { DefaultProps } from '@robin-ui/types'
 import { AnimatePresence } from 'framer-motion'
-import React, { useMemo, useRef, useState } from 'react'
+import { createContext, useMemo, useRef, useState } from 'react'
 
 import { Notification } from '../Notification'
 import { Portal } from '../Portal'
@@ -17,7 +17,7 @@ export type Notification = {
   onClose?: () => void
 }
 
-export const NotificationsManagerContext = React.createContext<{
+export const NotificationsManagerContext = createContext<{
   managerEl?: HTMLElement | null
   addNotification?: (notification: Notification) => void
   removeNotification?: (id: string) => void

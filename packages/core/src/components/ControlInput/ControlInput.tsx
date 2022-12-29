@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { Text } from '../Typography'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'label'> {
   labelPosition?: 'left' | 'right'
 }
 
-export const ControlInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const ControlInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { label, labelFor, labelPosition = 'right', children, disabled, ...otherProps } = props
 
   return (

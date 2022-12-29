@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { TagContainer } from './Tag.style'
 
@@ -18,7 +18,7 @@ export interface Props extends DefaultProps<HTMLSpanElement, 'size'> {
   radius?: SizeValue
 }
 
-export const Tag = React.forwardRef<HTMLSpanElement, Props>((props, ref) => {
+export const Tag = forwardRef<HTMLSpanElement, Props>((props, ref) => {
   const {
     variant = 'filled',
     color = 'primary',

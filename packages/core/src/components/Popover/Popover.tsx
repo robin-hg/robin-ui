@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import { forwardRef, useEffect } from 'react'
 import { useId } from '@robin-ui/hooks'
 
 import { Floating } from '../Floating'
 
 export interface Props extends React.ComponentProps<typeof Floating> {}
 
-export const Popover = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Popover = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { role = 'dialog', trigger, open, children, ...otherProps } = props
   const _id = useId(trigger?.id)
 

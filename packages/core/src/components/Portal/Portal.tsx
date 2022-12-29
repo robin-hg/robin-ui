@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom'
+import { createPortal } from 'react-dom'
 import { useForceUpdate } from '@robin-ui/hooks'
 
 export interface Props {
@@ -15,5 +15,5 @@ export const Portal: React.FC<Props> = props => {
   const container = containerEl ?? document?.body
   useForceUpdate(true)
 
-  return container ? ReactDOM.createPortal(children, container) : null
+  return container ? createPortal(children, container) : null
 }

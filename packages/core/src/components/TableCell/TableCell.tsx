@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 
 import { TableContext } from '../Table/Table'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLTableCellElement> {
 }
 
 const TableCellFactory = (variant: 'th' | 'td') => {
-  const TableCell = React.forwardRef<HTMLTableCellElement, Props>((props, ref) => {
+  const TableCell = forwardRef<HTMLTableCellElement, Props>((props, ref) => {
     const { align, padding, children, ...otherProps } = props
     const { align: tableAlign, cellPadding: tablePadding } = useContext(TableContext)
 

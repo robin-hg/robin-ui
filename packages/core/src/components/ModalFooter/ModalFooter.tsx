@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 
 import { ModalContext } from '../Modal'
 import { FlexBox } from '../FlexBox'
@@ -9,7 +9,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {
   closeButton?: React.ReactNode
 }
 
-export const ModalFooter = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const ModalFooter = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { closeButton = 'Close', children, ...otherProps } = props
   const { onClose } = useContext(ModalContext)
 

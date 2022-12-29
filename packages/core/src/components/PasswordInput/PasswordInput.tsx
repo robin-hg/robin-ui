@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { forwardRef, useState } from 'react'
 import { Eye, EyeOff } from '@robin-ui/icons'
 
 import { TextInput } from '../TextInput'
@@ -7,7 +7,7 @@ import { IconButton } from '../IconButton'
 export interface Props
   extends Omit<React.ComponentProps<typeof TextInput>, 'children' | 'rightAdornment' | 'type'> {}
 
-export const PasswordInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const PasswordInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { ...otherProps } = props
   const [hidden, setHidden] = useState(true)
 

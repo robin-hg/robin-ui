@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { AvatarContainer } from './Avatar.style'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
   alt?: string
 }
 
-export const Avatar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Avatar = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { color = 'primary', size = 'lg', radius = 'xl', src, alt, children, ...otherProps } = props
 
   return (

@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { StyledText } from './Typography.style'
 
@@ -26,7 +26,7 @@ const variantComponentMap: Record<Variant, keyof JSX.IntrinsicElements> = {
 }
 
 const TypographyFactory = (variant: Variant) => {
-  const Typography = React.forwardRef<HTMLParagraphElement, Props>((props, ref) => {
+  const Typography = forwardRef<HTMLParagraphElement, Props>((props, ref) => {
     const {
       as,
       size = 'md',

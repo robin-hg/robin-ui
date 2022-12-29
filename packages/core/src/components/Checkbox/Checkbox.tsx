@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps } from '@robin-ui/types'
-import React, { useRef } from 'react'
+import { forwardRef, useRef } from 'react'
 import { useId, useIsomorphicLayoutEffect, useUncontrolled } from '@robin-ui/hooks'
 import { Check, Minus } from '@robin-ui/icons'
 
@@ -24,7 +24,7 @@ export interface Props
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Checkbox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Checkbox = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     color = 'primary',
     label,

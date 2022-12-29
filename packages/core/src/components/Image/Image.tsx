@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React, { useState } from 'react'
+import { forwardRef, useState } from 'react'
 import { Image as ImageIcon } from '@robin-ui/icons'
 
 import { Spinner } from '../Spinner'
@@ -18,7 +18,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   radius?: SizeValue
 }
 
-export const Image = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Image = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     src,
     alt = 'Image',

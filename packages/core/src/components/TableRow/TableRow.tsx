@@ -1,11 +1,11 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { StyledTableRow } from './TableRow.style'
 
 export interface Props extends DefaultProps<HTMLTableRowElement> {}
 
-const TableRow = React.forwardRef<HTMLTableRowElement, Props>((props, ref) => {
+const TableRow = forwardRef<HTMLTableRowElement, Props>((props, ref) => {
   const { children, ...otherProps } = props
 
   return (

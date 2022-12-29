@@ -1,9 +1,9 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React, { useMemo } from 'react'
+import { createContext, forwardRef, useMemo } from 'react'
 
 import { StyledList } from './List.style'
 
-export const ListContext = React.createContext<{
+export const ListContext = createContext<{
   marker?: React.ReactElement
 }>({})
 
@@ -15,7 +15,7 @@ export interface Props extends DefaultProps<HTMLUListElement> {
   children?: React.ReactElement | React.ReactElement[]
 }
 
-export const List = React.forwardRef<HTMLUListElement, Props>((props, ref) => {
+export const List = forwardRef<HTMLUListElement, Props>((props, ref) => {
   const {
     variant = 'unordered',
     styleType,

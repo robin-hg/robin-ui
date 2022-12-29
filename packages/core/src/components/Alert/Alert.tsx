@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 import { AlertCircle, AlertTriangle, CheckCircle, Info } from '@robin-ui/icons'
 
 import { Label } from '../Typography'
@@ -23,7 +23,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'title'> {
   radius?: SizeValue
 }
 
-export const Alert = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Alert = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     status = 'critical',
     variant = 'flat',

@@ -1,5 +1,5 @@
 import type { SizeValue } from '@robin-ui/theme'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import type { Button } from '../Button'
 
@@ -9,7 +9,7 @@ export interface Props extends Omit<React.ComponentProps<typeof Button>, 'size'>
   size?: SizeValue
 }
 
-export const IconButton = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
+export const IconButton = forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const { size = 'md', children, ...otherProps } = props
 
   return (

@@ -1,5 +1,5 @@
 import type { DefaultProps, Size } from '@robin-ui/types'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { createContext, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 import { useCombinedRef, useId, useLockWindowScroll } from '@robin-ui/hooks'
 
 import { Fade } from '../Transition'
@@ -8,7 +8,7 @@ import { Portal } from '../Portal'
 
 import { Backdrop, ModalContainer, ModalPaper } from './Modal.style'
 
-export const ModalContext = React.createContext<{
+export const ModalContext = createContext<{
   id?: string
   contentId?: string
   modalEl?: HTMLDivElement | null
@@ -22,7 +22,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
   onClose?: () => void
 }
 
-export const Modal = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Modal = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { size = 'md', open, onClose, onClick, children, ...otherProps } = props
   const [preventClose, setPreventClose] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)

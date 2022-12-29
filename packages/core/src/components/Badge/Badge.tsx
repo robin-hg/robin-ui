@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { BadgeCircle, BadgeContainer } from './Badge.style'
 
@@ -10,7 +10,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size' | 'content'> 
   content?: string | number
 }
 
-export const Badge = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Badge = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     position = 'top-end',
     color = 'primary',

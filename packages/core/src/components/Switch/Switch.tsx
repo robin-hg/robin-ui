@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 import { useId, useUncontrolled } from '@robin-ui/hooks'
 
 import { ControlInput } from '../ControlInput'
@@ -23,7 +23,7 @@ export interface Props
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Switch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Switch = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     color = 'primary',
     label,

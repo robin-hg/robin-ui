@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { PaperContainer } from './Paper.style'
 
@@ -13,7 +13,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   as?: React.ElementType
 }
 
-export const Paper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Paper = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     variant = 'elevated',
     elevation = 1,

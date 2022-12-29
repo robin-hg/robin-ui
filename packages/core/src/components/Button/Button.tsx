@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 
 import { ButtonGroupContext } from '../ButtonGroup'
 
@@ -29,7 +29,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
   as?: React.ElementType
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
+export const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const {
     as,
     variant = 'filled',

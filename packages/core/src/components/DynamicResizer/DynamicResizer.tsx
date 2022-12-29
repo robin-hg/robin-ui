@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React, { useRef } from 'react'
+import { forwardRef, useRef } from 'react'
 import { type Easing, m } from 'framer-motion'
 import { useSize, useTransition } from '@robin-ui/hooks'
 
@@ -12,7 +12,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   disableResizeWidth?: boolean
 }
 
-export const DynamicResizer = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const DynamicResizer = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { duration, ease, disableResizeHeight, disableResizeWidth, children, ...otherProps } = props
   const contentRef = useRef<HTMLDivElement>(null)
   const size = useSize(contentRef.current)

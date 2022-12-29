@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import { forwardRef, useContext, useEffect, useRef, useState } from 'react'
 import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
 import { ChevronDown } from '@robin-ui/icons'
 
@@ -32,7 +32,7 @@ export interface Props
   onChange?: (value: Item['value']) => void
 }
 
-export const Select = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Select = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     options = [],
     value,

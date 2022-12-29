@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, Size } from '@robin-ui/types'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import { forwardRef, useContext, useEffect, useRef, useState } from 'react'
 import { clampNumber } from '@robin-ui/utils'
 import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
 
@@ -28,7 +28,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'children' | 'onChan
   onChange?: (value: number) => void
 }
 
-export const Slider = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Slider = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     color = 'primary',
     size = 'md',

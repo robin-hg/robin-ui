@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { FlexBoxContainer } from './FlexBox.style'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {
   spacing?: SizeValue | [SizeValue, SizeValue]
 }
 
-export const FlexBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const FlexBox = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     direction = 'row',
     justifyContent = 'flex-start',

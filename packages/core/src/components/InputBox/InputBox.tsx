@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React, { useRef } from 'react'
+import { forwardRef, useRef } from 'react'
 import { useSize } from '@robin-ui/hooks'
 
 import { Adornment, Box } from './InputBox.style'
@@ -14,7 +14,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   disabled?: boolean
 }
 
-export const InputBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const InputBox = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { active, error, disabled, leftAdornment, rightAdornment, children, ...otherProps } = props
   const leftAdornmentRef = useRef<HTMLSpanElement>(null)
   const rightAdornmentRef = useRef<HTMLSpanElement>(null)

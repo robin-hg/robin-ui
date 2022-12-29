@@ -1,4 +1,4 @@
-import React from 'react'
+import { forwardRef } from 'react'
 import { AnimatePresence, type Easing, type MotionProps, type Variant, m } from 'framer-motion'
 import { useTransition } from '@robin-ui/hooks'
 
@@ -18,7 +18,7 @@ export interface Props extends MotionProps {
 }
 
 const TransitionFactory = (defaultAnimation?: Animation) => {
-  const BaseTransition = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const BaseTransition = forwardRef<HTMLDivElement, Props>((props, ref) => {
     const {
       in: inProp,
       variants,

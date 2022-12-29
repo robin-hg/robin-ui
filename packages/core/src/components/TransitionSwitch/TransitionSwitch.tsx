@@ -1,4 +1,4 @@
-import React from 'react'
+import { forwardRef } from 'react'
 import { AnimatePresence } from 'framer-motion'
 
 import { Collapse, Fade, Grow, type Props as TransitionProps } from '../Transition'
@@ -15,7 +15,7 @@ export interface Props extends TransitionProps {
   children?: React.ReactNode
 }
 
-export const TransitionSwitch = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const TransitionSwitch = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { currentKey, type = 'fade', children, ...otherProps } = props
 
   const Transition = defaultTransitions[type] || Fade

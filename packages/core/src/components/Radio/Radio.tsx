@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps } from '@robin-ui/types'
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 import { useId, useUncontrolled } from '@robin-ui/hooks'
 
 import { RadioGroupContext } from '../RadioGroup'
@@ -24,7 +24,7 @@ export interface Props
   onChange?: (checked: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+export const Radio = forwardRef<HTMLInputElement, Props>((props, ref) => {
   const {
     label,
     labelPosition,

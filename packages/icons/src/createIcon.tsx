@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { cloneElement, forwardRef } from 'react'
 import { useTheme } from '@robin-ui/styles'
 
 const defaultSizes = {
@@ -17,13 +17,13 @@ export interface Props extends DefaultProps<SVGElement, 'children' | 'size'> {
 }
 
 export default (icon: JSX.Element, name: string) => {
-  const Icon = React.forwardRef<SVGElement, Props>((props, ref) => {
+  const Icon = forwardRef<SVGElement, Props>((props, ref) => {
     const { color = 'inherit', size = 'md', strokeWidth = 2, sx, ...otherProps } = props
 
     const theme = useTheme()
     const colorStr = color !== 'inherit' && theme.fn.getColor(color)
 
-    return React.cloneElement(icon, {
+    return cloneElement(icon, {
       ref,
       sx: [{ color: colorStr }, sx],
       width: theme.fn.getSize(size, defaultSizes),

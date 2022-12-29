@@ -1,12 +1,12 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React, { useContext, useMemo } from 'react'
+import { createContext, forwardRef, useContext, useMemo } from 'react'
 import { useUncontrolled } from '@robin-ui/hooks'
 
 import { InputWrapperContext } from '../InputWrapper'
 
 import { RadioContainer } from './RadioGroup.style'
 
-export const RadioGroupContext = React.createContext<{
+export const RadioGroupContext = createContext<{
   name?: string
   value?: string | number
   error?: boolean
@@ -31,7 +31,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange' | 'wrap'>
   onChange?: (value?: string | number) => void
 }
 
-export const RadioGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const RadioGroup = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     direction = 'row',
     value,

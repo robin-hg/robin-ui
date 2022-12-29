@@ -1,9 +1,9 @@
 import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
-import React, { useMemo } from 'react'
+import { createContext, forwardRef, useMemo } from 'react'
 
 import { ButtonGroupContainer } from './ButtonGroup.style'
 
-export const ButtonGroupContext = React.createContext<{
+export const ButtonGroupContext = createContext<{
   groupVariant?: 'filled' | 'faded' | 'outlined' | 'text'
   groupColor?: string
   groupSize?: Size
@@ -16,7 +16,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
   radius?: SizeValue
 }
 
-export const ButtonGroup = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const ButtonGroup = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     variant = 'filled',
     color = 'primary',

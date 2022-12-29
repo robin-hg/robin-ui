@@ -1,11 +1,11 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { StyledDiv } from './ScrollContainer.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {}
 
-export const ScrollContainer = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const ScrollContainer = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { children, ...otherProps } = props
 
   return (

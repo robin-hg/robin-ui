@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 import { ChevronLeft, ChevronRight, MoreHorizontal } from '@robin-ui/icons'
 import { clampNumber, range } from '@robin-ui/utils'
 import { useUncontrolled } from '@robin-ui/hooks'
@@ -19,7 +19,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size' | 'children' 
   onChange?: (page: number) => void
 }
 
-export const Pagination = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Pagination = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     count,
     page,

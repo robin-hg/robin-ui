@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { VisuallyHidden } from '../VisuallyHidden'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
   speed?: number
 }
 
-export const Spinner = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Spinner = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { color = 'primary', size = 'md', speed = 800, children } = props
 
   return (

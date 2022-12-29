@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { StyledLink } from './Link.style'
 
@@ -19,7 +19,7 @@ export interface Props extends DefaultProps<HTMLAnchorElement, 'size'> {
   as?: React.ElementType
 }
 
-export const Link = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => {
+export const Link = forwardRef<HTMLAnchorElement, Props>((props, ref) => {
   const {
     as,
     size = 'md',

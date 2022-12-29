@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { DividerLine } from './Divider.style'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLHRElement> {
   alignLabel?: 'start' | 'center' | 'end'
 }
 
-export const Divider = React.forwardRef<HTMLHRElement, Props>((props, ref) => {
+export const Divider = forwardRef<HTMLHRElement, Props>((props, ref) => {
   const {
     orientation = 'horizontal',
     color = 'outline',

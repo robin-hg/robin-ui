@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 import { useTimeout } from '@robin-ui/hooks'
 
 import { NotificationsManagerContext } from '../NotificationsManager'
@@ -17,7 +17,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'title'> {
   onClose?: () => void
 }
 
-export const Notification = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Notification = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { icon, title, duration = 5000, managed, onClose, children, ...otherProps } = props
   const { managerEl } = useContext(NotificationsManagerContext)
 

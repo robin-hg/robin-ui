@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { GridItemContainer } from './GridItem.style'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'span'> {
   xl?: number
 }
 
-export const GridItem = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const GridItem = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { span = 1, children, ...otherProps } = props
 
   const staticSpan = typeof span === 'number'

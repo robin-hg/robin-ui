@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 import { X } from '@robin-ui/icons'
 
 import { ModalContext } from '../Modal'
@@ -9,7 +9,7 @@ import { Button } from '../Button'
 
 export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {}
 
-export const ModalHeader = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const ModalHeader = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { children, ...otherProps } = props
   const { id, onClose } = useContext(ModalContext)
 

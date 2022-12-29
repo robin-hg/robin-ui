@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { cloneElement, forwardRef, useRef, useState } from 'react'
 import { ThemeProvider } from '@robin-ui/theme'
 import { useId, useKeyDown, useTheme } from '@robin-ui/hooks'
 
@@ -11,7 +11,7 @@ export interface Props extends Omit<React.ComponentProps<typeof Floating>, 'labe
   children?: React.ReactElement
 }
 
-export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Tooltip = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     open: openOverride,
     withArrow = true,
@@ -46,7 +46,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         </TooltipContainer>
       </ThemeProvider>
       {children &&
-        React.cloneElement(children, {
+        cloneElement(children, {
           ref: targetRef,
           'aria-describedby': open ? _id : undefined,
           onKeyDown: (event: React.KeyboardEvent) => {

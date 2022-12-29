@@ -1,13 +1,13 @@
 import { useId } from '@robin-ui/hooks'
 import type { DefaultProps } from '@robin-ui/types'
-import React, { useMemo } from 'react'
+import { createContext, forwardRef, useMemo } from 'react'
 
 import { Stack } from '../Stack'
 import { Text } from '../Typography'
 
 import { Description, Label } from './InputWrapper.style'
 
-export const InputWrapperContext = React.createContext<{
+export const InputWrapperContext = createContext<{
   labelId?: string
   labelFor?: string
   error?: boolean
@@ -30,7 +30,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   disabled?: boolean
 }
 
-export const InputWrapper = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const InputWrapper = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     label,
     labelId: labelIdOverride,

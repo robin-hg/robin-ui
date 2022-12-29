@@ -1,7 +1,7 @@
 import type { ColorToken, DefaultProps, SizeValue } from '@robin-ui/types'
-import React, { useMemo } from 'react'
+import { createContext, forwardRef, useMemo } from 'react'
 
-export const TableContext = React.createContext<{
+export const TableContext = createContext<{
   align?: 'left' | 'center' | 'right'
   cellPadding?: SizeValue | SizeValue[]
 }>({})
@@ -16,7 +16,7 @@ export interface Props extends DefaultProps<HTMLTableElement, 'cellPadding'> {
   radius?: SizeValue
 }
 
-export const Table = React.forwardRef<HTMLTableElement, Props>((props, ref) => {
+export const Table = forwardRef<HTMLTableElement, Props>((props, ref) => {
   const { align = 'left', cellPadding = 'sm', radius = 'md', children, ...otherProps } = props
 
   const ctxValue = useMemo(() => ({ align, cellPadding }), [align, cellPadding])

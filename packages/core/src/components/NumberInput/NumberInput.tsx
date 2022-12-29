@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import { forwardRef, useContext, useEffect, useRef, useState } from 'react'
 import NumberFormat, { type NumberFormatProps } from 'react-number-format'
 import { clampNumber } from '@robin-ui/utils'
 import { ChevronDown, ChevronUp, Minus, Plus } from '@robin-ui/icons'
@@ -33,7 +33,7 @@ export interface Props
   numberFormatProps?: NumberFormatProps
 }
 
-export const NumberInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     value,
     defaultValue,

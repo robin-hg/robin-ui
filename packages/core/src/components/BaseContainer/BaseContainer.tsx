@@ -1,5 +1,5 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { StyledBaseContainer } from './BaseContainer.style'
 
@@ -7,7 +7,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   as?: React.ElementType
 }
 
-export const BaseContainer = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const BaseContainer = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { as, children, ...otherProps } = props
 
   return (

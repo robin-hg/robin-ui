@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { SkeletonContainer } from './Skeleton.style'
 
@@ -9,7 +9,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   radius?: SizeValue
 }
 
-export const Skeleton = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Skeleton = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { animated = true, loading = true, radius = 'sm', children, ...otherProps } = props
 
   return (

@@ -1,11 +1,11 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { HiddenContainer } from './VisuallyHidden.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {}
 
-export const VisuallyHidden = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const VisuallyHidden = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { children, ...otherProps } = props
 
   return (

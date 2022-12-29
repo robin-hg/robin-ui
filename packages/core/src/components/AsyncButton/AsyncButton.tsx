@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { forwardRef, useContext, useState } from 'react'
 import { wait } from '@robin-ui/utils'
 import { Check, X } from '@robin-ui/icons'
 
@@ -23,7 +23,7 @@ export interface Props extends React.ComponentProps<typeof Button> {
   onError?: (error: unknown) => Promise<void> | void
 }
 
-export const AsyncButton = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
+export const AsyncButton = forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const [state, setState] = useState<States>('ready')
   const {
     spinnerPosition = 'right',

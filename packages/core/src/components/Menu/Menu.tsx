@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { forwardRef, useRef } from 'react'
 import { getFocusable } from '@robin-ui/utils'
 import { useCombinedRef } from '@robin-ui/hooks'
 
@@ -22,7 +22,7 @@ export interface Props extends React.ComponentProps<typeof Popover> {
   onClose?: () => void
 }
 
-export const Menu = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Menu = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     role = 'menu',
     minWidth = '20rem',

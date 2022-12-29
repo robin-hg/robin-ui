@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 import { clampNumber } from '@robin-ui/utils'
 
 import { Bar, Track } from './Progress.style'
@@ -20,7 +20,7 @@ export interface Props extends DefaultProps<HTMLDivElement> {
   noAria?: boolean
 }
 
-export const Progress = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Progress = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     value = 0,
     color = 'primary',

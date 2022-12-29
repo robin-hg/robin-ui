@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 
 import { InputWrapperContext } from '../InputWrapper'
 import { InputBox } from '../InputBox'
@@ -20,7 +20,7 @@ export interface Props extends Omit<React.ComponentProps<typeof InputBox>, 'chil
   inputProps?: React.HTMLProps<HTMLInputElement>
 }
 
-export const TextInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const TextInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     value,
     defaultValue,

@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React, { useContext } from 'react'
+import { forwardRef, useContext } from 'react'
 
 import { TableContext } from '../Table/Table'
 
@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLTableCaptionElement> {
   captionSide?: 'top' | 'bottom'
 }
 
-export const TableCaption = React.forwardRef<HTMLTableCaptionElement, Props>((props, ref) => {
+export const TableCaption = forwardRef<HTMLTableCaptionElement, Props>((props, ref) => {
   const { align, padding, captionSide = 'bottom', children, ...otherProps } = props
   const { cellPadding: tablePadding } = useContext(TableContext)
 

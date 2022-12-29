@@ -1,4 +1,4 @@
-import React from 'react'
+import { forwardRef } from 'react'
 
 import type { Button } from '../Button'
 
@@ -9,7 +9,7 @@ export interface Props extends React.ComponentProps<typeof Button> {
   disabled?: boolean
 }
 
-export const MenuItem = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
+export const MenuItem = forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const { active, disabled, children, ...otherProps } = props
 
   return (

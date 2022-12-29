@@ -1,5 +1,5 @@
 import type { ColorToken, DefaultProps } from '@robin-ui/types'
-import React, { Children, isValidElement, useRef } from 'react'
+import { Children, forwardRef, isValidElement, useRef } from 'react'
 import { useUncontrolled } from '@robin-ui/hooks'
 import { getFocusable } from '@robin-ui/utils'
 import { sxc } from '@robin-ui/styles'
@@ -18,7 +18,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'onChange'> {
   children?: React.ReactElement | React.ReactElement[]
 }
 
-export const Tabs = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Tabs = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { color = 'primary', activeTab, defaultTab = 0, onChange, children, ...otherProps } = props
   const tabGroupRef = useRef<HTMLDivElement>(null)
 

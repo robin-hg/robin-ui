@@ -1,12 +1,12 @@
 import type { DefaultProps } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { StyledTableSection } from './TableSection.style'
 
 export interface Props extends DefaultProps<HTMLTableSectionElement> {}
 
 const TableSectionFactory = (variant: 'thead' | 'tbody' | 'tfoot') => {
-  const TableSection = React.forwardRef<HTMLTableSectionElement, Props>((props, ref) => {
+  const TableSection = forwardRef<HTMLTableSectionElement, Props>((props, ref) => {
     const { children, ...otherProps } = props
 
     return (

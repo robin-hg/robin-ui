@@ -1,5 +1,5 @@
 import type { DefaultProps, SizeValue } from '@robin-ui/types'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { StackContainer } from './Stack.style'
 
@@ -8,7 +8,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'wrap'> {
   direction?: React.CSSProperties['flexDirection']
 }
 
-export const Stack = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Stack = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { spacing, direction = 'column', children, ...otherProps } = props
 
   return (

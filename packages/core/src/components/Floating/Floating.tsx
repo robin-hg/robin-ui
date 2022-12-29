@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useRef } from 'react'
+import { createContext, forwardRef, useContext, useEffect, useMemo, useRef } from 'react'
 import {
   type Placement,
   arrow,
@@ -22,7 +22,7 @@ import { FocusTrap } from '../FocusTrap'
 
 import { Arrow, FadeContainer, FloatingElement } from './Floating.style'
 
-export const FloatingContext = React.createContext<{
+export const FloatingContext = createContext<{
   floatinghEl?: HTMLElement | null
 }>({})
 
@@ -37,7 +37,7 @@ export interface Props extends React.ComponentProps<typeof Paper> {
   onClose?: () => void
 }
 
-export const Floating = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Floating = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     trigger,
     open,
