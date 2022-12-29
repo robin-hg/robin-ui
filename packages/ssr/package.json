@@ -1,0 +1,43 @@
+{
+  "name": "@robin-ui/ssr",
+  "version": "0.4.0",
+  "author": "Robin Hong <robinh.jsx@gmail.com>",
+  "description": "Utilities for server side rendering",
+  "license": "MIT",
+  "homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinh-jsx/robin-ui",
+    "directory": "packages/ssr"
+  },
+  "keywords": [
+    "library",
+    "robin ui",
+    "ssr"
+  ],
+  "main": "src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist cache",
+    "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
+    "build:bundle": "rollup -c --configPlugin rollup-plugin-esbuild",
+    "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
+  },
+  "publishConfig": {
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts"
+  },
+  "peerDependencies": {
+    "@emotion/cache": "^11",
+    "@emotion/server": "^11"
+  },
+  "devDependencies": {
+    "@emotion/cache": "^11.10.5",
+    "@emotion/server": "^11.10.0"
+  }
+}

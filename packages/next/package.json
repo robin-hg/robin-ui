@@ -1,0 +1,49 @@
+{
+  "name": "@robin-ui/next",
+  "version": "0.4.0",
+  "author": "Robin Hong <robinh.jsx@gmail.com>",
+  "description": "Next.js integration for Robin UI",
+  "license": "MIT",
+  "homepage": "https://github.com/robinh-jsx/robin-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinh-jsx/robin-ui",
+    "directory": "packages/next"
+  },
+  "keywords": [
+    "library",
+    "robin ui",
+    "next",
+    "nextjs"
+  ],
+  "main": "src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist cache",
+    "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
+    "build:bundle": "rollup -c --configPlugin rollup-plugin-esbuild",
+    "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
+  },
+  "publishConfig": {
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts"
+  },
+  "dependencies": {
+    "@robin-ui/ssr": "workspace:*",
+    "html-react-parser": "^3.0.6"
+  },
+  "peerDependencies": {
+    "next": "^13"
+  },
+  "devDependencies": {
+    "@emotion/cache": "^11.10.5",
+    "next": "^13.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

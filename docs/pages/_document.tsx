@@ -1,15 +1,20 @@
-import { Head, Html, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { createGetInitialProps } from '@robin-ui/next'
 
-export const Document = () => {
-  return (
-    <Html lang="en">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+const getInitialProps = createGetInitialProps()
+
+export default class AppDocument extends Document {
+  static getInitialProps = getInitialProps
+
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
 }
-
-export default Document

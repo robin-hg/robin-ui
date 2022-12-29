@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.prod.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "declarationDir": "dist/types",
+    "tsBuildInfoFile": "cache/tsconfig.tsbuildinfo"
+  },
+  "include": ["src"]
+}
