@@ -107,6 +107,7 @@ importers:
   docs:
     specifiers:
       '@next/font': 13.1.1
+      '@robin-ui/core': workspace:*
       '@robin-ui/next': workspace:*
       '@types/node': ^18.11.9
       '@types/react': ^18.0.26
@@ -119,6 +120,7 @@ importers:
       typescript: 4.9.4
     dependencies:
       '@next/font': 13.1.1
+      '@robin-ui/core': link:../packages/core
       '@robin-ui/next': link:../packages/next
       '@types/node': 18.11.17
       '@types/react': 18.0.26

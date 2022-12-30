@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@robin-ui/core": "workspace:*",
     "@robin-ui/next": "workspace:*",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.26",

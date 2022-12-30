@@ -1,6 +1,8 @@
+import { Inter } from '@next/font/google'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+
+import { Button } from '@robin-ui/core'
 
 import styles from '../styles/Home.module.css'
 
@@ -17,6 +19,7 @@ const Home = () => {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
+          <Button>Button</Button>
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.tsx</code>

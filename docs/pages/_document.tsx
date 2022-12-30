@@ -1,4 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
+
 import { createGetInitialProps } from '@robin-ui/next'
 
 const getInitialProps = createGetInitialProps()
