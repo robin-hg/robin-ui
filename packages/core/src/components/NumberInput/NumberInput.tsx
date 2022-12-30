@@ -1,6 +1,6 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from 'react'
 
-import NumberFormat, { type NumberFormatProps } from 'react-number-format'
+import { NumericFormat, type NumericFormatProps } from 'react-number-format'
 
 import { ChevronDown, ChevronUp, Minus, Plus } from '@robin-ui/icons'
 import { clampNumber } from '@robin-ui/utils'
@@ -32,7 +32,7 @@ export interface Props
   onChange?: (values: { value: string; formattedValue: string }) => void
 
   // sub element props
-  numberFormatProps?: NumberFormatProps
+  numberFormatProps?: NumericFormatProps
 }
 
 export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
@@ -175,7 +175,7 @@ export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
         </>
       }
       {...otherProps}>
-      <NumberFormat
+      <NumericFormat
         getInputRef={inputRef}
         id={labelFor ?? id}
         inputMode={inputMode}
@@ -185,7 +185,7 @@ export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        isNumericString
+        valueIsNumericString
         onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
           switch (event.key) {
             case 'ArrowUp': {
