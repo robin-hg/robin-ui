@@ -1,11 +1,11 @@
 import { useArgs } from '@storybook/client-api'
 import type { Meta, StoryFn } from '@storybook/react'
 
-import { NumberInput, type Props } from './NumberInput'
+import { NumericInput, type Props } from './NumericInput'
 
 export default {
-  title: 'Inputs/NumberInput',
-  component: NumberInput,
+  title: 'Inputs/NumericInput',
+  component: NumericInput,
   args: {
     placeholder: 'Placeholder',
     value: ''
@@ -18,7 +18,7 @@ export default {
 export const Default: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()
   return (
-    <NumberInput
+    <NumericInput
       {...args}
       onChange={values => {
         args.onChange?.(values)

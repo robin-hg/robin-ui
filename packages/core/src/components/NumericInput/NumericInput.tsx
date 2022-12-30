@@ -9,7 +9,7 @@ import { IconButton } from '../IconButton'
 import { InputBox } from '../InputBox'
 import { InputWrapperContext } from '../InputWrapper'
 
-import { BigStepButton, StepButtons } from './NumberInput.style'
+import { BigStepButton, StepButtons } from './NumericInput.style'
 
 export interface Props
   extends Omit<React.ComponentProps<typeof InputBox>, 'children' | 'onChange'> {
@@ -19,7 +19,6 @@ export interface Props
   min?: number
   max?: number
   step?: number
-  precision?: number
   showControl?: boolean | 'big'
 
   // state props
@@ -32,10 +31,15 @@ export interface Props
   onChange?: (values: { value: string; formattedValue: string }) => void
 
   // sub element props
+  allowLeadingZeros?: NumericFormatProps['allowLeadingZeros']
+  allowNegative?: NumericFormatProps['allowNegative']
+  decimalScale?: NumericFormatProps['decimalScale']
+  thousandSeparator?: NumericFormatProps['thousandSeparator']
+  thousandsGroupStyle?: NumericFormatProps['thousandsGroupStyle']
   numberFormatProps?: NumericFormatProps
 }
 
-export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const NumericInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     value,
     defaultValue,
@@ -43,7 +47,6 @@ export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
     min,
     max,
     step = 1,
-    precision,
     showControl,
     leftAdornment,
     rightAdornment,
@@ -55,6 +58,11 @@ export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
     id,
     name,
     inputMode = 'decimal',
+    allowLeadingZeros,
+    allowNegative,
+    decimalScale,
+    thousandSeparator,
+    thousandsGroupStyle,
     numberFormatProps,
     ...otherProps
   } = props
@@ -209,11 +217,15 @@ export const NumberInput = forwardRef<HTMLDivElement, Props>((props, ref) => {
           const numberValue = isNaN(parsedNumber) ? 0 : parsedNumber
           setInternalValue(clampNumber(numberValue, min, max).toString())
         }}
-        decimalScale={precision}
+        allowLeadingZeros={allowLeadingZeros}
+        allowNegative={allowNegative}
+        decimalScale={decimalScale}
+        thousandSeparator={thousandSeparator}
+        thousandsGroupStyle={thousandsGroupStyle}
         {...numberFormatProps}
       />
     </InputBox>
   )
 })
 
-NumberInput.displayName = 'NumberInput'
+NumericInput.displayName = 'NumericInput'
