@@ -26,9 +26,11 @@ $ yarn add @robin-ui/core @emotion/react @emotion/styled framer-motion
 
 - `@robin-ui/core` - Core components library
 - `@robin-ui/hooks` - A collection of handy React hooks
-- `@robin-ui/icons` - [Feather](https://feathericons.com/) based icon library
-- `@robin-ui/styles` - [Emotion](https://emotion.sh/) based css-in-js solution with built in `sx` prop support
-- `@robin-ui/theme` - Default theme configuration with dark mode support
+- `@robin-ui/icons` - [Feather](https://feathericons.com/) based React icon library
+- `@robin-ui/next` - [Next.js](https://nextjs.org/) integration for server side rendering
+- `@robin-ui/ssr` - Utility functions for server side rendering
+- `@robin-ui/styles` - [Emotion](https://emotion.sh/) based css-in-js solution
+- `@robin-ui/theme` - Theme configuration with dark mode + dynamic color support
 - `@robin-ui/utils` - A collection of handy utility functions
 
 ## License
