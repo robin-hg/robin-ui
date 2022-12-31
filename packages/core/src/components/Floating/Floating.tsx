@@ -102,6 +102,8 @@ export const Floating = forwardRef<HTMLDivElement, Props>((props, ref) => {
     return null
   }
 
+  const { surfaceColor = 'base', tint = 'tint' } = otherProps
+
   return (
     <Portal container={floatinghEl ?? modalEl ?? undefined}>
       <FadeContainer in={open} duration={duration} unmountOnExit>
@@ -126,6 +128,8 @@ export const Floating = forwardRef<HTMLDivElement, Props>((props, ref) => {
                   top: arrowY ? `${arrowY}px` : undefined
                 }}
                 $placement={finalPlacement}
+                $surfaceColor={surfaceColor}
+                $tint={tint}
               />
             )}
           </FloatingElement>

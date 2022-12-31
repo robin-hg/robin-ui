@@ -1,6 +1,7 @@
 import type { Placement } from '@floating-ui/react-dom'
 
 import { styled } from '@robin-ui/styles'
+import type { ColorToken } from '@robin-ui/types'
 
 import { Paper } from '../Paper'
 import { Fade } from '../Transition'
@@ -16,13 +17,19 @@ export const FadeContainer = styled(Fade)({
 
 interface FloatingElementProps {
   $placement: Placement
+  $surfaceColor: 'base' | 'variant'
+  $tint: ColorToken
 }
 
 export const Arrow = styled.span<FloatingElementProps>(
-  ({ theme }) => ({
+  ({ theme, $surfaceColor, $tint }) => ({
     position: 'absolute',
     zIndex: -1,
-    border: `0.4rem solid ${theme.palette.surface.base}`,
+    border: `0.4rem solid ${theme.fn.getMixedColor(
+      `surface.${$surfaceColor}`,
+      $tint,
+      'surfaceTint'
+    )}`,
     transform: 'rotate(45deg)'
   }),
   ({ $placement }) => {
