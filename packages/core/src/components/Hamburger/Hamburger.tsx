@@ -14,7 +14,13 @@ export interface Props extends Omit<React.ComponentProps<typeof IconButton>, 'ch
 export const Hamburger = forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const { open, size = 'md', color = 'surface.onBase', variant = 'text', ...otherProps } = props
   return (
-    <StyledButton ref={ref} size={size} color={color} variant={variant} {...otherProps}>
+    <StyledButton
+      ref={ref}
+      size={size}
+      color={color}
+      variant={variant}
+      aria-label="Menu"
+      {...otherProps}>
       <Lines $open={!!open} $size={size}>
         <span />
       </Lines>
