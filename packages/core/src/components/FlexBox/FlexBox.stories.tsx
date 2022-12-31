@@ -18,8 +18,7 @@ export default {
   argTypes: {
     direction: { control: { type: 'text' } },
     justifyContent: { control: { type: 'text' } },
-    alignItems: { control: { type: 'text' } },
-    spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+    alignItems: { control: { type: 'text' } }
   }
 } satisfies Meta<Props>
 

@@ -17,9 +17,6 @@ export default {
     size: 'md',
     variant: 'filled',
     color: 'primary'
-  },
-  argTypes: {
-    size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 } satisfies Meta<Props>
 

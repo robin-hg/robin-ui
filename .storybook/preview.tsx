@@ -1,4 +1,4 @@
-import type { Decorator } from '@storybook/react'
+import type { Decorator, Parameters } from '@storybook/react'
 import React from 'react'
 import { themes } from '@storybook/theming'
 import { useDarkMode } from 'storybook-dark-mode'
@@ -10,6 +10,40 @@ import '@fontsource/noto-sans/600.css'
 import '@fontsource/noto-serif/400.css'
 import '@fontsource/noto-serif/700.css'
 import '@fontsource/noto-sans-mono/400.css'
+
+export const argTypes = {
+  sx: { table: { disable: true } },
+  as: { table: { disable: true } },
+  children: { table: { disable: true } },
+  size: {
+    control: { type: 'radio' },
+    options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    if: { arg: 'size' }
+  },
+  radius: {
+    control: { type: 'radio' },
+    options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    if: { arg: 'radius' }
+  },
+  spacing: {
+    control: { type: 'radio' },
+    options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    if: { arg: 'spacing' }
+  },
+  thickness: {
+    control: { type: 'radio' },
+    options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    if: { arg: 'thickness' }
+  },
+  color: {
+    control: { type: 'color' },
+    if: { arg: 'color' }
+  },
+  highlight: {
+    control: { type: 'color' },
+    if: { arg: 'highlight' }
+  }
+}
 
 export const parameters = {
   darkMode: {

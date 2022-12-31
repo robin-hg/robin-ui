@@ -12,9 +12,6 @@ export default {
   args: {
     spacing: 'md',
     direction: 'column'
-  },
-  argTypes: {
-    spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 } satisfies Meta<Props>
 

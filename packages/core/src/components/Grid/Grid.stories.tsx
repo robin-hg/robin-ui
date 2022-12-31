@@ -13,8 +13,7 @@ export default {
     spacing: 'md'
   },
   argTypes: {
-    columns: { control: 'number' },
-    spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+    columns: { control: 'number' }
   }
 } satisfies Meta<Props>
 

@@ -12,8 +12,7 @@ export default {
     spacing: 'md'
   },
   argTypes: {
-    separator: { control: { type: 'text' } },
-    spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+    separator: { control: { type: 'text' } }
   }
 } satisfies Meta<Props>
 

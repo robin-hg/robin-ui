@@ -9,9 +9,6 @@ export default {
     radius: 'sm',
     animated: true,
     loading: true
-  },
-  argTypes: {
-    radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 } satisfies Meta<Props>
 

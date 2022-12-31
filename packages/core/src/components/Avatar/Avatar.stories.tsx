@@ -11,10 +11,6 @@ export default {
     radius: 'xl',
     src: 'https://bit.ly/dan-abramov',
     alt: 'Dan Abramov'
-  },
-  argTypes: {
-    size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-    radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 } satisfies Meta<Props>
 

@@ -17,8 +17,7 @@ export default {
     position: {
       control: { type: 'radio' },
       options: ['top-start', 'top-end', 'bottom-start', 'bottom-end']
-    },
-    size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+    }
   }
 } satisfies Meta<Props>
 

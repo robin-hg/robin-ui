@@ -16,9 +16,7 @@ export default {
   },
   argTypes: {
     value: { control: { type: 'range', min: 0, max: 100, step: 1 } },
-    trackColor: { control: 'color' },
-    thickness: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-    radius: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+    trackColor: { control: 'color' }
   }
 } satisfies Meta<Props>
 

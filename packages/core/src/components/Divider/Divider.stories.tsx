@@ -13,8 +13,7 @@ export default {
     orientation: 'horizontal'
   },
   argTypes: {
-    thickness: { control: { type: 'range', min: 1, max: 6, step: 1 } },
-    spacing: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+    thickness: { control: { type: 'range', min: 1, max: 6, step: 1 } }
   }
 } satisfies Meta<Props>
 

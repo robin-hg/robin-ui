@@ -12,9 +12,6 @@ export default {
     siblings: 1,
     size: 'md',
     align: 'center'
-  },
-  argTypes: {
-    size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 } satisfies Meta<Props>
 

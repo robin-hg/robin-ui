@@ -7,11 +7,11 @@ export default {
   title: 'Inputs/Slider',
   component: Slider,
   args: {
-    value: 0
+    value: 0,
+    size: 'md'
   },
   argTypes: {
-    value: { control: { type: 'range', min: 0, max: 100, step: 1 } },
-    size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg', 'xl'] }
+    value: { control: { type: 'range', min: 0, max: 100, step: 1 } }
   }
 } satisfies Meta<Props>
 
