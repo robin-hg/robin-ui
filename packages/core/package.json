@@ -32,7 +32,7 @@
     "build:types": "tsc -p ./tsconfig.prod.json --emitDeclarationOnly"
   },
   "dependencies": {
-    "@floating-ui/react-dom": "^1.1.0",
+    "@floating-ui/react-dom": "^1.1.1",
     "@robin-ui/hooks": "workspace:*",
     "@robin-ui/icons": "workspace:*",
     "@robin-ui/styles": "workspace:*",
