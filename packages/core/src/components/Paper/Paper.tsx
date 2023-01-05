@@ -7,7 +7,7 @@ import { PaperContainer } from './Paper.style'
 export interface Props extends DefaultProps<HTMLDivElement> {
   variant?: 'flat' | 'elevated' | 'outlined'
   elevation?: number
-  surfaceColor?: 'base' | 'variant'
+  surfaceColor?: 'background' | 'base' | 'variant'
   tint?: ColorToken
   padding?: SizeValue | SizeValue[]
   radius?: SizeValue

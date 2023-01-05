@@ -5,7 +5,7 @@ import { BaseContainer } from '../BaseContainer'
 
 interface PaperContainerProps {
   $variant: 'flat' | 'elevated' | 'outlined'
-  $surfaceColor: 'base' | 'variant'
+  $surfaceColor: 'background' | 'base' | 'variant'
   $tint: ColorToken
   $elevation: number
   $padding: SizeValue | SizeValue[]
@@ -18,7 +18,11 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
     zIndex: 0,
     boxSizing: 'border-box',
     overflow: 'hidden',
-    background: theme.fn.getMixedColor(`surface.${$surfaceColor}`, $tint, 'surfaceTint'),
+    background: theme.fn.getMixedColor(
+      $surfaceColor === 'background' ? 'background' : `surface.${$surfaceColor}`,
+      $tint,
+      'surfaceTint'
+    ),
     color: theme.fn.getOnColor(`surface.${$surfaceColor}`),
     border: '0.1rem solid transparent',
     borderRadius: theme.fn.getSize($radius, theme.radius),
