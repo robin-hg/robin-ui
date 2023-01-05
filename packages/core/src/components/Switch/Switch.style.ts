@@ -32,7 +32,7 @@ export const Box = styled.input<BoxProps>(
   }),
   ({ theme, checked, $color, $error }) => {
     const color = $error ? (checked ? 'critical' : 'critical.variant') : $color
-    const onColor = theme.fn.getOnColor(checked ? color : 'surface.base')
+    const onColor = theme.fn.getOnColor(checked ? color : 'surface.onVariant')
     const borderColor = $error ? 'critical' : color
 
     return {

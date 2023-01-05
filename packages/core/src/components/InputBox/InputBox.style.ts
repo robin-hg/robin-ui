@@ -3,13 +3,14 @@ import { styled } from '@robin-ui/styles'
 import { BaseContainer } from '../BaseContainer'
 
 interface BoxProps {
+  $variant: 'flat' | 'outlined'
   $state: 'disabled' | 'error' | 'active' | 'none'
   $leftPadding?: number
   $rightPadding?: number
 }
 
 export const Box = styled(BaseContainer)<BoxProps>(
-  ({ theme, $leftPadding, $rightPadding }) => ({
+  ({ theme, $variant, $leftPadding, $rightPadding }) => ({
     position: 'relative',
     width: '100%',
     color: theme.palette.surface.onBase,
@@ -23,7 +24,7 @@ export const Box = styled(BaseContainer)<BoxProps>(
       lineHeight: '1em',
       background: theme.fn.getMixedColor('surface.base', 'tint', 'surfaceTint'),
       color: 'inherit',
-      border: `0.1rem solid ${theme.palette.outline}`,
+      border: `0.1rem solid ${$variant === 'flat' ? 'transparent' : theme.palette.outline}`,
       borderRadius: theme.radius.sm,
       outline: 'none',
       transition: theme.fn.getTransition(),
@@ -79,7 +80,8 @@ export const Adornment = styled.span<AdornmentProps>(
     alignItems: 'center',
     justifyContent: 'center',
     gap: theme.spacing.sm,
-    padding: theme.fn.getSpacing([0, 'sm'])
+    padding: theme.fn.getSpacing([0, 'sm']),
+    color: `${theme.fn.getAlphaColor('surface.onBase', 0.6)}`
   }),
   ({ $position }) =>
     ({

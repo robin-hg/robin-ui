@@ -13,7 +13,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size' | 'children' 
   defaultPage?: number
   siblings?: number
   align?: 'left' | 'right' | 'center'
-  variant?: 'filled' | 'faded' | 'outlined' | 'text'
+  variant?: 'flat' | 'faded' | 'outlined' | 'text'
   color?: ColorToken
   size?: SizeValue
   radius?: SizeValue
@@ -27,7 +27,7 @@ export const Pagination = forwardRef<HTMLDivElement, Props>((props, ref) => {
     defaultPage = 1,
     siblings = 1,
     align = 'center',
-    variant = 'filled',
+    variant = 'flat',
     color = 'primary',
     size = 'md',
     radius = 'sm',

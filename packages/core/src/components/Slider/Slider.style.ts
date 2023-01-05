@@ -54,17 +54,21 @@ export const SliderThumb = styled.div<SliderThumbProps>(({ theme, $size, $color 
   borderRadius: theme.radius.xl,
   transition: theme.fn.getTransition(['background', 'border', 'outline']),
   outline: '0.2rem solid transparent',
-  background: theme.palette.surface.base,
+  background: theme.palette.surface.onVariant,
   '&:hover': {
-    background: theme.fn.getMixedColor('surface.onBase', $color, 'hover')
+    background: theme.fn.getMixedColor('primary.variant', $color, 'hover')
   },
   '&:focus-visible': {
-    background: theme.fn.getMixedColor('surface.onBase', $color, 'focus')
+    background: theme.fn.getMixedColor('primary.variant', $color, 'focus')
   },
   '&:active': {
-    background: theme.fn.getMixedColor('surface.onBase', $color, 'active')
+    background: theme.fn.getMixedColor('primary.variant', $color, 'active')
   },
   '&[disabled]': {
-    background: `${theme.fn.getMixedColor('surface.onBase', 'surface.base', 'disabled')} !important`
+    background: `${theme.fn.getMixedColor(
+      'surface.onVariant',
+      'surface.variant',
+      'disabled'
+    )} !important`
   }
 }))

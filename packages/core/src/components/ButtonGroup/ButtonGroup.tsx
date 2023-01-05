@@ -5,13 +5,13 @@ import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
 import { ButtonGroupContainer } from './ButtonGroup.style'
 
 export const ButtonGroupContext = createContext<{
-  groupVariant?: 'filled' | 'faded' | 'outlined' | 'text'
+  groupVariant?: 'flat' | 'faded' | 'outlined' | 'text'
   groupColor?: string
   groupSize?: Size
 }>({})
 
 export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
-  variant?: 'filled' | 'faded' | 'outlined' | 'text'
+  variant?: 'flat' | 'faded' | 'outlined' | 'text'
   color?: ColorToken
   size?: Size
   radius?: SizeValue
@@ -19,7 +19,7 @@ export interface Props extends DefaultProps<HTMLDivElement, 'size'> {
 
 export const ButtonGroup = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
-    variant = 'filled',
+    variant = 'flat',
     color = 'primary',
     size = 'md',
     radius = 'sm',

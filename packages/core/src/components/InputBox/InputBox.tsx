@@ -6,6 +6,7 @@ import type { DefaultProps } from '@robin-ui/types'
 import { Adornment, Box } from './InputBox.style'
 
 export interface Props extends DefaultProps<HTMLDivElement> {
+  variant?: 'flat' | 'outlined'
   leftAdornment?: React.ReactNode
   rightAdornment?: React.ReactNode
 
@@ -16,7 +17,16 @@ export interface Props extends DefaultProps<HTMLDivElement> {
 }
 
 export const InputBox = forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { active, error, disabled, leftAdornment, rightAdornment, children, ...otherProps } = props
+  const {
+    variant = 'flat',
+    active,
+    error,
+    disabled,
+    leftAdornment,
+    rightAdornment,
+    children,
+    ...otherProps
+  } = props
   const leftAdornmentRef = useRef<HTMLSpanElement>(null)
   const rightAdornmentRef = useRef<HTMLSpanElement>(null)
   const leftAdornmentSize = useSize(leftAdornmentRef.current)
@@ -27,6 +37,7 @@ export const InputBox = forwardRef<HTMLDivElement, Props>((props, ref) => {
   return (
     <Box
       ref={ref}
+      $variant={variant}
       $state={state}
       $leftPadding={leftAdornmentSize?.width}
       $rightPadding={rightAdornmentSize?.width}

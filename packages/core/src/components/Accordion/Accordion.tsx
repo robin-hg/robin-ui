@@ -21,6 +21,9 @@ export interface Props extends DefaultProps<HTMLDivElement, 'summary' | 'title'>
 
   /** Chevron position */
   chevronPosition?: 'left' | 'right'
+
+  /** Hide border */
+  borderless?: boolean
 }
 
 export const Accordion = forwardRef<HTMLDivElement, Props>((props, ref) => {
@@ -29,6 +32,7 @@ export const Accordion = forwardRef<HTMLDivElement, Props>((props, ref) => {
     disabled,
     title,
     chevronPosition = 'left',
+    borderless,
     children,
     ...otherProps
   } = props
@@ -51,7 +55,7 @@ export const Accordion = forwardRef<HTMLDivElement, Props>((props, ref) => {
   }
 
   return (
-    <AccordionContainer ref={ref} {...otherProps}>
+    <AccordionContainer ref={ref} $borderless={!!borderless} {...otherProps}>
       <AccordionSummary
         role="button"
         $open={open}

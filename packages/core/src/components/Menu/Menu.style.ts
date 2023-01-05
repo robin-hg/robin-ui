@@ -10,6 +10,7 @@ interface MenuProps {
 export const StyledMenu = styled(Popover)<MenuProps>(({ theme, $minWidth, $maxHeight }) => ({
   minWidth: $minWidth,
   maxHeight: $maxHeight,
+  overflow: 'hidden',
   '& > div': {
     padding: theme.spacing.xs
   }

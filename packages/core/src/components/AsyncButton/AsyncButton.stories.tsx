@@ -15,7 +15,7 @@ export default {
     completeDuration: 1000,
     errorDuration: 1000,
     size: 'md',
-    variant: 'filled',
+    variant: 'flat',
     color: 'primary'
   }
 } satisfies Meta<Props>

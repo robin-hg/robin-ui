@@ -5,7 +5,7 @@ import type { ColorToken, DefaultProps, Size, SizeValue } from '@robin-ui/types'
 import { TagContainer } from './Tag.style'
 
 export interface Props extends DefaultProps<HTMLSpanElement, 'size'> {
-  variant?: 'filled' | 'faded' | 'outlined'
+  variant?: 'flat' | 'faded' | 'outlined'
   /**
    * Tag color.
    * @default primary
@@ -21,7 +21,7 @@ export interface Props extends DefaultProps<HTMLSpanElement, 'size'> {
 
 export const Tag = forwardRef<HTMLSpanElement, Props>((props, ref) => {
   const {
-    variant = 'filled',
+    variant = 'flat',
     color = 'primary',
     size = 'md',
     radius = 'sm',

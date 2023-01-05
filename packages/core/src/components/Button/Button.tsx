@@ -9,9 +9,9 @@ import { Content, Item, StyledButton } from './Button.style'
 export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> {
   /**
    * Button variant
-   * @default filled
+   * @default flat
    */
-  variant?: 'filled' | 'faded' | 'outlined' | 'text'
+  variant?: 'flat' | 'faded' | 'outlined' | 'text'
   /**
    * Button size
    * @default md
@@ -33,7 +33,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
 export const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const {
     as,
-    variant = 'filled',
+    variant = 'flat',
     size = 'md',
     color = 'primary',
     radius = 'sm',

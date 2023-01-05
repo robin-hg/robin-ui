@@ -4,7 +4,7 @@ import type { ColorToken, Size, SizeValue } from '@robin-ui/theme'
 import { DynamicResizer } from '../DynamicResizer'
 
 interface StyledButtonProps {
-  $variant: 'filled' | 'faded' | 'outlined' | 'text'
+  $variant: 'flat' | 'faded' | 'outlined' | 'text'
   $size: Size
   $color: ColorToken
   $radius: SizeValue
@@ -58,7 +58,7 @@ export const StyledButton = styled.button<StyledButtonProps>(
     }[$size]),
   ({ theme, $variant, $color }) =>
     ({
-      filled: {
+      flat: {
         color: theme.fn.getOnColor($color),
         background: theme.fn.getColor($color),
         '&:hover': {

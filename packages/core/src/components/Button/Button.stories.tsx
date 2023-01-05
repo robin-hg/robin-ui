@@ -9,7 +9,7 @@ export default {
     children: 'I am a button',
     size: 'md',
     radius: 'sm',
-    variant: 'filled',
+    variant: 'flat',
     color: 'primary'
   }
 } satisfies Meta<Props>

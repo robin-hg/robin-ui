@@ -3,9 +3,15 @@ import { styled } from '@robin-ui/styles'
 import { BaseContainer } from '../BaseContainer'
 import { Paper } from '../Paper'
 
-export const AccordionContainer = styled(BaseContainer)(({ theme }) => ({
-  borderBottom: `solid 0.1rem ${theme.palette.outline}`
-}))
+interface AccordionContainerProps {
+  $borderless: boolean
+}
+
+export const AccordionContainer = styled(BaseContainer)<AccordionContainerProps>(
+  ({ theme, $borderless }) => ({
+    borderBottom: $borderless ? 'none' : `solid 0.1rem ${theme.palette.outline}`
+  })
+)
 
 interface AccordionSummaryProps {
   $open: boolean

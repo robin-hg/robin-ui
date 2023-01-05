@@ -2,7 +2,7 @@ import { styled } from '@robin-ui/styles'
 import type { ColorToken, Size, SizeValue } from '@robin-ui/types'
 
 interface TagContainerProps {
-  $variant: 'filled' | 'faded' | 'outlined'
+  $variant: 'flat' | 'faded' | 'outlined'
   $color: ColorToken
   $size: Size
   $radius: SizeValue
@@ -32,7 +32,7 @@ export const TagContainer = styled.span<TagContainerProps>(
   }),
   ({ theme, $variant, $color }) =>
     ({
-      filled: {
+      flat: {
         background: theme.fn.getColor($color),
         color: theme.fn.getOnColor($color)
       },
