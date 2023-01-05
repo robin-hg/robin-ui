@@ -3,8 +3,8 @@ import { forwardRef, useContext } from 'react'
 import { X } from '@robin-ui/icons'
 import type { DefaultProps } from '@robin-ui/types'
 
-import { Button } from '../Button'
 import { FlexBox } from '../FlexBox'
+import { IconButton } from '../IconButton'
 import { ModalContext } from '../Modal'
 import { Text } from '../Typography'
 
@@ -20,14 +20,9 @@ export const ModalHeader = forwardRef<HTMLDivElement, Props>((props, ref) => {
         {children}
       </Text>
       {onClose && (
-        <Button
-          onClick={onClose}
-          variant="text"
-          color="surface.onBase"
-          size="sm"
-          aria-label="Close">
+        <IconButton onClick={onClose} variant="text" color="surface.onBase" aria-label="Close">
           <X />
-        </Button>
+        </IconButton>
       )}
     </FlexBox>
   )
