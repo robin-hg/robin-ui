@@ -17,7 +17,7 @@ export const FadeContainer = styled(Fade)({
 
 interface FloatingElementProps {
   $placement: Placement
-  $surfaceColor: 'base' | 'variant'
+  $surfaceColor: 'background' | 'base' | 'variant'
   $tint: ColorToken
 }
 
@@ -26,7 +26,7 @@ export const Arrow = styled.span<FloatingElementProps>(
     position: 'absolute',
     zIndex: -1,
     border: `0.4rem solid ${theme.fn.getMixedColor(
-      `surface.${$surfaceColor}`,
+      $surfaceColor === 'background' ? 'background' : `surface.${$surfaceColor}`,
       $tint,
       'surfaceTint'
     )}`,
