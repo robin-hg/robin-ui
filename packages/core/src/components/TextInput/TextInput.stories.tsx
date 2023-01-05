@@ -1,8 +1,6 @@
 import { useArgs } from '@storybook/client-api'
 import type { Meta, StoryFn } from '@storybook/react'
 
-import { Paper } from '../Paper'
-
 import { type Props, TextInput } from './TextInput'
 
 export default {
@@ -17,14 +15,12 @@ export default {
 export const Default: StoryFn<Props> = args => {
   const [, updateArgs] = useArgs()
   return (
-    <Paper>
-      <TextInput
-        {...args}
-        onChange={event => {
-          args.onChange?.(event)
-          updateArgs({ value: event.target.value })
-        }}
-      />
-    </Paper>
+    <TextInput
+      {...args}
+      onChange={event => {
+        args.onChange?.(event)
+        updateArgs({ value: event.target.value })
+      }}
+    />
   )
 }
