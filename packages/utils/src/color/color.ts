@@ -13,8 +13,8 @@ export const generateShades = (baseColor: string, steps = 10) => {
   const lch = colord(baseColor).toLch()
   const palette = range(steps, 1).map(i => {
     const half = steps / 2
-    const fixedLightness = Math.round(i * (100 / steps) - half)
-    const chromaRatio = (i > half ? Math.abs(i - steps * 1.2) : i) / half
+    const fixedLightness = Math.round((100 / steps) * (i - 0.5))
+    const chromaRatio = 1 - Math.abs(i - half - (i > half ? 1 : 0)) / half
 
     return colord({ l: fixedLightness, c: lch.c * chromaRatio, h: lch.h }).toHex()
   })
