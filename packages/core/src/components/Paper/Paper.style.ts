@@ -23,7 +23,9 @@ export const PaperContainer = styled(BaseContainer)<PaperContainerProps>(
       $tint,
       'surfaceTint'
     ),
-    color: theme.fn.getOnColor(`surface.${$surfaceColor}`),
+    color: theme.fn.getOnColor(
+      $surfaceColor === 'background' ? 'background' : `surface.${$surfaceColor}`
+    ),
     border: '0.1rem solid transparent',
     borderRadius: theme.fn.getSize($radius, theme.radius),
     transition: theme.fn.getTransition(),

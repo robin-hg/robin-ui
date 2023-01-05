@@ -40,9 +40,9 @@ export const lightPalette: Palette = {
   },
   surface: {
     base: colors.neutral[1],
-    onBase: colors.neutral[9],
+    onBase: colors.neutral[7],
     variant: colors.neutral[2],
-    onVariant: colors.neutral[7]
+    onVariant: colors.neutral[8]
   },
   background: {
     base: white,
@@ -93,7 +93,7 @@ export const darkPalette: Palette = {
     base: colors.neutral[9],
     onBase: colors.neutral[3],
     variant: colors.neutral[8],
-    onVariant: colors.neutral[3]
+    onVariant: colors.neutral[2]
   },
   background: {
     base: colors.neutral[10],
