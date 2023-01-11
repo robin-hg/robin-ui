@@ -9,8 +9,9 @@ export default {
     children: 'I am a button',
     size: 'md',
     radius: 'sm',
-    variant: 'flat',
-    color: 'primary'
+    variant: 'gradient',
+    color: 'primary',
+    gradient: { colors: ['#090979', '#00d4ff'], deg: 0 }
   }
 } satisfies Meta<Props>
 

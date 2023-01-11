@@ -91,13 +91,13 @@ export const darkPalette: Palette = {
   },
   surface: {
     base: colors.neutral[9],
-    onBase: colors.neutral[3],
+    onBase: colors.neutral[2],
     variant: colors.neutral[8],
     onVariant: colors.neutral[2]
   },
   background: {
     base: colors.neutral[10],
-    onBase: colors.neutral[3]
+    onBase: colors.neutral[2]
   },
   outline: colors.neutral[7],
   tint: colors.blue[7]

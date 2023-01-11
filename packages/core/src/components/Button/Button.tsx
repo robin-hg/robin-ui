@@ -11,7 +11,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
    * Button variant
    * @default flat
    */
-  variant?: 'flat' | 'faded' | 'outlined' | 'text'
+  variant?: 'flat' | 'faded' | 'outlined' | 'text' | 'gradient'
   /**
    * Button size
    * @default md
@@ -23,6 +23,7 @@ export interface Props extends DefaultProps<HTMLButtonElement, 'size' | 'type'> 
    * @default primary
    */
   color?: ColorToken
+  gradient?: string[] | { colors: string[]; deg?: number }
   leftAdornment?: React.ReactNode
   rightAdornment?: React.ReactNode
   disabled?: boolean
@@ -36,6 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
     variant = 'flat',
     size = 'md',
     color = 'primary',
+    gradient,
     radius = 'sm',
     leftAdornment,
     rightAdornment,
@@ -55,6 +57,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
       $color={groupColor ?? color}
       $size={groupSize ?? size}
       $radius={radius}
+      $gradient={Array.isArray(gradient) ? { colors: gradient } : gradient}
       type="button"
       onClick={event => {
         if (disabled) {

@@ -4,10 +4,11 @@ import type { ColorToken, Size, SizeValue } from '@robin-ui/theme'
 import { DynamicResizer } from '../DynamicResizer'
 
 interface StyledButtonProps {
-  $variant: 'flat' | 'faded' | 'outlined' | 'text'
+  $variant: 'flat' | 'faded' | 'outlined' | 'text' | 'gradient'
   $size: Size
   $color: ColorToken
   $radius: SizeValue
+  $gradient?: { colors: string[]; deg?: number }
 }
 
 export const StyledButton = styled.button<StyledButtonProps>(
@@ -56,8 +57,9 @@ export const StyledButton = styled.button<StyledButtonProps>(
         padding: theme.fn.getSpacing(['md', 'xl'])
       }
     }[$size]),
-  ({ theme, $variant, $color }) =>
-    ({
+  ({ theme, $variant, $color, $gradient }) => {
+    const variant = $variant === 'gradient' && !$gradient ? 'flat' : $variant
+    return {
       flat: {
         color: theme.fn.getOnColor($color),
         background: theme.fn.getColor($color),
@@ -151,8 +153,36 @@ export const StyledButton = styled.button<StyledButtonProps>(
           background: `transparent !important`,
           cursor: 'default !important'
         }
+      },
+      gradient: null
+    }[variant]
+  },
+  ({ theme, $variant, $gradient }) => {
+    if ($variant !== 'gradient' || !$gradient) {
+      return null
+    }
+
+    const gradient = theme.fn.generateGradient($gradient.colors, $gradient.deg)
+    return {
+      color: theme.fn.getOnColor(gradient),
+      background: theme.fn.getColor(gradient),
+      border: 'none',
+      '&:hover': {
+        background: theme.fn.getAlphaColor(gradient, 'hover')
+      },
+      '&:focus-visible': {
+        background: theme.fn.getAlphaColor(gradient, 'focus'),
+        outlineColor: theme.fn.getColor(gradient)
+      },
+      '&:active': {
+        background: theme.fn.getAlphaColor(gradient, 'active')
+      },
+      '&[disabled]': {
+        color: `${theme.fn.getMixedColor('surface.base', 'surface.onBase', 'disabled')} !important`,
+        background: `${theme.fn.getAlphaColor('surface.base', 'disabled')} !important`
       }
-    }[$variant])
+    }
+  }
 )
 
 export const Content = styled(DynamicResizer)(({ theme }) => ({

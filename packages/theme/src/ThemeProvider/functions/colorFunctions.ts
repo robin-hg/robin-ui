@@ -26,6 +26,11 @@ export const getColorFunctions = (theme: AugumentedTheme) => {
       }
 
       const backgroundColor = getColor(background)
+
+      if (!colord(backgroundColor).isValid()) {
+        return theme.palette.surface.onBase
+      }
+
       const baseContrast = colord(backgroundColor).contrast(theme.palette.surface.base)
       const onBaseContrast = colord(backgroundColor).contrast(theme.palette.surface.onBase)
 
