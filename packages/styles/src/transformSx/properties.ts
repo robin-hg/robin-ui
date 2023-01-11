@@ -16,7 +16,7 @@ const supportedColorProperties = [
   'stroke'
 ] as const
 export const colorProperties = new Set<string>(supportedColorProperties)
-export type SupportedColorProp = typeof supportedColorProperties[number]
+export type SupportedColorProp = (typeof supportedColorProperties)[number]
 
 const supportedSpacingProperties = [
   'gap',
@@ -38,4 +38,4 @@ const supportedSpacingProperties = [
   'left'
 ] as const
 export const spacingProperties = new Set<string>(supportedSpacingProperties)
-export type SupportedSpacingProp = typeof supportedSpacingProperties[number]
+export type SupportedSpacingProp = (typeof supportedSpacingProperties)[number]
