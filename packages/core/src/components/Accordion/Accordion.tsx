@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState } from 'react'
+import { forwardRef, useState } from 'react'
 
 import { useId } from '@robin-ui/hooks'
 import { ChevronDown } from '@robin-ui/icons'
@@ -36,37 +36,30 @@ export const Accordion = forwardRef<HTMLDivElement, Props>((props, ref) => {
     children,
     ...otherProps
   } = props
-  const [open, setOpen] = useState(!!openOverride)
+  const [open, setOpen] = useState(false)
   const id = useId()
 
-  const overrideMode = openOverride !== undefined
   const expandable = !!children && !disabled
-
-  useEffect(() => {
-    if (overrideMode && expandable) {
-      setOpen(openOverride)
-    }
-  }, [openOverride])
-
-  const toggleOpen = () => {
-    if (!overrideMode && expandable) {
-      setOpen(!open)
-    }
-  }
+  const overrideMode = openOverride !== undefined && expandable
+  const isOpen = overrideMode ? openOverride : open
 
   return (
     <AccordionContainer ref={ref} $borderless={!!borderless} {...otherProps}>
       <AccordionSummary
         role="button"
-        $open={open}
+        $open={isOpen}
         $expandable={expandable}
         $spaceBetween={chevronPosition === 'right'}
         disabled={!!disabled}
-        onClick={toggleOpen}
+        onClick={() => {
+          if (!overrideMode) {
+            setOpen(!open)
+          }
+        }}
         tabIndex={expandable ? 0 : -1}
         id={`${id}-summary`}
         aria-controls={`${id}-body`}
-        aria-expanded={!!open}
+        aria-expanded={!!isOpen}
         aria-disabled={disabled}>
         {!!children && chevronPosition === 'left' && <ChevronDown size={20} />}
         <Text as="div" bold color="inherit">
@@ -74,7 +67,7 @@ export const Accordion = forwardRef<HTMLDivElement, Props>((props, ref) => {
         </Text>
         {!!children && chevronPosition === 'right' && <ChevronDown size={20} />}
       </AccordionSummary>
-      <Collapse in={open} unmountOnExit>
+      <Collapse in={isOpen} unmountOnExit>
         <AccordionContent
           role="region"
           id={`${id}-body`}

@@ -1,4 +1,4 @@
-import { forwardRef, useContext, useEffect, useRef, useState } from 'react'
+import { forwardRef, useContext, useRef, useState } from 'react'
 
 import { useCombinedRef, useSize, useUncontrolled } from '@robin-ui/hooks'
 import { ChevronDown } from '@robin-ui/icons'
@@ -70,10 +70,6 @@ export const Select = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const readOnly = wrapperReadOnly ?? inputReadOnly
   const disabled = wrapperDisabled ?? inputDisabled
 
-  useEffect(() => {
-    setOpen(false)
-  }, [disabled, native])
-
   const item = options.find(option => option.value === _value)
 
   return (
@@ -104,7 +100,7 @@ export const Select = forwardRef<HTMLDivElement, Props>((props, ref) => {
         readOnly={readOnly}
         disabled={disabled}
         error={wrapperError ?? error}
-        active={open}
+        active={!native && open}
         tabIndex={native ? -1 : 0}
         {...otherProps}>
         {native ? (
